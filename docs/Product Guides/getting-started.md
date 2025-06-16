@@ -29,10 +29,10 @@ To get started, you can continue to the  [Core Concepts](doc:concepts)  or pick 
 
 We support several platforms through our SDK, which include end-to-end UI to get you started. You can also leverage our REST API to create your own user experiences for platforms we do not currently offer or to automate other aspects of our product experience.
 
-- [iOS SDK](doc:ios-basic-integration)
-- [Android SDK](doc:android-basic-integration)
-- [Web SDK](doc:getting-started-with-the-web-sdk)
-- [REST APIs](doc:rest-api-getting-started) 
+* [iOS SDK](doc:ios-basic-integration)
+* [Android SDK](doc:android-basic-integration)
+* [Web SDK](doc:getting-started-with-the-web-sdk)
+* [REST APIs](doc:rest-api-getting-started) 
 
 **Producer Suite**
 
