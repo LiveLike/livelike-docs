@@ -11,3 +11,4 @@
 - reply-to-chat-message
 - quote-message
 - token-gating-chat
+- toggle-filtered-messages
