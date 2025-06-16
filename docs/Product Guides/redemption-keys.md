@@ -14,9 +14,9 @@ next:
 ---
 ## What are Redemption Keys?
 
-A redemption key is an object that is created on the Application level in the [Producer Site](https://cf-blast.livelikecdn.com/producer).  
-As an integrator, you can issue unique redemption keys to users that can be redeemed in first-party or third-party systems.  
-These keys can be created from CMS (<https://cf-blast.livelikecdn.com/producer>) and then can be issued to users  
+A redemption key is an object that is created on the Application level in the [Producer Site](https://cf-blast.livelikecdn.com/producer).\
+As an integrator, you can issue unique redemption keys to users that can be redeemed in first-party or third-party systems.\
+These keys can be created from CMS ([https://cf-blast.livelikecdn.com/producer](https://cf-blast.livelikecdn.com/producer)) and then can be issued to users\
 As a user, you can redeem these unique keys (using code/id)
 
 ## Creating Redemption Key
@@ -31,8 +31,8 @@ As a user, you can redeem these unique keys (using code/id)
 
 ## Fetching Redemption Keys  in the SDK
 
-You can fetch all Redemption Keys (non producer users can see only keys redeemed by them) using the SDK interface **getRedemptionKeys**  
-This interface supports **status** as filter  
+You can fetch all Redemption Keys (non producer users can see only keys redeemed by them) using the SDK interface **getRedemptionKeys**\
+This interface supports **status** as filter\
 This interface returns paginated list of Redemption Keys
 
 ```swift
