@@ -26,9 +26,9 @@ To create, publish a widget with an application profile you should be a producer
 
 | Widget     | Create Widget Permission | Publish Widget Permission |
 | :--------- | :----------------------- | :------------------------ |
-| Text Poll  | create_text_poll         | publish_text_poll         |
-| Image Poll | create_image_poll        | publish_image_poll        |
-| Alert      | create_alert             | publish_alert             |
+| Text Poll  | create\_text\_poll       | publish\_text\_poll       |
+| Image Poll | create\_image\_poll      | publish\_image\_poll      |
+| Alert      | create\_alert            | publish\_alert            |
 
 # Create a Widget
 
