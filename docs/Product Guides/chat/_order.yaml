@@ -10,3 +10,4 @@
 - pin-message
 - reply-to-chat-message
 - quote-message
+- token-gating-chat
