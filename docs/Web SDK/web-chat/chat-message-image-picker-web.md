@@ -16,20 +16,7 @@ next:
 
 Chat does not show image picker by default. Add the `imagePicker`  attribute to the `livelike-chat` element to enable it.
 
-
-[block:embed]
-{
-  "html": false,
-  "url": "https://codepen.io/abhi1599/embed/yLRxmVe",
-  "provider": "codepen.io",
-  "href": "https://codepen.io/abhi1599/embed/yLRxmVe",
-  "typeOfEmbed": "iframe",
-  "height": "300px",
-  "width": "100%",
-  "iframe": true
-}
-[/block]
-
+<Embed url="https://codepen.io/abhi1599/embed/yLRxmVe" provider="codepen.io" href="https://codepen.io/abhi1599/embed/yLRxmVe" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" title="undefined" />
 
 ## Customise Image Picker
 
@@ -39,16 +26,4 @@ The `chatImagePickerRenderer` function takes an argument object with a property 
 
 Here's an example showcasing a custom Image Picker UI and providing code snippets for rendering images in the chat input container using both Blob and URL.
 
-
-[block:embed]
-{
-  "html": false,
-  "url": "https://codepen.io/abhi1599/embed/dyggbmy",
-  "provider": "codepen.io",
-  "href": "https://codepen.io/abhi1599/embed/dyggbmy",
-  "typeOfEmbed": "iframe",
-  "height": "300px",
-  "width": "100%",
-  "iframe": true
-}
-[/block]
+<Embed url="https://codepen.io/abhi1599/embed/dyggbmy" provider="codepen.io" href="https://codepen.io/abhi1599/embed/dyggbmy" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" title="undefined" />
