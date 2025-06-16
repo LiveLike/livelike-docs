@@ -14,7 +14,7 @@ next:
       slug: javascript-chat
       title: Chat
 ---
-The various interactive elements like polls, quizzes, and predictions are called widgets. A list of the available widgets can be found in the [widgets product guide](doc:widgets).  
+The various interactive elements like polls, quizzes, and predictions are called widgets. A list of the available widgets can be found in the [widgets product guide](doc:widgets).\
 This section details all the widget based API exported as part of Javascript package.
 
 ## Real Time published widgets
@@ -39,13 +39,13 @@ getPostedWidgets({
 
 ## getWidgetsInteractions
 
-This API can be used to get interactions for the user for a given set of widgets or for the interactionUrl returned form the timeline resource.  
+This API can be used to get interactions for the user for a given set of widgets or for the interactionUrl returned form the timeline resource.\
 It takes an interactionUrl, or a programId and an array of widget's kind and id.
 
 **API Definition:** [getWidgetsInteractions](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getWidgetsInteractions)
 
 > 🚧 No Interactions for follow up widgets
-> 
+>
 > For followup widgets, there are no interaction. They should be attached with the interaction on their corresponding non followup widget.
 
 ```javascript
@@ -59,10 +59,10 @@ getWidgetsInteractions({
 
 ## getWidgetInteractions
 
-This API gives you widget interactions for a given widget.  
+This API gives you widget interactions for a given widget.\
 Only in the case of Cheer meter widget, widget interaction would be list of more than one interaction element, for the rest of the widgets user widget interactions would be a list of one single interaction element.
 
-** API Definition:** [getWidgetInteractions](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getWidgetInteractions)
+**API Definition:** [getWidgetInteractions](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getWidgetInteractions)
 
 ```javascript
 import { getWidgetInteractions, WidgetKind } from '@livelike/javascript';
@@ -114,7 +114,7 @@ removeWidgetListener({
 
 ## getWidget
 
-This API can be used to get any published widget details using its id and kind.  
+This API can be used to get any published widget details using its id and kind.\
 **API Definition:** [getWidget](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getWidget)
 
 ```javascript
@@ -128,7 +128,7 @@ getWidget({
 
 ## getUnclaimedWidgetInteractionsRewards
 
-This API can be used to get interactions for widgets that have not yet had their rewards claimed.  
+This API can be used to get interactions for widgets that have not yet had their rewards claimed.\
 **API Definition:** [getUnclaimedWidgetInteractionsRewards](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getUnclaimedWidgetInteractionsRewards)
 
 ```javascript
@@ -141,9 +141,9 @@ getUnclaimedWidgetInteractionsRewards({
 
 ## getWidgets
 
-This API can be used to fetch paginated List of Widgets filtered by widget status and kind.  
-It takes a programId as a mandatory argument.  
-Other optional parameters to filter the widget list are widget status, ordering, interactivity and an array of widget's kind.  
+This API can be used to fetch paginated List of Widgets filtered by widget status and kind.\
+It takes a programId as a mandatory argument.\
+Other optional parameters to filter the widget list are widget status, ordering, interactivity and an array of widget's kind.\
 **API Definition:** [getWidgets](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getWidgets)
 
 ```javascript
@@ -164,7 +164,7 @@ getWidgets({
 
 This API lets you create an widget impression that could be used for analytics purposes, for eg: track the user reachability of a given widget as shown in producer suite application.
 
-** API Definition:** [createWidgetImpression](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createWidgetImpression)
+**API Definition:** [createWidgetImpression](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createWidgetImpression)
 
 ```javascript
 import { createWidgetImpression, WidgetKind } from '@livelike/javascript';
@@ -177,17 +177,17 @@ createWidgetImpression({
 
 ## createWidgetInteraction
 
-This API lets you create a new widget interaction. Use this API when a user interacts with the widget UI for the first time.  
-Before using this API, make sure you have already fetched widget details using either `getPostedWidgets`, `getWidgets` or `getWidget` API and also checked if there were no widget interaction present using `getWidgetsInteractions` or `getWidgetInteractions` API.  
+This API lets you create a new widget interaction. Use this API when a user interacts with the widget UI for the first time.\
+Before using this API, make sure you have already fetched widget details using either `getPostedWidgets`, `getWidgets` or `getWidget` API and also checked if there were no widget interaction present using `getWidgetsInteractions` or `getWidgetInteractions` API.\
 In case of:
 
-- Poll/Prediction/Cheer meter widget -> interaction item would be of type [IWidgetOptionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IWidgetOptionItem). Use widget details `options` element to pass interaction item.
-- Quiz widget -> interaction item would be of type [IWidgetChoiceItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IWidgetChoiceItem). Use widget details `choices` element  to pass interaction item. 
-- Text ask widget -> interaction item would of type [ITextAskInteractionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ITextAskInteractionItem)
-- Emoji slider widget -> interaction item would of type [ISliderInteractionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ISliderInteractionItem)
-- Number Prediction widget -> interaction item would be of type  [INumberPredictionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=INumberPredictionItem)
+* Poll/Prediction/Cheer meter widget -> interaction item would be of type [IWidgetOptionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IWidgetOptionItem). Use widget details `options` element to pass interaction item.
+* Quiz widget -> interaction item would be of type [IWidgetChoiceItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IWidgetChoiceItem). Use widget details `choices` element  to pass interaction item. 
+* Text ask widget -> interaction item would of type [ITextAskInteractionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ITextAskInteractionItem)
+* Emoji slider widget -> interaction item would of type [ISliderInteractionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ISliderInteractionItem)
+* Number Prediction widget -> interaction item would be of type  [INumberPredictionItem](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=INumberPredictionItem)
 
-** API Definition:** [createWidgetInteraction](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createWidgetInteraction)
+**API Definition:** [createWidgetInteraction](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createWidgetInteraction)
 
 ```javascript
 import { createWidgetInteraction, WidgetKind } from '@livelike/javascript';
@@ -208,10 +208,10 @@ createWidgetInteraction({
 
 ## updateWidgetInteraction
 
-This API lets you update an existing user widget interaction which was already created by `createWidgetInteraction` API.  
+This API lets you update an existing user widget interaction which was already created by `createWidgetInteraction` API.\
 Make sure to check whether a widget interaction is already created using `getWidgetsInteractions` or using `getWidgetInteractions` API. In case no widget interaction found, use `createWidgetInteraction` instead. 
 
-** API Definition:** [updateWidgetInteraction](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=updateWidgetInteraction)
+**API Definition:** [updateWidgetInteraction](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=updateWidgetInteraction)
 
 ```javascript
 import { updateWidgetInteraction, WidgetKind } from '@livelike/javascript';
@@ -232,7 +232,7 @@ updateWidgetInteraction({
 
 ## claimPredictionWidgetRewards
 
-This API lets you claim rewards in the case of prediction follow up widgets. For prediction based widgets like Text/Image Prediction or Image Number Prediction widget, rewards are needed to be claimed only after followup widget is published.  
+This API lets you claim rewards in the case of prediction follow up widgets. For prediction based widgets like Text/Image Prediction or Image Number Prediction widget, rewards are needed to be claimed only after followup widget is published.\
 This API works only with follow up widget details where follow up widget Id could be fetched using [real time widget details](javascript-widgets#real-time-published-widgets) or from producer suite.
 
 **API Definition:** [claimPredictionWidgetRewards](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=claimPredictionWidgetRewards)
