@@ -11,25 +11,12 @@ next:
   description: ''
 ---
 > 🚧 Pre-requisite
-> 
+>
 > Make sure you [initialise React Native SDK](react-native-getting-started#initialise-react-native-sdk).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7baefa3-Group_68_1.svg",
-        null,
-        "Widget header Anatomy"
-      ],
-      "align": "center",
-      "sizing": "600px",
-      "caption": "Widget Header Anatomy"
-    }
-  ]
-}
-[/block]
+<Image alt="Widget header Anatomy" align="center" width="600px" src="https://files.readme.io/7baefa3-Group_68_1.svg">
+  Widget Header Anatomy
+</Image>
 
 `LLWidgetHeader` is a fundamental atomic component that is used by various widget components. This component is rendered as a top component as part of [widget anatomy](react-native-widget-anatomy).
 
@@ -55,29 +42,16 @@ export function MyWidgetHeader() {
 
 ## Hooks used by `LLWidgetHeader`
 
-- [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
+* [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
 
 ## Component Hierarchy
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a430993-Widget_Doc-Component_hierarchy.drawio.svg",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/a430993-Widget_Doc-Component_hierarchy.drawio.svg" />
 
 ## LLWidgetHeader Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `title`
@@ -110,7 +84,7 @@ Function that gets invoked whenever user dismisses the widget by clicking on dis
 | :----- | :--------- |
 | Number | No default |
 
-Interactive timeout in [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). Once the timeout gets elapsed, widget transition into `Timed Out` phase where it is in disabled state.
+Interactive timeout in [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). Once the timeout gets elapsed, widget transition into `Timed Out` phase where it is in disabled state.\
 When setting `interactiveTimeout` as `null`, this overrides widget interactive timeout (that is set from producer suite) and widget becomes always interactive.
 
 #### `onInteractiveTimeout`
