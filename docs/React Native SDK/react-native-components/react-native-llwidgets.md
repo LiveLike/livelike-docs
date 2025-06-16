@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 🚧 Pre-requisite
-> 
+>
 > Make sure you [initialise React Native SDK](react-native-getting-started#initialise-react-native-sdk).
 
 `LLWidgets` is a timeline based widget container component that would render set of widgets based on `WidgetMode`  (`POPUP` or `INTERACTIVE_TIMELINE`) where the mode defines how those set of widgets (published from our producer suite) would be rendered.
@@ -39,11 +39,11 @@ export function MyWidgetsContainer() {
 
 In interactive timeline mode (i.e `WidgetMode.INTERACTIVE_TIMELINE`), 
 
-- previously published widgets are displayed newest to oldest 
-- then new widgets appear above the old ones. 
-- All the widgets are interactive for infinite time. There is **no timer** attached to any of the widgets.  
-- Each "page" of widgets in the timeline contain up to the 20 most recent widgets. 
-- If there are more than 20 past widgets available, there will be a customisable "Load More" button at the end of the widget list that will load up to the next 20 widgets at a time.
+* previously published widgets are displayed newest to oldest 
+* then new widgets appear above the old ones. 
+* All the widgets are interactive for infinite time. There is **no timer** attached to any of the widgets.  
+* Each "page" of widgets in the timeline contain up to the 20 most recent widgets. 
+* If there are more than 20 past widgets available, there will be a customisable "Load More" button at the end of the widget list that will load up to the next 20 widgets at a time.
 
 ```typescript react native
 import { LLWidgets, WidgetMode } from '@livelike/react-native';
@@ -59,19 +59,19 @@ export function MyWidgetsContainer() {
 ```
 
 > 📘 Snack expo playground
-> 
+>
 > Refer [LLWidgets](https://snack.expo.dev/@aquibv/llwidgets) snack to play around with the widget
 
 ## Hooks used by `LLWidgets`
 
-- [useLoadTimelineWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadTimelineWidgetEffect)
-- [useTimelineWidgets](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useTimelineWidgets)
-- [useTimelineWidgetActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useTimelineWidgetActions)
+* [useLoadTimelineWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadTimelineWidgetEffect)
+* [useTimelineWidgets](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useTimelineWidgets)
+* [useTimelineWidgetActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useTimelineWidgetActions)
 
 ## LLWidgets Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `programId`
@@ -480,5 +480,5 @@ Component that could be rendered for video alert widget kind, you can pass your 
 Component that could be rendered for social embed widget kind, you can pass your own custom component.
 
 > 🚧 Widgets in development
-> 
+>
 > Currently text ask, alert, video alert and social embed stock widget UI is in development. So by default there's no stock widget UI rendered by LLTimelineWidget.
