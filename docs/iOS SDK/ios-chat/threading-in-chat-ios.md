@@ -49,7 +49,7 @@ livelike.chat.getChatMessages(
 
 ## Listening for Replies to a Message
 
-Listening to replies for a message is similar to listening to regular chat messages. To figure out if a new message is a reply, compare the new message’s "parent message id" with the root message’s id. [https://docs.livelike.com/docs/ios-chat-session#sending-and-receiving-messages]\(Read More)
+Listening to replies for a message is similar to listening to regular chat messages. To figure out if a new message is a reply, compare the new message’s "parent message id" with the root message’s id. \[https\://docs.livelike.com/docs/ios-chat-session#sending-and-receiving-messages]\(Read More)
 
 If the parentMessageID is nil then the new message is not a reply.
 
@@ -78,4 +78,4 @@ Use the service with:
 
 1. `reaction space id` from  this can be found in the [Chat Room Info](https://docs.livelike.com/docs/chat-rooms-1#getting-chat-room-information)  
 2. `target id` set to the id of the reply message (`ChatMessage.id.id`)
-3. `reaction id` set to id of the reaction found by getting the [Reaction Space and Reaction Pack Details]\(1. 1. <https://docs.livelike.com/docs/reactions#get-reaction-space-details-by-reaction-space-id>)  for the reaction space in step 1.
+3. `reaction id` set to id of the reaction found by getting the [Reaction Space and Reaction Pack Details]\(1. 1. [https://docs.livelike.com/docs/reactions#get-reaction-space-details-by-reaction-space-id](https://docs.livelike.com/docs/reactions#get-reaction-space-details-by-reaction-space-id))  for the reaction space in step 1.
