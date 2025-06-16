@@ -13,85 +13,71 @@ next:
   description: ''
 ---
 The Web SDK contains various chat methods which can be used to build chats.
-[block:api-header]
-{
-  "title": "getMessageList"
-}
-[/block]
+
+## getMessageList
+
 This method is used to get messages of the chat room.
 
 It takes a **roomId** string as an argument and returns a list of messages.
 
-Other optional params:
-**count**
-**start**
-**end**
+Other optional params:\
+**count**\
+**start**\
+**end**\
 **includeFilteredMessages** - To include messages with banned words in the response
-[block:code]
-{
-  "codes": [
-    {
-      "code": "LiveLike.getMessageList(\"*****\", {\n  includeFilteredMessages: true\n}).then(res => \n  console.log('res', res);\n);",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "sendMessage"
-}
-[/block]
+```javascript
+LiveLike.getMessageList("*****", {
+  includeFilteredMessages: true
+}).then(res => 
+  console.log('res', res);
+);
+```
+
+## sendMessage
+
 This method is used to send message to a chat room. 
 
-It takes an object argument with the required ** roomId** string property. 
-Other arguments are
-For text message - ** message**
-For image message - ** image_url**, ** image_width**, ** image_height**
-Optional sender avatar - ** sender_image_url**
-Optional custom_data - ** custom_data**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "LiveLike.sendMessage({roomId:'*****', message:\"Hello\"});\n\nLiveLike.sendMessage({\n  roomId:\"*****\", \n  image_url:'https://test.com/image.png',\n  image_width: 50,\n  image_height: 150\n})",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+It takes an object argument with the required **roomId** string property.\
+Other arguments are\
+For text message - **message**\
+For image message - **image\_url** , **image\_width** , **image\_height**\
+Optional sender avatar - **sender\_image\_url**\
+Optional custom\_data - **custom\_data**
 
-[block:api-header]
-{
-  "title": "addMessageListener"
-}
-[/block]
+```javascript
+LiveLike.sendMessage({roomId:'*****', message:"Hello"});
+
+LiveLike.sendMessage({
+  roomId:"*****", 
+  image_url:'https://test.com/image.png',
+  image_width: 50,
+  image_height: 150
+})
+```
+
+## addMessageListener
+
 This method is used to listen to events that occur within a chat room. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const callback = (data) => {\n  console.log('data.event', data.event);\n  console.log('data.message', data.message);\n}\n\nLiveLike.addMessageListener({roomId: \"*****\"}, callback);",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "removeMessageListener"
+```javascript
+const callback = (data) => {
+  console.log('data.event', data.event);
+  console.log('data.message', data.message);
 }
-[/block]
+
+LiveLike.addMessageListener({roomId: "*****"}, callback);
+```
+
+## removeMessageListener
+
 This method is used to remove listeners attached using addMessageListener.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const callback = (data) => {\n  console.log('data.event', data.event);\n  console.log('data.message', data.message);\n}\n\nLiveLike.removeMessageListener({roomId: \"*****\"}, callback);",
-      "language": "javascript"
-    }
-  ]
+
+```javascript
+const callback = (data) => {
+  console.log('data.event', data.event);
+  console.log('data.message', data.message);
 }
-[/block]
+
+LiveLike.removeMessageListener({roomId: "*****"}, callback);
+```
