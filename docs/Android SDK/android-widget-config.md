@@ -12,11 +12,8 @@ metadata:
 next:
   description: ''
 ---
-[block:api-header]
-{
-  "title": "Intercept Widgets"
-}
-[/block]
+## Intercept Widgets
+
 Widgets can be **intercepted** to add a Toast before showing the widget or delaying them until the user approve to see them.
 
 1. Create a WidgetInterceptor
@@ -25,19 +22,50 @@ Widgets can be **intercepted** to add a Toast before showing the widget or delay
 
 3. At this time Call `ShowWidget()` to show the widget or `dismissWidget()` to dismiss it.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Example of Widget Interceptor showing a dialog\n    private val interceptor = object : WidgetInterceptor() {\n            override fun widgetWantsToShow() {\n                AlertDialog.Builder(context).apply {\n                    setMessage(\"You received a Widget, what do you want to do?\")\n                    setPositiveButton(\"Show\") { _, _ ->\n                        showWidget() // Releases the widget\n                    }\n                    setNegativeButton(\"Dismiss\") { _, _ ->\n                        dismissWidget() // Discards the widget\n                    }\n                    create()\n                }.show()\n            }\n        }\n    \n    // You just need to add it on your session instance\n    session.widgetInterceptor = interceptor",
-      "language": "text",
-      "name": "Kotlin"
-    },
-    {
-      "code": "// Example of Widget Interceptor showing a dialog\nWidgetInterceptor interceptor =  new WidgetInterceptor() {\n             @Override\n             public void widgetWantsToShow(@NotNull LiveLikeWidgetEntity widgetData) {\n                 new AlertDialog.Builder(context)\n                     .setMessage(\"You received a Widget, what do you want to do?\")\n                     .setPositiveButton(\"Show\", new DialogInterface.OnClickListener() {\n                                 @Override\n                                 public void onClick(DialogInterface dialog, int which) {\n                                     showWidget(); // Releases the widget                                     \n                                 }\n                             })\n                     .setNegativeButton(\"Dismiss\", new DialogInterface.OnClickListener() {\n                         @Override\n                         public void onClick(DialogInterface dialog, int which) {\n                             dismissWidget(); // Discards the widget\n                         }\n                     })\n                     .create()\n                    .show();\n             }\n         };\n\n// You just need to add it on your session instance\nsession.setWidgetInterceptor(interceptor);",
-      "language": "text",
-      "name": "Java"
-    }
-  ]
-}
-[/block]
+```text Kotlin
+// Example of Widget Interceptor showing a dialog
+    private val interceptor = object : WidgetInterceptor() {
+            override fun widgetWantsToShow() {
+                AlertDialog.Builder(context).apply {
+                    setMessage("You received a Widget, what do you want to do?")
+                    setPositiveButton("Show") { _, _ ->
+                        showWidget() // Releases the widget
+                    }
+                    setNegativeButton("Dismiss") { _, _ ->
+                        dismissWidget() // Discards the widget
+                    }
+                    create()
+                }.show()
+            }
+        }
+    
+    // You just need to add it on your session instance
+    session.widgetInterceptor = interceptor
+```
+```text Java
+// Example of Widget Interceptor showing a dialog
+WidgetInterceptor interceptor =  new WidgetInterceptor() {
+             @Override
+             public void widgetWantsToShow(@NotNull LiveLikeWidgetEntity widgetData) {
+                 new AlertDialog.Builder(context)
+                     .setMessage("You received a Widget, what do you want to do?")
+                     .setPositiveButton("Show", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                     showWidget(); // Releases the widget                                     
+                                 }
+                             })
+                     .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialog, int which) {
+                             dismissWidget(); // Discards the widget
+                         }
+                     })
+                     .create()
+                    .show();
+             }
+         };
+
+// You just need to add it on your session instance
+session.setWidgetInterceptor(interceptor);
+```
