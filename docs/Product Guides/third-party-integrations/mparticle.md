@@ -28,14 +28,14 @@ When LiveLike is set as the destination, the mParticle will send data to LiveLik
 
 **Automation:** By integrating mParticle and LiveLike, customers can automate the process of delivering rewards to users based on specific events or triggers within their application. This can save time and resources by eliminating the need for manual intervention.
 
-**Enhanced Data Analysis: **mParticle provides detailed insights and analytics about user behavior and interactions with the source application. By integrating with LiveLike, customers can gain further insights into how users engage with reward systems and gamification features, allowing for more informed decision-making and optimization of the user experience.
+**Enhanced Data Analysis:** mParticle provides detailed insights and analytics about user behavior and interactions with the source application. By integrating with LiveLike, customers can gain further insights into how users engage with reward systems and gamification features, allowing for more informed decision-making and optimization of the user experience.
 
 **Flexibility:** Both LiveLike and mParticle are highly customizable and can be tailored to meet the specific needs of each individual customer. This allows for a more personalized and effective approach to engaging users and delivering rewards.
 
 ## How to integrate?
 
-- **Outbound Integration** allows mParticle to forward clients' customer data to the LiveLike platform as Event Data or Audience Data.
-- **Inbound Integration** allows mParticle to receive Event data from our platform.
+* **Outbound Integration** allows mParticle to forward clients' customer data to the LiveLike platform as Event Data or Audience Data.
+* **Inbound Integration** allows mParticle to receive Event data from our platform.
 
 ### Inbound Integration
 
@@ -43,12 +43,12 @@ When LiveLike is set as the destination, the mParticle will send data to LiveLik
 
 **User Events**
 
-- Widget interaction
-- Widget Impression
-- New Application Profile is created
-- Reaction on chat message
-- New chat message is created (sticker, message)
-- Quest is completed
+* Widget interaction
+* Widget Impression
+* New Application Profile is created
+* Reaction on chat message
+* New chat message is created (sticker, message)
+* Quest is completed
 
 **Authentication**
 
@@ -70,16 +70,16 @@ Then all the event data received from the connected inputs will be sent to LiveL
 
 **Automating LiveLike features**
 
-This also enables our clients to automate many LiveLike features. Automated features will be initiated by a trigger, such as user sign-in and widget interaction.  
+This also enables our clients to automate many LiveLike features. Automated features will be initiated by a trigger, such as user sign-in and widget interaction.\
 LiveLike CMS will provide a dashboard for mParticle outbound integration, where clients can create actions such as widget publishing or rewarding a badge, triggered by an event in an application.
 
-For example:  
+For example:\
 Custom Reward Actions - Currently implementing custom reward actions involve calling the invoke reward action API. Using our automation features, they can surpass that API call and just pass some additional data such as programid and action key with the track API call they might already be doing.
 
 ## How to configure Outbound Integration?
 
 > 🚧 Make sure you have an account with mParticle
-> 
+>
 > Make sure you have an account with mParticle and have access to their dashboard.
 
 We have made enabling this feature very easy for you and please follow the below steps in LiveLike CMS for integration.
@@ -88,7 +88,7 @@ We have made enabling this feature very easy for you and please follow the below
 
 ![](https://files.readme.io/d53152f-image.png)
 
-2. Copy the **Client id **
+2. Copy the **Client id**
 
 ![](https://files.readme.io/f6e3c87-image.png)
 
