@@ -20,9 +20,9 @@ Quests give the end user a more gamified experience. They have to do multiple th
 
 Quests can be used to build things like:
 
-- New user on-boarding checklists
-- Product and feature tours
-- One-time promotional campaigns
+* New user on-boarding checklists
+* Product and feature tours
+* One-time promotional campaigns
 
 ## Configuring Quests
 
@@ -31,7 +31,7 @@ From the CMS:
 1. Head to your Application on the [Producer Site](https://cf-blast.livelikecdn.com/producer/)
 2. Select "Quests" in the Sidebar
 3. Select the "New Quest" button
-4. Set the Quest name, Description, and add at least one subtask.  
+4. Set the Quest name, Description, and add at least one subtask.\
    Note: When creating a subtask, you may link a reward action for automating quest task progress
 5. Select "Create" to finish
 
@@ -141,8 +141,8 @@ quests.startUserQuest(
 
 ## Getting UserQuest List
 
-You can fetch all userQuests started by a user.  
-This list is filterable by status and UserQuestIds  
+You can fetch all userQuests started by a user.\
+This list is filterable by status and UserQuestIds\
 If you know a UserQuestId, you are able to get its details by using the code samples below. This can be useful if you would like to know the status of a UserQuest, or the individual progress from each UserQuestTask. 
 
 ```javascript javascript
@@ -229,7 +229,7 @@ quests.getUserQuests(
 
 ## Updating UserQuestTask Status
 
-The status of UserQuestTasks can be updated using `updateUserQuestTasks`.  
+The status of UserQuestTasks can be updated using `updateUserQuestTasks`.\
 This will go beyond and above the progress of that UserQuestTask
 
 ```javascript javascript
@@ -363,9 +363,9 @@ quests.setUserQuestTaskProgress(
 ```
 
 > 📘 Overriding user quest task progress
-> 
+>
 > Generally, progress on tasks is incremental, but task progress can also be set to an absolute value.
-> 
+>
 > The `setUserQuestTaskProgress` method can be used to set user quest task progress to a specific value, such as to zero if you'd like to reset the someone's progress on a task. For more API level details, check out the [Update User Quest Task Progress](ref:update-user-quest-task-progress) endpoint and the `custom_progress` field.
 
 ## Get Quest Rewards
