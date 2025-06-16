@@ -59,7 +59,7 @@ chat_view.enableChatMessageURLs = true
 ```
 
 > 🚧 Note:
-> 
+>
 > For Better performance of this feature, make sure to enable enableChatMessageURLs before setSession
 
 To add links of your own choices like for deep linking, you can add regex to access the chat message text string as linkable or not. For that, you have to set the value of **chatMessageUrlPatterns** , it should be string.
@@ -69,7 +69,7 @@ chat_view.chatMessageUrlPatterns = “Validation RegEx”
 ```
 
 > ❗️ Feature Availability
-> 
+>
 > This feature is not available for **Flutter SDK** as of 4th Aug 2021
 
 ## iOS SDK Integration
