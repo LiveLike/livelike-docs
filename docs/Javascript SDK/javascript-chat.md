@@ -28,12 +28,12 @@ next:
 ---
 The LiveLike SDK provides you with Chat UI and APIs to create your preferred chat experience, ranging from one-on-one direct messaging to large public chat rooms. The supported features of the chat system include:
 
-  * Private and public chats
-  * In-app notifications
-  * Room member lists
-  * Avatars
-  * Stickers
-  * Reactions
-  * Spoiler prevention
-  * Report offensive messages
-  * Moderator tools
+* Private and public chats
+* In-app notifications
+* Room member lists
+* Avatars
+* Stickers
+* Reactions
+* Spoiler prevention
+* Report offensive messages
+* Moderator tools
