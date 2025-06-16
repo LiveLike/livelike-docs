@@ -32,7 +32,7 @@ A profile can have multiple role assignments, with different scopes for the same
 
 ## Base Role
 
-A Base Role defines a default set of permissions assigned to user profiles. It acts as the starting role for new users within an application.  
+A Base Role defines a default set of permissions assigned to user profiles. It acts as the starting role for new users within an application.\
 While multiple Base Roles can exist, only those marked as active are considered for assignment. This ensures new profiles receive the appropriate baseline access upon creation.
 
 > 📘 Base Role Creation API: [Create a Base Role](ref:create-a-base-role)
@@ -102,18 +102,18 @@ Below is a sample list of applicable resource-kinds provided by LiveLike:
 
 ## Scope
 
-Scope refers to the application-specific range of a resource category and a resource instance. It helps integrators precisely define the context in which a permission is applicable.  
+Scope refers to the application-specific range of a resource category and a resource instance. It helps integrators precisely define the context in which a permission is applicable.\
 It can be represented by a pair of resource-kind (type of resource), and resource-key (unique identifier of the resource, or "\*" for all resources of that kind)
 
 ### Example Scopes :
 
-1. kind = program, key = program_a -> denotes a program with a particular id
+1. kind = program, key = program\_a -> denotes a program with a particular id
 2. kind = chat-room, key = "\*" -> denotes all chatrooms
-3. kind = comment-board, key = board_a ; kind = comment-board, key = board_b -> denotes comment boards of id = a and b
+3. kind = comment-board, key = board\_a ; kind = comment-board, key = board\_b -> denotes comment boards of id = a and b
 
 ## Role Template
 
-Role templates are predefined sets of permissions designed for common use-cases. These templates are integrated into the system and are managed by LiveLike. However clients can use them to create a role with permissions associated with the role template.  
+Role templates are predefined sets of permissions designed for common use-cases. These templates are integrated into the system and are managed by LiveLike. However clients can use them to create a role with permissions associated with the role template.\
 Here is an sample list of role templates and their respective permissions as provided by LiveLike:
 
 ```Text Widget Creator
@@ -169,6 +169,6 @@ delete-comment-board-ban
 
 ## Role Assignment Examples:
 
-1. Widget Creator role when assigned to a user A with scope of {kind, key = program, program_a}, would allow the user to create widgets in program_an only. 
-2. Widget Creator role when assigned to a user B with scope of {kind, key = program, "\*"}, would allow the user to create widgets in all programs.
-3. Another widget creator role assigned to user A with scope of {kind, key = program, program_b} would allow the user to create widgets in program_b along with program_a as well.
+1. Widget Creator role when assigned to a user A with scope of \{kind, key = program, program\_a}, would allow the user to create widgets in program\_an only. 
+2. Widget Creator role when assigned to a user B with scope of \{kind, key = program, "\*"}, would allow the user to create widgets in all programs.
+3. Another widget creator role assigned to user A with scope of \{kind, key = program, program\_b} would allow the user to create widgets in program\_b along with program\_a as well.
