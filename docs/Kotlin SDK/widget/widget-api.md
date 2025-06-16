@@ -13,36 +13,39 @@ metadata:
 next:
   description: ''
 ---
-[block:api-header]
-{
-  "title": "Subscribing to Realtime Widgets"
-}
-[/block]
-Using the widgetFlow inside ContentSession, you can subscribe to the upcoming new widgets that are published by the producer. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "private var contentSession: ContentSession\n \n runBlocking {\n        contentSession.widgetFlow?.collect{ widget ->\n          // handle new widget received\n        }\n    }",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
+## Subscribing to Realtime Widgets
 
-[block:api-header]
-{
-  "title": "Get Details of Published Widget"
-}
-[/block]
-As an integrator, you have the ability to query our backend for a specific widget to either display it to the user right away or save the widget details for later use. In order to retrieve a Widget, you will need to know it's id and kind 
-[block:code]
-{
-  "codes": [
-    {
-      "code": " private var contentSession: ContentSession\n   \n   contentSession.getPublishedWidgets(\n        LiveLikePagination.FIRST,\n        object : LiveLikeCallback<List<LiveLikeWidget>>() {\n            override fun onResponse(\n                result: List<LiveLikeWidget>?,\n                error: String?\n            ) {\n               result?.let{\n                // handle published widget\n               }\n            }\n        }\n    )\n }\n    ",
-      "language": "kotlin"
+Using the widgetFlow inside ContentSession, you can subscribe to the upcoming new widgets that are published by the producer. 
+
+```kotlin
+private var contentSession: ContentSession
+ 
+ runBlocking {
+        contentSession.widgetFlow?.collect{ widget ->
+          // handle new widget received
+        }
     }
-  ]
-}
-[/block]
+```
+
+## Get Details of Published Widget
+
+As an integrator, you have the ability to query our backend for a specific widget to either display it to the user right away or save the widget details for later use. In order to retrieve a Widget, you will need to know it's id and kind 
+
+```kotlin
+private var contentSession: ContentSession
+   
+   contentSession.getPublishedWidgets(
+        LiveLikePagination.FIRST,
+        object : LiveLikeCallback<List<LiveLikeWidget>>() {
+            override fun onResponse(
+                result: List<LiveLikeWidget>?,
+                error: String?
+            ) {
+               result?.let{
+                // handle published widget
+               }
+            }
+        }
+    )
+ }
+```
