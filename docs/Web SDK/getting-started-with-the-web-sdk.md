@@ -35,10 +35,10 @@ The Engagment SDK can be installed with npm or Yarn. For more details see the [N
 npm i @livelike/engagementsdk
 ```
 
-Initialize the SDK with the `LiveLike.init` function. A <<glossary:Client ID>> is required to be passed as the `clientId` property of the function's object argument.
+Initialize the SDK with the `LiveLike.init` function. A <Glossary>Client ID</Glossary> is required to be passed as the `clientId` property of the function's object argument.
 
 > 👍 Make sure you have a valid Client ID
-> 
+>
 > You'll need a Client ID for this step, which you learn how to do in [Retrieving Important Keys](doc:retrieving-important-keys).
 
 ```javascript
@@ -53,5 +53,5 @@ LiveLike.init({ clientId }).then(profile => {
 ```
 
 > 🚧 User Profile Integration
-> 
+>
 > The init function will create a new LiveLike profile and access token by default, and **each profile created counts toward a monthly active user count**. You should re-use the access tokens when you can to treat returning visitors as the same user. To better integrate this into your own product and more accurately reflect your MAUs, check out the [User Profile Integration](doc:web-user-profile-integration) section.
