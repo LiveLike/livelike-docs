@@ -18,7 +18,7 @@ Users can customise the Stock UI Version when initialising the `Theme` class. It
 
 The `Alert Widgets` are created as a stack of three different views which are `Header` , `Body` and `Footer`.
 
-The `Main`, `Header`, `Body` and `Footer` sections of the widget are of type `Theme.Container`  
+The `Main`, `Header`, `Body` and `Footer` sections of the widget are of type `Theme.Container`\
 To customise the UI for the `Alert Widget` as a whole you can edit the values for the attributes in `main`
 
 ```swift
@@ -78,7 +78,7 @@ The look of the `link` in the `Footer` of the `Alert Widget` can be customised b
 
 The `Poll Widgets` are created as a stack of three different views which are `Header` , `Body` and `Footer`.
 
-The `Main`, `Header`, `Body` and `Footer` sections of the widget are of type `Theme.Container`  
+The `Main`, `Header`, `Body` and `Footer` sections of the widget are of type `Theme.Container`\
 To customise the UI for the `Poll Widget` as a whole you can edit the values for the attributes in as mentioned above for the `Alert Widget`.
 
 For `Poll Widgets`, users have additional options to customise the `Choice Options` in a `Poll Widget`. The following attributes are available to change. Users can change options for `unselectedOption` or `selectedOption`.
