@@ -53,7 +53,7 @@ To get the replies to a message use the getChatMessageReplies API and pass the p
 
 ## Listening for Replies to a Message
 
-Listening for replies to a message is similar to listening to regular chat messages. To determine if a new message is a reply, compare the new message’s "parentMessageId" with the root message’s id. [<https://docs.livelike.com/docs/android-chat-session#sending-and-receiving-messages>]\(Read More)
+Listening for replies to a message is similar to listening to regular chat messages. To determine if a new message is a reply, compare the new message’s "parentMessageId" with the root message’s id. \[\<https\://docs.livelike.com/docs/android-chat-session#sending-and-receiving-messages>]\(Read More)
 
 If the parentMessageID is null then the new message is not a reply.
 
