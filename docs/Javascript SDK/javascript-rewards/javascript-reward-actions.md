@@ -45,8 +45,6 @@ getRewardActions().then(res => {
 });
 ```
 
-
-
 ## List of all invoked Reward actions
 
 Get the list of all the invoked reward actions for a given program. 
@@ -63,15 +61,13 @@ getInvokedRewardActions({
 });
 ```
 
-
-
 further filters can be supplied to narrow down your results.
 
 filters include:
 
-- reward action keys
-- profile ids to limit to specific users
-- attributes to filter on integration supplied data
+* reward action keys
+* profile ids to limit to specific users
+* attributes to filter on integration supplied data
 
 ```javascript
 import { getInvokedRewardActions } from "@livelike/javascript"
