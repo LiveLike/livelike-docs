@@ -13,10 +13,6 @@ metadata:
 next:
   description: ''
 ---
-[block:callout]
-{
-  "type": "warning",
-  "title": "Note:",
-  "body": "Only Admins are allowed to link ```Sponsors``` with ```Chat Rooms```."
-}
-[/block]
+> 🚧 Note:
+>
+> Only Admins are allowed to link `Sponsors` with `Chat Rooms`.
