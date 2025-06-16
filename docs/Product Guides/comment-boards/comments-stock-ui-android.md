@@ -43,90 +43,30 @@ To integrate the CommentView into your Android application, follow these steps:
 
 Users can easily send comments and reply on it. Comment System supports infinite reply depth and is controllable by integrator.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cbd1a53-Screenshot_2023-09-11_at_5.47.16_PM.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/cbd1a53-Screenshot_2023-09-11_at_5.47.16_PM.png" />
 
 ### Comment Replies
 
-Users can reply to comments, creating threaded discussions.  
+Users can reply to comments, creating threaded discussions.\
 Nested replies are supported, offering a structured conversation.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e423341-Screenshot_2023-09-11_at_5.48.51_PM.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/e423341-Screenshot_2023-09-11_at_5.48.51_PM.png" />
 
 ### Comment Reactions
 
-Users can react to comments with emojis or custom reactions.  
+Users can react to comments with emojis or custom reactions.\
 Provides an expressive way for users to engage with content.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/443d908-Screenshot_2023-09-11_at_5.50.41_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="400px" src="https://files.readme.io/443d908-Screenshot_2023-09-11_at_5.50.41_PM.png" />
 
 ### Sorting Filter
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/056f43e-Screenshot_2023-09-11_at_5.51.05_PM.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="400px" src="https://files.readme.io/056f43e-Screenshot_2023-09-11_at_5.51.05_PM.png" />
 
 ### Moderation
 
-Comprehensive moderation tools for maintaining a safe and respectful environment.  
-Features include reporting, blocking, and deleting comments.  
+Comprehensive moderation tools for maintaining a safe and respectful environment.\
+Features include reporting, blocking, and deleting comments.\
 Profanity control helps maintain a clean and respectful conversation.
 
 ```asp Kotlin
@@ -148,62 +88,17 @@ See the Usage section for more clarity
 
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b98a56b-Screenshot_2023-09-11_at_5.50.16_PM.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="400px" src="https://files.readme.io/b98a56b-Screenshot_2023-09-11_at_5.50.16_PM.png" />
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/35b86a2-Screenshot_2023-09-11_at_5.50.25_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="400px" src="https://files.readme.io/35b86a2-Screenshot_2023-09-11_at_5.50.25_PM.png" />
 
 ### You can control profanity either by masking(\*\*\*) bad words in a comment or completely removing the comment.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4fb3c74-Screenshot_2023-09-11_at_5.50.50_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "400px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="400px" src="https://files.readme.io/4fb3c74-Screenshot_2023-09-11_at_5.50.50_PM.png" />
 
 ### Customization
 
-Developers can customize the appearance of the CommentView using custom theme attributes.  
+Developers can customize the appearance of the CommentView using custom theme attributes.\
 Customize colors, backgrounds, positions, fonts, and more to fit your app's design.
 
 ## Usage
