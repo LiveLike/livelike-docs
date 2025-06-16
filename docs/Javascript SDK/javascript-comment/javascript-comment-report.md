@@ -27,8 +27,6 @@ createCommentReport({
 }).then((commentReport) => console.log(commentReport));
 ```
 
-
-
 ## Get Comment Report List
 
 Get a list of comment reports i.e. the reports submitted for comment in the current application. Each comment report resource represents information about a report submitted for comment.
@@ -45,8 +43,6 @@ getCommentReports({
 }).then((paginatedResponse) => console.log(paginatedResponse));
 ```
 
-
-
 ## Get Comment Report
 
 Get a report submitted for a comment.
@@ -60,8 +56,6 @@ getCommentReport({
   commentReportId: '<comment_report_id>',
 }).then((commentReport) => console.log(commentReport));
 ```
-
-
 
 ## Delete Comment Report
 
@@ -77,8 +71,6 @@ deleteCommentReport({
 })
 ```
 
-
-
 ## Dismiss a Comment Report
 
 Dismiss a comment report. This updates the `report_status` to 'dismissed'.
@@ -92,8 +84,6 @@ dismissCommentReport({
   commentReportId: '<comment_report_id>',
 }).then((commentReport) => console.log(commentReport));
 ```
-
-
 
 ## Dismiss All Comment Reports
 
