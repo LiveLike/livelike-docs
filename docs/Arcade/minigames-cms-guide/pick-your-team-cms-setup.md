@@ -24,42 +24,13 @@ Let's get started!
 
 Pick Your Team is available in the experiences list once you login and choose your application. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/604ce5c86eaf8dbc31f1622c3654b2a689d71881e0dde79ec76e063025d46287-Screenshot_2025-01-17_at_16.12.49.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="600px" src="https://files.readme.io/604ce5c86eaf8dbc31f1622c3654b2a689d71881e0dde79ec76e063025d46287-Screenshot_2025-01-17_at_16.12.49.png" />
 
 To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/853e66744919aee6d9f12b2f68ab2712118c55cf5678bc080a1d1d25dd1811a0-welcome_screen.gif",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/853e66744919aee6d9f12b2f68ab2712118c55cf5678bc080a1d1d25dd1811a0-welcome_screen.gif" />
 
-
-1. **Welcome Screen**  
+1. **Welcome Screen**\
    This is the initial configuration page where you set up the player's first interaction with the Pick Your Team game. Here you can customize the initial setup and welcome experience for your players when they first enter the game.
    1. **Welcome Screen Configuration:**
       1. **Button Label**
@@ -75,7 +46,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       2. Include step-by-step guidance 
    4. **Terms & Conditions** 
       1. Add your terms and conditions text 
-      2. Example URL format: www.samplewebsite/terms.html
+      2. Example URL format: www\.samplewebsite/terms.html
    5. **Rules Section** 
       1. Toggle to enable/disable rules display
       2. Set a custom rules title (e.g., "Team Selection Rules")
@@ -84,23 +55,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
          1. Each player can only be selected once 
          2. No changes allowed after team confirmation
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a04868bdb9e73ca0520f21430a248383804dd12eada29be0810d2fad30564ed4-Screenshot_2025-01-17_at_16.28.09.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/a04868bdb9e73ca0520f21430a248383804dd12eada29be0810d2fad30564ed4-Screenshot_2025-01-17_at_16.28.09.png" />
 
-
-2. **Sports and Tournaments: **  
+2. **Sports and Tournaments:**\
    This section allows you to set up the core elements of your Pick Your Team game by configuring the sport, data source, and tournament settings.
    1. **Sport Selection**: Choose the sport for your game (e.g., Football) This determines the available tournaments and team options. 
    2. **Data Source Configuration**: Two options for adding player and team data: 
@@ -110,7 +67,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. Select specific tournament (e.g., UEFA Champions League)
       2. Choose participating teams from the tournament
       3. Select relevant fixtures/matches
-   4. **Select game type **
+   4. **Select game type**
       1. Same team: Users can only pick players from one team
       2. All teams: Users can pick players from any participating team
    5. **Key Considerations:**
@@ -118,25 +75,11 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       2. Verify all selected teams have complete player data
       3. Check fixture dates align with your game schedule
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/21ea9ef5cf89c29244f1344244173c2d18994bd509abbaf23cc16b5db6a3e442-Screenshot_2025-01-17_at_16.29.27.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/21ea9ef5cf89c29244f1344244173c2d18994bd509abbaf23cc16b5db6a3e442-Screenshot_2025-01-17_at_16.29.27.png" />
 
 <br />
 
-3. **Media Library **
+3. **Media Library**\
    The Media Library section allows you to manage and upload images for teams and players in your Pick Your Team game.
    1. **Image Upload Process**
       1. **Download Template**
@@ -166,23 +109,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 **Note: The media library is crucial for creating an engaging visual experience. Proper image assets help players easily identify teams and players during the selection process.**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c3f1291d3408dc26614764977dc12e2f1e7f777450607dcd48dce0773961e2d9-Screenshot_2025-01-17_at_16.38.33.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/c3f1291d3408dc26614764977dc12e2f1e7f777450607dcd48dce0773961e2d9-Screenshot_2025-01-17_at_16.38.33.png" />
 
-
-4. **Social Features **
+4. **Social Features**
    1. The Social Features section allows you to configure how players can share their game experience with others. This step focuses on customizing sharing options and social engagement settings.
    2. **Key Features:**
       1. Allow share image toggle
@@ -196,23 +125,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       4. Control whether users can download images
       5. The social features help increase engagement and virality by letting players share their team selections and invite others to participate.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c6833efa49f9d88ed27c424e1e9c0f4a5ff88799df29ce3815a96b1bd691ac6b-Screenshot_2025-01-17_at_16.41.03.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/c6833efa49f9d88ed27c424e1e9c0f4a5ff88799df29ce3815a96b1bd691ac6b-Screenshot_2025-01-17_at_16.41.03.png" />
 
-
-5. **Theming **
+5. **Theming**
    1. The Theme & Branding section allows you to customize the visual identity of your Pick Your Team game. The interface is divided into different tabs: Brand & Theme name, Welcome screen, Team/fixtures, The playground, Players list, and Information.
    2. **Theme Configuration:**
       1. Choose between using an existing theme or creating a new one
@@ -248,57 +163,16 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 **Each section includes a "Browse file" button for easy upload and information icons (?) for additional guidance.**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png" />
 
-
-6. **Schedule **
+6. **Schedule**
    1. **Control game availability:**
       1. Publish immediately
       2. Schedule for future date/time
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5c29710ceec7f132d8731c3a0126cece06e12125990f38fa1046a6366a40367f-Screenshot_2025-01-17_at_16.47.09.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/5c29710ceec7f132d8731c3a0126cece06e12125990f38fa1046a6366a40367f-Screenshot_2025-01-17_at_16.47.09.png" />
 
-
-7. **Preview **  
+7. **Preview**\
    Click on the 3 dot icon and click Preview to preview the experience you created. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/71dc46116d8965912b1fe593e503cc85b3e2b618c31ab7e796648f389d571cc8-Screenshot_2025-01-17_at_16.50.17.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/71dc46116d8965912b1fe593e503cc85b3e2b618c31ab7e796648f389d571cc8-Screenshot_2025-01-17_at_16.50.17.png" />
