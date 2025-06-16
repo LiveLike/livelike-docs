@@ -14,125 +14,98 @@ next:
       slug: javascript-chat-messages
       title: Chat Messages
 ---
-[block:api-header]
-{
-  "title": "Invite User to Chat Room"
-}
-[/block]
-You can allow the User to invite another user to a particular chat room that they are already a part of.
+## Invite User to Chat Room
+
+You can allow the User to invite another user to a particular chat room that they are already a part of.\
 You can call the `sendChatRoomInviteToUser` method which sends an invitation to the other user where the other user could decide either to `accept` or `reject` the invitation.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { sendChatRoomInviteToProfile } from '@livelike/javascript'\n\nsendChatRoomInviteToProfile({\n roomId: \"<Room ID>\",\n profileId: \"<Profile ID>\"\n}).then(chatRoomInvitation => console.log(chatRoomInvitation))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Delete chatroom invitation"
-}
-[/block]
+```javascript
+import { sendChatRoomInviteToProfile } from '@livelike/javascript'
+
+sendChatRoomInviteToProfile({
+ roomId: "<Room ID>",
+ profileId: "<Profile ID>"
+}).then(chatRoomInvitation => console.log(chatRoomInvitation))
+```
+
+## Delete chatroom invitation
+
 Using `deleteChatRoomInvitation` API, the user who send the invitation, have a possibility to delete it, before the invited user have responded.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { deleteChatRoomInvitation } from '@livelike/javascript'\n\ndeleteChatRoomInvitation({\n invitationId: \"<Invitation ID>\",\n}).then(res => console.log(res))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Update the Invitation Status for a User"
-}
-[/block]
+```javascript
+import { deleteChatRoomInvitation } from '@livelike/javascript'
+
+deleteChatRoomInvitation({
+ invitationId: "<Invitation ID>",
+}).then(res => console.log(res))
+```
+
+## Update the Invitation Status for a User
+
 You can update the status of the invitation that the User has received using updateChatRoomInviteStatus API. invitationStatus value could be "accepted" | "rejected" | "pending".
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { updateChatRoomInviteStatus } from '@livelike/javascript'\n\nupdateChatRoomInviteStatus({\n  invitationId: \"<Invitation ID>\",\n  invitationStatus: \"accepted\"\n}).then(chatRoomInvitation => console.log(chatRoomInvitation))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Get List of Invitations received by the current User"
-}
-[/block]
-This API gives you list of received invitation for the current logged in user. 
+```javascript
+import { updateChatRoomInviteStatus } from '@livelike/javascript'
+
+updateChatRoomInviteStatus({
+  invitationId: "<Invitation ID>",
+  invitationStatus: "accepted"
+}).then(chatRoomInvitation => console.log(chatRoomInvitation))
+```
+
+## Get List of Invitations received by the current User
+
+This API gives you list of received invitation for the current logged in user.\
 invitationStatus value could be "accepted" | "rejected" | "pending".
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getReceivedChatRoomInvitations } from '@livelike/javascript'\n\ngetReceivedChatRoomInvitations({\n  invitationStatus: \"pending\"\n}).then(paginatedInvitations => console.log(paginatedInvitations))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Get List of Invitations sent by the current User"
-}
-[/block]
-This API gives you list of sent invitation for the current logged in user.
+```javascript
+import { getReceivedChatRoomInvitations } from '@livelike/javascript'
+
+getReceivedChatRoomInvitations({
+  invitationStatus: "pending"
+}).then(paginatedInvitations => console.log(paginatedInvitations))
+```
+
+## Get List of Invitations sent by the current User
+
+This API gives you list of sent invitation for the current logged in user.\
 invitationStatus value could be "accepted" | "rejected" | "pending"
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getSentChatRoomInvitations } from '@livelike/javascript'\n\ngetSentChatRoomInvitations({\n  invitationStatus: \"pending\"\n}).then(paginatedInvitations => console.log(paginatedInvitations))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Add event listener for Chat Room Invitation"
-}
-[/block]
-Whenever a new member is invited to the Chat Room, INVITE_NEW_MEMBER event is emitted
-Use this method to add event listener for the INVITE_NEW_MEMBER event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { addChatRoomEventListener } from '@livelike/javascript'\n\nfunction onReceieveChatRoomInvitationListener(invitationEvent) {\n  console.log(invitationEvent);\n}\n\naddChatRoomEventListener(\n  ChatRoomEvent.INVITE_NEW_MEMBER,\n  onReceieveChatRoomInvitationListener\n)",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+```javascript
+import { getSentChatRoomInvitations } from '@livelike/javascript'
 
-[block:api-header]
-{
-  "title": "Remove event listener for Chat Room Invitation"
+getSentChatRoomInvitations({
+  invitationStatus: "pending"
+}).then(paginatedInvitations => console.log(paginatedInvitations))
+```
+
+## Add event listener for Chat Room Invitation
+
+Whenever a new member is invited to the Chat Room, INVITE\_NEW\_MEMBER event is emitted\
+Use this method to add event listener for the INVITE\_NEW\_MEMBER event.
+
+```javascript
+import { addChatRoomEventListener } from '@livelike/javascript'
+
+function onReceieveChatRoomInvitationListener(invitationEvent) {
+  console.log(invitationEvent);
 }
-[/block]
-Use this method to remove the event listener for the INVITE_NEW_MEMBER event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { removeChatRoomEventListener } from '@livelike/javascript'\n\nremoveChatRoomEventListener(\n  ChatRoomEvent.INVITE_NEW_MEMBER,\n  onReceieveChatRoomInvitationListener\n)",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+
+addChatRoomEventListener(
+  ChatRoomEvent.INVITE_NEW_MEMBER,
+  onReceieveChatRoomInvitationListener
+)
+```
+
+## Remove event listener for Chat Room Invitation
+
+Use this method to remove the event listener for the INVITE\_NEW\_MEMBER event.
+
+```javascript
+import { removeChatRoomEventListener } from '@livelike/javascript'
+
+removeChatRoomEventListener(
+  ChatRoomEvent.INVITE_NEW_MEMBER,
+  onReceieveChatRoomInvitationListener
+)
+```
