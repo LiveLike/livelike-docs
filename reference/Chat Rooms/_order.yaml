@@ -13,3 +13,4 @@
 - get-chatroom-messages
 - get-chatroom-message-count
 - get-reported-chat-messages
+- get-reported-chat-messages-copy
