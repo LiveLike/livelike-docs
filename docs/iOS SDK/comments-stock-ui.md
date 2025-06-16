@@ -56,21 +56,7 @@ Stock UI for Comments supports threaded discussions, enabling users to reply to 
 
 ## Moderation
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0d95a89-Screenshot_2023-09-11_at_12.40.11_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="300px" src="https://files.readme.io/0d95a89-Screenshot_2023-09-11_at_12.40.11_PM.png" />
 
 ### - Reporting Comments
 
@@ -82,21 +68,7 @@ Blocking a user prevents them from replying further on your comment. It's a powe
 
 ### - Deleting Comments
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4f4314d-Screenshot_2023-09-11_at_12.40.01_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="300px" src="https://files.readme.io/4f4314d-Screenshot_2023-09-11_at_12.40.01_PM.png" />
 
 Moderators or authorized users can delete comments when necessary. Users can also delete their own comments. This ensures that inappropriate or harmful comments can be removed promptly.
 
