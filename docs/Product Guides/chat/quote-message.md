@@ -14,11 +14,11 @@ next:
 ---
 Quoting a message allow the user to quote on a particular message with the user message. The message will be of the following types:
 
-- Text
-- Image/Gif
+* Text
+* Image/Gif
 
 > 🚧 Custom Message
-> 
+>
 > Quote Message does not support custom Messages
 
 To enable the quote message feature in your chat
@@ -83,23 +83,23 @@ session.quoteMessage(
 
 Quote Message is also supported by Stock UI for each platform.
 
-**Android**:  
-In order to quote a message in Android, the user can swipe right, this will allow the user to send a message over a quote message. You can also cancel the quoted message by clicking the cancel button on the quote message box over the chat input box.  
+**Android**:\
+In order to quote a message in Android, the user can swipe right, this will allow the user to send a message over a quote message. You can also cancel the quoted message by clicking the cancel button on the quote message box over the chat input box.\
 The integrator can also update the color and size of the quote message box. 
 
 > 📘 Enable Quote Message
-> 
+>
 > By Default the quoteMessage feature is disabled in ChatView.
-> 
+>
 > To Enable call 
-> 
+>
 > `chatView.enableQuoteMessage = true`
 
 ![](https://files.readme.io/b8afffe-Screenshot_20220301-180157_LiveLikeDemo.jpg "Screenshot_20220301-180157_LiveLikeDemo.jpg")
 
 ![](https://files.readme.io/f9b0971-Screenshot_20220301-183407_LiveLikeDemo.jpg "Screenshot_20220301-183407_LiveLikeDemo.jpg")
 
-**Web**:  
+**Web**:\
 Quote a user message in web stock UI through message menu (by clicking on three dots), this will allow the user to quote a message. You can also cancel the quoted message by clicking the cancel button on the quote message box over the chat input box.
 
 ![](https://files.readme.io/b385113-Screenshot_2022-03-01_at_7.10.23_PM.png "Screenshot 2022-03-01 at 7.10.23 PM.png")
