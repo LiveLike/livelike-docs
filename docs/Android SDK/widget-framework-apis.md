@@ -55,10 +55,10 @@ liveLikeWidgetView.displayWidget(sdk, widgetJsonObject);
 Using the widgetView you can subscribe to the upcoming new widgets that are published by the producer. 
 
 > 🚧 Deprecated!
-> 
+>
 > Use the widgetStream inside content session, to subscribe to the widgets published real time.
 
-Implement the setWidgetListener method in widgetView.  
+Implement the setWidgetListener method in widgetView.\
 **Note**: Make sure to setSession in widgetView.
 
 ```kotlin
@@ -91,8 +91,8 @@ contentSession.widgetStream.subscribe(this) {
 
 Using a Content Session you can retrieve a paginated list of Widgets (up to 20 per page) that have already been published using the getPublishedWidgets method. You can pass `LivelikePagination.first` or `LivelikePagination.next` enum. 
 
-`LivelikePagination.first` will always return the newest Widgets.  
-`LivelikePagination..next` will return the next page from the oldest page loaded.  
+`LivelikePagination.first` will always return the newest Widgets.\
+`LivelikePagination..next` will return the next page from the oldest page loaded.\
 If the result and error are both null that means the user reached the list end.
 
 ```kotlin
@@ -159,18 +159,18 @@ sdk.fetchWidgetDetails(
 
 Using a Content Session you can retrieve a paginated list of Widgets (up to 20 per page) using the getWidgets method. You can pass `LivelikePagination.first` or `LivelikePagination.next` enum. 
 
-`LivelikePagination.first` will always return the newest Widgets.  
-`LivelikePagination.next` will return the next page from the oldest page loaded.  
+`LivelikePagination.first` will always return the newest Widgets.\
+`LivelikePagination.next` will return the next page from the oldest page loaded.\
 If the result and error are both null that means the user reached the list end.
 
-`WidgetsRequestParameters` is used to filter widgets based on filtering options.  
+`WidgetsRequestParameters` is used to filter widgets based on filtering options.\
  The filtering options include::
 
-- widgetTypeFilter - The set of widget kinds to include 
-- widgetStatus - The publishing status of the widget
-- widgetOrdering - The order in which the widgets will be returned
-- interactive - Filters for only widgets that can still be interacted with
-- since - A Date parameter that filters out widgets with an earlier created date
+* widgetTypeFilter - The set of widget kinds to include 
+* widgetStatus - The publishing status of the widget
+* widgetOrdering - The order in which the widgets will be returned
+* interactive - Filters for only widgets that can still be interacted with
+* since - A Date parameter that filters out widgets with an earlier created date
 
 ```kotlin
 session.getWidgets(
@@ -223,8 +223,8 @@ widget_view.displayWidget( sdk,livelikeWidget );
 ```
 
 > 📘 current widget removal
-> 
-> 1. widgetView.clearWidget() allows to remove the current loaded widget.
+>
+> 1. widgetView\.clearWidget() allows to remove the current loaded widget.
 > 2. Also If we reload the same widget view with another JSON previous one will get removed.
 
 ## Controlling widget state transitions
@@ -247,7 +247,7 @@ Currently, the widget has 4 states :
 
 We have to disable the default widget state transition to take control by setting boolean `enableDefaultWidgetTransition` to false.
 
-widgetView.moveToNextState() method is used to move to next state.
+widgetView\.moveToNextState() method is used to move to next state.
 
 ```kotlin
 widgetView.enableDefaultWidgetTransition = false
