@@ -10,19 +10,16 @@ metadata:
 next:
   description: ''
 ---
-[block:api-header]
-{
-  "title": "Pausing Chat & Widgets"
-}
-[/block]
+## Pausing Chat & Widgets
+
 You can [Pause a Content Session](https://livelike.readme.io/docs/ios-basic-integration#section-pause-a-content-session) as described earlier. Alternatively, you can just pause Chat or Widgets through the respective ViewControllers.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "let widgetViewController = WidgetViewController()\nwidgetViewController.pause()\nwidgetViewController.resume()\n\nlet chatViewController = ChatViewController()\nchatViewController.pause()\nchatViewController.resume()",
-      "language": "swift"
-    }
-  ]
-}
-[/block]
+
+```swift
+let widgetViewController = WidgetViewController()
+widgetViewController.pause()
+widgetViewController.resume()
+
+let chatViewController = ChatViewController()
+chatViewController.pause()
+chatViewController.resume()
+```
