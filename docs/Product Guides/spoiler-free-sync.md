@@ -35,16 +35,16 @@ Sports fans don’t like spoilers. Unfortunately given the nature of streaming v
 
 When users send chat messages to each other, those chat messages are embedded with a timestamp obtained from the video player. A user will only see a message that has been received when they are at the appropriate timestamp in the video.
 
-> 🚧 
-> 
+> 🚧
+>
 > A video player that exposes timing data is required for this functionality. The timing data should come from a common time source between all users, such as from a timestamp embedded in the video stream. Using times information derived from users' device clocks is not suitable.
 
 ## Preventing Widgets Spoilers
 
 When a producer sends widgets to users, those widgets are embedded with a timestamp obtained from the video currently playing in the Producer Suite. End-users will only see a widget that has been received when they are at the appropriate timestamp in the video.
 
-> 🚧 
-> 
+> 🚧
+>
 > The program that widgets are being published to inside the Producer Suite needs to be configured with a video stream that matches our Producer-User Stream Requirements for Spoiler Prevention for this scenario to function properly. Users must also be watching on a video player that exposes timing data.
 
 ## Basic Requirements
@@ -55,19 +55,19 @@ You'll need to provide a video stream that has timecode metadata embedded within
 
 The LiveLike SDK's come with bundled support for a limited range of video players, but you can add support for your own players and stream formats by providing a custom plugin. Please see the [Supported Video Players](doc:supported-video-players) page for the list of bundled support inside the SDKs. To learn how to integrate spoiler prevention, take a look at the technical documentation for the appropriate platform:
 
-- [iOS SDK](doc:ios-spoiler-free-sync) 
-- [Android SDK](doc:android-spoiler-free) 
-- [Web SDK](doc:web-spoiler-free-sync)
+* [iOS SDK](doc:ios-spoiler-free-sync) 
+* [Android SDK](doc:android-spoiler-free) 
+* [Web SDK](doc:web-spoiler-free-sync)
 
 > 📘 Spoiler prevention is implemented on the client
-> 
+>
 > All content like chat messages and widgets are delivered live over the network, and spoiler prevention is handled on the client-side so that it can be driven by the user's own local video playback progress. Content that is marked as a spoiler is queued on the device until video playback reaches a point where it is safe to show.
 
 ## Testing Your Integration
 
 We host a test HLS stream with program date time metadata, as well as the timestamp burned into the video. It is available here:
 
-- <https://cf-streams.livelikecdn.com/live/colorbars/index.m3u8>
+* [https://cf-streams.livelikecdn.com/live/colorbars/index.m3u8](https://cf-streams.livelikecdn.com/live/colorbars/index.m3u8)
 
 ### Testing in Chat
 
