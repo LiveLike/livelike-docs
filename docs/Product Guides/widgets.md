@@ -22,7 +22,7 @@ next:
 
 The various interactive elements that are delivered to audiences to engage with are called widgets. The library of widgets is always expanding and features things like polls, quizzes, and predictions. Widgets can be created and published manually by producers using the [Producer Suite](doc:ps-getting-started), and can also be automated through the [REST API](doc:rest-api-getting-started).
 
-Every widget is created as part of a <<glossary:Program>>. A program associates a sequence of widgets with some content. Every program has a Program ID that uniquely identifies the program within an application. Programs are also how content is managed inside of the Producer Suite and include metadata like scheduling information that helps producers keep their dashboards organized.
+Every widget is created as part of a <Glossary>Program</Glossary>. A program associates a sequence of widgets with some content. Every program has a Program ID that uniquely identifies the program within an application. Programs are also how content is managed inside of the Producer Suite and include metadata like scheduling information that helps producers keep their dashboards organized.
 
 # Presentation Modes
 
@@ -32,27 +32,27 @@ The different ways Widgets are displayed in your application.
 
 Popup widgets are shown one at a time. Users have a limited time to engage with each widget before it goes away to make room for the next one. Some use cases for popup widgets include:
 
-- Crowd polls
-- In-play prediction games
-- Trivia games
-- Limited-time offers
+* Crowd polls
+* In-play prediction games
+* Trivia games
+* Limited-time offers
 
-Click the links below learn more about how to add Popup Widgets to your application:  
-[iOS](doc:widget-view-controller)  
-[Android](doc:widget-pop-up-view)  
+Click the links below learn more about how to add Popup Widgets to your application:\
+[iOS](doc:widget-view-controller)\
+[Android](doc:widget-pop-up-view)\
 [Web](https://docs.livelike.com/docs/web-widget-modes#popup-mode)
 
 ## Timeline Widets
 
 Timeline widgets are shown all at once. Users can browse through them and interact with past widgets. Some use cases for timeline widgets include:
 
-- Live blogging
-- Match commentary
-- Pick 'em games
+* Live blogging
+* Match commentary
+* Pick 'em games
 
-Click the links below learn more about how to add Timeline Widgets to your application:  
-[iOS](doc:interactive-widget-timeline-view-controller)  
-[Android](https://docs.livelike.com/docs/widget-timeline)  
+Click the links below learn more about how to add Timeline Widgets to your application:\
+[iOS](doc:interactive-widget-timeline-view-controller)\
+[Android](https://docs.livelike.com/docs/widget-timeline)\
 [Web](https://docs.livelike.com/docs/web-widget-modes#timeline-mode)
 
 ## Embedded Widgets
@@ -75,9 +75,9 @@ Get your audience’s opinion. Ask questions and see results update live as vote
 
 Polls ask audiences questions that don’t necessarily have any right answers. The results update live **so** everyone voting feels like they are part of the crowd.
 
-- Audience opinion
-- Gather feedback
-- Results revealed immediately and update live
+* Audience opinion
+* Gather feedback
+* Results revealed immediately and update live
 
 You can create text polls or image polls. Image polls allow you to illustrate each answer with an image such as a player photo.
 
@@ -93,11 +93,11 @@ Add between 1 to 5 images to illustrate different steps in the scale. If have a 
 
 ## Trivia / Quiz
 
-Challenge your audience’s knowledge.  
+Challenge your audience’s knowledge.\
 Quizzes ask audiences questions that have at least one correct answer. 
 
-- Audience competition
-- Results revealed when time expires
+* Audience competition
+* Results revealed when time expires
 
 Gamification options: Everybody who answers collects points, and correct answers can earn higher points.
 
@@ -109,11 +109,11 @@ Keep your audience’s attention. Ask them to predict the future and creating a 
 
 Predictions are a two-step interaction. In the first step, the prediction, the producer asks the audience a question for which the answer is not yet known and provides some answers to choose from. In the second step, the producer follows-up to reveal which answer turned out to be correct. 
 
-- Audience suspense & appointment dynamics
-  - Short term: Guess the penalty outcome?
-  - Medium term: Which team will score more rushing yard this quarter?
-  - Long term: Who will win the match?
-- Results revealed when producer is ready
+* Audience suspense & appointment dynamics
+  * Short term: Guess the penalty outcome?
+  * Medium term: Which team will score more rushing yard this quarter?
+  * Long term: Who will win the match?
+* Results revealed when producer is ready
 
 ![](https://files.readme.io/95fa43e-image_poll_7.gif "image_poll_7.gif")
 
@@ -133,11 +133,11 @@ Inform your audience. Broadcast breaking headlines, GIFs, special offers, or pro
 
 Alerts are a versatile widget. Use them to broadcast text, media, or a combination of both. Additionally, links can be attached for use as sponsorship, media or advertisement destinations. The link can also be as a point of integration for other apps and websites such as a betting app of a partner.
 
-- Headlines
-- Graphics
-- Advertisements
-- Deep links
-- Content suggestion at the end of a stream
+* Headlines
+* Graphics
+* Advertisements
+* Deep links
+* Content suggestion at the end of a stream
 
 ![](https://files.readme.io/04ad2e4-image_poll_11-min.gif "image_poll_11-min.gif")
 
@@ -147,21 +147,7 @@ Ask your audience. Collect their replies, and feature the best ones.
 
 You can gather open-ended feedback, or compile a list of questions from the crowd to ask to on-air talent. Allow everyone watching to share their input, and maybe see their content featured in the experience.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/afc7afd-ask-widget--new.gif",
-        "ask-widget--new.gif",
-        1074
-      ],
-      "align": "center",
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="smart" src="https://files.readme.io/afc7afd-ask-widget--new.gif" />
 
 ## Number Prediction
 
@@ -183,41 +169,17 @@ The Engagement SDK has bundled UI for Widgets. These are designed by LiveLike to
 
 We understand that every app is different and our designs style may not fit into yours. For these cases, you can either use the Theme system to alter the Stock UI to generally match your app design or you can design and develop your own Custom UI to work with the Engagement ecosystem.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/63e0d43-50b616a-stock_ui.gif",
-        "50b616a-stock_ui.gif",
-        375
-      ],
-      "align": "center",
-      "caption": "The Stock UI for Poll Widget"
-    }
-  ]
-}
-[/block]
+<Image title="50b616a-stock_ui.gif" alt={375} align="center" src="https://files.readme.io/63e0d43-50b616a-stock_ui.gif">
+  The Stock UI for Poll Widget
+</Image>
 
 ## Themed Stock UI
 
 The Theme system allows you to alter the look of the Engagement SDK’s Stock Widget UI. This includes common UI properties such as background colors and border colors, corner radii, and text size and fonts. Those customizations are saved in a standard format and can be reused across platforms.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/65113ef-1a6f870-themed_stock_ui.gif",
-        "1a6f870-themed_stock_ui.gif",
-        375
-      ],
-      "align": "center",
-      "caption": "The Stock UI for Poll Widget Themed to a green app style."
-    }
-  ]
-}
-[/block]
+<Image title="1a6f870-themed_stock_ui.gif" alt={375} align="center" src="https://files.readme.io/65113ef-1a6f870-themed_stock_ui.gif">
+  The Stock UI for Poll Widget Themed to a green app style.
+</Image>
 
 Learn more about [Custom Themes](doc:custom-themes) here!
 
@@ -225,23 +187,13 @@ Theme options are inherently limited - if you need more control of the Widgets U
 
 ## Custom UI
 
-Although the EngagementSDK offers high-fidelity widget UI which provide engaging experiences for your users, you may want to design and develop your own UI to match your applications particular use-case or aesthetic.  
+Although the EngagementSDK offers high-fidelity widget UI which provide engaging experiences for your users, you may want to design and develop your own UI to match your applications particular use-case or aesthetic.\
 We can guarantee that any changes to the Stock UI will not affect any Custom UI that you have built. Any changes to the Widget Models are backwards compatible.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/307f534-eaab79c-cust_ui.gif",
-        "eaab79c-cust_ui.gif",
-        375
-      ],
-      "align": "center",
-      "caption": "An alternative UI design which was custom built to fit into a specific app style. \n\nThe placement of the percentage and option text animation are examples of design changes that aren't feasible with the Theme system."
-    }
-  ]
-}
-[/block]
+<Image title="eaab79c-cust_ui.gif" alt={375} align="center" src="https://files.readme.io/307f534-eaab79c-cust_ui.gif">
+  An alternative UI design which was custom built to fit into a specific app style. 
+
+  The placement of the percentage and option text animation are examples of design changes that aren't feasible with the Theme system.
+</Image>
 
 Learn more about [Building Custom Widget UI](doc:custom-widget-ui) here!
