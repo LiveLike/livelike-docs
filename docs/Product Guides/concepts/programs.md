@@ -28,29 +28,16 @@ Programs can be linked with one or more [leaderboards](doc:leaderboards). [Rewar
 
 ## Scheduling Programs
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a40f0c2-ProgramSchedulingDetail.png",
-        "",
-        "Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab."
-      ],
-      "align": "center",
-      "caption": "Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab."
-    }
-  ]
-}
-[/block]
-
+<Image alt="Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab." align="center" src="https://files.readme.io/a40f0c2-ProgramSchedulingDetail.png">
+  Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab.
+</Image>
 
 Each program has fields for scheduling information such as starting time and status. Those fields are:
 
-- **Status**: can be one of future, live, or past.
-- **Scheduled At**: when the program is planned to start.
-- **Started At**: when the program was most recently started. Will be null if the program hasn't been started before.
-- **Stopped At**: when the program was most recently stopped. Will be null if the program hasn't been stopped before.
+* **Status**: can be one of future, live, or past.
+* **Scheduled At**: when the program is planned to start.
+* **Started At**: when the program was most recently started. Will be null if the program hasn't been started before.
+* **Stopped At**: when the program was most recently stopped. Will be null if the program hasn't been stopped before.
 
 A program can be started and stopped multiple times.
 
@@ -59,7 +46,7 @@ A program can be started and stopped multiple times.
 Starting a program flags it as live, and stopping a program signals that it is no longer live. The live status is purely for organizational purposes inside of the CMS and for adding scheduling hook points to integration. Integrations can listen for the `program-status-updated` pubsub event to implement their own custom handlers for a program starting and stopping.
 
 > 📘 Live status does not affect widget publishing
-> 
+>
 > Widgets can always be published to programs whether or not they are live. Live status is used by the CMS for organization and navigational purposes, but no business logic is enforced by LiveLike related to the live status of a program.
 
 ## Custom Identifiers
