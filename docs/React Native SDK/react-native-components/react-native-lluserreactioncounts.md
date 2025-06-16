@@ -189,9 +189,9 @@ const userReactionCountDetailStyles: Partial<LLUserReactionCountDetailStyles> =
 
 ### Hooks used by LLUserReactionCounts
 
-- [useReactionSpace](react-native-reaction-hooks#usereactionspace)
-- [useUserReactions](react-native-reaction-hooks#useuserreactions)
-- [useStyles](react-native-usestyles)
+* [useReactionSpace](react-native-reaction-hooks#usereactionspace)
+* [useUserReactions](react-native-reaction-hooks#useuserreactions)
+* [useStyles](react-native-usestyles)
 
 ### LLUserReactionCounts Props
 
@@ -269,7 +269,7 @@ const userReactionCountDetailStyles: Partial<LLUserReactionCountDetailStyles> =
 
 ### Hooks used by LLUserReactionCountDetail
 
-- [useStyles](react-native-usestyles)
+* [useStyles](react-native-usestyles)
 
 ### LLUserReactionCountDetail Props
 
@@ -307,8 +307,8 @@ const userReactionCountDetailStyles: Partial<LLUserReactionCountDetailStyles> =
 
 ### Hooks used by LLReactionPicker
 
-- [useReactionPacks](react-native-reaction-hooks#usereactionpacks)
-- [useStyles](react-native-usestyles)
+* [useReactionPacks](react-native-reaction-hooks#usereactionpacks)
+* [useStyles](react-native-usestyles)
 
 ### LLReactionPicker Props
 
@@ -360,7 +360,7 @@ const userReactionCountDetailStyles: Partial<LLUserReactionCountDetailStyles> =
 
 ### Hooks used by LLReactionPickerItem
 
-- [useStyles](react-native-usestyles)
+* [useStyles](react-native-usestyles)
 
 ### LLReactionPickerItem Props
 
