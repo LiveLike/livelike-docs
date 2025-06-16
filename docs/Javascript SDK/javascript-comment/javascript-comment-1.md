@@ -26,8 +26,6 @@ addComment({
    }).then(comment => console.log(comment));
 ```
 
-
-
 ## Get a list of Top Level Comments
 
 A "getComments" API would likely be used to retrieve comments from a particular comment board. The function takes in several parameters, including the ID of the comment board, a sorting parameter to control the order of the returned comments, and optional parameters to filter comments by their reply timestamps. The function returns a promise that resolves with an object representing the comment board, including an array of the retrieved comments.
@@ -56,8 +54,6 @@ getComments({
   }).then(padinatedResponse => console.log(padinatedResponse));
 ```
 
-
-
 ## Edit a Comment
 
 An "editComment" API would likely be used to update the text or custom data of an existing comment on a particular comment board or thread. The function takes in several parameters, including the ID of the comment board and the ID of the comment to be updated, as well as the new text and custom data values. The function returns a promise that resolves with the updated comment object, which can then be logged to the console or used in further code.
@@ -83,8 +79,6 @@ editComment({
   }).then(comment => console.log(comment))
 ```
 
-
-
 ## Delete a Comment
 
 A "deleteComment" API would likely be used to delete an existing comment on a particular comment board or thread. The function takes in several parameters, including the ID of the comment board and the ID of the comment to be deleted. The function does not typically return anything but may throw an error if the deletion fails for some reason.
@@ -99,8 +93,6 @@ deleteComment({
    commentId: "<comment-id>"
   })
 ```
-
-
 
 ## Get a Comment Details
 
