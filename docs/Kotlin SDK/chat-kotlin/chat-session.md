@@ -14,78 +14,93 @@ next:
   description: ''
 ---
 A Chat Session is your interface to interact with a chat room.
-[block:api-header]
-{
-  "title": "Starting a Chat Session"
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": " val chatSession = sdk.createChatSession(\n        timecodeGetter = object:LiveLikeKotlin.TimecodeGetterCore{\n            override fun getTimecode(): EpochTime {\n                return EpochTime(0) //provide your epoch time to enable sync with live video \n            }\n\n        },\n        isPlatformLocalContentImageUrl = {false},\n        uiDispatcher = Dispatchers.Default\n    )\n  \n  //connect to chat room\n  chatSession.connectToChatRoom(\"<chat-room-id>\",object : LiveLikeCallback<Unit>() {\n            override fun onResponse(result: Unit?, error: String?) {\n               \n            }\n        })  ",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
+## Starting a Chat Session
 
-[block:api-header]
-{
-  "title": "Message List"
-}
-[/block]
+```kotlin
+val chatSession = sdk.createChatSession(
+        timecodeGetter = object:LiveLikeKotlin.TimecodeGetterCore{
+            override fun getTimecode(): EpochTime {
+                return EpochTime(0) //provide your epoch time to enable sync with live video 
+            }
+
+        },
+        isPlatformLocalContentImageUrl = {false},
+        uiDispatcher = Dispatchers.Default
+    )
+  
+  //connect to chat room
+  chatSession.connectToChatRoom("<chat-room-id>",object : LiveLikeCallback<Unit>() {
+            override fun onResponse(result: Unit?, error: String?) {
+               
+            }
+        })
+```
+
+## Message List
+
 The ChatSession maintains a list of all messages currently loaded into memory. This list is read-only and managed by the SDK - messages that a sent, received, and loaded from history are automatically added to the list. 
-[block:api-header]
-{
-  "title": "Sending and Receiving Messages"
-}
-[/block]
-** Sending Messages **
 
+## Sending and Receiving Messages
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": " chatSession.sendMessage(\n                    message, imageUrl = imageUrl, imageWidth = 150, imageHeight = 150,\n                    messageMetadata = sampleMapForMessageMetadata(),\n                    liveLikePreCallback = object :LiveLikeCallback<LiveLikeChatMessage>(){\n                        override fun onResponse(result: LiveLikeChatMessage?, error: String?) {\n                            //message sent\n                        }\n\n                    }\n                )",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
-** Receiving Messages **
+**Sending Messages**
+
+```kotlin
+chatSession.sendMessage(
+                    message, imageUrl = imageUrl, imageWidth = 150, imageHeight = 150,
+                    messageMetadata = sampleMapForMessageMetadata(),
+                    liveLikePreCallback = object :LiveLikeCallback<LiveLikeChatMessage>(){
+                        override fun onResponse(result: LiveLikeChatMessage?, error: String?) {
+                            //message sent
+                        }
+
+                    }
+                )
+```
+
+**Receiving Messages**\
 The `MessageListener` provide the following method for listening :
-  * To observe when new messages are received from other users you need to implement the `onNewMessage` method of the `MessageListener`. This will get raised every time another user successfully publishes a Chat Message to the Chat Room.
-    *Note* this listener will also raise if the sender also sent the ChatMessage to the ChatRoom.
-  *  To observe when the history method call to fetch the history message, this will receive only current connected chatRoom messages. For this, you need to implement the `onHistoryMessage` method of the `MessageListener`.
-  * To observe when the message is deleted you need to implement the `onDeleteMessage` method of the `MessageListener`. This will be raised when the message is deleted from the connected ChatRoom.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "chatSession.setMessageListener(object : MessageListener {\n        override fun onDeleteMessage(messageId: String) {\n\n        }\n\n        override fun onErrorMessage(error: String, clientMessageId: String?) {\n\n        }\n\n        override fun onHistoryMessage(messages: List<LiveLikeChatMessage>) {\n          //history message received for connected chatroom\n        }\n\n        override fun onNewMessage(message: LiveLikeChatMessage) {\n            //new message received here\n         \n        }\n\n        override fun onPinMessage(message: PinMessageInfo) {\n\n        }\n\n        override fun onUnPinMessage(pinMessageId: String) {\n\n        }\n     })",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Message History"
-}
-[/block]
+* To observe when new messages are received from other users you need to implement the `onNewMessage` method of the `MessageListener`. This will get raised every time another user successfully publishes a Chat Message to the Chat Room.\
+  *Note* this listener will also raise if the sender also sent the ChatMessage to the ChatRoom.
+* To observe when the history method call to fetch the history message, this will receive only current connected chatRoom messages. For this, you need to implement the `onHistoryMessage` method of the `MessageListener`.
+* To observe when the message is deleted you need to implement the `onDeleteMessage` method of the `MessageListener`. This will be raised when the message is deleted from the connected ChatRoom.
+
+```kotlin
+chatSession.setMessageListener(object : MessageListener {
+        override fun onDeleteMessage(messageId: String) {
+
+        }
+
+        override fun onErrorMessage(error: String, clientMessageId: String?) {
+
+        }
+
+        override fun onHistoryMessage(messages: List<LiveLikeChatMessage>) {
+          //history message received for connected chatroom
+        }
+
+        override fun onNewMessage(message: LiveLikeChatMessage) {
+            //new message received here
+         
+        }
+
+        override fun onPinMessage(message: PinMessageInfo) {
+
+        }
+
+        override fun onUnPinMessage(pinMessageId: String) {
+
+        }
+     })
+```
+
+## Message History
+
 You can request more messages from the Chat Room history by calling the loadNextHistory method on the ChatSession. This will load the next page of the transcript. The default limit is 20 messages and the maximum is 100.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "chatSession.loadNextHistory()",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
+
+```kotlin
+chatSession.loadNextHistory()
+```
+
 *Note* The `loadNextHistory` calls the API to fetch the history list of the `ChatMessage` object. This will trigger the `onHistoryMessage` method of  `MessageListener`.
