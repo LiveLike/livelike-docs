@@ -15,5 +15,5 @@ next:
 ---
 Manually award badges to a user upon completing a quest:
 
-- If claim_badges is not provided, all badges associated with the quest will be awarded.
-- If claim_badges is provided, only the badges listed in it will be awarded, but only if they are valid and associated with the quest. Invalid or unrelated badges will be ignored.
+* If claim\_badges is not provided, all badges associated with the quest will be awarded.
+* If claim\_badges is provided, only the badges listed in it will be awarded, but only if they are valid and associated with the quest. Invalid or unrelated badges will be ignored.
