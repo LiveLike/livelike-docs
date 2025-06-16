@@ -14,5 +14,5 @@ next:
   description: ''
 ---
 > 🚧 Note:
-> 
+>
 > Only producers are allowed to link sponsors with chat rooms.
