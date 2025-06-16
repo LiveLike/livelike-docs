@@ -22,8 +22,8 @@ sdk.profile().updateChatNickname(nickname)
 
 ## Update User Avatar
 
-You can update the user avatar at the chat room level.  
-We have a default image for an avatar for placeholder and error. To set your own default image just add an image in drawable named "default_avatar.png" to override the SDK default avatar image
+You can update the user avatar at the chat room level.\
+We have a default image for an avatar for placeholder and error. To set your own default image just add an image in drawable named "default\_avatar.png" to override the SDK default avatar image
 
 ```kotlin Kotlin
 chatsession.avatarUrl="<url>"
@@ -65,7 +65,7 @@ To add or remove Stickers from the keyboard, you will need to share sticker pack
 
 ## Get Unread Message Count Between Sessions
 
-To count unread messages between app sessions you need to keep track of the timestamp of the first unread message received on each channel. With this timestamp you will call the Join API with parameter startTimeStamp to resume the stream of messages from the last timestamp or can use in combination of _Count API_
+To count unread messages between app sessions you need to keep track of the timestamp of the first unread message received on each channel. With this timestamp you will call the Join API with parameter startTimeStamp to resume the stream of messages from the last timestamp or can use in combination of *Count API*
 
 1. Maintain a dictionary of the timestamps of the first unread message of each room id
    1. Add to dict when a new message has been received on a channel that is not being displayed
@@ -115,7 +115,7 @@ chatSession.joinChatRoom("<custom-room-id>");
 
 ## Custom chat room inside a session
 
-If the integrator doesn’t want to show the public chat. In order to achieve this, they should set the custom chat room before setting it to the chat_view.
+If the integrator doesn’t want to show the public chat. In order to achieve this, they should set the custom chat room before setting it to the chat\_view.
 
 ```kotlin
 val chatSession = engagementSDK.createContentSession("<chat-program-id>")
@@ -162,22 +162,9 @@ class ChatViewWrapper extends ChatView{
 
 Users can add image/emoji/gif coming from from any custom keyboard (Bijmoji, Giphy, Google Keyboard, etc. )
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/13167cf-Image_2020-03-20_at_8.59.15_AM.png",
-        "Image 2020-03-20 at 8.59.15 AM.png",
-        718
-      ],
-      "align": "center",
-      "caption": "Gboard in action"
-    }
-  ]
-}
-[/block]
-
+<Image title="Image 2020-03-20 at 8.59.15 AM.png" alt={718} align="center" src="https://files.readme.io/13167cf-Image_2020-03-20_at_8.59.15_AM.png">
+  Gboard in action
+</Image>
 
 As an integrator you have the control about activating or deactivating this feature  
 
