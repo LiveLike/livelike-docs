@@ -14,67 +14,63 @@ next:
       slug: usechatmessageseffect
       title: useChatMessagesEffect
 ---
-The purpose of `useChatMessageActions` hook is to abstract out our store actions and exposes actions handlers responsible for updating store value. 
+The purpose of `useChatMessageActions` hook is to abstract out our store actions and exposes actions handlers responsible for updating store value.
 
 ##### Example usage
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { sendChatMessage, deleteChatMessage } = useChatMessageActions({ \n  roomId: \"<Room ID>\" \n});",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Argument"
-}
-[/block]
+```typescript
+const { sendChatMessage, deleteChatMessage } = useChatMessageActions({ 
+  roomId: "<Room ID>" 
+});
+```
+
+## Hook Argument
+
 #### `roomId`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "String (**Required**)",
-    "0-1": "No Default"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String (**Required**)</td>
+      <td>No Default</td>
+    </tr>
+  </tbody>
+</Table>
+
+## Hook Return Value
+
 #### `sendChatMessage`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-1": "",
-    "0-0": "Function of type: (messageArgs: [ISendMessageArgs](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ISendMessageArgs)) => Promise<void>"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Function of type: (messageArgs: [ISendMessageArgs](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=ISendMessageArgs)) => Promise&lt;void&gt;</td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `deleteChatMessage`
-[block:parameters]
-{
-  "data": {
-    "0-0": "Function of type:\n({ roomId, chatMessage }: {\n    roomId: any;\n    chatMessage: any;\n}) => void",
-    "0-1": "",
-    "h-0": "Type",
-    "h-1": "Default"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Function of type: (`{ roomId, chatMessage }`: `{ roomId: any; chatMessage: any; }`) => void</td>
+    </tr>
+  </tbody>
+</Table>
