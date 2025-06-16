@@ -19,7 +19,7 @@ Once a profile joins a room, they are a member of that room until they leave it.
 A user does not have to be a member of a room to enter it and send messages.
 
 > 📘 Use of chatroom memberships?
-> 
+>
 > Use memberships to keep track of users in a given room, to identify common chatroom between list of user profiles etc.
 
 ## Get chat room memberships for the current user
@@ -81,12 +81,12 @@ leaveChatRoom({roomId: "<Chat Room ID>"})
 
 ## Add new member to chat room
 
-Use this method to add other users to chat rooms.  
-The method takes an object argument with a chat room id string as a `roomId` property,  
+Use this method to add other users to chat rooms.\
+The method takes an object argument with a chat room id string as a `roomId` property,\
 an object argument with a user profile id string as a `profileId` property.
 
 > 🚧 Please note
-> 
+>
 > User can add another user to the chat room only if they are already a member of the chat room, use `joinChatRoom` API for becoming a member.
 
 ```javascript
@@ -100,8 +100,8 @@ addNewMemberToChatRoom({
 
 ## Add event listener for Chat Room Membership
 
-Whenever a new member is added to the Chat Room, ADD_NEW_MEMBER event is emitted  
-Use this method to add event listener for the ADD_NEW_MEMBER event
+Whenever a new member is added to the Chat Room, ADD\_NEW\_MEMBER event is emitted\
+Use this method to add event listener for the ADD\_NEW\_MEMBER event
 
 ```javascript
 import { addChatRoomEventListener } from '@livelike/javascript'
@@ -117,7 +117,7 @@ addChatRoomEventListener(
 
 ## Remove event listener for Chat Room Membership
 
-Use this method to remove the event listener for the ADD_NEW_MEMBER event
+Use this method to remove the event listener for the ADD\_NEW\_MEMBER event
 
 ```javascript
 import { removeChatRoomEventListener } from '@livelike/javascript'
