@@ -84,6 +84,7 @@ fun someMethod() {
                     })
 }
 ```
+
  What does gating a chat mean?
 
 When an operator puts a gate on the chat, it means that only people with certain criteria can enter the chat room. The current accepted criteria is contract wallet address from NFTs.
@@ -94,46 +95,33 @@ Token gating a chat with an NFT allows certain users to enter a room because the
 
 # How Token gating is used in LiveLike SDK
 
-In LiveLike engagement SDK, producers can make the chat room token gated  
-from the CMS by adding the tokens required to enter the chat room. Now, When  
-integrators fetch chat room details they receive a property **token_gates **in the chat  
-room details which is a list that contains the required contract addresses and their  
-network types to access the chat room.  
-Integrator would be required to connect the user's crypto wallet which will be  
-required by the SDK’s API to know whether he/she owns the required token to access  
+In LiveLike engagement SDK, producers can make the chat room token gated\
+from the CMS by adding the tokens required to enter the chat room. Now, When\
+integrators fetch chat room details they receive a property **token\_gates** in the chat\
+room details which is a list that contains the required contract addresses and their\
+network types to access the chat room.\
+Integrator would be required to connect the user's crypto wallet which will be\
+required by the SDK’s API to know whether he/she owns the required token to access\
 the chat room.
 
-The integrators are exposed to the API **getTokenGatedChatRoomAccessDetails **which  
-takes chat room id and crypto Wallet address as input and provides information whether  
-he can access the chat room or not, along with detailed information about contract  
-balances. It is up to the integrator how he fetches the user’s crypto wallet address.  
-Based on the response we can let the user access the chat room or otherwise show him  
-the detailed message.  
-The SDKs contain the **getTokenGatedChatRoomAccessDetails **method that  
-internally fetches the room details from the BE by sending chat room id as a parameter  
-in the get API call. The room details contains the token gating information if the room is  
-token gated. If the room is token gated then SDK fetches the wallet details by sending  
-chat room id and wallet address to the BE, if wallet contains all the required tokens then  
+The integrators are exposed to the API **getTokenGatedChatRoomAccessDetails** which\
+takes chat room id and crypto Wallet address as input and provides information whether\
+he can access the chat room or not, along with detailed information about contract\
+balances. It is up to the integrator how he fetches the user’s crypto wallet address.\
+Based on the response we can let the user access the chat room or otherwise show him\
+the detailed message.\
+The SDKs contain the **getTokenGatedChatRoomAccessDetails** method that\
+internally fetches the room details from the BE by sending chat room id as a parameter\
+in the get API call. The room details contains the token gating information if the room is\
+token gated. If the room is token gated then SDK fetches the wallet details by sending\
+chat room id and wallet address to the BE, if wallet contains all the required tokens then\
 he/she is allowed to enter the room.
 
-The Blast BE is responsible for all the web3 operations, communicating with the  
-blockchain network, fetching the crypto wallet balance, providing detailed response to  
+The Blast BE is responsible for all the web3 operations, communicating with the\
+blockchain network, fetching the crypto wallet balance, providing detailed response to\
 the SDK calls & creating token gated chat rooms.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d276ea9-LiveLike_Flow.png",
-        null,
-        null
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/d276ea9-LiveLike_Flow.png" />
 
 ## CMS UI
 
@@ -141,46 +129,20 @@ the SDK calls & creating token gated chat rooms.
 
 ## Add Token Gated Chat Room from CMS
 
-Before creating token gated chat room we need to set up RPC URL on CMS  
+Before creating token gated chat room we need to set up RPC URL on CMS\
 Setting Up RPC URL
 
 For Setting up RPC url for network type need to follow following steps
 
 1. Go to My Organization.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f0e6177-My_Organization.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/f0e6177-My_Organization.png" />
 
 You will see something like this. With all the applications under Organisation.
 
 2. Select the Application for which you want to update the RPC network URL.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fc89268-apps.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/fc89268-apps.png" />
 
 And you will be redirected to a page like this where on scrolling down you will see predefined  RPC for all network types and you can update it.
 
@@ -188,121 +150,43 @@ And you will be redirected to a page like this where on scrolling down you will 
 
 All the Pre-defined RPC urls are visible which are updatable to connect with contract of that respective network type.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2f6cfd6-urls.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/2f6cfd6-urls.png" />
 
 Now we can proceed to create chat room
 
 4. Click on Chat Room from the left bar list.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/17c2771-chat_rooms.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/17c2771-chat_rooms.png" />
 
 5. Create a new chat room from button New Chat Room.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/07e155e-new_chat_room.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/07e155e-new_chat_room.png" />
 
 It will open a new modal for chat room details.
 
 7. Switch On Token Gate Access’s  toggle button to add token gates.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/57fe2d9-token_gate.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/57fe2d9-token_gate.png" />
 
 For adding a token gate you will need to add a valid contract address and its network type.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d8eee04-token_gate_.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/d8eee04-token_gate_.png" />
 
 You always have the privilege to add multiple contracts and the User will be needed to have tokens of all the contracts to access this chat.
 
 And after clicking the Create button it will create a chat room with token gate.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bb68022-created_room.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/bb68022-created_room.png" />
 
 # Add Token Gated Chat Room from SDK
 
-Besides adding the token gating to the chat room from the CMS, we can also add the  
-token gating to the chat room from the SDKs.  
-Here is how we can create a token gated chat room using Android SDK.  
-Users can create a chat room with an optional title, optional visibility and optional list of  
-ChatRoomTokenGate objects.  
-**Parameters**: Title(Optional) , Visibility(Optional,Default value: everyone),  
-tokenGates(Optional,Default value: null)  
+Besides adding the token gating to the chat room from the CMS, we can also add the\
+token gating to the chat room from the SDKs.\
+Here is how we can create a token gated chat room using Android SDK.\
+Users can create a chat room with an optional title, optional visibility and optional list of\
+ChatRoomTokenGate objects.\
+**Parameters**: Title(Optional) , Visibility(Optional,Default value: everyone),\
+tokenGates(Optional,Default value: null)\
 **Response**: ChatRoomInfo Object, it contains the newly created chatroom Id, title & token gate information if available.
 
 ```javascript
@@ -356,23 +240,23 @@ sdk.chat().createChatRoom(
 }, tokenGates)
 ```
 
-Here, tokenGates is a list of ChatRoomTokenGate in Android and in iOS TokenGate objects.  
-ChatRoomTokenGate/TokenGate includes contract address, network type, token type, attributes  
+Here, tokenGates is a list of ChatRoomTokenGate in Android and in iOS TokenGate objects.\
+ChatRoomTokenGate/TokenGate includes contract address, network type, token type, attributes\
 (traits) as fields.
 
 The ChatRoomTokenGate object contains 4 fields:
 
-**Contract Address**: The smart contract address for the token.  
-**Token Type**: The type of token fungible or non fungible.  
-**Network Type**: The blockchain network ie Ethereum, Chiliz, Hedera, Polygon.  
+**Contract Address**: The smart contract address for the token.\
+**Token Type**: The type of token fungible or non fungible.\
+**Network Type**: The blockchain network ie Ethereum, Chiliz, Hedera, Polygon.\
 **Attributes**: The list of metadata of tokens.
 
 # Sample use cases\*
 
-\*These are just a few examples  
-NFTs can be created and given for any reason. Therefore, their use to gate chats can be for a variety of reasons.  
-For example, NFTs given to people in a specific location (like a field or arena) can enter a private chat together and discuss what is happening live.  
-NFTs can be given to different wallet addresses for social media giveaways, such as a private chat with an athlete.  
+\*These are just a few examples\
+NFTs can be created and given for any reason. Therefore, their use to gate chats can be for a variety of reasons.\
+For example, NFTs given to people in a specific location (like a field or arena) can enter a private chat together and discuss what is happening live.\
+NFTs can be given to different wallet addresses for social media giveaways, such as a private chat with an athlete.\
 Clients can partner with third party NFT distributors to create token chats based on points, features etc.
 
 # Get Smart Contracts to Create Token Gated ChatRoom
@@ -415,12 +299,12 @@ sdk.chat().getSmartContracts(
 
 # Token gating based on NFTs Metadata
 
-NFT metadata refers to the additional information associated with a non-fungible token (NFT). It  
-could be its creator, date or properties like color, size, style etc.  
-We can create the chat room using metadata of NFTs by adding a list of attributes to the  
-ChatRoomTokenGate object. The attributes object contains the trait name and trait value.  
-**Attributes**  
-           - Trait type  
-           - value  
-NFTs with these metadata are then checked in the wallet at the time of entering the chat room  
+NFT metadata refers to the additional information associated with a non-fungible token (NFT). It\
+could be its creator, date or properties like color, size, style etc.\
+We can create the chat room using metadata of NFTs by adding a list of attributes to the\
+ChatRoomTokenGate object. The attributes object contains the trait name and trait value.\
+**Attributes**\
+           \- Trait type\
+           \- value\
+NFTs with these metadata are then checked in the wallet at the time of entering the chat room\
 using **getTokenGatedChatRoomAccessDetails** method.
