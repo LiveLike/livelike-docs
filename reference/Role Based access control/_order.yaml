@@ -12,3 +12,4 @@
 - get-roles
 - update-a-role
 - patch-update-a-role-copy
+- delete-a-role
