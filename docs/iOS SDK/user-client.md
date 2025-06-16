@@ -12,11 +12,11 @@ next:
 ---
 User Client is an interface that can be used for features related to users applicable across an application.
 
-** Features **
+**Features**
 
-- Block a User Profile
-- Unblock a User Profile
-- Get List of User Profiles that have been blocked
+* Block a User Profile
+* Unblock a User Profile
+* Get List of User Profiles that have been blocked
 
 ## Block Profile
 
@@ -42,8 +42,6 @@ sdk.user.blockProfile(
 }
 ```
 
-
-
 ## Unblock profile
 
 As an integrator, you can now allow users to unblock users they had previously blocked from sending invitations or adding them to chat rooms.
@@ -60,8 +58,6 @@ sdk.user.unblockProfile(blockRequestID: requestID) { result in
 		}
 }
 ```
-
-
 
 ## Get List of Blocked Profiles
 
