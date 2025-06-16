@@ -14,22 +14,22 @@ next:
 ---
 A Chat Client is an interface that can be used to add or invite other users to a chat room.
 
-** Features **
+**Features**
 
-- Add User to a Chat Room
-- Invite User to a Chat Room
-- Respond to invitations
-- Get List of Invitations corresponding to the User
+* Add User to a Chat Room
+* Invite User to a Chat Room
+* Respond to invitations
+* Get List of Invitations corresponding to the User
 
 ## Add User to Chat Room
 
 As an integrator you can enable the current user to add users to chat rooms of which the current user is a member of. 
 
-You can call the `addMemberToChatRoom` method which is a part of the `chat` (ChatClient) object.  
+You can call the `addMemberToChatRoom` method which is a part of the `chat` (ChatClient) object.\
 On successful completion, it returns a `ChatRoomMember` object which contains the details of the User and Chat Room they were added to
 
 > 📘 Please Note
-> 
+>
 > User can add another user to the chat room only if they are already a member of the chat room
 
 ```swift
@@ -46,8 +46,6 @@ sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) {
 	}
 }
 ```
-
-
 
 ## Receive notification for added user in Real-time
 
@@ -71,13 +69,11 @@ class SomeViewController: ChatClientDelegate {
 }
 ```
 
-
-
 ## Invite User to Chat Room
 
 You can allow the User to invite another user to a particular chat room that they are already a part of. 
 
-You can call the `sendChatRoomInviteToUser` method which is a part of the `chat` (ChatClient) object.  
+You can call the `sendChatRoomInviteToUser` method which is a part of the `chat` (ChatClient) object.\
 On successful completion, it returns a `ChatRoomInvitation` object which contains the details of the the Invitation.
 
 ```swift
@@ -94,8 +90,6 @@ sdk.chat.sendChatRoomInviteToUser(roomId: roomId, profileId: profileId) {
 	}
 }
 ```
-
-
 
 ## Receive Invitation in Real-time
 
@@ -119,13 +113,11 @@ class SomeViewController: ChatClientDelegate {
 }
 ```
 
-
-
 ## Update the Invitation Status for a User
 
 You can update the status of the invitation that the User has received.
 
-You can call the `updateChatRoomInviteStatus` method which is a part of the `chat` (ChatClient) object.  
+You can call the `updateChatRoomInviteStatus` method which is a part of the `chat` (ChatClient) object.\
 On successful completion, it returns a `ChatRoomInvitation` object which contains the details of the Invitation with its updated status. 
 
 The function requires the `ChatRoomInvitation` object and also a `status` of type `ChatRoomInvitationStatus` which can be of type `accepted`, `pending` or `rejected`.
@@ -144,8 +136,6 @@ self.sdk.chat.updateChatRoomInviteStatus(
 	}
 }
 ```
-
-
 
 ## Get List of Invitations received by the User
 
@@ -166,8 +156,6 @@ sdk.chat.getInvitationsForUserWithInvitationStatus(
 	}
 }
 ```
-
-
 
 ## Get List of Invitations sent by the User
 
