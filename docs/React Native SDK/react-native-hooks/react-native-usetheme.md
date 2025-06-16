@@ -17,112 +17,191 @@ next:
 The purpose of the `useTheme` hook is to manage and customise the StockUI Theme
 
 ##### Example Usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { theme, themeAssets, setThemeType, setThemes, themeType, themes } = useTheme();",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Argument"
-}
-[/block]
+```typescript
+const { theme, themeAssets, setThemeType, setThemes, themeType, themes } = useTheme();
+```
+
+## Hook Argument
+
 #### `themeType`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[UseThemeArg](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=UseThemeArg)",
-    "0-1": "Empty Object"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [UseThemeArg](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=UseThemeArg)
+      </td>
+
+      <td>
+        Empty Object
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Hook Return Value
+
 #### `theme`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[LLTheme](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLTheme)",
-    "0-1": "Default [colorScheme]()"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [LLTheme](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLTheme)
+      </td>
+
+      <td>
+        Default [colorScheme]()
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `themeAssets`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[LLThemeAssets](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeAssets)",
-    "0-1": "Default assets"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [LLThemeAssets](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeAssets)
+      </td>
+
+      <td>
+        Default assets
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `setThemeType`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "Function of type: (newThemeType: [LLThemeType](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeType)) => void"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: (newThemeType: [LLThemeType](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeType)) => void
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `setThemes`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "Function of type: (_themes: [LLThemes](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemes)) => void"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: (\_themes: [LLThemes](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemes)) => void
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `themeType`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[ColorSchemeName]() | [LLThemeType](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=ColorSchemeName)",
-    "0-1": "ColorSchemeName"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [ColorSchemeName]() | [LLThemeType](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=ColorSchemeName)
+      </td>
+
+      <td>
+        ColorSchemeName
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `themes`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[LLThemes](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemes)",
-    "0-1": "Default StockUI Theme"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [LLThemes](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemes)
+      </td>
+
+      <td>
+        Default StockUI Theme
+      </td>
+    </tr>
+  </tbody>
+</Table>
