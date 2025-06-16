@@ -12,349 +12,1983 @@ metadata:
 next:
   description: ''
 ---
-[block:api-header]
-{
-  "title": "Alert Widget"
-}
-[/block]
+## Alert Widget
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Property",
-    "h-1": "Type",
-    "0-1": "string",
-    "0-0": "title",
-    "1-0": "text",
-    "2-0": "image_url",
-    "3-0": "link_url",
-    "4-0": "link_label",
-    "1-1": "string",
-    "2-1": "string",
-    "3-1": "string",
-    "4-1": "string",
-    "5-0": "trackLinkOpened",
-    "5-1": "function: ()"
-  },
-  "cols": 2,
-  "rows": 6
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Property
+      </th>
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const alertTemplate = (payload) => {\n  var template = document.createElement('template');\n  let alertHtml = `\n    <livelike-widget-root>\n      <livelike-widget-header>\n        <livelike-title>${payload.title}</livelike-title>\n      </livelike-widget-header>\n      <livelike-widget-body>\n        <img src=${payload.image_url}>\n      \t<a href=\"${payload.link_url}\" target=\"_blank\">${payload.link_label}</a>\n      </livelike-widget-body>\n    </livelike-widget-root>\n  `;\n  template.innerHTML = alertHtml;\n  return template;\n}\nconst widgetContainer = document.querySelector('livelike-widgets');\nwidgetContainer.customTemplateRenderer = function({ widgetPayload }){\n  if(widgetPayload.kind === 'alert'){\n    return alertTemplate(widgetPayload);\n  }\n}\n",
-      "language": "javascript",
-      "name": "Alert Widget Example"
-    },
-    {
-      "code": "class CustomAlert extends LiveLikeAlert {\n      render() {\n        return html`\n          <template>\n            <livelike-widget-root>\n              <livelike-widget-header>\n              <livelike-title></livelike-title>\n                ${this.link_url &&\n                html`\n                  <a href=\"${this.link_url}\" target=\"_blank\">${this.link_label}</a>\n                `}\n              </livelike-widget-header>\n              <livelike-widget-body>\n                <span>${this.text}</span>\n                ${this.image_url &&\n                html`\n                  <img src=${this.image_url} height=\"40px\">\n                `}\n              </livelike-widget-body>\n            </livelike-widget-root>\n          <template>\n        `;\n      }\n    }\n    customElements.define(\"custom-alert\", CustomAlert);\n    \nconst customWidgetRenderer = (args) => {\n      let widgetPayload = args.widgetPayload;\n      if( widgetPayload.kind === 'alert'){\n        return document.createElement('custom-alert');\n      }\n    }\nlet w = document.querySelector('livelike-widgets');\nw.customWidgetRenderer = customWidgetRenderer;",
-      "language": "text",
-      "name": "Extended Alert Class"
-    },
-    {
-      "code": "class CustomAlert extends LiveLikeAlert {\n  render() {\n    const hasCaptionAndMedia = !!this.text && !!this.image_url;\n\n    const hasOnlyMedia = !this.text && !!this.image_url;\n\n    const hasOnlyCaption = !!this.text && !this.image_url;\n\n    const paramsString = !!this.link_url && new URLSearchParams(this.link_url.split('?')[1]);\n\n    const hasSponsor = paramsString && paramsString.get(\"sponsor\");\n\n    return html`\n      <template>\n        <style>\n        \tlivelike-widget-root.custom-widget livelike-widget-header{\n            background: white;\n            text-align: center;\n            display: block;\n            padding-bottom: 20px;\n            border-radius: 0;\n            border: 1px solid #e6e6e6;\n            border-bottom: 0;\n          }\n          livelike-widget-root.custom-widget livelike-timer.custom-timer{\n            background: #fac83c;\n            top: 0;\n            height: 5px;\n          }\n          livelike-widget-root.custom-widget .widget-kind{\n            color: #000;\n            opacity: 30%;\n            font-size: 14.5px;\n            letter-spacing: 0.55px;\n            font-family: \"HelveticaNeue-Medium\";\n            padding: 15px 20px 0 20px;\n          }\n          livelike-widget-root.custom-widget livelike-title.custom-title{\n            color: #000;\n            font-size: 20px;\n            font-family: \"HelveticaNeue-Bold\";\n            padding: 0 20px;\n            display: block;\n            width: calc(100% - 40px);\n          }\n          livelike-widget-root.custom-widget livelike-widget-body{\n            background: white;\n            padding: 0 20px 20px 20px;\n            border-radius: 0;\n            border: 1px solid #e6e6e6;\n            border-top: 0;\n          }\t\n          livelike-widget-root.custom-widget livelike-description{\n            font-size: 18.5px;\n            font-family: \"HelveticaNeue-Regular\";\n            text-align: left;\n          }\n          livelike-footer a.widget-link{\n            margin-top: 10px;\n            border-radius: 5px;\n            text-align: center;\n            color: white;\n            background-image: none;\n            padding: 1rem;\n            background-color: #222;\n          }\n          livelike-footer div.sponsor-section{\n            margin-top: 10px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n          }\n          livelike-footer div.sponsor-section span{\n            margin-right: 10px;\n            color: #bbbbbb;\n          }\n          livelike-footer div.sponsor-section img{\n            height: 30px;\n            width: auto;\n          }\n          .widget-caption{\n            color: #000;\n            opacity: 60%;\n          }\n          .widget-media img{\n            max-height: none;\n            height: auto;\n          }\n        </style>\n        <livelike-widget-root class=\"custom-widget\">\n          <livelike-widget-header class=\"widget-header\" slot=\"header\">\n            <livelike-timer class=\"custom-timer\"></livelike-timer>\n            <div class=\"widget-kind\">ALERT</div>\n            <livelike-title class=\"custom-title\"></livelike-title>\n          </livelike-widget-header>\n          <livelike-widget-body>\n            ${hasCaptionAndMedia\n              ? html`\n                  <figure class=\"widget-captioned-media\">\n                    ${this.text &&\n                      html`\n                        <figcaption class=\"widget-caption media-caption\">\n                          ${this.text}\n                        </figcaption>\n                      `}\n                    ${this.image_url &&\n                      html`\n                        <img\n                          class=\"widget-media\"\n                          src=${this.image_url}\n                          alt=${this.text}\n                        />\n                      `}\n                  </figure>\n                `\n              : hasOnlyMedia\n              ? html`\n                  <div class=\"widget-media\">\n                    <img src=${this.image_url} />\n                  </div>\n                `\n              : hasOnlyCaption\n              ? html`\n                  <div class=\"widget-caption-container\">\n                    <span class=\"widget-caption\">${this.text}</span>\n                  </div>\n                `\n              : null}\n            ${this.link_url &&\n              html`\n                <livelike-footer>\n                  <a\n                    class=\"widget-link\"\n                    href=${this.link_url}\n                    target=\"_blank\"\n                    @click=${this.trackLinkOpened}\n                    >${this.link_label}</a>\n                    ${hasSponsor &&\n                      html`\n                        <div class=\"sponsor-section\">\n                          <span>Sponsored by</span>\n                          <img alt=\"sponsor logo\" src=\"https://cf-blast-storage-qa.livelikecdn.com/assets/7eea3117-20ce-455e-8996-9021e62245b1.png\"></img>\n                        </div>\n                    `}\n                </livelike-footer>\n              `}\n          </livelike-widget-body>\n        </livelike-widget-root>\n      </template>\n    `;\n  }\n}\ncustomElements.define(\"custom-alert\", CustomAlert);\nconst widgetContainer = document.querySelector('livelike-widgets');\n\twidgetContainer.customWidgetRenderer = function({ widgetPayload }){\n  switch (widgetPayload.kind) {\n    case 'alert':\n      return document.createElement('custom-alert');\n    default:\n      break;\n  }\n};",
-      "language": "javascript",
-      "name": "Custom Alert Widget"
+      <th style={{ textAlign: "left" }}>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        title
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        text
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        image\_url
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        link\_url
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        link\_label
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        trackLinkOpened
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        function: ()
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```javascript Alert Widget Example
+const alertTemplate = (payload) => {
+  var template = document.createElement('template');
+  let alertHtml = `
+    <livelike-widget-root>
+      <livelike-widget-header>
+        <livelike-title>${payload.title}</livelike-title>
+      </livelike-widget-header>
+      <livelike-widget-body>
+        <img src=${payload.image_url}>
+      	<a href="${payload.link_url}" target="_blank">${payload.link_label}</a>
+      </livelike-widget-body>
+    </livelike-widget-root>
+  `;
+  template.innerHTML = alertHtml;
+  return template;
+}
+const widgetContainer = document.querySelector('livelike-widgets');
+widgetContainer.customTemplateRenderer = function({ widgetPayload }){
+  if(widgetPayload.kind === 'alert'){
+    return alertTemplate(widgetPayload);
+  }
+}
+```
+```text Extended Alert Class
+class CustomAlert extends LiveLikeAlert {
+      render() {
+        return html`
+          <template>
+            <livelike-widget-root>
+              <livelike-widget-header>
+              <livelike-title></livelike-title>
+                ${this.link_url &&
+                html`
+                  <a href="${this.link_url}" target="_blank">${this.link_label}</a>
+                `}
+              </livelike-widget-header>
+              <livelike-widget-body>
+                <span>${this.text}</span>
+                ${this.image_url &&
+                html`
+                  <img src=${this.image_url} height="40px">
+                `}
+              </livelike-widget-body>
+            </livelike-widget-root>
+          <template>
+        `;
+      }
     }
-  ]
-}
-[/block]
-
-[block:api-header]
-{
-  "title": "Quiz Widget"
-}
-[/block]
-
-[block:parameters]
-{
-  "data": {
-    "0-0": "question",
-    "0-1": "question",
-    "1-0": "choices",
-    "1-1": "array",
-    "h-0": "Property",
-    "h-1": "Type",
-    "2-0": "lockInVote",
-    "2-1": "function: (option)"
-  },
-  "cols": 2,
-  "rows": 3
-}
-[/block]
-
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<template kind=\"text-quiz\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n      <livelike-dismiss-button></livelike-dismiss-button>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Quiz Widget Example"
-    },
-    {
-      "code": "<style>\n  livelike-widget-root.custom-widget livelike-widget-header{\n    background: white;\n    text-align: center;\n    display: block;\n    padding-bottom: 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-bottom: 0;\n  }\n  livelike-widget-root.custom-widget livelike-timer.custom-timer{\n    background: #fac83c;\n    top: 0;\n    height: 5px;\n  }\n  livelike-widget-root.custom-widget .widget-kind{\n    color: #000;\n    opacity: 30%;\n    font-size: 14.5px;\n    letter-spacing: 0.55px;\n    font-family: \"HelveticaNeue-Medium\";\n    padding: 15px 20px 0 20px;\n  }\n  livelike-widget-root.custom-widget livelike-title.custom-title{\n    color: #000;\n    font-size: 20px;\n    font-family: \"HelveticaNeue-Bold\";\n    padding: 0 20px;\n    display: block;\n    width: calc(100% - 40px);\n  }\n  livelike-widget-root.custom-widget livelike-widget-body{\n    background: white;\n    padding: 0 20px 20px 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-top: 0;\n  }\n  livelike-widget-root.custom-widget livelike-select{\n    background: #fff;\n  }\n  livelike-widget-root.custom-widget livelike-option{\n    color: #000;\n    border: 1px solid #e6e6e6;\n    padding: 0;\n    margin-bottom: 20px;\n    height: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option:last-child{\n    margin-bottom: 0px;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected]{\n    color: #fff;\n    background: #000;\n  }\n  livelike-widget-root.custom-widget livelike-description{\n    font-size: 18.5px;\n    font-family: \"HelveticaNeue-Regular\";\n    text-align: left;\n  }\n  livelike-widget-root.custom-widget livelike-percentage{\n    font-size: 21px;\n    font-family: \"HelveticaNeue-CondensedBlack\"\n  }\n  livelike-widget-root.custom-widget livelike-progress{\n    height: 4px;\n    bottom: 0;\n    top: auto;\n    background: #e6e6e6;\n    border-color: #e6e6e6;\n    border-radius: 0;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n    background: #0096ff;\n    border-color: #0096ff;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid{\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-column-gap: 15px;\n    grid-row-gap: 10px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{\n    margin-bottom: 0;\n    min-height: 60px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n    width: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{\n    flex-grow: 1;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{\n    background: #00ff78;\n    border-color: #00ff78;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{\n    background: #ff3c3c;\n    border-color: #ff3c3c;\n  }\n</style>\n<template kind=\"image-quiz\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">IMAGE QUIZ</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select class=\"image-grid\">\n        <template>\n          <livelike-option>\n            <div class=\"livelike-voting-image-container\">\n              <div class=\"image-description-wrapper\">\n                <livelike-description></livelike-description>\n              </div>\n              <livelike-percentage></livelike-percentage>\n            </div>\n            <livelike-image height=\"60px\"></livelike-image>\n            <livelike-progress></livelike-progress>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Custom Image Quiz"
+    customElements.define("custom-alert", CustomAlert);
+    
+const customWidgetRenderer = (args) => {
+      let widgetPayload = args.widgetPayload;
+      if( widgetPayload.kind === 'alert'){
+        return document.createElement('custom-alert');
+      }
     }
-  ]
-}
-[/block]
+let w = document.querySelector('livelike-widgets');
+w.customWidgetRenderer = customWidgetRenderer;
+```
+```javascript Custom Alert Widget
+class CustomAlert extends LiveLikeAlert {
+  render() {
+    const hasCaptionAndMedia = !!this.text && !!this.image_url;
 
-[block:api-header]
-{
-  "title": "Cheer Meter Widget"
-}
-[/block]
+    const hasOnlyMedia = !this.text && !!this.image_url;
 
-[block:parameters]
-{
-  "data": {
-    "0-0": "title",
-    "0-1": "string",
-    "1-0": "options",
-    "1-1": "array",
-    "h-0": "Property",
-    "h-1": "Type",
-    "2-0": "submitVote",
-    "2-1": "function: (option)"
-  },
-  "cols": 2,
-  "rows": 3
-}
-[/block]
+    const hasOnlyCaption = !!this.text && !this.image_url;
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<template kind=\"cheer-meter\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-dismiss-button></livelike-dismiss-button>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select>\n        <template>\n          <livelike-option>\n            <livelike-vote-count></livelike-vote-count>\n            <livelike-description></livelike-description>\n            <livelike-image height=\"50px\" width=\"50px\"></livelike-image>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Cheer Meter Example"
-    },
-    {
-      "code": "<script>\n  class CustomCheerOption extends LiveLikeOption {\n    votePercentage = () => {\n      const totalVotes = this.items.reduce((a, b) => a + b['vote_count'], 0);\n      return totalVotes > 0\n        ? Math.round((this.item.vote_count / totalVotes) * 100)\n        : 0;\n    };\n    render() {\n      return html`\n        <style>\n          livelike-image{\n            width: calc(100% - 42px);\n            padding: 20px;\n            border: 1px solid #e6e6e6;\n            border-radius: 6px;\n            flex-grow: 1;\n          }\n          :host(:not([disabled])) livelike-image:active{\n            background-color: #222222 !important;\n          }\n          livelike-description{\n            font-size: 18.5px;\n            font-family: \"HelveticaNeue-Regular\";\n            text-align: center;\n            flex-grow: 0;\n          }\n        </style>\n        <livelike-image width=\"100%\" height=\"auto\" style=\"background: linear-gradient(0deg, ${this.optionIndex % 2 === 0 ? `#0096ff` : `#ed174b` } ${this.votePercentage()}%, transparent 0);\"></livelike-image>\n        <livelike-description></livelike-description>\n      `;\n    }\n}\ncustomElements.define(\"custom-cheer-option\", CustomCheerOption);\n</script>\n<style>\n  body{\n  background-color: #f0f0f0;\n}\nlivelike-widgets{\n  width: 500px;\n  height: 340px;\n  margin-left: auto;\n  margin-right: auto;\n}\nlivelike-widget-root.custom-widget livelike-widget-header{\n  background: white;\n  text-align: center;\n  display: block;\n  padding-bottom: 20px;\n  border-radius: 0;\n  border: 1px solid #e6e6e6;\n  border-bottom: 0;\n}\nlivelike-widget-root.custom-widget livelike-timer.custom-timer{\n  background: #fac83c;\n  top: 0;\n  height: 5px;\n}\nlivelike-widget-root.custom-widget .widget-kind{\n  color: #000;\n  opacity: 30%;\n  font-size: 14.5px;\n  letter-spacing: 0.55px;\n  font-family: \"HelveticaNeue-Medium\";\n  padding: 15px 20px 0 20px;\n}\nlivelike-widget-root.custom-widget livelike-title.custom-title{\n  color: #000;\n  font-size: 20px;\n  font-family: \"HelveticaNeue-Bold\";\n  padding: 0 20px;\n  display: block;\n  width: calc(100% - 40px);\n}\nlivelike-widget-root.custom-widget livelike-widget-body{\n  background: white;\n  padding: 0 20px 20px 20px;\n  border-radius: 0;\n  border: 1px solid #e6e6e6;\n  border-top: 0;\n}\nlivelike-widget-root.custom-widget livelike-select{\n  background: #fff;\n}\nlivelike-widget-root.custom-widget livelike-option{\n  color: #000;\n  border: 1px solid #e6e6e6;\n  padding: 0;\n  margin-bottom: 20px;\n  height: auto;\n}\nlivelike-widget-root.custom-widget livelike-option:last-child{\n  margin-bottom: 0px;\n}\nlivelike-widget-root.custom-widget livelike-option[selected]{\n  color: #fff;\n  background: #000;\n}\nlivelike-widget-root.custom-widget livelike-description{\n  font-size: 18.5px;\n  font-family: \"HelveticaNeue-Regular\";\n  text-align: left;\n}\nlivelike-widget-root.custom-widget livelike-percentage{\n  font-size: 21px;\n  font-family: \"HelveticaNeue-CondensedBlack\"\n}\nlivelike-widget-root.custom-widget livelike-progress{\n  height: 4px;\n  bottom: 0;\n  top: auto;\n  background: #e6e6e6;\n  border-color: #e6e6e6;\n  border-radius: 0;\n}\nlivelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n  background: #0096ff;\n  border-color: #0096ff;\n}\nlivelike-widget-root.custom-widget livelike-select.image-grid{\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  grid-column-gap: 15px;\n  grid-row-gap: 10px;\n}\nlivelike-widget-root.custom-widget livelike-select.image-grid livelike-option{\n  margin-bottom: 0;\n  min-height: 60px;\n}\nlivelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n  width: auto;\n}\nlivelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{\n  flex-grow: 1;\n}\nlivelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{\n  background: #00ff78;\n  border-color: #00ff78;\n}\nlivelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{\n  background: #ff3c3c;\n  border-color: #ff3c3c;\n}\nlivelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid{\n  width: 100%;\n  background: transparent;\n  display: flex;\n  justify-content: space-around;\n}\nlivelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid custom-cheer-option{\n  display: flex;\n  flex-direction: column;\n  border: none;\n  margin-bottom: 0;\n  min-height: 60px;\n  color: #000;\n  padding: 0;\n  height: auto;\n  width: 100px;\n}\nlivelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n  width: calc(100% - 22px);\n  padding: 10px;\n  border: 1px solid #e6e6e6;\n  border-radius: 6px;\n}\nlivelike-cheer-meter livelike-widget-root.custom-widget img.divider{\n  color: #000;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 2rem;\n  z-index: 100;\n}\nlivelike-cheer-meter livelike-widget-root.custom-widget livelike-description{\n  text-align: center;\n}\n</style>\n<template kind=\"cheer-meter\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">CHEER METER</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <div class=\"cheer-image-body\">\n        <livelike-vote-count></livelike-vote-count>\n        <img class=\"divider\" src=\"./assets/vs-light.gif\" />\n        <livelike-select class=\"image-grid\">\n          <template>\n            <custom-cheer-option></custom-cheer-option>\n          </template>\n        </livelike-select>\n      </div>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Custom Cheer Meter"
+    const paramsString = !!this.link_url && new URLSearchParams(this.link_url.split('?')[1]);
+
+    const hasSponsor = paramsString && paramsString.get("sponsor");
+
+    return html`
+      <template>
+        <style>
+        	livelike-widget-root.custom-widget livelike-widget-header{
+            background: white;
+            text-align: center;
+            display: block;
+            padding-bottom: 20px;
+            border-radius: 0;
+            border: 1px solid #e6e6e6;
+            border-bottom: 0;
+          }
+          livelike-widget-root.custom-widget livelike-timer.custom-timer{
+            background: #fac83c;
+            top: 0;
+            height: 5px;
+          }
+          livelike-widget-root.custom-widget .widget-kind{
+            color: #000;
+            opacity: 30%;
+            font-size: 14.5px;
+            letter-spacing: 0.55px;
+            font-family: "HelveticaNeue-Medium";
+            padding: 15px 20px 0 20px;
+          }
+          livelike-widget-root.custom-widget livelike-title.custom-title{
+            color: #000;
+            font-size: 20px;
+            font-family: "HelveticaNeue-Bold";
+            padding: 0 20px;
+            display: block;
+            width: calc(100% - 40px);
+          }
+          livelike-widget-root.custom-widget livelike-widget-body{
+            background: white;
+            padding: 0 20px 20px 20px;
+            border-radius: 0;
+            border: 1px solid #e6e6e6;
+            border-top: 0;
+          }	
+          livelike-widget-root.custom-widget livelike-description{
+            font-size: 18.5px;
+            font-family: "HelveticaNeue-Regular";
+            text-align: left;
+          }
+          livelike-footer a.widget-link{
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            background-image: none;
+            padding: 1rem;
+            background-color: #222;
+          }
+          livelike-footer div.sponsor-section{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          livelike-footer div.sponsor-section span{
+            margin-right: 10px;
+            color: #bbbbbb;
+          }
+          livelike-footer div.sponsor-section img{
+            height: 30px;
+            width: auto;
+          }
+          .widget-caption{
+            color: #000;
+            opacity: 60%;
+          }
+          .widget-media img{
+            max-height: none;
+            height: auto;
+          }
+        </style>
+        <livelike-widget-root class="custom-widget">
+          <livelike-widget-header class="widget-header" slot="header">
+            <livelike-timer class="custom-timer"></livelike-timer>
+            <div class="widget-kind">ALERT</div>
+            <livelike-title class="custom-title"></livelike-title>
+          </livelike-widget-header>
+          <livelike-widget-body>
+            ${hasCaptionAndMedia
+              ? html`
+                  <figure class="widget-captioned-media">
+                    ${this.text &&
+                      html`
+                        <figcaption class="widget-caption media-caption">
+                          ${this.text}
+                        </figcaption>
+                      `}
+                    ${this.image_url &&
+                      html`
+                        <img
+                          class="widget-media"
+                          src=${this.image_url}
+                          alt=${this.text}
+                        />
+                      `}
+                  </figure>
+                `
+              : hasOnlyMedia
+              ? html`
+                  <div class="widget-media">
+                    <img src=${this.image_url} />
+                  </div>
+                `
+              : hasOnlyCaption
+              ? html`
+                  <div class="widget-caption-container">
+                    <span class="widget-caption">${this.text}</span>
+                  </div>
+                `
+              : null}
+            ${this.link_url &&
+              html`
+                <livelike-footer>
+                  <a
+                    class="widget-link"
+                    href=${this.link_url}
+                    target="_blank"
+                    @click=${this.trackLinkOpened}
+                    >${this.link_label}</a>
+                    ${hasSponsor &&
+                      html`
+                        <div class="sponsor-section">
+                          <span>Sponsored by</span>
+                          <img alt="sponsor logo" src="https://cf-blast-storage-qa.livelikecdn.com/assets/7eea3117-20ce-455e-8996-9021e62245b1.png"></img>
+                        </div>
+                    `}
+                </livelike-footer>
+              `}
+          </livelike-widget-body>
+        </livelike-widget-root>
+      </template>
+    `;
+  }
+}
+customElements.define("custom-alert", CustomAlert);
+const widgetContainer = document.querySelector('livelike-widgets');
+	widgetContainer.customWidgetRenderer = function({ widgetPayload }){
+  switch (widgetPayload.kind) {
+    case 'alert':
+      return document.createElement('custom-alert');
+    default:
+      break;
+  }
+};
+```
+
+## Quiz Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        question
+      </td>
+
+      <td>
+        question
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        choices
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        lockInVote
+      </td>
+
+      <td>
+        function: (option)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```html Quiz Widget Example
+<template kind="text-quiz">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+      <livelike-dismiss-button></livelike-dismiss-button>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+```
+```html Custom Image Quiz
+<style>
+  livelike-widget-root.custom-widget livelike-widget-header{
+    background: white;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+  }
+  livelike-widget-root.custom-widget livelike-timer.custom-timer{
+    background: #fac83c;
+    top: 0;
+    height: 5px;
+  }
+  livelike-widget-root.custom-widget .widget-kind{
+    color: #000;
+    opacity: 30%;
+    font-size: 14.5px;
+    letter-spacing: 0.55px;
+    font-family: "HelveticaNeue-Medium";
+    padding: 15px 20px 0 20px;
+  }
+  livelike-widget-root.custom-widget livelike-title.custom-title{
+    color: #000;
+    font-size: 20px;
+    font-family: "HelveticaNeue-Bold";
+    padding: 0 20px;
+    display: block;
+    width: calc(100% - 40px);
+  }
+  livelike-widget-root.custom-widget livelike-widget-body{
+    background: white;
+    padding: 0 20px 20px 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+  }
+  livelike-widget-root.custom-widget livelike-select{
+    background: #fff;
+  }
+  livelike-widget-root.custom-widget livelike-option{
+    color: #000;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option:last-child{
+    margin-bottom: 0px;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected]{
+    color: #fff;
+    background: #000;
+  }
+  livelike-widget-root.custom-widget livelike-description{
+    font-size: 18.5px;
+    font-family: "HelveticaNeue-Regular";
+    text-align: left;
+  }
+  livelike-widget-root.custom-widget livelike-percentage{
+    font-size: 21px;
+    font-family: "HelveticaNeue-CondensedBlack"
+  }
+  livelike-widget-root.custom-widget livelike-progress{
+    height: 4px;
+    bottom: 0;
+    top: auto;
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    border-radius: 0;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+    background: #0096ff;
+    border-color: #0096ff;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{
+    margin-bottom: 0;
+    min-height: 60px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+    width: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{
+    flex-grow: 1;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{
+    background: #00ff78;
+    border-color: #00ff78;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{
+    background: #ff3c3c;
+    border-color: #ff3c3c;
+  }
+</style>
+<template kind="image-quiz">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">IMAGE QUIZ</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select class="image-grid">
+        <template>
+          <livelike-option>
+            <div class="livelike-voting-image-container">
+              <div class="image-description-wrapper">
+                <livelike-description></livelike-description>
+              </div>
+              <livelike-percentage></livelike-percentage>
+            </div>
+            <livelike-image height="60px"></livelike-image>
+            <livelike-progress></livelike-progress>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+
+## Cheer Meter Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        title
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        options
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        submitVote
+      </td>
+
+      <td>
+        function: (option)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```html Cheer Meter Example
+<template kind="cheer-meter">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-dismiss-button></livelike-dismiss-button>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select>
+        <template>
+          <livelike-option>
+            <livelike-vote-count></livelike-vote-count>
+            <livelike-description></livelike-description>
+            <livelike-image height="50px" width="50px"></livelike-image>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+```html Custom Cheer Meter
+<script>
+  class CustomCheerOption extends LiveLikeOption {
+    votePercentage = () => {
+      const totalVotes = this.items.reduce((a, b) => a + b['vote_count'], 0);
+      return totalVotes > 0
+        ? Math.round((this.item.vote_count / totalVotes) * 100)
+        : 0;
+    };
+    render() {
+      return html`
+        <style>
+          livelike-image{
+            width: calc(100% - 42px);
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            border-radius: 6px;
+            flex-grow: 1;
+          }
+          :host(:not([disabled])) livelike-image:active{
+            background-color: #222222 !important;
+          }
+          livelike-description{
+            font-size: 18.5px;
+            font-family: "HelveticaNeue-Regular";
+            text-align: center;
+            flex-grow: 0;
+          }
+        </style>
+        <livelike-image width="100%" height="auto" style="background: linear-gradient(0deg, ${this.optionIndex % 2 === 0 ? `#0096ff` : `#ed174b` } ${this.votePercentage()}%, transparent 0);"></livelike-image>
+        <livelike-description></livelike-description>
+      `;
     }
-  ]
 }
-[/block]
-
-[block:api-header]
-{
-  "title": "Prediction Widget"
+customElements.define("custom-cheer-option", CustomCheerOption);
+</script>
+<style>
+  body{
+  background-color: #f0f0f0;
 }
-[/block]
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Property",
-    "h-1": "Type",
-    "0-0": "question",
-    "0-1": "string",
-    "1-0": "options",
-    "1-1": "array",
-    "2-0": "submitVote",
-    "2-1": "function: (option)"
-  },
-  "cols": 2,
-  "rows": 3
+livelike-widgets{
+  width: 500px;
+  height: 340px;
+  margin-left: auto;
+  margin-right: auto;
 }
-[/block]
+livelike-widget-root.custom-widget livelike-widget-header{
+  background: white;
+  text-align: center;
+  display: block;
+  padding-bottom: 20px;
+  border-radius: 0;
+  border: 1px solid #e6e6e6;
+  border-bottom: 0;
+}
+livelike-widget-root.custom-widget livelike-timer.custom-timer{
+  background: #fac83c;
+  top: 0;
+  height: 5px;
+}
+livelike-widget-root.custom-widget .widget-kind{
+  color: #000;
+  opacity: 30%;
+  font-size: 14.5px;
+  letter-spacing: 0.55px;
+  font-family: "HelveticaNeue-Medium";
+  padding: 15px 20px 0 20px;
+}
+livelike-widget-root.custom-widget livelike-title.custom-title{
+  color: #000;
+  font-size: 20px;
+  font-family: "HelveticaNeue-Bold";
+  padding: 0 20px;
+  display: block;
+  width: calc(100% - 40px);
+}
+livelike-widget-root.custom-widget livelike-widget-body{
+  background: white;
+  padding: 0 20px 20px 20px;
+  border-radius: 0;
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+}
+livelike-widget-root.custom-widget livelike-select{
+  background: #fff;
+}
+livelike-widget-root.custom-widget livelike-option{
+  color: #000;
+  border: 1px solid #e6e6e6;
+  padding: 0;
+  margin-bottom: 20px;
+  height: auto;
+}
+livelike-widget-root.custom-widget livelike-option:last-child{
+  margin-bottom: 0px;
+}
+livelike-widget-root.custom-widget livelike-option[selected]{
+  color: #fff;
+  background: #000;
+}
+livelike-widget-root.custom-widget livelike-description{
+  font-size: 18.5px;
+  font-family: "HelveticaNeue-Regular";
+  text-align: left;
+}
+livelike-widget-root.custom-widget livelike-percentage{
+  font-size: 21px;
+  font-family: "HelveticaNeue-CondensedBlack"
+}
+livelike-widget-root.custom-widget livelike-progress{
+  height: 4px;
+  bottom: 0;
+  top: auto;
+  background: #e6e6e6;
+  border-color: #e6e6e6;
+  border-radius: 0;
+}
+livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+  background: #0096ff;
+  border-color: #0096ff;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 10px;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{
+  margin-bottom: 0;
+  min-height: 60px;
+}
+livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+  width: auto;
+}
+livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{
+  flex-grow: 1;
+}
+livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{
+  background: #00ff78;
+  border-color: #00ff78;
+}
+livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{
+  background: #ff3c3c;
+  border-color: #ff3c3c;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid{
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid custom-cheer-option{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-bottom: 0;
+  min-height: 60px;
+  color: #000;
+  padding: 0;
+  height: auto;
+  width: 100px;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget img.divider{
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  z-index: 100;
+}
+livelike-cheer-meter livelike-widget-root.custom-widget livelike-description{
+  text-align: center;
+}
+</style>
+<template kind="cheer-meter">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">CHEER METER</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <div class="cheer-image-body">
+        <livelike-vote-count></livelike-vote-count>
+        <img class="divider" src="./assets/vs-light.gif" />
+        <livelike-select class="image-grid">
+          <template>
+            <custom-cheer-option></custom-cheer-option>
+          </template>
+        </livelike-select>
+      </div>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<template kind=\"text-prediction\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>\n<template kind=\"image-prediction\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-image height=\"60px\"></livelike-image>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Prediction widgets"
-    },
-    {
-      "code": "<template kind=\"text-prediction-follow-up\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>\n<template kind=\"image-prediction-follow-up\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-image height=\"60px\"></livelike-image>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Follow-ups"
-    },
-    {
-      "code": "<style>\n  livelike-widget-root.custom-widget livelike-widget-header{\n    background: white;\n    text-align: center;\n    display: block;\n    padding-bottom: 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-bottom: 0;\n  }\n  livelike-widget-root.custom-widget livelike-timer.custom-timer{\n    background: #fac83c;\n    top: 0;\n    height: 5px;\n  }\n  livelike-widget-root.custom-widget .widget-kind{\n    color: #000;\n    opacity: 30%;\n    font-size: 14.5px;\n    letter-spacing: 0.55px;\n    font-family: \"HelveticaNeue-Medium\";\n    padding: 15px 20px 0 20px;\n  }\n  livelike-widget-root.custom-widget livelike-title.custom-title{\n    color: #000;\n    font-size: 20px;\n    font-family: \"HelveticaNeue-Bold\";\n    padding: 0 20px;\n    display: block;\n    width: calc(100% - 40px);\n  }\n  livelike-widget-root.custom-widget livelike-widget-body{\n    background: white;\n    padding: 0 20px 20px 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-top: 0;\n  }\n  livelike-widget-root.custom-widget livelike-select{\n    background: #fff;\n  }\n  livelike-widget-root.custom-widget livelike-option{\n    color: #000;\n    border: 1px solid #e6e6e6;\n    padding: 0;\n    margin-bottom: 20px;\n    height: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option:last-child{\n    margin-bottom: 0px;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected]{\n    color: #fff;\n    background: #000;\n  }\n  livelike-widget-root.custom-widget livelike-description{\n    font-size: 18.5px;\n    font-family: \"HelveticaNeue-Regular\";\n    text-align: left;\n  }\n  livelike-widget-root.custom-widget livelike-percentage{\n    font-size: 21px;\n    font-family: \"HelveticaNeue-CondensedBlack\"\n  }\n  livelike-widget-root.custom-widget livelike-progress{\n    height: 4px;\n    bottom: 0;\n    top: auto;\n    background: #e6e6e6;\n    border-color: #e6e6e6;\n    border-radius: 0;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n    background: #0096ff;\n    border-color: #0096ff;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid{\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-column-gap: 15px;\n    grid-row-gap: 10px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{\n    margin-bottom: 0;\n    min-height: 60px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n    width: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{\n    flex-grow: 1;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{\n    background: #00ff78;\n    border-color: #00ff78;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{\n    background: #ff3c3c;\n    border-color: #ff3c3c;\n  }\n</style>\n<template kind=\"image-prediction\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">IMAGE PREDICTION</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select class=\"image-grid prediction-widget\">\n        <template>\n          <livelike-option>\n            <div class=\"livelike-voting-image-container\">\n              <div class=\"image-description-wrapper\">\n                <livelike-description></livelike-description>\n              </div>\n              <livelike-percentage></livelike-percentage>\n            </div>\n            <livelike-image height=\"60px\"></livelike-image>\n            <livelike-progress></livelike-progress>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Custom Image Prediction"
-    },
-    {
-      "code": "<style>\n  livelike-widget-root.custom-widget livelike-widget-header{\n    background: white;\n    text-align: center;\n    display: block;\n    padding-bottom: 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-bottom: 0;\n  }\n  livelike-widget-root.custom-widget livelike-timer.custom-timer{\n    background: #fac83c;\n    top: 0;\n    height: 5px;\n  }\n  livelike-widget-root.custom-widget .widget-kind{\n    color: #000;\n    opacity: 30%;\n    font-size: 14.5px;\n    letter-spacing: 0.55px;\n    font-family: \"HelveticaNeue-Medium\";\n    padding: 15px 20px 0 20px;\n  }\n  livelike-widget-root.custom-widget livelike-title.custom-title{\n    color: #000;\n    font-size: 20px;\n    font-family: \"HelveticaNeue-Bold\";\n    padding: 0 20px;\n    display: block;\n    width: calc(100% - 40px);\n  }\n  livelike-widget-root.custom-widget livelike-widget-body{\n    background: white;\n    padding: 0 20px 20px 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-top: 0;\n  }\n  livelike-widget-root.custom-widget livelike-select{\n    background: #fff;\n  }\n  livelike-widget-root.custom-widget livelike-option{\n    color: #000;\n    border: 1px solid #e6e6e6;\n    padding: 0;\n    margin-bottom: 20px;\n    height: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option:last-child{\n    margin-bottom: 0px;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected]{\n    color: #fff;\n    background: #000;\n  }\n  livelike-widget-root.custom-widget livelike-description{\n    font-size: 18.5px;\n    font-family: \"HelveticaNeue-Regular\";\n    text-align: left;\n  }\n  livelike-widget-root.custom-widget livelike-percentage{\n    font-size: 21px;\n    font-family: \"HelveticaNeue-CondensedBlack\"\n  }\n  livelike-widget-root.custom-widget livelike-progress{\n    height: 4px;\n    bottom: 0;\n    top: auto;\n    background: #e6e6e6;\n    border-color: #e6e6e6;\n    border-radius: 0;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n    background: #0096ff;\n    border-color: #0096ff;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid{\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-column-gap: 15px;\n    grid-row-gap: 10px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{\n    margin-bottom: 0;\n    min-height: 60px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n    width: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{\n    flex-grow: 1;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{\n    background: #00ff78;\n    border-color: #00ff78;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{\n    background: #ff3c3c;\n    border-color: #ff3c3c;\n  }\n</style>\n<template kind=\"image-prediction-follow-up\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">IMAGE PREDICTION FOLLOW UP</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select class=\"image-grid\">\n        <template>\n          <livelike-option>\n            <div class=\"livelike-voting-image-container\">\n              <div class=\"image-description-wrapper\">\n                <livelike-description></livelike-description>\n              </div>\n              <livelike-percentage></livelike-percentage>\n            </div>\n            <livelike-image height=\"60px\"></livelike-image>\n            <livelike-progress></livelike-progress>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Custom Image Prediction Follow Up"
+## Prediction Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        question
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        options
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        submitVote
+      </td>
+
+      <td>
+        function: (option)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```html Prediction widgets
+<template kind="text-prediction">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+<template kind="image-prediction">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-image height="60px"></livelike-image>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+```
+```html Follow-ups
+<template kind="text-prediction-follow-up">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+<template kind="image-prediction-follow-up">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-image height="60px"></livelike-image>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+```
+```html Custom Image Prediction
+<style>
+  livelike-widget-root.custom-widget livelike-widget-header{
+    background: white;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+  }
+  livelike-widget-root.custom-widget livelike-timer.custom-timer{
+    background: #fac83c;
+    top: 0;
+    height: 5px;
+  }
+  livelike-widget-root.custom-widget .widget-kind{
+    color: #000;
+    opacity: 30%;
+    font-size: 14.5px;
+    letter-spacing: 0.55px;
+    font-family: "HelveticaNeue-Medium";
+    padding: 15px 20px 0 20px;
+  }
+  livelike-widget-root.custom-widget livelike-title.custom-title{
+    color: #000;
+    font-size: 20px;
+    font-family: "HelveticaNeue-Bold";
+    padding: 0 20px;
+    display: block;
+    width: calc(100% - 40px);
+  }
+  livelike-widget-root.custom-widget livelike-widget-body{
+    background: white;
+    padding: 0 20px 20px 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+  }
+  livelike-widget-root.custom-widget livelike-select{
+    background: #fff;
+  }
+  livelike-widget-root.custom-widget livelike-option{
+    color: #000;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option:last-child{
+    margin-bottom: 0px;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected]{
+    color: #fff;
+    background: #000;
+  }
+  livelike-widget-root.custom-widget livelike-description{
+    font-size: 18.5px;
+    font-family: "HelveticaNeue-Regular";
+    text-align: left;
+  }
+  livelike-widget-root.custom-widget livelike-percentage{
+    font-size: 21px;
+    font-family: "HelveticaNeue-CondensedBlack"
+  }
+  livelike-widget-root.custom-widget livelike-progress{
+    height: 4px;
+    bottom: 0;
+    top: auto;
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    border-radius: 0;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+    background: #0096ff;
+    border-color: #0096ff;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{
+    margin-bottom: 0;
+    min-height: 60px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+    width: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{
+    flex-grow: 1;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{
+    background: #00ff78;
+    border-color: #00ff78;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{
+    background: #ff3c3c;
+    border-color: #ff3c3c;
+  }
+</style>
+<template kind="image-prediction">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">IMAGE PREDICTION</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select class="image-grid prediction-widget">
+        <template>
+          <livelike-option>
+            <div class="livelike-voting-image-container">
+              <div class="image-description-wrapper">
+                <livelike-description></livelike-description>
+              </div>
+              <livelike-percentage></livelike-percentage>
+            </div>
+            <livelike-image height="60px"></livelike-image>
+            <livelike-progress></livelike-progress>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+```html Custom Image Prediction Follow Up
+<style>
+  livelike-widget-root.custom-widget livelike-widget-header{
+    background: white;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+  }
+  livelike-widget-root.custom-widget livelike-timer.custom-timer{
+    background: #fac83c;
+    top: 0;
+    height: 5px;
+  }
+  livelike-widget-root.custom-widget .widget-kind{
+    color: #000;
+    opacity: 30%;
+    font-size: 14.5px;
+    letter-spacing: 0.55px;
+    font-family: "HelveticaNeue-Medium";
+    padding: 15px 20px 0 20px;
+  }
+  livelike-widget-root.custom-widget livelike-title.custom-title{
+    color: #000;
+    font-size: 20px;
+    font-family: "HelveticaNeue-Bold";
+    padding: 0 20px;
+    display: block;
+    width: calc(100% - 40px);
+  }
+  livelike-widget-root.custom-widget livelike-widget-body{
+    background: white;
+    padding: 0 20px 20px 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+  }
+  livelike-widget-root.custom-widget livelike-select{
+    background: #fff;
+  }
+  livelike-widget-root.custom-widget livelike-option{
+    color: #000;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option:last-child{
+    margin-bottom: 0px;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected]{
+    color: #fff;
+    background: #000;
+  }
+  livelike-widget-root.custom-widget livelike-description{
+    font-size: 18.5px;
+    font-family: "HelveticaNeue-Regular";
+    text-align: left;
+  }
+  livelike-widget-root.custom-widget livelike-percentage{
+    font-size: 21px;
+    font-family: "HelveticaNeue-CondensedBlack"
+  }
+  livelike-widget-root.custom-widget livelike-progress{
+    height: 4px;
+    bottom: 0;
+    top: auto;
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    border-radius: 0;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+    background: #0096ff;
+    border-color: #0096ff;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{
+    margin-bottom: 0;
+    min-height: 60px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+    width: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{
+    flex-grow: 1;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{
+    background: #00ff78;
+    border-color: #00ff78;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{
+    background: #ff3c3c;
+    border-color: #ff3c3c;
+  }
+</style>
+<template kind="image-prediction-follow-up">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">IMAGE PREDICTION FOLLOW UP</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select class="image-grid">
+        <template>
+          <livelike-option>
+            <div class="livelike-voting-image-container">
+              <div class="image-description-wrapper">
+                <livelike-description></livelike-description>
+              </div>
+              <livelike-percentage></livelike-percentage>
+            </div>
+            <livelike-image height="60px"></livelike-image>
+            <livelike-progress></livelike-progress>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+
+## Poll Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        question
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        options
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        submitVote
+      </td>
+
+      <td>
+        function: (option)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```text
+<template kind="text-poll">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+<template kind="image-poll">
+  <livelike-widget-root>
+    <livelike-widget-header>
+      <livelike-title></livelike-title>
+      <livelike-timer></livelike-timer>
+    </livelike-widget-header>
+    <livelike-select>
+      <template>
+        <livelike-option>
+          <livelike-image height="60px"></livelike-image>
+          <livelike-description></livelike-description>
+          <livelike-percentage></livelike-percentage>
+          <livelike-vote-count></livelike-vote-count>
+        </livelike-option>
+      </template>
+    </livelike-select>
+  </livelike-widget-root>
+</template>
+```
+```html Customized Text Poll
+<style>
+  livelike-widget-root.custom-widget livelike-widget-header{
+    background: white;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+  }
+  livelike-widget-root.custom-widget livelike-timer.custom-timer{
+    background: #fac83c;
+    top: 0;
+    height: 5px;
+  }
+  livelike-widget-root.custom-widget .widget-kind{
+    color: #000;
+    opacity: 30%;
+    font-size: 14.5px;
+    letter-spacing: 0.55px;
+    font-family: "HelveticaNeue-Medium";
+    padding: 15px 20px 0 20px;
+  }
+  livelike-widget-root.custom-widget livelike-title.custom-title{
+    color: #000;
+    font-size: 20px;
+    font-family: "HelveticaNeue-Bold";
+    padding: 0 20px;
+    display: block;
+    width: calc(100% - 40px);
+  }
+  livelike-widget-root.custom-widget livelike-widget-body{
+    background: white;
+    padding: 0 20px 20px 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+  }
+  livelike-widget-root.custom-widget livelike-select{
+    background: #fff;
+  }
+  livelike-widget-root.custom-widget livelike-option{
+    color: #000;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option:last-child{
+    margin-bottom: 0px;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected]{
+    color: #fff;
+    background: #000;
+  }
+  livelike-widget-root.custom-widget livelike-description{
+    font-size: 18.5px;
+    font-family: "HelveticaNeue-Regular";
+    text-align: left;
+  }
+  livelike-widget-root.custom-widget livelike-percentage{
+    font-size: 21px;
+    font-family: "HelveticaNeue-CondensedBlack"
+  }
+  livelike-widget-root.custom-widget livelike-progress{
+    height: 4px;
+    bottom: 0;
+    top: auto;
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    border-radius: 0;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+    background: #0096ff;
+    border-color: #0096ff;
+  }
+</style>
+<template kind="text-poll">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">TEXT POLL</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select>
+        <template>
+          <livelike-option>
+            <div style="width:100%;display:flex;align-items:center;">
+              <livelike-progress></livelike-progress>
+              <livelike-description></livelike-description>
+              <livelike-percentage></livelike-percentage>
+            </div>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+```html Customized Image Poll
+<style>
+  livelike-widget-root.custom-widget livelike-widget-header{
+    background: white;
+    text-align: center;
+    display: block;
+    padding-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+  }
+  livelike-widget-root.custom-widget livelike-timer.custom-timer{
+    background: #fac83c;
+    top: 0;
+    height: 5px;
+  }
+  livelike-widget-root.custom-widget .widget-kind{
+    color: #000;
+    opacity: 30%;
+    font-size: 14.5px;
+    letter-spacing: 0.55px;
+    font-family: "HelveticaNeue-Medium";
+    padding: 15px 20px 0 20px;
+  }
+  livelike-widget-root.custom-widget livelike-title.custom-title{
+    color: #000;
+    font-size: 20px;
+    font-family: "HelveticaNeue-Bold";
+    padding: 0 20px;
+    display: block;
+    width: calc(100% - 40px);
+  }
+  livelike-widget-root.custom-widget livelike-widget-body{
+    background: white;
+    padding: 0 20px 20px 20px;
+    border-radius: 0;
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+  }
+  livelike-widget-root.custom-widget livelike-select{
+    background: #fff;
+  }
+  livelike-widget-root.custom-widget livelike-option{
+    color: #000;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option:last-child{
+    margin-bottom: 0px;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected]{
+    color: #fff;
+    background: #000;
+  }
+  livelike-widget-root.custom-widget livelike-description{
+    font-size: 18.5px;
+    font-family: "HelveticaNeue-Regular";
+    text-align: left;
+  }
+  livelike-widget-root.custom-widget livelike-percentage{
+    font-size: 21px;
+    font-family: "HelveticaNeue-CondensedBlack"
+  }
+  livelike-widget-root.custom-widget livelike-progress{
+    height: 4px;
+    bottom: 0;
+    top: auto;
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    border-radius: 0;
+  }
+  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{
+    background: #0096ff;
+    border-color: #0096ff;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{
+    margin-bottom: 0;
+    min-height: 60px;
+  }
+  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{
+    width: auto;
+  }
+  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{
+    flex-grow: 1;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{
+    background: #00ff78;
+    border-color: #00ff78;
+  }
+  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{
+    background: #ff3c3c;
+    border-color: #ff3c3c;
+  }
+</style>
+<template kind="image-poll">
+  <livelike-widget-root class="custom-widget">
+    <livelike-widget-header class="widget-header" slot="header">
+      <livelike-timer class="custom-timer"></livelike-timer>
+      <div class="widget-kind">IMAGE POLL</div>
+      <livelike-title class="custom-title"></livelike-title>
+    </livelike-widget-header>
+    <livelike-widget-body>
+      <livelike-select class="image-grid">
+        <template>
+          <livelike-option>
+            <div class="livelike-voting-image-container">
+              <div class="image-description-wrapper">
+                <livelike-description></livelike-description>
+              </div>
+              <livelike-percentage></livelike-percentage>
+            </div>
+            <livelike-image height="60px"></livelike-image>
+            <livelike-progress></livelike-progress>
+          </livelike-option>
+        </template>
+      </livelike-select>
+    </livelike-widget-body>
+  </livelike-widget-root>
+</template>
+```
+
+## Slider Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        question
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        options
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        average\_magnitude
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        initial\_magnitude
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        lockInVote
+      </td>
+
+      <td>
+        function: (magnitude: number)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```text
+class CustomSlider extends LiveLikeEmojiSlider {
+      submitButtonClicked = () => {
+        let mag = this.querySelector('#magnitude-input').value;
+        this.submitResults(mag).then((r) => console.log('slider vote submitted', r));
+      }
+      render() {
+        return html`
+          <template>
+            <livelike-widget-root>
+              <livelike-widget-header>
+                <livelike-title slot="title"></livelike-title>
+                <livelike-dismiss-button slot="dismiss"></livelike-dismiss-button>
+                <livelike-timer></livelike-timer>
+              </livelike-widget-header>
+              <livelike-widget-body>
+                <input
+                  type="number"
+                  id="magnitude-input"
+                  value="${this.initial_magnitude}"
+                  min="0" max="1"
+                  style="width:50%"
+                />
+                <button @click=${this.submitButtonClicked}>Submit Vote</button>
+                <livelike-select>
+                  <template>
+                    <livelike-option>
+                      <livelike-image height="60px"></livelike-image>
+                    </livelike-option>
+                  </template>
+                </livelike-select>
+                <div>${this.average_magnitude}</div>
+              </livelike-widget-body>
+            </livelike-widget-root>
+          <template>
+        `;
+      }
     }
-  ]
-}
-[/block]
+    customElements.define("custom-slider", CustomSlider);
+```
+```javascript Custom Slider Widget
+class CustomSlider extends LiveLikeEmojiSlider {
+  render() {
+    const initialMag = Math.round(this.widgetPayload.initial_magnitude * 100);
+    const resultMark =
+      this.phase !== 'interactive' && (this.val || this.val === 0)
+        ? html`
+            <div
+              class="result-mark"
+              style="left: calc(${Math.round(
+                this.average_magnitude * 100
+              )}%)"
+            ></div>
+          `
+        : null;
 
-[block:api-header]
-{
-  "title": "Poll Widget"
+    return html`
+      <template>
+        <style>
+					livelike-widget-root.custom-widget livelike-widget-header{
+            background: white;
+            text-align: center;
+            display: block;
+            padding-bottom: 20px;
+            border-radius: 0;
+            border: 1px solid #e6e6e6;
+            border-bottom: 0;
+          }
+          livelike-widget-root.custom-widget livelike-timer.custom-timer{
+            background: #fac83c;
+            top: 0;
+            height: 5px;
+          }
+          livelike-widget-root.custom-widget .widget-kind{
+            color: #000;
+            opacity: 30%;
+            font-size: 14.5px;
+            letter-spacing: 0.55px;
+            font-family: "HelveticaNeue-Medium";
+            padding: 15px 20px 0 20px;
+          }
+          livelike-widget-root.custom-widget livelike-title.custom-title{
+            color: #000;
+            font-size: 20px;
+            font-family: "HelveticaNeue-Bold";
+            padding: 0 20px;
+            display: block;
+            width: calc(100% - 40px);
+          }
+          livelike-widget-root.custom-widget livelike-widget-body{
+            background: white;
+            padding: 0 20px 20px 20px;
+            border-radius: 0;
+            border: 1px solid #e6e6e6;
+            border-top: 0;
+          }	
+          livelike-widget-root.custom-widget livelike-description{
+            font-size: 18.5px;
+            font-family: "HelveticaNeue-Regular";
+            text-align: left;
+          }
+          .slider-input::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #e6e6e6;
+            background-image: linear-gradient(
+              90deg,
+              #140099,
+              #256eff var(--x),
+              transparent 0
+            );
+          }
+          .slider-input::-moz-range-track {
+            height: 8px;
+            background: #e6e6e6;
+            background-image: linear-gradient(
+              90deg,
+              #140099,
+              #256eff var(--x),
+              transparent 0
+            );
+          }
+          .slider-input::-ms-track {
+            height: 8px;
+            background: #e6e6e6;
+            background-image: linear-gradient(
+              90deg,
+              #140099,
+              #256eff var(--x),
+              transparent 0
+            );
+          }
+        </style>
+        <livelike-widget-root class="custom-widget">
+          <livelike-widget-header class="widget-header" slot="header">
+            <livelike-timer class="custom-timer"></livelike-timer>
+            <div class="widget-kind">EMOJI SLIDER</div>
+            <livelike-title class="custom-title"></livelike-title>
+          </livelike-widget-header>
+          <livelike-widget-body>
+            <form style="--val: ${initialMag};" class="input-form">
+              <div class="input-container">
+                <input
+                  type="range"
+                  class="slider-input"
+                  value="${initialMag}"
+                />
+                ${resultMark}
+              </div>
+              <output class="slider-thumb">
+                <img class="slider-image" />
+              </output>
+            </form>
+          </livelike-widget-body>
+        </livelike-widget-root>
+      </template>
+    `;
+  }
 }
-[/block]
+customElements.define("custom-slider", CustomSlider);
+const widgetContainer = document.querySelector('livelike-widgets');
+	widgetContainer.customWidgetRenderer = function({ widgetPayload }){
+  switch (widgetPayload.kind) {
+    case 'emoji-slider':
+      return document.createElement('custom-slider');
+    default:
+      break;
+  }
+};
+```
 
-[block:parameters]
-{
-  "data": {
-    "0-0": "question",
-    "1-0": "options",
-    "0-1": "string",
-    "1-1": "array",
-    "h-0": "Property",
-    "h-1": "Type",
-    "2-1": "function: (option)",
-    "2-0": "submitVote"
-  },
-  "cols": 2,
-  "rows": 3
-}
-[/block]
+## Text Ask Widget
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<template kind=\"text-poll\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>\n<template kind=\"image-poll\">\n  <livelike-widget-root>\n    <livelike-widget-header>\n      <livelike-title></livelike-title>\n      <livelike-timer></livelike-timer>\n    </livelike-widget-header>\n    <livelike-select>\n      <template>\n        <livelike-option>\n          <livelike-image height=\"60px\"></livelike-image>\n          <livelike-description></livelike-description>\n          <livelike-percentage></livelike-percentage>\n          <livelike-vote-count></livelike-vote-count>\n        </livelike-option>\n      </template>\n    </livelike-select>\n  </livelike-widget-root>\n</template>",
-      "language": "text"
-    },
-    {
-      "code": "<style>\n  livelike-widget-root.custom-widget livelike-widget-header{\n    background: white;\n    text-align: center;\n    display: block;\n    padding-bottom: 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-bottom: 0;\n  }\n  livelike-widget-root.custom-widget livelike-timer.custom-timer{\n    background: #fac83c;\n    top: 0;\n    height: 5px;\n  }\n  livelike-widget-root.custom-widget .widget-kind{\n    color: #000;\n    opacity: 30%;\n    font-size: 14.5px;\n    letter-spacing: 0.55px;\n    font-family: \"HelveticaNeue-Medium\";\n    padding: 15px 20px 0 20px;\n  }\n  livelike-widget-root.custom-widget livelike-title.custom-title{\n    color: #000;\n    font-size: 20px;\n    font-family: \"HelveticaNeue-Bold\";\n    padding: 0 20px;\n    display: block;\n    width: calc(100% - 40px);\n  }\n  livelike-widget-root.custom-widget livelike-widget-body{\n    background: white;\n    padding: 0 20px 20px 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-top: 0;\n  }\n  livelike-widget-root.custom-widget livelike-select{\n    background: #fff;\n  }\n  livelike-widget-root.custom-widget livelike-option{\n    color: #000;\n    border: 1px solid #e6e6e6;\n    padding: 0;\n    margin-bottom: 20px;\n    height: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option:last-child{\n    margin-bottom: 0px;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected]{\n    color: #fff;\n    background: #000;\n  }\n  livelike-widget-root.custom-widget livelike-description{\n    font-size: 18.5px;\n    font-family: \"HelveticaNeue-Regular\";\n    text-align: left;\n  }\n  livelike-widget-root.custom-widget livelike-percentage{\n    font-size: 21px;\n    font-family: \"HelveticaNeue-CondensedBlack\"\n  }\n  livelike-widget-root.custom-widget livelike-progress{\n    height: 4px;\n    bottom: 0;\n    top: auto;\n    background: #e6e6e6;\n    border-color: #e6e6e6;\n    border-radius: 0;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n    background: #0096ff;\n    border-color: #0096ff;\n  }\n</style>\n<template kind=\"text-poll\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">TEXT POLL</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select>\n        <template>\n          <livelike-option>\n            <div style=\"width:100%;display:flex;align-items:center;\">\n              <livelike-progress></livelike-progress>\n              <livelike-description></livelike-description>\n              <livelike-percentage></livelike-percentage>\n            </div>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Customized Text Poll"
-    },
-    {
-      "code": "<style>\n  livelike-widget-root.custom-widget livelike-widget-header{\n    background: white;\n    text-align: center;\n    display: block;\n    padding-bottom: 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-bottom: 0;\n  }\n  livelike-widget-root.custom-widget livelike-timer.custom-timer{\n    background: #fac83c;\n    top: 0;\n    height: 5px;\n  }\n  livelike-widget-root.custom-widget .widget-kind{\n    color: #000;\n    opacity: 30%;\n    font-size: 14.5px;\n    letter-spacing: 0.55px;\n    font-family: \"HelveticaNeue-Medium\";\n    padding: 15px 20px 0 20px;\n  }\n  livelike-widget-root.custom-widget livelike-title.custom-title{\n    color: #000;\n    font-size: 20px;\n    font-family: \"HelveticaNeue-Bold\";\n    padding: 0 20px;\n    display: block;\n    width: calc(100% - 40px);\n  }\n  livelike-widget-root.custom-widget livelike-widget-body{\n    background: white;\n    padding: 0 20px 20px 20px;\n    border-radius: 0;\n    border: 1px solid #e6e6e6;\n    border-top: 0;\n  }\n  livelike-widget-root.custom-widget livelike-select{\n    background: #fff;\n  }\n  livelike-widget-root.custom-widget livelike-option{\n    color: #000;\n    border: 1px solid #e6e6e6;\n    padding: 0;\n    margin-bottom: 20px;\n    height: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option:last-child{\n    margin-bottom: 0px;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected]{\n    color: #fff;\n    background: #000;\n  }\n  livelike-widget-root.custom-widget livelike-description{\n    font-size: 18.5px;\n    font-family: \"HelveticaNeue-Regular\";\n    text-align: left;\n  }\n  livelike-widget-root.custom-widget livelike-percentage{\n    font-size: 21px;\n    font-family: \"HelveticaNeue-CondensedBlack\"\n  }\n  livelike-widget-root.custom-widget livelike-progress{\n    height: 4px;\n    bottom: 0;\n    top: auto;\n    background: #e6e6e6;\n    border-color: #e6e6e6;\n    border-radius: 0;\n  }\n  livelike-widget-root.custom-widget livelike-option[selected] livelike-progress{\n    background: #0096ff;\n    border-color: #0096ff;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid{\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-column-gap: 15px;\n    grid-row-gap: 10px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-option{\n    margin-bottom: 0;\n    min-height: 60px;\n  }\n  livelike-widget-root.custom-widget livelike-select.image-grid livelike-image{\n    width: auto;\n  }\n  livelike-widget-root.custom-widget livelike-option div.livelike-voting-image-container{\n    flex-grow: 1;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[correct] livelike-progress{\n    background: #00ff78;\n    border-color: #00ff78;\n  }\n  livelike-widget-root.custom-widget livelike-select:not(.prediction-widget) livelike-option[incorrect] livelike-progress{\n    background: #ff3c3c;\n    border-color: #ff3c3c;\n  }\n</style>\n<template kind=\"image-poll\">\n  <livelike-widget-root class=\"custom-widget\">\n    <livelike-widget-header class=\"widget-header\" slot=\"header\">\n      <livelike-timer class=\"custom-timer\"></livelike-timer>\n      <div class=\"widget-kind\">IMAGE POLL</div>\n      <livelike-title class=\"custom-title\"></livelike-title>\n    </livelike-widget-header>\n    <livelike-widget-body>\n      <livelike-select class=\"image-grid\">\n        <template>\n          <livelike-option>\n            <div class=\"livelike-voting-image-container\">\n              <div class=\"image-description-wrapper\">\n                <livelike-description></livelike-description>\n              </div>\n              <livelike-percentage></livelike-percentage>\n            </div>\n            <livelike-image height=\"60px\"></livelike-image>\n            <livelike-progress></livelike-progress>\n          </livelike-option>\n        </template>\n      </livelike-select>\n    </livelike-widget-body>\n  </livelike-widget-root>\n</template>",
-      "language": "html",
-      "name": "Customized Image Poll"
-    }
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
 
-[block:api-header]
-{
-  "title": "Slider Widget"
-}
-[/block]
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Property",
-    "h-1": "Type",
-    "0-0": "question",
-    "1-0": "options",
-    "2-0": "average_magnitude",
-    "3-0": "initial_magnitude",
-    "0-1": "string",
-    "2-1": "string",
-    "3-1": "string",
-    "1-1": "array",
-    "4-0": "lockInVote",
-    "4-1": "function: (magnitude: number)"
-  },
-  "cols": 2,
-  "rows": 5
-}
-[/block]
+  <tbody>
+    <tr>
+      <td>
+        title
+      </td>
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class CustomSlider extends LiveLikeEmojiSlider {\n      submitButtonClicked = () => {\n        let mag = this.querySelector('#magnitude-input').value;\n        this.submitResults(mag).then((r) => console.log('slider vote submitted', r));\n      }\n      render() {\n        return html`\n          <template>\n            <livelike-widget-root>\n              <livelike-widget-header>\n                <livelike-title slot=\"title\"></livelike-title>\n                <livelike-dismiss-button slot=\"dismiss\"></livelike-dismiss-button>\n                <livelike-timer></livelike-timer>\n              </livelike-widget-header>\n              <livelike-widget-body>\n                <input\n                  type=\"number\"\n                  id=\"magnitude-input\"\n                  value=\"${this.initial_magnitude}\"\n                  min=\"0\" max=\"1\"\n                  style=\"width:50%\"\n                />\n                <button @click=${this.submitButtonClicked}>Submit Vote</button>\n                <livelike-select>\n                  <template>\n                    <livelike-option>\n                      <livelike-image height=\"60px\"></livelike-image>\n                    </livelike-option>\n                  </template>\n                </livelike-select>\n                <div>${this.average_magnitude}</div>\n              </livelike-widget-body>\n            </livelike-widget-root>\n          <template>\n        `;\n      }\n    }\n    customElements.define(\"custom-slider\", CustomSlider);",
-      "language": "text"
-    },
-    {
-      "code": "class CustomSlider extends LiveLikeEmojiSlider {\n  render() {\n    const initialMag = Math.round(this.widgetPayload.initial_magnitude * 100);\n    const resultMark =\n      this.phase !== 'interactive' && (this.val || this.val === 0)\n        ? html`\n            <div\n              class=\"result-mark\"\n              style=\"left: calc(${Math.round(\n                this.average_magnitude * 100\n              )}%)\"\n            ></div>\n          `\n        : null;\n\n    return html`\n      <template>\n        <style>\n\t\t\t\t\tlivelike-widget-root.custom-widget livelike-widget-header{\n            background: white;\n            text-align: center;\n            display: block;\n            padding-bottom: 20px;\n            border-radius: 0;\n            border: 1px solid #e6e6e6;\n            border-bottom: 0;\n          }\n          livelike-widget-root.custom-widget livelike-timer.custom-timer{\n            background: #fac83c;\n            top: 0;\n            height: 5px;\n          }\n          livelike-widget-root.custom-widget .widget-kind{\n            color: #000;\n            opacity: 30%;\n            font-size: 14.5px;\n            letter-spacing: 0.55px;\n            font-family: \"HelveticaNeue-Medium\";\n            padding: 15px 20px 0 20px;\n          }\n          livelike-widget-root.custom-widget livelike-title.custom-title{\n            color: #000;\n            font-size: 20px;\n            font-family: \"HelveticaNeue-Bold\";\n            padding: 0 20px;\n            display: block;\n            width: calc(100% - 40px);\n          }\n          livelike-widget-root.custom-widget livelike-widget-body{\n            background: white;\n            padding: 0 20px 20px 20px;\n            border-radius: 0;\n            border: 1px solid #e6e6e6;\n            border-top: 0;\n          }\t\n          livelike-widget-root.custom-widget livelike-description{\n            font-size: 18.5px;\n            font-family: \"HelveticaNeue-Regular\";\n            text-align: left;\n          }\n          .slider-input::-webkit-slider-runnable-track {\n            height: 8px;\n            background: #e6e6e6;\n            background-image: linear-gradient(\n              90deg,\n              #140099,\n              #256eff var(--x),\n              transparent 0\n            );\n          }\n          .slider-input::-moz-range-track {\n            height: 8px;\n            background: #e6e6e6;\n            background-image: linear-gradient(\n              90deg,\n              #140099,\n              #256eff var(--x),\n              transparent 0\n            );\n          }\n          .slider-input::-ms-track {\n            height: 8px;\n            background: #e6e6e6;\n            background-image: linear-gradient(\n              90deg,\n              #140099,\n              #256eff var(--x),\n              transparent 0\n            );\n          }\n        </style>\n        <livelike-widget-root class=\"custom-widget\">\n          <livelike-widget-header class=\"widget-header\" slot=\"header\">\n            <livelike-timer class=\"custom-timer\"></livelike-timer>\n            <div class=\"widget-kind\">EMOJI SLIDER</div>\n            <livelike-title class=\"custom-title\"></livelike-title>\n          </livelike-widget-header>\n          <livelike-widget-body>\n            <form style=\"--val: ${initialMag};\" class=\"input-form\">\n              <div class=\"input-container\">\n                <input\n                  type=\"range\"\n                  class=\"slider-input\"\n                  value=\"${initialMag}\"\n                />\n                ${resultMark}\n              </div>\n              <output class=\"slider-thumb\">\n                <img class=\"slider-image\" />\n              </output>\n            </form>\n          </livelike-widget-body>\n        </livelike-widget-root>\n      </template>\n    `;\n  }\n}\ncustomElements.define(\"custom-slider\", CustomSlider);\nconst widgetContainer = document.querySelector('livelike-widgets');\n\twidgetContainer.customWidgetRenderer = function({ widgetPayload }){\n  switch (widgetPayload.kind) {\n    case 'emoji-slider':\n      return document.createElement('custom-slider');\n    default:\n      break;\n  }\n};\n",
-      "language": "javascript",
-      "name": "Custom Slider Widget"
-    }
-  ]
-}
-[/block]
+      <td>
+        String
+      </td>
+    </tr>
 
-[block:api-header]
-{
-  "title": "Text Ask Widget"
-}
-[/block]
+    <tr>
+      <td>
+        prompt
+      </td>
 
-[block:parameters]
-{
-  "data": {
-    "0-0": "title",
-    "1-0": "prompt",
-    "2-0": "confirmation_message",
-    "0-1": "String",
-    "1-1": "String",
-    "2-1": "String",
-    "3-0": "submitReply",
-    "3-1": "function: ()",
-    "h-0": "Property",
-    "h-1": "Type"
-  },
-  "cols": 2,
-  "rows": 4
-}
-[/block]
+      <td>
+        String
+      </td>
+    </tr>
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class CustomTextAsk extends LiveLikeTextAsk {\n  render() {\n    return html`\n      <template>\n        <livelike-widget-root>\n          <livelike-widget-header>\n            <livelike-title></livelike-title>\n            <livelike-timer></livelike-timer>\n            <livelike-dismiss-button></livelike-dismiss-button>\n          </livelike-widget-header>\n          <livelike-widget-body>\n            <span>${this.prompt}</span>\n            <form>\n              <textarea\n                class=\"text-ask-input\"\n                type=\"text\"\n                name=\"reply\"\n                rows=\"2\"\n                .value = ${this.text}\n                maxlength=\"${this.maxlength}\"\n                ?disabled=\"${this.disabled}\"\n                placeholder=\"Type something...\"\n                @input=${this.inputHandler}\n              ></textarea>\n              ${ this.disabled ? null : html`<span class=\"text-ask-input-counter\">${this.maxlength}</span>` }\n            </form>\n            <button\n              @click=${this.submitReply}\n              ?disabled=\"${this.disabled || this.replyDisable}\"\n            >\n              <span>SEND</span>\n            </button>\n            <div class=\"${!this.showConfirmation ? 'hidden' : ''}\">\n              <span>${this.confirmation_message}</span>\n            </div>\n          </livelike-widget-body>\n        </livelike-widget-root>\n      </template>\n    `;\n  }\n}\ncustomElements.define(\"custom-text-ask\", CustomTextAsk);\n\nconst customWidgetRenderer = (args) => {\n  let widgetPayload = args.widgetPayload;\n  if( widgetPayload.kind === 'text-ask'){\n    return document.createElement('custom-text-ask');\n  }\n}\n\nlet w = document.querySelector('livelike-widgets');\nw.customWidgetRenderer = customWidgetRenderer;",
-      "language": "text",
-      "name": "Extend Text Ask Class"
-    }
-  ]
-}
-[/block]
+    <tr>
+      <td>
+        confirmation\_message
+      </td>
 
-[block:api-header]
-{
-  "title": "Number Prediction Widget"
-}
-[/block]
+      <td>
+        String
+      </td>
+    </tr>
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Property",
-    "h-1": "Type",
-    "0-0": "question",
-    "0-1": "String",
-    "1-0": "options",
-    "1-1": "Array",
-    "2-0": "updateOption",
-    "2-1": "function: (option, number: Integer)",
-    "3-0": "lockInVote",
-    "3-1": "function: (options: Array)"
-  },
-  "cols": 2,
-  "rows": 4
-}
-[/block]
+    <tr>
+      <td>
+        submitReply
+      </td>
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class CustomImagePrediction extends LiveLikeNumberPrediction{\n  inputHandler = (e, option) => {\n    this.updateOption(option,+e.target.value);\n  }\n  render(){\n    return html `\n      <template>\n        <livelike-widget-root>\n          <livelike-widget-header slot=\"header\">\n            <livelike-title slot=\"title\"></livelike-title>\n            <livelike-dismiss-button slot=\"dismiss\"></livelike-dismiss-button>\n            <livelike-timer></livelike-timer>\n          </livelike-widget-header>\n          <livelike-widget-body>\n            ${this.options.map((option,idx) => {\n              return html `\n              <livelike-option index=\"${idx}\">\n                <input \n                  type=\"number\" \n                  .value=\"${option.number}\"\n                  @input=${(e) => this.inputHandler(e,option)}\n                  ?disabled=\"${this.disabled || this.voteDisable}\"\n                />\n                <livelike-description></livelike-description>\n                <livelike-image height=\"80px\" width=\"80px\"></livelike-image>\n              </livelike-option>\n              `;\n            })}\n            <livelike-footer>\n              <button\n                @click=${() => this.lockInVote(this.options)}\n                ?disabled=\"${this.disabled || this.voteDisable || this.voteButtonDisabled}\"\n              >Vote</button>\n            </livelike-footer>\n          </livelike-widget-body>\n        </livelike-widget-root>\n      </template>\n    `;\n  }\n}\ncustomElements.define(\"custom-image-prediction\", CustomImagePrediction);\n\nconst customWidgetRenderer = (args) => {\n  let widgetPayload = args.widgetPayload;\n  if( widgetPayload.kind === 'image-number-prediction'){\n    return document.createElement('custom-image-prediction');\n  }\n}\n\nlet w = document.querySelector('livelike-widgets');\nw.customWidgetRenderer = customWidgetRenderer;",
-      "language": "text",
-      "name": "Image Number Prediction"
-    },
-    {
-      "code": "class CustomImageFollowUp extends LiveLikeNumberFollowUp{\n  render(){\n    return html `\n      <template>\n        <livelike-widget-root>\n          <livelike-widget-header slot=\"header\">\n            <livelike-title slot=\"title\"></livelike-title>\n            <livelike-dismiss-button slot=\"dismiss\"></livelike-dismiss-button>\n            <livelike-timer></livelike-timer>\n          </livelike-widget-header>\n          <livelike-widget-body>\n            ${this.options.map((option,idx) => {\n              return html `\n              <livelike-option index=\"${idx}\">\n                <div>\n                  <span>User Input</span>\n                  <input \n                    type=\"number\" \n                    value=\"${option.number}\"\n                    disabled\n                  />\n                  <span>Correct Answer</span>\n                  <input \n                    type=\"number\" \n                    value=\"${option.correct_number}\"\n                    disabled\n                  />\n                </div>\n                <livelike-description></livelike-description>\n                <livelike-image height=\"80px\" width=\"80px\"></livelike-image>\n              </livelike-option>\n              `;\n            })}\n          </livelike-widget-body>\n        </livelike-widget-root>\n      </template>\n    `;\n  }\n}\ncustomElements.define(\"custom-image-followup\", CustomImageFollowUp);\n\nconst customWidgetRenderer = (args) => {\n  let widgetPayload = args.widgetPayload;\n  if(widgetPayload.kind === 'image-number-prediction-follow-up'){\n    return document.createElement('custom-image-followup');\n  }\n}\n\nlet w = document.querySelector('livelike-widgets');\nw.customWidgetRenderer = customWidgetRenderer;",
-      "language": "text",
-      "name": "Image Number Prediction Follow Up"
-    }
-  ]
+      <td>
+        function: ()
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```text Extend Text Ask Class
+class CustomTextAsk extends LiveLikeTextAsk {
+  render() {
+    return html`
+      <template>
+        <livelike-widget-root>
+          <livelike-widget-header>
+            <livelike-title></livelike-title>
+            <livelike-timer></livelike-timer>
+            <livelike-dismiss-button></livelike-dismiss-button>
+          </livelike-widget-header>
+          <livelike-widget-body>
+            <span>${this.prompt}</span>
+            <form>
+              <textarea
+                class="text-ask-input"
+                type="text"
+                name="reply"
+                rows="2"
+                .value = ${this.text}
+                maxlength="${this.maxlength}"
+                ?disabled="${this.disabled}"
+                placeholder="Type something..."
+                @input=${this.inputHandler}
+              ></textarea>
+              ${ this.disabled ? null : html`<span class="text-ask-input-counter">${this.maxlength}</span>` }
+            </form>
+            <button
+              @click=${this.submitReply}
+              ?disabled="${this.disabled || this.replyDisable}"
+            >
+              <span>SEND</span>
+            </button>
+            <div class="${!this.showConfirmation ? 'hidden' : ''}">
+              <span>${this.confirmation_message}</span>
+            </div>
+          </livelike-widget-body>
+        </livelike-widget-root>
+      </template>
+    `;
+  }
 }
-[/block]
+customElements.define("custom-text-ask", CustomTextAsk);
+
+const customWidgetRenderer = (args) => {
+  let widgetPayload = args.widgetPayload;
+  if( widgetPayload.kind === 'text-ask'){
+    return document.createElement('custom-text-ask');
+  }
+}
+
+let w = document.querySelector('livelike-widgets');
+w.customWidgetRenderer = customWidgetRenderer;
+```
+
+## Number Prediction Widget
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        question
+      </td>
+
+      <td>
+        String
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        options
+      </td>
+
+      <td>
+        Array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        updateOption
+      </td>
+
+      <td>
+        function: (option, number: Integer)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        lockInVote
+      </td>
+
+      <td>
+        function: (options: Array)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```text Image Number Prediction
+class CustomImagePrediction extends LiveLikeNumberPrediction{
+  inputHandler = (e, option) => {
+    this.updateOption(option,+e.target.value);
+  }
+  render(){
+    return html `
+      <template>
+        <livelike-widget-root>
+          <livelike-widget-header slot="header">
+            <livelike-title slot="title"></livelike-title>
+            <livelike-dismiss-button slot="dismiss"></livelike-dismiss-button>
+            <livelike-timer></livelike-timer>
+          </livelike-widget-header>
+          <livelike-widget-body>
+            ${this.options.map((option,idx) => {
+              return html `
+              <livelike-option index="${idx}">
+                <input 
+                  type="number" 
+                  .value="${option.number}"
+                  @input=${(e) => this.inputHandler(e,option)}
+                  ?disabled="${this.disabled || this.voteDisable}"
+                />
+                <livelike-description></livelike-description>
+                <livelike-image height="80px" width="80px"></livelike-image>
+              </livelike-option>
+              `;
+            })}
+            <livelike-footer>
+              <button
+                @click=${() => this.lockInVote(this.options)}
+                ?disabled="${this.disabled || this.voteDisable || this.voteButtonDisabled}"
+              >Vote</button>
+            </livelike-footer>
+          </livelike-widget-body>
+        </livelike-widget-root>
+      </template>
+    `;
+  }
+}
+customElements.define("custom-image-prediction", CustomImagePrediction);
+
+const customWidgetRenderer = (args) => {
+  let widgetPayload = args.widgetPayload;
+  if( widgetPayload.kind === 'image-number-prediction'){
+    return document.createElement('custom-image-prediction');
+  }
+}
+
+let w = document.querySelector('livelike-widgets');
+w.customWidgetRenderer = customWidgetRenderer;
+```
+```text Image Number Prediction Follow Up
+class CustomImageFollowUp extends LiveLikeNumberFollowUp{
+  render(){
+    return html `
+      <template>
+        <livelike-widget-root>
+          <livelike-widget-header slot="header">
+            <livelike-title slot="title"></livelike-title>
+            <livelike-dismiss-button slot="dismiss"></livelike-dismiss-button>
+            <livelike-timer></livelike-timer>
+          </livelike-widget-header>
+          <livelike-widget-body>
+            ${this.options.map((option,idx) => {
+              return html `
+              <livelike-option index="${idx}">
+                <div>
+                  <span>User Input</span>
+                  <input 
+                    type="number" 
+                    value="${option.number}"
+                    disabled
+                  />
+                  <span>Correct Answer</span>
+                  <input 
+                    type="number" 
+                    value="${option.correct_number}"
+                    disabled
+                  />
+                </div>
+                <livelike-description></livelike-description>
+                <livelike-image height="80px" width="80px"></livelike-image>
+              </livelike-option>
+              `;
+            })}
+          </livelike-widget-body>
+        </livelike-widget-root>
+      </template>
+    `;
+  }
+}
+customElements.define("custom-image-followup", CustomImageFollowUp);
+
+const customWidgetRenderer = (args) => {
+  let widgetPayload = args.widgetPayload;
+  if(widgetPayload.kind === 'image-number-prediction-follow-up'){
+    return document.createElement('custom-image-followup');
+  }
+}
+
+let w = document.querySelector('livelike-widgets');
+w.customWidgetRenderer = customWidgetRenderer;
+```
