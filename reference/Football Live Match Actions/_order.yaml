@@ -1,3 +1,4 @@
 - create-match-action
 - update-match-action
 - get-match-action
+- delete-match-action
