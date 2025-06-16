@@ -24,21 +24,7 @@ Reach out to your LiveLike representative to enable the leaderboard feature for 
 
 Once leaderboards are enabled, create a quest in the Producer Suite. Make sure to enable rewards for the quest.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1e0c29432507e556b0281e9c6e696bdf0b53a6f560bcfaa48361bdf743017200-Screenshot_2024-09-26_at_1.31.58_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/1e0c29432507e556b0281e9c6e696bdf0b53a6f560bcfaa48361bdf743017200-Screenshot_2024-09-26_at_1.31.58_PM.png" />
 
 ## 3. Select a Reward
 
@@ -47,41 +33,13 @@ While setting up the quest, choose a reward item. Upon selecting a reward, youâ€
 1. **Update All Leaderboards.**
 2. **Update Selected Leaderboards**
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8e6234583400751d4a9abd2df5ab7dcee5ea97e1608f2bfb8757956ede98568d-Screenshot_2024-09-26_at_1.38.05_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/8e6234583400751d4a9abd2df5ab7dcee5ea97e1608f2bfb8757956ede98568d-Screenshot_2024-09-26_at_1.38.05_PM.png" />
 
 ## 4. Choose Leaderboards to Update
 
 If you select Update Selected Leaderboards, a list of leaderboards linked to the reward item will appear. Choose which leaderboard(s) youâ€™d like to update.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/3e12e821d4c21a9f85d0efed2b4f2051bfb7434dd8814cc081f77ded0d449174-Screenshot_2024-09-26_at_1.40.55_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/3e12e821d4c21a9f85d0efed2b4f2051bfb7434dd8814cc081f77ded0d449174-Screenshot_2024-09-26_at_1.40.55_PM.png" />
 
 ## 5. Save Your Configuration
 
