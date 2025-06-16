@@ -28,7 +28,8 @@ These APIs require relevant RBAC permissions on the calling profile to perform t
 2. delete-program-ban
 3. view-program-ban
 
-<br>
+<br />
 
-> 📘 These permissions are also a part of the `program-moderator` role template offered by Livelike.  
+> 📘 These permissions are also a part of the `program-moderator` role template offered by Livelike.
+>
 > Using producer tokens would bypass these permission checks
