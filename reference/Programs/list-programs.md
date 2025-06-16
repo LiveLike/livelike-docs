@@ -14,10 +14,7 @@ next:
   description: ''
 ---
 This endpoint returns the collection of all programs for a given application.
-[block:callout]
-{
-  "type": "warning",
-  "title": "Client ID parameter is required",
-  "body": "The client_id query parameter must be provided when calling this endpoint. Leaving it out will cause an error response to be returned."
-}
-[/block]
+
+> 🚧 Client ID parameter is required
+>
+> The client\_id query parameter must be provided when calling this endpoint. Leaving it out will cause an error response to be returned.
