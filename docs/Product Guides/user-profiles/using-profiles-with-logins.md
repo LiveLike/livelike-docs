@@ -32,35 +32,22 @@ There are two ways to obtain a profile:
 1. Client-side, using one of the SDKs.
 2. Server-side, [using the REST API](ref:using-profiles-api).
 
-Once you have a profile instance, you can do things like change its display name and have it join chats. When a profile is created, it includes an <<glossary:Access Token>>. This works like a credential, and is what your app needs to save to re-use the profile associated with it. Try to keep it a secret, because anyone who has that access token can use it to modify the profile.
+Once you have a profile instance, you can do things like change its display name and have it join chats. When a profile is created, it includes an <Glossary>Access Token</Glossary>. This works like a credential, and is what your app needs to save to re-use the profile associated with it. Try to keep it a secret, because anyone who has that access token can use it to modify the profile.
 
 > 📘 Want to use your own user IDs?
-> 
+>
 > You can associate your own IDs with profiles by using [Custom Profile IDs](doc:custom-profile-ids).
 
 ## Associate the Profile with a User
 
 If you know which user to associate the profile with, you should store the access token on your user record. Here are some common scenarios:
 
-- A logged-in user enters a section of the app that has chat or widgets for the first time. Their user account doesn't have a LiveLike access token already stored on it, so a new profile is created with the LiveLike SDK. You then store the access token in the logged-in user's account records.
-- A new user signs up in your app. Your backend calls the LiveLike API to create the profile, and stores the profile access token on the new user record.
+* A logged-in user enters a section of the app that has chat or widgets for the first time. Their user account doesn't have a LiveLike access token already stored on it, so a new profile is created with the LiveLike SDK. You then store the access token in the logged-in user's account records.
+* A new user signs up in your app. Your backend calls the LiveLike API to create the profile, and stores the profile access token on the new user record.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cc74a91-Login_Integration.png",
-        "Login Integration.png",
-        630
-      ],
-      "align": "center",
-      "caption": "An existing user logging in to an app with the LiveLike SDK integrated."
-    }
-  ]
-}
-[/block]
-
+<Image title="Login Integration.png" alt={630} align="center" src="https://files.readme.io/cc74a91-Login_Integration.png">
+  An existing user logging in to an app with the LiveLike SDK integrated.
+</Image>
 
 Now going forward, the LiveLike SDK's should be initialized with that access token. The user associated with that profile will now continue to earn points, gain ranks on the leaderboard, and everything else that the LiveLike SDK allows. Storing the profile access token on the user record allows progress to be saved across installs, devices, and platforms.
 
