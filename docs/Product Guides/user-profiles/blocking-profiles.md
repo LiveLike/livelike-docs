@@ -18,13 +18,13 @@ Sometimes users are not comfortable, or are being harassed by another user. In o
 
 When someone blocks someone else, they prevent the blocked user from:
 
-- inviting them to chat rooms.
-- adding them to chat rooms.
-- directly replying to their comments.
-- commenting on boards they own, and vice versa.
+* inviting them to chat rooms.
+* adding them to chat rooms.
+* directly replying to their comments.
+* commenting on boards they own, and vice versa.
 
 > 📘 Note:
-> 
+>
 > Block User is now supported in default ChatView from Android SDK 2.41 and Web SDK 2.15
 
 ## Creating a Block
@@ -204,7 +204,7 @@ sdk.chat().getProfileBlockInfo(<profileId>,object : LiveLikeCallback<BlockedInfo
 You can add listeners/delegators for getting real time block/unblock profile events
 
 > 📘 Platform specific implementation
-> 
+>
 > Implementation for receiving real time events is different for Web, Android and IOS.
 
 ```javascript
