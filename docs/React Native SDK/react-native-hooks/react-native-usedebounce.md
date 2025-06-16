@@ -29,9 +29,9 @@ const debouncedFunction = useDebounce({
 
 #### `callback`
 
-| Type                     | Default    |
-| :----------------------- | :--------- |
-| Function (**Required**)  | No Default |
+| Type                    | Default    |
+| :---------------------- | :--------- |
+| Function (**Required**) | No Default |
 
 #### `timer`
 
