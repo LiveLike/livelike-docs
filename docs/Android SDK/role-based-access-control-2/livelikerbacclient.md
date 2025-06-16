@@ -12,12 +12,12 @@ next:
 ---
 ## Working with LiveLikeRBACClient
 
-- **Roles** are assigned to profiles and permission checks are performed against the authenticated profile's roles when they are performing some action. A profile can be assigned more than one role.
-- **Permissions** represent an action a user can perform, like posting a comment or deleting a board. Permissions are granted to roles, and in effect a role is a named set of permissions. Once a role is assigned to a profile, that profile has all of that role's permissions.
-- **Scopes** control which resources the role assignment is effective in. A role assignment is valid for one or more scopes.
-- **Resources** are the entities that profiles act upon. Resources are things like Applications, Programs, Comment Boards, Chat Rooms, Chat Room Messages, and so on.
+* **Roles** are assigned to profiles and permission checks are performed against the authenticated profile's roles when they are performing some action. A profile can be assigned more than one role.
+* **Permissions** represent an action a user can perform, like posting a comment or deleting a board. Permissions are granted to roles, and in effect a role is a named set of permissions. Once a role is assigned to a profile, that profile has all of that role's permissions.
+* **Scopes** control which resources the role assignment is effective in. A role assignment is valid for one or more scopes.
+* **Resources** are the entities that profiles act upon. Resources are things like Applications, Programs, Comment Boards, Chat Rooms, Chat Room Messages, and so on.
 
-#### 
+####
 
 ### Create a Role assignment
 
