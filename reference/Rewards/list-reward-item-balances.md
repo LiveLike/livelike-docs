@@ -14,8 +14,9 @@ next:
   description: ''
 ---
 [block:textarea]
+```json
 {
   "text": "Requires Producer Token or User Access Token associated with the profile",
   "sidebar": true
 }
-[/block]
+```
