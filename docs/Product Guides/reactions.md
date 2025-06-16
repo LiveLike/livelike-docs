@@ -12,38 +12,23 @@ next:
 ---
 Use the Reactions service to add user reactions to your content. Anything that can be referenced by a unique identifier is eligible for reactions, so everything ranging from built-in LiveLike components to your own custom content can support user reactions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a165ca3-ReactionsAsAService.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/a165ca3-ReactionsAsAService.png" />
 
 > 📘 Available since:
-> 
+>
 > **Web SDK** `2.29.0`
-> 
+>
 > **Android SDK** `2.54`
-> 
+>
 > **iOS SDK** `2.51`
 
 ## Reactions Basics
 
 The reactions service consists of a few components.
 
-- A **Reaction Pack** defines a set of reaction types. Each pack can have many reaction types inside of it, and each type has an ID, name, and image asset. Once a pack is created it can be associated with spaces in order to make its reaction types available inside those spaces.
-- A **Reaction Space** acts as namespace and mapping for content. Targets within each space represent individual units inside the space that can be reacted to. Packs can be linked with spaces to control which reactions are available to use inside those spaces. Reaction spaces are usually mapped one-to-one with content like chat rooms, comment boards, blog posts, videos, and so on.
-- A **User Reaction** is an instance of a user adding their reaction to some target within the space.
+* A **Reaction Pack** defines a set of reaction types. Each pack can have many reaction types inside of it, and each type has an ID, name, and image asset. Once a pack is created it can be associated with spaces in order to make its reaction types available inside those spaces.
+* A **Reaction Space** acts as namespace and mapping for content. Targets within each space represent individual units inside the space that can be reacted to. Packs can be linked with spaces to control which reactions are available to use inside those spaces. Reaction spaces are usually mapped one-to-one with content like chat rooms, comment boards, blog posts, videos, and so on.
+* A **User Reaction** is an instance of a user adding their reaction to some target within the space.
 
 ## Typical Reactions Workflow
 
@@ -411,7 +396,7 @@ reactionSession.subscribeToReactionSpaceDelegate(<key>, object: ReactionSpaceDel
 ```
 
 > 📘 Real Time Events (iOS)
-> 
+>
 > For iOS SDK, please conform to the respective Delegates
 
 ### Real Time User Reaction events
@@ -439,7 +424,7 @@ func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace new
 ### User Reactions API
 
 > 📘 Note:
-> 
+>
 > **Reaction Session** is an interface to interact with the reactions space exposed by Android and IOS SDK.
 
 #### Create Reaction Session
@@ -550,7 +535,7 @@ reactionSession.getUserReactions(
 
 #### Count User Reactions by target IDs
 
-This API could be used in case you just need reaction with total count for a given target Id.  
+This API could be used in case you just need reaction with total count for a given target Id.\
 You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.    
 
 ```javascript
