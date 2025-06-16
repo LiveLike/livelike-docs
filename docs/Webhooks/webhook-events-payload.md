@@ -314,7 +314,7 @@ This document details the webhook events sent by our system, including their pay
 | Field Name                   | Type       | Description                                                             |
 | :--------------------------- | :--------- | :---------------------------------------------------------------------- |
 | `id`                         | `string`   | Unique identifier for the event                                         |
-| `event`                      | `string`   | Event type {`comment-reply-created`}                                    |
+| `event`                      | `string`   | Event type \{`comment-reply-created`}                                   |
 | `data.reply_comment_id`      | `string`   | Unique identifer for the comment reply                                  |
 | `data.reply_author_id`       | `string`   | Unique identifier for the author of the new comment reply               |
 | `data.reply_author_nickname` | `string`   | Nickname for the author of the new comment reply                        |
