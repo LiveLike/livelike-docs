@@ -16,8 +16,8 @@ A guide for managing Chat Rooms
 
 ## Creating a Chat Room
 
-Users can create a chat room with an optional title, optional visibility and optional list of ChatRoomTokenGate object.  
-**Parameters**: Title(Optional) , Visibility(Optional,Default value: everyone), tokenGates(Optional,Default value: null)  
+Users can create a chat room with an optional title, optional visibility and optional list of ChatRoomTokenGate object.\
+**Parameters**: Title(Optional) , Visibility(Optional,Default value: everyone), tokenGates(Optional,Default value: null)\
 **Response:** ChatRoomInfo Object, it contains the newly created chatroom Id and title
 
 ```kotlin
@@ -49,8 +49,8 @@ sdk.chat().createChatRoom(
 
 ## Update Chat Room
 
-Users can update the chat room with title and visibility.  
-**Parameters**: Title(Optional) , Visibility(Optional)  
+Users can update the chat room with title and visibility.\
+**Parameters**: Title(Optional) , Visibility(Optional)\
 **Response:** ChatRoomInfo Object, it contains the updated chatroom Id and title
 
 ```kotlin
@@ -86,7 +86,7 @@ See [Chat Room Membership](https://docs.livelike.com/docs/chatroom-membership-an
 
 ## Chat Room User Mute
 
-Using our producer suite website, a producer has the ability to mute a user. Muting a user disables their ability to send messages to the room they were muted in.  
+Using our producer suite website, a producer has the ability to mute a user. Muting a user disables their ability to send messages to the room they were muted in.\
 As an integrator you have the option to query our backend to find out whether a user is muted or not  inside a chat room .
 
 ```kotlin
