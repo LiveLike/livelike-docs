@@ -14,39 +14,39 @@ next:
 
 1. Initialization
 
-   - [Loading SDK as script](#loading-sdk-as-script)
-   - [Loading SDK as Node Module](#loading-sdk-as-node-module)
-   - [Minimum initialization](#minimum-initialization)
-   - [Accessing profile from initialization](#accessing-profile-from-initialization)
-   - [Initialization with logger active](#initialization-with-logger-active)
-   - [Initialization with custom translations](#initialization-with-custom-translations)
-   - [Initialization with custom theme](#initialization-with-custom-theme)
-   - [Initializing with profile access token](#initializing-with-profile-access-token)
-   - [Initializing with custom profile nickname](#initializing-with-custom-profile-nickname)
-   - [Updating profile nickname after initialization](#updating-profile-nickname-after-initialization)
-   - [Initializing with loaded accessToken](#initializing-with-loaded-accessToken)
-   - [Initializing with loaded accessToken and ensuring nicknames match](#initializing-with-loaded-accessToken-and-ensuring-nicknames-match)
-   - [Ensuring LiveLike SDK is loaded without Promises](#ensuring-livelike-sdk-is-loaded-without-promises)
+   * [Loading SDK as script](#loading-sdk-as-script)
+   * [Loading SDK as Node Module](#loading-sdk-as-node-module)
+   * [Minimum initialization](#minimum-initialization)
+   * [Accessing profile from initialization](#accessing-profile-from-initialization)
+   * [Initialization with logger active](#initialization-with-logger-active)
+   * [Initialization with custom translations](#initialization-with-custom-translations)
+   * [Initialization with custom theme](#initialization-with-custom-theme)
+   * [Initializing with profile access token](#initializing-with-profile-access-token)
+   * [Initializing with custom profile nickname](#initializing-with-custom-profile-nickname)
+   * [Updating profile nickname after initialization](#updating-profile-nickname-after-initialization)
+   * [Initializing with loaded accessToken](#initializing-with-loaded-accessToken)
+   * [Initializing with loaded accessToken and ensuring nicknames match](#initializing-with-loaded-accessToken-and-ensuring-nicknames-match)
+   * [Ensuring LiveLike SDK is loaded without Promises](#ensuring-livelike-sdk-is-loaded-without-promises)
 
 2. Profile
 
-   - [Getting Profile](#getting-profile)
-   - [Updating Profile](#updating-profile)
+   * [Getting Profile](#getting-profile)
+   * [Updating Profile](#updating-profile)
 
 3. Widgets
 
-   - [Creating a custom pop-up mode](#Creating-a-custom-pop-up-mode)
-   - [Creating a custom mode where widgets are interactive indefinitely](#creating-a-custom-mode-where-widgets-are-interactive-indefinitely)
-   - [Creating a custom timeline mode](#Creating-a-custom-timeline-mode)
-   - [Creating a custom widget mode with animations](#Creating-a-custom-widget-mode-with-animations)
-   - [Set widget theme styles](#set-widget-theme-styles)
-   - [Set widget translations](#set-widget-translations)
-   - [Add sounds to widget interactions](#add-sounds-to-widget-interactions)
-   - [Displaying a single widget HTML tag](#displaying-a-single-widget-html-tag)
-   - [Displaying a previews widget](#displaying-a-preview-widget)
-   - [Creating widget element programmatically](#creating-widget-element-programmatically)
-   - [Creating widget element programmatically with custom mode](#creating-widget-element-programmatically-with-custom-mode)
-   - [Creating custom widget template](#creating-custom-widget-template)
+   * [Creating a custom pop-up mode](#Creating-a-custom-pop-up-mode)
+   * [Creating a custom mode where widgets are interactive indefinitely](#creating-a-custom-mode-where-widgets-are-interactive-indefinitely)
+   * [Creating a custom timeline mode](#Creating-a-custom-timeline-mode)
+   * [Creating a custom widget mode with animations](#Creating-a-custom-widget-mode-with-animations)
+   * [Set widget theme styles](#set-widget-theme-styles)
+   * [Set widget translations](#set-widget-translations)
+   * [Add sounds to widget interactions](#add-sounds-to-widget-interactions)
+   * [Displaying a single widget HTML tag](#displaying-a-single-widget-html-tag)
+   * [Displaying a previews widget](#displaying-a-preview-widget)
+   * [Creating widget element programmatically](#creating-widget-element-programmatically)
+   * [Creating widget element programmatically with custom mode](#creating-widget-element-programmatically-with-custom-mode)
+   * [Creating custom widget template](#creating-custom-widget-template)
 
 ## SDK Initialization
 
@@ -172,13 +172,13 @@ fetchSavedUserProfile().then((savedProfile) =>
 );
 ```
 
-**Note: ** The `fetchSavedUserProfile` function is a placeholder for one of your functions that will fetch your saved user profile.
+**Note:** The `fetchSavedUserProfile` function is a placeholder for one of your functions that will fetch your saved user profile.
 
 The `saveUserProfile` function is a placeholder for one of your functions that will save the LiveLike profile to your backend, localStorage, etc.
 
-If your saved user profile contains an access_token, it will be used to initialize the application, and the correct LiveLike profile will be loaded.
+If your saved user profile contains an access\_token, it will be used to initialize the application, and the correct LiveLike profile will be loaded.
 
-If you saved user profile does not contain an access_token, the LiveLike profile is saved.
+If you saved user profile does not contain an access\_token, the LiveLike profile is saved.
 
 ### Initializing with loaded accessToken and ensuring nicknames match
 
