@@ -35,8 +35,6 @@ addCommentReply({
 }).then(comment => console.log(comment));
 ```
 
-
-
 ## List of comments replies
 
 A "getCommentReplies" API would likely be used to retrieve all the replies to a specific comment on a particular comment board or thread. The function takes in several parameters, including the ID of the comment board and the ID of the comment for which replies are being requested, as well as a sorting value that determines the order in which replies will be returned. The function returns a promise that resolves with an array of comment objects representing each of the replies.
@@ -48,8 +46,6 @@ A "getCommentReplies" API would likely be used to retrieve all the replies to a 
 **sorting**: This parameter is an optional value that determines the order in which replies will be returned. The possible values for this parameter will depend on the specific API being used, but in this case, it appears that the CommentSort.NEWEST value is being used to sort replies in descending order based on their creation date (i.e., newest replies first).
 
 **API Definition**: [getCommentReplies](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getCommentReplies)
-
-
 
 ```javascript
 import { getCommentReplies } from '@livelike/javascript'
