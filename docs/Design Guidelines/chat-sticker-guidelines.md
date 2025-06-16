@@ -13,28 +13,22 @@ next:
   description: ''
 ---
 Use the following guidelines when designing stickers and reactions to be used in chat. New sticker and reaction packs can be created inside of the Producer Suite.
-[block:api-header]
-{
-  "title": "Sticker Packs"
-}
-[/block]
+
+## Sticker Packs
+
 * Pack Icon dimensions: 120x120 px
 * Pack Icon format: Transparent PNG
 * Pack Icon file size: 1MB or less
 * Recommended number of stickers per pack: 4 or more
-[block:api-header]
-{
-  "title": "Stickers"
-}
-[/block]
+
+## Stickers
+
 * Sticker dimensions: 240x240 px
 * Sticker format: PNG or GIF (recommend in transparent background)
 * Sticker file size: 2MB or less
-[block:api-header]
-{
-  "title": "Reactions"
-}
-[/block]
+
+## Reactions
+
 * Reaction dimensions: 120x120 px
 * Reaction format: PNG
 * Reaction file size: 1MB or less
