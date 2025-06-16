@@ -17,8 +17,8 @@ next:
 In Order to show or pin some important message in chat, users can use these APIs. The APIs allow users to pin messages with real-time listeners to all the chatroom listeners.
 
 > 🚧 Note
-> 
-> Only the Producer or creators of the chatroom are allowed to pin messages.  
+>
+> Only the Producer or creators of the chatroom are allowed to pin messages.\
 > These are access control through backend API's so can be controlled/managed easily.
 
 ## Pin Message
@@ -28,7 +28,7 @@ In Order to show or pin some important message in chat, users can use these APIs
 **API Definition**: [pinMessage](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=pinMessage) 
 
 > 📘 What is PinMessageInfo?
-> 
+>
 > `PinMessageInfo` is an object which contains information related to pin messages like `roomId`, `messageId`, `pinById` etc. For doing any operation on pinned message, you may require the pinMessageInfo id (that could be fetched using `getPinMessageInfoList` API)
 
 ```javascript
@@ -43,8 +43,6 @@ pinMessage({
   }
 }).then(pinMessageInfo => console.log(pinMessageInfo))
 ```
-
-
 
 ## Unpin Message
 
@@ -65,8 +63,6 @@ unpinMessage({
 })
 ```
 
-
-
 ## List Of Pin Messages
 
 To get the list of pin messages, use **getPinMessageInfoList** API which requires **roomId** and optional **orderBy** that returns list of pin message info.
@@ -74,7 +70,7 @@ To get the list of pin messages, use **getPinMessageInfoList** API which require
 **API Definition**: [getPinMessageInfoList](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getPinMessageInfoList)
 
 > 📘 Ordering of List of PinMessageInfo
-> 
+>
 > `getPinMessageInfoList` accepts a parameter **orderBy** which lets you choose if the list should be received in ascending ( **asc** ) or descending ( **desc** ) order.
 
 ```javascript
@@ -85,8 +81,6 @@ getPinMessageInfoList({
   orderBy: "desc" // order by pinned time, optional prop with values "asc" | "desc"
 }).then(paginatedPinMessageInfoList => console.log(paginatedPinMessageInfoList))
 ```
-
-
 
 ## Add event listener for Pin Message
 
@@ -108,8 +102,6 @@ addChatRoomEventListener(
 )
 ```
 
-
-
 Similarly use `removeChatRoomEventListener` API to remove a added listener function
 
 ```javascript
@@ -121,8 +113,6 @@ removeChatRoomEventListener(
   { roomId: "<Chat Room ID>" }
 )
 ```
-
-
 
 ## Add event listener for Unpin Message
 
@@ -143,8 +133,6 @@ addChatRoomEventListener(
   { roomId: "<Chat Room ID>" }
 )
 ```
-
-
 
 Similarly use `removeChatRoomEventListener` API to remove a added listener function
 
