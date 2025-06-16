@@ -13,76 +13,45 @@ next:
   description: ''
 ---
 WidgetModel is the data layer class that allows the integrator to use the APIs of LiveLike associated widgets.
-[block:api-header]
-{
-  "title": "Create WidgetModel"
-}
-[/block]
+
+## Create WidgetModel
+
 In Order to create the widget Model 
 
 **Create using LiveLikeWidget Model class:** 
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "   final widgetModel = await session.fetchWidgetModel(<LiveLikeWidget class instance>);",
-      "language": "text",
-      "name": "Dart"
-    }
-  ]
-}
-[/block]
+```text Dart
+final widgetModel = await session.fetchWidgetModel(<LiveLikeWidget class instance>);
+```
 
-[block:api-header]
-{
-  "title": "WidgetModel"
-}
-[/block]
+## WidgetModel
+
 Components of WidgetModel:
 
-**LiveLikeWidget**
+**LiveLikeWidget**\
 The instance of the livelikeWidget class which is used to create the widget model, contains the data of the widgets
 
-**Vote Api** 
+**Vote Api**\
 In Order to vote on a particular option, the voting method is used, it contains optionId and magnitude , magnitude is used for sending vote for Image Slider Widget, and for the rest of the widget the optionId is sent.
 
+```text Dart
+widgetModel.vote(magnitude: <value>);
+widgetModel.vote(optionId: <value>)
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "widgetModel.vote(magnitude: <value>);\nwidgetModel.vote(optionId: <value>)",
-      "language": "text",
-      "name": "Dart"
-    }
-  ]
-}
-[/block]
-**Vote Result Stream** 
+**Vote Result Stream**\
 In Order to receive the vote count for options associated with a widget, the voteResultStream is used. It returns the instance of VoteCountResult class, which contains the option id,vote count,magnitude values
-[block:code]
-{
-  "codes": [
-    {
-      "code": "widgetModel?.voteCountResultStream.listen((event) {\n//VoteCountResult\n}))",
-      "language": "text",
-      "name": "Dart"
-    }
-  ]
-}
-[/block]
+
+```text Dart
+widgetModel?.voteCountResultStream.listen((event) {
+//VoteCountResult
+}))
+```
+
 **Dispose** 
 
 The dispose method is used to clear and release the instances associated to widgetModel.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "widgetModel.dispose()",
-      "language": "text",
-      "name": "Dart"
-    }
-  ]
-}
-[/block]
+
+```text Dart
+widgetModel.dispose()
+```
