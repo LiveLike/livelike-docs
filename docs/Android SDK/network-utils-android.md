@@ -25,26 +25,25 @@ inline fun <B : Any, reified R : Any> LiveLikeKotlin.request(
     headers: List<Pair<String, String>> = emptyList(),
     noinline callback: LiveLikeCallback<R>
 )
-
 ```
 
 ### Parameters:
 
-- path (String?): The path for the request. Can be null if 'url' is provided.
-- URL (String?): The URL for the request. Can be null if 'path' is provided.
-- requestType (RequestType): The type of HTTP request (e.g., GET, POST, PUT, DELETE).
-- queryParameters (List\<Pair\<String, Any?>>): The query parameters for the request as a list of key-value pairs.
-- body (B?): The request body, if applicable.
-- accessToken (String?): The access token for authorization. Can be null if not required.
-- headers (List\<Pair\<String, String>>): Additional headers for the request as a list of key-value pairs.
-- callback (LiveLikeCallback<R>): The callback to handle the asynchronous response.
+* path (String?): The path for the request. Can be null if 'url' is provided.
+* URL (String?): The URL for the request. Can be null if 'path' is provided.
+* requestType (RequestType): The type of HTTP request (e.g., GET, POST, PUT, DELETE).
+* queryParameters (List<Pair<String, Any?>>): The query parameters for the request as a list of key-value pairs.
+* body (B?): The request body, if applicable.
+* accessToken (String?): The access token for authorization. Can be null if not required.
+* headers (List<Pair<String, String>>): Additional headers for the request as a list of key-value pairs.
+* callback (LiveLikeCallback<R>): The callback to handle the asynchronous response.
 
 ## How to Use
 
 To utilize this function:
 
-Import the necessary classes/interfaces required for LiveLikeKotlin and LiveLikeCallback.  
-Call the request function with appropriate parameters based on your request needs.  
+Import the necessary classes/interfaces required for LiveLikeKotlin and LiveLikeCallback.\
+Call the request function with appropriate parameters based on your request needs.\
 Implement the callback to handle the response once it's received.
 
 ```kotlin
@@ -64,7 +63,6 @@ LiveLikeKotlin.request<String, YourResponseClass>(
     
     }
 )
-
 ```
 
 Replace **YourResponseClass** with the actual response data class you expect from the server.
