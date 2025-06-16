@@ -17,24 +17,20 @@ next:
       title: Game preparation
 ---
 This page will help Producers of Live events think through an editorial strategy for one or more events. As a best practice we recommend you:
-  * Set your business goals
-  * Identify your target audience
-  * Define editorial cadence
-  * Craft an editorial guideline
-  * Setup gamification
-[block:api-header]
-{
-  "type": "basic",
-  "title": "1. Business goals"
-}
-[/block]
-As a producer, ensure business goals are regarding our usage of the Engagement SDK. Are there specific numbers your organization is looking to improve such as session length or target engagement? Are there Widgets that will be sponsored such as Voting on MVP Player. Make sure you have at least one KPI you be keeping track of and that guide you to success.
 
+* Set your business goals
+* Identify your target audience
+* Define editorial cadence
+* Craft an editorial guideline
+* Setup gamification
+
+## 1. Business goals
+
+As a producer, ensure business goals are regarding our usage of the Engagement SDK. Are there specific numbers your organization is looking to improve such as session length or target engagement? Are there Widgets that will be sponsored such as Voting on MVP Player. Make sure you have at least one KPI you be keeping track of and that guide you to success.
 
 # 2. Target audience
 
 Generally we've found younger audience (under 35) are more comfortable with lean-forward experiences such as chat and widgets. It's helpful to set your mind to understand who is your primary target audience. It will help you set the tone when preparing widgets. How will you balance your question to engage between different segments such as casual and hardcore fans? Use analytics to see if your interactions are engaging the segments that matter to you.
-
 
 # 3. Editorial cadence
 
@@ -46,19 +42,18 @@ Also consider publishing widgets as a reaction to what's happening to chat. The 
 
 Finally, we recommend you engage your audience with a wide variety of widgets especially those that prompt audience participation. Thinking through your editorial guideline will help.
 
-
 # 4. Craft an editorial guideline
 
 Continuing with the basketball example, if you have 60-75 widgets to publish, try and evaluate how many of each widget you will be publishing. You may decide for something like:
 
-  * 8x Predictions
-  * 10x Trivia
-  * 8x Cheer meter
-  * 4x Emoji slider
-  * 4x Poll
-  * 10x Social media
-  * 15-30x Alert Widgets 
-  * 1x Alert: Content recommendation at the end of stream
+* 8x Predictions
+* 10x Trivia
+* 8x Cheer meter
+* 4x Emoji slider
+* 4x Poll
+* 10x Social media
+* 15-30x Alert Widgets 
+* 1x Alert: Content recommendation at the end of stream
 
 Amongst these 15-30 Alert Widgets you may even be able to prepare some of these ahead with statistics or informational snapshots, etc. Alerts can be many things such as a deeplink for a Content Recommendation at the end of a stream.
 
@@ -66,23 +61,23 @@ Also consider when your want to bring these interactions. Perhaps you will want 
 
 Consider also ahead of time about what widget you would produce at different key moments of the game. What interactions could you push before kick-off? After a goal, during an injury or a time-out? It doesnt have to be fully scripted -- you can keep a few options for each -- but mapping the typical interactions you might want to follow up each action with will help you be take quick actions.
 
-
- # 5. Community management
+# 5. Community management
 
 Sports watching has always been more fun with peers, friends and family. Researchers have actually show it's the #1 motivation for watching sports. LiveLike's social features are really about empowering people to watch together even if people are unable to gather around the TV or at the stadium. 
 
 If chat enables a public chat in your app make sure your community are provided clear chat rules. While automatic content filtering will filter offensive language, it's helpful to make sure the correct behaviors are recognized and encouraged while foul behaviors are discouraged or banned. It will help shape a good community if you jump in to remind users to stay respectful or to call out inappropriate behaviors. You can also help users or respond to questions you see in chat. This may range from explaining a referee decision that people ask about, reacting with a Giphy to chat sentiment, etc.
 
 If you are a social media expert or community manager, you may be very comfortable with all of this. If this is newer to you we suggest to consider taking a few steps to :
-  * Join or think about social media that you use such as Twitch, YouTube, Twitter, Reddit or other. Observe how great community managers address their communities.
-  * There are lots of resources on how to manage communities, for instance [this great video from 3 Twitch streamers on how they manage their community](https://www.youtube.com/watch?v=Pz0K0IVpD2w)
 
+* Join or think about social media that you use such as Twitch, YouTube, Twitter, Reddit or other. Observe how great community managers address their communities.
+* There are lots of resources on how to manage communities, for instance [this great video from 3 Twitch streamers on how they manage their community](https://www.youtube.com/watch?v=Pz0K0IVpD2w)
 
 # 6. Setup gamification
 
 The Engagement SDK allows you to use gamification to amplify the user behaviors that matter to you. For more information checkout the [Gamification resources](https://docs.livelike.com/docs/additional-resources#section-gamification).
 
 If your apps uses our Gamification you should make sure your editorial guideline incorporates the following:
- * Ensure points have been defined for participating and winning any widgets. This is customized to your need in LiveLike's backend upon request.
- * Know what point thresholds will unlock different badges then check your editorial guideline makes it possible to attain to all badges. Besides the point values, consider how you make it more difficult on an editorial level to get the higher badges.
- * Consider how to boost the sense of recognition to people in the leaderboard, for instance by giving a shout out to people in top spot of the leaderboard at the end of each quarter -- or any strategy to this effect.
+
+* Ensure points have been defined for participating and winning any widgets. This is customized to your need in LiveLike's backend upon request.
+* Know what point thresholds will unlock different badges then check your editorial guideline makes it possible to attain to all badges. Besides the point values, consider how you make it more difficult on an editorial level to get the higher badges.
+* Consider how to boost the sense of recognition to people in the leaderboard, for instance by giving a shout out to people in top spot of the leaderboard at the end of each quarter -- or any strategy to this effect.
