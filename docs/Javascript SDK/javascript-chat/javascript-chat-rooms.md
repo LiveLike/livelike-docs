@@ -29,7 +29,7 @@ const chatroom = await createChatRoom({
 
 ## Create token gated chat room
 
-For creating a token gated chat room you can pass the token_gates argument in create chat room method along with title and visibiltiy, which will create a token gated chat room. Token gates is an array of object which consist of network_type and NFT contract address for which token gating is generated or applied. network_type can be `ethereum`, `chiliz`, `hedera`, `polygon`.
+For creating a token gated chat room you can pass the token\_gates argument in create chat room method along with title and visibiltiy, which will create a token gated chat room. Token gates is an array of object which consist of network\_type and NFT contract address for which token gating is generated or applied. network\_type can be `ethereum`, `chiliz`, `hedera`, `polygon`.
 
 ```javascript JavaScript
 import { createChatRoom } from '@livelike/javascript'
@@ -73,8 +73,6 @@ const chatroom = await getTokenGatedChatRoomAccessDetails({
   walletAddress:"wallet_address"
 });
 ```
-
-
 
 ## Get chat user muted status
 
