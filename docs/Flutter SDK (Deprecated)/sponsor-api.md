@@ -12,16 +12,9 @@ metadata:
 next:
   description: ''
 ---
-To get the list of sponsors associated with a program, you have to make a sponsor client and then 
+To get the list of sponsors associated with a program, you have to make a sponsor client and then\
 fetch a list of sponsors by passing program id as a param like mentioned below:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "final sponsorsList =await sdk.sponsor.fetchByProgramId(<program-id>)",
-      "language": "text",
-      "name": "Flutter"
-    }
-  ]
-}
-[/block]
+
+```text Flutter
+final sponsorsList =await sdk.sponsor.fetchByProgramId(<program-id>)
+```
