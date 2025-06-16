@@ -26,7 +26,7 @@ A thread is a sequence of messages that originate from a single parent message. 
 
 **Thread Creation:**
 
-Users can start a thread by replying to any existing message in the chat.  
+Users can start a thread by replying to any existing message in the chat.\
 Each thread has a parent message, which is the message that started the thread.
 
 **No Nested Threads:**
@@ -35,19 +35,19 @@ Threads are limited to a single level of replies. This means that replies within
 
 **Parent Message ID:**
 
-The parent message ID is a crucial identifier in the thread feature. It links each reply to the original message that started the thread.  
-When a message is part of a thread, it includes a `parent_message_id` that points to the ID of the parent message.  
+The parent message ID is a crucial identifier in the thread feature. It links each reply to the original message that started the thread.\
+When a message is part of a thread, it includes a `parent_message_id` that points to the ID of the parent message.\
 Standalone messages (not part of a thread) have a `parent_message_id` set to null.
 
 **Thread Message Count:**
 
-Each parent message in a thread displays the count of replies it has received.  
+Each parent message in a thread displays the count of replies it has received.\
 This count provides a quick overview of the activity within the thread, helping users gauge the extent of discussions.
 
 ## Using Threads in the Chat
 
-**Starting a Thread:**  To start a thread, reply to any existing message in the chat. Your reply will be grouped under the parent message, initiating a new thread.  [Send ChatRoom Message](https://docs.livelike.com/reference/send-chat-message)  
-**Viewing Threads:** Threads are visually distinct, often nested under the parent message. You can expand or collapse threads to follow specific discussions. [Get ChatRoom Messages](https://docs.livelike.com/reference/get-chatroom-messages)  
+**Starting a Thread:**  To start a thread, reply to any existing message in the chat. Your reply will be grouped under the parent message, initiating a new thread.  [Send ChatRoom Message](https://docs.livelike.com/reference/send-chat-message)\
+**Viewing Threads:** Threads are visually distinct, often nested under the parent message. You can expand or collapse threads to follow specific discussions. [Get ChatRoom Messages](https://docs.livelike.com/reference/get-chatroom-messages)\
 **Participating in Threads**: When participating in a thread, your replies will automatically be linked to the parent message, keeping the conversation organized.
 
 ## Summary
