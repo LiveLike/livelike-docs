@@ -65,5 +65,5 @@ The [Send a Chat Message](ref:send-chat-message) REST API endpoint is also avail
 
 The stock UI for chat allows custom implementations of image pickers. For more details per platform, pease see these guides:
 
-- [Chat Message Image Picker (Web)](doc:chat-message-image-picker-web)
-- [Chat Message Image Picker (Android)](doc:chat-image-picker-android)
+* [Chat Message Image Picker (Web)](doc:chat-message-image-picker-web)
+* [Chat Message Image Picker (Android)](doc:chat-image-picker-android)
