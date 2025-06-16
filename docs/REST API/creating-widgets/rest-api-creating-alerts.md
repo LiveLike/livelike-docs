@@ -20,61 +20,48 @@ next:
       url: https://docs.livelike.com/v1/reference#widgets-basics
 ---
 Alerts are a quick and versatile way to interact with your audience. They can contain text only, an image only, or a combination of both. Links can also be attached so that they can act as a call-to-action for your audience. For more details, see the [Alerts product guide](doc:widgets#section-alerts).
-[block:api-header]
-{
-  "title": "Create an Alert"
-}
-[/block]
-All widgets are created as part of a <<glossary:Program>> and each program has its own unique ID. To send an alert widget, a new alert must first be created within the program that your audience will be interacting with. Here is a simple "Hello world!" text-only alert:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "# Configure your Program ID\nprogram_id = \"your-program-id\"\n\n# Set up authorization headers using your API access token\nheaders = {'Authorization': f'Bearer {access_token}'} \n           \n# Create a new text-only alert widget\npayload = {'program_id': program_id, 'text': 'Hello world!'}\nr = requests.post('https://cf-blast.livelikecdn.com/api/v1/alerts/', json=payload, headers=headers)\nalert = r.json()",
-      "language": "python"
-    }
-  ]
-}
-[/block]
+
+## Create an Alert
+
+All widgets are created as part of a <Glossary>Program</Glossary> and each program has its own unique ID. To send an alert widget, a new alert must first be created within the program that your audience will be interacting with. Here is a simple "Hello world!" text-only alert:
+
+```python
+# Configure your Program ID
+program_id = "your-program-id"
+
+# Set up authorization headers using your API access token
+headers = {'Authorization': f'Bearer {access_token}'} 
+           
+# Create a new text-only alert widget
+payload = {'program_id': program_id, 'text': 'Hello world!'}
+r = requests.post('https://cf-blast.livelikecdn.com/api/v1/alerts/', json=payload, headers=headers)
+alert = r.json()
+```
+
 Once a widget is created, it will appear in the Pending section of the Producer Studio, but users won't see it yet. A widget has to be published before an audience will see it.
-[block:callout]
-{
-  "type": "info",
-  "body": "Please see the [Using Widgets](https://docs.livelike.com/v1/reference#widgets-basics) section of the API reference documentation for more details about how widgets are created and published.",
-  "title": "More info is in the API reference!"
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Publish the Alert"
-}
-[/block]
+> 📘 More info is in the API reference!
+>
+> Please see the [Using Widgets](https://docs.livelike.com/v1/reference#widgets-basics) section of the API reference documentation for more details about how widgets are created and published.
+
+## Publish the Alert
+
 Widgets get published according to the program schedule. Every widget has a `schedule_url` field that can be called to update the schedule. The schedule works by setting a delay on a widget, and once the delay is reached the widget gets published. If you want to publish a widget immediately, use a delay of zero. Here is how you would immediately publish the alert created earlier:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "# Schedule the alert to publish immediately\npublish_payload = {'publish_delay': 'P0DT0S'}\nrequests.put(alert['schedule_url'], json=publish_payload, headers=headers)",
-      "language": "python"
-    }
-  ]
-}
-[/block]
 
-[block:callout]
-{
-  "type": "success",
-  "title": "Specify publish delays in ISO format",
-  "body": "The `publish_delay` body parameter is specified in ISO 8601 duration format."
-}
-[/block]
+```python
+# Schedule the alert to publish immediately
+publish_payload = {'publish_delay': 'P0DT0S'}
+requests.put(alert['schedule_url'], json=publish_payload, headers=headers)
+```
+
+> 👍 Specify publish delays in ISO format
+>
+> The `publish_delay` body parameter is specified in ISO 8601 duration format.
+
 Once the alert is published, it will appear in the History tab in the Producer Studio, and audiences will see it on their devices if they are subscribed to the program.
-[block:api-header]
-{
-  "title": "Alert Variations"
-}
-[/block]
+
+## Alert Variations
+
 The alert widget supports a few variations. The variation to use is decided when the widget is created. These variations include:
 
 * Text-only, by specifying only the `text` field
