@@ -17,32 +17,30 @@ next:
 The purpose of `useBannerActions` hook is to abstract out our store actions and exposes actions handlers responsible for updating store value.  
 
 ##### Example usage
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { addBannerItem } = useBannerActions();",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+```typescript
+const { addBannerItem } = useBannerActions();
+```
+
+## Hook Return Value
+
 #### `addBannerItem`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-1": "",
-    "0-0": "Function of type: \n({ bannerType, bannerMessage }: {bannerType: [BannerType](https://livelike-doc-redirect-url.herokuapp.com/react-native?enum=BannerType); bannerMessage: string;}) => void"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type:
+        (\{ bannerType, bannerMessage }: \{bannerType: [BannerType](https://livelike-doc-redirect-url.herokuapp.com/react-native?enum=BannerType); bannerMessage: string;}) => void
+      </td>
+    </tr>
+  </tbody>
+</Table>
