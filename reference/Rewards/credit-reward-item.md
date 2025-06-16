@@ -13,9 +13,9 @@ metadata:
 next:
   description: ''
 ---
-[block:textarea]
+```json
 {
   "text": "Requires Producer Access Token",
   "sidebar": true
 }
-[/block]
+```
