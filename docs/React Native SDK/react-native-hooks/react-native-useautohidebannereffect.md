@@ -17,32 +17,38 @@ next:
 The purpose of `useAutoHideBannerEffect` is to autohide top most displayed banner item after a given time out value (in ms).
 
 ##### Example Usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { banners } = useBanner();\nuseAutoHideBannerEffect({ bannerAutoHideTimeout: 4000 });",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Argument"
-}
-[/block]
+```typescript
+const { banners } = useBanner();
+useAutoHideBannerEffect({ bannerAutoHideTimeout: 4000 });
+```
+
+## Hook Argument
+
 #### `bannerAutoHideTimeout`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Number (**Required**)",
-    "0-1": "4000 (ms)"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Number (**Required**)
+      </td>
+
+      <td>
+        4000 (ms)
+      </td>
+    </tr>
+  </tbody>
+</Table>
