@@ -20,18 +20,18 @@ Webhooks allow our platform to send real-time data to your systems when specific
 
 # Key Concepts
 
-- **Webhook URL:** The endpoint where we will send the event data.
-- **Payload:** The actual event data sent in the body of the request.
-- **Signature:** A cryptographic hash of the payload that ensures the integrity and authenticity of the data.
-- **Webhook Event Types:** Specific events that you can subscribe to in order to receive notifications. Common events include:
-- **Event Subscriptions:** You can create subscriptions to listen for specific events. This allows you to manage which events you want to receive and helps reduce unnecessary traffic.
+* **Webhook URL:** The endpoint where we will send the event data.
+* **Payload:** The actual event data sent in the body of the request.
+* **Signature:** A cryptographic hash of the payload that ensures the integrity and authenticity of the data.
+* **Webhook Event Types:** Specific events that you can subscribe to in order to receive notifications. Common events include:
+* **Event Subscriptions:** You can create subscriptions to listen for specific events. This allows you to manage which events you want to receive and helps reduce unnecessary traffic.
 
 # [Webhook Event Types](https://docs.livelike.com/docs/webhook-events-payload)
 
 You can subscribe to specific events that match your business needs. Here are some common event types:
 
-- **reward-table-rewards-awarded**: Triggered when a user is rewarded with a specific [reward item](https://docs.livelike.com/docs/webhooks) from [reward table](https://docs.livelike.com/docs/webhooks).
-- **badge-awarded**: Triggered when a user is rewarded with a specific badge.
+* **reward-table-rewards-awarded**: Triggered when a user is rewarded with a specific [reward item](https://docs.livelike.com/docs/webhooks) from [reward table](https://docs.livelike.com/docs/webhooks).
+* **badge-awarded**: Triggered when a user is rewarded with a specific badge.
 
 Each event will deliver a payload containing the relevant data for that event, such as profile IDs, reward item IDs, etc.
 
@@ -43,14 +43,14 @@ Currently, LiveLike Admins configure your webhook settings for you. However, in 
 
 **Information Required to Subscribe:**
 
-- **Webhook URL:** The endpoint where the event data should be sent.
-- **Events to Subscribe To:** The specific events you'd like to receive notifications for (like reward-item-rewarded).
+* **Webhook URL:** The endpoint where the event data should be sent.
+* **Events to Subscribe To:** The specific events you'd like to receive notifications for (like reward-item-rewarded).
 
 # Authenticating Webhooks
 
 To ensure that webhook requests are coming from **LiveLike** and haven't been tampered with, we sign each payload. The signature is included in the headers, and you can use it to verify the authenticity of the data.
 
-**Signature Calculation**  
+**Signature Calculation**\
 Each webhook payload is signed using a shared secret (your client secret). The process is as follows:
 
 1. The payload is serialized into a JSON string.
@@ -151,6 +151,6 @@ app.listen(3000, () => console.log('Webhook server running on port 3000'));
 
 # Best Practices
 
-- Validate the signature to ensure the request is from us.
-- Respond quickly with a 200 status code to acknowledge receipt.
-- Keep in mind that the same webhook event may be delivered more than once, so having a plan to handle duplicates can be really helpful.
+* Validate the signature to ensure the request is from us.
+* Respond quickly with a 200 status code to acknowledge receipt.
+* Keep in mind that the same webhook event may be delivered more than once, so having a plan to handle duplicates can be really helpful.
