@@ -11,25 +11,12 @@ next:
   description: ''
 ---
 > 🚧 Pre-requisite
-> 
+>
 > Make sure you [initialise React Native SDK](react-native-getting-started#initialise-react-native-sdk).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6d31b37-Group_69.svg",
-        null,
-        "Widget footer Anatomy"
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "caption": "Widget Footer Anatomy"
-    }
-  ]
-}
-[/block]
+<Image alt="Widget footer Anatomy" align="center" width="750px" src="https://files.readme.io/6d31b37-Group_69.svg">
+  Widget Footer Anatomy
+</Image>
 
 `LLWidgetFooter` is a fundamental atomic component that is used by various widget components. This component is rendered as a bottom component as part of default [widget anatomy](react-native-widget-anatomy).
 
@@ -47,30 +34,17 @@ export function MyWidgetFooter() {
 
 ## Hooks used by `LLWidgetFooter`
 
-- [useWidgetInteractiveTimeout](react-native-usewidgetinteractivetimeout)
-- [useWidgetExpiryEffect](react-native-usewidgetexpiryeffect)
+* [useWidgetInteractiveTimeout](react-native-usewidgetinteractivetimeout)
+* [useWidgetExpiryEffect](react-native-usewidgetexpiryeffect)
 
 ## Component Hierarchy
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/abe87fd-Widget_Doc-Component_hierarchy.drawio_2.svg",
-        null,
-        "Footer component hierarchy"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/abe87fd-Widget_Doc-Component_hierarchy.drawio_2.svg" />
 
 ## LLWidgetFooter Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `widgetId`
@@ -93,11 +67,11 @@ export function MyWidgetFooter() {
 
 Renders widget action related components that comprises of:
 
-- End phase label i.e Timed Out | Expired
-- Rewards earned by user.
-- submit button for single interaction based widgets.
+* End phase label i.e Timed Out | Expired
+* Rewards earned by user.
+* submit button for single interaction based widgets.
 
-Pass your own custom action info component or extend default LLWidgetActionInfo stock component by customising above sub components.  
+Pass your own custom action info component or extend default LLWidgetActionInfo stock component by customising above sub components.\
 Refer [LLWidgetActionInfo](react-native-llwidgetfooter#llwidgetactioninfo) for more details.   
 
 ##### Example usage:
@@ -173,18 +147,18 @@ export function MyWidgetFooter() {
 
 Renders widget action related components that comprises of:
 
-- End phase label i.e Timed Out | Expired
-- Rewards earned by user.
-- submit button for single interaction based widgets.
+* End phase label i.e Timed Out | Expired
+* Rewards earned by user.
+* submit button for single interaction based widgets.
 
 ### Hooks used by `LLWidgetActionInfo`
 
-- [useStyles](react-native-usestyles)
+* [useStyles](react-native-usestyles)
 
 ### LLWidgetActionInfo Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `widgetId`
