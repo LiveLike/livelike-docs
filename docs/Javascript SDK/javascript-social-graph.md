@@ -18,85 +18,69 @@ Social Graph is an API-first service that enables products to define and explore
 * Define your own relationship types like followers, friends, classmates, or anything else
 * Discover and analyze connections in your network of users
 * Integrate with your existing features and user data
-[block:api-header]
-{
-  "title": "Getting all relationship types in an application"
-}
-[/block]
+
+## Getting all relationship types in an application
+
 All relations between profiles must fall into a predefined relationship type. These relationship types can be Queried via the client interface. 
 
 **API Definition:** [getProfileRelationshipTypes](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getProfileRelationshipTypes)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getProfileRelationshipTypes } from \"@livelike/javascript\"\n\ngetProfileRelationshipTypes().then(({results}) => console.log(results))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Querying relationships"
-}
-[/block]
+```javascript
+import { getProfileRelationshipTypes } from "@livelike/javascript"
+
+getProfileRelationshipTypes().then(({results}) => console.log(results))
+```
+
+## Querying relationships
+
 Using the client you can query relationships by any combination of the three parameters `to profile`, `relationship type` and `from profile`
 
 **API Definition:** [getProfileRelationships](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getProfileRelationships)
 
 This is an example to find who is following me
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getProfileRelationships } from \"@livelike/javascript\"\n\ngetProfileRelationships({\n   relationshipTypeKey: \"follow\",\n   toProfileId: \"<Profile ID>\",\n }).then(({results}) => console.log(results))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
-This example is who am I following
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getProfileRelationships } from \"@livelike/javascript\"\n\ngetProfileRelationships({\n   relationshipTypeKey: \"follow\",\n   fromProfileId: \"<Profile ID>\",\n }).then(({results}) => console.log(results))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Managing relationships"
-}
-[/block]
+```javascript
+import { getProfileRelationships } from "@livelike/javascript"
+
+getProfileRelationships({
+   relationshipTypeKey: "follow",
+   toProfileId: "<Profile ID>",
+ }).then(({results}) => console.log(results))
+```
+
+This example is who am I following
+
+```javascript
+import { getProfileRelationships } from "@livelike/javascript"
+
+getProfileRelationships({
+   relationshipTypeKey: "follow",
+   fromProfileId: "<Profile ID>",
+ }).then(({results}) => console.log(results))
+```
+
+## Managing relationships
+
 Creating relationships is done one at a time via the client interface
 
 **API Definition:** [createProfileRelationship](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createProfileRelationship)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { createProfileRelationship } from \"@livelike/javascript\"\n\ncreateProfileRelationship({\n   relationshipTypeKey: \"follow\",\n   toProfileId: \"<Profile ID>\",\n   fromProfileId: \"<Profile ID>\",\n }).then((profileRelationship) => console.log(profileRelationship))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+
+```javascript
+import { createProfileRelationship } from "@livelike/javascript"
+
+createProfileRelationship({
+   relationshipTypeKey: "follow",
+   toProfileId: "<Profile ID>",
+   fromProfileId: "<Profile ID>",
+ }).then((profileRelationship) => console.log(profileRelationship))
+```
+
 Deleting relationships is similarly achieved via the client interface
 
 **API Definition:** [deleteProfileRelationship](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=deleteProfileRelationship)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { deleteProfileRelationship } from \"@livelike/javascript\"\n\ndeleteProfileRelationship({ relationshipId: \"<Profile Relationship ID>\" })",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+
+```javascript
+import { deleteProfileRelationship } from "@livelike/javascript"
+
+deleteProfileRelationship({ relationshipId: "<Profile Relationship ID>" })
+```
