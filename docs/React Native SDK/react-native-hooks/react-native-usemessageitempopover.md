@@ -17,73 +17,109 @@ next:
 The purpose of `useMessageItemPopover` is to control the presence of the popover menu, using exposed states and functions.
 
 ##### Example Usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { popoverDetail, showPopover, hidePopover } = useMessageItemPopover({\n  messageId: <Message ID>,\n});",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Argument"
-}
-[/block]
+```typescript
+const { popoverDetail, showPopover, hidePopover } = useMessageItemPopover({
+  messageId: <Message ID>,
+});
+```
+
+## Hook Argument
+
 #### `messageId`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "String",
-    "0-1": "No Default"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        String
+      </td>
+
+      <td>
+        No Default
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Hook Return Value
+
 #### `popoverDetail`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[PopoverDetail](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=PopoverDetail)",
-    "0-1": "{ messageId: '', popoverType: undefined }"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [PopoverDetail](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=PopoverDetail)
+      </td>
+
+      <td>
+        \{ messageId: '', popoverType: undefined }
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `showPopover`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "Function of type: (args: [PopoverDetail](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=PopoverDetail)) => void"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: (args: [PopoverDetail](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=PopoverDetail)) => void
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `hidePopover`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "Function of type: `() => void`"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: `() => void`
+      </td>
+    </tr>
+  </tbody>
+</Table>
