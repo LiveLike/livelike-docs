@@ -15,8 +15,8 @@ next:
 ---
 Add one of the following parameters:
 
-- custom_ids: A list of custom ID strings for application profiles that have already been created.
-- profile_ids: A list of application profile IDs for application profiles that have already been created.  
+* custom\_ids: A list of custom ID strings for application profiles that have already been created.
+* profile\_ids: A list of application profile IDs for application profiles that have already been created.\
   These application profiles will be added as members of the group.
 
 A profile can belong to multiple groups. Duplicate profile or custom IDs will be ignored, ensuring each profile is added only once as a member.
