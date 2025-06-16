@@ -16,22 +16,7 @@ next:
 
 Chat messages do not show timestamps by default. Add the `timestamps` bare attribute to the chat element to enable them:
 
-
-[block:embed]
-{
-  "html": false,
-  "url": "https://codepen.io/tanyalivelike/embed/XWgMwJG",
-  "href": "https://codepen.io/tanyalivelike/pen/XWgMwJG",
-  "typeOfEmbed": "iframe",
-  "height": "300px",
-  "width": "100%",
-  "iframe": true,
-  "provider": "embed"
-}
-[/block]
-
-
-
+<Embed url="https://codepen.io/tanyalivelike/embed/XWgMwJG" href="https://codepen.io/tanyalivelike/embed/XWgMwJG" typeOfEmbed="iframe" height="300px" width="100%" iframe="true" provider="codepen.io" title="undefined" />
 
 The timestamp formatter will respect the [lang](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) attribute if it is present, so timestamps will appear localized. The language will default to `"en"` if it is undefined.
 
