@@ -73,13 +73,13 @@ rewardsClient = liveLikeSdk.rewards()
 ## Reward Item Attributes
 
 > 🚧 Reward Item Attributes
-> 
-> This feature is only available on upcoming releases  
-> Android v2.41+  
-> iOS v2.40+  
+>
+> This feature is only available on upcoming releases\
+> Android v2.41+\
+> iOS v2.40+\
 > web SDK v2.16.0+
 
-Reward Item Attributes provide integrators with organizational and filtering tools.  
+Reward Item Attributes provide integrators with organizational and filtering tools.\
 These attributes are key, value pairs of data defined in the LikeLive CMS portal.
 
 In addition when retrieving reward items, attributes can be used to filter reward item result sets.
@@ -374,7 +374,7 @@ LiveLike.getRewardItemTransfers().then(res => {
 
 ## Filtering Reward Item Transfers for the current user
 
-As an integrator, you can filter reward item transfers the current user has done. Filtering can be done based on transfer_type which allows filtering the sent or received transfers.  This can be done by utilizing the `getRewardItemTransfers` function as mentioned below
+As an integrator, you can filter reward item transfers the current user has done. Filtering can be done based on transfer\_type which allows filtering the sent or received transfers.  This can be done by utilizing the `getRewardItemTransfers` function as mentioned below
 
 ```swift
 let sdk: EngagementSDK
@@ -430,8 +430,8 @@ LiveLike.getRewardItemTransfers({
 
 ## Notifying when Reward Item Transfer is received
 
-As an integrator, you can inform users when they receive a new Reward Item Transfer.  
-Depending upon platform, a delegate/Listener can be attached to the event and integrators will receive a RewardItemTransfer object.  
+As an integrator, you can inform users when they receive a new Reward Item Transfer.\
+Depending upon platform, a delegate/Listener can be attached to the event and integrators will receive a RewardItemTransfer object.\
 Using the RewardItemTransfer object, you can create a notification with appropriate information to the user
 
 ```swift
@@ -556,9 +556,9 @@ getRewardTransactions({
 
 Detailed information on potential earn-able rewards are attached to widgets and can be accessed through the Content Session.
 
-To retrieve widget data:  
-On Android see [get-published-widgets](https://docs.livelike.com/docs/widget-framework-apis#get-published-widgets)  
-On iOS see [getPostedWidgetModels()](https://docs.livelike.com/docs/accessing-widget-data#get-published-widget-models-from-history)  
+To retrieve widget data:\
+On Android see [get-published-widgets](https://docs.livelike.com/docs/widget-framework-apis#get-published-widgets)\
+On iOS see [getPostedWidgetModels()](https://docs.livelike.com/docs/accessing-widget-data#get-published-widget-models-from-history)\
 on Web see [getWidgets](https://docs.livelike.com/docs/widget-api-methods#getwidgets)
 
 ```swift
