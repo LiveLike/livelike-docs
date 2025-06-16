@@ -25,37 +25,37 @@ next:
 Features like [Chat](doc:chat), [Widgets](doc:widgets), and more can be added to your web pages with HTML embed codes. Anywhere you can paste an HTML embed code, you can add LiveLike functionality.  These codes can be used in HTML files, or in popular web site builders, or your favorite blogging tool.
 
 > 👍 Make sure you have a Client ID
-> 
+>
 > You'll need a Client ID to initialize the SDK. Check out [Retrieving Important Keys](doc:retrieving-important-keys) for instructions on how to get one.
 
 ## Setting Up
 
-Add the snippet below onto your page only once. The ideal place to put it is at the bottom of the page, inside of the `<body>` tag. Replace `YOUR-CLIENT-ID` with your <<glossary:Client ID>> before saving your page.
+Add the snippet below onto your page only once. The ideal place to put it is at the bottom of the page, inside of the `<body>` tag. Replace `YOUR-CLIENT-ID` with your <Glossary>Client ID</Glossary> before saving your page.
 
 ```html
 <script src="https://unpkg.com/@livelike/engagementsdk@2.54.0/livelike.umd.js"></script>
 <script>LiveLike.init({ clientId: "YOUR-CLIENT-ID" });</script>
 ```
 
-> 🚧 
-> 
+> 🚧
+>
 > This snippet only needs to be added once on your page, and then any number of LiveLike tags can be added.
 
 ## Timeline Widgets
 
-Add the embed code below anywhere on your page to display [widgets in timeline mode](doc:web-widget-modes) wherever the code is placed. Replace `YOUR-PROGRAM-ID` with your event's <<glossary:Program ID>>.
+Add the embed code below anywhere on your page to display [widgets in timeline mode](doc:web-widget-modes) wherever the code is placed. Replace `YOUR-PROGRAM-ID` with your event's <Glossary>Program ID</Glossary>.
 
 ```html
 <livelike-widgets programid="YOUR-PROGRAM-ID" mode="timeline"></livelike-widgets>
 ```
 
 > 📘 Making a live blog?
-> 
+>
 > Widgets in timeline mode can be used as a live blog. After you have widgets appearing on your site, you can customize your integration even further with CSS. Check out the [Live Blog Tutorial](doc:live-blog-tutorial) for more information.
 
 ## Pop-up Widgets
 
-Add the embed code below anywhere on your page to display [pop-up widgets](doc:web-widget-modes) wherever the code is placed. Replace `YOUR-PROGRAM-ID` with your event's <<glossary:Program ID>>.
+Add the embed code below anywhere on your page to display [pop-up widgets](doc:web-widget-modes) wherever the code is placed. Replace `YOUR-PROGRAM-ID` with your event's <Glossary>Program ID</Glossary>.
 
 ```html
 <livelike-widgets programid="YOUR-PROGRAM-ID"></livelike-widgets>
@@ -77,24 +77,24 @@ Integrators can embed any widget in their web page using their embed codes. Embe
 
 Default widget tags are the following:
 
-- livelike-text-poll
-- livelike-image-poll
-- livelike-text-quiz
-- livelike-image-quiz
-- livelike-text-prediction
-- livelike-text-prediction-follow-up
-- livelike-image-prediction
-- livelike-image-prediction-follow-up
-- livelike-cheer-meter
-- livelike-emoji-slider
-- livelike-rich-post
-- livelike-social-embed
-- livelike-video-alert
-- livelike-text-ask
-- livelike-text-number-prediction
-- livelike-text-number-prediction-follow-up
-- livelike-image-number-prediction
-- livelike-image-number-prediction-follow-up
+* livelike-text-poll
+* livelike-image-poll
+* livelike-text-quiz
+* livelike-image-quiz
+* livelike-text-prediction
+* livelike-text-prediction-follow-up
+* livelike-image-prediction
+* livelike-image-prediction-follow-up
+* livelike-cheer-meter
+* livelike-emoji-slider
+* livelike-rich-post
+* livelike-social-embed
+* livelike-video-alert
+* livelike-text-ask
+* livelike-text-number-prediction
+* livelike-text-number-prediction-follow-up
+* livelike-image-number-prediction
+* livelike-image-number-prediction-follow-up
 
 Any template added in HTML for the widget kind will be applied to embedded widgets
 
@@ -169,17 +169,7 @@ The `registerWidgetMode` method's first argument is a string, the name of the mo
 
 Below is an example of how to create your own timeline mode using the available methods.
 
-[block:embed]
-{
-  "html": "<iframe height='350' scrolling='no' src='https://codepen.io/abhi1599/embed/rNGeOqQ?editors=1010' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>",
-  "url": "https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010",
-  "title": "Single Tag Widgets Custom Mode",
-  "favicon": "https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico",
-  "provider": "codepen.io",
-  "href": "https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010"
-}
-[/block]
-
+<Embed url="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" title="Single Tag Widgets Custom Mode" favicon="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" provider="codepen.io" href="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FrNGeOqQ%3Feditors%3D1010'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
 
 ## Troubleshooting
 
@@ -187,8 +177,8 @@ Below is an example of how to create your own timeline mode using the available 
 
 Some publishing tools automatically sanitize scripts and HTML that seem suspicious as a security measure. Try updating your tool's configuration to allow these tags to be added to your pages:
 
-- `<livelike-widgets>`
-- `<livelike-chat>`
+* `<livelike-widgets>`
+* `<livelike-chat>`
 
 ### I'm using Squarespace. What's the best way to use LiveLike on my page?
 
