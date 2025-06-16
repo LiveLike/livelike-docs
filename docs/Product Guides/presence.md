@@ -14,12 +14,12 @@ The presence service enables developers to show who is online and who is not. In
 
 ## Presence Concepts
 
-- **Channel** -  a channel is an ambiguous location dependent on your use case. A channel can represent your entire application or smaller areas of your application (ie. a friends list, a chat room, a video, a blog post, etc.) User’s can be present or not present within a channel.
-- **Presence Event** - a presence event is an event that is published to observers representing a user joining or leaving a channel.
-- **Joining a Channel** - a user joining a channel marks them present in the channel 
-- **Leaving a Channel** - a user leaving a channel marks them no longer present in the channel
-- **Subscribing to a Channel** - when subscribed to a channel enables a developer to observe Presence Events on the channel
-- **Unsubscribing from a Channel** - when unsubscribed from a channel, Presence Events can no longer be observed
+* **Channel** -  a channel is an ambiguous location dependent on your use case. A channel can represent your entire application or smaller areas of your application (ie. a friends list, a chat room, a video, a blog post, etc.) User’s can be present or not present within a channel.
+* **Presence Event** - a presence event is an event that is published to observers representing a user joining or leaving a channel.
+* **Joining a Channel** - a user joining a channel marks them present in the channel 
+* **Leaving a Channel** - a user leaving a channel marks them no longer present in the channel
+* **Subscribing to a Channel** - when subscribed to a channel enables a developer to observe Presence Events on the channel
+* **Unsubscribing from a Channel** - when unsubscribed from a channel, Presence Events can no longer be observed
 
 ## Retrieving a User's Presence
 
@@ -73,7 +73,7 @@ LiveLike.getPresenceUserChannels({
 To get list of users present in a channel.
 
 > 🚧 3 second response cache time.
-> 
+>
 > When retrieving list of users in a given channel, there a response cache time of 3 seconds
 
 ```javascript Web
@@ -84,15 +84,15 @@ LiveLike.getPresenceChannelUsers({
 
 ## Observing Channel's Presence Events
 
-To observe a channel’s presence events, including when a user joins, leaves or has their attributes set.  
+To observe a channel’s presence events, including when a user joins, leaves or has their attributes set.\
 In case of Mobile SDK's, you should `subscribe` to a presence channel. To stop observing a channel’s presence events use `unsubscribe`.
 
 > 📘 Possible Presence Events
-> 
-> - **join** - a user has joined a channel and became present
-> - **leave** - a user has left a channel and is no longer present
-> - **timeout** - a user’s presence in a channel has timed out
-> - **updateAttributes** - a user’s presence attributes have changed
+>
+> * **join** - a user has joined a channel and became present
+> * **leave** - a user has left a channel and is no longer present
+> * **timeout** - a user’s presence in a channel has timed out
+> * **updateAttributes** - a user’s presence attributes have changed
 
 ```swift
 import LiveLikeSwift
@@ -207,14 +207,14 @@ LiveLike.leavePresenceChannel({ channel: "<channel-1>" })
 
 # Presence Attributes
 
-Presence attributes enable developers to set or get key/pair values associated to a user's presence in a channel. This functionality allows developers to expand on a user's presence even further by providing additional information about the user's presence.  
+Presence attributes enable developers to set or get key/pair values associated to a user's presence in a channel. This functionality allows developers to expand on a user's presence even further by providing additional information about the user's presence.\
 Some examples of presence attributes are to add location, mood, game score.
 
 > 🚧 About Presence Attributes
-> 
-> - **The presence attributes data is not persisted anywhere**. When the user disconnects, the presence attributes data is lost. If you require user's presence attributes to be restored on reconnect, be sure to cache that data locally.
-> - **Setting presence attributes overwrites any previously set data** for a user on a channel.
-> - The user must join a channel before getting or setting attributes.
+>
+> * **The presence attributes data is not persisted anywhere**. When the user disconnects, the presence attributes data is lost. If you require user's presence attributes to be restored on reconnect, be sure to cache that data locally.
+> * **Setting presence attributes overwrites any previously set data** for a user on a channel.
+> * The user must join a channel before getting or setting attributes.
 
 ### Setting User’s Presence Attributes
 
