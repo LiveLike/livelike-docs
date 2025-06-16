@@ -65,7 +65,7 @@ class SomeClass {
 In order to retrieve all the chat rooms a user is currently a member of, use `getUserChatRoomMemberships(page: ChatRoomMembershipPagination, completion: @escaping (Result<[ChatRoomInfo], Error>) -> Void)` function. As a result you will get an array of `ChatRoomInfo` objects. This functionality is especially useful when building out a chat room picker. 
 
 > 📘 Pagination
-> 
+>
 > The `getUserChatRoomMemberships` accepts a `ChatRoomMembershipPagination` parameter. Use this parameter to request the **first**, **next** or **previous** page of results.
 
 ```swift
@@ -95,7 +95,7 @@ class SomeClass {
 In order to retrieve all chat room memberships for a specific chat room, use the `getChatRoomMemberships(options: GetChatRoomMembershipsRequestOptions, page: ChatRoomMembershipPagination, completion: @escaping (Result<[ChatRoomMember], Error>) -> Void)` function. As a result you will get an array of `ChatRoomMember` objects. `GetChatRoomMembershipsRequestOptions` enables filtering by chat room id and profile id(s).
 
 > 📘 Pagination
-> 
+>
 > The `getChatRoomMemberships` accepts a `ChatRoomMembershipPagination` parameter. Use this parameter to request the **first**, **next** or **previous** page of results.
 
 ```swift
