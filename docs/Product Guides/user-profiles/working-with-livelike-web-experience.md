@@ -20,8 +20,8 @@ Profiles collect user activity across chat, widgets, and other features under a 
 
 **Further Reading:**
 
-- [Profiles](doc:user-profiles)
-- [Custom Profile IDs](doc:custom-profile-ids)
+* [Profiles](doc:user-profiles)
+* [Custom Profile IDs](doc:custom-profile-ids)
 
 # Creating LiveLike user profiles for your users
 
