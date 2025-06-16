@@ -16,37 +16,25 @@ next:
       slug: javascript-reactions
       title: Reactions
 ---
-[block:api-header]
-{
-  "title": "List of Sticker Pack"
-}
-[/block]
-This method is used to get list of sticker pack created through producer suite.
-It returns a Promise that resolves the paginated list of sticker pack objects.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getStickerPacks } from '@livelike/javascript'\n\ngetStickerPacks().then(({results}) => console.log(results))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+## List of Sticker Pack
 
-[block:api-header]
-{
-  "title": "Sticker Pack details"
-}
-[/block]
+This method is used to get list of sticker pack created through producer suite.\
+It returns a Promise that resolves the paginated list of sticker pack objects.
+
+```javascript
+import { getStickerPacks } from '@livelike/javascript'
+
+getStickerPacks().then(({results}) => console.log(results))
+```
+
+## Sticker Pack details
+
 This method is used to get sticker pack details using sticker pack Id.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { getStickerPackDetail } from '@livelike/javascript'\n\ngetStickerPackDetail({\n  stickerPackId: \"<Sticker Pack ID>\",\n}).then(stickerPack => console.log(stickerPack))",
-      "language": "javascript"
-    }
-  ]
-}
-[/block]
+
+```javascript
+import { getStickerPackDetail } from '@livelike/javascript'
+
+getStickerPackDetail({
+  stickerPackId: "<Sticker Pack ID>",
+}).then(stickerPack => console.log(stickerPack))
+```
