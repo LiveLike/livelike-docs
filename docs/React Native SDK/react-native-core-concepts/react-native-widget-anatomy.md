@@ -14,47 +14,21 @@ next:
       slug: react-native-widget-ui-lifecycle
       title: Widget UI Lifecycle
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8751d31-Group_64.svg",
-        null,
-        "Widget Anatomy"
-      ],
-      "align": "center",
-      "caption": "Widget Anatomy"
-    }
-  ]
-}
-[/block]
+<Image alt="Widget Anatomy" align="center" src="https://files.readme.io/8751d31-Group_64.svg">
+  Widget Anatomy
+</Image>
 
 Every widget follows similar UI structure where its mostly composed with Header, Body and Footer component. Every widget is capable enough to either extend default component with your own custom tweaks or render your own custom component in place of these default rendered sub component.   
 
 ## Header Component
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7baefa3-Group_68_1.svg",
-        null,
-        "Header Component"
-      ],
-      "align": "center",
-      "sizing": "600px"
-    }
-  ]
-}
-[/block]
+<Image align="center" width="600px" src="https://files.readme.io/7baefa3-Group_68_1.svg" />
 
 Every widget header component is defaulted to [LLWidgetHeader](react-native-llwidgetheader). It is responsible for rendering:
 
-- Timer component (defaulted to [LLWidgetInteractiveTimer](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLWidgetInteractiveTimer)) incase widget is interact-able for certain time period only.
-- Title of the widget.
-- Dismiss button incase widget is dismissible.
+* Timer component (defaulted to [LLWidgetInteractiveTimer](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLWidgetInteractiveTimer)) incase widget is interact-able for certain time period only.
+* Title of the widget.
+* Dismiss button incase widget is dismissible.
 
 ## Body Component
 
@@ -70,22 +44,9 @@ For more details on the body component, refer corresponding widget `BodyComponen
 
 ## Footer Component
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6d31b37-Group_69.svg",
-        null,
-        "Footer component"
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "caption": "Footer component"
-    }
-  ]
-}
-[/block]
+<Image alt="Footer component" align="center" width="750px" src="https://files.readme.io/6d31b37-Group_69.svg">
+  Footer component
+</Image>
 
 Every widget footer is defaulted to [LLWidgetFooter](react-native-llwidgetfooter). It is responsible for rendering:
 
