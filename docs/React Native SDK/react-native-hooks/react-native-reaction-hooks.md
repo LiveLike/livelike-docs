@@ -13,7 +13,7 @@ next:
 Reaction hooks are the set of hooks which would enable you to use Reactions for any entity that could be reacted upon.
 
 > 📘 What are Reactions?
-> 
+>
 > Refer our core [reactions](reactions)  documentation
 
 ## useReactionSpace
@@ -70,7 +70,7 @@ useLoadReactionPacksEffect({ reactionSpaceId: reactionSpace?.id });
 
 ## useUserReactions
 
-`useUserReactions` hook returns user reactions state for multiple targets. You need a reaction space Id for this hook that could be retrieved using [useReactionSpace](reaction-hooks#useReactionSpace)  
+`useUserReactions` hook returns user reactions state for multiple targets. You need a reaction space Id for this hook that could be retrieved using [useReactionSpace](reaction-hooks#useReactionSpace)\
 For loading user reactions state, use [useLoadUserReactions](react-native-useloaduserreactions) hook.
 
 For auto updating user reactions state whenever any user adds or removes reaction, use [useUserReactionEffect](react-native-useuserreactioneffect)
@@ -103,7 +103,7 @@ const { userReactions } = useUserReactions({
 
 ## useLoadUserReactions
 
-`useLoadUserReactions` hook is to load user reactions state. You need a reaction space Id for this hook that could be retrieved using [useReactionSpace](reaction-hooks#useReactionSpace)  
+`useLoadUserReactions` hook is to load user reactions state. You need a reaction space Id for this hook that could be retrieved using [useReactionSpace](reaction-hooks#useReactionSpace)\
 This hook implements a lazy load technique. To fetch the resources you need to invoke the `loadUserReactions` function that is returned by this hook.
 
 **Hook Type definition**: [useLoadUserReactions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadUserReactions)
@@ -129,7 +129,7 @@ useEffect(() => {
 
 ## useUserReactionEffect
 
-`useUserReactionEffect` is a side effect based hook that updates user reactions state whenever any user adds or removes reactions. This hook makes user reaction state reactive keeping it up to date with latest user reactions. Internally it uses reaction space event listeners to listen to `ADD_REACTION` and `REMOVE_REACTION` event.  
+`useUserReactionEffect` is a side effect based hook that updates user reactions state whenever any user adds or removes reactions. This hook makes user reaction state reactive keeping it up to date with latest user reactions. Internally it uses reaction space event listeners to listen to `ADD_REACTION` and `REMOVE_REACTION` event.\
 Make sure to use this hook only once in your react component tree.
 
 You need a reaction space Id for this hook that could be retrieved using [useReactionSpace](reaction-hooks#useReactionSpace)  
