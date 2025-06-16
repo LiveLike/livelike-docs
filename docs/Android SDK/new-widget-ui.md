@@ -14,21 +14,7 @@ next:
 ---
 ### Default New UI for Widgets - Version2
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a358a01-Screenshot_2023-11-07_at_1.10.13_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/a358a01-Screenshot_2023-11-07_at_1.10.13_PM.png" />
 
 ### Integrator Usage for PopUp WidgetView
 
