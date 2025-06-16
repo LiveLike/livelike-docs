@@ -18,8 +18,8 @@ Chat Room Membership is a simple concept of a relationship between a user and a 
 
 <br />
 
-In order to retrieve all the chat rooms a user is currently a member of, use getCurrentUserChatRoomList function  
-**Parameters:** LiveLikePagination(enum) FIRST(default),PREVIOUS,NEXT  
+In order to retrieve all the chat rooms a user is currently a member of, use getCurrentUserChatRoomList function\
+**Parameters:** LiveLikePagination(enum) FIRST(default),PREVIOUS,NEXT\
 **Response:** List of ChatRoomInfo(chatRoom id ,title)
 
 ```kotlin
@@ -54,8 +54,8 @@ sdk.chat().getCurrentUserChatRoomList(
 
 <br />
 
-User can retrieve all chat room memberships for a specific chat room  
-**Parameter**: chatRoom Id  and LiveLikePagination(enum) FIRST(default),PREVIOUS,NEXT  
+User can retrieve all chat room memberships for a specific chat room\
+**Parameter**: chatRoom Id  and LiveLikePagination(enum) FIRST(default),PREVIOUS,NEXT\
 **Response:** List of User(LiveLikeUser)
 
 ```kotlin
@@ -136,8 +136,8 @@ sdk.chat().getProfileChatRoomMemberships(
 
 ## Join a Chat Room
 
-User can join the chat room by providing the chatroom Id  
-**Parameters:** chatRoom id  
+User can join the chat room by providing the chatroom Id\
+**Parameters:** chatRoom id\
 **Response:**  ChatRoomMembership object which contains the membership id and user details
 
 ```kotlin
@@ -167,8 +167,8 @@ sdk.chat().addCurrentUserToChatRoom(id,
 
 ## Leave Chat Room
 
-User can leave the group by providing the chatroom Id  
-**Parameters:** chatRoom id  
+User can leave the group by providing the chatroom Id\
+**Parameters:** chatRoom id\
 **Response:**  Boolean response
 
 ```kotlin
