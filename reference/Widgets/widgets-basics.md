@@ -16,7 +16,7 @@ When a widget is published, its payload is delivered over PubNub so that subscri
 
 ## Creating Widgets
 
-When a widget is first created, it is considered _pending_. It exists in the system and can be referenced in the API, but has not been published to an audience. Here is some sample code for creating an alert widget:
+When a widget is first created, it is considered *pending*. It exists in the system and can be referenced in the API, but has not been published to an audience. Here is some sample code for creating an alert widget:
 
 ```python
 import requests
@@ -44,7 +44,7 @@ requests.patch(alert['url'], json=update)
 
 ## Publishing Widgets
 
-A pending widget has to be _scheduled_ for it to be published. All publication is done through scheduling, and posting a widget immediately is semantically equivalent to scheduling for now. Widgets can also be scheduled for publishing in the future by scheduling with a delay. Every widget has an associated `schedule_url` field that must be called with a `publish_delay` in ISO duration format to schedule it.
+A pending widget has to be *scheduled* for it to be published. All publication is done through scheduling, and posting a widget immediately is semantically equivalent to scheduling for now. Widgets can also be scheduled for publishing in the future by scheduling with a delay. Every widget has an associated `schedule_url` field that must be called with a `publish_delay` in ISO duration format to schedule it.
 
 Here's how an alert would be immediately published:
 
