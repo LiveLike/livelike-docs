@@ -16,12 +16,12 @@ This is a developers' guide for setting up a LiveLike SDK configuration for nati
 
 ## Prerequisites
 
-- An admin login and registered application on the [Producer Suite](http://producer.livelikecdn.com/) (provided by LiveLike).
-- Client ID - Used to initialize the SDK. See instructions for [retrieving Your Client ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-client-id).
-- OS: iOS 10+
+* An admin login and registered application on the [Producer Suite](http://producer.livelikecdn.com/) (provided by LiveLike).
+* Client ID - Used to initialize the SDK. See instructions for [retrieving Your Client ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-client-id).
+* OS: iOS 10+
 
-> 📘 
-> 
+> 📘
+>
 > Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
 
 ## Installation
@@ -36,7 +36,7 @@ The SDK can be installed via Swift Package Manager (recommended) or through pack
 
 ## CocoaPods
 
-<https://guides.cocoapods.org/using/using-cocoapods.html>
+[https://guides.cocoapods.org/using/using-cocoapods.html](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 Add the following to a Podfile:
 
@@ -59,14 +59,14 @@ import EngagementSDK
 
 Next, create an instance of the EngagementSDK.
 
-If your billing is determined by _Monthly Active Users (MAUs)_, then at this point it is important to consider how and when the EngagementSDK will be initialized.
+If your billing is determined by *Monthly Active Users (MAUs)*, then at this point it is important to consider how and when the EngagementSDK will be initialized.
 
 By default, the EngagementSDK will generate a new [User Profile](doc:user-profiles) upon first initialization. The Access Token of the User Profile will be stored in User Defaults and may not persist across app installations, devices, and/or platforms. We recommend that you override this default behavior and manage where the User's Access Token is stored. Find out how [here](doc:ios-user-profiles).
 
 We also recommend that you initialize the SDK as late as possible in your application - just before the user accesses the EngagementSDK features. 
 
-> 🚧 
-> 
+> 🚧
+>
 > Concurrent instances of the EngagementSDK are not supported; only one instance should exist at any given time.
 
 Use your Client ID to create a EngagementSDKConfig. The EngagementSDKConfig is used to initialize the EngagementSDK.
@@ -85,8 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Configure Your Layout
 
-> 📘 
-> 
+> 📘
+>
 > Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
 
 ### Storyboards / XIB
@@ -135,16 +135,16 @@ class ViewController: UIViewController {
 }
 ```
 
-> 🚧 
-> 
+> 🚧
+>
 > If you are working in a multilayered UIView environment where the `widgetView` is placed above the `chatView`. It is best practice to instantiate the `widgetView` as `PassthroughView`. This will allow user interactions on `widgetView` effect the `chatView` when there are no activate widgets.
 
 ### Programmatic
 
 In your ViewController, create an instance of `WidgetPopupViewController` and `ChatViewController`
 
-> 🚧 
-> 
+> 🚧
+>
 > Important: The width of the Widget view must be at least 260 and height 280. The width of the Chat view must be at least 292.
 
 Add the `WidgetViewController` and `ChatViewController` as a child view controller to your ViewController. For more information on child view controllers see Apple documentation on [Implementing a ContainerViewController](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html). 
@@ -187,18 +187,18 @@ override func viewDidLoad() {
 
 ## Start a Content Session
 
-A Content Session represents a user's subscription to a particular <<glossary:Program>> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](http://producer.livelikecdn.com) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
+A Content Session represents a user's subscription to a particular <Glossary>Program</Glossary> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](http://producer.livelikecdn.com) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
 
 Use the following resources to get started with the Producer Suite
 
-- [Creating a Program](https://docs.livelike.com/docs/ps-getting-started#section-creating-a-program)
-- [Retrieving a Program ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-program-id)
-- [Publishing a Widget](https://docs.livelike.com/docs/ps-getting-started#section-publishing-widgets)
+* [Creating a Program](https://docs.livelike.com/docs/ps-getting-started#section-creating-a-program)
+* [Retrieving a Program ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-program-id)
+* [Publishing a Widget](https://docs.livelike.com/docs/ps-getting-started#section-publishing-widgets)
 
 In your ViewController, declare a variable to maintain an instance of the `ContentSession` we will be creating.
 
-> 🚧 
-> 
+> 🚧
+>
 > Important: A reference to the `ContentSession` instance must be maintained in order for the session to remain valid and receive Widget and Chat events.
 
 ```swift
@@ -241,8 +241,8 @@ func startContentSession(engagementSDK: EngagementSDK) {
 
 When the user returns to your application's home page and away from your live video screen you will want to **close** the ContentSession. Closing a session will disconnect from Widgets and Chat and release all the related resources.
 
-> 📘 
-> 
+> 📘
+>
 > You can also set the session reference to `nil`, this is the same as calling close
 
 ```swift
