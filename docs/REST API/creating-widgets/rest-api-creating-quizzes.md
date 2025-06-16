@@ -23,7 +23,7 @@ Quizzes challenge an audience's knowledge and add game elements your experience.
 
 ## Create a Quiz
 
-All widgets are created as part of a <<glossary:Program>> and each program has its own unique ID. To send a quiz widget, a new one must first be created within the program that your audience will be interacting with. When creating a quiz, the `program_id`, `question`, and `choices` body parameters are required.
+All widgets are created as part of a <Glossary>Program</Glossary> and each program has its own unique ID. To send a quiz widget, a new one must first be created within the program that your audience will be interacting with. When creating a quiz, the `program_id`, `question`, and `choices` body parameters are required.
 
 ```python createimagequiz.py
 # Configure your Program ID
@@ -66,7 +66,7 @@ quiz = r.json()
 Once a widget is created, it will appear in the Pending section of the Producer Studio, but users won't see it yet. A widget has to be published before an audience will see it.
 
 > 📘 More info is in the API reference!
-> 
+>
 > Please see the [Using Widgets](https://docs.livelike.com/v1/reference#widgets-basics) section of the API reference documentation for more details about how widgets are created and published.
 
 ## Publish the Quiz
@@ -80,7 +80,7 @@ requests.put(quiz['schedule_url'], json=publish_payload, headers=headers)
 ```
 
 > 👍 Specify publish delays in ISO format
-> 
+>
 > The `publish_delay` body parameter is specified in ISO 8601 duration format.
 
 Once the widget is published, it will appear in the History tab in the Producer Studio, and audiences will see it on their devices if they are subscribed to the program.
@@ -89,8 +89,8 @@ Once the widget is published, it will appear in the History tab in the Producer 
 
 The REST API supports two quiz variants, text quizzes and image quizzes. They function mostly identically, except for these key differences:
 
-- Image quiz and Text Quiz are two separate API resources
-- Image quiz choices require an `image_url` field that text quiz choices do not have
+* Image quiz and Text Quiz are two separate API resources
+* Image quiz choices require an `image_url` field that text quiz choices do not have
 
 ## Answering Quizzes
 
