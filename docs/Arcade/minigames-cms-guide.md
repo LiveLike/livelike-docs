@@ -23,7 +23,7 @@ next:
       slug: pick-your-team-cms-setup
       title: Pick Your Team CMS Setup
 ---
-LiveLike provides an easy way to configure MiniGames. You can access the MiniGames CMS from <https://arcade-cms.livelikecdn.com/>. The CMS allows creation of MiniGames on the fly tailored towards the brand. 
+LiveLike provides an easy way to configure MiniGames. You can access the MiniGames CMS from [https://arcade-cms.livelikecdn.com/](https://arcade-cms.livelikecdn.com/). The CMS allows creation of MiniGames on the fly tailored towards the brand. 
 
 Each experience follows a similar step by step approach with certain nuances based on the experience. For technical integration guide please refer to the guide [here](https://docs.livelike.com/docs/arcade) 
 
@@ -33,17 +33,4 @@ If you dont have access to the MiniGames CMS, please [contact us](https://liveli
 
 <br />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/34b4892e64753c5a72683ab0c28f539e80847efb4cbdfec452740819f8d8b3e7-Screenshot_2024-12-18_at_12.33.36.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/34b4892e64753c5a72683ab0c28f539e80847efb4cbdfec452740819f8d8b3e7-Screenshot_2024-12-18_at_12.33.36.png" />
