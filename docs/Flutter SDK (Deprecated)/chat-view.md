@@ -12,28 +12,16 @@ metadata:
 next:
   description: ''
 ---
-[block:api-header]
-{
-  "title": "Chat View"
-}
-[/block]
+## Chat View
+
 For using the ChatView Widget in your flutter app, you have to add the ChatView Widget in your app and provide chatSession object to that widget.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "ChatView(key: Key(\"${chatSession.chatRoomId}\"),session: chatSession)",
-      "language": "text"
-    }
-  ]
-}
-[/block]
+```text
+ChatView(key: Key("${chatSession.chatRoomId}"),session: chatSession)
+```
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Note:",
-  "body": "If you are facing extra padding when keyboard appears in IOS, then add \n**resizeToAvoidBottomInset: !Platform.IOS,**\nattribute to your Scaffold to avoid this issue, and make sure it is true for android platform"
-}
-[/block]
+> 🚧 Note:
+>
+> If you are facing extra padding when keyboard appears in IOS, then add\
+> **resizeToAvoidBottomInset: !Platform.IOS,**\
+> attribute to your Scaffold to avoid this issue, and make sure it is true for android platform
