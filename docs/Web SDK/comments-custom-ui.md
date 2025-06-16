@@ -21,8 +21,6 @@ When it comes to customising the UI components within LiveLikeComments, you have
 
 Here's an example of how you can customise the comment board header component.
 
-
-
 ```javascript
 import { LiveLikeComments, html } from "@livelike/engagementsdk";
 
