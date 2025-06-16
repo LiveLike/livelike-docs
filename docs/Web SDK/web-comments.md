@@ -30,17 +30,7 @@ LiveLike.init({ clientId })
 
 Reaction space to can be added to comments using [create reaction space API](https://docs.livelike.com/docs/reactions)
 
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fcodepen.io%2Fharshitachugh%2Fembed%2Fpreview%2FVwqPqmg%3Fdefault-tabs%3Dhtml%252Cresult%26height%3D600%26host%3Dhttps%253A%252F%252Fcodepen.io%26slug-hash%3DVwqPqmg&display_name=CodePen&url=https%3A%2F%2Fcodepen.io%2Fharshitachugh%2Fpen%2FVwqPqmg&image=https%3A%2F%2Fshots.codepen.io%2Fusername%2Fpen%2FVwqPqmg-512.jpg%3Fversion%3D1694166085&key=02466f963b9b4bb8845a05b53d3235d7&type=text%2Fhtml&schema=codepen\" width=\"800\" height=\"600\" scrolling=\"no\" title=\"CodePen embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://codepen.io/harshitachugh/pen/VwqPqmg",
-  "title": "Comment Board",
-  "image": "https://shots.codepen.io/username/pen/VwqPqmg-512.jpg?version=1694166085",
-  "provider": "codepen.io",
-  "href": "https://codepen.io/harshitachugh/pen/VwqPqmg"
-}
-[/block]
-
+<Embed url="https://codepen.io/harshitachugh/pen/VwqPqmg" title="Comment Board" image="https://shots.codepen.io/username/pen/VwqPqmg-512.jpg?version=1694166085" provider="codepen.io" href="https://codepen.io/harshitachugh/pen/VwqPqmg" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fcodepen.io%252Fharshitachugh%252Fembed%252Fpreview%252FVwqPqmg%253Fdefault-tabs%253Dhtml%25252Cresult%2526height%253D600%2526host%253Dhttps%25253A%25252F%25252Fcodepen.io%2526slug-hash%253DVwqPqmg%26display_name%3DCodePen%26url%3Dhttps%253A%252F%252Fcodepen.io%252Fharshitachugh%252Fpen%252FVwqPqmg%26image%3Dhttps%253A%252F%252Fshots.codepen.io%252Fusername%252Fpen%252FVwqPqmg-512.jpg%253Fversion%253D1694166085%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dcodepen%22%20width%3D%22800%22%20height%3D%22600%22%20scrolling%3D%22no%22%20title%3D%22CodePen%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 #### - Displaying Comments
 
@@ -54,21 +44,7 @@ Users can contribute to the discussion by posting comments. They can express the
 
 Users can react to comments using emojis or custom reaction icons. This feature allows users to express their emotions or agreement with a comment.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5003ed6-Screenshot_2023-09-25_at_6.32.21_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/5003ed6-Screenshot_2023-09-25_at_6.32.21_PM.png" />
 
 #### - Replying to Comments
 
@@ -78,60 +54,17 @@ Users can react to comments using emojis or custom reaction icons. This feature 
 
 Users can sort comments from newest to oldest or oldest to newest. By default ,the comments will be sorted from newest to oldest.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1f0bdd7-Screenshot_2023-09-25_at_6.31.13_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/1f0bdd7-Screenshot_2023-09-25_at_6.31.13_PM.png" />
 
 #### - Pagination
 
 Maximum of 20 comments will be visible on first load. User can load more comments by clicking `Load More` button at end of comments list.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8a10105-Screenshot_2023-09-25_at_6.33.00_PM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/8a10105-Screenshot_2023-09-25_at_6.33.00_PM.png" />
 
 ### b. Moderation
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0d95a89-Screenshot_2023-09-11_at_12.40.11_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/0d95a89-Screenshot_2023-09-11_at_12.40.11_PM.png" />
 
 #### - Reporting Comments
 
@@ -143,22 +76,7 @@ Blocking a user prevents them from replying further on your comment. It's a powe
 
 #### - Deleting Comments
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4f4314d-Screenshot_2023-09-11_at_12.40.01_PM.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/4f4314d-Screenshot_2023-09-11_at_12.40.01_PM.png" />
 
 Moderators or authorised users can delete comments when necessary.User can also delete self comment. This ensures that inappropriate or harmful comments can be removed promptly.
 
@@ -186,34 +104,19 @@ When filtering is enabled, comments containing profane/obscene words will be fil
 
 The `profaneComment` attribute allows you to control how profane comments are displayed. You can configure the behaviour of profaneComment either masked with asterisks (e.g., `***`) or according to your custom filter function.
 
-- If you set `profaneComment="mask"`, profane words in the comments will be displayed as asterisks (`***`).
+* If you set `profaneComment="mask"`, profane words in the comments will be displayed as asterisks (`***`).
 
 ```html
 <livelike-comments boardId="COMMENT_BOARD_ID" profaneComment="mask"></livelike-comments>
 ```
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7d063b1-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "300px"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="300px" src="https://files.readme.io/7d063b1-image.png" />
 
 #### - Custom Profanity Filter Function
 
 If you have specific requirements for profanity filtering, you can define a custom filter function. This function allows you to implement your filtering logic.
 
-- If you set `profaneComment="custom"`, you can provide your custom logic to handle profane comment using `profaneCommentFilterFunction` attribute.
+* If you set `profaneComment="custom"`, you can provide your custom logic to handle profane comment using `profaneCommentFilterFunction` attribute.
 
 ```html
 <livelike-comments boardId="COMMENT_BOARD_ID" profaneComment="custom" profaneCommentFilterFunction={someFunc} >
@@ -226,21 +129,7 @@ If you have specific requirements for profanity filtering, you can define a cust
 
 Users can associate an image with their comment by providing an `authorImageUrl`. This personalizes their comments and adds visual context to their contributions.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/85fb2f6-Screenshot_2023-09-11_at_3.14.31_PM.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/85fb2f6-Screenshot_2023-09-11_at_3.14.31_PM.png" />
 
 ##### `authorImageUrl` Attribute
 
