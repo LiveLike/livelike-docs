@@ -30,8 +30,8 @@ const { trackWidgetInteractedAction } = useWidgetInteractedAnalytics({ widgetId:
 
 #### `trackWidgetInteractedAction`
 
-| Type                                                                                                                                                   |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Function](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractedAnalytics) of type: ({ interactionItem:T }) => void |
+| Type                                                                                                                                                    |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Function](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractedAnalytics) of type: (\{ interactionItem:T }) => void |
 
 interactionItem: The item representing the interaction with the widget.
