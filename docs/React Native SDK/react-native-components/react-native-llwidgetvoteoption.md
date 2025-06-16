@@ -10,25 +10,25 @@ metadata:
 next:
   description: ''
 ---
-`LLWidgetVoteOption` is a container component that renders a vote based widget option details using [LLWidgetOption](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLWidgetOption) as its presentational component. It derives all the option details and interaction handler needed by `LLWidgetOption` component.  
+`LLWidgetVoteOption` is a container component that renders a vote based widget option details using [LLWidgetOption](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLWidgetOption) as its presentational component. It derives all the option details and interaction handler needed by `LLWidgetOption` component.\
 This widget is used by:
 
-- [LLPollWidget](react-native-llpollwidget)
-- [LLPredictionWidget](react-native-llpredictionwidget)
-- [LLPredictionFollowUpWidget](react-native-llpredictionfollowupwidget)
+* [LLPollWidget](react-native-llpollwidget)
+* [LLPredictionWidget](react-native-llpredictionwidget)
+* [LLPredictionFollowUpWidget](react-native-llpredictionfollowupwidget)
 
 ## Hooks used by `LLWidgetVoteOption`
 
-- [useWidgetInteractionActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractionActions)
-- [useWidgetResultState](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetResultState)
-- [useWidgetOptions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetOptions)
-- [useInteractedWidgetOption](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useInteractedWidgetOption)
-- [useIsWidgetOptionDisabled](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useIsWidgetOptionDisabled)
+* [useWidgetInteractionActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractionActions)
+* [useWidgetResultState](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetResultState)
+* [useWidgetOptions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetOptions)
+* [useInteractedWidgetOption](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useInteractedWidgetOption)
+* [useIsWidgetOptionDisabled](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useIsWidgetOptionDisabled)
 
 ## LLWidgetVoteOption Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `widgetId`
