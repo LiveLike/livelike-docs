@@ -14,88 +14,145 @@ next:
       slug: react-native-customisation
       title: Customisation
 ---
-Using `LLThemeSwitch` component, you can switch between light and dark theme StockUI. The component renders a switch icon to toggle light/dark theme.
+Using `LLThemeSwitch` component, you can switch between light and dark theme StockUI. The component renders a switch icon to toggle light/dark theme.\
 This component is not rendered in Stock UI by default. You can include `LLThemeSwitch` by customising chat header of `LLChat` using [`HeaderComponent`](react-native-llchat#headercomponent) prop
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a13beac-Screenshot_2023-01-30_at_12.04.34.png",
-        "Screenshot 2023-01-30 at 12.04.34.png",
-        1794,
-        1536,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
-##### Example usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import React from 'react';\nimport { Text, View } from 'react-native';\nimport {\n  LLChat,\n  LLChatHeaderProps,\n  LLThemeSwitch,\n} from '@livelike/react-native';\n\nfunction CustomHeader({ title }: LLChatHeaderProps) {\n  return (\n    <View>\n      <Text>{title}</Text>\n      <LLThemeSwitch />\n    </View>\n  );\n}\n\nexport function MyApp() {\n  return <LLChat roomId=\"<Your chat room id>\" HeaderComponent={CustomHeader} />;\n}",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hooks used by LLThemeSwitch"
+![1794](https://files.readme.io/a13beac-Screenshot_2023-01-30_at_12.04.34.png "Screenshot 2023-01-30 at 12.04.34.png")
+
+##### Example usage:
+
+```typescript
+import React from 'react';
+import { Text, View } from 'react-native';
+import {
+  LLChat,
+  LLChatHeaderProps,
+  LLThemeSwitch,
+} from '@livelike/react-native';
+
+function CustomHeader({ title }: LLChatHeaderProps) {
+  return (
+    <View>
+      <Text>{title}</Text>
+      <LLThemeSwitch />
+    </View>
+  );
 }
-[/block]
+
+export function MyApp() {
+  return <LLChat roomId="<Your chat room id>" HeaderComponent={CustomHeader} />;
+}
+```
+
+## Hooks used by LLThemeSwitch
+
 * [useTheme](react-native-usetheme)
 * [useStyles](react-native-usestyles)
-[block:api-header]
-{
-  "title": "LLThemeSwitch Props"
-}
-[/block]
+
+## LLThemeSwitch Props
+
 #### `switchIcon`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[Image source](https://reactnative.dev/docs/image#source)",
-    "0-1": "themeAssets.themeSwitch icon (exposed by [useTheme](react-native-usetheme) hook)"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [Image source](https://reactnative.dev/docs/image#source)
+      </td>
+
+      <td>
+        themeAssets.themeSwitch icon (exposed by [useTheme](react-native-usetheme) hook)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `styles`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "StyleSheet of type [LLThemeSwitchStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeSwitchStyles)",
-    "0-1": "No Default, if present styles props would be applied on top of internal `LLThemeSwitch` styles."
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        StyleSheet of type [LLThemeSwitchStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLThemeSwitchStyles)
+      </td>
+
+      <td>
+        No Default, if present styles props would be applied on top of internal `LLThemeSwitch` styles.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### Styles Props
-[block:parameters]
-{
-  "data": {
-    "h-0": "CSS Class",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "imageContainer",
-    "1-0": "image",
-    "0-1": "[ViewStyle](https://reactnative.dev/docs/view-style-props)",
-    "1-1": "[ImageStyle](https://reactnative.dev/docs/image-style-props)",
-    "0-2": "Icon image container",
-    "1-2": "Icon image styles"
-  },
-  "cols": 3,
-  "rows": 2
-}
-[/block]
+
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        CSS Class
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        imageContainer
+      </td>
+
+      <td>
+        [ViewStyle](https://reactnative.dev/docs/view-style-props)
+      </td>
+
+      <td>
+        Icon image container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        image
+      </td>
+
+      <td>
+        [ImageStyle](https://reactnative.dev/docs/image-style-props)
+      </td>
+
+      <td>
+        Icon image styles
+      </td>
+    </tr>
+  </tbody>
+</Table>
