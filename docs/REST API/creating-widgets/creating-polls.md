@@ -16,7 +16,7 @@ Polls ask your audience to let everyone know how they feel or what they think. T
 
 ## Create a Poll
 
-All widgets are created as part of a <<glossary:Program>> and each program has its own unique ID. To send a poll widget, a new one must first be created within the program that your audience will be interacting with. When creating a poll, the `program_id`, `question`, and `options` body parameters are required.
+All widgets are created as part of a <Glossary>Program</Glossary> and each program has its own unique ID. To send a poll widget, a new one must first be created within the program that your audience will be interacting with. When creating a poll, the `program_id`, `question`, and `options` body parameters are required.
 
 ```python createimagepoll.py
 # Configure your Program ID
@@ -47,7 +47,7 @@ poll = r.json()
 Once a widget is created, it will appear in the Pending section of the Producer Studio, but users won't see it yet. A widget has to be published before an audience will see it.
 
 > 📘 Check out Polls API reference
-> 
+>
 > More details on [reading polls](https://docs.livelike.com/reference#get-an-image-poll) and [creating polls](https://docs.livelike.com/reference#create-image-poll) is available in the API reference.
 
 ## Publish the Poll
@@ -61,18 +61,18 @@ requests.put(poll['schedule_url'], json=publish_payload, headers=headers)
 ```
 
 > 👍 Specify publish delays in ISO format
-> 
+>
 > The `publish_delay` body parameter is specified in ISO 8601 duration format.
 
 Once the widget is published, it will appear in the History tab in the Producer Studio, and audiences will see it on their devices if they are subscribed to the program.
 
 > 📘 More info is in the API reference!
-> 
+>
 > Please see the [Using Widgets](https://docs.livelike.com/v1/reference#widgets-basics) section of the API reference documentation for more details about how widgets are created and published.
 
 ## Poll Variations
 
 The REST API supports two poll variants, text polls and image polls. They function mostly identically, except for these key differences:
 
-- Image poll and text poll are two separate API resources
-- Image poll options require an `image_url` field that text poll options do not have
+* Image poll and text poll are two separate API resources
+* Image poll options require an `image_url` field that text poll options do not have
