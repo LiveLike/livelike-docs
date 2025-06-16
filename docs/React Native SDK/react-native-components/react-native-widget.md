@@ -13,19 +13,19 @@ next:
 The various interactive elements that are delivered to audiences to engage with are called widgets. The library of widgets is always expanding and features things like polls, quizzes, and predictions.
 
 > 📘 What are widgets, different available widgets and presentational modes?
-> 
+>
 > Refer our [widget](https://docs.livelike.com/docs/widgets) core documentation
 
 > 📘 Widget core concepts
-> 
+>
 > As a pre-requisite we recommend you to go through our widget core concepts documentation that would help you to understand below different widgets, their structure and available customisations.
-> 
+>
 > [Widget Anatomy](react-native-widget-anatomy) 
-> 
+>
 > [Widget UI Lifecycle](react-native-widget-ui-lifecycle)
 
 > 👍 Snack expo playground
-> 
+>
 > Refer [livelike-widgets](https://snack.expo.dev/@aquibv/livelike-widgets) snack expo playground
 
 React Native SDK provides different stock widget UI components:
