@@ -18,7 +18,7 @@ next:
 ---
 ## Overview
 
-Leaderboards allow users to compete and see how they stack up against each other. Once a leaderboard has been associated with a <<glossary:Program>>, users who earn [rewards](https://docs.livelike.com/docs/rewards) in that program will have them counted toward their score on that leaderboard.
+Leaderboards allow users to compete and see how they stack up against each other. Once a leaderboard has been associated with a <Glossary>Program</Glossary>, users who earn [rewards](https://docs.livelike.com/docs/rewards) in that program will have them counted toward their score on that leaderboard.
 
 A program can have many leaderboards associated, and a leaderboard can be linked with many programs. This allows you to better capture your own experience's structure, such as allowing all-time, seasonal, or single-event leaderboards. You can even mix and match multiple leaderboards with the same program.
 
@@ -26,18 +26,18 @@ A program can have many leaderboards associated, and a leaderboard can be linked
 
 Each leaderboard has these properties:
 
-- An **ID** containing the unique identifier of the leaderboard. This can't be changed.
-- A human-readable **Name**.
-- A **Tracked Reward Item**. When fans earn these rewards in linked programs their scores in the leaderboard automatically update.
-- A set of **Linked Programs** that determine which programs are eligible to automatically update the leaderboard.
-- An ordered list of **Entries**, one for each profile ranked on the leaderboard. Each entry contains the profile, their rank on the leaderboard, and their score.
+* An **ID** containing the unique identifier of the leaderboard. This can't be changed.
+* A human-readable **Name**.
+* A **Tracked Reward Item**. When fans earn these rewards in linked programs their scores in the leaderboard automatically update.
+* A set of **Linked Programs** that determine which programs are eligible to automatically update the leaderboard.
+* An ordered list of **Entries**, one for each profile ranked on the leaderboard. Each entry contains the profile, their rank on the leaderboard, and their score.
 
 ## Entries and Score
 
 Each leaderboard maintains a list of entries ordered by rank for each profile ranked on the leaderboard. Entries are ranked high to low by score, where the profile with the highest score has rank 1. In addition to the rank, each entry also has fields for the profile and for their current score on the leaderboard. Score increases each time a profile gains the same kind of reward that the leaderboard is tracking, and only while the program the profile earned the rewards in is linked to the leaderboard. When using automatically-updating leaderboards that track rewards, score only accumulates, it does not go down when the profile spends, transfers, or otherwise depletes their reward balances.
 
 > 📘 Scores only update when the program is linked to the leaderboard
-> 
+>
 > Rewards earned in a program will only increase score when the program is linked to the leaderboard, and when the rewards earned are the same kind being tracked by the leaderboard.
 
 ## Setting Up Leaderboards in the CMS
@@ -283,9 +283,9 @@ final LeaderBoardEntry result = await sdk.getLeaderBoardEntryForCurrentUserProfi
 You can subscribe to the current user's Leaderboard position to receive updates when their position changes.
 
 > 📘 Minimum SDK Version
-> 
-> iOS: 2.9  
-> Android:  
+>
+> iOS: 2.9\
+> Android:\
 > Web: 2.0.0
 
 #### Get LeaderboardClients from Content Session
