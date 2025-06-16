@@ -17,43 +17,57 @@ next:
 The purpose of the `useStickerPicker` is to manage and track the selected sticker pack. It exposes the selected stickerPackId value and appropriate setter function.
 
 ##### Example Usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { selectedStickerPackId, setSelectedStickerPackId } = useStickerPicker();",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+```typescript
+const { selectedStickerPackId, setSelectedStickerPackId } = useStickerPicker();
+```
+
+## Hook Return Value
+
 #### `selectedStickerPackId`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "String",
-    "0-1": "Empty String"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        String
+      </td>
+
+      <td>
+        Empty String
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `setSelectedStickerPackId`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "`(newSelectedStickerPickerId) => void`"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        `(newSelectedStickerPickerId) => void`
+      </td>
+    </tr>
+  </tbody>
+</Table>
