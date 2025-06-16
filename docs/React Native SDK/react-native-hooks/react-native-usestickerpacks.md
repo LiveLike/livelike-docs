@@ -17,32 +17,37 @@ next:
 The purpose of `useStickerPacks` hook is to expose sticker packs resource.
 
 ##### Example usage
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { stickerPacks } = useStickerPacks();",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+```typescript
+const { stickerPacks } = useStickerPacks();
+```
+
+## Hook Return Value
+
 #### `stickerPacks`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Array of items of type: [IStickerPack](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IStickerPack)",
-    "0-1": "Empty Array"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Array of items of type: [IStickerPack](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IStickerPack)
+      </td>
+
+      <td>
+        Empty Array
+      </td>
+    </tr>
+  </tbody>
+</Table>
