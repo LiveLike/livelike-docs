@@ -22,7 +22,7 @@ Overall, a board is a valuable resource for fostering engagement and facilitatin
 
 Users can create a Comment Board using the `createCommentBoard` method.
 
-**API Definition** : [createCommentBoard]((https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createCommentBoard))
+**API Definition** : [createCommentBoard](\(https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createCommentBoard\))
 
 ```javascript
 import { createCommentBoard } from '@livelike/javascript'
@@ -37,11 +37,9 @@ createCommentBoard({
 }).then((commentBoard) => console.log(commentBoard));
 ```
 
-
-
 ## Updating a Comment Board
 
-**API Definition** : [updateCommentBoard]((https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=updateCommentBoard))
+**API Definition** : [updateCommentBoard](\(https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=updateCommentBoard\))
 
 ```javascript
 import { updateCommentBoard } from '@livelike/javascript'
@@ -57,11 +55,9 @@ updateCommentBoard({
 }).then((commentBoard) => console.log(commentBoard));
 ```
 
-
-
 ## Getting a list of Comments Boards
 
-**API Definition** : [getCommentBoards]((https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getCommentBoards))
+**API Definition** : [getCommentBoards](\(https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=getCommentBoards\))
 
 ```javascript
 import { getCommentBoards } from '@livelike/javascript'
@@ -69,11 +65,9 @@ import { getCommentBoards } from '@livelike/javascript'
 getCommentBoards().then(({results}) => console.log(results))
 ```
 
-
-
 ## Deleting a Comment Board
 
-**API Definition** : [deleteCommentBoard]((https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=deleteCommentBoard))
+**API Definition** : [deleteCommentBoard](\(https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=deleteCommentBoard\))
 
 ```javascript
 import { deleteCommentBoard } from '@livelike/javascript'
