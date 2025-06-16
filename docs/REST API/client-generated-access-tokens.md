@@ -27,7 +27,6 @@ LiveLike Profile Access Tokens are in the [JSON Web Token](https://jwt.io/) form
 * `custom_profile_id`
   * This is the ID of the user in your own system.  It should be a string value no longer than 255 characters, and must be unique within the application.  The ID is always stored as a string in LiveLike's system.  So even if the ID value is an integer (ie, an autoincrement primary key), please convert it to a string before generating the JWT access token.This ID is unique for that [Client ID](https://docs.livelike.com/docs/retrieving-important-keys#retrieving-client-id)
 
-  
 ## Example generating a client access token in Python
 
 ```python
