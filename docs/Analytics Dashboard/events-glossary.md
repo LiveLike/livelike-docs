@@ -31,26 +31,11 @@ In the Application View, you can view various KPIs associated with your applicat
 
 Key features include:
 
-- Spreadsheet download of the page contents with the current filters that have been applied. 
-- Search bar in the top right corner to increase efficiency. 
-- Share' next to the download button for better ease of access and shareability, allowing you to share the contents between your colleagues with the same filters which you have applied at your end.
+* Spreadsheet download of the page contents with the current filters that have been applied. 
+* Search bar in the top right corner to increase efficiency. 
+* Share' next to the download button for better ease of access and shareability, allowing you to share the contents between your colleagues with the same filters which you have applied at your end.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif",
-        "ezgif.com-gif-maker.gif",
-        1200
-      ],
-      "align": "center",
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
 
 You can see data in a more granular form, such as **hour/day/week/month/year**, by using the Interval drop-down options.  Our default view option is by **Month**.
 
