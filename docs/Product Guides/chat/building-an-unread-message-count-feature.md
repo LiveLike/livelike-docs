@@ -16,36 +16,76 @@ next:
   description: ''
 ---
 This is a walkthrough on how to create two types of unread message count features using the EngagementSDK. 
-[block:api-header]
-{
-  "title": "Unread Messages Indicator"
-}
-[/block]
-If you want to notify the user that a message has been received on a ChatRoom you can use some kind of visual indicator. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class SomeClass {\n  let chatSession: ChatSession\n  let chatViewController: ChatViewController\n  let unreadMessagesIndicatorView: UIView\n  \n  func someMethod(){\n    chatSession.addDelegate(self)\n  }\n   \n  func hideChat(){\n    chatViewController.view.isHidden = true\n  }\n  \n  func showChat() {\n    chatViewController.view.isHidden = false\n    // We'll consider the messages to be read when the chatViewController is visible\n    unreadMessagesIndicatorView.isHidden = true\n  }\n}\n\nextension SomeClass: ChatSessionDelegate {\n\tfunc chatSession(_ chatSession: ChatSession, didRecieveNewMessage message: ChatMessage) {\n    if chatViewController.view.isHidden {\n      unreadMessageIndicatorView.isHidden = false\n    }\n  }\n}\n  ",
-      "language": "swift"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Unread Message Count Since Last App Launch"
+## Unread Messages Indicator
+
+If you want to notify the user that a message has been received on a ChatRoom you can use some kind of visual indicator. 
+
+```swift
+class SomeClass {
+  let chatSession: ChatSession
+  let chatViewController: ChatViewController
+  let unreadMessagesIndicatorView: UIView
+  
+  func someMethod(){
+    chatSession.addDelegate(self)
+  }
+   
+  func hideChat(){
+    chatViewController.view.isHidden = true
+  }
+  
+  func showChat() {
+    chatViewController.view.isHidden = false
+    // We'll consider the messages to be read when the chatViewController is visible
+    unreadMessagesIndicatorView.isHidden = true
+  }
 }
-[/block]
-Another version of an unread message count feature would be to display a number of how many messages were missed since the last time the app was open.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class SomeClass {\n  let chatSession: ChatSession\n  let chatViewController: ChatViewController\n  // Keeps track of the latest message received. Stored in local storage.\n  var dateOfLastNewMessage: Date?\n \tlet unreadMessageCountLabel: UILabel\n  \n  func someMethod(){\n    session.addDelegate(self)\n    \n    dateOfLastNewMessage = UserDefaults.standard.object(forKey: \"dateOfLastNewMessage\") as? Date\n    if let dateOfLastNewMessage = dateOfLastNewMessage {\n      \n      chatsession.getMessageCount(\n        since: dateOfLastNewMessage,\n        completion: { result in\n         \tswitch result {\n            case .success(let messageCount):\n           \t\tunreadMessageCountLabel.text = messageCount.description\n            case .failure(let error):\n            \t//handle error\n        })\n    }\n  }\n}\n\nextension SomeClass: ContentSessionDelegate {\n\tfunc chatSession(_ chatSession: ChatSession, didRecieveNewMessage message: ChatMessage) {\n    dateOfLastNewMessage = message.timestamp\n    UserDefaults.standard.set(dateOfLastNewMessage, forKey: \"dateOfLastNewMessage\")\n  }\n}",
-      "language": "swift"
+
+extension SomeClass: ChatSessionDelegate {
+	func chatSession(_ chatSession: ChatSession, didRecieveNewMessage message: ChatMessage) {
+    if chatViewController.view.isHidden {
+      unreadMessageIndicatorView.isHidden = false
     }
-  ]
+  }
 }
-[/block]
+```
+
+## Unread Message Count Since Last App Launch
+
+Another version of an unread message count feature would be to display a number of how many messages were missed since the last time the app was open.
+
+```swift
+class SomeClass {
+  let chatSession: ChatSession
+  let chatViewController: ChatViewController
+  // Keeps track of the latest message received. Stored in local storage.
+  var dateOfLastNewMessage: Date?
+ 	let unreadMessageCountLabel: UILabel
+  
+  func someMethod(){
+    session.addDelegate(self)
+    
+    dateOfLastNewMessage = UserDefaults.standard.object(forKey: "dateOfLastNewMessage") as? Date
+    if let dateOfLastNewMessage = dateOfLastNewMessage {
+      
+      chatsession.getMessageCount(
+        since: dateOfLastNewMessage,
+        completion: { result in
+         	switch result {
+            case .success(let messageCount):
+           		unreadMessageCountLabel.text = messageCount.description
+            case .failure(let error):
+            	//handle error
+        })
+    }
+  }
+}
+
+extension SomeClass: ContentSessionDelegate {
+	func chatSession(_ chatSession: ChatSession, didRecieveNewMessage message: ChatMessage) {
+    dateOfLastNewMessage = message.timestamp
+    UserDefaults.standard.set(dateOfLastNewMessage, forKey: "dateOfLastNewMessage")
+  }
+}
+```
