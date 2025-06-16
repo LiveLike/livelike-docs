@@ -15,11 +15,11 @@ next:
 This is a developers' guide for setting up a LiveLike SDK configuration for Flutter apps. We will take you through the basic technical steps for configuration and show you how to send your first chat messages. The LiveLike Flutter SDK  depends on the native SDK of LiveLike, it uses Embedded PlatformView and UiKitView to View the widgets and chats features in Flutter. For communication between the Flutter and native platforms, we use the event channel supported by Flutter SDK itself.
 
 > ❗️ Flutter is not supported.
-> 
+>
 > The Flutter SDK is not actively maintained and is not supported.
 
 > 🚧 LiveLike Flutter SDK
-> 
+>
 > The SDK currently supports only the Android(**LiveLike SDK 2.23.2**) and IOS(**LiveLike SDK 2.29.1**) platform.
 
 ## Installation
@@ -27,10 +27,10 @@ This is a developers' guide for setting up a LiveLike SDK configuration for Flut
 Add below lines to your pubspec.yaml under dependencies.
 
 > 👍 Flutter LiveLike SDK
-> 
-> livelike_flutter_sdk: ^0.2.0
+>
+> livelike\_flutter\_sdk: ^0.2.0
 
-Check Pub Dev Link for more details: <https://pub.dev/packages/livelike_flutter_sdk>
+Check Pub Dev Link for more details: [https://pub.dev/packages/livelike\_flutter\_sdk](https://pub.dev/packages/livelike_flutter_sdk)
 
 ## Initialization
 
@@ -44,7 +44,7 @@ final sdk = EngagementSDK("<client-id>");
 
 **Access Token**
 
-The LiveLike SDK generates a User <<glossary: Access Token>> whenever initialized. You can either choose to store it locally or persist it within your internal user database (although we have already managed it internally in the SDK). The access Token is stored locally which can be updated if the user uninstalls the application or clears data from application settings. This may result in higher MAUs([Monthly Active Users], so it is highly recommended to pass the accessToken delegate as a param on SDK init and store the accessToken for persistent users count.
+The LiveLike SDK generates a User <Glossary> Access Token</Glossary> whenever initialized. You can either choose to store it locally or persist it within your internal user database (although we have already managed it internally in the SDK). The access Token is stored locally which can be updated if the user uninstalls the application or clears data from application settings. This may result in higher MAUs([Monthly Active Users], so it is highly recommended to pass the accessToken delegate as a param on SDK init and store the accessToken for persistent users count.
 
 To Use the EngagementSDK instance with the accessToken.
 
@@ -60,7 +60,7 @@ In Order to get the accessToken for the first when a new user is created.
 **Note**: AccessTokenStream can only be used with EngagementSDK.accessToken constructor else it will give the issue related "**No Implementation Found**"
 
 > ❗️ AccessTokenStream
-> 
+>
 > AccessTokenStream is removed from 0.0.2, added a delegate method in the EngagementSDK.accessToken constructor
 
 ## Chat Session
@@ -84,7 +84,7 @@ session.resume();
 session.pause();
 ```
 
-**Close Chat Session**  
+**Close Chat Session**\
 To close the chat services in LiveLike SDK and clear all variables.
 
 ```text Dart
@@ -112,7 +112,7 @@ session.resume();
 session.pause();
 ```
 
-**Close Content Session**  
+**Close Content Session**\
 To close the widget services in LiveLike SDK and clear all variables.
 
 ```text Dart
@@ -125,7 +125,7 @@ session.close();
 final list = await session?.getPublishedWidgets(LiveLikePagination.first);
 ```
 
-**LiveLikePagination**  
+**LiveLikePagination**\
 the LiveLikePagination enum is used for lazy loading, right now by default widgets loaded a limit of 20, in order to start the call the api with LiveLikePagination.first which will return you first page data and call api with LiveLikePagination.next which will get next page data and similarly LiveLikePagination.previous will get previous page data, in next once you get the empty array you have reached the last page.
 
 ## Programs
