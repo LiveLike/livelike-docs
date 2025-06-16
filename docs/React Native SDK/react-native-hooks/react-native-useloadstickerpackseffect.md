@@ -12,14 +12,11 @@ next:
 ---
 The purpose of `useLoadStickerPacksEffect` hook is to fetch and update the sticker pack resource.
 
-##### Example Usage: 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { reactionPacks } = useReactionPacks({\n  reactionSpaceId: \"<Reaction space ID>\",\n});\nuseLoadStickerPacksEffect();\n",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
+##### Example Usage:
+
+```typescript
+const { reactionPacks } = useReactionPacks({
+  reactionSpaceId: "<Reaction space ID>",
+});
+useLoadStickerPacksEffect();
+```
