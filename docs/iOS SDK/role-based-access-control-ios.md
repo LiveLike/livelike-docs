@@ -21,12 +21,12 @@ Read Product Guide [here](doc:roles-and-permissions)
 ### Swift Package Manager
 
 1. Open your project inside of Xcode and navigate to File > Add Packages...
-2. Search for <https://bitbucket.org/livelike/livelike-ios-sdk.git> and select the livelike-ios-sdk swift package
+2. Search for [https://bitbucket.org/livelike/livelike-ios-sdk.git](https://bitbucket.org/livelike/livelike-ios-sdk.git) and select the livelike-ios-sdk swift package
 3. Use the Up to Next Major Version dependency rule spanning from 2.0.0 \< 3.0.0, and hit the Add Package button
 
 ### CocoaPods
 
-<https://guides.cocoapods.org/using/using-cocoapods.html>
+[https://guides.cocoapods.org/using/using-cocoapods.html](https://guides.cocoapods.org/using/using-cocoapods.html)
 
 Add the following to a Podfile:
 
@@ -67,10 +67,10 @@ LiveLikeRBACClient.make(
 
 ### Manage roles and permissions via the LiveLikeRBACClient
 
-- **Roles** are assigned to profiles and permission checks are performed against the authenticated profile's roles when they are performing some action. A profile can be assigned more than one role.
-- **Permissions** represent an action a user can perform, like posting a comment or deleting a board. Permissions are granted to roles, and in effect a role is a named set of permissions. Once a role is assigned to a profile, that profile has all of that role's permissions.
-- **Scopes** control which resources the role assignment is effective in. A role assignment is valid for one or more scopes.
-- **Resources** are the entities that profiles act upon. Resources are things like Applications, Programs, Comment Boards, Chat Rooms, Chat Room Messages, and so on.
+* **Roles** are assigned to profiles and permission checks are performed against the authenticated profile's roles when they are performing some action. A profile can be assigned more than one role.
+* **Permissions** represent an action a user can perform, like posting a comment or deleting a board. Permissions are granted to roles, and in effect a role is a named set of permissions. Once a role is assigned to a profile, that profile has all of that role's permissions.
+* **Scopes** control which resources the role assignment is effective in. A role assignment is valid for one or more scopes.
+* **Resources** are the entities that profiles act upon. Resources are things like Applications, Programs, Comment Boards, Chat Rooms, Chat Room Messages, and so on.
 
 <br />
 
