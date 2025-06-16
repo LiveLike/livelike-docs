@@ -30,9 +30,9 @@ history = r.json()
 
 The default behavior is to return all widgets that have been created. The list responses can be filtered by the `status` parameter. The valid statuses are:
 
-- `pending` List widgets that have been created but not scheduled
-- `scheduled` List widgets that have been scheduled but not yet published
-- `published` List widgets that have been published
+* `pending` List widgets that have been created but not scheduled
+* `scheduled` List widgets that have been scheduled but not yet published
+* `published` List widgets that have been published
 
 ### Showing Only Published Widgets
 
@@ -105,5 +105,5 @@ recent_poll_history = r.json()
 ```
 
 > 🚧 Widgets Page Size
-> 
+>
 > The maximum number of widgets that can be returned in a single page is 1,000.  But be careful fetching large numbers of widgets in a single API call since rendering them on the client device can cause issues with performance and memory usage.  Using smaller page sizes and a "Load More" button can help to alleviate those issues.
