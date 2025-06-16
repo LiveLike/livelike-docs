@@ -15,134 +15,312 @@ next:
       title: LLThemeSwitch
 ---
 `LLGifPicker` renders a Sticker picker component when a user press on sticker-picker icon in composer
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2e75341-Screenshot_2023-01-30_at_11.04.10.png",
-        "Screenshot 2023-01-30 at 11.04.10.png",
-        1810,
-        1492,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
-##### Customise styles for Stock `LLStickerPicker` component example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import React from 'react';\nimport {\n  LLBasePickerStyles,\n  LLChat,\n  LLChatMessageComposer,\n  LLChatMessageComposerProps,\n  LLStickerPicker,\n  LLStickerPickerProps,\n  LLStickerPickerStyles,\n  useTheme,\n} from '@livelike/react-native';\nimport { StyleSheet } from 'react-native';\nimport { useMemo } from 'react';\n\nfunction MyStickerPicker(props: LLStickerPickerProps) {\n  const { themeType } = useTheme();\n  const pickerComponentStyles = useMemo(() => pickerComponentStylesFn(themeType), [themeType]);\n\n  return (\n    <LLStickerPicker\n      {...props}\n      PickerComponentStyles={pickerComponentStyles}\n      styles={gifPickerStyles}\n    />\n  );\n}\n\nfunction MyComposer(props: LLChatMessageComposerProps) {\n  return (\n    <LLChatMessageComposer\n      {...props}\n      StickerPickerComponent={MyStickerPicker}\n    />\n  );\n}\n\nexport function MyApp() {\n  return (\n    <LLChat\n      roomId=\"<Your chat room id>\"\n      MessageComposerComponent={MyComposer}\n    />\n  );\n}\n\nconst gifPickerStyles: Partial<LLStickerPickerStyles> = StyleSheet.create({\n  pickerCloseIcon: { height: 12, width: 12 },\n  stickerImage: { width: 70, height: 70 },\n  stickerPackIcon: { height: 22, width: 22 },\n});\nconst pickerComponentStylesFn: (\n  theme: 'light' | 'dark'\n) => Partial<LLBasePickerStyles> = (theme) =>\n  StyleSheet.create({\n    pickerContainer: {\n      minHeight: 250,\n      maxHeight: 350,\n      backgroundColor: theme === 'light' ? '#A0C3D2' : '#2b4956',\n    },\n    pickerItemsScrollview: {\n      padding: 10,\n    },\n  });",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hooks used by LLStickerPicker"
+![1810](https://files.readme.io/2e75341-Screenshot_2023-01-30_at_11.04.10.png "Screenshot 2023-01-30 at 11.04.10.png")
+
+##### Customise styles for Stock `LLStickerPicker` component example:
+
+```typescript
+import React from 'react';
+import {
+  LLBasePickerStyles,
+  LLChat,
+  LLChatMessageComposer,
+  LLChatMessageComposerProps,
+  LLStickerPicker,
+  LLStickerPickerProps,
+  LLStickerPickerStyles,
+  useTheme,
+} from '@livelike/react-native';
+import { StyleSheet } from 'react-native';
+import { useMemo } from 'react';
+
+function MyStickerPicker(props: LLStickerPickerProps) {
+  const { themeType } = useTheme();
+  const pickerComponentStyles = useMemo(() => pickerComponentStylesFn(themeType), [themeType]);
+
+  return (
+    <LLStickerPicker
+      {...props}
+      PickerComponentStyles={pickerComponentStyles}
+      styles={gifPickerStyles}
+    />
+  );
 }
-[/block]
+
+function MyComposer(props: LLChatMessageComposerProps) {
+  return (
+    <LLChatMessageComposer
+      {...props}
+      StickerPickerComponent={MyStickerPicker}
+    />
+  );
+}
+
+export function MyApp() {
+  return (
+    <LLChat
+      roomId="<Your chat room id>"
+      MessageComposerComponent={MyComposer}
+    />
+  );
+}
+
+const gifPickerStyles: Partial<LLStickerPickerStyles> = StyleSheet.create({
+  pickerCloseIcon: { height: 12, width: 12 },
+  stickerImage: { width: 70, height: 70 },
+  stickerPackIcon: { height: 22, width: 22 },
+});
+const pickerComponentStylesFn: (
+  theme: 'light' | 'dark'
+) => Partial<LLBasePickerStyles> = (theme) =>
+  StyleSheet.create({
+    pickerContainer: {
+      minHeight: 250,
+      maxHeight: 350,
+      backgroundColor: theme === 'light' ? '#A0C3D2' : '#2b4956',
+    },
+    pickerItemsScrollview: {
+      padding: 10,
+    },
+  });
+```
+
+## Hooks used by LLStickerPicker
+
 * [useStickerPacks](react-native-usestickerpacks)
 * [useStickerPicker](react-native-usestickerpicker)
 * [useTheme](react-native-usetheme)
 * [useStyles](react-native-usestyles)
-[block:api-header]
-{
-  "title": "LLStickerPicker Props"
-}
-[/block]
+
+## LLStickerPicker Props
+
 #### `visible`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "boolean",
-    "0-1": "false if not present"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        boolean
+      </td>
+
+      <td>
+        false if not present
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `closeStickerPicker`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Function of type: `() => void`"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: `() => void`
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `onSelectSticker`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "Function of type: `(stickerShortcode: string) => void` (**Required**)"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: `(stickerShortcode: string) => void` (**Required**)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `PickerComponentStyles`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-1": "No Default, if present styles props would be applied on top of internal `LLBasePicker` styles.",
-    "0-0": "[LLBasePickerStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLBasePickerStyles)"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [LLBasePickerStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLBasePickerStyles)
+      </td>
+
+      <td>
+        No Default, if present styles props would be applied on top of internal `LLBasePicker` styles.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `styles`
-[block:parameters]
-{
-  "data": {
-    "0-0": "StyleSheet of type [LLStickerPickerStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLStickerPickerStyles)",
-    "0-1": "No Default, if present styles props would be applied on top of internal `LLStickerPicker` styles."
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+
+      </th>
+
+      <th>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        StyleSheet of type [LLStickerPickerStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLStickerPickerStyles)
+      </td>
+
+      <td>
+        No Default, if present styles props would be applied on top of internal `LLStickerPicker` styles.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### Styles Props
-[block:parameters]
-{
-  "data": {
-    "h-0": "CSS Class",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "stickerPacksContainer",
-    "1-0": "stickerImageContainer",
-    "2-0": "stickerHeaderContainer",
-    "4-0": "stickerImage",
-    "3-0": "stickerPackIcon",
-    "5-0": "pickerCloseIcon",
-    "0-1": "[ViewStyle](https://reactnative.dev/docs/view-style-props)",
-    "1-1": "[ViewStyle](https://reactnative.dev/docs/view-style-props)",
-    "2-1": "[ViewStyle](https://reactnative.dev/docs/view-style-props)",
-    "3-1": "[ImageStyle](https://reactnative.dev/docs/image-style-props)",
-    "4-1": "[ImageStyle](https://reactnative.dev/docs/image-style-props)",
-    "5-1": "[ImageStyle](https://reactnative.dev/docs/image-style-props)",
-    "0-2": "Sticker packs item container",
-    "1-2": "Sticker item container",
-    "2-2": "Root sticker packs container",
-    "3-2": "Sticker packs item styles",
-    "4-2": "Sticker item styles",
-    "5-2": "Sticker picker close icon styles"
-  },
-  "cols": 3,
-  "rows": 6
-}
-[/block]
+
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        CSS Class
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        stickerPacksContainer
+      </td>
+
+      <td>
+        [ViewStyle](https://reactnative.dev/docs/view-style-props)
+      </td>
+
+      <td>
+        Sticker packs item container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        stickerImageContainer
+      </td>
+
+      <td>
+        [ViewStyle](https://reactnative.dev/docs/view-style-props)
+      </td>
+
+      <td>
+        Sticker item container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        stickerHeaderContainer
+      </td>
+
+      <td>
+        [ViewStyle](https://reactnative.dev/docs/view-style-props)
+      </td>
+
+      <td>
+        Root sticker packs container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        stickerPackIcon
+      </td>
+
+      <td>
+        [ImageStyle](https://reactnative.dev/docs/image-style-props)
+      </td>
+
+      <td>
+        Sticker packs item styles
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        stickerImage
+      </td>
+
+      <td>
+        [ImageStyle](https://reactnative.dev/docs/image-style-props)
+      </td>
+
+      <td>
+        Sticker item styles
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pickerCloseIcon
+      </td>
+
+      <td>
+        [ImageStyle](https://reactnative.dev/docs/image-style-props)
+      </td>
+
+      <td>
+        Sticker picker close icon styles
+      </td>
+    </tr>
+  </tbody>
+</Table>
