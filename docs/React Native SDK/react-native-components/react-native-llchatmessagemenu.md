@@ -18,9 +18,9 @@ next:
 
 `LLChatMessageMenu` is rendered as a popover component. The default user action to show LLChatMessageMenu component is long press on message item. It consists of moderation based menu options like: 
 
-- Report message
-- Block profile
-- Delete message
+* Report message
+* Block profile
+* Delete message
 
 ![](https://files.readme.io/e670439-Screenshot_2023-01-27_at_10.41.56.png "Screenshot 2023-01-27 at 10.41.56.png")
 
@@ -93,7 +93,7 @@ const messageMenuItemStyle: Partial<LLChatMessageMenuOptionStyles> =
 
 ### Hooks used by LLChatMessageMenu
 
-- [useStyles](react-native-usestyles)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageMenu Props
 
@@ -127,9 +127,9 @@ const messageMenuItemStyle: Partial<LLChatMessageMenuOptionStyles> =
 
 ### Hooks used by LLChatMessageMenuOption
 
-- [useApi](react-native-useapi)
-- [useMessageItemPopover](react-native-usemessageitempopover)
-- [useStyles](react-native-usestyles)
+* [useApi](react-native-useapi)
+* [useMessageItemPopover](react-native-usemessageitempopover)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageMenuOption Props
 
