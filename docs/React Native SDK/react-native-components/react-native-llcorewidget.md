@@ -12,22 +12,22 @@ next:
 ---
 `LLCoreWidget` is a container component used by various widget component where it is usually the first component rendered in the component hierarchy of a widget. This component is responsible for:
 
-- Loading widget details based on `widgetId` and `widgetKind` using [useLoadWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadWidgetEffect) hook.
-- Add dismiss functionality using [useWidgetDismiss](<>).
-- Render `LoadingComponent` when widget details are been loaded.
-- Render `ErrorComponent` when there was an error loading widget details.
-- Render widget UI using `children` prop.
+* Loading widget details based on `widgetId` and `widgetKind` using [useLoadWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadWidgetEffect) hook.
+* Add dismiss functionality using [useWidgetDismiss]().
+* Render `LoadingComponent` when widget details are been loaded.
+* Render `ErrorComponent` when there was an error loading widget details.
+* Render widget UI using `children` prop.
 
 ## Hooks used by `LLCoreWidget`
 
-- [useLoadWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadWidgetTimelineEffect)
-- [useWidgetDismiss](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetDismiss)
-- [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
+* [useLoadWidgetEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useLoadWidgetTimelineEffect)
+* [useWidgetDismiss](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetDismiss)
+* [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
 
 ## LLCoreWidget Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `programId`
