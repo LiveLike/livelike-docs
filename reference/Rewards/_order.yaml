@@ -14,3 +14,4 @@
 - delete-reward-table
 - create-reward-table-entry
 - get-reward-table-entry
+- delete-reward-table-entry
