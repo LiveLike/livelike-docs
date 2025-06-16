@@ -26,7 +26,7 @@ next:
 `LLChat` is the main Chat UI component that renders the chat room UI with a chat header, message list, message composer and chat banner.
 
 > 🚧 Pre-requisite
-> 
+>
 > Make sure you [initialise the SDK](react-native-getting-started#initialise-react-native-sdk).
 
 ```text react native
@@ -38,38 +38,23 @@ export function MyChat(){
 ```
 
 > 👍 Snack Expo playground
-> 
+>
 > Refer [LLChat](https://snack.expo.dev/@aquibv/livelike-chat) snack expo playground
 
 ## Hooks used by `LLChat`
 
-- [useChatRoom](react-native-usechatroom)
-- [useLoadStickerPacksEffect] \(react-native-useloadstickerpackseffect)
-- [useStyles](react-native-usestyles)
+* [useChatRoom](react-native-usechatroom)
+* [useLoadStickerPacksEffect] \(react-native-useloadstickerpackseffect)
+* [useStyles](react-native-usestyles)
 
 ## `LLChat` component hierarchy:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fbb69eb-LLChat-comp-heirarchy.png",
-        "LLChat-comp-heirarchy.png",
-        2860
-      ],
-      "align": "center",
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="smart" src="https://files.readme.io/fbb69eb-LLChat-comp-heirarchy.png" />
 
 ## LLChat Props
 
 > 📘 Customisation Core concept
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation that could be achieved through below mentioned props.
 
 #### `roomId`
@@ -82,9 +67,9 @@ This is the room Id of the chat (that you can get from the producer suite). In c
 
 #### `userAvatarUrl`
 
-| Type    | Default    |
-| :------ | :--------- |
-| String  | No Default |
+| Type   | Default    |
+| :----- | :--------- |
+| String | No Default |
 
 This property allows integrators to set avatars for the LLChat component by providing an avatar image URL. To set a custom avatar for an `LLChat` instance, use the `userAvatarUrl` property and provide the URL of the desired avatar image. Here's an example of how to use it:
 
@@ -143,7 +128,7 @@ HeaderComponent styles prop which could be used to modify styles of default rend
 | :------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------ |
 | React component of type [LLChatBanner](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLChatBanner) | [`LLChatBanner`](react-native-llchatbanner) |
 
-`BannerComponent` is rendered in response to any moderation based action for eg Reporting a message, deleting a message or blocking a profile.  
+`BannerComponent` is rendered in response to any moderation based action for eg Reporting a message, deleting a message or blocking a profile.\
 This prop could be used to pass your custom Banner Component.
 
 ##### Example usage:
@@ -214,9 +199,9 @@ MessageListComponent styles prop which could be used to modify styles of default
 
 Rendered at the bottom of the Chat UI. This prop could be used to pass your custom composer component. This component renders:
 
-- `TextInput` - To send a text message.
-- `Sticker Picker` - To pick and send sticker image message
-- `Gif Picker` - To pick and send gif message.
+* `TextInput` - To send a text message.
+* `Sticker Picker` - To pick and send sticker image message
+* `Gif Picker` - To pick and send gif message.
 
 ##### Example usage:
 
