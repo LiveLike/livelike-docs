@@ -29,9 +29,9 @@ Integrations may need to handle more than one scenario depending on their implem
 
 When a chat message is deleted, a few things happen:
 
-- The chat message is removed from history, but may still be in cached API responses
-- If the message was pinned, the related pin is also deleted
-- A `message-deleted` pub/sub event is published containing details of the deleted message
+* The chat message is removed from history, but may still be in cached API responses
+* If the message was pinned, the related pin is also deleted
+* A `message-deleted` pub/sub event is published containing details of the deleted message
 
 The [Get Chat Messages](ref:get-chatroom-messages) API may return deleted messages in its cached results.
 
