@@ -33,7 +33,7 @@ Mentions allow commenters to tag other profiles.
 
 There are two ways to create a mention, implicitly and explicitly. Implicit mentions are automatically created by the backend from specially formatted profile IDs in the comment text. Explicit mentions are supplied by the caller when they want to use their own formatting or custom IDs that the backend wouldn’t be able to parse.
 
-1. **Implicit**: Using the \<@profile:{id}> tag in the comment text.
+1. **Implicit**: Using the \<@profile:\{id}> tag in the comment text.
 2. **Explicit**: By adding an entry into the mentions list and specifying: 
    1. Start index of the mention in the text
    2. End index of the mention in the text
