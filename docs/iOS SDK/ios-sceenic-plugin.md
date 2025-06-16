@@ -14,25 +14,18 @@ next:
       slug: getting-started-2
       title: Getting Started
 ---
-[block:api-header]
-{
-  "title": "Sceenic Video Room"
-}
-[/block]
+## Sceenic Video Room
+
 A Video Room is an entity that contains *Session* and *Participants*. It is a persistent entity that can be connected to and **interacted** with.
 
 For more information see [Sceenic Video Room](doc:sceenic-video-room)
-[block:api-header]
-{
-  "title": "Video Room Session"
-}
-[/block]
+
+## Video Room Session
+
 A Video Room Session represents a connection to a Sceenic Video Room. Integrators can interact and modify video calls within a Sceenic Video Room via a Video Room Session.
 
 For more information see [Video Room Session](doc:video-room-session) 
-[block:api-header]
-{
-  "title": "Video Room View Controller"
-}
-[/block]
+
+## Video Room View Controller
+
 A UIViewController provided out-of-the-box in the Sceenic Plugin. This is a plug-and-play UI that enables you to integrate Sceenic Video Calls and many of its features into your application very quickly.
