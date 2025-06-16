@@ -7,3 +7,4 @@
 - get-list-of-base-roles
 - patch-update-a-base-role
 - put-update-a-base-role
+- delete-a-base-role
