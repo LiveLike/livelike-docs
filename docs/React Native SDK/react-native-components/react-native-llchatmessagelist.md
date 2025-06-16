@@ -49,15 +49,15 @@ const messageListStyle: Partial<LLChatMessageListStyles> = StyleSheet.create({
 
 ### Hooks used by LLChatMessageList
 
-- [useAutoScroll](react-native-useautoscroll)
-- [useStyles](react-native-usestyles)
-- [useTheme](react-native-usetheme)
-- [useReactionSpace](react-native-reaction-hooks#usereactionspace)
-- [useChatMessagesEffect](react-native-usechatmessageseffect)
-- [useLoadReactionPacksEffect](react-native-reaction-hooks#useloadreactionpackseffect)
-- [useUserReactionEffect](react-native-reaction-hooks#useuserreactioneffect)
-- [useChatMessages](react-native-usechatmessages)
-- [useLoadUserReactions](react-native-reaction-hooks#useloaduserreactions)
+* [useAutoScroll](react-native-useautoscroll)
+* [useStyles](react-native-usestyles)
+* [useTheme](react-native-usetheme)
+* [useReactionSpace](react-native-reaction-hooks#usereactionspace)
+* [useChatMessagesEffect](react-native-usechatmessageseffect)
+* [useLoadReactionPacksEffect](react-native-reaction-hooks#useloadreactionpackseffect)
+* [useUserReactionEffect](react-native-reaction-hooks#useuserreactioneffect)
+* [useChatMessages](react-native-usechatmessages)
+* [useLoadUserReactions](react-native-reaction-hooks#useloaduserreactions)
 
 ### LLChatMessageList Props
 
@@ -216,9 +216,9 @@ export function MyApp() {
 
 ### Hooks used by LLChatMessageItem
 
-- [useMessageItemPopover](react-native-usemessageitempopover)
-- [useTheme](react-native-usetheme)
-- [useStyles](react-native-usestyles)
+* [useMessageItemPopover](react-native-usemessageitempopover)
+* [useTheme](react-native-usetheme)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageItem Props
 
@@ -394,8 +394,8 @@ const footerStyle: Partial<LLChatMessageItemFooterStyles> = StyleSheet.create({
 
 ### Hooks used by LLChatMessageItemHeader
 
-- [useTheme](react-native-usetheme)
-- [useStyles](react-native-usestyles)
+* [useTheme](react-native-usetheme)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageItemHeader Props
 
@@ -413,9 +413,9 @@ const footerStyle: Partial<LLChatMessageItemFooterStyles> = StyleSheet.create({
 
 #### `formatMessageTimestamp`
 
-| Type                                                   | Default                                                  |
-| :----------------------------------------------------- | :------------------------------------------------------- |
-| (date: string) => string.                              | Default formatter function `convertDateTime` is applied. |
+| Type                      | Default                                                  |
+| :------------------------ | :------------------------------------------------------- |
+| (date: string) => string. | Default formatter function `convertDateTime` is applied. |
 
 #### `styles`
 
@@ -441,7 +441,7 @@ const footerStyle: Partial<LLChatMessageItemFooterStyles> = StyleSheet.create({
 
 ### Hooks used by LLChatMessageItemBody
 
-- [useStyles](react-native-usestyles)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageItemBody Props
 
@@ -465,23 +465,32 @@ const footerStyle: Partial<LLChatMessageItemFooterStyles> = StyleSheet.create({
 
 #### `ChatMessageItemBodyTextStyles`
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "StyleSheet of type  \n[LLChatMessageItemBodyTextStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLChatMessageItemBodyTextStyles)",
-    "0-1": "No Default, if present styles props would be applied on top of internal `LLChatMessageItemBodyText` styles."
-  },
-  "cols": 2,
-  "rows": 1,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
 
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        StyleSheet of type
+        [LLChatMessageItemBodyTextStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLChatMessageItemBodyTextStyles)
+      </td>
+
+      <td>
+        No Default, if present styles props would be applied on top of internal `LLChatMessageItemBodyText` styles.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 #### `styles`
 
@@ -503,11 +512,11 @@ const footerStyle: Partial<LLChatMessageItemFooterStyles> = StyleSheet.create({
 
 ### Hooks used by LLChatMessageItemFooter
 
-- [useMessageItemPopover](react-native-usemessageitempopover)
-- [useReactionSpace](react-native-reaction-hooks#usereactionspace)
-- [useReactionPacks](react-native-reaction-hooks#usereactionpacks)
-- [useTheme](react-native-usetheme)
-- [useStyles](react-native-usestyles)
+* [useMessageItemPopover](react-native-usemessageitempopover)
+* [useReactionSpace](react-native-reaction-hooks#usereactionspace)
+* [useReactionPacks](react-native-reaction-hooks#usereactionpacks)
+* [useTheme](react-native-usetheme)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageItemFooter Props
 
@@ -664,8 +673,8 @@ The `LLChatMessageItemBodyText`component renders the message body content. It ca
 
 ### Hooks used by LLChatMessageItemBodyText
 
-- [useStickerPacks](react-native-usestickerpacks)
-- [useStyles](react-native-usestyles)
+* [useStickerPacks](react-native-usestickerpacks)
+* [useStyles](react-native-usestyles)
 
 ### LLChatMessageItemBodyText Props
 
