@@ -12,89 +12,209 @@ metadata:
 next:
   description: ''
 ---
-[block:callout]
-{
-  "type": "info",
-  "title": "Minimum SDK Version",
-  "body": "2.9"
-}
-[/block]
+> 📘 Minimum SDK Version
+>
+> 2.9
+
 This is a guide on building a custom Poll Widget. For an overview of the Custom Widget UI system see [Custom Widget UI](doc:custom-widget-ui). 
-[block:api-header]
-{
-  "title": "Poll Widget Model"
-}
-[/block]
+
+## Poll Widget Model
+
 The Poll Widget Model is like a ViewModel for Poll Widget.
 
-***Poll Data(object of LiveLikeWidget class)***
+***Poll Data(object of LiveLikeWidget class)***\
 The Poll Data provides data about the Poll Widget such as the title text and the options.
 
 The model also provides metadata about the widget such as the Date that it was created or the timeout duration set by the Producer.
 
 Note: Use options in livelikeWidget class for the poll.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": " pollWidgetModel?.widgetData?.let { liveLikeWidget ->\n            liveLikeWidget.options?.let {\n                if (it.size > 2) {\n                    rcyl_poll_list.layoutManager = GridLayoutManager(context, 2)\n                }\n                val adapter =\n                    PollListAdapter(context, isImage, ArrayList(it.map { item -> item!! }))\n                rcyl_poll_list.adapter = adapter\n                adapter.pollListener = object : PollListAdapter.PollListener {\n                    override fun onSelectOption(id: String) {\n                        pollWidgetModel?.submitVote(id)\n                    }\n                }\n                button2.visibility = View.GONE\n            }\n        }",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
-***SubmitVote***
+```kotlin
+pollWidgetModel?.widgetData?.let { liveLikeWidget ->
+            liveLikeWidget.options?.let {
+                if (it.size > 2) {
+                    rcyl_poll_list.layoutManager = GridLayoutManager(context, 2)
+                }
+                val adapter =
+                    PollListAdapter(context, isImage, ArrayList(it.map { item -> item!! }))
+                rcyl_poll_list.adapter = adapter
+                adapter.pollListener = object : PollListAdapter.PollListener {
+                    override fun onSelectOption(id: String) {
+                        pollWidgetModel?.submitVote(id)
+                    }
+                }
+                button2.visibility = View.GONE
+            }
+        }
+```
+
+***SubmitVote***\
 For submitting or changing the vote on the option for the poll which needed optionId to send to the backend for changing/submitting the vote for the poll.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "  pollWidgetModel?.submitVote(optionId)",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
-***VoteResults***
+
+```kotlin
+pollWidgetModel?.submitVote(optionId)
+```
+
+***VoteResults***\
 The VoteResults gives you events for updates on the Poll Widget. The event contains the vote count changes for each option on the server.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "pollWidgetModel?.voteResults?.subscribe(this) { result ->\n                    result?.choices?.let { options ->\n                        options.forEach { op ->\n                            adapter.optionIdCount[op.id] = op.vote_count ?: 0\n                        }\n                        adapter.notifyDataSetChanged()\n                    }\n                }",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
-***Interaction History***
-To load the interaction history, you can call the loadInteractionHistory method
+
+```kotlin
+pollWidgetModel?.voteResults?.subscribe(this) { result ->
+                    result?.choices?.let { options ->
+                        options.forEach { op ->
+                            adapter.optionIdCount[op.id] = op.vote_count ?: 0
+                        }
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+```
+
+***Interaction History***\
+To load the interaction history, you can call the loadInteractionHistory method\
 Eg:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "  pollWidgetModel?.loadInteractionHistory( object : LiveLikeCallback<List<PollWidgetUserInteraction>>(){\n            override fun onResponse(result: List<PollWidgetUserInteraction>?, error: String?) {\n              \n            }\n        })",
-      "language": "kotlin"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Sample Custom Poll Widget"
-}
-[/block]
+```kotlin
+pollWidgetModel?.loadInteractionHistory( object : LiveLikeCallback<List<PollWidgetUserInteraction>>(){
+            override fun onResponse(result: List<PollWidgetUserInteraction>?, error: String?) {
+              
+            }
+        })
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class CustomPollWidget : ConstraintLayout {\n    var pollWidgetModel: PollWidgetModel? = null\n    var isImage = false\n\n    constructor(context: Context) : super(context) {\n        init(null, 0)\n    }\n\n    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {\n        init(attrs, 0)\n    }\n\n    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(\n        context,\n        attrs,\n        defStyle\n    ) {\n        init(attrs, defStyle)\n    }\n\n    private fun init(attrs: AttributeSet?, defStyle: Int) {\n        inflate(context, R.layout.custom_poll_widget, this@CustomPollWidget)\n    }\n\n    override fun onAttachedToWindow() {\n        super.onAttachedToWindow()\n        pollWidgetModel?.widgetData?.let { liveLikeWidget ->\n            liveLikeWidget.options?.let {\n                if (it.size > 2) {\n                    rcyl_poll_list.layoutManager = GridLayoutManager(context, 2)\n                }\n                val adapter =\n                    PollListAdapter(context, isImage, ArrayList(it.map { item -> item!! }))\n                rcyl_poll_list.adapter = adapter\n                adapter.pollListener = object : PollListAdapter.PollListener {\n                    override fun onSelectOption(id: String) {\n                        pollWidgetModel?.submitVote(id)\n                    }\n                }\n                button2.visibility = View.GONE\n                pollWidgetModel?.voteResults?.subscribe(this) { result ->\n                    result?.choices?.let { options ->\n                        options.forEach { op ->\n                            adapter.optionIdCount[op.id] = op.vote_count ?: 0\n                        }\n                        adapter.notifyDataSetChanged()\n                    }\n                }\n            }\n            imageView2.setOnClickListener {\n                pollWidgetModel?.finish()\n            }\n\n        }\n\n    }\n\n    override fun onDetachedFromWindow() {\n        super.onDetachedFromWindow()\n        pollWidgetModel?.voteResults?.unsubscribe(this)\n    }\n}\n\nclass PollListAdapter(\n    private val context: Context,\n    private val isImage: Boolean,\n    val list: ArrayList<OptionsItem>\n) :\n    RecyclerView.Adapter<PollListAdapter.PollListItemViewHolder>() {\n    private var selectedIndex = -1\n    val optionIdCount: HashMap<String, Int> = hashMapOf()\n    fun getSelectedOption(): OptionsItem? = when (selectedIndex > -1) {\n        true -> list[selectedIndex]\n        else -> null\n    }\n\n    var pollListener: PollListener? = null\n\n    interface PollListener {\n        fun onSelectOption(id: String)\n    }\n\n    class PollListItemViewHolder(view: View) : RecyclerView.ViewHolder(view)\n\n    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PollListItemViewHolder {\n        return PollListItemViewHolder(\n            LayoutInflater.from(p0.context!!).inflate(\n                when (isImage) {\n                    true -> R.layout.quiz_image_list_item\n                    else -> R.layout.quiz_list_item\n                }, p0, false\n            )\n        )\n    }\n\n    override fun onBindViewHolder(holder: PollListItemViewHolder, index: Int) {\n        val item = list[index]\n        if (isImage) {\n            Glide.with(context)\n                .load(item.imageUrl)\n                .into(holder.itemView.imageButton2)\n            if (selectedIndex == index) {\n                holder.itemView.imageButton2.setBackgroundColor(Color.BLUE)\n            } else {\n                holder.itemView.imageButton2.setBackgroundColor(Color.GRAY)\n            }\n            holder.itemView.textView8.text = \"${optionIdCount[item.id!!] ?: 0}\"\n\n            holder.itemView.imageButton2.setOnClickListener {\n                selectedIndex = holder.adapterPosition\n                pollListener?.onSelectOption(item.id!!)\n                notifyDataSetChanged()\n            }\n        } else {\n            holder.itemView.textView7.text = \"${optionIdCount[item.id!!] ?: 0}\"\n            holder.itemView.button4.text = \"${item.description}\"\n            if (selectedIndex == index) {\n                holder.itemView.button4.setBackgroundColor(Color.BLUE)\n            } else {\n                holder.itemView.button4.setBackgroundColor(Color.GRAY)\n            }\n\n            holder.itemView.button4.setOnClickListener {\n                selectedIndex = holder.adapterPosition\n                pollListener?.onSelectOption(item.id!!)\n                notifyDataSetChanged()\n            }\n        }\n\n    }\n\n    override fun getItemCount(): Int = list.size\n}\n",
-      "language": "kotlin"
+## Sample Custom Poll Widget
+
+```kotlin
+class CustomPollWidget : ConstraintLayout {
+    var pollWidgetModel: PollWidgetModel? = null
+    var isImage = false
+
+    constructor(context: Context) : super(context) {
+        init(null, 0)
     }
-  ]
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        init(attrs, 0)
+    }
+
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
+        context,
+        attrs,
+        defStyle
+    ) {
+        init(attrs, defStyle)
+    }
+
+    private fun init(attrs: AttributeSet?, defStyle: Int) {
+        inflate(context, R.layout.custom_poll_widget, this@CustomPollWidget)
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        pollWidgetModel?.widgetData?.let { liveLikeWidget ->
+            liveLikeWidget.options?.let {
+                if (it.size > 2) {
+                    rcyl_poll_list.layoutManager = GridLayoutManager(context, 2)
+                }
+                val adapter =
+                    PollListAdapter(context, isImage, ArrayList(it.map { item -> item!! }))
+                rcyl_poll_list.adapter = adapter
+                adapter.pollListener = object : PollListAdapter.PollListener {
+                    override fun onSelectOption(id: String) {
+                        pollWidgetModel?.submitVote(id)
+                    }
+                }
+                button2.visibility = View.GONE
+                pollWidgetModel?.voteResults?.subscribe(this) { result ->
+                    result?.choices?.let { options ->
+                        options.forEach { op ->
+                            adapter.optionIdCount[op.id] = op.vote_count ?: 0
+                        }
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+            imageView2.setOnClickListener {
+                pollWidgetModel?.finish()
+            }
+
+        }
+
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        pollWidgetModel?.voteResults?.unsubscribe(this)
+    }
 }
-[/block]
+
+class PollListAdapter(
+    private val context: Context,
+    private val isImage: Boolean,
+    val list: ArrayList<OptionsItem>
+) :
+    RecyclerView.Adapter<PollListAdapter.PollListItemViewHolder>() {
+    private var selectedIndex = -1
+    val optionIdCount: HashMap<String, Int> = hashMapOf()
+    fun getSelectedOption(): OptionsItem? = when (selectedIndex > -1) {
+        true -> list[selectedIndex]
+        else -> null
+    }
+
+    var pollListener: PollListener? = null
+
+    interface PollListener {
+        fun onSelectOption(id: String)
+    }
+
+    class PollListItemViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PollListItemViewHolder {
+        return PollListItemViewHolder(
+            LayoutInflater.from(p0.context!!).inflate(
+                when (isImage) {
+                    true -> R.layout.quiz_image_list_item
+                    else -> R.layout.quiz_list_item
+                }, p0, false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: PollListItemViewHolder, index: Int) {
+        val item = list[index]
+        if (isImage) {
+            Glide.with(context)
+                .load(item.imageUrl)
+                .into(holder.itemView.imageButton2)
+            if (selectedIndex == index) {
+                holder.itemView.imageButton2.setBackgroundColor(Color.BLUE)
+            } else {
+                holder.itemView.imageButton2.setBackgroundColor(Color.GRAY)
+            }
+            holder.itemView.textView8.text = "${optionIdCount[item.id!!] ?: 0}"
+
+            holder.itemView.imageButton2.setOnClickListener {
+                selectedIndex = holder.adapterPosition
+                pollListener?.onSelectOption(item.id!!)
+                notifyDataSetChanged()
+            }
+        } else {
+            holder.itemView.textView7.text = "${optionIdCount[item.id!!] ?: 0}"
+            holder.itemView.button4.text = "${item.description}"
+            if (selectedIndex == index) {
+                holder.itemView.button4.setBackgroundColor(Color.BLUE)
+            } else {
+                holder.itemView.button4.setBackgroundColor(Color.GRAY)
+            }
+
+            holder.itemView.button4.setOnClickListener {
+                selectedIndex = holder.adapterPosition
+                pollListener?.onSelectOption(item.id!!)
+                notifyDataSetChanged()
+            }
+        }
+
+    }
+
+    override fun getItemCount(): Int = list.size
+}
+```
