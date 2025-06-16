@@ -13,69 +13,105 @@ next:
 The purpose of `useGifPicker` hook is to manage and expose the gif picker resources.
 
 ##### Example Usage:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { isLoading, gifImages, onGifSearchInputChange, loadNextGifImages } = useGifPicker();",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+```typescript
+const { isLoading, gifImages, onGifSearchInputChange, loadNextGifImages } = useGifPicker();
+```
+
+## Hook Return Value
+
 #### `gifImages`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Array of [IGif](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IGif)",
-    "0-1": "Empty Array"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Array of [IGif](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IGif)
+      </td>
+
+      <td>
+        Empty Array
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `onGifSearchInputChange`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Function of type: (gifSearchInput, { debounce }) => void"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: (gifSearchInput, \{ debounce }) => void
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `isLoading`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "boolean",
-    "0-1": "false"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        boolean
+      </td>
+
+      <td>
+        false
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 #### `loadNextGifImages`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "Function of type: `() => void`"
-  },
-  "cols": 1,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Function of type: `() => void`
+      </td>
+    </tr>
+  </tbody>
+</Table>
