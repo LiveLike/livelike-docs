@@ -16,49 +16,163 @@ Below is a list of analytics events triggered in Guess What, along with their de
 
 ### **Event List**
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "**Event Name**",
-    "h-1": "**Event Trigger Condition**",
-    "h-2": "**Event Properties**  \n_(not included default event properties as outlined [here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_",
-    "h-3": "**Event Description**",
-    "0-0": "**session_start**",
-    "0-1": "When the user starts a web session.",
-    "0-2": "—",
-    "0-3": "Marks the beginning of a session.",
-    "1-0": "**session_stop**",
-    "1-1": "When the user exits the web session. ",
-    "1-2": "`duration` (in seconds)",
-    "1-3": "Tracks the total session length.",
-    "2-0": "**click_play**",
-    "2-1": "When users starts the game by clicking on play button.",
-    "2-2": "—",
-    "2-3": "Tracks when started playing.",
-    "3-0": "**game_completed**",
-    "3-1": "When game is over and result screen is displayed.",
-    "3-2": "`give_up` (boolean)  \n`is_winner` (boolean)  \n`number_of_questions` (number)  \n`tags` (string)  \n`accuracy` (number)  \n`is_journey_final_step` (boolean)  \n`hints_used` (boolean)",
-    "3-3": "Captures when the game is over.",
-    "4-0": "**click_share**",
-    "4-1": "When user clicks on share button after game over (if enabled)",
-    "4-2": "—",
-    "4-3": "Tracks when user shares the stats.",
-    "5-0": "**click_play_again**",
-    "5-1": "When user clicks on play again button after game over.",
-    "5-2": "—",
-    "5-3": "Tracks when attempts play again.",
-    "6-0": "**click_play_more**",
-    "6-1": "When user clicks on play more button after game over.",
-    "6-2": "—",
-    "6-3": "Tracks when user explores play more."
-  },
-  "cols": 4,
-  "rows": 7,
-  "align": [
-    null,
-    null,
-    null,
-    null
-  ]
-}
-[/block]
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Event Name**
+      </th>
+
+      <th>
+        **Event Trigger Condition**
+      </th>
+
+      <th>
+        **Event Properties**
+
+
+
+
+        *(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )*
+      </th>
+
+      <th>
+        **Event Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **session\_start**
+      </td>
+
+      <td>
+        When the user starts a web session.
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Marks the beginning of a session.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **session\_stop**
+      </td>
+
+      <td>
+        When the user exits the web session. 
+      </td>
+
+      <td>
+        `duration` (in seconds)
+      </td>
+
+      <td>
+        Tracks the total session length.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **click\_play**
+      </td>
+
+      <td>
+        When users starts the game by clicking on play button.
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Tracks when started playing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **game\_completed**
+      </td>
+
+      <td>
+        When game is over and result screen is displayed.
+      </td>
+
+      <td>
+        `give_up` (boolean)\
+        `is_winner` (boolean)\
+        `number_of_questions` (number)\
+        `tags` (string)\
+        `accuracy` (number)\
+        `is_journey_final_step` (boolean)\
+        `hints_used` (boolean)
+      </td>
+
+      <td>
+        Captures when the game is over.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **click\_share**
+      </td>
+
+      <td>
+        When user clicks on share button after game over (if enabled)
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Tracks when user shares the stats.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **click\_play\_again**
+      </td>
+
+      <td>
+        When user clicks on play again button after game over.
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Tracks when attempts play again.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **click\_play\_more**
+      </td>
+
+      <td>
+        When user clicks on play more button after game over.
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Tracks when user explores play more.
+      </td>
+    </tr>
+  </tbody>
+</Table>
