@@ -89,7 +89,7 @@ widgets.getUnclaimedRewards().then(widgetInteractions =>
 
 This method can be used to fetch paginated List of Widgets filtered by widget status and kind.
 
-This method takes a programId as a mandatory argument.  
+This method takes a programId as a mandatory argument.\
 Other optional parameters to filter the widget list are widget status, ordering, interactivity and an array of widget's kind.
 
 ```javascript
