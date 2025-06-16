@@ -18,7 +18,7 @@ A user profile badge is a badge that is linked to a user profile. A user profile
 
 ## Utilizing Badges
 
-A badge can be awarded or earned. To award a badge please use the award badge rest API.  
+A badge can be awarded or earned. To award a badge please use the award badge rest API.\
 To set up a way to earn a badge, please follow the instructions below.
 
 The following items are required to be completed for a user to be able to earn a badge.
