@@ -24,7 +24,7 @@ The REST API has two types of predictions: text predictions and image prediction
 
 ## Create a Prediction
 
-All widgets are created as part of a <<glossary:Program>> and each program has its own unique ID. To send a prediction widget, a new one must first be created within the program that your audience will be interacting with. When creating a prediction, the `program_id`, `question`, and `options` body parameters are required.
+All widgets are created as part of a <Glossary>Program</Glossary> and each program has its own unique ID. To send a prediction widget, a new one must first be created within the program that your audience will be interacting with. When creating a prediction, the `program_id`, `question`, and `options` body parameters are required.
 
 ```python createimageprediction.py
 # Configure your Program ID
@@ -54,15 +54,15 @@ prediction = r.json()
 
 Once a prediction is created, two widgets will appear in the Pending section of the Producer Studio, but users won't see either of them yet. The two widgets are:
 
-- The prediction widget. Once published, the audience will be able to guess which option will be correct.
-- The follow-up widget. Once published, the audience will find out which options were correct.
+* The prediction widget. Once published, the audience will be able to guess which option will be correct.
+* The follow-up widget. Once published, the audience will find out which options were correct.
 
 > 🚧 Users don't see the prediction yet!
-> 
+>
 > The widget is created, and it's pending in the queue, but it hasn't yet been published.
 
 > 📘 More info is in the API reference!
-> 
+>
 > Please see the [Using Widgets](https://docs.livelike.com/v1/reference#widgets-basics) section of the API reference documentation for more details about how widgets are created and published.
 
 ## Publish the Prediction
@@ -78,27 +78,14 @@ requests.put(prediction['schedule_url'], json=publish_payload, headers=headers)
 ```
 
 > 👍 Specify publish delays in ISO format
-> 
+>
 > The `publish_delay` body parameter is specified in ISO 8601 duration format.
 
 Once the widget is published, it will appear in the History tab in the Producer Studio, and audiences will see it on their devices if they are subscribed to the program. The interaction isn't complete yet though, the audience still has to wait for the follow-up to know if they were right or not.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0f33478-95fa43e-image_poll_7.gif",
-        "95fa43e-image_poll_7.gif",
-        1422
-      ],
-      "align": "center",
-      "caption": "Users will see the prediction once it's published."
-    }
-  ]
-}
-[/block]
-
+<Image title="95fa43e-image_poll_7.gif" alt={1422} align="center" src="https://files.readme.io/0f33478-95fa43e-image_poll_7.gif">
+  Users will see the prediction once it's published.
+</Image>
 
 ## Update the Correct Options
 
@@ -128,5 +115,5 @@ requests.put(follow_up['schedule_url'], json=publish_payload, headers=headers)
 
 The REST API supports two prediction variants, text predictions and image predictions. They function mostly identically, except for these key differences:
 
-- Image prediction and text predictions are two separate API resources
-- Image prediction options require an `image_url` field that text prediction options do not have
+* Image prediction and text predictions are two separate API resources
+* Image prediction options require an `image_url` field that text prediction options do not have
