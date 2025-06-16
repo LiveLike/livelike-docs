@@ -17,51 +17,67 @@ next:
 The purpose of `useChatRoom` hook is to fetch and expose the chatroom resources
 
 ##### Example usage
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const { chatRoom } = useChatRoom({ roomId: \"<Room ID>\" });",
-      "language": "typescript"
-    }
-  ]
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Argument"
-}
-[/block]
+```typescript
+const { chatRoom } = useChatRoom({ roomId: "<Room ID>" });
+```
+
+## Hook Argument
+
 #### `roomId`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "String (**Required**)",
-    "0-1": "No Default"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
 
-[block:api-header]
-{
-  "title": "Hook Return Value"
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        String (**Required**)
+      </td>
+
+      <td>
+        No Default
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Hook Return Value
+
 #### `chatRoom`
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Default",
-    "0-0": "[IChatRoomPayload](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IChatRoomPayload)",
-    "0-1": "null"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Type
+      </th>
+
+      <th>
+        Default
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        [IChatRoomPayload](https://livelike-doc-redirect-url.herokuapp.com/javascript?interface=IChatRoomPayload)
+      </td>
+
+      <td>
+        null
+      </td>
+    </tr>
+  </tbody>
+</Table>
