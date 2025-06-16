@@ -130,8 +130,8 @@ further filters can be supplied to narrow down your results.
 
 filters include:
 
-- profile ids to limit to specific users
-- attributes to filter on integration supplied data
+* profile ids to limit to specific users
+* attributes to filter on integration supplied data
 
 ```kotlin
 sdk.rewards().getInvokedRewardActions(
