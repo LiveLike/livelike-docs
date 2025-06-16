@@ -25,6 +25,7 @@ next:
 The Sceenic plugin enables developers to seamlessly build watch party experiences using the combined capabilities of the LiveLike and Sceenic SDKs. The plugin is distributed as a separate package that combines the functionality of both services. The plugin is available for iOS, Android, and Web.
 
 The plugin provides the following capabilities:
+
 * Creating a video room
 * Joining and leaving a video room
 * Events for participants joining and leaving
