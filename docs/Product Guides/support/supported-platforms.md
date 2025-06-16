@@ -12,43 +12,124 @@ metadata:
 next:
   description: ''
 ---
-[block:parameters]
-{
-  "data": {
-    "h-0": "Target Platform",
-    "h-1": "Minimum Version",
-    "0-0": "iOS",
-    "0-1": "10",
-    "1-0": "Android",
-    "1-1": "6",
-    "2-0": "Chrome",
-    "2-1": "64",
-    "3-0": "Firefox",
-    "3-1": "75",
-    "4-0": "Safari",
-    "4-1": "12",
-    "h-2": "SDK",
-    "0-2": "iOS",
-    "1-2": "Android",
-    "2-2": "Web",
-    "3-2": "Web",
-    "4-2": "Web",
-    "5-0": "Internet Explorer",
-    "5-1": "11",
-    "5-2": "Web",
-    "6-0": "Edge",
-    "6-1": "79",
-    "6-2": "Web"
-  },
-  "cols": 3,
-  "rows": 7
-}
-[/block]
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Target Platform
+      </th>
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Other platforms may integrate via REST API",
-  "body": "If your platform is not supported by one of the SDKs, you may still integrate by using the [REST API](rest-api-getting-started)."
-}
-[/block]
+      <th style={{ textAlign: "left" }}>
+        Minimum Version
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        SDK
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        iOS
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        10
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        iOS
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Android
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        6
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Android
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Chrome
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        64
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Web
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Firefox
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        75
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Web
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Safari
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        12
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Web
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Internet Explorer
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        11
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Web
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Edge
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        79
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Web
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> 📘 Other platforms may integrate via REST API
+>
+> If your platform is not supported by one of the SDKs, you may still integrate by using the [REST API](rest-api-getting-started).
