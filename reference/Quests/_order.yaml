@@ -9,3 +9,4 @@
 - list-user-quests
 - create-user-quest
 - update-user-quest-task-progress
+- delete-userquest
