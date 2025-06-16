@@ -19,10 +19,10 @@ next:
 ---
 Custom Profile IDs help integrations maintain a two-way mapping between their users and LiveLike profiles. Using custom IDs on profiles makes it so that you don't need to maintain your own mapping of user IDs to profile IDs, instead you supply your IDs as custom ID values and then use those values to look up profiles directly.
 
-A <<glossary:Profile>> has two IDs:
+A <Glossary>Profile</Glossary> has two IDs:
 
-- **<<glossary:Profile ID>>**: The profile ID is the unique identifier assigned by LiveLike when the profile is created. It can't be modified.
-- **Custom ID**: The custom ID is optional and empty by default. It can be changed, but it has to be unique within the application.
+* **<Glossary>Profile ID</Glossary>**: The profile ID is the unique identifier assigned by LiveLike when the profile is created. It can't be modified.
+* **Custom ID**: The custom ID is optional and empty by default. It can be changed, but it has to be unique within the application.
 
 ## Looking Up Profiles by Custom ID
 
