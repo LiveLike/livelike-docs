@@ -35,34 +35,34 @@ next:
 
 ### Step 2: Add the Arcade Game JavaScript SDKs
 
-- **Guess The Word**: Add the following script tag to your HTML page:
+* **Guess The Word**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.0.0.js"></script>
 
 ```
 
-- **Trivia**: Add the following script tag to your HTML page:
+* **Trivia**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.1.1.js"></script>
 
 ```
 
-- **Pick Your Team**: Add the following script tag to your HTML page:
+* **Pick Your Team**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.0.0.js"></script>
 ```
 
-- **Play Predictor**: Add the following script tag to your HTML page:
+* **Play Predictor**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.0.0.js"></script>
 
 ```
 
-- **Guess What**: Add the following script tag to your HTML page:
+* **Guess What**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/guess-what-1.0.0.js"></script>
@@ -73,37 +73,37 @@ next:
 
 ### Step 3: Embed Game Component
 
-- In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
+* In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
 
 <br />
 
-- #### **Guess The Word** ([Demo](https://stackblitz.com/edit/livelike-gtw))
+* #### **Guess The Word** ([Demo](https://stackblitz.com/edit/livelike-gtw))
 
 ```html
 <ll-guess-the-word accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-word>
 
 ```
 
-- #### **Trivia**: ([Demo](https://stackblitz.com/edit/livelike-trivia))
+* #### **Trivia**: ([Demo](https://stackblitz.com/edit/livelike-trivia))
 
 ```html
 <ll-trivia profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-trivia>
 
 ```
 
-- #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/livelike-pyt))
+* #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/livelike-pyt))
 
 ```html
 <ll-pick-your-team accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-pick-your-team>
 ```
 
-- #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js))
+* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js))
 
 ```html html
 <ll-predictor accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor>
 ```
 
-- #### **Guess What**: ([Demo](https://stackblitz.com/edit/vitejs-vite-orguuifq))
+* #### **Guess What**: ([Demo](https://stackblitz.com/edit/vitejs-vite-orguuifq))
 
 ```html html
 <ll-guess-what accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-what>
@@ -113,5 +113,5 @@ next:
 
 ### Required Parameters:
 
-- **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
-- **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
+* **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
+* **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
