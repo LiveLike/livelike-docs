@@ -12,11 +12,11 @@ next:
 ---
 A Chat Session is your interface to interact with a chat room.
 
-** Features **
+**Features**
 
-- Message List
-- Sending and Receiving Messages
-- Message History
+* Message List
+* Sending and Receiving Messages
+* Message History
 
 ## Starting a Chat Session
 
@@ -49,8 +49,6 @@ class SomeClass {
 }
 ```
 
-
-
 ## Message List
 
 The ChatSession maintains list of all messages currently loaded into memory. This list stores messages in ascending order of the time that the message was published (index 0 is the oldest message loaded). This list is readonly and managed by the SDK - messages that a sent, received, and loaded from history are automatically added to the list. 
@@ -61,7 +59,7 @@ List access by ID is recommended since the indices will change as messages are l
 
 The core of any chat experience is sending and receiving messages. 
 
-** Sending Messages **  
+**Sending Messages**\
 You send a message by creating a `NewChatMessage` instance and then passing it into the `sendMessage` method of the ChatSession. 
 
 As a result you will receive a `ChatMessage` object representing the new message. 
@@ -109,9 +107,7 @@ chatSession.sendMessage(imageDataMessage) { result in
 }
 ```
 
-
-
-** Receiving Messages **  
+**Receiving Messages**\
 To observe when new messages are received from other users you need to implement the `didRecieveNewMessage` method of the `ChatSessionDelegate`. This will get raised every time another user successfully publishes a Chat Message to the Chat Room.
 
 ```swift
@@ -123,8 +119,6 @@ class SomeClass: ChatSessionDelegate {
   }
 }
 ```
-
-
 
 ## Message History
 
@@ -142,8 +136,6 @@ chatSession.loadNextHistory { result in
   }
 }
 ```
-
-
 
 The `loadNextHistory` returns the messages of the loaded page. These messages are also added to the `ChatSession().messages`.
 
@@ -163,8 +155,6 @@ chatSession.sendCustomMessage(customString) { [weak self] result in
 }
 ```
 
-
-
 ## Configure Clickable URLs in Chat Messages
 
 To show and enable links in the chat messages, you have to set the value of **enableChatMessageURLs** in the Chat Session Configuration or Content Session Configuration.
@@ -176,8 +166,6 @@ let config = ChatSessionConfig(roomId: chatRoomId)
 config.enableChatMessageURLs = true
 ```
 
-
-
 To add link validation of your own choice, you can add a regex to determine if the chat message text string is linkable or not. For that, you have to set the value of **chatMessageUrlPatterns**  in the Chat Session Configuration or Content Session Configuration as type String.
 
 ```swift
@@ -185,8 +173,6 @@ let config = ChatSessionConfig(roomId: chatRoomId)
 config.enableChatMessageURLs = true
 config.chatMessageUrlPatterns = "Validation RegEx"
 ```
-
-
 
 ## Deleting a message
 
@@ -204,8 +190,6 @@ override func viewDidLoad() {
 	chatController.messageViewController.shouldShowDeleteConfirmation = true 
 }
 ```
-
-
 
 You can also delete users' chat message in a chat room using the **deleteMessage** function in the **ChatSession**. It accepts a **ChatMessage** type parameter which is the message object to be deleted.
 
