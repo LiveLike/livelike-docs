@@ -12,23 +12,23 @@ next:
 ---
 Profile Groups is an API-first service that enables products to group profiles into named sets, allowing you to easily address groups of profiles inside of an integration. As a product developer using the Profile Groups API, you will be able to:
 
-- Group members into flexible, dynamic sets
-- Manage and query the groups a profile belongs to
-- Access and list all available profile groups
-- Retrieve and manage group members efficiently
+* Group members into flexible, dynamic sets
+* Manage and query the groups a profile belongs to
+* Access and list all available profile groups
+* Retrieve and manage group members efficiently
 
 # Profile Groups Basics
 
 A Profile Group can be thought of as a named set of profiles. When a profile group is first created it has no member profiles. 
 
-- The **Name** and **Description** help you organize your groups inside of the CMS, and can be used as labels inside of your integration. 
-- The **Members** field is the set of profiles that are part of this group.
-- The **ID** is the LiveLike-assigned unique identifier of the group. It's one of the main ways to reference the group in your integration code.
-- The **Custom ID** is optional but can also be used to reference the group in your integration code. A group's custom ID must be unique in your application.
-- The **Attributes** are an array of key-value pairs that can be used to organize and query groups inside of  the integration. Groups are indexed by their attributes, and groups can be looked up by their attribute values.
+* The **Name** and **Description** help you organize your groups inside of the CMS, and can be used as labels inside of your integration. 
+* The **Members** field is the set of profiles that are part of this group.
+* The **ID** is the LiveLike-assigned unique identifier of the group. It's one of the main ways to reference the group in your integration code.
+* The **Custom ID** is optional but can also be used to reference the group in your integration code. A group's custom ID must be unique in your application.
+* The **Attributes** are an array of key-value pairs that can be used to organize and query groups inside of  the integration. Groups are indexed by their attributes, and groups can be looked up by their attribute values.
 
 > 📘 Custom IDs and attributes make data-level integrations easier
-> 
+>
 > Check out [Data Integration Patterns](doc:data-integration-patterns) for more ideas on using custom IDs and attributes to organize your profile groups.
 
 # Working with Profile Groups
@@ -130,7 +130,7 @@ Content-Type: application/json
 
 ```
 
-**Note**: Changing **is_active** to false will make the group unavailable through the API and cause 404 on consecutive calls. 
+**Note**: Changing **is\_active** to false will make the group unavailable through the API and cause 404 on consecutive calls. 
 
 ```http Response
 {
@@ -193,7 +193,7 @@ Authorization: Bearer {access-token}
 }
 ```
 
-**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
 
 ```http
 POST /api/v1/applications/{client-id}/profile-groups/{group-id}/members/ HTTP/1.1
@@ -224,7 +224,7 @@ Authorization: Bearer {access-token}
 
 ```
 
-**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
 
 <br />
 
@@ -245,7 +245,7 @@ Authorization: Bearer {access-token}
 }
 ```
 
-**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
 
 ```http
 DELETE /api/v1/applications/{client-id}/profile-groups/{group-id}/members/ HTTP/1.1
