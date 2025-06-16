@@ -28,11 +28,9 @@ getApplicationRewardItems().then(res => {
 });
 ```
 
-
-
 ## Reward Item Attributes
 
-Reward Item Attributes provide integrators with organisational and filtering tools.  
+Reward Item Attributes provide integrators with organisational and filtering tools.\
 These attributes are key, value pairs of data defined in the LikeLive CMS portal.
 
 In addition when retrieving reward items, attributes can be used to filter reward item result sets.
@@ -49,8 +47,6 @@ getApplicationRewardItems({ attributes }).then(res => {
 });
 ```
 
-
-
 ## Reward Item Images
 
 Reward Item Images enable integrators to visually enhance and customize their user experience
@@ -63,8 +59,6 @@ getApplicationRewardItems()
 	res.results.forEach(rewardItem => console.log(rewardItem.images))
 )
 ```
-
-
 
 ## Retrieving Reward Item Balances for the current user
 
@@ -79,8 +73,6 @@ getRewardItemBalances({
   rewardItemIds: ["xxx", "xxx"] 
 }).then(res => console.log(res))
 ```
-
-
 
 ## Transferring Reward Item Amount to another User
 
@@ -98,8 +90,6 @@ transferRewardItemAmount({
 }).then(res => console.log(res))
 ```
 
-
-
 ## Retrieving Reward Item Transfers for the current user
 
 As an integrator you can retrieve the paginated list of reward item transfers the current user has done. This can be done by utilizing the `getRewardItemTransfers` function.
@@ -113,8 +103,6 @@ getRewardItemTransfers().then(res => {
   console.log('res', res);
 });
 ```
-
-
 
 ## Filtering Reward Item Transfers for the current user
 
@@ -130,12 +118,10 @@ getRewardItemTransfers({
 }).then(res => console.log(res))
 ```
 
-
-
 ## Notifying when Reward Item Transfer is received
 
-As an integrator, you can inform users when they receive a new Reward Item Transfer.  
-Use `addRewardEventListener` API for adding a listener function and `removeRewardEventListener` API for removing an added listener function.  
+As an integrator, you can inform users when they receive a new Reward Item Transfer.\
+Use `addRewardEventListener` API for adding a listener function and `removeRewardEventListener` API for removing an added listener function.\
 Using the RewardItemTransfer object, you can create a notification with appropriate information to the user.
 
 **API Definition**: [addRewardEventListener](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=addRewardEventListener), [removeRewardEventListener](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=removeRewardEventListener)  
@@ -161,8 +147,6 @@ removeRewardEventListener(
   onRewardListener
 )
 ```
-
-
 
 ## Retrieving earned rewards filtered by widgets
 
@@ -198,11 +182,9 @@ getRewardTransactions({
 }).then(res => console.log(res));
 ```
 
-
-
 ## Retrieving potential widget rewards
 
-Detailed information on potential earn-able rewards are attached to widget details.  
+Detailed information on potential earn-able rewards are attached to widget details.\
 Use [getWidgets](javascript-widgets#getWidgets) or [getWidget](javascript-widgets#getWidget) API to get widget details.
 
 ```javascript javascript
