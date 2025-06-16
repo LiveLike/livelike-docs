@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 🚧 Pre-requisite
-> 
+>
 > Make sure you [initialise React Native SDK](react-native-getting-started#initialise-react-native-sdk).
 
 ## LLPredictionFollowUpWidget
@@ -38,13 +38,13 @@ export function MyWidgetContainer() {
 
 ### Hooks used by `LLPredictionFollowUpWidget`
 
-- [usePredictionClaimRewardEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=usePredictionClaimRewardEffect)
-- [useWidgetInteractiveTimeout](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractiveTimeout)
+* [usePredictionClaimRewardEffect](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=usePredictionClaimRewardEffect)
+* [useWidgetInteractiveTimeout](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetInteractiveTimeout)
 
 ### LLPredictionFollowUpWidget Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `programId`
@@ -73,7 +73,7 @@ This is the Id of the program in which a given widget is published
 | :------- | :--------- |
 | Function | No Default |
 
-Function that gets invoked whenever user dismisses the widget by clicking on dismiss Icon.  
+Function that gets invoked whenever user dismisses the widget by clicking on dismiss Icon.\
 Pass `onDismiss` prop (with no op function) to make widget `dismissible`.
 
 #### `interactiveTimeout`
@@ -82,7 +82,7 @@ Pass `onDismiss` prop (with no op function) to make widget `dismissible`.
 | :----- | :--------- |
 | Number | No default |
 
-Interactive timeout in [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). Once the timeout gets elapsed, widget transition into `Timed Out` phase where it is in disabled state.  
+Interactive timeout in [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). Once the timeout gets elapsed, widget transition into `Timed Out` phase where it is in disabled state.\
 When setting `interactiveTimeout` as `null`, this overrides widget interactive timeout (that is set from producer suite) and widget becomes always interactive.
 
 #### `onInteractiveTimeout`
@@ -99,7 +99,7 @@ Function that gets invoked whenever interactive timer gets elapsed. When `intera
 | :------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------ |
 | Component of type [LLCoreWidget](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLCoreWidget) | [LLCoreWidget](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=LLCoreWidget) |
 
-This is the core widget component that is responsible for loading widget details and rendering other part of widget UI (passed as children).  
+This is the core widget component that is responsible for loading widget details and rendering other part of widget UI (passed as children).\
 Refer [LLCoreWidget](react-native-llcorewidget) docs for more details. 
 
 #### `WidgetComponentStyles`
@@ -210,14 +210,14 @@ This is a body component for a vote option based widget responsible for renderin
 
 ### Hooks used by `LLVoteWidgetBody`
 
-- [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
-- [useWidgetOptions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetOptions)
-- [useWidgetActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetActions)
+* [useStyles](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useStyles)
+* [useWidgetOptions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetOptions)
+* [useWidgetActions](https://livelike-doc-redirect-url.herokuapp.com/react-native?keyword=useWidgetActions)
 
 ### `LLVoteWidgetBody` Props
 
 > 📘 Customisation
-> 
+>
 > Refer [customisation](react-native-customisation) core concepts to understand different level of component customisation.
 
 #### `widgetId`
