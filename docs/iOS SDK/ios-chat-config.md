@@ -94,7 +94,7 @@ class SomeClass {
 }
 ```
 
-Full list of ChatSessionConfig options <link to api reference>
+Full list of ChatSessionConfig options \<link to api reference>
 
 ## Chat Sessions with ChatViewController
 
