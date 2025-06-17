@@ -63,7 +63,7 @@ Remember not to use default livelike widget elements which are the following:
 
 ## Custom Widget Rendering using classes for different presentation modes
 
-Different UI can be defined for each presentation mode by using the mode property of the <livelike-widgets> element.
+Different UI can be defined for each presentation mode by using the mode property of the \<livelike-widgets> element.
 
 Here is an example with Number Prediction Widget custom UI only in interactive-timeline mode, for other modes stock UI is rendered by default.
 
@@ -114,7 +114,7 @@ If you require multiple different template's to be rendered conditionally per wi
 >
 > To write custom widget templates in JSX, one way would be to use the Higher Order Component below.
 >
-> For extending widget classes, customElements can be. created by extending widget classes as shown below and then the file in which customElements have been defined needs to be imported in the react component where <livelike-widgets> is used
+> For extending widget classes, customElements can be. created by extending widget classes as shown below and then the file in which customElements have been defined needs to be imported in the react component where \<livelike-widgets> is used
 
 ```javascript JSX Template
 function Template({ children, ...attrs }) {
