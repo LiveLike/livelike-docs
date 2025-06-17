@@ -30,13 +30,13 @@ To start using this feature, first should complete Prizeout integration with Liv
 
 > 🚧 The first step to start using this feature
 >
-> Make sure you have successfully integrated Prizeout with LiveLike to start using this feature If not, please check this <a href="https://docs.livelike.com/docs/prizeout-integration" target="_blank" />documentation</a> for the complete guide.
+> Make sure you have successfully integrated Prizeout with LiveLike to start using this feature If not, please check this <a href="https://docs.livelike.com/docs/prizeout-integration" target="_blank" >documentation</a> for the complete guide.
 
 ## Create a monetization-enabled reward item
 
 Let’s see how to create a reward item with Prizeout for monetization feature.
 
-1. Navigate to **Rewards** > **New Reward Item** to start creating a new reward item.
+1. Navigate to **Rewards** \> **New Reward Item** to start creating a new reward item.
 
 ![1440](https://files.readme.io/240c67f-Reward_Items.png "Reward Items.png")
 
@@ -60,7 +60,7 @@ Let’s see how to create a reward item with Prizeout for monetization feature.
 
 Now you have successfully created a new reward item with the Prizeout feature and now let’s see how to use that.
 
-1. Navigate to **Rewards** > **Tables**. Then Create a new reward table or click on an existing table.
+1. Navigate to **Rewards** \> **Tables**. Then Create a new reward table or click on an existing table.
 
 ![1440](https://files.readme.io/54f2191-Reward_table.png "Reward table.png")
 
@@ -78,12 +78,12 @@ For example, as you can see above that once a customer performs a “Vote on a p
 
 7. Click **Create** to submit all inputs.
 
-After all of these steps, you have successfully created a reward item with prizeout feature. Now, you can move forward with client side integration to let your users earn prizeout points each time when they earn this item and redeem gift cards. 
+After all of these steps, you have successfully created a reward item with prizeout feature. Now, you can move forward with client side integration to let your users earn prizeout points each time when they earn this item and redeem gift cards.
 
 ## Client Side Integration
 
 Before loading the Prizeout marketplace widget on the client side, you will need to create Prizeout User Session using the [API Endpoint](https://docs.livelike.com/reference/prizeout-user-session) provided by LiveLike.\
-Use the `session_id` to initialise the Prizeout SDK. 
+Use the `session_id` to initialise the Prizeout SDK.
 
 Refer [Prizeout API documentation](https://partners.prizeout.com/#/api) for more details.
 
