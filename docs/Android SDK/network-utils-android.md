@@ -32,11 +32,11 @@ inline fun <B : Any, reified R : Any> LiveLikeKotlin.request(
 * path (String?): The path for the request. Can be null if 'url' is provided.
 * URL (String?): The URL for the request. Can be null if 'path' is provided.
 * requestType (RequestType): The type of HTTP request (e.g., GET, POST, PUT, DELETE).
-* queryParameters (List<Pair<String, Any?>>): The query parameters for the request as a list of key-value pairs.
+* queryParameters (List\<Pair\<String, Any?>>): The query parameters for the request as a list of key-value pairs.
 * body (B?): The request body, if applicable.
 * accessToken (String?): The access token for authorization. Can be null if not required.
-* headers (List<Pair<String, String>>): Additional headers for the request as a list of key-value pairs.
-* callback (LiveLikeCallback<R>): The callback to handle the asynchronous response.
+* headers (List\<Pair\<String, String>>): Additional headers for the request as a list of key-value pairs.
+* callback (LiveLikeCallback\<R>): The callback to handle the asynchronous response.
 
 ## How to Use
 
