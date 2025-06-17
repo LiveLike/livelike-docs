@@ -50,7 +50,7 @@ widgetData?.let { liveLikeWidget ->
 ```
 
 ***lockInVote***\
-For submitting the predictions you need to call **lockInVote(options:List<NumberPredictionVotes>)**, with list of NumberPredictionVotes (consisting of the optionId and the number).  It is mandatory to submit the prediction for all the options.
+For submitting the predictions you need to call **lockInVote(options:List\<NumberPredictionVotes>)**, with list of NumberPredictionVotes (consisting of the optionId and the number).  It is mandatory to submit the prediction for all the options.
 
 ```kotlin
 numberPredictionWidgetViewModel?.lockInVote(optionList)
