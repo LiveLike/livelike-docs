@@ -48,7 +48,7 @@ chatViewController.isChatInputVisible = false
 
 > 📘 Customizing Colors and Font
 >
-> Most colors and text properties can be modified using the Theme system. See <link-to-theme> for more information.
+> Most colors and text properties can be modified using the Theme system. See \<link-to-theme> for more information.
 
 ## Message List
 
@@ -97,7 +97,7 @@ class SomeViewController: UIViewController {
 
 Allows user's to add stickers to their chat message. Accessed by clicking the sticker button of the **Message Input**. The sticker has a horizontal scrolling view to switch between different sticker packs.
 
-For more information on customizing Sticker packs see <link-to-sticker-packs>.
+For more information on customizing Sticker packs see \<link-to-sticker-packs>.
 
 ## User Nickname
 
@@ -136,7 +136,7 @@ theme.reactionsImageHint = UIImage()
 theme.reactionsImageHint = nil
 ```
 
-To customize your reaction pack see <link to reaction pack tutorial>
+To customize your reaction pack see \<link to reaction pack tutorial>
 
 **Timestamp**
 
@@ -162,11 +162,11 @@ chatViewController.messageViewController.messageTimestampFormatter = nil
 
 Displays the available reactions and count of each reactions. Allows the user to add a reaction. A user can only add one (1) reaction per message.
 
-To customize your reaction pack see <link to reaction pack tutorial>
+To customize your reaction pack see \<link to reaction pack tutorial>
 
 **Report Button**
 
 Gives the user the ability to report a message or block a particular user.
 
-For more information on moderation see <link-to-moderation-guide>
+For more information on moderation see \<link-to-moderation-guide>
 ```
