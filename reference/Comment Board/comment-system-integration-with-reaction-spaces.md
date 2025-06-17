@@ -35,13 +35,13 @@ Create containers for managing comments associated with specific content items.
      }
      ```
 
-<br>
+<br/>
 
 > 📘 See Also
 >
 > [Create Comment Board API](https://docs.livelike.com/reference/create-a-comment-board)
 
-<br>
+<br/>
 
 ## 2\. Managing Comments
 
@@ -65,7 +65,7 @@ Allow users to post comments and retrieve comments associated with content items
      }
      ```
 
-<br>
+<br/>
 
 > 📘 See also
 >
@@ -132,7 +132,7 @@ Allow users to react to comments and retrieve reaction counts.
      GET /api/v1/user-reactions-count/?target_id=comment_id_456&target_id=comment_id_789
      ```
 
-<br>
+<br/>
 
 > 📘 See also
 >
