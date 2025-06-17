@@ -177,7 +177,7 @@ Use DOM events to track the events you need. Attach listeners directly to the `<
       </td>
 
       <td>
-        \{ messages: Array<message> }
+        \{ messages: Array\<message> }
       </td>
     </tr>
   </tbody>
