@@ -1,6 +1,8 @@
 ---
 title: Localization
-excerpt: ''
+excerpt: >-
+  This document outlines how LiveLike handles language preferences and serves
+  localized content to clients.
 deprecated: false
 hidden: false
 metadata:
@@ -102,8 +104,6 @@ curl --request POST \
     }
 }'
 ```
-
-<br />
 
 #### PUT vs PATCH for Translations
 
