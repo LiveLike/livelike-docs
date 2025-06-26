@@ -1,5 +1,5 @@
 ---
-title: Get Chat Messages
+title: List Chat Messages
 excerpt: ''
 api:
   file: engagement-suite.json
