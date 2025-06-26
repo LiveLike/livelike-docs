@@ -71,30 +71,43 @@ Add the embed code below anywhere to your page to display a chat room on your pa
 
 ## Embedded Individual Widgets
 
-Integrators can embed any widget in their web page using their embed codes. Embed codes can be copied from inside the CMS, or generates from your own templates.
+Integrators can embed any widget in their web page using their embed codes from the LiveLike CMS:
 
-### Embedded Default Widgets
+1. Navigate to the widget in the LiveLike CMS
+2. Click on the "Embed" button
+3. Copy the provided HTML code
+4. Paste it into your web page
 
-Default widget tags are the following:
+OR if you already have the widget id and widget kind/type, you could use the following code (for example embedding text quiz widget):
 
-* livelike-text-poll
-* livelike-image-poll
-* livelike-text-quiz
-* livelike-image-quiz
-* livelike-text-prediction
-* livelike-text-prediction-follow-up
-* livelike-image-prediction
-* livelike-image-prediction-follow-up
-* livelike-cheer-meter
-* livelike-emoji-slider
-* livelike-rich-post
-* livelike-social-embed
-* livelike-video-alert
-* livelike-text-ask
-* livelike-text-number-prediction
-* livelike-text-number-prediction-follow-up
-* livelike-image-number-prediction
-* livelike-image-number-prediction-follow-up
+```html
+<livelike-text-quiz widgetid="YOUR-WIDGET-ID"></livelike-text-quiz>
+```
+
+Below are the list of available widget web components:
+
+| Widget Type                       | Web Component                              | Usage                                                                                                                 |
+| --------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Text Poll                         | livelike-text-poll                         | `<livelike-text-poll widgetid="YOUR-WIDGET-ID"></livelike-text-poll>`                                                 |
+| Image Poll                        | livelike-image-poll                        | `<livelike-image-poll widgetid="YOUR-WIDGET-ID"></livelike-image-poll>`                                               |
+| Text Quiz                         | livelike-text-quiz                         | `<livelike-text-quiz widgetid="YOUR-WIDGET-ID"></livelike-text-quiz>`                                                 |
+| Image Quiz                        | livelike-image-quiz                        | `<livelike-image-quiz widgetid="YOUR-WIDGET-ID"></livelike-image-quiz>`                                               |
+| Text Prediction                   | livelike-text-prediction                   | `<livelike-text-prediction widgetid="YOUR-WIDGET-ID"></livelike-text-prediction>`                                     |
+| Text Prediction Follow-up         | livelike-text-prediction-follow-up         | `<livelike-text-prediction-follow-up widgetid="YOUR-WIDGET-ID"></livelike-text-prediction-follow-up>`                 |
+| Image Prediction                  | livelike-image-prediction                  | `<livelike-image-prediction widgetid="YOUR-WIDGET-ID"></livelike-image-prediction>`                                   |
+| Image Prediction Follow-up        | livelike-image-prediction-follow-up        | `<livelike-image-prediction-follow-up widgetid="YOUR-WIDGET-ID"></livelike-image-prediction-follow-up>`               |
+| Cheer Meter                       | livelike-cheer-meter                       | `<livelike-cheer-meter widgetid="YOUR-WIDGET-ID"></livelike-cheer-meter>`                                             |
+| Emoji Slider                      | livelike-emoji-slider                      | `<livelike-emoji-slider widgetid="YOUR-WIDGET-ID"></livelike-emoji-slider>`                                           |
+| Rich Post                         | livelike-rich-post                         | `<livelike-rich-post widgetid="YOUR-WIDGET-ID"></livelike-rich-post>`                                                 |
+| Social Embed                      | livelike-social-embed                      | `<livelike-social-embed widgetid="YOUR-WIDGET-ID"></livelike-social-embed>`                                           |
+| Video Alert                       | livelike-video-alert                       | `<livelike-video-alert   widgetid="YOUR-WIDGET-ID"></livelike-video-alert>`                                           |
+| Text Ask                          | livelike-text-ask                          | `<livelike-text-ask widgetid="YOUR-WIDGET-ID"></livelike-text-ask>`                                                   |
+| Text Number Prediction            | livelike-text-number-prediction            | `<livelike-text-number-prediction widgetid="YOUR-WIDGET-ID"></livelike-text-number-prediction>`                       |
+| Text Number Prediction Follow-up  | livelike-text-number-prediction-follow-up  | `<livelike-text-number-prediction-follow-up widgetid="YOUR-WIDGET-ID"></livelike-text-number-prediction-follow-up>`   |
+| Image Number Prediction           | livelike-image-number-prediction           | `<livelike-image-number-prediction widgetid="YOUR-WIDGET-ID"></livelike-image-number-prediction>`                     |
+| Image Number Prediction Follow-up | livelike-image-number-prediction-follow-up | `<livelike-image-number-prediction-follow-up widgetid="YOUR-WIDGET-ID"></livelike-image-number-prediction-follow-up>` |
+
+**Replace`YOUR-WIDGET-ID` with your actual LiveLike Widget ID**
 
 Any template added in HTML for the widget kind will be applied to embedded widgets
 
@@ -107,6 +120,60 @@ Any template added in HTML for the widget kind will be applied to embedded widge
 </template>
 <livelike-text-quiz widgetid="XXXXXXX"></livelike-text-quiz>
 ```
+
+<br />
+
+## Example: Complete Embed default widget Integration
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LiveLike Integration Example</title>
+    <style>
+      :root {
+        --livelike-primary-color: #0066ff;
+        --livelike-text-color: #333333;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+      .widgets-container,
+      .chat-container {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <livelike-text-quiz widgetid="YOUR-WIDGET-ID"></livelike-text-quiz>
+    </div>
+
+    <!-- LiveLike SDK -->
+    <script src="https://unpkg.com/@livelike/[email protected]/livelike.umd.js"></script>
+    <script>
+      // Initialize the SDK
+      LiveLike.init({
+        clientId: 'YOUR-CLIENT-ID',
+        // Optional: Add user identification
+        user: {
+          id: 'USER-ID',
+          accessToken: 'USER-ACCESS-TOKEN',
+        },
+      });
+    </script>
+  </body>
+</html>
+```
+
+<br />
 
 ### Embedded Custom Widgets
 
@@ -169,7 +236,7 @@ The `registerWidgetMode` method's first argument is a string, the name of the mo
 
 Below is an example of how to create your own timeline mode using the available methods.
 
-<Embed url="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" title="Single Tag Widgets Custom Mode" favicon="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" provider="codepen.io" href="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FrNGeOqQ%3Feditors%3D1010'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
+<Embed url="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" href="https://codepen.io/abhi1599/pen/rNGeOqQ?editors=1010" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FrNGeOqQ%3Feditors%3D1010'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
 
 ## Troubleshooting
 
