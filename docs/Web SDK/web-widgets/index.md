@@ -30,7 +30,7 @@ Usage example:
 
 ```html
 <body>
-<livelike-widgets programid="YOUR-PROGRAM-ID"></livelike-widgets>
+  <livelike-widgets programid="YOUR-PROGRAM-ID"></livelike-widgets>
 </body>
 ```
 
