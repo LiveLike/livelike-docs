@@ -157,16 +157,11 @@ Any template added in HTML for the widget kind will be applied to embedded widge
     </div>
 
     <!-- LiveLike SDK -->
-    <script src="https://unpkg.com/@livelike/[email protected]/livelike.umd.js"></script>
+    <script src="https://unpkg.com/@livelike/engagementsdk/livelike.umd.js"></script>
     <script>
       // Initialize the SDK
       LiveLike.init({
-        clientId: 'YOUR-CLIENT-ID',
-        // Optional: Add user identification
-        user: {
-          id: 'USER-ID',
-          accessToken: 'USER-ACCESS-TOKEN',
-        },
+        clientId: 'YOUR-CLIENT-ID'
       });
     </script>
   </body>
