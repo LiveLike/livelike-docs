@@ -13,3 +13,4 @@ metadata:
 next:
   description: ''
 ---
+Create Reward Table Entry with optional Reward Limit and Rate Limit
