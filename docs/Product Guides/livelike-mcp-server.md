@@ -1,5 +1,5 @@
 ---
-title: LiveLike MCP Server
+title: MCP Server
 deprecated: false
 hidden: false
 metadata:
