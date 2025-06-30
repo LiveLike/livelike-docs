@@ -248,10 +248,13 @@ Your LiveLike Client ID
    Identify `npx` and `Node` binaries path
 
    Get the `npx` path and installed node version `bin` path
+
    ```sh
    which npx
    ```
+
    eg: `/Users/<user-account-name>/.nvm/versions/node/v20.19.2/bin/npx`
+
    * use `/Users/<user-account-name>/.nvm/versions/node/v20.19.2/bin/npx` as mcp server command (referred as `<npx_path>` in below mcp client config)
    * add node bin path `/Users/<user-account-name>/.nvm/versions/node/v20.19.2/bin` to `PATH` env var (referred as `<node_bin_path>` in below mcp client config)
    * ```json MCP server config
