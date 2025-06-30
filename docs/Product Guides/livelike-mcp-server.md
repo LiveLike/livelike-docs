@@ -3,6 +3,9 @@ title: MCP Server
 deprecated: false
 hidden: false
 metadata:
+  description: >-
+    LiveLike MCP server enabling AI Assitant tool based MCP Client to manage
+    LiveLike resources.
   robots: index
 ---
 A Model Context Protocol (MCP) server for interacting with LiveLike's engagement platform. This server enables AI assistants to manage LiveLike programs and interactive widgets through a standardized interface. <Anchor label="LiveLike MCP" target="_blank" href="https://www.npmjs.com/package/@livelike/mcp">LiveLike MCP</Anchor> is available as part of NPM package
