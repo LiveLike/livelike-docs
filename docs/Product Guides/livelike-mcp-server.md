@@ -150,7 +150,7 @@ nvm install 20 && nvm use 20 && nvm alias default 20
 
 ```json Unix
 {
-  "mcpServers": {
+  "servers": {
     "livelike": {
       "command": "npx",
       "args": ["-y", "@livelike/mcp"],
