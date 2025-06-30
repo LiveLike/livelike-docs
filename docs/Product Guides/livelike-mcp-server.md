@@ -1,8 +1,5 @@
 ---
 title: MCP Server
-excerpt: >-
-  LiveLike MCP server enabling AI Assistant tool based MCP Client to manage
-  LiveLike resources.
 deprecated: false
 hidden: false
 metadata:
