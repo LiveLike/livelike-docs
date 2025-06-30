@@ -164,7 +164,7 @@ nvm install 20 && nvm use 20 && nvm alias default 20
 ```
 ```json Windows
 {
-  "mcpServers": {
+  "servers": {
     "livelike": {
       "command": "cmd.exe",
       "args": ["/c", "npx", "-y", "@livelike/mcp"],
