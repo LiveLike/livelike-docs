@@ -15,17 +15,16 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 * **Fields**:
   * `Name` (e.g., "VIP Levels")
   * `Description` (optional)
-  * `Visibility` (public/private)
+  * `Image`
 
 ### 2. Tier
 
 * **Hierarchy**: Levels within a group (e.g., Bronze → Silver → Gold).
 * **Configuration**:
   * `Reward Threshold` (optional): Auto-assign tier when users hit this value.
-  * `Manual Assignment`: No threshold (admins assign manually).
-  * `Priority`: Defines unlock order.
+  * `Manual Assignment`: No threshold (assign manually).
+  * `Order`: Defines unlock order.
 
 ### 3. Benefits
 
-* **Perks**: Attached to tiers (e.g., discounts, early access).
-* **Types**: Static (fixed) or dynamic (conditional).
+* **Perks**: Attached to tiers (e.g.,rewards, discounts, early access).
