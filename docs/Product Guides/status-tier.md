@@ -65,3 +65,33 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 * Enter a Title (required).
 * (Optional) Add a Description, upload an Image, or define Attributes.
 * Click "Save" to create the group.
+
+<br />
+
+### Adding Tiers to a Group
+
+#### Required Fields
+
+* **Title (Mandatory)** → Name of the Tier (e.g., "Gold")
+
+#### Configuration Options
+
+* **Tier with Reward Threshold (Auto-Assignment)**
+  * Enable **"Set Reward Threshold"**
+  * Select a **Reward Item** (e.g., "Total Points")
+  * Enter a **Threshold Value** (e.g., 1000)
+  * Order is auto-set based on threshold (higher = higher tier)
+
+* **Tier without Threshold (Manual Assignment)**
+  * Leave **"Set Reward Threshold"** disabled
+  * Order can be manually adjusted later
+
+#### Steps
+
+* Open the desired **Tier Group**
+* Click **"+ Add Tier"**
+* Enter a **Title** (required)
+* Choose between:
+  * **Auto-assignment**: Set reward threshold
+  * **Manual-assignment**: Leave threshold empty
+* Click **"Save"** to create the tier
