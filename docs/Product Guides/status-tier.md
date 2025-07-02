@@ -12,10 +12,6 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 ### 1. Tier Group
 
 * **Purpose**: A container for related tiers (e.g., "Loyalty Program").
-* **Fields**:
-  * `Name` (e.g., "VIP Levels")
-  * `Description` (optional)
-  * `Image`
 
 ### 2. Tier
 
