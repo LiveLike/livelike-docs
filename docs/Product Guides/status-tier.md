@@ -108,3 +108,50 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 
 * Threshold-based tiers are locked in auto-order.
 * Manual tiers can be dragged/dropped to reorder.
+
+<br />
+
+### Adding Benefits Within a Tier
+
+#### Required Fields
+
+* **Title (Mandatory)** → Name of the Benefit (e.g., "Free Shipping", "Exclusive Discount")
+
+#### Optional Fields
+
+* **Description** → Additional details about the benefit
+* **Image** → Visual representation (e.g., icon, badge)
+* **Custom Attributes** → Metadata (e.g., `"expiry": "30d"`)
+
+#### Rewardable Benefit (Optional)
+
+* Enable **"Rewardable"** toggle to link a reward item
+* **Reward Item** → Select from existing rewards (e.g., "Loyalty Points")
+* **Reward Value** → Amount granted when the user reaches the tier (e.g., `100` points)
+
+> When a user qualifies for the tier, they automatically receive the reward if the benefit is rewardable.
+
+#### Steps
+
+* Open the desired **Tier** inside a **Tier Group**
+* Click **"Add Benefit"**
+* Enter a **Title** (required)
+* *(Optional)* Fill in **Description**, **Image**, or **Attributes**
+* *(Optional)* Toggle **"Rewardable"** and link a **Reward Item** + **Value**
+* Click **"Save"** to add the benefit
+
+#### Example: Rewardable Benefit Setup
+
+* **Tier**: `"Gold"`
+* **Benefit Title**: `"Welcome Bonus"`
+* **Rewardable**: ✅ Enabled
+* **Reward Item**: `"Loyalty Points"`
+* **Value**: `500`
+
+**Result**: When a user hits the Gold tier’s threshold, they automatically get 500 loyalty points.
+
+#### Key Rules
+
+* Non-rewardable benefits are purely descriptive (e.g., `"24/7 Support"`)
+* Rewardable benefits trigger instantly upon tier qualification
+* Reward items must be pre-configured in the **Rewards System**
