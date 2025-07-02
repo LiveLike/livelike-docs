@@ -35,6 +35,8 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
   * If set user gets the reward on unlocking the Tier.
 * Example: "Exclusive Discounts", "Early Access to Products".
 
+***
+
 <br />
 
 ## Managing Status Tier via CMS
@@ -65,6 +67,8 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 * Enter a Title (required).
 * (Optional) Add a Description, upload an Image, or define Attributes.
 * Click "Save" to create the group.
+
+***
 
 <br />
 
@@ -108,6 +112,8 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 
 * Threshold-based tiers are locked in auto-order.
 * Manual tiers can be dragged/dropped to reorder.
+
+***
 
 <br />
 
@@ -155,3 +161,94 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 * Non-rewardable benefits are purely descriptive (e.g., `"24/7 Support"`)
 * Rewardable benefits trigger instantly upon tier qualification
 * Reward items must be pre-configured in the **Rewards System**
+
+<br />
+
+***
+
+<br />
+
+### Archiving Tier Groups, Tiers, and Benefits
+
+#### Overview
+
+* **Archiving** allows you to deactivate **Tier Groups, Tiers, or Benefits** without permanently deleting them
+* Archived items appear in a dedicated **"Archived" tab** within their respective sections
+* Archived items are **excluded** from active workflows (e.g., tier assignment, reward logic)
+* Items can be **reactivated** or **permanently deleted** from the archive
+
+#### Archiving a Tier Group
+
+* **Effect**:
+  * Archives the **entire group**, including all associated **tiers and benefits**
+  * Users **cannot progress** in an archived group
+  * Existing tier assignments remain but **stop updating**
+
+* **Steps**:
+  1. Go to **Status Tier > Tier Groups**
+  2. Click the **"⋮" (More Options)** on the desired group
+  3. Select **"Archive"**
+  4. Confirm the action
+
+#### Archiving a Tier
+
+* **Effect**:
+  * Only the selected **tier** is archived (group remains active)
+  * Users **cannot qualify** for the tier if auto-assigned
+
+* **Steps**:
+  1. Open the **Tier Group** containing the tier
+  2. Click the **"⋮"** next to the tier
+  3. Select **"Archive"**
+
+#### Archiving a Benefit
+
+* **Effect**:
+  * Benefit is removed from the tier but **preserved** in the archive
+  * Existing users **retain previously granted rewards**
+  * New tier qualifiers **do not receive** the benefit
+
+* **Steps**:
+  1. Open the **Tier** containing the benefit
+  2. Click the **"⋮"** next to the benefit
+  3. Select **"Archive"**
+
+### Managing Archived Items
+
+#### Accessing Archived Items
+
+* Each section (**Tier Groups**, **Tiers**, **Benefits**) includes an **"Archived"** tab
+* Switch to this tab to view, activate, or delete archived items
+
+#### Actions Available
+
+| Action       | Effect                                                  |
+| ------------ | ------------------------------------------------------- |
+| **Activate** | Restores the item (e.g., tier becomes assignable again) |
+| **Delete**   | Permanently removes the item (**irreversible**)         |
+
+#### Steps to Restore or Delete
+
+1. Navigate to the **"Archived"** tab in the relevant section
+2. Click **"⋮"** next to the item
+3. Choose:
+   * **"Activate"** → Returns the item to the active list
+   * **"Delete Forever"** → Removes the item permanently
+
+### Key Rules & Best Practices
+
+⚠ **Tier Groups**:
+
+* Reactivating a group **also restores** all its nested **tiers and benefits**
+* Deleting a group **permanently removes** all associated content
+
+♻ **Tiers/Benefits**:
+
+* Reactivated tiers **resume original order and thresholds**
+
+### Example Workflow
+
+1. Archive the **"Bronze" tier** (threshold: 500 XP)
+   * ➜ Users stop qualifying for Bronze
+2. Later, **Activate** the Bronze tier from the Archived tab
+   * ➜ Tier becomes active again and users can earn it
