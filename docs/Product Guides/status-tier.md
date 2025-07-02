@@ -56,8 +56,8 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 #### Optional Fields
 
 * **Description** → Brief explanation of the group.
-* **Image**→ Visual representation (e.g., badge icon).
-* **Custom Attributes** → Additional metadata (e.g., "color": "gold").
+* **Image**→ Visual representation.
+* **Custom Attributes** → Additional metadata.
 
 #### Steps
 
@@ -74,6 +74,12 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 
 * **Title (Mandatory)** → Name of the Tier (e.g., "Gold")
 
+#### Optional Fields
+
+* **Description** → Brief explanation of the Tier.
+* **Image**→ Visual representation.
+* **Custom Attributes** → Additional metadata.
+
 #### Configuration Options
 
 * **Tier with Reward Threshold (Auto-Assignment)**
@@ -88,10 +94,17 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
 
 #### Steps
 
-* Open the desired **Tier Group**
-* Click **"+ Add Tier"**
+* Open the desired by clicking on View Detail of **Tier Group**
+* Click **"Add Tier"**
 * Enter a **Title** (required)
 * Choose between:
   * **Auto-assignment**: Set reward threshold
   * **Manual-assignment**: Leave threshold empty
 * Click **"Save"** to create the tier
+
+#### Key UI Notes
+
+**Tier Order Rules:**
+
+* Threshold-based tiers are locked in auto-order.
+* Manual tiers can be dragged/dropped to reorder.
