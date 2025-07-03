@@ -104,11 +104,11 @@ Both evaluations run independently and modularly at runtime. If both are configu
 
 ## Example Configurations
 
-| Scenario                       | Reward Limit | Rate Limit |
-| ------------------------------ | ------------ | ---------- |
-| Max 3 rewards per day          | Yes          | No         |
-| Reward only once every 10 mins | No           | Yes        |
-| Max 5 per day, 1 every 5 mins  | Yes          | Yes        |
+| Scenario                                                                 | Reward Limit | Rate Limit |
+| ------------------------------------------------------------------------ | ------------ | ---------- |
+| Reward max 3 actions per calendar day                                    | Yes          | No         |
+| Reward an action only once every 10 mins                                 | No           | Yes        |
+| Reward max 5 actions per day, with a 5 mins cooldown between each action | Yes          | Yes        |
 
 ***
 
