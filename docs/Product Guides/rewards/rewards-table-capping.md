@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-***
-
 ## Overview
 
 Reward Capping provides producers with greater control over the distribution of rewards by introducing two independent mechanisms:
