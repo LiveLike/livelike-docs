@@ -48,7 +48,7 @@ Users can earn rewards for watching VODs up to a max of 3 times per day.
 ### 2. Rate Limit
 
 **What it does:**\
-Enforces a minimum time gap between rewarded actions for the same user.
+Enforces a minimum time gap between rewardable actions for the same user.
 
 **Example:**\
 Users can only earn a reward for watching VODs once every 10 minutes.
