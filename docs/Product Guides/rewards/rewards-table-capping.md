@@ -1,7 +1,7 @@
 ---
 title: Rewards Table Capping
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
