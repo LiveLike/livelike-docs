@@ -356,12 +356,6 @@ This system ensures:
 2. **Add New Benefit**:
    * `[4]` Early Access → Auto-assigned to bottom
 
-3. **Reorder**:
-   * `[1]` Early Access
-   * `[2]` Free Shipping
-   * `[3]` 24/7 Support
-   * `[4]` Birthday Discount
-
 This system provides:
 
 * **Full control** over benefit presentation
