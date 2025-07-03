@@ -295,3 +295,74 @@ This system ensures:
 
 * Logical, **threshold-based tier progression**
 * Flexibility for **manually prioritized tiers**
+
+***
+
+### Benefit Ordering System
+
+#### 1. Benefit Position Assignment
+
+##### New Benefits
+
+* Automatically assigned the **next available order number** when created
+* Appears at the **bottom** of the benefit list by default
+
+**Example:**
+
+* Existing benefits: `[1]`, `[2]`, `[3]`
+* New benefit added → Assigned order **`[4]`**
+
+#### 2. Reordering Benefits
+
+##### Manual Adjustment
+
+* Benefits can be **freely reordered** using drag-and-drop or manual input
+* Order numbers update **dynamically** during rearrangement
+* No restrictions on positioning (unlike tier ordering)
+
+##### User-Facing Impact
+
+* Benefits are **shown to users in the defined order**
+* Common use cases:
+  * Highlight **most important** benefits first
+  * Group **related** benefits
+  * Promote **premium offerings** at the top
+
+#### 3. Archival Behavior
+
+##### When Archiving a Benefit
+
+* Benefit is **removed** from the active list
+* Remaining benefits **retain** their positions
+* No gaps created in numbering
+
+##### When Reactivating a Benefit
+
+* Benefit is re-added to the to its original position.
+
+#### 4. UI Implementation
+
+* **Drag handles** are present on all benefits
+* **Live preview** while reordering
+* No lock icons — **all benefits are fully adjustable**
+
+#### Example Workflow
+
+1. **Initial List**:
+   * `[1]` Free Shipping
+   * `[2]` 24/7 Support
+   * `[3]` Birthday Discount
+
+2. **Add New Benefit**:
+   * `[4]` Early Access → Auto-assigned to bottom
+
+3. **Reorder**:
+   * `[1]` Early Access
+   * `[2]` Free Shipping
+   * `[3]` 24/7 Support
+   * `[4]` Birthday Discount
+
+This system provides:
+
+* **Full control** over benefit presentation
+* **Flexible reordering** with no constraints
