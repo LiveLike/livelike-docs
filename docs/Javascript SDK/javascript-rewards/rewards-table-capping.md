@@ -162,12 +162,6 @@ A new InvokedActionRewardLog is introduced to:
 
 ***
 
-## Known Challenges
-
-* Concurrency: Multiple requests processed simultaneously may bypass limits if not handled atomically.
-
-***
-
 ## Summary
 
 Reward Capping gives producers powerful, modular tools to control reward distribution effectively. It ensures:
