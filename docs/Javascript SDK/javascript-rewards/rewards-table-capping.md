@@ -155,16 +155,6 @@ A new InvokedActionRewardLog is introduced to:
 
 ## Constraints
 
-* If no time zone is given for Reward Limit, it defaults to UTC
+* If no time zone is given for Reward Limit, it defaults to UTC.
 * Reward Limit currently supports Calendar Day and Calendar Month windows only.
 * Rate Limit supports cooldowns in minutes, hours, or days.
-
-***
-
-## Summary
-
-Reward Capping gives producers powerful, modular tools to control reward distribution effectively. It ensures:
-
-* Fairness and strategic behavior shaping.
-* Prevention of reward farming abuse.
-* Flexible configurations with minimal complexity.
