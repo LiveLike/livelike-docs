@@ -31,7 +31,7 @@ Enable producers to:
 ### 1. Reward Limit
 
 **What it does:**\
-Caps the total number of rewards a user can earn for an action within a specified window (e.g. per day or per month).
+Caps the total number of rewardable actions for a user within a specified window (e.g. per day or per month).
 
 **Example:**\
 Users can earn rewards for watching VODs up to a max of 3 times per day.
