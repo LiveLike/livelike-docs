@@ -155,6 +155,7 @@ A new InvokedActionRewardLog is introduced to:
 
 ## Constraints
 
+* If no time zone is given for Reward Limit, it defaults to UTC
 * Reward Limit currently supports Calendar Day and Calendar Month windows only.
 * Rate Limit supports cooldowns in minutes, hours, or days.
 
