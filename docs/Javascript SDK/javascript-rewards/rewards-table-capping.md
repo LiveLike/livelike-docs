@@ -155,7 +155,6 @@ A new InvokedActionRewardLog is introduced to:
 
 ## Constraints
 
-* All timestamps stored in UTC, adjusted per configured timezone.
 * Reward Limit currently supports Calendar Day and Calendar Month windows only.
 * Rate Limit supports cooldowns in minutes, hours, or days.
 
