@@ -252,3 +252,46 @@ The **Status Tier** feature enables the creation of tiered reward systems where 
    * ➜ Users stop qualifying for Bronze
 2. Later, **Activate** the Bronze tier from the Archived tab
    * ➜ Tier becomes active again and users can earn it
+
+***
+
+### Tier Ordering System
+
+#### 1. Core Ordering Rules
+
+##### Automatic-Order Tiers (With Thresholds)
+
+* Ordered strictly by **reward threshold value** (low to high)
+* Higher threshold = higher tier position
+* Positions are **locked** and cannot be manually changed
+
+##### Manual-Order Tiers (No Thresholds)
+
+* New tiers are added to the **end** of non reward tiers.
+* Can be **freely reordered** among other manual tiers
+* Must always remain **below** automatic-order tiers
+
+#### 2. Archival Behavior
+
+##### When Archiving a Tier
+
+* Tier is **removed** from the active sequence
+* Other tiers maintain their **relative positions**
+* No gaps are created in the ordering
+
+##### When Reactivating a Tier
+
+* Tier returns to its **original position**
+  * For automatic tiers: May **reorder** other threshold tiers
+  * For manual tiers: Returns to **saved position**, newer tiers shift down
+
+#### 4. Special Cases
+
+* Removing a tier’s threshold moves it to the **manual section**
+* If all threshold tiers are archived, **manual ordering takes over**
+* Updating a threshold triggers **automatic reordering** of all affected tiers
+
+This system ensures:
+
+* Logical, **threshold-based tier progression**
+* Flexibility for **manually prioritized tiers**
