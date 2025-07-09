@@ -5,7 +5,7 @@ api:
   file: engagement-suite.json
   operationId: create-tier-benefit
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
