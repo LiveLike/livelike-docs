@@ -2,7 +2,7 @@
 title: Assigning tier to a profile
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
