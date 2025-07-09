@@ -5,7 +5,7 @@ api:
   file: engagement-suite.json
   operationId: update-tier-group
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
