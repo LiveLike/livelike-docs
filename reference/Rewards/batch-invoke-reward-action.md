@@ -5,7 +5,7 @@ api:
   file: engagement-suite.json
   operationId: batch-invoke-reward-action
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
