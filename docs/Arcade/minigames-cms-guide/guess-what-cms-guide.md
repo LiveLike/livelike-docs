@@ -12,6 +12,12 @@ next:
 ---
 **Guess What?** is a fast-paced puzzle or trivia-style game where users guess the correct answer using clever clues. It supports multiple input methods, scoring modes, and dynamic branding, making it ideal for daily or themed challenges.
 
+Guess What? experience is available in the experiences list once you login and choose your application.
+
+<Image align="center" src="https://files.readme.io/9d37c51afc86ffee2890bc9e11e96d3d20203c8310532acfaa397a2a978baf12-Screenshot_2025-07-22_at_13.37.02.png" />
+
+To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps as outlined below.
+
 ***
 
 **CMS Setup consists of 7 key steps as follow:**
