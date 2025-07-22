@@ -7,6 +7,10 @@ metadata:
 ---
 Spin The Wheel is a luck-based reward game that allows users to spin a customizable prize wheel. You can configure spin types, rewards, visuals, and engagement frequency — making it a flexible retention tool for events, onboarding, and daily rewards.
 
+Spin The Wheel experience is available in the experiences list once you login and choose your application.
+
+<Image align="center" src="https://files.readme.io/9d37c51afc86ffee2890bc9e11e96d3d20203c8310532acfaa397a2a978baf12-Screenshot_2025-07-22_at_13.37.02.png" />
+
 ***
 
 **The STW setup consists of 6 key steps as outlined below:**
