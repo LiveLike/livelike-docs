@@ -36,81 +36,35 @@ next:
             2. 51–90%: “Great effort! You’re almost there.”
             3. 91–100%: “Amazing! You’re a trivia champion!”
       2. Allow Play Again and Play More toggles
-      3. <br />
-4. Quiz Setup\
-   Input Method: Manual, CSV Upload, or AI Generator (Beta)
-
-Game Format:
-
-Fill In The Blank (Live)
-
-Arrange In Sequence / Grid Format (Coming Soon)
-
-Game Title & Subtitle:
-
-e.g., “Greatest Soccer Players of All Time”
-
-Tags: e.g., football, players
-
-Time Limit: Duration in seconds
-
-Reward Items: Select 1, 2, or all options
-
-Points per Correct Answer
-
-Game Screen Toggles:
-
-Allow Give Up
-
-Enable Get Hint
-
-Answers Section
-
-Enter:
-
-Correct Answer,
-
-Valid Answer Variants,
-
-Metadata (e.g., nationality)
-
-5. Theme Setup\
-   Theme: Use Existing / New / Upload
-
-Logos:
-
-Brand Logo (PNG/JPG, ≤1MB)
-
-Game Logo or Text Label
-
-Screens: Customize individually
-
-Welcome Screen, Game Screen, How to Play, Result, etc.
-
-Colors: Full control of title, subtext, container, and accuracy indicators
-
-Backgrounds: Image, Color, or Video (with optional overlay tint)
-
-6. Social Features\
-   Enable Sharing Stats: Allow players to share their game results
-
-Custom Share Message: e.g., “Join me in today’s Guess What!”
-
-Deep Link: Add a URL for redirection
-
-Enable UGC (User-Generated Content):
-
-Allows users to generate up to 3 quizzes
-
-Quizzes expire in 24 hours
-
-Ideal for campaigns, virality, and creator engagement
-
-7. Schedule\
-   Timing Options:
-
-Publish Now
-
-Schedule Later using date and time picker
-
-Align publishing with campaigns, holidays, or sports fixtures
+4. **Quiz Setup**
+   1. Input Method: Manual, CSV Upload, or AI Generator (Beta)
+   2. Game Format Supported:
+      1. Fill In The Blank (Live)
+      2. Arrange In Sequence / Grid Format (Coming Soon)
+   3. Game Title & Subtitle: e.g., “Greatest Soccer Players of All Time”
+   4. Tags: e.g., football, players
+   5. Time Limit: Duration in seconds
+   6. Reward Items: Select 1, 2, or all options
+   7. Points per Correct Answer
+   8. Game Screen Toggles:
+      1. Allow Give Up
+      2. Enable Get Hint
+      3. Answers Section
+   9. Define Correct Answer, Valid Answer Variants, Hints (e.g., nationality)
+5. **Theme Setup**
+   1. Theme: Use Existing / New / Upload
+   2. Use this section to setup the theme that matches your brand styling. You will get option to upload, brand logo, game logo and sponsor logo, background image/color, etc
+   3. There are customisable option available for individual screens.
+6. **Social Features**
+   1. Enable Sharing Stats: Allow players to share their game results with below configurable message option
+      1. Custom Share Message: e.g., “Join me in today’s Guess What!”
+      2. Deep Link: Add a URL for redirection
+   2. Enable UGC (User-Generated Content):
+      1. Allows users to generate up to 3 quizzes
+      2. Quizzes expire in 24 hours
+      3. Ideal for campaigns, virality, and creator engagement
+7. Schedule
+   1. Timing Options:
+      1. Publish Now
+      2. Schedule Later using date and time picker
+      3. Align publishing with campaigns, holidays, or sports fixtures
