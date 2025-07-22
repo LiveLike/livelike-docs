@@ -10,9 +10,15 @@ metadata:
 next:
   description: Check out what events you can track for each of the MiniGames below
   pages:
-    - type: basic
-      slug: play-predictor-events
+    - slug: play-predictor-events
       title: Play Predictor Events
+      type: basic
+    - slug: pick-your-team
+      title: Pick Your Team Events
+      type: basic
+    - slug: guess-what-events
+      title: Guess What Events
+      type: basic
 ---
 This document outlines the analytics event system implemented in the arcade application. It explains how to listen for emitted events, capture relevant data, and forward it to an analytics provider of your choice for tracking and analysis.  
 
