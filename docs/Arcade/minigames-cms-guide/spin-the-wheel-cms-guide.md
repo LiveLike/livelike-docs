@@ -11,6 +11,10 @@ Spin The Wheel experience is available in the experiences list once you login an
 
 <Image align="center" src="https://files.readme.io/9d37c51afc86ffee2890bc9e11e96d3d20203c8310532acfaa397a2a978baf12-Screenshot_2025-07-22_at_13.37.02.png" />
 
+To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps as outlined below.
+
+<Image align="center" src="https://files.readme.io/4324828441c9ed1a839a9b79dc8b1d50cfe871accc506dd427a3f7215320929d-Screenshot_2025-07-22_at_13.38.45.png" />
+
 ***
 
 **The STW setup consists of 6 key steps as outlined below:**
