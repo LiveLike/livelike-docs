@@ -2,7 +2,7 @@
 title: Guess What CMS Guide
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
