@@ -2,7 +2,7 @@
 title: Registered Links
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: Registered Links | LiveLike Developer Hub
   description: >-
