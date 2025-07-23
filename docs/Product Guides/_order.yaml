@@ -4,6 +4,7 @@
 - widgets
 - chat
 - comment-boards
+- presence
 - stickers
 - reactions
 - social-graph-service
@@ -16,7 +17,6 @@
 - sponsorship
 - redemption-keys
 - registered-links
-- presence
 - custom-themes
 - spoiler-free-sync
 - analytics-overview
