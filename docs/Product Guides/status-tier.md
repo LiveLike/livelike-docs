@@ -1,6 +1,6 @@
 ---
 title: Status Tiers
-excerpt: Users can unlock benefits as they progress through status tiers
+excerpt: Allow users to unlock benefits as they progress through status tiers
 deprecated: false
 hidden: false
 metadata:
