@@ -1,5 +1,5 @@
 ---
-title: Retrive Tier Benefit
+title: Retrieve Tier Benefit
 excerpt: ''
 api:
   file: engagement-suite.json
