@@ -1,13 +1,16 @@
 ---
-title: Status Tier
+title: Status Tiers
+excerpt: Unlock perks and benefits as users progress through status tiers
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-The **Status Tier** feature enables the creation of tiered reward systems where users unlock benefits based on activity or rewards. Tiers are organized into groups, with optional reward thresholds for automatic progression.
+Use Status Tiers to define reward systems where users progressively unlock benefits based on their activity or rewards. As users reach more advanced tiers, their benefits from them accumulate.
 
 ## Key Components
+
+A *tier* represents a level of progress within a *tier group*.
 
 ### 1. Tier Group
 
