@@ -69,6 +69,13 @@ next:
 
 ```
 
+* **Spin The Wheel**: Add the following script tag to your HTML page:
+
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.0.0.js"></script>
+
+```
+
 <br />
 
 ### Step 3: Embed Game Component
@@ -97,7 +104,7 @@ next:
 <ll-pick-your-team accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-pick-your-team>
 ```
 
-* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js))
+* #### **Play Predictor**: (<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js">Demo</Anchor>)
 
 ```html html
 <ll-predictor accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor>
@@ -107,6 +114,12 @@ next:
 
 ```html html
 <ll-guess-what accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-what>
+```
+
+* #### **Spin The Wheel**: ([Demo](https://stackblitz.com/edit/vitejs-vite-orguuifq))
+
+```html html
+<ll-spin-the-wheel accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-spin-the-wheel>
 ```
 
 <br />
