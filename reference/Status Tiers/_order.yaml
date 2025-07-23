@@ -10,7 +10,7 @@
 - delete-tier
 - create-tier-benefit
 - list-tier-benefits
-- retrive-tier-benefit
+- retrieve-tier-benefit
 - update-tier-benefit
 - delete-tier-benefit
 - assigning-tier-to-a-profile
