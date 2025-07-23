@@ -6,7 +6,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Use Status Tiers to define reward systems where users progressively unlock benefits based on their activity or rewards. As users reach more advanced tiers, their benefits from them accumulate.
+Use Status Tiers to define reward systems where users progressively unlock the benefits associated with those tiers. As users reach more advanced tiers, their benefits from them accumulate.
 
 <Image align="center" width="40% " src="https://files.readme.io/8a5bb68d8eaf149eb16aee46ab54e8ea89ceb992861b22e772d5a1ff530131df-Status_Tiers_cropped.png" />
 
