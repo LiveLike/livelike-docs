@@ -11,7 +11,7 @@ metadata:
 | **Capability**                | **What it means**                                                                                                                          |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Manage Resources**          | Create, edit, and publish Programs, Text Polls, Predictions, and Quizzes without leaving chat.                                             |
-| **Real-time Internet Access** | Genie can fetch live data like scores, odds, or headlines and use it inside prompts or widgets.                                            |
+| **Real-time Internet Access** | Genie can fetch live data like scores, or headlines and use it inside prompts or widgets.                                                  |
 | **Conversational Knowledge**  | Talk to the Genie in natural language. "Create 3 trivia questions on the greatest NBA players of all time" or "List all my live programs." |
 | **Inline Feedback**           | Give quick feedback using thumbs up/down icons or type `feedback:` followed by your comment.                                               |
 
