@@ -10,3 +10,11 @@ link:
 metadata:
   robots: index
 ---
+Create a single quest with two variants to test differences in:
+
+* Rewards
+* Quest Tasks
+* Badges
+* Sponsors
+
+While keeping the core quest logic shared.
