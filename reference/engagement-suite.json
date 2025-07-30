@@ -31261,14 +31261,86 @@
                     "type": "array",
                     "description": "Currently, only two variants are supported, so this list must contain exactly two objects",
                     "items": {
-                      "properties": {},
-                      "type": "object"
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "Give variant a name"
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "Description for the variant"
+                        },
+                        "badge_ids": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "List of Badge UUIDs to link in the variant  "
+                        },
+                        "quest_rewards": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "reward_item_id": {
+                                "type": "string"
+                              },
+                              "reward_item_amount": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "sponsor_ids": {
+                          "type": "array",
+                          "description": "List of Sponsor UUIDs to link in the variant",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "quest_tasks": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "target_value": {
+                                "type": "integer"
+                              },
+                              "quest_task_actions": {
+                                "type": "array",
+                                "items": {
+                                  "properties": {
+                                    "reward_action_key": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object",
+                                  "required": [
+                                    "reward_action_key"
+                                  ]
+                                }
+                              }
+                            },
+                            "type": "object",
+                            "required": [
+                              "name",
+                              "target_value",
+                              "quest_task_actions"
+                            ]
+                          }
+                        }
+                      },
+                      "type": "object",
+                      "required": []
                     }
                   }
                 },
                 "type": "object",
                 "required": [
-                  "quest_name"
+                  "quest_name",
+                  "name"
                 ]
               }
             }
