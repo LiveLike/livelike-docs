@@ -21054,135 +21054,6 @@
           }
         },
         "deprecated": false
-      },
-      "patch": {
-        "summary": "Claim User Quest Badge",
-        "description": "",
-        "operationId": "claim-user-quest-badges",
-        "parameters": [
-          {
-            "name": "user_quest_id",
-            "in": "path",
-            "description": "the user quest id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "claim_badges": {
-                    "type": "array",
-                    "description": "list of badges that should be awarded to user for completing the Quest",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "201",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"user_quest_id\": \"fa1e61e9-6211-4943-ae10-8a5e4a0eaaa0\",\n    \"claimed_badges\": [\n        {\n            \"id\": \"c0dd5ab6-1b51-413e-9c3a-9d34074d5559\",\n            \"url\": \"http://localhost:8888/api/v1/badges/c0dd5ab6-1b51-413e-9c3a-9d34074d5559/\",\n            \"client_id\": \"kTytonx4hY0fI1rWrCtwdtacsj21pbuAn3Y4MrNr\",\n            \"name\": \"Badge 4\",\n            \"description\": \"desc\",\n            \"badge_icon_url\": \"/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg\",\n            \"mimetype\": \"application/octet-stream\",\n            \"registered_links\": [],\n            \"file\": \"http://localhost:8888/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg\",\n            \"attributes\": []\n        }\n    ]\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "user_quest_id": {
-                      "type": "string",
-                      "example": "fa1e61e9-6211-4943-ae10-8a5e4a0eaaa0"
-                    },
-                    "claimed_badges": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string",
-                            "example": "c0dd5ab6-1b51-413e-9c3a-9d34074d5559"
-                          },
-                          "url": {
-                            "type": "string",
-                            "example": "http://localhost:8888/api/v1/badges/c0dd5ab6-1b51-413e-9c3a-9d34074d5559/"
-                          },
-                          "client_id": {
-                            "type": "string",
-                            "example": "kTytonx4hY0fI1rWrCtwdtacsj21pbuAn3Y4MrNr"
-                          },
-                          "name": {
-                            "type": "string",
-                            "example": "Badge 4"
-                          },
-                          "description": {
-                            "type": "string",
-                            "example": "desc"
-                          },
-                          "badge_icon_url": {
-                            "type": "string",
-                            "example": "/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg"
-                          },
-                          "mimetype": {
-                            "type": "string",
-                            "example": "application/octet-stream"
-                          },
-                          "registered_links": {
-                            "type": "array"
-                          },
-                          "file": {
-                            "type": "string",
-                            "example": "http://localhost:8888/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg"
-                          },
-                          "attributes": {
-                            "type": "array"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "404",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"detail\": \"Not found.\",\n    \"error_code\": \"not_found\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "example": "Not found."
-                    },
-                    "error_code": {
-                      "type": "string",
-                      "example": "not_found"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
       }
     },
     "/quests/{quest_id}/badges/{badge_id}": {
@@ -31575,6 +31446,136 @@
             }
           }
         }
+      }
+    },
+    "/user-quests/{quest_id}/badges": {
+      "patch": {
+        "summary": "Claim User Quest Badge",
+        "description": "",
+        "operationId": "claim-user-quest-badges",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "quest_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "claim_badges": {
+                    "type": "array",
+                    "description": "list of badges that should be awarded to user for completing the Quest",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"user_quest_id\": \"fa1e61e9-6211-4943-ae10-8a5e4a0eaaa0\",\n    \"claimed_badges\": [\n        {\n            \"id\": \"c0dd5ab6-1b51-413e-9c3a-9d34074d5559\",\n            \"url\": \"http://localhost:8888/api/v1/badges/c0dd5ab6-1b51-413e-9c3a-9d34074d5559/\",\n            \"client_id\": \"kTytonx4hY0fI1rWrCtwdtacsj21pbuAn3Y4MrNr\",\n            \"name\": \"Badge 4\",\n            \"description\": \"desc\",\n            \"badge_icon_url\": \"/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg\",\n            \"mimetype\": \"application/octet-stream\",\n            \"registered_links\": [],\n            \"file\": \"http://localhost:8888/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg\",\n            \"attributes\": []\n        }\n    ]\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user_quest_id": {
+                      "type": "string",
+                      "example": "fa1e61e9-6211-4943-ae10-8a5e4a0eaaa0"
+                    },
+                    "claimed_badges": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "c0dd5ab6-1b51-413e-9c3a-9d34074d5559"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "http://localhost:8888/api/v1/badges/c0dd5ab6-1b51-413e-9c3a-9d34074d5559/"
+                          },
+                          "client_id": {
+                            "type": "string",
+                            "example": "kTytonx4hY0fI1rWrCtwdtacsj21pbuAn3Y4MrNr"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Badge 4"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "desc"
+                          },
+                          "badge_icon_url": {
+                            "type": "string",
+                            "example": "/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg"
+                          },
+                          "mimetype": {
+                            "type": "string",
+                            "example": "application/octet-stream"
+                          },
+                          "registered_links": {
+                            "type": "array"
+                          },
+                          "file": {
+                            "type": "string",
+                            "example": "http://localhost:8888/media/assets/9828393d-fabe-4540-b8ce-70e8230c7f85.jpg"
+                          },
+                          "attributes": {
+                            "type": "array"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"detail\": \"Not found.\",\n    \"error_code\": \"not_found\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Not found."
+                    },
+                    "error_code": {
+                      "type": "string",
+                      "example": "not_found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
       }
     }
   },
