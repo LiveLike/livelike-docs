@@ -31504,6 +31504,13 @@
                               },
                               "reward_item_amount": {
                                 "type": "string"
+                              },
+                              "leaderboard_ids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "Only the specified leaderboards will be incremented. If not provided, all leaderboards associated with the reward item(s) will be incremented by default."
                               }
                             },
                             "type": "object",
