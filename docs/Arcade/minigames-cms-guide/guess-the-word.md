@@ -54,11 +54,11 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    3. **Please note:**
       1. The structure of the game stays the same. Poistioning, adding and resizing of components cannot be done
       2. Only colors/background images and text copies can be customised
-      3. Brand Logo -  Maximum height of the image should be \<45px
+      3. Brand Logo -  Max size: 42x300 pixels
       4. Game Font: Applied to all text except letters inputed in the Grid.
       5. Grid Font: Applied to only Letters in the Grid.
-      6. Game logo: Maximum height of the image should be \<200px
-      7. Sponsor Logo: Maximum height of the image should be \<47px
+      6. Game logo: Max size: 42x300 pixels
+      7. Sponsor Logo: Max size: 42x300 pixels
       8. Background image: Recommended size 1080x1920 , max size 1mb
 
 <Image align="center" src="https://files.readme.io/7068cc08423bfee8b8806475ddc8be970380b516e77f854739ff54ee5b05cd3c-ezgif-5-70918d4920.gif" />
