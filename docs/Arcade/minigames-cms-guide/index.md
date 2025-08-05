@@ -27,6 +27,9 @@ next:
     - slug: spin-the-wheel-cms-guide
       title: Spin The Wheel CMS Guide
       type: basic
+    - slug: guess-the-word
+      title: Guess The Word CMS Guide
+      type: basic
 ---
 LiveLike provides an easy way to configure MiniGames. You can access the MiniGames CMS from [https://arcade-cms.livelikecdn.com/](https://arcade-cms.livelikecdn.com/). The CMS allows creation of MiniGames on the fly tailored towards the brand. 
 
