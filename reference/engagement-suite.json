@@ -18762,6 +18762,13 @@
                   "attributes": {
                     "type": "array",
                     "description": "key and value pairs"
+                  },
+                  "leaderboard_ids": {
+                    "type": "array",
+                    "description": "Optional list of leaderboard UUIDs that should be updated when a user receives a reward for completing a quest. This field only takes effect if the leaderboard override flag is enabled for your application. To enable this flag, please contact Livelike.  By default, if the flag is disabled, all leaderboards linked to the awarded reward item will be updated automatically.",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -18775,7 +18782,25 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n\t\"id\": \"0276241f-959a-4062-a28c-e1a9c13b0c81\",\n\t\"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n\t\"name\": \"Bens Quest\",\n\t\"description\": \"My first Quest\",\n\t\"quest_tasks\": [],\n\t\"created_at\": \"2022-06-10T02:20:03.570870Z\",\n  \"attributes\": [\n        {\n            \"key\": \"k1\",\n            \"value\": \"one\"\n        },\n        {\n            \"key\": \"k2\",\n            \"value\": \"two\"\n        }\n    ]\n}"
+                    "value": {
+                      "id": "0276241f-959a-4062-a28c-e1a9c13b0c81",
+                      "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "name": "Bens Quest",
+                      "description": "My first Quest",
+                      "quest_tasks": [],
+                      "created_at": "2022-06-10T02:20:03.570870Z",
+                      "leaderboards": [],
+                      "attributes": [
+                        {
+                          "key": "k1",
+                          "value": "one"
+                        },
+                        {
+                          "key": "k2",
+                          "value": "two"
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
