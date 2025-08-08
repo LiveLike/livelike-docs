@@ -34,6 +34,8 @@ history = r.json()
 
 ## Start or Stop Program
 
+The `status` field on a program is controlled by starting and stopping it. When a program is started the status is `live`, and then when it's stopped it is either `future` or `past` depending on when the program is scheduled for. A program's live status does not affect it's ability to create or publish widgets.
+
 ```python Python
 import requests
 
