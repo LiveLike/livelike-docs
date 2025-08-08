@@ -31,3 +31,22 @@ program = r.json()
 r = requests.get(program['widgets_url'])
 history = r.json()
 ```
+
+## Start or Stop Program
+
+```python Python
+import requests
+
+# Set up authorization headers using a producer access token
+headers = {'Authorization': f'Bearer {access_token}'} 
+
+# Fetch program resource
+r = requests.get('https://cf-blast.livelikecdn.com/api/v1/programs/f1938a34-2611-4cff-9043-ad6b3dd2f6fd/')
+program = r.json()
+
+# Start the program
+requests.post(program['start_program_url'], headers=headers)
+
+# Stop the program
+requests.post(program['stop_program_url'], headers=headers)
+```
