@@ -28,9 +28,7 @@ Programs can be linked with one or more [leaderboards](doc:leaderboards). [Rewar
 
 ## Scheduling Programs
 
-<Image alt="Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab." align="center" src="https://files.readme.io/a40f0c2-ProgramSchedulingDetail.png">
-  Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab.
-</Image>
+<Image align="center" alt="Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab." border={false} caption="Live programs appear in the Live Now tab of the Programs section. Future programs will appear in the Upcoming tab, and past programs can be found in the History tab." src="https://files.readme.io/a40f0c2-ProgramSchedulingDetail.png" />
 
 Each program has fields for scheduling information such as starting time and status. Those fields are:
 
@@ -48,6 +46,8 @@ Starting a program flags it as live, and stopping a program signals that it is n
 > 📘 Live status does not affect widget publishing
 >
 > Widgets can always be published to programs whether or not they are live. Live status is used by the CMS for organization and navigational purposes, but no business logic is enforced by LiveLike related to the live status of a program.
+
+Read more about [Using Programs](ref:using-programs-api) to manage program status via the API.
 
 ## Custom Identifiers
 
