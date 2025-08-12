@@ -2913,6 +2913,14 @@
                   "parent_message_id": {
                     "type": "string",
                     "description": "parent message for this specific reply in the message thread"
+                  },
+                  "mentions": {
+                    "type": "array",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "description": "Details of the mentioned profiles and their location in the message"
                   }
                 }
               }
