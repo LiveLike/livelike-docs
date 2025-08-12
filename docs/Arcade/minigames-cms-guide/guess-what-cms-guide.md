@@ -16,7 +16,7 @@ Guess What? experience is available in the experiences list once you login and c
 
 <Image align="center" src="https://files.readme.io/9d37c51afc86ffee2890bc9e11e96d3d20203c8310532acfaa397a2a978baf12-Screenshot_2025-07-22_at_13.37.02.png" />
 
-To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps as outlined below.
+To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 7 key steps as outlined below.
 
 <Image align="center" src="https://files.readme.io/9fc010bbc4ca291f04a3b43ace72fb39186d9220d73dee574319214c67a63db0-Screenshot_2025-07-22_at_13.43.04.png" />
 
