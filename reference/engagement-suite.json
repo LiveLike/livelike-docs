@@ -13807,6 +13807,13 @@
                   "reason": {
                     "type": "string",
                     "description": "Optional reason for crediting the reward. eg. attend a game"
+                  },
+                  "leaderboard_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "List of leaderboard UUIDs to update; if provided, only those leaderboards are updated; if empty ([]), no linked leaderboards are updated; if omitted, all linked leaderboards are updated."
                   }
                 }
               }
