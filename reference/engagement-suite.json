@@ -13815,7 +13815,11 @@
                     },
                     "description": "List of leaderboard UUIDs to update; if provided, only those leaderboards are updated; if empty ([]), no linked leaderboards are updated; if omitted, all linked leaderboards are updated."
                   }
-                }
+                },
+                "required": [
+                  "reward_item_id",
+                  "reward_item_amount"
+                ]
               }
             }
           }
