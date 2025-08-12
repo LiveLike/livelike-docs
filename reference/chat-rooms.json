@@ -1,1 +1,1290 @@
-{"openapi":"3.1.0","info":{"title":"chat-rooms","version":"1"},"servers":[{"url":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms"}],"components":{"securitySchemes":{}},"security":[{}],"paths":{"/{id}/":{"get":{"summary":"Get a Chat Room","description":"","operationId":"get-chat-room","parameters":[{"name":"id","in":"path","description":"Unique chat room identifier","schema":{"type":"string"},"required":true}],"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n}\n"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"},"client_id":{"type":"string","example":"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"},"title":{},"created_at":{"type":"string","example":"2020-04-28T13:35:52.973396Z"},"content_filter":{"type":"string","example":"none"},"visibility":{"type":"string","example":"everyone"},"channels":{"type":"object","properties":{"chat":{"type":"object","properties":{"sendbird":{},"pubnub":{"type":"string","example":"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}},"reactions":{"type":"object","properties":{"pubnub":{"type":"string","example":"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}}}},"upload_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"},"memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"},"sticker_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"reaction_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}}}}}},"deprecated":false,"security":[]}},"/":{"get":{"summary":"Get List of Chat Room","description":"","operationId":"get-list-of-chat-rooms","parameters":[{"name":"client_id","in":"query","description":"The Client ID of the application to get list of associated chat rooms from.","schema":{"type":"string"}},{"name":"attributes","in":"query","description":"Filters Chat on the basis of their attributes, ?attributes=key:value","schema":{"type":"string"}}],"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n}\n"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"},"client_id":{"type":"string","example":"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"},"title":{},"created_at":{"type":"string","example":"2020-04-28T13:35:52.973396Z"},"content_filter":{"type":"string","example":"none"},"visibility":{"type":"string","example":"everyone"},"channels":{"type":"object","properties":{"chat":{"type":"object","properties":{"sendbird":{},"pubnub":{"type":"string","example":"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}},"reactions":{"type":"object","properties":{"pubnub":{"type":"string","example":"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}}}},"upload_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"},"memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"},"sticker_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"reaction_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}}}}}},"deprecated":false,"security":[]},"post":{"summary":"Create a Chat Room","description":"Create a new chat room","operationId":"create-chat-room","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"title":{"type":"string","description":"Set an optional title for the Chat Room"},"content_filter":{"type":"string","description":"To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only.","default":"none","enum":["none","filtered","producer"]},"sticker_pack_ids":{"type":"array","description":"Sticker Pack IDs","items":{"type":"string"}},"reaction_pack_ids":{"type":"array","description":"Reaction Pack IDs","items":{"type":"string"}},"visibility":{"type":"string","description":"Who is allowed to see and join the chat room.  Can be `everyone` or `members`.","default":"members","enum":["everyone","members"]},"sponsor_ids":{"type":"array","description":"Sets the sponsors associated with the chat room","items":{"type":"string"}},"token_gates":{"type":"array","description":"Set an optional crypto token gates over chat","items":{"properties":{"contract_address":{"type":"string","description":"address of smart contract whose token will be used as gate"},"network_type":{"type":"string","description":"define network in which above contract is a block","enum":["ethereum","polygon","chiliz","hedera"]},"token_type":{"type":"string","default":"fungible","enum":["non-fungible","fungible"]},"attributes":{"type":"array","description":"Attributes are only attched with non-fungible type token-gates","items":{"properties":{"key":{"type":"string"},"value":{"type":"string"}},"type":"object"}}},"type":"object"}},"attributes":{"type":"array","description":"Array of custom attributes","items":{"properties":{"key":{"type":"string"},"value":{"type":"string"}},"type":"object"}}}},"examples":{"Request Example":{"value":{"content_filter":"none","visibility":"everyone","title":"example chat name","token_gates":[{"contract_address":"0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458","network_type":"ethereum"}]}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/\",\n  \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"title\": \"testTitle\",\n  \"created_at\": \"2023-04-27T09:07:22.982044Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"control\": {\n      \"pubnub\": \"chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    }\n  },\n  \"report_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/\",\n  \"reported_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending\",\n  \"delete_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/\",\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/\",\n  \"muted_status_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/\",\n  \"custom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"custom_data\": null,\n  \"sponsors_url\": \"https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"chatroom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/\",\n  \"chatroom_messages_count_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/\",\n  \"pubnub_messages_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/\",\n  \"pubnub_messages_remove_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/\",\n  \"token_gates\": [\n    {\n      \"contract_address\": \"0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458\",\n      \"network_type\": \"ethereum\"\n    }\n  ],\n  \"chatroom_token_gate_access_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}\",\n  \"chatroom_access_rule_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/\",\n  \"reported_chat_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/\",\n  \"reaction_space_id\": \"71b422ae-df6d-4c8e-bae3-c12204856754\"\n}\n"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"29c0fb7b-d6f9-4400-9dc5-2535a97d224c"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/"},"client_id":{"type":"string","example":"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"},"title":{"type":"string","example":"testTitle"},"created_at":{"type":"string","example":"2023-04-27T09:07:22.982044Z"},"content_filter":{"type":"string","example":"none"},"visibility":{"type":"string","example":"everyone"},"channels":{"type":"object","properties":{"chat":{"type":"object","properties":{"sendbird":{},"pubnub":{"type":"string","example":"chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"}}},"reactions":{"type":"object","properties":{"pubnub":{"type":"string","example":"chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"}}},"control":{"type":"object","properties":{"pubnub":{"type":"string","example":"chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"}}}}},"report_message_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/"},"reported_messages_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending"},"delete_message_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/"},"upload_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/"},"memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/"},"muted_status_url_template":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/"},"custom_messages_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/"},"sticker_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c"},"reaction_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c"},"custom_data":{},"sponsors_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"},"chatroom_messages_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/"},"chatroom_messages_count_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/"},"pubnub_messages_reaction_url_template":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/"},"pubnub_messages_remove_reaction_url_template":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/"},"token_gates":{"type":"array","items":{"type":"object","properties":{"contract_address":{"type":"string","example":"0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458"},"network_type":{"type":"string","example":"ethereum"}}}},"chatroom_token_gate_access_url_template":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}"},"chatroom_access_rule_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/"},"reported_chat_messages_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/"},"reaction_space_id":{"type":"string","example":"71b422ae-df6d-4c8e-bae3-c12204856754"}}}}}}},"deprecated":false}},"/{id}":{"patch":{"summary":"Update a Chat Room","description":"","operationId":"update-a-chat-room","parameters":[{"name":"id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"title":{"type":"string","description":"Set an optional title for the Chat Room"},"content_filter":{"type":"string","description":"To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only.","default":"none","enum":["none","filtered","producer"]},"sticker_pack_ids":{"type":"array","description":"Sticker Pack IDs","items":{"type":"string"}},"reaction_pack_ids":{"type":"array","description":"Reaction Pack IDs","items":{"type":"string"}},"visibility":{"type":"string","description":"Who is allowed to see and join the chat room.  Can be `everyone` or `members`.","default":"everyone","enum":["everyone","members"]},"sponsor_ids":{"type":"array","description":"Links the sponsors with this chat room. Note that only valid sponsor IDs will be linked to a chatroom.","items":{"type":"string"}},"token_gates":{"type":"array","description":"Token gates users must pass to access the chat","items":{"properties":{"contract_address":{"type":"string","description":"Contract address of required token in EVM format"},"network_type":{"type":"string","enum":["ethereum","polygon","chiliz","hedera","hedera-mainnet"]},"token_type":{"type":"string","enum":["fungible","non-fungible"]}},"type":"object"}}}}}}},"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n   \"sponsors_url\":  \"https://cf-blast-storage.livelikecdn.com/sticker-packs/ff8d89f6-3d7b-48de-87a8-f3588674eef8/sponsors.json\"\n}\n"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"},"client_id":{"type":"string","example":"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"},"title":{},"created_at":{"type":"string","example":"2020-04-28T13:35:52.973396Z"},"content_filter":{"type":"string","example":"none"},"visibility":{"type":"string","example":"everyone"},"channels":{"type":"object","properties":{"chat":{"type":"object","properties":{"sendbird":{},"pubnub":{"type":"string","example":"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}},"reactions":{"type":"object","properties":{"pubnub":{"type":"string","example":"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"}}}}},"upload_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"},"memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"},"sticker_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"reaction_packs_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"},"sponsors_url":{"type":"string","example":"https://cf-blast-storage.livelikecdn.com/sticker-packs/ff8d89f6-3d7b-48de-87a8-f3588674eef8/sponsors.json"}}}}}},"400":{"description":"400","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}}},"deprecated":false},"delete":{"summary":"Delete a Chat Room","description":"","operationId":"delete-a-chat-room","parameters":[{"name":"id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"responses":{"204":{"description":"204","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}},"403":{"description":"403","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"detail\": \"User cannot delete chat room.\"\n}"}},"schema":{"type":"object","properties":{"detail":{"type":"string","example":"User cannot delete chat room."}}}}}}},"deprecated":false}},"/{id}/delete-chat-message/":{"post":{"summary":"Delete A Chat Room Message","description":"","operationId":"delete-a-chat-room-message","parameters":[{"name":"id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["message_id"],"properties":{"message_id":{"type":"string","description":"Chat Message ID"},"pubnub_timetoken":{"type":"integer","description":"If a PubNub Time Token is also provided then the message will be deleted from room history in addition to a `message-deleted` event being published.","format":"int64"}}}}}},"responses":{"204":{"description":"204","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}},"400":{"description":"400","content":{"application/json":{"examples":{"Result":{"value":"{\"message_id\": \"pubnub_timetoken is invalid.\"}"}},"schema":{"type":"object","properties":{"message_id":{"type":"string","example":"pubnub_timetoken is invalid."}}}}}}},"deprecated":false}},"/{chat_room_id}/messages/":{"post":{"summary":"Send a chat message","description":"","operationId":"send-a-chat-message","parameters":[{"name":"chat_room_id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string","description":"Chat message text"},"program_date_time":{"type":"string","description":"ISO-8601 datetime string used for feature synchronization","format":"date"}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"event\": \"message-created\",\n  \"payload\": {\n    \"badge_image_url\": null,\n    \"content_filter\": [],\n    \"created_at\": \"2021-05-19T15:14:20+0000\",\n    \"filtered_message\": null,\n    \"filtered_sender_nickname\": null,\n    \"id\": \"05fb1d22-5f2c-4384-ad13-a514dc1808e7\",\n    \"message\": \"Hello World\",\n    \"program_date_time\": null,\n    \"sender_id\": \"0c85e86c-10fe-4bcd-b6f7-aea63d05cb0a\",\n    \"sender_image_url\": null,\n    \"sender_nickname\": \"Ben\",\n    \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/0c85e86c-10fe-4bcd-b6f7-aea63d05cb0a/\"\n  }\n}\n"}},"schema":{"type":"object","properties":{"event":{"type":"string","example":"message-created"},"payload":{"type":"object","properties":{"badge_image_url":{},"content_filter":{"type":"array"},"created_at":{"type":"string","example":"2021-05-19T15:14:20+0000"},"filtered_message":{},"filtered_sender_nickname":{},"id":{"type":"string","example":"05fb1d22-5f2c-4384-ad13-a514dc1808e7"},"message":{"type":"string","example":"Hello World"},"program_date_time":{},"sender_id":{"type":"string","example":"0c85e86c-10fe-4bcd-b6f7-aea63d05cb0a"},"sender_image_url":{},"sender_nickname":{"type":"string","example":"Ben"},"sender_profile_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/0c85e86c-10fe-4bcd-b6f7-aea63d05cb0a/"}}}}}}}}},"deprecated":false,"x-readme":{"code-samples":[{"language":"curl","code":"curl -X POST -H \"Authorization: Bearer <access_token>\" -d message=\"Hello World\" https://cf-blast.livelikecdn.com/api/v1/chat-rooms/{chat_room_id}/messages/"}],"samples-languages":["curl"]}}},"/{chat_room_id}/custom-messages/":{"post":{"summary":"Send a Custom Chat Message","description":"Send a custom message to a chat room.  This can be used to send rich data as a chat message that can be interpreted by the SDK to perform some action or display additional content.","operationId":"send-a-custom-chat-message","parameters":[{"name":"chat_room_id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["custom_data"],"properties":{"custom_data":{"type":"string","description":"String data to send with the chat message.  Typically contains a string JSON payload to be decoded by the client SDK"},"program_date_time":{"type":"string","description":"ISO-8601 Program Date Time to associate with the chat message.","format":"date"}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n    \"id\": \"9709cc92-83b3-4e32-b2d0-9029b2f2a0d8\",\n    \"chat_room_id\": \"1b494165-188f-4e16-9766-ac1d1f1ac925\",\n    \"sender_id\": \"c8d2922f-8324-4a9a-97f6-88851c53d331\",\n    \"sender_nickname\": \"Gautam Aggarwal\",\n    \"sender_image_url\": null,\n    \"badge_image_url\": null,\n    \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/c8d2922f-8324-4a9a-97f6-88851c53d331/\",\n    \"created_at\": \"2021-09-16T12:24:32.423815+00:00\",\n    \"custom_data\": \"{\\\"text\\\": \\\"This is a custom chat message\\\"}\",\n    \"program_date_time\": null\n}"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"9709cc92-83b3-4e32-b2d0-9029b2f2a0d8"},"chat_room_id":{"type":"string","example":"1b494165-188f-4e16-9766-ac1d1f1ac925"},"sender_id":{"type":"string","example":"c8d2922f-8324-4a9a-97f6-88851c53d331"},"sender_nickname":{"type":"string","example":"Gautam Aggarwal"},"sender_image_url":{},"badge_image_url":{},"sender_profile_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/c8d2922f-8324-4a9a-97f6-88851c53d331/"},"created_at":{"type":"string","example":"2021-09-16T12:24:32.423815+00:00"},"custom_data":{"type":"string","example":"{\"text\": \"This is a custom chat message\"}"},"program_date_time":{}}}}}},"403":{"description":"403","content":{"application/json":{"examples":{"Result":{"value":"{\"detail\": \"Authentication credentials were invalid or not provided.\"}"}},"schema":{"type":"object","properties":{"detail":{"type":"string","example":"Authentication credentials were invalid or not provided."}}}}}}},"deprecated":false}},"/{id}/memberships/":{"get":{"summary":"List Chat Room Memberships","description":"","operationId":"list-chat-room-memberships","parameters":[{"name":"id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"count\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"5c92f58f-f987-4269-8a32-83efa6693999\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/\",\n      \"profile\": {\n        \"id\": \"26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/\",\n        \"created_at\": \"2020-04-16T23:15:07.550000Z\",\n        \"nickname\": \"Wise Bee\",\n        \"subscribe_channel\": \"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/\"\n      }\n    },\n    {\n      \"id\": \"2bd41d2c-423a-4229-b6db-7909bc002e53\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/2bd41d2c-423a-4229-b6db-7909bc002e53/\",\n      \"profile\": {\n        \"id\": \"988b06e6-fa35-4590-9d2e-9572fb28e702\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/988b06e6-fa35-4590-9d2e-9572fb28e702/\",\n        \"created_at\": \"2020-04-16T23:15:07.544000Z\",\n        \"nickname\": \"Dangerous Snake\",\n        \"subscribe_channel\": \"profile.988b06e6-fa35-4590-9d2e-9572fb28e702\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/988b06e6-fa35-4590-9d2e-9572fb28e702/chat-room-memberships/\"\n      }\n    }\n  ]\n}\n"}},"schema":{"type":"object","properties":{"count":{"type":"integer","example":2,"default":0},"next":{},"previous":{},"results":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","example":"5c92f58f-f987-4269-8a32-83efa6693999"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/"},"profile":{"type":"object","properties":{"id":{"type":"string","example":"26b0cae1-3890-486c-b6c0-0b36005c76d6"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/"},"created_at":{"type":"string","example":"2020-04-16T23:15:07.550000Z"},"nickname":{"type":"string","example":"Wise Bee"},"subscribe_channel":{"type":"string","example":"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6"},"reported_count":{"type":"integer","example":0,"default":0},"chat_room_memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/"}}}}}}}}}}}},"deprecated":false,"security":[]},"post":{"summary":"Create a Chat Room Membership","description":"","operationId":"create-a-chat-room-membership","parameters":[{"name":"id","in":"path","description":"Chat Room ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"profile_id":{"type":"string","description":"profile_id field must be null if you want to join the chatroom, if profile_id field is provided then that profile will be added to the chatroom provided the user who is adding is already a member of that chatroom","default":"null"}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n    \"id\": \"26bf2b90-87cc-4e0e-860b-58e6c5e36ec0\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/26bf2b90-87cc-4e0e-860b-58e6c5e36ec0/\",\n    \"created_at\": \"2021-09-16T12:01:48.342229Z\",\n    \"profile\": {\n        \"id\": \"dfb92c93-6a00-44cf-bb03-09ea52684043\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/\",\n        \"created_at\": \"2021-09-14T07:54:53Z\",\n        \"nickname\": \"Alpha Dynamo\",\n        \"custom_data\": \"\",\n        \"badges\": [],\n        \"badges_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/badges/\",\n        \"subscribe_channel\": \"profile.dfb92c93-6a00-44cf-bb03-09ea52684043\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/chat-room-memberships/\"\n    }\n}"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"26bf2b90-87cc-4e0e-860b-58e6c5e36ec0"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/26bf2b90-87cc-4e0e-860b-58e6c5e36ec0/"},"created_at":{"type":"string","example":"2021-09-16T12:01:48.342229Z"},"profile":{"type":"object","properties":{"id":{"type":"string","example":"dfb92c93-6a00-44cf-bb03-09ea52684043"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/"},"created_at":{"type":"string","example":"2021-09-14T07:54:53Z"},"nickname":{"type":"string","example":"Alpha Dynamo"},"custom_data":{"type":"string","example":""},"badges":{"type":"array"},"badges_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/badges/"},"subscribe_channel":{"type":"string","example":"profile.dfb92c93-6a00-44cf-bb03-09ea52684043"},"reported_count":{"type":"integer","example":0,"default":0},"chat_room_memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/chat-room-memberships/"}}}}}}}},"400":{"description":"400","content":{"application/json":{"examples":{"Result":{"value":"{\n    \"profile_id\": [\n        \"Must be a valid UUID.\"\n    ]\n}"}},"schema":{"type":"object","properties":{"profile_id":{"type":"array","items":{"type":"string","example":"Must be a valid UUID."}}}}}}},"403":{"description":"403","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"detail\": \"cannot add profile, since you are not a part of this chatroom.\"\n}"}},"schema":{"oneOf":[{"type":"object","properties":{"detail":{"type":"string","example":"application profile mismatch."}}},{"type":"object","properties":{"detail":{"type":"string","example":"cannot add profile, since you are not a part of this chatroom."}}}]}}}},"409":{"description":"409","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"detail\": \"membership already exists.\"\n}"}},"schema":{"type":"object","properties":{"detail":{"type":"string","example":"membership already exists."}}}}}}},"deprecated":false}}},"x-readme":{"headers":[],"explorer-enabled":true,"proxy-enabled":true},"x-readme-fauxas":true}
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "chat-rooms",
+    "version": "1"
+  },
+  "servers": [
+    {
+      "url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms"
+    }
+  ],
+  "components": {
+    "securitySchemes": {}
+  },
+  "security": [
+    {}
+  ],
+  "paths": {
+    "/{id}/": {
+      "get": {
+        "summary": "Get a Chat Room",
+        "description": "",
+        "operationId": "get-chat-room",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique chat room identifier",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"
+                    },
+                    "title": {},
+                    "created_at": {
+                      "type": "string",
+                      "example": "2020-04-28T13:35:52.973396Z"
+                    },
+                    "content_filter": {
+                      "type": "string",
+                      "example": "none"
+                    },
+                    "visibility": {
+                      "type": "string",
+                      "example": "everyone"
+                    },
+                    "channels": {
+                      "type": "object",
+                      "properties": {
+                        "chat": {
+                          "type": "object",
+                          "properties": {
+                            "sendbird": {},
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        },
+                        "reactions": {
+                          "type": "object",
+                          "properties": {
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "upload_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"
+                    },
+                    "memberships_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"
+                    },
+                    "sticker_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "reaction_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Get List of Chat Room",
+        "description": "",
+        "operationId": "get-list-of-chat-rooms",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "query",
+            "description": "The Client ID of the application to get list of associated chat rooms from.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "Filters Chat on the basis of their attributes, ?attributes=key:value",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"
+                    },
+                    "title": {},
+                    "created_at": {
+                      "type": "string",
+                      "example": "2020-04-28T13:35:52.973396Z"
+                    },
+                    "content_filter": {
+                      "type": "string",
+                      "example": "none"
+                    },
+                    "visibility": {
+                      "type": "string",
+                      "example": "everyone"
+                    },
+                    "channels": {
+                      "type": "object",
+                      "properties": {
+                        "chat": {
+                          "type": "object",
+                          "properties": {
+                            "sendbird": {},
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        },
+                        "reactions": {
+                          "type": "object",
+                          "properties": {
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "upload_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"
+                    },
+                    "memberships_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"
+                    },
+                    "sticker_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "reaction_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "post": {
+        "summary": "Create a Chat Room",
+        "description": "Create a new chat room",
+        "operationId": "create-chat-room",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Set an optional title for the Chat Room"
+                  },
+                  "content_filter": {
+                    "type": "string",
+                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only.",
+                    "default": "none",
+                    "enum": [
+                      "none",
+                      "filtered",
+                      "producer"
+                    ]
+                  },
+                  "sticker_pack_ids": {
+                    "type": "array",
+                    "description": "Sticker Pack IDs",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "reaction_pack_ids": {
+                    "type": "array",
+                    "description": "Reaction Pack IDs",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "visibility": {
+                    "type": "string",
+                    "description": "Who is allowed to see and join the chat room.  Can be `everyone` or `members`.",
+                    "default": "members",
+                    "enum": [
+                      "everyone",
+                      "members"
+                    ]
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "description": "Sets the sponsors associated with the chat room",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "token_gates": {
+                    "type": "array",
+                    "description": "Set an optional crypto token gates over chat",
+                    "items": {
+                      "properties": {
+                        "contract_address": {
+                          "type": "string",
+                          "description": "address of smart contract whose token will be used as gate"
+                        },
+                        "network_type": {
+                          "type": "string",
+                          "description": "define network in which above contract is a block",
+                          "enum": [
+                            "ethereum",
+                            "polygon",
+                            "chiliz",
+                            "hedera"
+                          ]
+                        },
+                        "token_type": {
+                          "type": "string",
+                          "default": "fungible",
+                          "enum": [
+                            "non-fungible",
+                            "fungible"
+                          ]
+                        },
+                        "attributes": {
+                          "type": "array",
+                          "description": "Attributes are only attched with non-fungible type token-gates",
+                          "items": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Array of custom attributes",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Request Example": {
+                  "value": {
+                    "content_filter": "none",
+                    "visibility": "everyone",
+                    "title": "example chat name",
+                    "token_gates": [
+                      {
+                        "contract_address": "0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458",
+                        "network_type": "ethereum"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/\",\n  \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"title\": \"testTitle\",\n  \"created_at\": \"2023-04-27T09:07:22.982044Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"control\": {\n      \"pubnub\": \"chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    }\n  },\n  \"report_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/\",\n  \"reported_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending\",\n  \"delete_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/\",\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/\",\n  \"muted_status_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/\",\n  \"custom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"custom_data\": null,\n  \"sponsors_url\": \"https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"chatroom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/\",\n  \"chatroom_messages_count_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/\",\n  \"pubnub_messages_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/\",\n  \"pubnub_messages_remove_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/\",\n  \"token_gates\": [\n    {\n      \"contract_address\": \"0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458\",\n      \"network_type\": \"ethereum\"\n    }\n  ],\n  \"chatroom_token_gate_access_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}\",\n  \"chatroom_access_rule_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/\",\n  \"reported_chat_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/\",\n  \"reaction_space_id\": \"71b422ae-df6d-4c8e-bae3-c12204856754\"\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "testTitle"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2023-04-27T09:07:22.982044Z"
+                    },
+                    "content_filter": {
+                      "type": "string",
+                      "example": "none"
+                    },
+                    "visibility": {
+                      "type": "string",
+                      "example": "everyone"
+                    },
+                    "channels": {
+                      "type": "object",
+                      "properties": {
+                        "chat": {
+                          "type": "object",
+                          "properties": {
+                            "sendbird": {},
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                            }
+                          }
+                        },
+                        "reactions": {
+                          "type": "object",
+                          "properties": {
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                            }
+                          }
+                        },
+                        "control": {
+                          "type": "object",
+                          "properties": {
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "report_message_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/"
+                    },
+                    "reported_messages_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending"
+                    },
+                    "delete_message_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/"
+                    },
+                    "upload_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/"
+                    },
+                    "memberships_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/"
+                    },
+                    "muted_status_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/"
+                    },
+                    "custom_messages_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/"
+                    },
+                    "sticker_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                    },
+                    "reaction_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                    },
+                    "custom_data": {},
+                    "sponsors_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                    },
+                    "chatroom_messages_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/"
+                    },
+                    "chatroom_messages_count_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/"
+                    },
+                    "pubnub_messages_reaction_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/"
+                    },
+                    "pubnub_messages_remove_reaction_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/"
+                    },
+                    "token_gates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "contract_address": {
+                            "type": "string",
+                            "example": "0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458"
+                          },
+                          "network_type": {
+                            "type": "string",
+                            "example": "ethereum"
+                          }
+                        }
+                      }
+                    },
+                    "chatroom_token_gate_access_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}"
+                    },
+                    "chatroom_access_rule_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/"
+                    },
+                    "reported_chat_messages_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/"
+                    },
+                    "reaction_space_id": {
+                      "type": "string",
+                      "example": "71b422ae-df6d-4c8e-bae3-c12204856754"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{id}": {
+      "patch": {
+        "summary": "Update a Chat Room",
+        "description": "",
+        "operationId": "update-a-chat-room",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Set an optional title for the Chat Room"
+                  },
+                  "content_filter": {
+                    "type": "string",
+                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only.",
+                    "default": "none",
+                    "enum": [
+                      "none",
+                      "filtered",
+                      "producer"
+                    ]
+                  },
+                  "sticker_pack_ids": {
+                    "type": "array",
+                    "description": "Sticker Pack IDs",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "reaction_pack_ids": {
+                    "type": "array",
+                    "description": "Reaction Pack IDs",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "visibility": {
+                    "type": "string",
+                    "description": "Who is allowed to see and join the chat room.  Can be `everyone` or `members`.",
+                    "default": "everyone",
+                    "enum": [
+                      "everyone",
+                      "members"
+                    ]
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "description": "Links the sponsors with this chat room. Note that only valid sponsor IDs will be linked to a chatroom.",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "token_gates": {
+                    "type": "array",
+                    "description": "Token gates users must pass to access the chat",
+                    "items": {
+                      "properties": {
+                        "contract_address": {
+                          "type": "string",
+                          "description": "Contract address of required token in EVM format"
+                        },
+                        "network_type": {
+                          "type": "string",
+                          "enum": [
+                            "ethereum",
+                            "polygon",
+                            "chiliz",
+                            "hedera",
+                            "hedera-mainnet"
+                          ]
+                        },
+                        "token_type": {
+                          "type": "string",
+                          "enum": [
+                            "fungible",
+                            "non-fungible"
+                          ]
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n   \"sponsors_url\":  \"https://cf-blast-storage.livelikecdn.com/sticker-packs/ff8d89f6-3d7b-48de-87a8-f3588674eef8/sponsors.json\"\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"
+                    },
+                    "title": {},
+                    "created_at": {
+                      "type": "string",
+                      "example": "2020-04-28T13:35:52.973396Z"
+                    },
+                    "content_filter": {
+                      "type": "string",
+                      "example": "none"
+                    },
+                    "visibility": {
+                      "type": "string",
+                      "example": "everyone"
+                    },
+                    "channels": {
+                      "type": "object",
+                      "properties": {
+                        "chat": {
+                          "type": "object",
+                          "properties": {
+                            "sendbird": {},
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        },
+                        "reactions": {
+                          "type": "object",
+                          "properties": {
+                            "pubnub": {
+                              "type": "string",
+                              "example": "chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "upload_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/"
+                    },
+                    "memberships_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/"
+                    },
+                    "sticker_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "reaction_packs_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    },
+                    "sponsors_url": {
+                      "type": "string",
+                      "example": "https://cf-blast-storage.livelikecdn.com/sticker-packs/ff8d89f6-3d7b-48de-87a8-f3588674eef8/sponsors.json"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "summary": "Delete a Chat Room",
+        "description": "",
+        "operationId": "delete-a-chat-room",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"detail\": \"User cannot delete chat room.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "User cannot delete chat room."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{id}/delete-chat-message/": {
+      "post": {
+        "summary": "Delete A Chat Room Message",
+        "description": "",
+        "operationId": "delete-a-chat-room-message",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "message_id"
+                ],
+                "properties": {
+                  "message_id": {
+                    "type": "string",
+                    "description": "Chat Message ID"
+                  },
+                  "pubnub_timetoken": {
+                    "type": "integer",
+                    "description": "If a PubNub Time Token is also provided then the message will be deleted from room history in addition to a `message-deleted` event being published.",
+                    "format": "int64"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\"message_id\": \"pubnub_timetoken is invalid.\"}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message_id": {
+                      "type": "string",
+                      "example": "pubnub_timetoken is invalid."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{chat_room_id}/messages/": {},
+    "/{chat_room_id}/custom-messages/": {
+      "post": {
+        "summary": "Send a Custom Chat Message",
+        "description": "Send a custom message to a chat room.  This can be used to send rich data as a chat message that can be interpreted by the SDK to perform some action or display additional content.",
+        "operationId": "send-a-custom-chat-message",
+        "parameters": [
+          {
+            "name": "chat_room_id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "custom_data"
+                ],
+                "properties": {
+                  "custom_data": {
+                    "type": "string",
+                    "description": "String data to send with the chat message.  Typically contains a string JSON payload to be decoded by the client SDK"
+                  },
+                  "program_date_time": {
+                    "type": "string",
+                    "description": "ISO-8601 Program Date Time to associate with the chat message.",
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"9709cc92-83b3-4e32-b2d0-9029b2f2a0d8\",\n    \"chat_room_id\": \"1b494165-188f-4e16-9766-ac1d1f1ac925\",\n    \"sender_id\": \"c8d2922f-8324-4a9a-97f6-88851c53d331\",\n    \"sender_nickname\": \"Gautam Aggarwal\",\n    \"sender_image_url\": null,\n    \"badge_image_url\": null,\n    \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/c8d2922f-8324-4a9a-97f6-88851c53d331/\",\n    \"created_at\": \"2021-09-16T12:24:32.423815+00:00\",\n    \"custom_data\": \"{\\\"text\\\": \\\"This is a custom chat message\\\"}\",\n    \"program_date_time\": null\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "9709cc92-83b3-4e32-b2d0-9029b2f2a0d8"
+                    },
+                    "chat_room_id": {
+                      "type": "string",
+                      "example": "1b494165-188f-4e16-9766-ac1d1f1ac925"
+                    },
+                    "sender_id": {
+                      "type": "string",
+                      "example": "c8d2922f-8324-4a9a-97f6-88851c53d331"
+                    },
+                    "sender_nickname": {
+                      "type": "string",
+                      "example": "Gautam Aggarwal"
+                    },
+                    "sender_image_url": {},
+                    "badge_image_url": {},
+                    "sender_profile_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/c8d2922f-8324-4a9a-97f6-88851c53d331/"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2021-09-16T12:24:32.423815+00:00"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "example": "{\"text\": \"This is a custom chat message\"}"
+                    },
+                    "program_date_time": {}
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\"detail\": \"Authentication credentials were invalid or not provided.\"}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Authentication credentials were invalid or not provided."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{id}/memberships/": {
+      "get": {
+        "summary": "List Chat Room Memberships",
+        "description": "",
+        "operationId": "list-chat-room-memberships",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"count\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"5c92f58f-f987-4269-8a32-83efa6693999\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/\",\n      \"profile\": {\n        \"id\": \"26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/\",\n        \"created_at\": \"2020-04-16T23:15:07.550000Z\",\n        \"nickname\": \"Wise Bee\",\n        \"subscribe_channel\": \"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/\"\n      }\n    },\n    {\n      \"id\": \"2bd41d2c-423a-4229-b6db-7909bc002e53\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/2bd41d2c-423a-4229-b6db-7909bc002e53/\",\n      \"profile\": {\n        \"id\": \"988b06e6-fa35-4590-9d2e-9572fb28e702\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/988b06e6-fa35-4590-9d2e-9572fb28e702/\",\n        \"created_at\": \"2020-04-16T23:15:07.544000Z\",\n        \"nickname\": \"Dangerous Snake\",\n        \"subscribe_channel\": \"profile.988b06e6-fa35-4590-9d2e-9572fb28e702\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/988b06e6-fa35-4590-9d2e-9572fb28e702/chat-room-memberships/\"\n      }\n    }\n  ]\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "5c92f58f-f987-4269-8a32-83efa6693999"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/"
+                          },
+                          "profile": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "26b0cae1-3890-486c-b6c0-0b36005c76d6"
+                              },
+                              "url": {
+                                "type": "string",
+                                "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2020-04-16T23:15:07.550000Z"
+                              },
+                              "nickname": {
+                                "type": "string",
+                                "example": "Wise Bee"
+                              },
+                              "subscribe_channel": {
+                                "type": "string",
+                                "example": "profile.26b0cae1-3890-486c-b6c0-0b36005c76d6"
+                              },
+                              "reported_count": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "chat_room_memberships_url": {
+                                "type": "string",
+                                "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      },
+      "post": {
+        "summary": "Create a Chat Room Membership",
+        "description": "",
+        "operationId": "create-a-chat-room-membership",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profile_id": {
+                    "type": "string",
+                    "description": "profile_id field must be null if you want to join the chatroom, if profile_id field is provided then that profile will be added to the chatroom provided the user who is adding is already a member of that chatroom",
+                    "default": "null"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"26bf2b90-87cc-4e0e-860b-58e6c5e36ec0\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/26bf2b90-87cc-4e0e-860b-58e6c5e36ec0/\",\n    \"created_at\": \"2021-09-16T12:01:48.342229Z\",\n    \"profile\": {\n        \"id\": \"dfb92c93-6a00-44cf-bb03-09ea52684043\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/\",\n        \"created_at\": \"2021-09-14T07:54:53Z\",\n        \"nickname\": \"Alpha Dynamo\",\n        \"custom_data\": \"\",\n        \"badges\": [],\n        \"badges_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/badges/\",\n        \"subscribe_channel\": \"profile.dfb92c93-6a00-44cf-bb03-09ea52684043\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/chat-room-memberships/\"\n    }\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "26bf2b90-87cc-4e0e-860b-58e6c5e36ec0"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/26bf2b90-87cc-4e0e-860b-58e6c5e36ec0/"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2021-09-16T12:01:48.342229Z"
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "dfb92c93-6a00-44cf-bb03-09ea52684043"
+                        },
+                        "url": {
+                          "type": "string",
+                          "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2021-09-14T07:54:53Z"
+                        },
+                        "nickname": {
+                          "type": "string",
+                          "example": "Alpha Dynamo"
+                        },
+                        "custom_data": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "badges": {
+                          "type": "array"
+                        },
+                        "badges_url": {
+                          "type": "string",
+                          "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/badges/"
+                        },
+                        "subscribe_channel": {
+                          "type": "string",
+                          "example": "profile.dfb92c93-6a00-44cf-bb03-09ea52684043"
+                        },
+                        "reported_count": {
+                          "type": "integer",
+                          "example": 0,
+                          "default": 0
+                        },
+                        "chat_room_memberships_url": {
+                          "type": "string",
+                          "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/dfb92c93-6a00-44cf-bb03-09ea52684043/chat-room-memberships/"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"profile_id\": [\n        \"Must be a valid UUID.\"\n    ]\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "profile_id": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "Must be a valid UUID."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"detail\": \"cannot add profile, since you are not a part of this chatroom.\"\n}"
+                  }
+                },
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "detail": {
+                          "type": "string",
+                          "example": "application profile mismatch."
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "detail": {
+                          "type": "string",
+                          "example": "cannot add profile, since you are not a part of this chatroom."
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"detail\": \"membership already exists.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "membership already exists."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "x-readme": {
+    "headers": [],
+    "explorer-enabled": true,
+    "proxy-enabled": true
+  },
+  "x-readme-fauxas": true
+}

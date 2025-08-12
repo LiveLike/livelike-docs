@@ -8,7 +8,6 @@
 - link-a-chat-room-with-a-program
 - unlink-a-chat-room-from-a-program
 - send-chat-message
-- send-a-chat-message
 - send-a-custom-chat-message
 - get-chatroom-messages
 - get-chatroom-message-count
