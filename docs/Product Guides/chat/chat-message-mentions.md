@@ -7,6 +7,14 @@ deprecated: false
 hidden: true
 metadata:
   robots: index
+next:
+  pages:
+    - slug: send-chat-message
+      title: Send a Chat Message
+      type: endpoint
+    - slug: get-chatroom-messages
+      title: List Chat Messages
+      type: endpoint
 ---
 ## Overview
 
