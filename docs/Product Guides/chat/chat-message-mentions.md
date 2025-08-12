@@ -4,7 +4,7 @@ excerpt: >-
   The Chat Message Mentions feature lets users tag specific profiles in a
   message.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
@@ -59,3 +59,11 @@ At render time, placeholder text in the message can be replaced with the nicknam
 
    * The mentioner has blocked the mentioned profile
    * The mentioned profile has blocked the mentioner
+
+<br />
+
+### Implicit Mentions (Future Scope)
+
+Implicit mentions are automatically extracted from message text by the backend using a specific pattern.\
+Example:
+`"hello <@profile:1234> and <@profile:5678>"`
