@@ -9,12 +9,12 @@ metadata:
   robots: index
 next:
   pages:
-    - slug: send-chat-message
-      title: Send a Chat Message
-      type: endpoint
-    - slug: get-chatroom-messages
-      title: List Chat Messages
-      type: endpoint
+    - title: Send Chat messages with Mentions
+      type: link
+      url: https://docs.livelike.com/reference/send-chat-message
+    - title: Fetch Chat messages with Mentions
+      type: link
+      url: https://docs.livelike.com/reference/get-chatroom-messages
 ---
 ## Overview
 
