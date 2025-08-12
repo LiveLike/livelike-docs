@@ -3071,7 +3071,81 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \t\"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"created_at\": \"2022-03-25T08:45:57.672Z\",\n          \t\"chat_room_id\": \"f741a63b-3a5b-4d3c-a6e5-be64c3da22ce\",\n            \"message\": \"hello\",\n            \"program_date_time\": null,\n            \"image_width\": null,\n            \"id\": \"fe87ccc7-f6b6-4ab1-9201-fcaea8165446\",\n            \"filtered_message\": null,\n            \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/f75d135c-478b-4cba-a793-873d988b017f/\",\n            \"sender_image_url\": \"https://cf-blast-storage.livelikecdn.com/assets/79e5ea59-41c7-488b-b9ac-9d3bd93220f8.png\",\n            \"filtered_sender_nickname\": null,\n            \"updated_at\": \"2022-03-25T08:45:58+0000\",\n            \"sender_id\": \"f75d135c-478b-4cba-a793-873d988b017f\",\n            \"sender_nickname\": \"Keval Shah\",\n            \"pubnub_timetoken\": \"16481979581567077\",\n            \"from_pubnub\": true,\n            \"content_filter\": [],\n            \"message_event\": \"message-created\",\n            \"badge_image_url\": null,\n            \"image_height\": null,\n          \t\"parent_message_id\": \"253e8bd8-203b-4312-8c43-d0641c12cf4c\",\n          \t\"replies_count\": 0,\n          \t\"replies_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce\"\n        },\n        {\n            \"created_at\": \"2022-03-30T07:35:38.682Z\",\n          \t\"chat_room_id\": \"f741a63b-3a5b-4d3c-a6e5-be64c3da22ce\",\n            \"message\": \"ffdh\",\n            \"program_date_time\": null,\n            \"image_width\": null,\n            \"id\": \"895ff661-affa-4f26-a1dd-c11bec8f6359\",\n            \"filtered_message\": null,\n            \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/143571b2-5a30-4ba8-b956-6b5b73f85e69/\",\n            \"sender_image_url\": \"https://cf-blast-storage.livelikecdn.com/assets/35b95e7c-ebd1-4625-a7ff-30ad389cf4db.png\",\n            \"filtered_sender_nickname\": null,\n            \"from_pubnub\": true,\n            \"sender_id\": \"143571b2-5a30-4ba8-b956-6b5b73f85e69\",\n            \"sender_nickname\": \"Vijay Singh Rawat1\",\n            \"reactions\": {\n                \"9ca6849e-6883-40b9-a477-3e83efb396e9\": [\n                    {\n                        \"uuid\": \"f6c92771-b1c9-4cc3-8584-9c81a2794753\",\n                        \"actionTimetoken\": \"16486259813136460\"\n                    }\n                ]\n            },\n            \"pubnub_timetoken\": \"16486257390778577\",\n            \"updated_at\": \"2022-03-30T07:35:38+0000\",\n            \"content_filter\": [],\n            \"message_event\": \"message-created\",\n            \"badge_image_url\": null,\n            \"image_height\": null,\n            \"parent_message_id\": \"253e8bd8-203b-4312-8c43-d0641c12cf4c\",\n          \t\"replies_count\": 0,\n          \t\"replies_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce\"\n        }\n    ]\n}"
+                    "value": {
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "created_at": "2022-03-25T08:45:57.672Z",
+                          "chat_room_id": "f741a63b-3a5b-4d3c-a6e5-be64c3da22ce",
+                          "message": "hello",
+                          "program_date_time": null,
+                          "image_width": null,
+                          "id": "fe87ccc7-f6b6-4ab1-9201-fcaea8165446",
+                          "filtered_message": null,
+                          "sender_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/f75d135c-478b-4cba-a793-873d988b017f/",
+                          "sender_image_url": "https://cf-blast-storage.livelikecdn.com/assets/79e5ea59-41c7-488b-b9ac-9d3bd93220f8.png",
+                          "filtered_sender_nickname": null,
+                          "updated_at": "2022-03-25T08:45:58+0000",
+                          "sender_id": "f75d135c-478b-4cba-a793-873d988b017f",
+                          "sender_nickname": "Keval Shah",
+                          "pubnub_timetoken": "16481979581567077",
+                          "from_pubnub": true,
+                          "content_filter": [],
+                          "message_event": "message-created",
+                          "badge_image_url": null,
+                          "image_height": null,
+                          "parent_message_id": "253e8bd8-203b-4312-8c43-d0641c12cf4c",
+                          "replies_count": 0,
+                          "replies_url": "https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce",
+                          "mentions": [
+                            {
+                              "mentioned_profile_nickname": "Risky Keeper",
+                              "mentioned_by_profile_id": "e52943b1-0e39-4413-9f36-8bae3bd7d51a",
+                              "mentioned_by_profile_nickname": "Jolly Baboon",
+                              "mentioned_by_profile_custom_id": "userBoardddolog2",
+                              "id": "3fe076c4-87e0-4237-a9ae-15410d0bca4a",
+                              "start_index": 1,
+                              "end_index": 2,
+                              "mentioned_profile_id": "398245d6-23a2-4c60-be38-5d3386462770"
+                            }
+                          ]
+                        },
+                        {
+                          "created_at": "2022-03-30T07:35:38.682Z",
+                          "chat_room_id": "f741a63b-3a5b-4d3c-a6e5-be64c3da22ce",
+                          "message": "ffdh",
+                          "program_date_time": null,
+                          "image_width": null,
+                          "id": "895ff661-affa-4f26-a1dd-c11bec8f6359",
+                          "filtered_message": null,
+                          "sender_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/143571b2-5a30-4ba8-b956-6b5b73f85e69/",
+                          "sender_image_url": "https://cf-blast-storage.livelikecdn.com/assets/35b95e7c-ebd1-4625-a7ff-30ad389cf4db.png",
+                          "filtered_sender_nickname": null,
+                          "from_pubnub": true,
+                          "sender_id": "143571b2-5a30-4ba8-b956-6b5b73f85e69",
+                          "sender_nickname": "Vijay Singh Rawat1",
+                          "reactions": {
+                            "9ca6849e-6883-40b9-a477-3e83efb396e9": [
+                              {
+                                "uuid": "f6c92771-b1c9-4cc3-8584-9c81a2794753",
+                                "actionTimetoken": "16486259813136460"
+                              }
+                            ]
+                          },
+                          "pubnub_timetoken": "16486257390778577",
+                          "updated_at": "2022-03-30T07:35:38+0000",
+                          "content_filter": [],
+                          "message_event": "message-created",
+                          "badge_image_url": null,
+                          "image_height": null,
+                          "parent_message_id": "253e8bd8-203b-4312-8c43-d0641c12cf4c",
+                          "replies_count": 0,
+                          "replies_url": "https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce",
+                          "mentions": []
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
