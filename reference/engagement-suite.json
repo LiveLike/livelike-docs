@@ -2853,7 +2853,7 @@
                 "required": [
                   "chat_room_id",
                   "message_event",
-                  "sender_nickname"
+                  "message"
                 ],
                 "properties": {
                   "chat_room_id": {
@@ -2902,13 +2902,13 @@
                     "type": "string"
                   },
                   "quote_message": {
-                    "type": "string",
+                    "type": "object",
                     "description": "this field contains message object, and must follow all the required parameters for message",
-                    "format": "json"
+                    "properties": {}
                   },
                   "message_metadata": {
-                    "type": "string",
-                    "format": "json"
+                    "type": "object",
+                    "properties": {}
                   },
                   "parent_message_id": {
                     "type": "string",
