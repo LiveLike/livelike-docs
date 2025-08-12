@@ -2934,7 +2934,47 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"image_url\": null,\n    \"created_at\": \"2022-03-15T11:15:07+0000\",\n    \"quote_message_id\": \"ff1c3c83-ec02-4728-b97a-89f52da169f0\",\n    \"program_date_time\": null,\n    \"sender_id\": \"6f0fd81e-85ca-4df1-9c93-a78258143226\",\n    \"filtered_message\": null,\n    \"sender_nickname\": \"Stylish Keeper\",\n    \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/6f0fd81e-85ca-4df1-9c93-a78258143226/\",\n    \"sender_image_url\": null,\n    \"badge_image_url\": null,\n    \"chat_room_id\": \"b40a2946-2a89-4b08-9d6d-ac4d04994f89\",\n    \"content_filter\": [],\n    \"updated_at\": \"2022-03-15T11:15:07+0000\",\n    \"message_event\": \"message-created\",\n    \"message\": \"hello\",\n    \"filtered_sender_nickname\": null,\n    \"quote_message\": {\n        \"badge_image_url\": null,\n        \"created_at\": \"2022-03-08T12:03:24.559Z\",\n        \"from_pubnub\": true,\n        \"content_filter\": [],\n        \"filtered_sender_nickname\": null,\n        \"updated_at\": \"2022-03-08T12:03:24+0000\",\n        \"image_width\": null,\n        \"id\": \"9e012999-a770-4d5c-9bc7-6bf943396488\",\n        \"program_date_time\": null,\n        \"sender_id\": \"c74b6935-6688-4a7f-a0bc-d62801e88e82\",\n        \"image_height\": null,\n        \"message\": \"hjbh\",\n        \"filtered_message\": null,\n        \"sender_nickname\": \"Royal Joker\",\n        \"sender_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/c74b6935-6688-4a7f-a0bc-d62801e88e82/\",\n        \"sender_image_url\": null\n    },\n    \"parent_message_id\": \"253e8bd8-203b-4312-8c43-d0641c12cf4c\",\n    \"replies_count\": 0,\n    \"replies_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce\"\n    \"id\": \"8bcd6181-7560-467f-a7e4-8ca38e31c404\"\n}"
+                    "value": {
+                      "image_url": null,
+                      "created_at": "2022-03-15T11:15:07+0000",
+                      "quote_message_id": "ff1c3c83-ec02-4728-b97a-89f52da169f0",
+                      "program_date_time": null,
+                      "sender_id": "6f0fd81e-85ca-4df1-9c93-a78258143226",
+                      "filtered_message": null,
+                      "sender_nickname": "Stylish Keeper",
+                      "sender_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/6f0fd81e-85ca-4df1-9c93-a78258143226/",
+                      "sender_image_url": null,
+                      "badge_image_url": null,
+                      "chat_room_id": "b40a2946-2a89-4b08-9d6d-ac4d04994f89",
+                      "content_filter": [],
+                      "updated_at": "2022-03-15T11:15:07+0000",
+                      "message_event": "message-created",
+                      "message": "hello",
+                      "filtered_sender_nickname": null,
+                      "quote_message": {
+                        "badge_image_url": null,
+                        "created_at": "2022-03-08T12:03:24.559Z",
+                        "from_pubnub": true,
+                        "content_filter": [],
+                        "filtered_sender_nickname": null,
+                        "updated_at": "2022-03-08T12:03:24+0000",
+                        "image_width": null,
+                        "id": "9e012999-a770-4d5c-9bc7-6bf943396488",
+                        "program_date_time": null,
+                        "sender_id": "c74b6935-6688-4a7f-a0bc-d62801e88e82",
+                        "image_height": null,
+                        "message": "hjbh",
+                        "filtered_message": null,
+                        "sender_nickname": "Royal Joker",
+                        "sender_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c74b6935-6688-4a7f-a0bc-d62801e88e82/",
+                        "sender_image_url": null
+                      },
+                      "parent_message_id": "253e8bd8-203b-4312-8c43-d0641c12cf4c",
+                      "replies_count": 0,
+                      "replies_url": "https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/?parent_message_id=253e8bd8-203b-4312-8c43-d0641c12cf4c&chat_room_id=f741a63b-3a5b-4d3c-a6e5-be64c3da22ce",
+                      "id": "8bcd6181-7560-467f-a7e4-8ca38e31c404",
+                      "mentions": []
+                    }
                   }
                 }
               }
