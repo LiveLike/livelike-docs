@@ -13772,11 +13772,11 @@
                 "properties": {
                   "reward_item_id": {
                     "type": "string",
-                    "default": " "
+                    "default": ""
                   },
                   "reward_item_amount": {
                     "type": "integer",
-                    "default": " ",
+                    "default": "",
                     "format": "int32"
                   },
                   "description": {
