@@ -13758,7 +13758,8 @@
             "name": "profile_id",
             "in": "path",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "required": true
           }
@@ -13770,11 +13771,12 @@
                 "type": "object",
                 "properties": {
                   "reward_item_id": {
-                    "type": "string"
+                    "type": "string",
+                    "default": " "
                   },
                   "reward_item_amount": {
                     "type": "integer",
-                    "default": null,
+                    "default": " ",
                     "format": "int32"
                   },
                   "description": {
