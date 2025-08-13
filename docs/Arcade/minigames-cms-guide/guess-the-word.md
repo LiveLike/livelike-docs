@@ -16,7 +16,7 @@ Guess The Word (GTW) is a daily word puzzle game where players have six attempts
 
 GTW (Guess The Word) is available in the experiences list.
 
-<Image align="center" width="600px" src="https://files.readme.io/35b54814b7dba860d1ea789e382f996a191154c68277b3e41749e6ac2128bfa7-Screenshot_2024-12-18_at_12.15.22.png" />
+<Image align="center" width="600px" src="https://files.readme.io/b168f6551190ec686ce15f7e3d7be670a51f38974147cf90de3096a598366d9f-Screenshot_2025-08-13_at_10.02.17.png" />
 
 To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps.
 
@@ -45,6 +45,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    3. By default, we provide a database of per-configured words for 100days.
    4. Currently, manual word entry is the supported method for adding words to the database. You can add or delete the rows and columns to manage the words.
    5. **Upload allowed word:** If your game includes words not found in the standard dictionary, you can upload a CSV file containing custom words that match your theme. These will be recognized as valid entries during gameplay else the words entered if not part of the dictionary will throw an error.
+   6. **New Updates** allows you to toggle off support for Dictionary words or define the cadence of when the word should go live, either daily, weekly or custom. Just click on the date and pick the date you want the word to go-live on.
 
 <Image align="center" src="https://files.readme.io/ea25ca9686b59ac764e6db480e680566118ab2cd093f5ea91a0035a676c85514-ezgif-2-9b6a19bee6.gif" />
 
@@ -65,10 +66,10 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 5. **Social features**
    1. The section includes toggles for showing user stats and enabling stat sharing capabilities.
-   2. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that display a countdown when today's game ends but the new game hasn't started yet,indicating when the next game day begins..
-   3. Under Track user quests, administrators can enable detailed player tracking with four specific metrics: tracking if users played the game, if they won the game, if they won within attempts 1 to 6, and their win and play streak.
+   2. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that display a countdown when today's game ends but the new game hasn't started yet,indicating when the next game day begins.
+   3. Count Down features when enabled displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
 
-<Image align="center" src="https://files.readme.io/31a12bbc72e90471ef87a8e9947370ebf60151a52aae030a11bbba089128c3ad-www.gif" />
+<Image align="center" src="https://files.readme.io/f134fd99d7fecb15e2804be8fa608b733bf4dce6d461c0b9cdfe1446bcc1a754-Screenshot_2025-08-13_at_10.04.57.png" />
 
 6. **Live Game Manager**
    1. This section provides real-time management capabilities for your GTW game.
