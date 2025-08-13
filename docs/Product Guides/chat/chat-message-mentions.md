@@ -21,7 +21,7 @@ next:
 The Chat Message Mentions feature allows users to tag specific user profiles in chat messages.\
 Mentions can be sent along with message creation and will be returned in the response of GET APIs.
 
-## How to Mention
+## How Mention works in LiveLike
 
 Client send structured mention data in the POST request when creating a chat message.\
 This includes:
