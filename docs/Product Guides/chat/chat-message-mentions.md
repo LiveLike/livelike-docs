@@ -21,16 +21,7 @@ next:
 The Chat Message Mentions feature allows users to tag specific user profiles in chat messages.\
 Mentions can be sent along with message creation and will be returned in the response of GET APIs.
 
-## Mention Types
-
-There are two ways to mention users.
-
-* **Explicit mentions**: Doesn’t requiring users to parse the message text manually for mentions.
-* **Implicit mention**s: Implicit mentions are automatically extracted from message text by the backend using a specific pattern
-
-> *Currently, we support explicit mentions only. Implicit mentions may be enabled in the future.*
-
-### 1. Explicit Mentions
+## How to Mention
 
 Client send structured mention data in the POST request when creating a chat message.\
 This includes:
@@ -67,11 +58,3 @@ At render time, placeholder text in the message can be replaced with the nicknam
 
    * The mentioner has blocked the mentioned profile
    * The mentioned profile has blocked the mentioner
-
-<br />
-
-### Implicit Mentions (Future Scope)
-
-Implicit mentions are automatically extracted from message text by the backend using a specific pattern.\
-Example:
-`"hello <@profile:1234> and <@profile:5678>"`
