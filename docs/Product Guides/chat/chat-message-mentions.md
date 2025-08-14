@@ -4,7 +4,7 @@ excerpt: >-
   The Chat Message Mentions feature lets users tag specific profiles in a
   message.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 next:
