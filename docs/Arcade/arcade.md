@@ -52,7 +52,7 @@ next:
 * **Pick Your Team**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.0.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.1.0.js"></script>
 ```
 
 * **Play Predictor**: Add the following script tag to your HTML page:
