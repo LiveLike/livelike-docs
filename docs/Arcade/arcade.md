@@ -45,7 +45,7 @@ next:
 * **Trivia**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.1.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.5.1.js"></script>
 
 ```
 
