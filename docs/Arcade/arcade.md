@@ -122,9 +122,7 @@ next:
 <ll-spin-the-wheel accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-spin-the-wheel>
 ```
 
-* #### **Skill Games**: (
-
-<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/vitejs-vite-nsxe4pgr?file=src%2FApp.jsx">Demo</Anchor>)
+* #### **Skill Games**: (<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/vitejs-vite-nsxe4pgr?file=src%2FApp.jsx">Demo</Anchor>)
 
 ```html html
 <ll-skill-game accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-skill-game>
