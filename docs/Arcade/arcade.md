@@ -38,7 +38,7 @@ next:
 * **Guess The Word**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.0.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.3.1.js"></script>
 
 ```
 
