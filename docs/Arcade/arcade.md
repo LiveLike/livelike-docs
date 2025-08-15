@@ -58,7 +58,7 @@ next:
 * **Play Predictor**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.0.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.1.0.js"></script>
 
 ```
 
