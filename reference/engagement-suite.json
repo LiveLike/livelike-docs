@@ -22162,6 +22162,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "reacted_by_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Profile ID used to set the `self_reacted_user_reaction_id`"
           }
         ],
         "responses": {
