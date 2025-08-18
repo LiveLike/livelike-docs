@@ -22169,7 +22169,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Profile ID used to set the `self_reacted_user_reaction_id`"
+            "description": "Profile ID used to personalize the response in fields like `self_reacted_user_reaction_id`"
           }
         ],
         "responses": {
