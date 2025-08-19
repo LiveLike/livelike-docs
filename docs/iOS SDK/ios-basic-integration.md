@@ -16,13 +16,13 @@ This is a developers' guide for setting up a LiveLike SDK configuration for nati
 
 ## Prerequisites
 
-* An admin login and registered application on the [Producer Suite](http://producer.livelikecdn.com/) (provided by LiveLike).
+* An admin login and registered application on the [Producer Suite](https://cf-blast.livelikecdn.com/) (provided by LiveLike).
 * Client ID - Used to initialize the SDK. See instructions for [retrieving Your Client ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-client-id).
 * OS: iOS 10+
 
-> 📘
->
-> Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+<Callout icon="📘" theme="info">
+  Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+</Callout>
 
 ## Installation
 
@@ -31,7 +31,7 @@ The SDK can be installed via Swift Package Manager (recommended) or through pack
 ## Swift Package Manager (versions 2.43.0+)
 
 1. Open your project inside of Xcode and navigate to File > Add Packages...
-2. Search for `https://bitbucket.org/livelike/livelike-ios-sdk.git` and select the `livelike-ios-sdk` swift package 
+2. Search for `https://bitbucket.org/livelike/livelike-ios-sdk.git` and select the `livelike-ios-sdk` swift package
 3. Use the `Up to Next Major Version` dependency rule spanning from `2.0.0 < 3.0.0`, and hit the Add Package button
 
 ## CocoaPods
@@ -63,11 +63,11 @@ If your billing is determined by *Monthly Active Users (MAUs)*, then at this poi
 
 By default, the EngagementSDK will generate a new [User Profile](doc:user-profiles) upon first initialization. The Access Token of the User Profile will be stored in User Defaults and may not persist across app installations, devices, and/or platforms. We recommend that you override this default behavior and manage where the User's Access Token is stored. Find out how [here](doc:ios-user-profiles).
 
-We also recommend that you initialize the SDK as late as possible in your application - just before the user accesses the EngagementSDK features. 
+We also recommend that you initialize the SDK as late as possible in your application - just before the user accesses the EngagementSDK features.
 
-> 🚧
->
-> Concurrent instances of the EngagementSDK are not supported; only one instance should exist at any given time.
+<Callout icon="🚧" theme="warn">
+  Concurrent instances of the EngagementSDK are not supported; only one instance should exist at any given time.
+</Callout>
 
 Use your Client ID to create a EngagementSDKConfig. The EngagementSDKConfig is used to initialize the EngagementSDK.
 
@@ -85,9 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Configure Your Layout
 
-> 📘
->
-> Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+<Callout icon="📘" theme="info">
+  Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+</Callout>
 
 ### Storyboards / XIB
 
@@ -135,19 +135,19 @@ class ViewController: UIViewController {
 }
 ```
 
-> 🚧
->
-> If you are working in a multilayered UIView environment where the `widgetView` is placed above the `chatView`. It is best practice to instantiate the `widgetView` as `PassthroughView`. This will allow user interactions on `widgetView` effect the `chatView` when there are no activate widgets.
+<Callout icon="🚧" theme="warn">
+  If you are working in a multilayered UIView environment where the `widgetView` is placed above the `chatView`. It is best practice to instantiate the `widgetView` as `PassthroughView`. This will allow user interactions on `widgetView` effect the `chatView` when there are no activate widgets.
+</Callout>
 
 ### Programmatic
 
 In your ViewController, create an instance of `WidgetPopupViewController` and `ChatViewController`
 
-> 🚧
->
-> Important: The width of the Widget view must be at least 260 and height 280. The width of the Chat view must be at least 292.
+<Callout icon="🚧" theme="warn">
+  Important: The width of the Widget view must be at least 260 and height 280. The width of the Chat view must be at least 292.
+</Callout>
 
-Add the `WidgetViewController` and `ChatViewController` as a child view controller to your ViewController. For more information on child view controllers see Apple documentation on [Implementing a ContainerViewController](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html). 
+Add the `WidgetViewController` and `ChatViewController` as a child view controller to your ViewController. For more information on child view controllers see Apple documentation on [Implementing a ContainerViewController](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html).
 
 In the `viewDidLoad` method add the following constraints:
 
@@ -187,7 +187,7 @@ override func viewDidLoad() {
 
 ## Start a Content Session
 
-A Content Session represents a user's subscription to a particular <Glossary>Program</Glossary> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](http://producer.livelikecdn.com) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
+A Content Session represents a user's subscription to a particular <Glossary>Program</Glossary> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](https://cf-blast.livelikecdn.com/) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
 
 Use the following resources to get started with the Producer Suite
 
@@ -197,9 +197,9 @@ Use the following resources to get started with the Producer Suite
 
 In your ViewController, declare a variable to maintain an instance of the `ContentSession` we will be creating.
 
-> 🚧
->
-> Important: A reference to the `ContentSession` instance must be maintained in order for the session to remain valid and receive Widget and Chat events.
+<Callout icon="🚧" theme="warn">
+  Important: A reference to the `ContentSession` instance must be maintained in order for the session to remain valid and receive Widget and Chat events.
+</Callout>
 
 ```swift
 class ViewController: UIViewController {
@@ -213,7 +213,7 @@ class ViewController: UIViewController {
 }
 ```
 
-Now call the contentSession method of your instance of the EngagementSDK - passing in your **Program ID**. This will return a `ContentSession` object. You must store this in the `ContentSession` variable declared earlier. 
+Now call the contentSession method of your instance of the EngagementSDK - passing in your **Program ID**. This will return a `ContentSession` object. You must store this in the `ContentSession` variable declared earlier.
 
 Assign the ContentSession to the WidgetPopupViewController so the user can begin receiving widgets published from the CMS.
 
@@ -241,9 +241,9 @@ func startContentSession(engagementSDK: EngagementSDK) {
 
 When the user returns to your application's home page and away from your live video screen you will want to **close** the ContentSession. Closing a session will disconnect from Widgets and Chat and release all the related resources.
 
-> 📘
->
-> You can also set the session reference to `nil`, this is the same as calling close
+<Callout icon="📘" theme="info">
+  You can also set the session reference to `nil`, this is the same as calling close
+</Callout>
 
 ```swift
 override func viewDidDisappear(_ animated: Bool) {

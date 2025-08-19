@@ -14,7 +14,7 @@ This is a developers' guide for setting up a Sceenic Video Plugin configuration 
 
 ## Prerequisites
 
-* An admin login and registered application on the [Producer Suite](http://producer.livelikecdn.com/) (provided by LiveLike).
+* An admin login and registered application on the [Producer Suite](https://cf-blast.livelikecdn.com/) (provided by LiveLike).
 * Client ID - Used to initialize the Plugin. See instructions for [retrieving Your Client ID](https://docs.livelike.com/docs/retrieving-important-keys#section-retrieving-client-id).
 * OS: iOS 11+
 

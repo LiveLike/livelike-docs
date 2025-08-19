@@ -16,7 +16,7 @@ Team members need to be invited to an organization before they can publish conte
 
 ![1440](https://files.readme.io/0d12015-Screen_Recording_2020-04-03_at_04.04_PM.gif "Screen Recording 2020-04-03 at 04.04 PM.gif")
 
-1. Login to the [Producer Suite](https://producer.livelikecdn.com/), and then navigate to the My Organizations section. The link is found inside the dropdown menu at the top right of the Producer Suite. The menu can be opened by clicking your avatar or display name.
+1. Login to the [Producer Suite](https://cf-blast.livelikecdn.com/), and then navigate to the My Organizations section. The link is found inside the dropdown menu at the top right of the Producer Suite. The menu can be opened by clicking your avatar or display name.
 2. Select the organization from the sidebar that you would like to invite the new member to.
 3. Find the Members heading on the page and click the circled plus icon to invite a new member.
 4. Enter the new member's email and press the Send Invite button.

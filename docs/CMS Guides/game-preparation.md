@@ -16,7 +16,7 @@ next:
 
 For the first games we recommend extra prep around:
 
-* Making sure you are comfortable using the [Producer Suite](https://producer.livelikecdn.com/) in real-time during a game
+* Making sure you are comfortable using the [Producer Suite](https://cf-blast.livelikecdn.com/) in real-time during a game
 * Setting up your media library -- this may include player photos, team logos, gifs or emoji useful for emoji sliders, sponsors logos, etc.
 * Make sure you will have the streams URLs for use in the Producer Suite and that the events have been created ahead of time in the Producer Suite.
 * We also recommend you have the app installed in addition to the Producer Suite
@@ -35,7 +35,7 @@ You can prep some "evergreen" widgets such as: cheer-meters or a few emoji slide
 
 ## Delight with stats
 
-If you have access to research packets, you can prepare widgets using specific expert insights or just to keep some data points in mind. Think ahead how you can turn such data into interaction opportunities whether in the form of a poll, emoji slider, quiz, prediction, alerts, etc. 
+If you have access to research packets, you can prepare widgets using specific expert insights or just to keep some data points in mind. Think ahead how you can turn such data into interaction opportunities whether in the form of a poll, emoji slider, quiz, prediction, alerts, etc.
 
 ## Spark conversations
 

@@ -18,7 +18,7 @@ next:
 ---
 ## Accessing the Suite
 
-You can access the Producer Suite at [producer.livelikecdn.com](http://producer.livelikecdn.com).
+You can access the Producer Suite at [cf-blast.livelikecdn.com](https://cf-blast.livelikecdn.com/).
 
 To get started, you will need account credentials. You can request these either from LiveLike, or from a member of your team that already has access (see [Inviting Your Team](inviting-organization-members)).
 
@@ -37,7 +37,7 @@ The main components of the Producer Suite are:
 
 ## Creating a Program
 
-To publish widgets for an event, you will need to create a program associated with that event. You can access the **Event Management** window through the **Navigation Sidebar**. The video below shows how you can create your first program. 
+To publish widgets for an event, you will need to create a program associated with that event. You can access the **Event Management** window through the **Navigation Sidebar**. The video below shows how you can create your first program.
 
 ![1439](https://files.readme.io/cb3e684-Screen_Recording_2020-05-12_at_11.24_AM.gif "Screen Recording 2020-05-12 at 11.24 AM.gif")
 
@@ -50,13 +50,11 @@ Each event has the following fields:
 
 The Event Management Panel has 3 tabs. Note that these tabs are purely for organization and do not affect product functionality:
 
-* **Live Now**: Displays all events that are currently live. To mark an event as "live", you will need to select "Start Event" as shown below. 
+* **Live Now**: Displays all events that are currently live. To mark an event as "live", you will need to select "Start Event" as shown below.
 * **Upcoming**: Displays all non-live events with a "scheduled date & time" in the future
 * **History**: Displays all non-live events with a "scheduled date & time" in the past
 
-<Image title="Screen Shot 2020-04-03 at 4.23.54 PM.png" alt={1146} width="smart" src="https://files.readme.io/6047e76-Screen_Shot_2020-04-03_at_4.23.54_PM.png">
-  Selecting "Start Event" will move the event to the "Live Now" tab
-</Image>
+<Image align="center" alt={1146} border={false} caption="Selecting &#x22;Start Event&#x22; will move the event to the &#x22;Live Now&#x22; tab" title="Screen Shot 2020-04-03 at 4.23.54 PM.png" src="https://files.readme.io/6047e76-Screen_Shot_2020-04-03_at_4.23.54_PM.png" width="smart" />
 
 ## Publishing Widgets
 
@@ -85,7 +83,7 @@ Select the "Moderation" tab, where you can see all messages reported by users an
 
 ## Personalised Chat Nickname
 
-The **Preview Panel** allows you to view and update your Chat NickName. The video below shows how you can update your Chat NickName. 
+The **Preview Panel** allows you to view and update your Chat NickName. The video below shows how you can update your Chat NickName.
 
 ![640](https://files.readme.io/1b547dc-ChatNickName_1.gif "ChatNickName (1).gif")
 
@@ -110,7 +108,7 @@ In the Sticker Pack Detail - Producers can Add/Edit/Delete Stickers in the Pack
 ![2560](https://files.readme.io/ba65ca1-Screenshot_2020-06-10_at_6.11.50_PM.png "Screenshot 2020-06-10 at 6.11.50 PM.png")
 
 Every Sticker has following fields:\
-**Image** The image which will be seen in chat\
+**Image** The image which will be seen in chat
 **Shortcode** This is the code which represents a sticker in the chat
 
 ## Creating a Sticker Pack
@@ -120,7 +118,7 @@ Producers can create a new Sticker Pack from the Stickers screen
 ![2560](https://files.readme.io/dd4e00d-Screenshot_2020-06-10_at_6.04.23_PM.png "Screenshot 2020-06-10 at 6.04.23 PM.png")
 
 Each Sticker Pack has following fields:\
-**Pack Icon**\
+**Pack Icon**
 **Pack Name**
 
 ## Badges
@@ -147,7 +145,7 @@ The following items are required to be completed for a user to be able to earn a
    4. Fill in the name, pick a program for it to be linked to and click **Create**
    5. Once a table is created, click on it's name in the list of all Reward Tables.
    6. You will see a screen showing all table entries. To add a new one, click on the **New Entry** button
-   7. In the New Entry modal, you will be able to pick and connect a **Reward Action** with a **Reward Item** in addition you will be able to set up a **Reward Item Amount**, which is the amount that will be awarded to a user when this entry is earned. 
+   7. In the New Entry modal, you will be able to pick and connect a **Reward Action** with a **Reward Item** in addition you will be able to set up a **Reward Item Amount**, which is the amount that will be awarded to a user when this entry is earned.
    8. Click **Create** to create a reward table entry
 4. Create a **Badge**
    1. In the Producer Suite, on the left hand side click on **Badges**.
