@@ -18,7 +18,7 @@ When using the LiveLike SDKs and REST APIs, there are a couple IDs and keys that
 
 The Client ID is used by both the SDKs and REST APIs to point them to the appropriate application. To retrieve your client ID:
 
-1. Login to the [Producer Suite](http://producer.livelikecdn.com/)
+1. Login to the [Producer Suite](https://cf-blast.livelikecdn.com/)
 2. Under your profile picture select 'My Organizations' from the dropdown menu.
 3. You will see your Client ID under the app available in the 'Apps' section. *If you don't have any apps, use the plus button in the top-right to create a new one.*
 
@@ -34,9 +34,9 @@ The application client secret is used to sign client-generated user access token
 
 ## Retrieving Program ID
 
-To access content for a specific <Glossary>Program</Glossary>, you will need the program ID. You can retrieve the Program ID via our REST API or from the [Producer Suite](http://producer.livelikecdn.com) using the following steps:
+To access content for a specific <Glossary>Program</Glossary>, you will need the program ID. You can retrieve the Program ID via our REST API or from the [Producer Suite](https://cf-blast.livelikecdn.com/) using the following steps:
 
-1. Login to the [Producer Suite](http://producer.livelikecdn.com/)
+1. Login to the [Producer Suite](https://cf-blast.livelikecdn.com/)
 2. Open the Event Management Panel (hamburger menu on the top-left).
 3. Click the vertical ellipse for your desired program
 4. Select "View Program ID"
@@ -47,7 +47,7 @@ To access content for a specific <Glossary>Program</Glossary>, you will need the
 
 You will need an API Access Token to access the LiveLike REST APIs. Unlike the user access tokens mentioned in [Profiles](doc:user-profiles), these access tokens have greater privileges that give you full API . To create & retrieve your access token:
 
-1. Login to the [Producer Suite](http://producer.livelikecdn.com/)
+1. Login to the [Producer Suite](https://cf-blast.livelikecdn.com/)
 2. Under your profile picture select 'My Organizations' from the dropdown menu
 3. Select the desired App from your App list
 4. Scroll down to API Access Tokens and click "+" to create a new access token
