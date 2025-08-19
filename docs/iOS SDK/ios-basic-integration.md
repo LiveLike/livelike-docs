@@ -187,7 +187,7 @@ override func viewDidLoad() {
 
 ## Start a Content Session
 
-A Content Session represents a user's subscription to a particular <Glossary>Program</Glossary> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](http://producer.livelikecdn.com) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
+A Content Session represents a user's subscription to a particular <Glossary>Program</Glossary> (typically a live, linear TV show, game or episode). To start a Content Session you will need a **Program ID**. You will need to create programs within the LiveLike system, either through the API or through the [Producer Suite](https://cf-blast.livelikecdn.com/) (see [Getting Started with the Producer Suite](doc:ps-getting-started)). You should then copy the **Program ID**s into the relevant media metadata in your own systems, so that content sessions can be started along with media playback.
 
 Use the following resources to get started with the Producer Suite
 
