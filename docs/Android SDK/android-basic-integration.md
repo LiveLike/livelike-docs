@@ -28,26 +28,26 @@ next:
       title: Widget Timeline
       url: https://docs.livelike.com/docs/widget-timeline
 ---
-This is a developers' guide for setting up {user["android-sdk"]}  configuration for native Android apps. We will take you through the basic technical steps for configuration and show you how to send your first widgets and chat messages. We will also provide detailed samples and instructions for complete LiveLike integration.
+This is a developers' guide for setting up Android Engagement SDK  configuration for native Android apps. We will take you through the basic technical steps for configuration and show you how to send your first widgets and chat messages. We will also provide detailed samples and instructions for complete LiveLike integration.
 
 ## Prerequisites
 
-* An admin login and registered application on the [Producer Suite](https://producer.livelikecdn.com/)
-* Client ID - Used to initialize the SDK. To get your ClientID, register your application in the [Producer Suite](https://producer.livelikecdn.com/)
+* An admin login and registered application on the [Producer Suite](https://cf-blast.livelikecdn.com/)
+* Client ID - Used to initialize the SDK. To get your ClientID, register your application in the [Producer Suite](https://cf-blast.livelikecdn.com/)
 * Minimum OS: Android 5.0
 * Minimum Android SDK: Lollipop SDK 21
 
 > 🚧 Android X Upgrade
 >
-> The {user["android-sdk"]} has been migrated to Android X from 2.15 onwards
+> The Android Engagement SDK has been migrated to Android X from 2.15 onwards
 >
 > If you have any issues with the integration please reach out.
 
 ## Installation
 
-> 👍
->
-> Current Version is {user["android-current-version"]}
+<Callout icon="👍" theme="okay">
+  Current Version is 3.0.5
+</Callout>
 
 **Step 1**\
 Add the JitPack repository to your build file
@@ -101,10 +101,10 @@ libraryDependencies += "com.livelike.android-engagement-sdk" % "engagementsdk" %
 
 ## Initialization
 
-For this step, you will need your Client ID to initialize the {user["android-sdk"]}. See here to [retrieve your Client ID](doc:retrieving-important-keys).
+For this step, you will need your Client ID to initialize the Android Engagement SDK. See here to [retrieve your Client ID](doc:retrieving-important-keys).
 
-**Note**: The LiveLike SDK generates a User <Glossary> Access Token</Glossary> whenever initialized. You can either choose to store it locally or persist it within your internal user database (although we have already managed it internally in the SDK). The access Token is stored locally which can be updated if the user uninstalls the application or clears data from application settings. This may result in higher MAUs([Monthly Active Users], so it is highly recommended to pass the accessToken delegate as a param on SDK init and store the accessToken for persistent users count.\
-See [Profiles](doc:user-profiles) for more info.\
+**Note**: The LiveLike SDK generates a User <Glossary> Access Token</Glossary> whenever initialized. You can either choose to store it locally or persist it within your internal user database (although we have already managed it internally in the SDK). The access Token is stored locally which can be updated if the user uninstalls the application or clears data from application settings. This may result in higher MAUs(\[Monthly Active Users], so it is highly recommended to pass the accessToken delegate as a param on SDK init and store the accessToken for persistent users count.\
+See [Profiles](doc:user-profiles) for more info.
 We also recommend that you initialize the SDK as late as possible in your application - just before the user accesses the EngagementSDK features.
 
 ```kotlin
@@ -153,15 +153,15 @@ EngagementSDK engagementSDK = new EngagementSDK(
 
 ## Configure Your Layout
 
-Now you have to configure your media page layout and declare containers for the {user["android-sdk"]} Widget and Chat views to live inside.
+Now you have to configure your media page layout and declare containers for the Android Engagement SDK Widget and Chat views to live inside.
 
-> 📘
->
-> Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+<Callout icon="📘" theme="info">
+  Even though this guide makes use of both the chat and widget components, if desired it is possible to use only one of the components.
+</Callout>
 
-> 🚧
->
-> The width of the Widget view must be at least **292dp** and the width of the Chat view must be at least **292dp**.
+<Callout icon="🚧" theme="warn">
+  The width of the Widget view must be at least **292dp** and the width of the Chat view must be at least **292dp**.
+</Callout>
 
 Add the following to your layout XML
 
@@ -198,11 +198,11 @@ A Content Session represents a user's subscription to a particular program (typi
 
 **How to retrieve a Program ID:**
 
-<Embed url="https://www.youtube.com/watch?v=eojvteNhogw&feature=youtu.be" title="Tutorial: Creating Event and Getting the Program ID" favicon="https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico" image="https://i.ytimg.com/vi/eojvteNhogw/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=eojvteNhogw&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FeojvteNhogw%253Ffeature%253Doembed%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DeojvteNhogw%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FeojvteNhogw%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://www.youtube.com/watch?v=eojvteNhogw&feature=youtu.be" href="https://www.youtube.com/watch?v=eojvteNhogw&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FeojvteNhogw%253Ffeature%253Doembed%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DeojvteNhogw%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FeojvteNhogw%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 **How to publish a widget:**
 
-<Embed url="https://www.youtube.com/watch?v=W1--cNOHi0g&feature=youtu.be" title="Tutorial: Posting a Text Poll" favicon="https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico" image="https://i.ytimg.com/vi/W1--cNOHi0g/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=W1--cNOHi0g&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FW1--cNOHi0g%253Ffeature%253Doembed%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DW1--cNOHi0g%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FW1--cNOHi0g%252Fhqdefault.jpg%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://www.youtube.com/watch?v=W1--cNOHi0g&feature=youtu.be" href="https://www.youtube.com/watch?v=W1--cNOHi0g&feature=youtu.be" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FW1--cNOHi0g%253Ffeature%253Doembed%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DW1--cNOHi0g%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FW1--cNOHi0g%252Fhqdefault.jpg%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ## Starting a Content Session
 
@@ -221,7 +221,7 @@ chatView.setSession(session);
 
 ## Handling application going to background
 
-When your application goes to background the {user["android-sdk"]} is still listening for new widgets to make sure the user doesn't lose any of the action when coming back.
+When your application goes to background the Android Engagement SDK is still listening for new widgets to make sure the user doesn't lose any of the action when coming back.
 
 If you want to disable this feature and assure the application remains dormant when backgrounded, you will need to Pause and Resume the Content Session.
 
