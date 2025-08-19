@@ -18,7 +18,7 @@ next:
 ---
 ## Accessing the Suite
 
-You can access the Producer Suite at [producer.livelikecdn.com](https://cf-blast.livelikecdn.com/).
+You can access the Producer Suite at [cf-blast.livelikecdn.com](https://cf-blast.livelikecdn.com/).
 
 To get started, you will need account credentials. You can request these either from LiveLike, or from a member of your team that already has access (see [Inviting Your Team](inviting-organization-members)).
 
