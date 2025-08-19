@@ -25,4 +25,4 @@ next:
       slug: rest-api-creating-predictions
       title: Creating Predictions
 ---
-While our [Producer Site](http://producer.livelikecdn.com/) can be used to create widgets manually, widgets can also be created by using our REST APIs. The tutorials below will show you how to create some of our most popular widgets, but the same approach can be applied to all widgets.
+While our [Producer Site](https://cf-blast.livelikecdn.com/) can be used to create widgets manually, widgets can also be created by using our REST APIs. The tutorials below will show you how to create some of our most popular widgets, but the same approach can be applied to all widgets.
