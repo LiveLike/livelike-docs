@@ -32,11 +32,11 @@ EngagementSDK.logLevel = .verbose
 
 ## Common Errors
 
-> ❗️
->
-> Failed to initialize the Engagement SDK. \[client-id] is not a valid client id.
+<Callout icon="❗️" theme="error">
+  Failed to initialize the Engagement SDK. \[client-id] is not a valid client id.
+</Callout>
 
-If you've received this error when trying to initialize the Engagement SDK, please ensure that the Client ID used in your application matches the one given in the [Producer Suite](https://producer.livelikecdn.com/).
+If you've received this error when trying to initialize the Engagement SDK, please ensure that the Client ID used in your application matches the one given in the [Producer Suite](https://cf-blast.livelikecdn.com/).
 
 > ❗️ “\[program-id] is not a valid program ID”
 
