@@ -2853,7 +2853,8 @@
                 "required": [
                   "chat_room_id",
                   "message_event",
-                  "message"
+                  "message",
+                  "mentions"
                 ],
                 "properties": {
                   "chat_room_id": {
@@ -2915,12 +2916,30 @@
                     "description": "parent message for this specific reply in the message thread"
                   },
                   "mentions": {
-                    "type": "array",
-                    "items": {
-                      "properties": {},
-                      "type": "object"
+                    "type": "object",
+                    "description": "Details of the mentioned profiles and their location in the message",
+                    "properties": {
+                      "mentioned_profile_id": {
+                        "type": "string",
+                        "description": "The ID of the profile to mention"
+                      },
+                      "mentioned_profile_custom_id": {
+                        "type": "string",
+                        "description": "The Custom ID of the profile to mention"
+                      },
+                      "start_index": {
+                        "type": "integer",
+                        "description": "The beginning index of the message text to treat as a mention"
+                      },
+                      "end_index": {
+                        "type": "integer",
+                        "description": "The ending index of the message text to treat as a mention"
+                      }
                     },
-                    "description": "Details of the mentioned profiles and their location in the message"
+                    "required": [
+                      "start_index",
+                      "end_index"
+                    ]
                   }
                 }
               }
