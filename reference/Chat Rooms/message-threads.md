@@ -1,5 +1,5 @@
 ---
-title: Message Threads
+title: Using Message Threads
 excerpt: ''
 deprecated: false
 hidden: false
