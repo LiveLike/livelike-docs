@@ -2853,8 +2853,7 @@
                 "required": [
                   "chat_room_id",
                   "message_event",
-                  "message",
-                  "mentions"
+                  "message"
                 ],
                 "properties": {
                   "chat_room_id": {
