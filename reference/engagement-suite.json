@@ -2853,8 +2853,7 @@
                 "required": [
                   "chat_room_id",
                   "message_event",
-                  "message",
-                  "mentions"
+                  "message"
                 ],
                 "properties": {
                   "chat_room_id": {
@@ -2918,6 +2917,28 @@
                   "mentions": {
                     "type": "array",
                     "description": "Details of the mentioned profiles and their location in the message",
+                    "properties": {
+                      "mentioned_profile_id": {
+                        "type": "string",
+                        "description": "The ID of the profile to mention"
+                      },
+                      "mentioned_profile_custom_id": {
+                        "type": "string",
+                        "description": "The Custom ID of the profile to mention"
+                      },
+                      "start_index": {
+                        "type": "integer",
+                        "description": "The beginning index of the message text to treat as a mention"
+                      },
+                      "end_index": {
+                        "type": "integer",
+                        "description": "The ending index of the message text to treat as a mention"
+                      }
+                    },
+                    "required": [
+                      "start_index",
+                      "end_index"
+                    ],
                     "items": {
                       "properties": {},
                       "type": "object"
