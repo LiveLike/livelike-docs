@@ -79,7 +79,7 @@ next:
 * **Skill Game**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-1.2.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.1.1.js"></script>
 
 ```
 
