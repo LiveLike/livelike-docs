@@ -79,7 +79,7 @@ next:
 * **Skill Game**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.1.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.1.2.js"></script>
 
 ```
 
@@ -111,7 +111,7 @@ next:
 <ll-pick-your-team accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-pick-your-team>
 ```
 
-* #### **Play Predictor**: (<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js">Demo</Anchor>)
+* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js))
 
 ```html html
 <ll-predictor accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor>
@@ -123,13 +123,13 @@ next:
 <ll-guess-what accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-what>
 ```
 
-* #### **Spin The Wheel**: (<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/vitejs-vite-nsxe4pgr?file=src%2FApp.jsx">Demo</Anchor>)
+* #### **Spin The Wheel**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nsxe4pgr?file=src%2FApp.jsx))
 
 ```html html
 <ll-spin-the-wheel profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-spin-the-wheel>
 ```
 
-* #### **Skill Games**: (<Anchor label="Demo" target="_blank" href="https://stackblitz.com/edit/livelike-skill-game">Demo</Anchor>)
+* #### **Skill Games**: ([Demo](https://stackblitz.com/edit/livelike-skill-game))
 
 ```html html
 <ll-skill-game accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-skill-game>
