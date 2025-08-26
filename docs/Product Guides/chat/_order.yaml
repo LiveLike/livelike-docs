@@ -6,6 +6,7 @@
 - chat-ui
 - chat-message-links
 - sending-custom-chat-messages
+- chat-room-membership
 - chat-room-invitations
 - pin-message
 - reply-to-chat-message
@@ -13,7 +14,6 @@
 - token-gating-chat
 - toggle-filtered-messages
 - message-metadata
-- chat-room-membership
 - high-latency-chat
 - deleting-chat-messages
 - images-in-chat
