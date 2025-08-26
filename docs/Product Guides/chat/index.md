@@ -84,7 +84,7 @@ Reactions are images that can be used to react to chat messages. They are groupe
 Once someone joins a room, they are considered a [member](doc:chat-room-membership) of that room until they leave it. Once someone is a member of a room, they will appear in its member list even when they are offline.
 
 <Callout icon="📘" theme="info">
-  A user does not have to me a member of a room to enter it and send messages. If your use-case doesn't involve keeping track of which rooms a user was in during their last visit, you may not need to integrate memberships.
+  A user does not have to be a member of a room to enter it and send messages. If your use case doesn't require keeping track of which rooms a user was in during their last visit, you probably don't need to integrate memberships.
 </Callout>
 
 In an experience that supports both event-based public chats and private group chats that persist across events, you may choose only to keep track of the private chat memberships for users so that past public chats from previous events don't clutter up a chat selection interface.
