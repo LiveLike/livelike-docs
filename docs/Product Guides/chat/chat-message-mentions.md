@@ -1,8 +1,6 @@
 ---
 title: Chat Message Mentions
-excerpt: >-
-  The Chat Message Mentions feature lets users tag specific profiles in a
-  message.
+excerpt: The Mentions feature lets users tag specific profiles in a message.
 deprecated: false
 hidden: false
 metadata:
@@ -18,12 +16,11 @@ next:
 ---
 ## Overview
 
-The Chat Message Mentions feature allows users to tag specific user profiles in chat messages.\
-Mentions can be sent along with message creation and will be returned in the response of GET APIs.
+The Chat message Mentions feature allows your users to tag specific profiles inside their chat messages, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included when a chat message is created and are also returned in the GET API responses.
 
 ## How "Mention" works
 
-Client send structured mention data in the POST request when creating a chat message.\
+Client send structured mention data in the POST request when creating a chat message.
 This includes:
 
 * The profile being mentioned (`mentioned_profile_id` or `mentioned_profile_custom_id`)
