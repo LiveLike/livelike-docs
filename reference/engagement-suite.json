@@ -23785,6 +23785,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Unique keys for profile relationship types (Example - follow, friend)"
+          },
+          {
+            "in": "query",
+            "name": "relationship_from_profile_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Profile UUID for the from_profile in a profile relationship. This parameter or an auth token for the from_profile is required with relationship_type."
           }
         ],
         "responses": {
