@@ -22324,14 +22324,6 @@
                       ],
                       "type": "object"
                     }
-                  },
-                  "mentions": {
-                    "type": "array",
-                    "description": "Details of the mentioned profiles and their location in the comment text",
-                    "items": {
-                      "properties": {},
-                      "type": "object"
-                    }
                   }
                 }
               }
@@ -22345,7 +22337,7 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"id\": \"69d1c606-7759-4aa7-9a8d-747da62d10e6\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/69d1c606-7759-4aa7-9a8d-747da62d10e6/\",\n  \"comment_board_id\": \"d849e096-d36d-406e-bff0-0627f13b19d4\",\n  \"parent_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n  \"thread_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n  \"text\": \"Sample Comment\",\n  \"comment_depth\": 1,\n  \"custom_data\": null,\n  \"author_id\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n  \"is_deleted\": false,\n  \"created_at\": \"2022-12-22T08:59:32.761643Z\",\n  \"replies_url\": null,\n  \"attributes\": [\n    {\n      \"key\": \"key-1\",\n      \"value\": \"value-1\"\n    }\n  ],\n  \"mentions\": [\n    {\n      \"start_index\": 1,\n      \"end_index\": 2,\n      \"mentioned_profile_id\": \"6c19a0a8-05a2-474f-85de-b9186c46c8ae\",\n      \"mentioned_profile_custom_id\": null,\n      \"mentioned_profile_nickname\": \"blue whale\",\n      \"id\": \"294ca91a-118c-4ef3-b986-3a726690ab6c\"\n    },\n    {\n      \"start_index\": 3,\n      \"end_index\": 6,\n      \"mentioned_profile_id\": \"114d4ba9-57c7-4903-b369-c3e09c7fd900\",\n      \"mentioned_profile_custom_id\": \"runner-custom-id\",\n      \"mentioned_profile_nickname\": \"Sociable Runner\",\n      \"id\": \"791d27b3-4f27-45b0-b305-0073d1e5cd9b\"\n     }\n   ],\n}"
+                    "value": "{\n    \"id\": \"69d1c606-7759-4aa7-9a8d-747da62d10e6\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/69d1c606-7759-4aa7-9a8d-747da62d10e6/\",\n    \"comment_board_id\": \"d849e096-d36d-406e-bff0-0627f13b19d4\",\n    \"parent_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"thread_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"text\": \"Sample Comment\",\n    \"comment_depth\": 1,\n    \"custom_data\": null,\n    \"author_id\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"is_deleted\": false,\n    \"created_at\": \"2022-12-22T08:59:32.761643Z\",\n    \"replies_url\": null,\n    \"attributes\": [\n      \t{\n          \"key\": \"key-1\",\n          \"value\": \"value-1\"\n      \t}\n      ]\n}"
                   }
                 },
                 "schema": {
@@ -22580,7 +22572,55 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"3437f488-5c45-468b-8a14-c9b67ee77337\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/3437f488-5c45-468b-8a14-c9b67ee77337/\",\n            \"comment_board_id\": \"d849e096-d36d-406e-bff0-0627f13b19d4\",\n            \"parent_comment_id\": null,\n            \"thread_comment_id\": \"3437f488-5c45-468b-8a14-c9b67ee77337\",\n            \"text\": \"test_comment\",\n            \"comment_depth\": 0,\n            \"custom_data\": \"custom data\",\n            \"author_id\": \"96819c56-063d-4fad-929a-79a0648122f4\",\n            \"is_deleted\": false,\n            \"trending_score\": 1.05439,\n            \"created_at\": \"2022-12-09T13:06:39.379146Z\",\n            \"replies_url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/?comment_board_id=d849e096-d36d-406e-bff0-0627f13b19d4&parent_comment_id=3437f488-5c45-468b-8a14-c9b67ee77337\",\n            \"attributes\":[\n              {\n                \"key\": \"key-1\",\n                \"value\":\"value-1\"\n              }\n            ]\n            \"reactions\": [\n                  {\n                      \"reaction_id\": \"ad6aea57-f4d3-4336-b12e-914147f3940b\",\n                      \"count\": 14,\n                      \"self_reacted_user_reaction_id\": \"2aed404b-e44f-4159-b53a-84cce0996203\"\n                  },\n                  {\n                      \"reaction_id\": \"c4c3cb96-13d4-464b-9450-41a2fa7dc56f\",\n                      \"count\": 10,\n                      \"self_reacted_user_reaction_id\": \"3b99b9a5-c325-4c5c-be77-1f485d52c5e3\"\n                  }\n              ]\n        }\n    ]\n}"
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "3437f488-5c45-468b-8a14-c9b67ee77337",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/comments/3437f488-5c45-468b-8a14-c9b67ee77337/",
+                          "comment_board_id": "d849e096-d36d-406e-bff0-0627f13b19d4",
+                          "parent_comment_id": null,
+                          "thread_comment_id": "3437f488-5c45-468b-8a14-c9b67ee77337",
+                          "text": "test_comment",
+                          "comment_depth": 0,
+                          "custom_data": "custom data",
+                          "author_id": "96819c56-063d-4fad-929a-79a0648122f4",
+                          "is_deleted": false,
+                          "trending_score": 1.05439,
+                          "created_at": "2022-12-09T13:06:39.379146Z",
+                          "replies_url": "https://cf-blast.livelikecdn.com/api/v1/comments/?comment_board_id=d849e096-d36d-406e-bff0-0627f13b19d4&parent_comment_id=3437f488-5c45-468b-8a14-c9b67ee77337",
+                          "attributes": [
+                            {
+                              "key": "key-1",
+                              "value": "value-1"
+                            }
+                          ],
+                          "reactions": [
+                            {
+                              "reaction_id": "ad6aea57-f4d3-4336-b12e-914147f3940b",
+                              "count": 14,
+                              "self_reacted_user_reaction_id": "2aed404b-e44f-4159-b53a-84cce0996203"
+                            },
+                            {
+                              "reaction_id": "c4c3cb96-13d4-464b-9450-41a2fa7dc56f",
+                              "count": 10,
+                              "self_reacted_user_reaction_id": "3b99b9a5-c325-4c5c-be77-1f485d52c5e3"
+                            }
+                          ],
+                          "mentions": [
+                            {
+                              "mentioned_profile_nickname": "Risky Keeper",
+                              "id": "3fe076c4-87e0-4237-a9ae-15410d0bca4a",
+                              "start_index": 1,
+                              "end_index": 2,
+                              "mentioned_profile_id": "398245d6-23a2-4c60-be38-5d3386462770"
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   }
                 }
               }
