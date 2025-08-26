@@ -10,7 +10,7 @@ next:
     - title: Send Comments with Mentions
       type: link
       url: https://docs.livelike.com/update/reference/create-a-comment#/
-    - title: Fetch Comments with MentionsFetch Chat messages with Mentions
+    - title: Fetch Comments with Mentions
       type: link
       url: https://docs.livelike.com/update/reference/create-a-comment#/
 ---
