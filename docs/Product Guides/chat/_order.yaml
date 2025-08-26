@@ -4,6 +4,7 @@
 - chat-room-membership
 - chat-room-invitations
 - building-an-unread-message-count-feature
+- chat-message-mentions
 - chat-avatar
 - chat-ui
 - chat-message-links
@@ -17,4 +18,3 @@
 - high-latency-chat
 - deleting-chat-messages
 - images-in-chat
-- chat-message-mentions
