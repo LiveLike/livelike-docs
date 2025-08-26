@@ -6,8 +6,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 ## Overview
 
 The Comment Mentions feature allows your users to tag specific profiles inside their comments, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included when a comment is created and are also returned in the GET API responses.
