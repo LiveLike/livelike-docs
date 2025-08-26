@@ -30,9 +30,9 @@ The LiveLike SDK provides you with Chat UI and APIs to create your preferred cha
 * Report offensive messages
 * Moderator tools
 
-> 📘
->
-> Features like device push notifications, read receipts, typing indicators, and presence indicators are not yet provided by the SDK and require custom development.
+<Callout icon="📘" theme="info">
+  Features like device push notifications, read receipts, typing indicators, and presence indicators are not yet provided by the SDK and require custom development.
+</Callout>
 
 ## Chat Room Basics
 
@@ -65,8 +65,8 @@ By default, users are assigned a randomized nickname. You can use our APIs to as
 
 These rooms can be used in a variety of ways including, but not limited to:
 
-**1. Public Chat**: A single global chat room for each <Glossary>Program</Glossary>.\
-**2. Group Chat via Deep Link**: Allow users to create a chat room and share a deep link with friends\
+**1. Public Chat**: A single global chat room for each <Glossary>Program</Glossary>.
+**2. Group Chat via Deep Link**: Allow users to create a chat room and share a deep link with friends
 **3. Private Chat in Existing Social Groups**: Create chat rooms to map to existing groups on your social graph
 
 ## Custom Stickers
@@ -81,11 +81,11 @@ Reactions are images that can be used to react to chat messages. They are groupe
 
 ## Membership
 
-Once someone joins a room, they are considered a member of that room until they leave it. Once someone is a member of a room, they will appear in its member list even when they are offline.
+Once someone joins a room, they are considered a [member](doc:chat-room-membership) of that room until they leave it. Once someone is a member of a room, they will appear in its member list even when they are offline.
 
-> 📘
->
-> A user does not have to me a member of a room to enter it and send messages. If your use-case doesn't involve keeping track of which rooms a user was in during their last visit, you may not need to integrate memberships.
+<Callout icon="📘" theme="info">
+  A user does not have to me a member of a room to enter it and send messages. If your use-case doesn't involve keeping track of which rooms a user was in during their last visit, you may not need to integrate memberships.
+</Callout>
 
 In an experience that supports both event-based public chats and private group chats that persist across events, you may choose only to keep track of the private chat memberships for users so that past public chats from previous events don't clutter up a chat selection interface.
 
@@ -100,9 +100,9 @@ Chat messages can be automatically filtered based on their contents. Automatic f
 * **Keyword-driven**. If a message contains a word from a list of bad words, it will be filtered. The word lists can be customized, and the behavior can be tuned to match either whole words or partially obfuscated words.
 * **AI-driven**. If a message is recognized by an AI model as being objectionable, it will be filtered.
 
-> 📘
->
-> The default behavior of the SDKs is to hide filtered messages from everyone except for the sender.
+<Callout icon="📘" theme="info">
+  The default behavior of the SDKs is to hide filtered messages from everyone except for the sender.
+</Callout>
 
 ### Moderator Tools
 
