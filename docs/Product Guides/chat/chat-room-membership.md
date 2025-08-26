@@ -1,5 +1,5 @@
 ---
-title: Chat Room Membership
+title: Chat Membership
 excerpt: Tracking and counting members of chat rooms
 deprecated: false
 hidden: false
