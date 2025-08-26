@@ -5,6 +5,14 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - title: Send Comments with Mentions
+      type: link
+      url: https://docs.livelike.com/update/reference/create-a-comment#/
+    - title: Fetch Comments with MentionsFetch Chat messages with Mentions
+      type: link
+      url: https://docs.livelike.com/update/reference/create-a-comment#/
 ---
 ## Overview
 
