@@ -2,7 +2,7 @@
 title: Chat Room Membership
 excerpt: Tracking and counting members of chat rooms
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
