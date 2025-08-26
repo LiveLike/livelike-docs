@@ -64,6 +64,9 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "custom_id": {
+                    "type": "string"
                   }
                 }
               }
