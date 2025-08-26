@@ -1,5 +1,6 @@
 - private-chat
 - chat-room-membership
+- chat-room-invitations
 - threads-in-chat
 - custom-chat-input
 - building-an-unread-message-count-feature
@@ -7,7 +8,6 @@
 - chat-ui
 - chat-message-links
 - sending-custom-chat-messages
-- chat-room-invitations
 - pin-message
 - reply-to-chat-message
 - quote-message
