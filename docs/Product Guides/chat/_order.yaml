@@ -1,4 +1,3 @@
-- custom-chat-input
 - threads-in-chat
 - private-chat
 - chat-room-membership
@@ -8,6 +7,7 @@
 - chat-avatar
 - chat-ui
 - chat-message-links
+- custom-chat-input
 - sending-custom-chat-messages
 - pin-message
 - reply-to-chat-message
