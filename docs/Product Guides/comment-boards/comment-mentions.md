@@ -12,7 +12,7 @@ next:
       url: https://docs.livelike.com/update/reference/create-a-comment#/
     - title: Fetch Comments with Mentions
       type: link
-      url: https://docs.livelike.com/update/reference/create-a-comment#/
+      url: https://docs.livelike.com/update/reference/list-comments#/
 ---
 ## Overview
 
