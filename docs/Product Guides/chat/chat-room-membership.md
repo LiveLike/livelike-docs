@@ -26,6 +26,14 @@ Once someone _joins_ a room, they are a member of that room until they _leave_ i
 
 A user does not have to be a member of a room to enter it and send messages.
 
+## Adding Members
+
+Members can be added to a room in a few ways:
+
+* Someone can _join_ a room on their own to become a member
+* A new member can be _added_ to the room by another member
+* Someone can accept an [invitation](doc:chat-room-invitations) to become a member
+
 ## Counting Members
 
 The number of members is steady regardless of whether or not they're online. For example, member counts are useful for displaying the number of participants in a group chat, even if not everybody is online at the same time it can be helpful to understand who is part of the chat and how many people are in it.
