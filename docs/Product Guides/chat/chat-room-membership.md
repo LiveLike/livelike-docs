@@ -28,7 +28,7 @@ A user does not have to be a member of a room to enter it and send messages.
 
 ## Counting Members
 
-The number of members is steady regardless of whether or not they're online. For example, member counts are helpful for displaying the number of participants in a group chat, even if not everybody is online at the same time it's useful to understand who is part of the chat and how many people are in it.
+The number of members is steady regardless of whether or not they're online. For example, member counts are useful for displaying the number of participants in a group chat, even if not everybody is online at the same time it can be helpful to understand who is part of the chat and how many people are in it.
 
 > 📘 Trying to count how many people are online in a chat room?
 >
