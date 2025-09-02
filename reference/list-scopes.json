@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://cf-blast.livelikecdn.com/api/v1/"
+      "url": "https://cf-blast.livelikecdn.com/api/v1/scopes"
     }
   ],
   "tags": [],
