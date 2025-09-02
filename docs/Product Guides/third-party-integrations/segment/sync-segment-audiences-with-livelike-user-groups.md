@@ -14,33 +14,27 @@ This ensures your LiveLike groups always stay up to date with the audiences you 
 * Stay accurate: Your groups always reflect the latest Segment audiences.
 * Stay flexible: You can still add users manually or turn syncing off anytime.
 
-**Key Benefits**
+## Key Benefits
 
 * Direct Sync – Connect any Segment Audience to a LiveLike User Group, either when creating the group or later.
 * Clear Visibility – See at a glance which groups are synced with Segment.
 * Full Control – Even with syncing enabled, you can add users manually or stop syncing anytime.
 
-Handling Existing Members
-
-
+## Handling Existing Members
 
 If your Segment Audience already has members when you first sync, you can quickly bring them into LiveLike with a CSV upload of user IDs or profile IDs.
 
 * Users without IDs can still join with nicknames (or automatically generated ones).
 * This ensures your group is fully up to date from day one.
 
-Smarter, Faster Syncing
-
-
+## Smarter, Faster Syncing
 
 Instead of sending one update per user, Segment now sends batches of updates to LiveLike.
 
 * If 20 users join at once, they’re added in a single batch.
 * This makes syncing more efficient and reliable.
 
-How to Set It Up
-
-
+## How to Set It Up
 
 Getting started is simple:
 
@@ -71,9 +65,7 @@ That’s it — your Segment audience will now stay in sync with your LiveLike U
 
 <br />
 
-Best Practice
-
-
+## Best Practice
 
 For the smoothest setup:
 
