@@ -11,4 +11,4 @@ link:
 metadata:
   robots: index
 ---
-<br />
+E.g. To get a scope details for a given comment board, use `resource_key` parameter to pass comment board id. 
