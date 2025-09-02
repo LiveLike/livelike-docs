@@ -97,21 +97,24 @@
             "name": "resource_key",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Resource identifier, If '*' then filter scopes applied to all resources of this kind."
           },
           {
             "in": "query",
             "name": "resource_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Resource uuid"
           },
           {
             "in": "query",
             "name": "resource_kind",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "resource kind"
           },
           {
             "in": "query",
