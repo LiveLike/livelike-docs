@@ -114,7 +114,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "resource kind"
+            "description": "e.g. comment-board, text-poll, program, etc"
           },
           {
             "in": "query",
