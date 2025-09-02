@@ -47,6 +47,14 @@
                   },
                   "result": {
                     "summary": "result",
+                    "value": ""
+                  },
+                  "New Example 3": {
+                    "summary": "New Example 3",
+                    "value": ""
+                  },
+                  "Result": {
+                    "summary": "Result",
                     "value": {
                       "count": 1,
                       "next": null,
