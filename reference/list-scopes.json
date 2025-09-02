@@ -90,7 +90,8 @@
             "name": "client_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Application ID"
           },
           {
             "in": "query",
