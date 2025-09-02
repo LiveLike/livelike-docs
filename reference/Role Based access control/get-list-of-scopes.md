@@ -5,7 +5,7 @@ api:
   file: list-scopes.json
   operationId: get_new-endpoint-1
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
