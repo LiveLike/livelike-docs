@@ -15,3 +15,4 @@
 - delete-a-role
 - create-role-assignments
 - delete-role-assignment
+- get-list-of-scopes
