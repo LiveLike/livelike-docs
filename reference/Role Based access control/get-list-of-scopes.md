@@ -11,4 +11,5 @@ link:
 metadata:
   robots: index
 ---
-E.g. To get a scope details for a given comment board, use `resource_key` parameter to pass comment board id.
+To retrieve the scope details of an entity, provide its ID in the `resource_key` parameter.
+For example, to get the scope details of a comment board, pass the comment board ID as the `resource_key`.
