@@ -29,7 +29,51 @@
         "operationId": "get_new-endpoint-1",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": ""
+                  },
+                  "New Example 1": {
+                    "summary": "New Example 1",
+                    "value": ""
+                  },
+                  "New Example 2": {
+                    "summary": "New Example 2",
+                    "value": ""
+                  },
+                  "New Example 3": {
+                    "summary": "New Example 3",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "7fc0c7a0-ec8b-4b87-a777-eb6583de6bfc",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/scopes/7fc0c7a0-ec8b-4b87-a777-eb6583de6bfc/",
+                          "client_id": "Txd6pYl4TwuqZU3ZAPf5zwQXMyHi1yEmfPtxwHWq",
+                          "resource": {
+                            "id": "e408441c-2c3c-4fe0-a24a-63cc118bac2b",
+                            "url": "https://cf-blast.livelikecdn.com/api/v1/resources/e408441c-2c3c-4fe0-a24a-63cc118bac2b/",
+                            "name": "Comment Board",
+                            "description": "",
+                            "kind": "comment-board",
+                            "created_at": "2023-12-29T00:15:49.183000Z",
+                            "scopes_url": "https://cf-blast.livelikecdn.com/api/v1/scopes/?resource_id=f808441c-2c3c-4fe0-a24a-63cc118bac2b"
+                          },
+                          "resource_key": "e822e639-95ba-449d-88e4-77d173a07b20",
+                          "created_at": "2024-03-15T13:13:58.178425Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
