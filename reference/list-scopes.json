@@ -118,14 +118,16 @@
             "name": "created_since",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "date in YYYY-MM-DD format"
           },
           {
             "in": "query",
             "name": "created_until",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "date in YYYY-MM-DD format"
           }
         ]
       }
