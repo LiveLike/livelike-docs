@@ -98,7 +98,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Resource identifier, If '*' then filter scopes applied to all resources of this kind."
+            "description": "Resource identifier, e.g. comment_board uuid. If '*' then filter scopes applied to all resources of this kind."
           },
           {
             "in": "query",
