@@ -63,8 +63,6 @@ Getting started is simple:
 
 That’s it — your Segment audience will now stay in sync with your LiveLike User Group automatically.
 
-<br />
-
 ## Best Practice
 
 For the smoothest setup:
