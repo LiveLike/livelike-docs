@@ -106,7 +106,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Resource uuid"
+            "description": "Resource object uuid"
           },
           {
             "in": "query",
