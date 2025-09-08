@@ -21,7 +21,7 @@ Welcome to the LiveLike Engagement Suite documentation hub where you can find al
 
 The LiveLike SDK enhances live video experiences in mobile apps and on the web. Interactive polls, quizzes, mini-games, and more can be broadcast alongside the video without spoiling the action. The users watching and playing along can chat with everyone else, or just their friends, while they earn points and collect rewards for participating.
 
-**Product Documentation **
+**Product Documentation**
 
 To get started, you can continue to the  [Core Concepts](doc:concepts)  or pick your platform below and start building!
 
