@@ -1,5 +1,5 @@
 ---
-title: Sync Segment Audiences to LiveLike User Groups
+title: Sync Segment Audiences to User Groups
 deprecated: false
 hidden: true
 metadata:
