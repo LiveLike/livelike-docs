@@ -61,11 +61,12 @@ That’s it — your Segment audience will now stay in sync with your LiveLike U
 
 ## Best Practice
 
-For the smoothest setup:
+For optimal setup and data consistency:
 
 * Create your LiveLike group first,
-* Then sync it with a Segment Audience before adding users.
+* Sync it with the desired Segment Audience before adding any users manually.
 
-This ensures everything is aligned from the start.
+This sequence ensures that group membership, IDs, and sync logic are aligned from the start, minimizing rework or data mismatches.
+With Segment–LiveLike syncing in place, audience management becomes automated, allowing teams to focus on building engagement features rather than handling manual user updates..
 
-With Segment–LiveLike syncing, you can stop worrying about audience management and focus on engaging your users where it matters most.
+<br />
