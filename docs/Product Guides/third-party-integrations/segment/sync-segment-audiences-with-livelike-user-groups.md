@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-Managing audiences across platforms doesn’t have to be a manual chore. Instead of adding and removing users one by one, you can now sync your Segment Audiences directly to LiveLike User Groups. This ensures your LiveLike groups always stay up to date with the audiences you define in Segment.
+Managing audiences across platforms doesn’t have to be a manual chore. Instead of adding and removing users one by one, you can now sync your Segment Audiences directly to your User Groups on LiveLike. This ensures your  groups always stay up to date with the audiences you define in Segment.
 
 ## Why sync audiences to groups
 
