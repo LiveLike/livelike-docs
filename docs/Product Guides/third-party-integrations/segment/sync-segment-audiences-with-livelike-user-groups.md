@@ -8,31 +8,27 @@ metadata:
 Managing audiences across platforms doesn’t have to be a manual chore. Instead of adding and removing users one by one, you can now sync your Segment Audiences directly to LiveLike User Groups.
 This ensures your LiveLike groups always stay up to date with the audiences you define in Segment—automatically.
 
-## Why This Matters
+## Why This Matters & Key Benefits
 
-* Save time: No more manual updates.
-* Stay accurate: Your groups always reflect the latest Segment audiences.
-* Stay flexible: You can still add users manually or turn syncing off anytime.
-
-## Key Benefits
-
-* Direct Sync – Connect any Segment Audience to a LiveLike User Group, either when creating the group or later.
-* Clear Visibility – See at a glance which groups are synced with Segment.
-* Full Control – Even with syncing enabled, you can add users manually or stop syncing anytime.
+* Save time – No more manual updates, your groups always reflect the latest Segment audiences.
+* Stay accurate – Direct sync ensures your Segment Audiences connect seamlessly with LiveLike User Groups, either at creation or later.
+* Stay flexible – You can still add users manually, stop syncing anytime, and see at a glance which groups are synced.
 
 ## Handling Existing Members
 
-If your Segment Audience already has members when you first sync, you can quickly bring them into LiveLike with a CSV upload of user IDs or profile IDs.
+When syncing a Segment Audience that already contains members, existing users can be imported into LiveLike via a CSV upload of either user_id or profile_id.
 
-* Users without IDs can still join with nicknames (or automatically generated ones).
-* This ensures your group is fully up to date from day one.
+If an incoming user record does not contain a livelike_profile_id or custom_id, the system will automatically create a new profile:
 
-## Smarter, Faster Syncing
+* If a nickname is provided, it will be assigned to the new profile.
+* If no nickname is provided, the system will generate a random nickname.
 
-Instead of sending one update per user, Segment now sends batches of updates to LiveLike.
+User records can be fetched and added using either:
 
-* If 20 users join at once, they’re added in a single batch.
-* This makes syncing more efficient and reliable.
+* Profile ID
+* Custom ID
+
+This process ensures that groups are fully populated and up to date from the very first sync.
 
 ## How to Set It Up
 
