@@ -13651,6 +13651,23 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "prizeout_item": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "prizeout_status": {
+                          "type": "string"
+                        },
+                        "reward_item_points": {
+                          "type": "integer"
+                        },
+                        "prizeout_points": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
                   }
                 }
               }
@@ -13664,7 +13681,18 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n\t\"id\": \"42249086-45e0-483a-a158-95555ea9fc70\",\n\t\"url\": \"http://localhost:8000/api/v1/reward-items/42249086-45e0-483a-a158-95555ea9fc70/\",\n\t\"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n\t\"name\": \"New Reward Item\",\n\t\"images\": [],\n\t\"attributes\": []\n}"
+                    "value": {
+                      "id": "df91dde4-b8da-438c-a57f-c70f2b2a9429",
+                      "url": "http://localhost:8888/api/v1/reward-items/df91dde4-b8da-438c-a57f-c70f2b2a9429/",
+                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                      "name": "Correct answer bonus points",
+                      "images": [],
+                      "attributes": [],
+                      "prizeout_conversion_rate": null,
+                      "reward_item_points": null,
+                      "prizeout_points": null,
+                      "prizeout_status": null
+                    }
                   }
                 },
                 "schema": {
