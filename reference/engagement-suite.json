@@ -22643,6 +22643,14 @@
               "type": "string"
             },
             "description": "Profile UUID for the from_profile in a profile relationship. This parameter or an auth token for the from_profile is required with relationship_type."
+          },
+          {
+            "in": "query",
+            "name": "mentioned_profile_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Profile Id of mentioned user"
           }
         ],
         "responses": {
