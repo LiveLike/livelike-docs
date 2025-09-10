@@ -314,8 +314,8 @@ This document details the webhook events sent by our system, including their pay
 | Field Name                   | Type       | Description                                                             |
 | :--------------------------- | :--------- | :---------------------------------------------------------------------- |
 | `id`                         | `string`   | Unique identifier for the event                                         |
-| `event`                      | `string`   | Event type \{`comment-reply-created`}                                   |
-| `data.reply_comment_id`      | `string`   | Unique identifer for the comment reply                                  |
+| `event`                      | `string`   | Event type {`comment-reply-created`}                                    |
+| `data.reply_comment_id`      | `string`   | Unique identifier for the comment reply                                 |
 | `data.reply_author_id`       | `string`   | Unique identifier for the author of the new comment reply               |
 | `data.reply_author_nickname` | `string`   | Nickname for the author of the new comment reply                        |
 | `data.reply_text`            | `string`   | The actual text content of the new comment reply                        |
@@ -324,9 +324,83 @@ This document details the webhook events sent by our system, including their pay
 | `data.author_nickname`       | `string`   | Nickname for the author of the original comment                         |
 | `data.author_image_url`      | `string`   | The url for the profile image for the author of the original comment    |
 | `data.comment_text`          | `string`   | The actual text content of the original comment                         |
-| `data.client_id`             | `string`   | Client-specific identifer                                               |
+| `data.client_id`             | `string`   | Client-specific identifier                                              |
 | `data.created_at`            | `string`   | Timestamp when the comment reply was created                            |
 | `created_at`                 | `datetime` | Timestamp when the event was created                                    |
+
+## `comment-mention-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "26059f13-9864-4507-a19c-5891bbac5beb",
+  "event": "comment-mention-created",
+  "data": {
+    "profile_id": "947d3a03-f87f-4146-8e32-043db3fdd25f",
+    "mentioned_by_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "comment_id": "ce1b34f3-2cdf-4145-87ee-e9c2279f838f",
+    "comment_text": "Hey @Swift and @Witty, how are you?",
+    "start_index": 4,
+    "end_index": 9,
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "created_at": "2025-09-10T06:27:03.349873Z"
+  },
+  "created_at": "2025-09-10T06:27:03.629615+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name             | Type       | Description                                                   |
+| :--------------------- | :--------- | :------------------------------------------------------------ |
+| `id`                   | `string`   | Unique identifier for the event                               |
+| `event`                | `string`   | Event type {`comment-mention-created`}                        |
+| `data.profile_id`      | `string`   | Unique identifier for the mentioned profile                   |
+| `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned_by profile                |
+| `data.comment_id`      | `string`   | Unique identifier for the comment                             |
+| `data.comment_text`    | `string`   | Text content of the comment in which mentionws were created   |
+| `data.start_index`     | `string`   | Starting index of the mention placeholder in the comment text |
+| `data.end_index`       | `string`   | Ending index of the mention placeholder in the comment text   |
+| `data.client_id`       | `string`   | Client-specific identifier                                    |
+| `data.created_at`      | `datetime` | Timestamp when the comment mention was created                |
+| `created_at`           | `datetime` | Timestamp when the event was created                          |
+
+## `profile-relationship-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "81b4d144-2936-44b7-867b-8c8740dc6159",
+  "event": "profile-relationship-created",
+  "data": {
+    "relationship_type": "follow",
+    "to_profile_id": "31d9b4b0-7ef6-44f8-911c-96035700c7d8",
+    "is_active": true,
+    "profile_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "created_at": "2025-09-10T07:01:46Z"
+  },
+  "created_at": "2025-09-10T07:02:16.062427+00:00"
+}
+```
+
+### Field Descriptions
+
+<br />
+
+| Field Name               | Type       | Description                                                |
+| :----------------------- | :--------- | :--------------------------------------------------------- |
+| `id`                     | `string`   | Unique identifier for the event                            |
+| `event`                  | `string`   | Event type {`profile-relationship-created`}                |
+| `data.relationship_type` | `string`   | Unique key for profile relationship type                   |
+| `data.to_profile_id`     | `string`   | Unique identifier for the from profile in the relationship |
+| `data.is_active`         | `boolean`  | Active status for the profile relationship                 |
+| `data.profile_id`        | `string`   | Unique identifier for the to profile in the relationship   |
+| `data.client_id`         | `string`   | Client-specific identifier                                 |
+| `data.created_at`        | `datetime` | Timestamp when the profile relationship was created        |
+| `created_at`             | `datetime` | Timestamp when the event was created                       |
 
 ***
 
