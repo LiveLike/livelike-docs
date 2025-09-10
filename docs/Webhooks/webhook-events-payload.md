@@ -388,8 +388,6 @@ This document details the webhook events sent by our system, including their pay
 
 ### Field Descriptions
 
-<br />
-
 | Field Name               | Type       | Description                                                |
 | :----------------------- | :--------- | :--------------------------------------------------------- |
 | `id`                     | `string`   | Unique identifier for the event                            |
