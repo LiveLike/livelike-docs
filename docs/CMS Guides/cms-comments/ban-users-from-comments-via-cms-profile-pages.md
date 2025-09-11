@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-## Ban from comments via profile page
+## Ban from comments via profile details
 
 Banning a user from comments via their profile page is convenient when a moderator knows who to ban, but doesn't have an particular comment or report to reference before banning them.
 
