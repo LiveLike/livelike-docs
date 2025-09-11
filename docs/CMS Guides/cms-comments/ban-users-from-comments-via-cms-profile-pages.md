@@ -1,5 +1,5 @@
 ---
-title: Ban Users from Comment Boards via CMS Profile Pages
+title: Moderating Comments
 excerpt: >-
   Moderators can now ban user profiles from participating in comment boards
   directly from the CMS profile detail page. This enables moderators to take
