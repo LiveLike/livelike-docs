@@ -1,5 +1,5 @@
 ---
-title: Chat Moderation Tools
+title: Chat Moderation
 excerpt: Moderating chat inside the CMS
 deprecated: false
 hidden: false
