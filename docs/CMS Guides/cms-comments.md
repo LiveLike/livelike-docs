@@ -20,14 +20,12 @@ next:
       slug: comments-stock-ui-1
       title: Comments UI
 ---
-Livelike CMS provides an easy to use front-end to manage your comment boards within an application.
-
 Comment Boards represent topics that can be commented on like blog posts, videos, sports teams, individual matches once they are integrated in client application.
 Comments are posted to boards. A comment can also be a reply to another comment.
 
 As a CMS producer, you can create, edit, delete comment boards, control the nesting depth of comments, post, delete, report, moderate any comment and ban users from posting any comment.
 
-To understand the technical implementation of the SDKs, please visit [https://docs.livelike.com/docs/comment-boards](https://docs.livelike.com/docs/comment-boards)
+To understand the technical implementation of the SDKs, please visit [Comments](doc:comment-boards).
 
 ## Comments section
 
