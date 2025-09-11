@@ -3,6 +3,11 @@ title: Moderating Comments
 deprecated: false
 hidden: false
 metadata:
+  keywords:
+    - cms
+    - comments
+    - ban
+    - moderation
   robots: index
 ---
 ## Ban from comments via profile details
