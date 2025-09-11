@@ -344,6 +344,11 @@
                       },
                       "type": "object"
                     }
+                  },
+                  "chat_message_throttle_seconds": {
+                    "type": "number",
+                    "description": "Set chat messages throttling",
+                    "default": "0"
                   }
                 }
               },
@@ -527,6 +532,9 @@
                     "reaction_space_id": {
                       "type": "string",
                       "example": "71b422ae-df6d-4c8e-bae3-c12204856754"
+                    },
+                    "chat_message_throttle_seconds": {
+                      "type": "number"
                     }
                   }
                 }
