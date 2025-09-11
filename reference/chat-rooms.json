@@ -632,6 +632,11 @@
                       },
                       "type": "object"
                     }
+                  },
+                  "chat_message_throttle_seconds": {
+                    "type": "number",
+                    "default": "0",
+                    "description": "Set chat room messages throttling"
                   }
                 }
               }
@@ -719,6 +724,9 @@
                     "sponsors_url": {
                       "type": "string",
                       "example": "https://cf-blast-storage.livelikecdn.com/sticker-packs/ff8d89f6-3d7b-48de-87a8-f3588674eef8/sponsors.json"
+                    },
+                    "chat_message_throttle_seconds": {
+                      "type": "number"
                     }
                   }
                 }
