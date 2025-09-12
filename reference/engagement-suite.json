@@ -31917,6 +31917,18 @@
         "deprecated": false
       }
     },
+    "/new-endpoint": {
+      "get": {
+        "description": "",
+        "operationId": "get_new-endpoint",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
+    },
     "/role-assignments": {
       "get": {
         "description": "",
@@ -31930,6 +31942,62 @@
           {
             "in": "query",
             "name": "client_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "profile_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "profile_custom_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role_key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scope_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
             "schema": {
               "type": "string"
             }
