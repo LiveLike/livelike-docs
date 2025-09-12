@@ -27239,7 +27239,98 @@
         "responses": {
           "200": {
             "description": "",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "property1": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "fb423be8-9e7d-4a39-8445-879706164bbf",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/role-assignments/fb423be8-9e7d-4a39-8445-879706164bbf/",
+                          "created_at": "2024-09-26T16:53:29.698505Z",
+                          "profile": {
+                            "id": "96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3",
+                            "url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/",
+                            "created_at": "2024-08-27T19:02:30.844406Z",
+                            "nickname": "Madhuri Joshi",
+                            "custom_id": null,
+                            "custom_data": null,
+                            "points": 0,
+                            "badges": [],
+                            "badges_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/badges/",
+                            "badge_progress_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/badge-progress/",
+                            "subscribe_channel": "profile.96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3",
+                            "reported_count": 0,
+                            "chat_room_memberships_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/chat-room-memberships/",
+                            "reward_item_credit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/reward-item-credits/",
+                            "reward_item_debit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/reward-item-debits/",
+                            "reward_item_balances_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/reward-item-balances/",
+                            "reward_item_transfer_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/reward-item-transfers/",
+                            "block_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/",
+                            "blocked_profiles_template_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/?blocked_profile_id={blocked_profile_id}",
+                            "blocked_profile_ids_url": "https://cf-blast.livelikecdn.com/api/v1/blocked-profile-ids/",
+                            "leaderboards_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/leaderboards/",
+                            "leaderboard_views_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/leaderboard-views/",
+                            "earned_badges_url": "https://cf-blast.livelikecdn.com/api/v1/earned-badges/?profile_id=96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3",
+                            "redemption_keys_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96513dcb-fb7b-4aba-a9c5-bb811fc5fdc3/redemption-keys/",
+                            "attributes": []
+                          },
+                          "role": {
+                            "id": "f237dd66-abf7-4437-bb35-9c01f683d785",
+                            "url": "https://cf-blast.livelikecdn.com/api/v1/roles/f237dd66-abf7-4437-bb35-9c01f683d785/",
+                            "client_id": "2cY9cf0qGpKwlZcJRGV7lCiScgvYsO4nI2pLYeoA",
+                            "name": "widget moderator",
+                            "description": "",
+                            "key": "widget-moderator",
+                            "permissions": [
+                              {
+                                "id": "a98884fb-a0e1-49c4-9c2f-d16c6dc59401",
+                                "url": "https://cf-blast.livelikecdn.com/api/v1/permissions/a98884fb-a0e1-49c4-9c2f-d16c6dc59401/",
+                                "name": "Moderate widget report",
+                                "description": "Moderate a widget report",
+                                "key": "moderate-widget-report",
+                                "created_at": "2024-04-01T14:28:04Z"
+                              }
+                            ],
+                            "created_at": "2024-09-26T16:48:48Z",
+                            "is_active": true
+                          },
+                          "scope": {
+                            "id": "9a0e490e-15ce-4d21-b985-39baa1456272",
+                            "url": "https://cf-blast.livelikecdn.com/api/v1/scopes/9a0e490e-15ce-4d21-b985-39baa1456272/",
+                            "client_id": "2cY9cf0qGpKwlZcJRGV7lCiScgvYsO4nI2pLYeoA",
+                            "resource": {
+                              "id": "d3efaf53-fef0-45e3-98b7-09a43d58d5a0",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/resources/d3efaf53-fef0-45e3-98b7-09a43d58d5a0/",
+                              "name": "Rich Post",
+                              "description": "",
+                              "kind": "rich-post",
+                              "created_at": "2023-12-29T00:15:49.182000Z",
+                              "scopes_url": "https://cf-blast.livelikecdn.com/api/v1/scopes/?resource_id=d3efaf53-fef0-45e3-98b7-09a43d58d5a0"
+                            },
+                            "resource_key": "rich-post",
+                            "created_at": "2024-09-26T16:53:29.692931Z"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -27272,21 +27363,24 @@
             "name": "role_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Role UUID"
           },
           {
             "in": "query",
             "name": "role_key",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Role Key. e.g widget-moderator, comment-board-owner"
           },
           {
             "in": "query",
             "name": "scope_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Scope uuid"
           },
           {
             "in": "query",
