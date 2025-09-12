@@ -178,4 +178,10 @@ delete-comment-board-ban
 
 1. Widget Creator role when assigned to a user A with scope of \{kind, key = program, program_a}, would allow the user to create widgets in program_an only.
 2. Widget Creator role when assigned to a user B with scope of \{kind, key = program, "*"}, would allow the user to create widgets in all programs.
-3. Another widget creator role assigned to user A with scope of \{kind, key = program, program_b} would allow the user to create widgets in program_b along with program_a as well.
+3. Another widget creator role assigned to user A with scope of \{kind, key = program, program_b} would allow the user to create widgets in program_b along with program_a as well.﻿
+
+<br />
+
+### This API can be used to fetch list of all role assignments : [Get List of Role Assignments](https://docs.livelike.com/reference/list-role-assignments#/)﻿
+
+<br />
