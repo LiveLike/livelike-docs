@@ -27347,14 +27347,16 @@
             "name": "profile_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "User Profile UUID"
           },
           {
             "in": "query",
             "name": "profile_custom_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Profile custom ID"
           },
           {
             "in": "query",
@@ -27382,21 +27384,24 @@
             "name": "resource_key",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Resource identifier, e.g. comment_board uuid. If '*' then filter scopes applied to all resources of this kind."
           },
           {
             "in": "query",
             "name": "created_since",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "date in YYYY-MM-DD format"
           },
           {
             "in": "query",
             "name": "created_until",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "date in YYYY-MM-DD format"
           }
         ]
       }
