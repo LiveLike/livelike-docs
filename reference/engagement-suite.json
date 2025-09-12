@@ -27232,6 +27232,16 @@
           }
         },
         "deprecated": false
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_new-endpoint",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
       }
     },
     "/role-assignments/{id}": {
@@ -31915,18 +31925,6 @@
           }
         },
         "deprecated": false
-      }
-    },
-    "/new-endpoint": {
-      "get": {
-        "description": "",
-        "operationId": "get_new-endpoint",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
       }
     },
     "/role-assignments": {
