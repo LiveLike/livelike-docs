@@ -27341,6 +27341,27 @@
               "type": "string"
             },
             "description": "Application ID"
+          },
+          {
+            "in": "query",
+            "name": "profile_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "profile_custom_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role_id",
+            "schema": {
+              "type": "string"
+            }
           }
         ]
       }
