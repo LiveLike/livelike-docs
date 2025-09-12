@@ -31917,7 +31917,7 @@
         "deprecated": false
       }
     },
-    "/new-endpoint": {
+    "/role-assignments": {
       "get": {
         "description": "",
         "operationId": "get_new-endpoint",
