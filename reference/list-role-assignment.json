@@ -22,6 +22,27 @@
           }
         }
       }
+    },
+    "/new-endpoint-1": {
+      "get": {
+        "description": "",
+        "operationId": "get_new-endpoint-1",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        ]
+      }
     }
   },
   "components": {
