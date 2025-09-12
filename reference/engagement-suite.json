@@ -31926,7 +31926,15 @@
             "description": ""
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     }
   },
