@@ -182,6 +182,6 @@ delete-comment-board-ban
 
 <br />
 
-### This API can be used to fetch list of all role assignments : [Get List of Role Assignments](https://docs.livelike.com/reference/list-role-assignments#/)﻿
+> 📘 This API can be used to fetch list of all role assignments: [Get List of Role Assignments](https://docs.livelike.com/reference/list-role-assignments#/)
 
 <br />
