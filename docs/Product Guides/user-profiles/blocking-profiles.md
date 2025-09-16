@@ -26,10 +26,14 @@ When someone blocks someone else, they prevent the blocked person from actively 
 * mentioning them in comments.
 * creating social graph relationships with them.
 
-Blocks do not protect against passive engagement at the system level. For example, API responses will include content from others that may be blocked by the current user. That filtering can be applied at the integration level, but the stock user interface implementations bundled with the SDKs include some basic functionality:
+Blocks do not prevent passive engagement at the system level. For example, API responses will include content from others that may be blocked by the current user. Content filtering can be applied at the integration level, and the stock user interface implementations bundled with the SDKs include some basic functionality:
 
 * Chat messages sent from blocked users are not shown.
 * Comments authored by blocked users are not shown.
+
+<Callout icon="📘" theme="info">
+  Social features integrated via API have to implement content filtering at the integration level. Active engagement between users are prevented at the system level, but passive engagement is not.
+</Callout>
 
 ## Creating a Block
 
