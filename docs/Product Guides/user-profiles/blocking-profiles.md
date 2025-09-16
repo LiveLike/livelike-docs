@@ -16,16 +16,20 @@ Sometimes users are not comfortable, or are being harassed by another user. In o
 
 ## How Blocks Work
 
-When someone blocks someone else, they prevent the blocked user from:
+When someone blocks someone else, they prevent the blocked person from actively engaging with them. Protections against active engagements are enforced at the system level, from the API layer upwards. Once a bock is in place, it prevents the blocked user from:
 
 * inviting them to chat rooms.
 * adding them to chat rooms.
+* mentioning them in chat messages.
 * directly replying to their comments.
 * commenting on boards they own, and vice versa.
+* mentioning them in comments.
+* creating social graph relationships with them.
 
-> 📘 Note:
->
-> Block User is now supported in default ChatView from Android SDK 2.41 and Web SDK 2.15
+Blocks do not protect against passive engagement at the system level. For example, API responses will include content from others that may be blocked by the current user. That filtering can be applied at the integration level, but the stock user interface implementations bundled with the SDKs include some basic functionality:
+
+* Chat messages sent from blocked users are not shown.
+* Comments authored by blocked users are not shown.
 
 ## Creating a Block
 
@@ -174,7 +178,7 @@ LiveLike.getBlockInfoList()
 
 ## Getting block profile info
 
-Use `getProfileBlockInfo` to get block information for a particular profile Id. 
+Use `getProfileBlockInfo` to get block information for a particular profile Id.
 
 ```javascript
 LiveLike.getProfileBlockInfo({
