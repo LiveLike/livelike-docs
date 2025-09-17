@@ -50,7 +50,15 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"id\": \"fd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/fd2cc73b-662b-4914-bb1c-341a0ce34a79/\",\n  \"client_id\": \"P97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf\",\n  \"name\": \"My Reaction Pack\",\n  \"emojis_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=P97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=fd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n  \"emojis\": []\n}\n\n"
+                    "value": {
+                      "id": "fd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/fd2cc73b-662b-4914-bb1c-341a0ce34a79/",
+                      "client_id": "P97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf",
+                      "name": "My Reaction Pack",
+                      "emojis_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=P97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=fd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                      "emojis": [],
+                      "is_exclusive": false
+                    }
                   }
                 },
                 "schema": {
