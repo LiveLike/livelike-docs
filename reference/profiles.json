@@ -1023,6 +1023,35 @@
           ]
         }
       }
+    },
+    "/{ProfileID}/sticker-packs/{StickerPackID}/": {
+      "delete": {
+        "description": "",
+        "operationId": "delete_{ProfileID}sticker-packs{StickerPackID}",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "StickerPackID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
