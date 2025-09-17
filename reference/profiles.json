@@ -997,7 +997,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "description": "Date in YYYY-MM-DD format"
           },
           {
             "in": "query",
@@ -1005,7 +1006,8 @@
             "schema": {
               "type": "string",
               "format": "date"
-            }
+            },
+            "description": "Date in YYYY-MM-DD format"
           }
         ],
         "x-readme": {
