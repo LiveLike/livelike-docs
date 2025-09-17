@@ -1,7 +1,7 @@
 ---
 title: List Profile Exclusive Reaction Packs
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
