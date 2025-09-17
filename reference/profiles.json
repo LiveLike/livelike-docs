@@ -882,7 +882,7 @@
         "security": []
       }
     },
-    "/<profileID>/sticker-packs/": {
+    "/{profileID}/sticker-packs/": {
       "get": {
         "description": "",
         "operationId": "get_<profileID>sticker-packs",
@@ -891,7 +891,16 @@
             "description": ""
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
