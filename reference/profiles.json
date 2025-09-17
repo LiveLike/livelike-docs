@@ -882,18 +882,7 @@
         "security": []
       }
     },
-    "/<profileID>/sticker-packs/": {
-      "get": {
-        "description": "",
-        "operationId": "get_<profileID>sticker-packs",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      }
-    },
+    "/<profileID>/sticker-packs/": {},
     "/{profileID}/sticker-packs/": {
       "get": {
         "description": "",
