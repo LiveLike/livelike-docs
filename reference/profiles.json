@@ -1040,7 +1040,21 @@
             },
             "required": true
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sticker_pack_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{ProfileID}/sticker-packs/{StickerPackID}/": {
