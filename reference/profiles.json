@@ -998,7 +998,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "DateTime in YYYY-MM-DD format"
+            "description": "DateTime in YYYY-MM-DDTHH:MM:SS format"
           },
           {
             "in": "query",
@@ -1007,7 +1007,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "DateTime in YYYY-MM-DD format"
+            "description": "DateTime in YYYY-MM-DDTHH:MM:SS format"
           }
         ],
         "x-readme": {
