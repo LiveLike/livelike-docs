@@ -1085,6 +1085,27 @@
           }
         ]
       }
+    },
+    "/{profileID}/reaction-packs/": {
+      "get": {
+        "description": "",
+        "operationId": "get_{profileID}reaction-packs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
