@@ -882,13 +882,50 @@
         "security": []
       }
     },
-    "/{profileID}/sticker-packs/": {
+    "/<profileID>/sticker-packs/": {
       "get": {
         "description": "",
         "operationId": "get_<profileID>sticker-packs",
         "responses": {
           "200": {
             "description": ""
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/{profileID}/sticker-packs/": {
+      "get": {
+        "description": "",
+        "operationId": "get_<profileID>sticker-packs",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "sticker_pack_id": "afd56669-2f3a-4610-bb81-1f309f9a5c78",
+                          "created_at": "2025-09-15T14:14:08.480554Z",
+                          "removed_at": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -900,7 +937,19 @@
             },
             "required": true
           }
-        ]
+        ],
+        "x-readme": {
+          "code-samples": [
+            {
+              "code": "",
+              "language": "shell",
+              "name": ""
+            }
+          ],
+          "samples-languages": [
+            "shell"
+          ]
+        }
       }
     }
   },
