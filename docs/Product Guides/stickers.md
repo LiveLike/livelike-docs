@@ -18,7 +18,7 @@ Stickers are images or animations that can be used inside of [chat messages](doc
 
 ## Sticker Packs
 
-Stickers are collected into *packs* that can usually have a shared theme or art style. Usually packs are focused on particular concepts such as:
+Stickers are collected into _packs_ that can usually have a shared theme or art style. Usually packs are focused on particular concepts such as:
 
 * Players
 * Teams
@@ -26,9 +26,7 @@ Stickers are collected into *packs* that can usually have a shared theme or art 
 * Crowd Reactions
 * Personalities
 
-<Image title="sticker kb behavior.gif" alt={563} width="auto" src="https://files.readme.io/5239f1d-sticker_kb_behavior.gif">
-  Each pack has its own icon that will help people find it in their soft keyboards.
-</Image>
+<Image align="center" alt={563} border={false} caption="Each pack has its own icon that will help people find it in their soft keyboards." title="sticker kb behavior.gif" src="https://files.readme.io/5239f1d-sticker_kb_behavior.gif" width="auto" />
 
 Many packs can be set up for an app, and then chats in that app can be configured individually to use different combinations of packs, or they can all share the same packs.
 
@@ -41,3 +39,9 @@ Custom stickers can be created by your own team, following the [Chat Asset Guide
 ## Sponsorship
 
 Custom stickers are also opportunities for brand partnerships and sponsorships. LiveLike can deliver [analytics and reports](doc:analytics-overview) that provide insights into when and how users interact with stickers.
+
+## Exclusive Stickers
+
+Exclusive stickers are assigned to specific users so that they can distinguish themselves in the communities they are part of.
+
+<br />
