@@ -1125,6 +1125,35 @@
           }
         ]
       }
+    },
+    "/{profileID}/reaction-packs/{ReactionPackID}/": {
+      "delete": {
+        "description": "",
+        "operationId": "delete_{profileID}reaction-packs{ReactionPackID}",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "ReactionPackID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
