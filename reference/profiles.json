@@ -996,18 +996,18 @@
             "name": "created_since",
             "schema": {
               "type": "string",
-              "format": "date"
+              "format": "date-time"
             },
-            "description": "Date in YYYY-MM-DD format"
+            "description": "DateTime in YYYY-MM-DD format"
           },
           {
             "in": "query",
             "name": "created_until",
             "schema": {
               "type": "string",
-              "format": "date"
+              "format": "date-time"
             },
-            "description": "Date in YYYY-MM-DD format"
+            "description": "DateTime in YYYY-MM-DD format"
           }
         ],
         "x-readme": {
