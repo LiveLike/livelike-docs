@@ -1123,7 +1123,21 @@
             },
             "required": true
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reaction_pack_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{profileID}/reaction-packs/{ReactionPackID}/": {
