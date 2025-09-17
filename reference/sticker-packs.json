@@ -146,7 +146,8 @@
                       "file": "https://cf-blast-storage-dig-us-east-1.livelikeblast.com/stickers/858602ac-56e7-44a1-92f4-1aceb8bc5a6d.png",
                       "mimetype": "image/png",
                       "stickers_url": "https://cf-blast-dig.livelikecdn.com/api/v1/stickers/?pack_id=6e0f5b28-86aa-489f-97cc-8ccf3118e42b",
-                      "stickers": []
+                      "stickers": [],
+                      "is_exclusive": false
                     }
                   }
                 }
