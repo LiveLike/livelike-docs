@@ -160,7 +160,117 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"count\": 4,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/\",\n      \"client_id\": \"J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf\",\n      \"name\": \"Goat Reactions\",\n      \"emojis_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n      \"emojis\": [\n        {\n          \"id\": \"81211a7e-d906-4399-8b8e-fe765ee9282b\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/81211a7e-d906-4399-8b8e-fe765ee9282b/\",\n          \"name\": \"Angry\",\n          \"pack_id\": \"7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/\",\n          \"pack_name\": \"Goat Reactions\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/1ed69071-debb-4979-a382-4fa6fb6faa85.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        },\n        {\n          \"id\": \"cc5f8d14-d915-463e-8608-2701d1f133b8\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/cc5f8d14-d915-463e-8608-2701d1f133b8/\",\n          \"name\": \"Crying\",\n          \"pack_id\": \"7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/\",\n          \"pack_name\": \"Goat Reactions\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/8dd11967-3a2e-4281-bd60-f7859bc0983d.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        },\n        {\n          \"id\": \"256855cd-7afa-4bb5-a949-463ffa4227c8\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/256855cd-7afa-4bb5-a949-463ffa4227c8/\",\n          \"name\": \"Smiling\",\n          \"pack_id\": \"7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/\",\n          \"pack_name\": \"Goat Reactions\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/cd11d9d7-b338-472e-98b9-d028aeb85457.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        },\n        {\n          \"id\": \"58ae85e6-638d-409b-aa67-719c1dd6f64c\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/58ae85e6-638d-409b-aa67-719c1dd6f64c/\",\n          \"name\": \"Hearts\",\n          \"pack_id\": \"7b600d22-c4a3-42b2-97c4-4cc0a3b87499\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/\",\n          \"pack_name\": \"Goat Reactions\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/76b370d3-d150-4c49-88ac-ba149ca3fff2.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        }\n      ]\n    },\n    {\n      \"id\": \"f488d64a-bf70-4ac5-b8a7-1bb8ad337e13\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/f488d64a-bf70-4ac5-b8a7-1bb8ad337e13/\",\n      \"client_id\": \"J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf\",\n      \"name\": \"Test Reactions - 1713976492\",\n      \"emojis_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=f488d64a-bf70-4ac5-b8a7-1bb8ad337e13\",\n      \"emojis\": []\n    },\n    {\n      \"id\": \"39dc3c15-0a64-4b58-91b5-dcde9ef6584f\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/39dc3c15-0a64-4b58-91b5-dcde9ef6584f/\",\n      \"client_id\": \"J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf\",\n      \"name\": \"Test Reactions - 1713976498\",\n      \"emojis_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=39dc3c15-0a64-4b58-91b5-dcde9ef6584f\",\n      \"emojis\": []\n    },\n    {\n      \"id\": \"dd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/\",\n      \"client_id\": \"J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf\",\n      \"name\": \"Test Reactions - 1713976545\",\n      \"emojis_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=dd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n      \"emojis\": [\n        {\n          \"id\": \"ac429bc6-2278-4fd2-8b45-dd5ec96b4217\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/ac429bc6-2278-4fd2-8b45-dd5ec96b4217/\",\n          \"name\": \"Emoji - 1713977511\",\n          \"pack_id\": \"dd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/\",\n          \"pack_name\": \"Test Reactions - 1713976545\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/e951dfb4-8881-4359-aecb-eddd37970f0d.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        },\n        {\n          \"id\": \"61ee16bd-2315-4204-acbd-c232cc338a13\",\n          \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/61ee16bd-2315-4204-acbd-c232cc338a13/\",\n          \"name\": \"Emoji - 1713977528\",\n          \"pack_id\": \"dd2cc73b-662b-4914-bb1c-341a0ce34a79\",\n          \"pack_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/\",\n          \"pack_name\": \"Test Reactions - 1713976545\",\n          \"file\": \"https://cf-blast-storage.livelikecdn.com/assets/984a9bc4-ff46-4f7b-b174-78187a52e103.png\",\n          \"order_index\": 0,\n          \"mimetype\": \"image/png\"\n        }\n      ]\n    }\n  ]\n}\n"
+                    "value": {
+                      "count": 4,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/",
+                          "client_id": "J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf",
+                          "name": "Goat Reactions",
+                          "is_exclusive": false,
+                          "emojis_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                          "emojis": [
+                            {
+                              "id": "81211a7e-d906-4399-8b8e-fe765ee9282b",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/81211a7e-d906-4399-8b8e-fe765ee9282b/",
+                              "name": "Angry",
+                              "pack_id": "7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/",
+                              "pack_name": "Goat Reactions",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/1ed69071-debb-4979-a382-4fa6fb6faa85.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            },
+                            {
+                              "id": "cc5f8d14-d915-463e-8608-2701d1f133b8",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/cc5f8d14-d915-463e-8608-2701d1f133b8/",
+                              "name": "Crying",
+                              "pack_id": "7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/",
+                              "pack_name": "Goat Reactions",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/8dd11967-3a2e-4281-bd60-f7859bc0983d.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            },
+                            {
+                              "id": "256855cd-7afa-4bb5-a949-463ffa4227c8",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/256855cd-7afa-4bb5-a949-463ffa4227c8/",
+                              "name": "Smiling",
+                              "pack_id": "7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/",
+                              "pack_name": "Goat Reactions",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/cd11d9d7-b338-472e-98b9-d028aeb85457.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            },
+                            {
+                              "id": "58ae85e6-638d-409b-aa67-719c1dd6f64c",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/58ae85e6-638d-409b-aa67-719c1dd6f64c/",
+                              "name": "Hearts",
+                              "pack_id": "7b600d22-c4a3-42b2-97c4-4cc0a3b87499",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/7b600d22-c4a3-42b2-97c4-4cc0a3b87499/",
+                              "pack_name": "Goat Reactions",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/76b370d3-d150-4c49-88ac-ba149ca3fff2.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "f488d64a-bf70-4ac5-b8a7-1bb8ad337e13",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/f488d64a-bf70-4ac5-b8a7-1bb8ad337e13/",
+                          "client_id": "J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf",
+                          "name": "Test Reactions - 1713976492",
+                          "is_exclusive": false,
+                          "emojis_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=f488d64a-bf70-4ac5-b8a7-1bb8ad337e13",
+                          "emojis": []
+                        },
+                        {
+                          "id": "39dc3c15-0a64-4b58-91b5-dcde9ef6584f",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/39dc3c15-0a64-4b58-91b5-dcde9ef6584f/",
+                          "client_id": "J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf",
+                          "name": "Test Reactions - 1713976498",
+                          "is_exclusive": false,
+                          "emojis_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=39dc3c15-0a64-4b58-91b5-dcde9ef6584f",
+                          "emojis": []
+                        },
+                        {
+                          "id": "dd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/",
+                          "client_id": "J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf",
+                          "name": "Test Reactions - 1713976545",
+                          "is_exclusive": false,
+                          "emojis_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/?client_id=J97YLOHQ5sMGzww1BHivAEP0dUIfRgFl6ilg3asf&pack_id=dd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                          "emojis": [
+                            {
+                              "id": "ac429bc6-2278-4fd2-8b45-dd5ec96b4217",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/ac429bc6-2278-4fd2-8b45-dd5ec96b4217/",
+                              "name": "Emoji - 1713977511",
+                              "pack_id": "dd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/",
+                              "pack_name": "Test Reactions - 1713976545",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/e951dfb4-8881-4359-aecb-eddd37970f0d.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            },
+                            {
+                              "id": "61ee16bd-2315-4204-acbd-c232cc338a13",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-emojis/61ee16bd-2315-4204-acbd-c232cc338a13/",
+                              "name": "Emoji - 1713977528",
+                              "pack_id": "dd2cc73b-662b-4914-bb1c-341a0ce34a79",
+                              "pack_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/dd2cc73b-662b-4914-bb1c-341a0ce34a79/",
+                              "pack_name": "Test Reactions - 1713976545",
+                              "file": "https://cf-blast-storage.livelikecdn.com/assets/984a9bc4-ff46-4f7b-b174-78187a52e103.png",
+                              "order_index": 0,
+                              "mimetype": "image/png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
