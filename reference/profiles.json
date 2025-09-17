@@ -1103,6 +1103,29 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "reaction_pack_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            },
+            "description": "DateTime in YYYY-MM-DDTHH:MM:SS format"
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            },
+            "description": "DateTime in YYYY-MM-DDTHH:MM:SS format"
           }
         ]
       },
