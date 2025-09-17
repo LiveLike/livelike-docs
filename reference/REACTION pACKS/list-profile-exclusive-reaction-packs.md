@@ -4,7 +4,7 @@ api:
   file: profiles.json
   operationId: get_{profileID}reaction-packs
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
