@@ -940,6 +940,27 @@
           ]
         }
       }
+    },
+    "/{ProfileID}/sticker-packs/": {
+      "get": {
+        "description": "",
+        "operationId": "get_{ProfileID}sticker-packs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
