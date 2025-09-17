@@ -1,1 +1,224 @@
-{"openapi":"3.1.0","info":{"title":"sticker-packs","version":"1"},"servers":[{"url":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/"}],"components":{"securitySchemes":{}},"security":[{}],"paths":{"/":{"post":{"summary":"Create a Sticker Pack","description":"","operationId":"create-a-sticker-pack","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","required":["name","file","client_id"],"properties":{"name":{"type":"string","description":"Sticker Pack Name"},"file":{"type":"string","description":"Icon file for the Sticker Pack","format":"binary"},"client_id":{"type":"string","description":"Application Client ID"}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"7f5b25aa-5d33-459e-8112-af91f11ce95a\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/7f5b25aa-5d33-459e-8112-af91f11ce95a/\",\n  \"client_id\": \"P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"name\": \"My Sticker Pack\",\n  \"file\": \"https://cf-blast-storage.livelikecdn.com/stickers/70f8548d-d95c-470a-a6ec-de5beff19260.png\",\n  \"mimetype\": \"image/png\",\n  \"stickers\": []\n}\n"}},"schema":{"type":"object","properties":{"id":{"type":"string","example":"7f5b25aa-5d33-459e-8112-af91f11ce95a"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/7f5b25aa-5d33-459e-8112-af91f11ce95a/"},"client_id":{"type":"string","example":"P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"},"name":{"type":"string","example":"My Sticker Pack"},"file":{"type":"string","example":"https://cf-blast-storage.livelikecdn.com/stickers/70f8548d-d95c-470a-a6ec-de5beff19260.png"},"mimetype":{"type":"string","example":"image/png"},"stickers":{"type":"array"}}}}}},"400":{"description":"400","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}}},"deprecated":false,"x-readme":{"code-samples":[{"language":"curl","code":"curl -X POST -F name=\"My Sticker Pack\" -F file=@icon_file.png -F client_id=P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS https://cf-blast.livelikecdn.com/api/v1/sticker-packs/"}],"samples-languages":["curl"]}}},"//":{"post":{"description":"","operationId":"post_{id}","responses":{"200":{"description":"","content":{"application/json":{"examples":{"New Example":{"summary":"New Example","value":{"id":"6e0f5b28-86aa-489f-97cc-8ccf3118e42b","url":"https://cf-blast-dig.livelikecdn.com/api/v1/sticker-packs/6e0f5b28-86aa-489f-97cc-8ccf3118e42b/","client_id":"lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje","name":"check12","file":"https://cf-blast-storage-dig-us-east-1.livelikeblast.com/stickers/858602ac-56e7-44a1-92f4-1aceb8bc5a6d.png","mimetype":"image/png","stickers_url":"https://cf-blast-dig.livelikecdn.com/api/v1/stickers/?pack_id=6e0f5b28-86aa-489f-97cc-8ccf3118e42b","stickers":[]}}}}}},"403":{"description":"Forbidden","content":{"application/json":{"examples":{"New Example 1":{"value":{"detail":"Authentication credentials were not provided.","error_code":"MISSING_AUTH_CREDENTIALS"}}}}}}},"parameters":[{"name":"Authorization","in":"header","required":false,"description":"Bearer Token","schema":{"type":"string","default":""}}],"requestBody":{"content":{"application/json":{"schema":{"properties":{"client_id":{"type":"string"},"name":{"type":"string"},"file":{"type":"string","format":"binary"}},"type":"object","required":["client_id","name","file"]}}}}}}},"x-readme":{"headers":[],"explorer-enabled":true,"proxy-enabled":true},"x-readme-fauxas":true}
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "sticker-packs",
+    "version": "1"
+  },
+  "servers": [
+    {
+      "url": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/"
+    }
+  ],
+  "components": {
+    "securitySchemes": {}
+  },
+  "security": [
+    {}
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Create a Sticker Pack",
+        "description": "",
+        "operationId": "create-a-sticker-pack",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "file",
+                  "client_id"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Sticker Pack Name"
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "Icon file for the Sticker Pack",
+                    "format": "binary"
+                  },
+                  "client_id": {
+                    "type": "string",
+                    "description": "Application Client ID"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"7f5b25aa-5d33-459e-8112-af91f11ce95a\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/7f5b25aa-5d33-459e-8112-af91f11ce95a/\",\n  \"client_id\": \"P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"name\": \"My Sticker Pack\",\n  \"file\": \"https://cf-blast-storage.livelikecdn.com/stickers/70f8548d-d95c-470a-a6ec-de5beff19260.png\",\n  \"mimetype\": \"image/png\",\n  \"stickers\": []\n}\n"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "7f5b25aa-5d33-459e-8112-af91f11ce95a"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/7f5b25aa-5d33-459e-8112-af91f11ce95a/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "My Sticker Pack"
+                    },
+                    "file": {
+                      "type": "string",
+                      "example": "https://cf-blast-storage.livelikecdn.com/stickers/70f8548d-d95c-470a-a6ec-de5beff19260.png"
+                    },
+                    "mimetype": {
+                      "type": "string",
+                      "example": "image/png"
+                    },
+                    "stickers": {
+                      "type": "array"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "x-readme": {
+          "code-samples": [
+            {
+              "language": "curl",
+              "code": "curl -X POST -F name=\"My Sticker Pack\" -F file=@icon_file.png -F client_id=P9qSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS https://cf-blast.livelikecdn.com/api/v1/sticker-packs/"
+            }
+          ],
+          "samples-languages": [
+            "curl"
+          ]
+        }
+      }
+    },
+    "//": {
+      "post": {
+        "description": "",
+        "operationId": "post_{id}",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "id": "6e0f5b28-86aa-489f-97cc-8ccf3118e42b",
+                      "url": "https://cf-blast-dig.livelikecdn.com/api/v1/sticker-packs/6e0f5b28-86aa-489f-97cc-8ccf3118e42b/",
+                      "client_id": "lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje",
+                      "name": "check12",
+                      "file": "https://cf-blast-storage-dig-us-east-1.livelikeblast.com/stickers/858602ac-56e7-44a1-92f4-1aceb8bc5a6d.png",
+                      "mimetype": "image/png",
+                      "stickers_url": "https://cf-blast-dig.livelikecdn.com/api/v1/stickers/?pack_id=6e0f5b28-86aa-489f-97cc-8ccf3118e42b",
+                      "stickers": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "New Example 1": {
+                    "value": {
+                      "detail": "Authentication credentials were not provided.",
+                      "error_code": "MISSING_AUTH_CREDENTIALS"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "description": "Bearer Token",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "is_exclusive": {
+                    "type": "boolean",
+                    "default": "false",
+                    "description": "Designate a sticker pack to be used as an exclusive pack"
+                  }
+                },
+                "type": "object",
+                "required": [
+                  "client_id",
+                  "name",
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-readme": {
+    "headers": [],
+    "explorer-enabled": true,
+    "proxy-enabled": true
+  },
+  "x-readme-fauxas": true
+}
