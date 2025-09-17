@@ -1,5 +1,5 @@
 ---
-title: List profile exclusive sticker packs
+title: List Profile Exclusive Sticker Packs
 api:
   file: profiles.json
   operationId: get_{ProfileID}sticker-packs
