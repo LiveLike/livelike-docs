@@ -1105,6 +1105,25 @@
             "required": true
           }
         ]
+      },
+      "post": {
+        "description": "",
+        "operationId": "post_{profileID}reaction-packs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
