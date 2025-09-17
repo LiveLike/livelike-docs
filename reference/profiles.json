@@ -1022,6 +1022,25 @@
             "shell"
           ]
         }
+      },
+      "post": {
+        "description": "",
+        "operationId": "post_{ProfileID}sticker-packs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     },
     "/{ProfileID}/sticker-packs/{StickerPackID}/": {
