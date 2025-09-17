@@ -42,6 +42,6 @@ Custom stickers are also opportunities for brand partnerships and sponsorships. 
 
 ## Exclusive Stickers
 
-Exclusive stickers are assigned to specific users so that they can distinguish themselves in the communities they are part of.
+Exclusive stickers are assigned to specific users so that they can distinguish themselves in the communities they are part of.  An exclusive sticker pack can be assigned to multiple profiles and only those users will be able to use them.
 
 <br />
