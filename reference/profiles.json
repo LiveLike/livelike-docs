@@ -952,11 +952,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "properties": {
-                    "property1": {
-                      "type": "string"
-                    }
-                  }
+                  "properties": {}
                 },
                 "examples": {
                   "New Example": {
