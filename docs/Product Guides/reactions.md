@@ -45,6 +45,10 @@ A typical reaction workflow involves setting up reaction packs, mapping those pa
 
 Imagine you want to allow your users to react to important moments in videos. Each video would have a reaction space associated with it, and moments inside the video would be represented by targets within the video's reaction space. Each moment would need some kind of unique identifier, so timecodes, chapters, or any other ID from your system would work as long as it's unique inside the reaction space.
 
+## Exclusive Reaction Packs
+
+Exclusive reaction packs are assigned to specific users so that they can distinguish themselves in the communities they are part of.  An exclusive reaction pack can be assigned to multiple profiles and only those users will be able to use them.
+
 ## Reactions Reference
 
 1. Reaction Pack API
@@ -216,7 +220,7 @@ sdk.reaction.deleteReactionSpace(reactionSpaceID: spaceID) { result in
 
 #### List Reaction Spaces
 
-This could be used to get list of reaction spaces in an application 
+This could be used to get list of reaction spaces in an application
 
 ```javascript
 LiveLike.getReactionSpaces().then(({results}) => console.log(results))
@@ -442,7 +446,7 @@ This API requires:
 
 1. reaction space Id
 2. reaction Id of a reaction from a reaction pack
-3. target Id which is unique identifier of the subjected entity being reacted upon 
+3. target Id which is unique identifier of the subjected entity being reacted upon
 
 ```javascript
 LiveLike.addUserReaction({
@@ -535,8 +539,8 @@ reactionSession.getUserReactions(
 
 #### Count User Reactions by target IDs
 
-This API could be used in case you just need reaction with total count for a given target Id.\
-You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.    
+This API could be used in case you just need reaction with total count for a given target Id.
+You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.
 
 ```javascript
 LiveLike.getUserReactionsCount({
