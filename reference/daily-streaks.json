@@ -80,6 +80,29 @@
                       }
                     }
                   }
+                },
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "id": "8c479fe1-761d-4ef3-8d61-91c95066fdd2",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/daily-streaks/8c479fe1-761d-4ef3-8d61-91c95066fdd2/",
+                      "name": "Delete streak test",
+                      "reward_action_key": "poll-voted",
+                      "timezone": "Europe/London",
+                      "created_at": "2025-09-18T15:49:16.550946Z",
+                      "period": "daily",
+                      "is_active": true,
+                      "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "end_at": null,
+                      "attributes": [
+                        {
+                          "key": "key1",
+                          "value": "value1"
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
