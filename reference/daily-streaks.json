@@ -12,15 +12,61 @@
   "tags": [],
   "paths": {
     "/new-endpoint": {
-      "get": {
+      "post": {
         "summary": "New Endpoint",
         "description": "This is your first endpoint! Edit this page to start documenting your API.",
         "operationId": "get_new-endpoint",
         "responses": {
-          "200": {
+          "201": {
             "description": "Successful response"
           }
-        }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the Daily Streak"
+                  },
+                  "reward_action_key": {
+                    "type": "string",
+                    "description": "Reward action key to trigger this daily streak for users."
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "reward_action_key",
+                  "client_id"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       }
     },
     "/new-endpoint-1": {
