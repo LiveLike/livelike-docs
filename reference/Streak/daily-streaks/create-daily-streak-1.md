@@ -4,7 +4,7 @@ api:
   file: engagement-suite.json
   operationId: post_daily-streaks
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
