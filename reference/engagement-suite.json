@@ -32227,7 +32227,20 @@
                         "type": "object"
                       }
                     }
-                  }
+                  },
+                  "required": [
+                    "id",
+                    "url",
+                    "name",
+                    "client_id",
+                    "reward_action_key",
+                    "timezone",
+                    "created_at",
+                    "period",
+                    "is_active",
+                    "end_at",
+                    "attributes"
+                  ]
                 },
                 "examples": {
                   "New Example": {
