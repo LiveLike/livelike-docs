@@ -1,5 +1,5 @@
 ---
-title: Create Daily Streak
+title: post
 api:
   file: daily-streaks.json
   operationId: post_new-endpoint-1
