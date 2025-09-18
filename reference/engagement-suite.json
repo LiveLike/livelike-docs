@@ -32180,16 +32180,38 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "name": {
-                      "type": "string",
-                      "description": "Name of the Daily Streak"
+                    "id": {
+                      "type": "string"
                     },
-                    "reward_action_key": {
-                      "type": "string",
-                      "description": "Reward action key to trigger this daily streak for users."
+                    "url": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
                     },
                     "client_id": {
                       "type": "string"
+                    },
+                    "reward_action_key": {
+                      "type": "string"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "period": {
+                      "type": "string",
+                      "default": "daily"
+                    },
+                    "is_active": {
+                      "type": "string"
+                    },
+                    "end_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "default": "null"
                     },
                     "attributes": {
                       "type": "array",
@@ -32205,12 +32227,7 @@
                         "type": "object"
                       }
                     }
-                  },
-                  "required": [
-                    "name",
-                    "reward_action_key",
-                    "client_id"
-                  ]
+                  }
                 },
                 "examples": {
                   "New Example": {
@@ -32224,7 +32241,7 @@
                       "created_at": "2025-09-18T15:57:48.831878Z",
                       "period": "daily",
                       "is_active": true,
-                      "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "client_id": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS",
                       "end_at": null,
                       "attributes": [
                         {
@@ -32249,7 +32266,59 @@
             "required": true,
             "description": "Producer bearer access token."
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the Daily Streak"
+                  },
+                  "reward_action_key": {
+                    "type": "string",
+                    "description": "Reward action key to trigger this daily streak for users."
+                  },
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "default": "Europe/London",
+                    "description": "Timezone to align the streak's time periods"
+                  },
+                  "end_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "default": "null",
+                    "description": "ISO DateTime when this streak will end."
+                  }
+                },
+                "required": [
+                  "name",
+                  "reward_action_key",
+                  "client_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
