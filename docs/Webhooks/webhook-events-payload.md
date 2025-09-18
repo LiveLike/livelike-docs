@@ -359,7 +359,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.profile_id`      | `string`   | Unique identifier for the mentioned profile                   |
 | `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned_by profile                |
 | `data.comment_id`      | `string`   | Unique identifier for the comment                             |
-| `data.comment_text`    | `string`   | Text content of the comment in which mentionws were created   |
+| `data.comment_text`    | `string`   | Text content of the comment in which mentions were created    |
 | `data.start_index`     | `string`   | Starting index of the mention placeholder in the comment text |
 | `data.end_index`       | `string`   | Ending index of the mention placeholder in the comment text   |
 | `data.client_id`       | `string`   | Client-specific identifier                                    |
@@ -399,6 +399,44 @@ This document details the webhook events sent by our system, including their pay
 | `data.client_id`         | `string`   | Client-specific identifier                                 |
 | `data.created_at`        | `datetime` | Timestamp when the profile relationship was created        |
 | `created_at`             | `datetime` | Timestamp when the event was created                       |
+
+## `chat-mention-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "53158ddc-fb10-422e-9b14-60961aebd251",
+  "event": "chat-mention-created",
+  "data": {
+    "profile_id": "947d3a03-f87f-4146-8e32-043db3fdd25f",
+    "message_id": "ed247acc-36bf-444c-a9cc-da495b787fc1",
+    "message": "Test Chat Message asjhfbkjhsabfgkjhsabf",
+    "mentioned_by_id": "413739c8-a040-4832-ba44-186e05d590ca",
+    "start_index": 10,
+    "end_index": 15,
+    "created_at": "2025-09-18T10:19:07.989634Z",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+  },
+  "created_at": "2025-09-18T10:19:09.263052+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name             | Type       | Description                                                     |
+| :--------------------- | :--------- | :-------------------------------------------------------------- |
+| `id`                   | `string`   | Unique identifier for the event                                 |
+| `event`                | `string`   | Event type {`chat-mention-created`}                             |
+| `data.profile_id`      | `string`   | Unique identifier for the mentioned profile                     |
+| `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned_by profile                  |
+| `data.message_id`      | `string`   | Unique identifier for the chat                                  |
+| `data.message`         | `string`   | Text content of the chat message in which mentions were created |
+| `data.start_index`     | `string`   | Starting index of the mention placeholder in the message text   |
+| `data.end_index`       | `string`   | Ending index of the mention placeholder in the message text     |
+| `data.client_id`       | `string`   | Client-specific identifier                                      |
+| `data.created_at`      | `datetime` | Timestamp when the chat mention was created                     |
+| `created_at`           | `datetime` | Timestamp when the event was created                            |
 
 ***
 
