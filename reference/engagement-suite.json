@@ -32243,8 +32243,8 @@
                   ]
                 },
                 "examples": {
-                  "New Example": {
-                    "summary": "New Example",
+                  "Daily Streak": {
+                    "summary": "Daily Streak",
                     "value": {
                       "id": "879fef7a-d403-4c59-ad4b-d3a7b31f53aa",
                       "url": "https://cf-blast.livelikecdn.com/api/v1/daily-streaks/879fef7a-d403-4c59-ad4b-d3a7b31f53aa/",
@@ -32331,6 +32331,18 @@
               }
             }
           }
+        },
+        "x-readme": {
+          "code-samples": [
+            {
+              "code": "",
+              "language": "shell",
+              "name": ""
+            }
+          ],
+          "samples-languages": [
+            "shell"
+          ]
         }
       }
     }
