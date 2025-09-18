@@ -32167,6 +32167,80 @@
           }
         ]
       }
+    },
+    "/daily-streaks/": {
+      "post": {
+        "description": "",
+        "operationId": "post_daily-streaks",
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Name of the Daily Streak"
+                    },
+                    "reward_action_key": {
+                      "type": "string",
+                      "description": "Reward action key to trigger this daily streak for users."
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "reward_action_key",
+                    "client_id"
+                  ]
+                },
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "id": "879fef7a-d403-4c59-ad4b-d3a7b31f53aa",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/daily-streaks/879fef7a-d403-4c59-ad4b-d3a7b31f53aa/",
+                      "name": "Delete streak test",
+                      "reward_action_key": "poll-voted",
+                      "timezone": "Europe/London",
+                      "created_at": "2025-09-18T15:57:48.831878Z",
+                      "period": "daily",
+                      "is_active": true,
+                      "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "end_at": null,
+                      "attributes": [
+                        {
+                          "key": "key1",
+                          "value": "value1"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "x-readme": {
