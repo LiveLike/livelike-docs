@@ -32239,7 +32239,17 @@
             }
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Producer bearer access token."
+          }
+        ]
       }
     }
   },
