@@ -1,6 +1,5 @@
 ---
-title: New Endpoint
-excerpt: This is your first endpoint! Edit this page to start documenting your API.
+title: Create Daily Streak
 api:
   file: daily-streaks.json
   operationId: get_new-endpoint
