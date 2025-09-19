@@ -24,7 +24,8 @@ metadata:
 
 ### Chat
 
-Chat is designed for real-time audience interaction. You can set up public rooms to bring everyone together or private rooms for smaller groups. Moderation controls — such as profanity filters, user bans, and automated checks — ensure conversations stay safe and on-topic. The chat UI can be branded to fit seamlessly into your app.
+Chat is designed for real-time audience interaction. You can set up public rooms to bring everyone together or private rooms for smaller groups. 
+Moderation controls such as profanity filters, user bans, and automated checks ensure conversations stay safe and on-topic. The chat UI can be branded to fit seamlessly into your app.
 
 #### Highlights:
 
@@ -35,7 +36,8 @@ Chat is designed for real-time audience interaction. You can set up public rooms
 
 ### Comments
 
-The comments system is built for structured, ongoing conversations. Users can post, reply, and react to comments, with support for media, mentions, and threaded discussions. Moderation workflows help you control quality, while analytics give you insights into engagement.
+The comments system is built for structured, ongoing conversations. Users can post, reply, and react to comments, with support for media, mentions, and threaded discussions. 
+Moderation workflows help you control quality, while analytics give you insights into engagement.
 
 #### Highlights:
 
