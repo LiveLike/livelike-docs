@@ -30968,11 +30968,12 @@
             }
           },
           {
-            "name": "profile_id",
+            "name": "assigned_to_id",
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Livelike profile uuid"
           }
         ],
         "responses": {
