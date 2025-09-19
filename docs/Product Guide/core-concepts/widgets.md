@@ -18,10 +18,10 @@ LiveLike widgets are key to the Engagement Suite, turning passive viewing into a
 
 Interactive elements published during live streams or on-demand videos, widgets are:
 
-*   **Ready-made:** Built-in UX for quick deployment.
-*   **Configurable:** Easy setup via Producer Suite or REST API.
-*   **Flexible:** Adaptable to live, VOD, or standalone experiences.
-*   **Customizable:** Match your brand's design.
+* **Ready-made:** Built-in UX for quick deployment.
+* **Configurable:** Easy setup via Producer Suite or REST API.
+* **Flexible:** Adaptable to live, VOD, or standalone experiences.
+* **Customizable:** Match your brand's design.
 
 Each widget is linked to a Program, which groups widgets, schedules, and metadata for organization.
 
@@ -29,35 +29,35 @@ Each widget is linked to a Program, which groups widgets, schedules, and metadat
 
 ### Interactive Widgets
 
-*   **Polls:** Collect real-time opinions (text/images).
-*   **Quizzes/Trivia:** Test knowledge, reward answers.
-*   **Predictions:** Viewers guess outcomes.
-*   **Alerts:** Deliver updates, offers, sponsor content.
-*   **Cheer Meters:** Capture live excitement.
-*   **Image Sliders:** Measure sentiment visually.
+* **Polls:** Collect real-time opinions (text/images).
+* **Quizzes/Trivia:** Test knowledge, reward answers.
+* **Predictions:** Viewers guess outcomes.
+* **Alerts:** Deliver updates, offers, sponsor content.
+* **Cheer Meters:** Capture live excitement.
+* **Image Sliders:** Measure sentiment visually.
 
 ### Social Widgets
 
-*   **Chat:** Public or group conversations.
-*   **Comments:** Collect open-ended feedback.
-*   **Reactions:** Express emotions with icons.
+* **Chat:** Public or group conversations.
+* **Comments:** Collect open-ended feedback.
+* **Reactions:** Express emotions with icons.
 
 ### Gamification Widgets
 
-*   **Leaderboards:** Rank users by participation.
-*   **Rewards:** Distribute virtual incentives.
-*   **Achievements:** Recognize milestones.
+* **Leaderboards:** Rank users by participation.
+* **Rewards:** Distribute virtual incentives.
+* **Achievements:** Recognize milestones.
 
 ## Presentation Modes
 
 Widgets appear in three main formats:
 
-*   **Popup Widgets:** Appear one at a time, limited window (e.g., polls, trivia).
-*   **Timeline Widgets:** Scrollable feed, revisit past widgets (e.g., live blogs).
-*   **Embedded Widgets:** Directly integrated into web pages (e.g., standalone activations).
+* **Popup Widgets:** Appear one at a time, limited window (e.g., polls, trivia).
+* **Timeline Widgets:** Scrollable feed, revisit past widgets (e.g., live blogs).
+* **Embedded Widgets:** Directly integrated into web pages (e.g., standalone activations).
 
 ## How Widgets Work
 
-*   **Easy Implementation:** Quick setup via Producer Suite (CMS) or REST API; flexible deployment.
-*   **Real-Time Interaction:** Instant participation, live results, spoiler prevention.
-*   **Engagement Features:** Points, rewards, social sharing, full branding, analytics.
+* **Easy Implementation:** Quick setup via Producer Suite (CMS) or REST API; flexible deployment.
+* **Real-Time Interaction:** Instant participation, live results, spoiler prevention.
+* **Engagement Features:** Points, rewards, social sharing, full branding, analytics.
