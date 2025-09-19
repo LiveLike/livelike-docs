@@ -27025,7 +27025,8 @@
                     "description": "resource-key for scope of the assignment"
                   },
                   "profile_custom_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "profile_id or profile_custom_id is required."
                   }
                 }
               }
