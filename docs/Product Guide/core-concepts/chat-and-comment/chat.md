@@ -22,22 +22,10 @@ metadata:
 * Report offensive messages
 * Moderator tools (mute, delete, block, review reports)
 
-<Cards columns={4}>
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
-  </Card>
+<Callout icon="📘" theme="info">
+  NOTE: Features like device push notifications, read receipts, typing indicators, and presence indicators are not yet provided by the SDK and require custom development.
+</Callout>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
-  </Card>
+##
 
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
-  </Card>
-
-  <Card title="Fourth Card" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
-  </Card>
-</Cards>
-
-Note: Features like push notifications, read receipts, typing indicators, and presence are not provided out-of-the-box. These can be added with custom development.
+<br />
