@@ -32388,25 +32388,16 @@
         ]
       }
     },
-    "/applications/{client-id}/daily-streaks/": {
+    "/abcd/": {
       "get": {
         "description": "",
-        "operationId": "get_applications{client-id}daily-streaks",
+        "operationId": "get_abcd",
         "responses": {
           "200": {
             "description": ""
           }
         },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
+        "parameters": []
       }
     }
   },
