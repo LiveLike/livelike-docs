@@ -1,6 +1,6 @@
 ---
 title: Introduction
-excerpt: ''
+excerpt: Welcome to the LiveLike Engagement Suite Documentation
 deprecated: false
 hidden: false
 metadata:
@@ -17,27 +17,43 @@ next:
       slug: concepts
       title: Core Concepts
 ---
-Welcome to the LiveLike Engagement Suite documentation hub where you can find all the information you need to get started with adding interactivity to your apps.
+The LiveLike Engagement Suite empowers you to add rich, interactive experiences to your apps and websites. Whether you’re enhancing a live video stream or building a standalone engagement layer, our SDKs and APIs provide everything you need to create dynamic, real-time user experiences.
 
-The LiveLike SDK enhances live video experiences in mobile apps and on the web. Interactive polls, quizzes, mini-games, and more can be broadcast alongside the video without spoiling the action. The users watching and playing along can chat with everyone else, or just their friends, while they earn points and collect rewards for participating.
+With LiveLike, your audience can:
+
+* Participate in polls, quizzes, predictions, and mini-games
+* Engage in real-time chat with friends or the broader community
+* Earn points and rewards for participation
+* Stay immersed without missing a moment of the action
 
 **Product Documentation**
+To get started, explore our Core Concepts or dive directly into your platform of choice:
 
-To get started, you can continue to the  [Core Concepts](doc:concepts)  or pick your platform below and start building!
+* iOS SDK
+* Android SDK
+* Web SDK
+* REST APIs
 
 **Technical Documentation**
+Our SDKs provide ready-to-use UI components for fast integration, while our REST API allows you to:
 
-We support several platforms through our SDK, which include end-to-end UI to get you started. You can also leverage our REST API to create your own user experiences for platforms we do not currently offer or to automate other aspects of our product experience.
-
-* [iOS SDK](doc:ios-basic-integration)
-* [Android SDK](doc:android-basic-integration)
-* [Web SDK](doc:getting-started-with-the-web-sdk)
-* [REST APIs](doc:rest-api-getting-started)
+* Build custom user experiences for any platform
+* Automate engagement workflows
+* Extend functionality beyond what SDKs offer out-of-the-box
 
 **Producer Suite**
+The Producer Suite is your control center for managing and broadcasting interactive content. Learn how to:
 
-[Get to know](doc:ps-getting-started) ins and outs of the LiveLike producer suite.
+* Create and schedule interactive events
+* Manage engagement widgets in real-time
+* Monitor audience participation and performance
 
 **Support**
 
-If you have any questions, please do not hesitate to reach out to [support@livelike.com](mailto:support@livelike.com). If you have already begun an integration with us, please request us to add you to our Slack channel for speedier communication.
+Need help? We’ve got you covered.
+
+Email: [support@livelike.com](mailto:support@livelike.com)
+
+Already integrating with LiveLike? Ask us to add you to our dedicated Slack channel for direct, real-time support.
+
+<br />
