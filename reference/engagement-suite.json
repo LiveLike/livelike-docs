@@ -12,7 +12,9 @@
   "components": {
     "securitySchemes": {}
   },
-  "security": [{}],
+  "security": [
+    {}
+  ],
   "paths": {
     "/applications/{client_id}/profile/": {
       "post": {
@@ -56,7 +58,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -195,7 +200,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -528,7 +536,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["email", "country", "region", "year_of_birth"],
+                "required": [
+                  "email",
+                  "country",
+                  "region",
+                  "year_of_birth"
+                ],
                 "properties": {
                   "email": {
                     "type": "string"
@@ -778,7 +791,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "name", "key"],
+                "required": [
+                  "client_id",
+                  "name",
+                  "key"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string",
@@ -1603,7 +1620,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["name"],
+                "required": [
+                  "name"
+                ],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -1625,7 +1644,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -1857,7 +1879,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -2829,7 +2854,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["chat_room_id", "message_event", "message"],
+                "required": [
+                  "chat_room_id",
+                  "message_event",
+                  "message"
+                ],
                 "properties": {
                   "chat_room_id": {
                     "type": "string"
@@ -2845,7 +2874,10 @@
                   },
                   "message_event": {
                     "type": "string",
-                    "enum": ["message-created", "image-created"]
+                    "enum": [
+                      "message-created",
+                      "image-created"
+                    ]
                   },
                   "sender_nickname": {
                     "type": "string"
@@ -2907,7 +2939,10 @@
                         "description": "The ending index of the message text to treat as a mention"
                       }
                     },
-                    "required": ["start_index", "end_index"],
+                    "required": [
+                      "start_index",
+                      "end_index"
+                    ],
                     "items": {
                       "properties": {},
                       "type": "object"
@@ -3521,7 +3556,9 @@
               "code": "curl --request GET 'https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=a2eb756c-f9hd-4b8d-r01e-f008affb8776&wallet_address=0x2e963Be31699dB6cE2v584EFAD453AcbgB3E1w14'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -3880,7 +3917,10 @@
               "code": "import requests\nimport json\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/pinned-messages/\"\n\npayload = json.dumps({\n  \"message_id\": \"b3b62e23-f194-46e1-a37c-e4cdd3d6fef8\",\n  \"message_payload\": {\n    \"custom_data\": \"\",\n    \"id\": \"b3b62e23-f194-46e1-a37c-e4cdd3d6fef8\",\n    \"filtered_sender_nickname\": None,\n    \"sender_nickname\": \"Healthy Hawk\",\n    \"message\": \"hhf\",\n    \"created_at\": \"2021-11-25T10:35:55+0000\",\n    \"filtered_message\": None,\n    \"content_filter\": {},\n    \"sender_image_url\": None,\n    \"badge_image_url\": None,\n    \"sender_id\": \"916f306c-fb75-46a1-b465-da843e72e132\",\n    \"sender_profile_url\": \"https://cf-blast-dig.livelikecdn.com/api/v1/profiles/916f306c-fb75-46a1-b465-da843e72e132/\",\n    \"program_date_time\": \"2021-11-25T10:36:27.935Z\",\n    \"image_url\": \"https://cf-blast-storage-dig.livelikecdn.com/uploads/b6bbcbd4-1d25-40bc-9cb5-c67cceb923d1/0df95f33-a5db-4d9e-945f-39db7477c936.gif\",\n    \"image_height\": \"123\",\n    \"image_width\": \"220\"\n  },\n  \"chat_room_id\": \"46a975fc-49e1-4fc0-8239-25c566296b5e\"\n})\nheaders = {\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZDFhY2FiLTg0YjctNDQ5ZC04Mjk4LWE1ZDU1ZmNjOGZjZSIsImNsaWVudF9pZCI6IlBITWdNbXRqcWRiR3ViaEs4eFJMNk43YzFpSHZFd2o1MTdlVFgzMzMiLCJhY2Nlc3NfdG9rZW4iOiJuSUlBVnoxNkMtbUwtbjNEOHBlYURMT1FpS0R2TkFJQjY1S2ZPczlOOFhNcTF2c0s2NDVtc0EiLCJpc19wcm9kdWNlciI6dHJ1ZSwiaXNzIjoiYmxhc3QiLCJpYXQiOjE2Mzc5MTM4MDd9.xiSxIa72PkedE2Fj_OzR_Sy5p7ciuahc-lR17Sgif2k',\n  'Content-Type': 'application/json'\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, data=payload)\n\nprint(response.text)\n"
             }
           ],
-          "samples-languages": ["curl", "python"]
+          "samples-languages": [
+            "curl",
+            "python"
+          ]
         }
       },
       "get": {
@@ -4115,7 +4155,10 @@
               "code": "import requests\nimport json\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/pinned-messages/?chat_room_id=46a975fc-49e1-4fc0-8239-25c566296b5e\"\n\npayload = json.dumps({\n  \"message_id\": \"b3b62e23-f194-46e1-a37c-e4cdd3d6fef8\",\n  \"message_payload\": {\n    \"custom_data\": \"\",\n    \"id\": \"b3b62e23-f194-46e1-a37c-e4cdd3d6fef8\",\n    \"filtered_sender_nickname\": None,\n    \"sender_nickname\": \"Healthy Hawk\",\n    \"message\": \"hhf\",\n    \"created_at\": \"2021-11-25T10:35:55+0000\",\n    \"filtered_message\": None,\n    \"content_filter\": {},\n    \"sender_image_url\": None,\n    \"badge_image_url\": None,\n    \"sender_id\": \"916f306c-fb75-46a1-b465-da843e72e132\",\n    \"sender_profile_url\": \"https://cf-blast-dig.livelikecdn.com/api/v1/profiles/916f306c-fb75-46a1-b465-da843e72e132/\",\n    \"program_date_time\": \"2021-11-25T10:36:27.935Z\",\n    \"image_url\": \"https://cf-blast-storage-dig.livelikecdn.com/uploads/b6bbcbd4-1d25-40bc-9cb5-c67cceb923d1/0df95f33-a5db-4d9e-945f-39db7477c936.gif\",\n    \"image_height\": \"123\",\n    \"image_width\": \"220\"\n  },\n  \"chat_room_id\": \"46a975fc-49e1-4fc0-8239-25c566296b5e\"\n})\nheaders = {\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZDFhY2FiLTg0YjctNDQ5ZC04Mjk4LWE1ZDU1ZmNjOGZjZSIsImNsaWVudF9pZCI6IlBITWdNbXRqcWRiR3ViaEs4eFJMNk43YzFpSHZFd2o1MTdlVFgzMzMiLCJhY2Nlc3NfdG9rZW4iOiJuSUlBVnoxNkMtbUwtbjNEOHBlYURMT1FpS0R2TkFJQjY1S2ZPczlOOFhNcTF2c0s2NDVtc0EiLCJpc19wcm9kdWNlciI6dHJ1ZSwiaXNzIjoiYmxhc3QiLCJpYXQiOjE2Mzc5MTM4MDd9.xiSxIa72PkedE2Fj_OzR_Sy5p7ciuahc-lR17Sgif2k',\n  'Content-Type': 'application/json'\n}\n\nresponse = requests.request(\"GET\", url, headers=headers, data=payload)\n\nprint(response.text)\n"
             }
           ],
-          "samples-languages": ["curl", "python"]
+          "samples-languages": [
+            "curl",
+            "python"
+          ]
         }
       }
     },
@@ -4176,7 +4219,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["profile_id", "directive"],
+                "required": [
+                  "profile_id",
+                  "directive"
+                ],
                 "properties": {
                   "profile_id": {
                     "type": "string"
@@ -4279,7 +4325,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["shortcode", "file", "pack_id"],
+                "required": [
+                  "shortcode",
+                  "file",
+                  "pack_id"
+                ],
                 "properties": {
                   "shortcode": {
                     "type": "string",
@@ -4512,7 +4562,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["widget_kind", "widget_id"],
+                "required": [
+                  "widget_kind",
+                  "widget_id"
+                ],
                 "properties": {
                   "widget_kind": {
                     "type": "string",
@@ -5543,7 +5596,11 @@
                   "status": {
                     "type": "string",
                     "description": "Change the status of the widget report.  Can be one of pending, accepted, dismissed",
-                    "enum": ["pending", "accepted", "dismissed"]
+                    "enum": [
+                      "pending",
+                      "accepted",
+                      "dismissed"
+                    ]
                   },
                   "moderator_comment": {
                     "type": "string",
@@ -6207,7 +6264,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/alerts/<alert_id>/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -6221,7 +6280,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "timeout"],
+                "required": [
+                  "program_id",
+                  "timeout"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -6272,7 +6334,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -7095,7 +7160,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["video_url"],
+                "required": [
+                  "video_url"
+                ],
                 "properties": {
                   "title": {
                     "type": "string",
@@ -7133,7 +7200,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -7527,7 +7597,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["question", "options", "program_id", "timeout"],
+                "required": [
+                  "question",
+                  "options",
+                  "program_id",
+                  "timeout"
+                ],
                 "properties": {
                   "question": {
                     "type": "string",
@@ -7543,7 +7618,9 @@
                           "description": "Description of a poll option"
                         }
                       },
-                      "required": ["description"],
+                      "required": [
+                        "description"
+                      ],
                       "type": "object"
                     }
                   },
@@ -7581,7 +7658,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -7990,7 +8070,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["question", "options", "program_id", "timeout"],
+                "required": [
+                  "question",
+                  "options",
+                  "program_id",
+                  "timeout"
+                ],
                 "properties": {
                   "question": {
                     "type": "string",
@@ -8010,7 +8095,10 @@
                           "description": "URL to the option image"
                         }
                       },
-                      "required": ["description", "image_url"],
+                      "required": [
+                        "description",
+                        "image_url"
+                      ],
                       "type": "object"
                     }
                   },
@@ -8048,7 +8136,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -8293,7 +8384,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["question", "options", "program_id"],
+                "required": [
+                  "question",
+                  "options",
+                  "program_id"
+                ],
                 "properties": {
                   "question": {
                     "type": "string",
@@ -8747,7 +8842,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "options", "question"],
+                "required": [
+                  "program_id",
+                  "options",
+                  "question"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -8989,7 +9088,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "question", "choices"],
+                "required": [
+                  "program_id",
+                  "question",
+                  "choices"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -9027,7 +9130,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -9251,7 +9357,9 @@
               "name": "sample"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -9265,7 +9373,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "question", "choices"],
+                "required": [
+                  "program_id",
+                  "question",
+                  "choices"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -9303,7 +9415,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -10004,7 +10119,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["image_prediction_id", "correct_option_id"],
+                "required": [
+                  "image_prediction_id",
+                  "correct_option_id"
+                ],
                 "properties": {
                   "image_prediction_id": {
                     "type": "string",
@@ -10385,7 +10503,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["text_prediction_id", "correct_option_id"],
+                "required": [
+                  "text_prediction_id",
+                  "correct_option_id"
+                ],
                 "properties": {
                   "text_prediction_id": {
                     "type": "string",
@@ -10620,7 +10741,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "question"],
+                "required": [
+                  "program_id",
+                  "question"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -11117,7 +11241,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["image_number_prediction_id"],
+                "required": [
+                  "image_number_prediction_id"
+                ],
                 "properties": {
                   "image_number_prediction_id": {
                     "type": "string",
@@ -11346,7 +11472,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["options"],
+                "required": [
+                  "options"
+                ],
                 "properties": {
                   "options": {
                     "type": "array",
@@ -12440,7 +12568,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "items"],
+                "required": [
+                  "program_id",
+                  "items"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -12926,7 +13057,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id"],
+                "required": [
+                  "program_id"
+                ],
                 "properties": {
                   "content": {
                     "type": "string",
@@ -13476,7 +13609,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-items/?client_id={client_id}' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "post": {
@@ -13488,7 +13623,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "name"],
+                "required": [
+                  "client_id",
+                  "name"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string"
@@ -13507,7 +13645,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -13774,7 +13915,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/reward-item-balances/?reward_item_id={reward_id}&reward_item_id={reward_id2}' \\\n--header 'Authorization: Bearer {Access Token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -13829,7 +13972,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -13845,7 +13991,10 @@
                     "description": "List of leaderboard UUIDs to update; if provided, only those leaderboards are updated; if empty ([]), no linked leaderboards are updated; if omitted, all linked leaderboards are updated."
                   }
                 },
-                "required": ["reward_item_id", "reward_item_amount"]
+                "required": [
+                  "reward_item_id",
+                  "reward_item_amount"
+                ]
               }
             }
           }
@@ -13911,7 +14060,9 @@
               "code": "curl --request POST \\\n  --url https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/reward-item-credits/ \\\n  --header 'Authorization: Bearer {producer token}' \\\n  --header 'Content-Type: application/json' \\\n  --data '{\n  \"reward_item_id\": \"{reward_item_id}\",\n  \"reward_item_amount\": {reward_item_amount},\n  \"description\": {description},\n  \"custom_data\": {custom_data},\n  \"attributes\": [{\n        \"key\": {key},\n        \"value\": {value}\n    }]\n}\n'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -13964,7 +14115,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -14085,7 +14239,9 @@
               "code": "curl --request POST \\\n  --url https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/reward-item-debits/ \\\n  --header 'Authorization: Bearer {producer token}' \\\n  --header 'Content-Type: application/json' \\\n  --data '{\n  \"reward_item_id\": \"{reward_item_id}\",\n  \"reward_item_amount\": {reward_item_amount},\n  \"attributes\": [{\n        \"key\": {key},\n        \"value\": {value}\n    }]\n}\n'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -14164,7 +14320,9 @@
               "code": "curl --request POST \\\n  --url https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/reward-item-transfers/ \\\n  --header 'Authorization: Bearer {access_token}' \\\n  --header 'Content-Type: application/json' \\\n  --data '{\n  \"reward_item_id\": \"{reward_item_id}\",\n  \"reward_item_amount\": 4,\n  \"recipient_profile_id\": \"{recipient_profile_id}\"\n}\n'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "get": {
@@ -14288,7 +14446,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/reward-item-transfers/?transfer_type=sent' \\\n--header 'Content-Disposition: attachment; filename=\"filename.jpg\"' \\\n--header 'Content-Type: application/json' \\\n--header 'Authorization: Bearer {access token}' \\\n--data-raw ''"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -14593,7 +14753,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/{id}/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "delete": {
@@ -14649,7 +14811,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/{id}/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -14810,7 +14974,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "post": {
@@ -14822,7 +14988,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "name", "entries"],
+                "required": [
+                  "client_id",
+                  "name",
+                  "entries"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string"
@@ -14959,7 +15129,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-actions/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "post": {
@@ -14982,7 +15154,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["name", "key", "client_id"],
+                "required": [
+                  "name",
+                  "key",
+                  "client_id"
+                ],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -15177,7 +15353,9 @@
               "code": "curl --location --request POST 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/{id}/entries/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         },
         "requestBody": {
           "content": {
@@ -15213,7 +15391,11 @@
                         "description": "The minimum time interval (in unit) required between two successful actions."
                       }
                     },
-                    "required": ["is_enabled", "unit", "frequency"]
+                    "required": [
+                      "is_enabled",
+                      "unit",
+                      "frequency"
+                    ]
                   },
                   "reward_limit": {
                     "type": "object",
@@ -15245,7 +15427,11 @@
                   }
                 },
                 "type": "object",
-                "required": ["reward_item_id", "reward_item_amount", "action"]
+                "required": [
+                  "reward_item_id",
+                  "reward_item_amount",
+                  "action"
+                ]
               }
             }
           }
@@ -15395,7 +15581,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/{id}/entries/{entry_id}/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -15462,7 +15650,9 @@
               "code": "curl --location --request DELETE 'https://cf-blast.livelikecdn.com/api/v1/reward-tables/{id}/entries/{entry_id}/' \\\n--header 'Authorization: Bearer {producer_token}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -15678,7 +15868,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["program_id", "profile_id", "reward_action_key"],
+                "required": [
+                  "program_id",
+                  "profile_id",
+                  "reward_action_key"
+                ],
                 "properties": {
                   "program_id": {
                     "type": "string",
@@ -15712,7 +15906,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -15902,7 +16099,9 @@
                               }
                             },
                             "type": "object",
-                            "required": ["reward_action_key"]
+                            "required": [
+                              "reward_action_key"
+                            ]
                           }
                         },
                         "custom_profile_id": {
@@ -15915,11 +16114,16 @@
                         }
                       },
                       "type": "object",
-                      "required": ["reward_actions"]
+                      "required": [
+                        "reward_actions"
+                      ]
                     }
                   }
                 },
-                "required": ["program_id", "updates"]
+                "required": [
+                  "program_id",
+                  "updates"
+                ]
               }
             }
           }
@@ -16139,7 +16343,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "name", "file"],
+                "required": [
+                  "client_id",
+                  "name",
+                  "file"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string",
@@ -16401,7 +16609,11 @@
               "name": "Node"
             }
           ],
-          "samples-languages": ["curl", "python", "text"]
+          "samples-languages": [
+            "curl",
+            "python",
+            "text"
+          ]
         }
       }
     },
@@ -16627,7 +16839,9 @@
               "code": "curl --location --request GET 'https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/badge-progress/?badge_id={badge_id}&badge_id={badge_id2}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -17184,7 +17398,10 @@
               "code": "import requests\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/sponsors/?client_id=lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMccfd\"\n\npayload={}\nheaders = {\n  'Authorization': 'Bearer Token'\n}\n\nresponse = requests.request(\"GET\", url, headers=headers, data=payload)\n\nprint(response.text)\n"
             }
           ],
-          "samples-languages": ["curl", "python"]
+          "samples-languages": [
+            "curl",
+            "python"
+          ]
         }
       }
     },
@@ -17226,7 +17443,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/media/?client_id=<client_id>"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -17305,7 +17524,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/media/<asset_id>/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -17577,7 +17798,10 @@
               "code": "curl -X POST \\\n  https://cf-blast.livelikecdn.com/api/v1/profile-blocks/ \\\n  -H 'authorization: Bearer {profile_access_token}' \\\n  -H 'cache-control: no-cache' \\\n  -H 'content-type: application/json' \\\n  -H 'postman-token: b22ef7b8-4a39-a602-6ac2-142b861233c1' \\\n  -d '{\n   \"blocked_profile_id\": \"f394d2cc-e7a3-4b73-9bed-81b38022f718\"\n}'"
             }
           ],
-          "samples-languages": ["python", "curl"]
+          "samples-languages": [
+            "python",
+            "curl"
+          ]
         }
       },
       "get": {
@@ -17833,7 +18057,10 @@
               "code": "import requests\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/profile-blocks/\"\n\nheaders = {\n    'content-type': \"application/json\",\n    'authorization': \"Bearer {profile_access_token}\",\n    'cache-control': \"no-cache\",\n    'postman-token': \"4f436b4e-c45c-bfa3-4511-432b0fda65f0\"\n    }\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
             }
           ],
-          "samples-languages": ["curl", "python"]
+          "samples-languages": [
+            "curl",
+            "python"
+          ]
         }
       }
     },
@@ -18020,7 +18247,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys/<id>/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "patch": {
@@ -18125,7 +18354,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys/{id}"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "delete": {
@@ -18165,7 +18396,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys/<id>/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -18261,7 +18494,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys/?client_id=<id>"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "post": {
@@ -18354,7 +18589,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -18461,7 +18698,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/redemption-keys-by-code/{client_id}/{code}/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -18540,7 +18779,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/registered-links/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "get": {
@@ -18618,7 +18859,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/registered-links/?client_id=<id>"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -18660,7 +18903,9 @@
               "code": "curl https://cf-blast.livelikecdn.com/api/v1/registered-links/{id}/"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -18674,7 +18919,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "name"],
+                "required": [
+                  "client_id",
+                  "name"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string"
@@ -19201,7 +19449,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["quest_id", "name"],
+                "required": [
+                  "quest_id",
+                  "name"
+                ],
                 "properties": {
                   "quest_id": {
                     "type": "string",
@@ -19431,7 +19682,10 @@
             "description": "Filter user quests by completion status",
             "schema": {
               "type": "string",
-              "enum": ["completed", "incomplete"]
+              "enum": [
+                "completed",
+                "incomplete"
+              ]
             }
           },
           {
@@ -19440,7 +19694,10 @@
             "description": "Filter user quests by whether rewards have been claimed",
             "schema": {
               "type": "string",
-              "enum": ["claimed", "unclaimed"]
+              "enum": [
+                "claimed",
+                "unclaimed"
+              ]
             }
           },
           {
@@ -19493,7 +19750,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["profile_id", "quest_id"],
+                "required": [
+                  "profile_id",
+                  "quest_id"
+                ],
                 "properties": {
                   "profile_id": {
                     "type": "string",
@@ -19701,7 +19961,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["user_quest_task_id"],
+                "required": [
+                  "user_quest_task_id"
+                ],
                 "properties": {
                   "user_quest_task_id": {
                     "type": "string",
@@ -19896,7 +20158,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["profile_id", "quest_id"],
+                "required": [
+                  "profile_id",
+                  "quest_id"
+                ],
                 "properties": {
                   "profile_id": {
                     "type": "string",
@@ -20109,7 +20374,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["quest_id", "quest_rewards"],
+                "required": [
+                  "quest_id",
+                  "quest_rewards"
+                ],
                 "properties": {
                   "quest_id": {
                     "type": "string"
@@ -20214,7 +20482,9 @@
               "code": "curl --location --request POST 'https://cf-blast.livelikecdn.com/api/v1/quest-rewards/' \\\n--header 'Authorization: Bearer Bo0DgHXBu7heGDq7qyF48an8F9FGzZP8UIPwfPoxhZulNogu-oOGUQ' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"quest_id\": \"0d45b284-2dbf-48c1-b41d-0a6004faba78\",\n    \"quest_rewards\": [\n        {\n            \"reward_item_id\": \"56d6fc6c-932c-4932-b029-804f931dd988\",\n            \"reward_item_amount\": 104\n        }\n    ]\n}'"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       },
       "get": {
@@ -20497,7 +20767,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["rewards_status"],
+                "required": [
+                  "rewards_status"
+                ],
                 "properties": {
                   "rewards_status": {
                     "type": "string",
@@ -21072,7 +21344,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["pack_id", "name", "file"],
+                "required": [
+                  "pack_id",
+                  "name",
+                  "file"
+                ],
                 "properties": {
                   "pack_id": {
                     "type": "string",
@@ -21273,7 +21549,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["name", "pack_id", "file"],
+                "required": [
+                  "name",
+                  "pack_id",
+                  "file"
+                ],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -21384,7 +21664,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["name", "file"],
+                "required": [
+                  "name",
+                  "file"
+                ],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -21676,7 +21959,11 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["reaction_id", "reaction_space_id", "target_id"],
+                "required": [
+                  "reaction_id",
+                  "reaction_space_id",
+                  "target_id"
+                ],
                 "properties": {
                   "reaction_id": {
                     "type": "string"
@@ -22066,7 +22353,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["comment_board_id"],
+                "required": [
+                  "comment_board_id"
+                ],
                 "properties": {
                   "comment_board_id": {
                     "type": "string"
@@ -22093,7 +22382,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -23049,7 +23341,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["comment_board_id"],
+                "required": [
+                  "comment_board_id"
+                ],
                 "properties": {
                   "comment_board_id": {
                     "type": "string"
@@ -23663,7 +23957,9 @@
               "code": "https://cf-blast.livelikecdn.com/api/v1/comment-counts/?comment_board_id=e10f28e4-8226-4ab4-96c9-b53729cb1717"
             }
           ],
-          "samples-languages": ["curl"]
+          "samples-languages": [
+            "curl"
+          ]
         }
       }
     },
@@ -23688,7 +23984,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["custom_id"],
+                "required": [
+                  "custom_id"
+                ],
                 "properties": {
                   "custom_id": {
                     "type": "string"
@@ -23719,7 +24017,10 @@
                     "type": "string",
                     "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
                     "default": "none",
-                    "enum": ["none", "filtered"]
+                    "enum": [
+                      "none",
+                      "filtered"
+                    ]
                   }
                 }
               }
@@ -24002,7 +24303,10 @@
                     "type": "string",
                     "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
                     "default": "none",
-                    "enum": ["none", "filtered"]
+                    "enum": [
+                      "none",
+                      "filtered"
+                    ]
                   }
                 }
               }
@@ -24289,7 +24593,10 @@
                     "type": "string",
                     "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
                     "default": "none",
-                    "enum": ["none", "filtered"]
+                    "enum": [
+                      "none",
+                      "filtered"
+                    ]
                   }
                 }
               }
@@ -24818,7 +25125,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["profile_id"],
+                "required": [
+                  "profile_id"
+                ],
                 "properties": {
                   "profile_id": {
                     "type": "string"
@@ -25375,7 +25684,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["name", "key"],
+                "required": [
+                  "name",
+                  "key"
+                ],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -26060,7 +26372,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["key", "name"],
+                "required": [
+                  "key",
+                  "name"
+                ],
                 "properties": {
                   "key": {
                     "type": "string",
@@ -26687,7 +27002,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["scope_id"],
+                "required": [
+                  "scope_id"
+                ],
                 "properties": {
                   "profile_id": {
                     "type": "string",
@@ -27174,7 +27491,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["comment_id"],
+                "required": [
+                  "comment_id"
+                ],
                 "properties": {
                   "comment_id": {
                     "type": "string"
@@ -27529,7 +27848,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["report_status"],
+                "required": [
+                  "report_status"
+                ],
                 "properties": {
                   "report_status": {
                     "type": "string",
@@ -27583,7 +27904,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["banned_profile_id", "program_id"],
+                "required": [
+                  "banned_profile_id",
+                  "program_id"
+                ],
                 "properties": {
                   "banned_profile_id": {
                     "type": "string",
@@ -28247,7 +28571,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["comment_id"],
+                "required": [
+                  "comment_id"
+                ],
                 "properties": {
                   "comment_id": {
                     "type": "string",
@@ -29081,7 +29407,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["client_id", "title"],
+                "required": [
+                  "client_id",
+                  "title"
+                ],
                 "properties": {
                   "client_id": {
                     "type": "string"
@@ -29107,7 +29436,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -29225,7 +29557,10 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": ["active", "archived"]
+              "enum": [
+                "active",
+                "archived"
+              ]
             }
           }
         ],
@@ -29349,7 +29684,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   },
@@ -29359,7 +29697,10 @@
                   },
                   "status": {
                     "type": "string",
-                    "enum": ["active", "archived"]
+                    "enum": [
+                      "active",
+                      "archived"
+                    ]
                   }
                 }
               }
@@ -29502,7 +29843,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["tier_group_id", "title"],
+                "required": [
+                  "tier_group_id",
+                  "title"
+                ],
                 "properties": {
                   "tier_group_id": {
                     "type": "string",
@@ -29529,7 +29873,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -29877,7 +30224,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -30025,7 +30375,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["tier_id", "title"],
+                "required": [
+                  "tier_id",
+                  "title"
+                ],
                 "properties": {
                   "tier_id": {
                     "type": "string",
@@ -30409,7 +30762,10 @@
                           "type": "string"
                         }
                       },
-                      "required": ["key", "value"],
+                      "required": [
+                        "key",
+                        "value"
+                      ],
                       "type": "object"
                     }
                   }
@@ -30812,7 +31168,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["tier_id"],
+                "required": [
+                  "tier_id"
+                ],
                 "properties": {
                   "tier_id": {
                     "type": "string"
@@ -31462,7 +31820,10 @@
                               }
                             },
                             "type": "object",
-                            "required": ["reward_item_id", "reward_item_amount"]
+                            "required": [
+                              "reward_item_id",
+                              "reward_item_amount"
+                            ]
                           }
                         },
                         "sponsor_ids": {
@@ -31491,7 +31852,9 @@
                                     }
                                   },
                                   "type": "object",
-                                  "required": ["reward_action_key"]
+                                  "required": [
+                                    "reward_action_key"
+                                  ]
                                 }
                               }
                             },
@@ -31510,7 +31873,10 @@
                   }
                 },
                 "type": "object",
-                "required": ["quest_name", "name"]
+                "required": [
+                  "quest_name",
+                  "name"
+                ]
               }
             }
           }
@@ -31878,7 +32244,11 @@
                     "description": "ISO DateTime when this streak will end."
                   }
                 },
-                "required": ["name", "reward_action_key", "client_id"]
+                "required": [
+                  "name",
+                  "reward_action_key",
+                  "client_id"
+                ]
               }
             }
           }
@@ -31891,7 +32261,9 @@
               "name": ""
             }
           ],
-          "samples-languages": ["shell"]
+          "samples-languages": [
+            "shell"
+          ]
         }
       }
     },
@@ -32039,6 +32411,27 @@
           }
         },
         "deprecated": false
+      }
+    },
+    "/applications/{client-id}/daily-streaks/": {
+      "get": {
+        "description": "",
+        "operationId": "get_applications{client-id}daily-streaks",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
