@@ -2,7 +2,7 @@
 title: Introduction
 excerpt: Welcome to the LiveLike Engagement Suite Documentation
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: Getting Started | LiveLike Developer Hub | LiveLike
   description: >-
