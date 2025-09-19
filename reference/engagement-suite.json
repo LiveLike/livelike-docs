@@ -27028,7 +27028,8 @@
                     "description": "profile_id or profile_custom_id is required."
                   },
                   "role_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "role_id or role_key is required"
                   }
                 }
               }
