@@ -9,94 +9,77 @@ Chat invitations support:
 
 \<Tabs>
 &#x20; \<Tab title="Add New User to Chat Room">
+&#x20;   \*\*Example (Swift):\*\*
+sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) \{&#x20;
+&#x20; \[weak self] result in
+&#x20; 	DispatchQueue.main.async \{
+&#x20; 		guard let self = self else \{ return }
+&#x20;   	switch result \{
+&#x20;   	case .success(let member):
+&#x20;   		self.showAlert(title: "Now Member", message: member.url.absoluteString)
+&#x20;   	case let .failure(error):
+&#x20;   		self.showAlert(title: "Error", message: error.localizedDescription)
+&#x9;	}
+&#x9;}
+}
+&#x20; \</Tab>
 
+&#x20; \<Tab title="Second Tab">
+&#x20;   Here's content that's only inside the second Tab.
+&#x20; \</Tab>
+
+&#x20; \<Tab title="Third Tab">
+&#x20;   Here's content that's only inside the third Tab.
+&#x20; \</Tab>
+\</Tabs>
 
 <br />
 
-  ## Add New User to Chat Room
+## Add New User to Chat Room
+
+Use `addNewMemberToChatRoom` API to add other users to chat rooms.
+
+> 🚧 Please Note
+>
+> User can add another user to the chat room only if they are already a member of the chat room, use `joinChatRoom` API for becoming a member.
+
+**Example (Swift):**
+
+```swift
+sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) { 
+  [weak self] result in
+  	DispatchQueue.main.async {
+  		guard let self = self else { return }
+    	switch result {
+    	case .success(let member):
+    		self.showAlert(title: "Now Member", message: member.url.absoluteString)
+    	case let .failure(error):
+    		self.showAlert(title: "Error", message: error.localizedDescription)
+		}
+	}
+}
+```
+```kotlin
+sdk.chat().addUserToChatRoom(chatRoomId,
+                userId,
+                object : LiveLikeCallback<ChatRoomMembership>() {
+                    override fun onResponse(result: ChatRoomMembership?, error: String?) {
+                        result?.let {
+                            showToast("User Added Successfully")
+                        }
+                       
+                        error?.let {
+                            showToast(it)
+                        }
+                       
+                    }
+                })
+```
+```javascript
+LiveLike.addNewMemberToChatRoom({
+  roomId: "9e6f1bc4-9f02-4c57-92b7-7521d0f5b027",
+  profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
+}).then(membership => console.log(membership))
+```
 
 <br />
-
-  Use `addNewMemberToChatRoom` API to add other users to chat rooms.
-
-<br />
-
-<Callout icon="📘" theme="info">
-  Users can add another user only if they are already a member of the chat room. Use `joinChatRoom` to become a member first.
-</Callout>
-
-  **Example (Swift):**
-  ```swift
-  sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) { result in
-      DispatchQueue.main.async {
-          switch result {
-          case .success(let member):
-              print("Now Member: \(member.url.absoluteString)")
-          case .failure(let error):
-              print("Error: \(error.localizedDescription)")
-          }
-      }
-  }
-
-Real-time Notification:
-Implement ChatClientDelegate to receive notifications when a user is added:
-
-func chatClient(_ chatClient: ChatClient, userDidBecomeMemberOfChatRoom newChatMembershipInfo: NewChatMembershipInfo) {
-    print("Added to room: \(newChatMembershipInfo.chatRoomTitle) by \(newChatMembershipInfo.senderNickName)")
-}
-
-</Tab> <Tab title="Send Invitation to User"> ## Invite User to Chat Room
-
-Use sendChatRoomInviteToUser to allow a user to invite another to a room they are already part of. The invitee can accept or reject.
-
-Example (Swift):
-sdk.chat.sendChatRoomInviteToUser(roomId: roomId, profileId: profileId) { result in
-    DispatchQueue.main.async {
-        switch result {
-        case .success(let invitation):
-            print("Invitation Sent: \(invitation.url.absoluteString)")
-        case .failure(let error):
-            print("Error: \(error.localizedDescription)")
-        }
-    }
-}
-</Tab> <Tab title="Receive Invitation in Real-Time"> ## Receive Invitation in Real-Time
-Implement ChatClientDelegate to get notified when a user receives an invitation.
-Example (Swift):
-func chatClient(_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) {
-    print("You've been invited to room: \(newInvitationInfo.chatRoomTitle)")
-}
-</Tab> <Tab title="Update Invitation Status"> ## Update Invitation Status
-Use updateChatRoomInviteStatus to accept, reject, or mark an invitation as pending.
-Example (Swift):
-sdk.chat.updateChatRoomInviteStatus(chatRoomInvitation: invitation, invitationStatus: .accepted) { result in
-    switch result {
-    case .success(let updatedInvitation):
-        print("Invitation Accepted")
-    case .failure(let error):
-        print("Failed: \(error.localizedDescription)")
-    }
-}
-</Tab> <Tab title="List Received Invitations"> ## Get Received Invitations
-Use getInvitationsForUserWithInvitationStatus to fetch invitations received by the current user.
-Example (Swift):
-sdk.chat.getInvitationsForUserWithInvitationStatus(invitationStatus: .pending, page: .first) { result in
-    switch result {
-    case .success(let invitations):
-        print("Received Invitations: \(invitations.count)")
-    case .failure(let error):
-        print(error.localizedDescription)
-    }
-}
-</Tab> <Tab title="List Sent Invitations"> ## Get Sent Invitations
-Use getInvitationsByUserWithInvitationStatus to fetch invitations sent by the current user.
-Example (Swift):
-sdk.chat.getInvitationsByUserWithInvitationStatus(invitationStatus: .pending, page: .first) { result in
-    switch result {
-    case .success(let invitations):
-        print("Sent Invitations: \(invitations.count)")
-    case .failure(let error):
-        print(error.localizedDescription)
-    }
-}
-</Tab> </Tabs> ```
