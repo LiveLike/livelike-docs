@@ -1,5 +1,5 @@
 ---
-title: Create a Cheer Meter.
+title: Create a Cheer Meter
 excerpt: ''
 api:
   file: engagement-suite.json
