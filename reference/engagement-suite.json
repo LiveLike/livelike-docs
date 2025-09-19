@@ -32345,6 +32345,27 @@
           ]
         }
       }
+    },
+    "/daily-streaks/{daily-streak-id}/": {
+      "get": {
+        "description": "",
+        "operationId": "get_daily-streaks{daily-streak-id}",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "daily-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
