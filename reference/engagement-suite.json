@@ -27003,7 +27003,6 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "profile_id",
                   "role_key",
                   "resource_kind",
                   "resource_key"
