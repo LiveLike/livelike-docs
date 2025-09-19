@@ -2,11 +2,11 @@
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "List Daily Streaks"
+    "title": "Application Detail"
   },
   "servers": [
     {
-      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/{client-id}/daily-streaks/"
+      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/{client-id}"
     }
   ],
   "tags": [],
