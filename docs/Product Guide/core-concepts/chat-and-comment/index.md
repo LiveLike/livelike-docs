@@ -9,8 +9,6 @@ The Chat and Comments systems in LiveLike let audiences connect, react, and part
 
 ***
 
-<br />
-
 ## Why Use Chat & Comments?
 
 * Enable real-time audience interaction
