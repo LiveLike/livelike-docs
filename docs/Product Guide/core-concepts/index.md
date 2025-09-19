@@ -19,6 +19,9 @@ Examples include:
 * Mini-games
 
 Widgets are typically published by a producer through the Producer Suite, but they can also be published programmatically via the REST API.
+
+<br />
+
 Learn more: [Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/widgets#/)
 
 **Chat**
@@ -26,6 +29,8 @@ LiveLike provides a flexible chat system to keep your audience engaged:
 
 * Public Chat: Open rooms where everyone can react and comment in real time, building hype and excitement around the event.
 * Group Chat: Private spaces for friends or closed communities to watch and chat together — without switching apps.
+
+Learn more: Chats
 
 **Spoiler Prevention**
 Avoid the frustration of spoilers. The LiveLike SDK is designed with spoiler prevention in mind:
