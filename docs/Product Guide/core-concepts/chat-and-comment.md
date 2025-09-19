@@ -12,9 +12,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Why Use Chat & Comments?
-
-
+## Why Use Chat & Comments?
 
 * Enable real-time audience interaction
 * Create a sense of community around content
@@ -26,6 +24,9 @@ Why Use Chat & Comments?
 
 ### Chat
 
+Chat is designed for real-time audience interaction. You can set up public rooms to bring everyone together or private rooms for smaller groups. Moderation controls — such as profanity filters, user bans, and automated checks — ensure conversations stay safe and on-topic. The chat UI can be branded to fit seamlessly into your app.
+
+#### Highlights:
 
 * Real-time messaging with text, emojis, and reactions
 * Public or private chat rooms
@@ -34,6 +35,9 @@ Why Use Chat & Comments?
 
 ### Comments
 
+The comments system is built for structured, ongoing conversations. Users can post, reply, and react to comments, with support for media, mentions, and threaded discussions. Moderation workflows help you control quality, while analytics give you insights into engagement.
+
+#### Highlights:
 
 * Standard comments and threaded replies
 * Reactions, mentions, and rich media support
@@ -42,8 +46,7 @@ Why Use Chat & Comments?
 
 ### Common Use Cases
 
-
-* Live Events → Audience Q&A, fan conversations, host interaction
+* Live Events → Host-audience communication, fan excitement
 * Media & Entertainment → Show discussions, episode feedback, fan forums
 * Sports → Match commentary, team chats, real-time fan engagement
 
