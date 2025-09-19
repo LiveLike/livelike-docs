@@ -29,7 +29,7 @@ Every widget is associated with a Program. Programs group multiple widgets aroun
 
 Widgets fall into three broad categories:
 
-### Interactive Widgets
+#### Interactive Widgets
 
 * Polls → Collect audience opinions in real time (text or images).
 * Quizzes/Trivia → Test knowledge and reward correct answers.
@@ -38,13 +38,13 @@ Widgets fall into three broad categories:
 * Cheer Meters → Capture live excitement by letting users tap to show support.
 * Image Sliders → Measure sentiment or preference along a visual scale.
 
-### Social Widgets
+#### Social Widgets
 
 * Chat → Enable public or group conversations.
 * Comments → Collect open-ended thoughts or crowd questions.
 * Reactions → Express emotions with instant feedback icons.
 
-### Gamification Widgets
+#### Gamification Widgets
 
 * Leaderboards → Rank users based on participation or performance.
 * Rewards → Distribute virtual goods or incentives.
@@ -61,19 +61,19 @@ LiveLike supports three main formats:
 
 ## How Widgets Work
 
-### Easy Implementation
+#### Easy Implementation
 
 * Quick setup via the Producer Suite (CMS)
 * Can also be published through REST API
 * Flexible deployment options with customization
 
-### Real-Time Interaction
+#### Real-Time Interaction
 
 * Instant audience participation
 * Live results and updates synchronized with the video
 * Spoiler prevention built-in for seamless experiences
 
-### Engagement Features
+#### Engagement Features
 
 * Points and rewards systems to drive repeat usage
 * Social sharing capabilities
