@@ -49,7 +49,8 @@ Widgets fall into three broad categories:
 
 ## Presentation Modes
 
-How widgets appear in your app can be just as important as the content itself. LiveLike supports three main formats:
+How widgets appear in your app can be just as important as the content itself. 
+LiveLike supports three main formats:
 
 * Popup Widgets → Appear one at a time for a limited window. Great for polls, trivia, or quick predictions.
 * Timeline Widgets → Display in a scrollable feed, letting audiences revisit past widgets. Ideal for live blogs, commentary, and multi-question games.
