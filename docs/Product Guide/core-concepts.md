@@ -19,6 +19,7 @@ Examples include:
 * Mini-games
 
 Widgets are typically published by a producer through the Producer Suite, but they can also be published programmatically via the REST API.
+Learn more: Widgets
 
 **Chat**
 LiveLike provides a flexible chat system to keep your audience engaged:
