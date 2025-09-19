@@ -7,9 +7,19 @@ metadata:
 ---
 Chat invitations support:
 
-
-
 <Tabs>
+  <Tab title="Adding new users to chat rooms">
+    Welcome to the content that you can only see inside the first Tab.
+  </Tab>
+
+  <Tab title="Sending invitations to other users">
+    Here's content that's only inside the second Tab.
+  </Tab>
+
+  <Tab title="Receiving invitations in real-time">
+    Here's content that's only inside the third Tab.
+  </Tab>
+
   <Tab title="Adding new users to chat rooms">
     Welcome to the content that you can only see inside the first Tab.
   </Tab>
