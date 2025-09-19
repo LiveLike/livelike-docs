@@ -27003,8 +27003,7 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "resource_kind",
-                  "resource_key"
+                  "scope_id"
                 ],
                 "properties": {
                   "profile_id": {
@@ -27035,7 +27034,8 @@
                     "type": "string"
                   },
                   "resource_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "resource_id or resource_kind is required"
                   }
                 }
               }
