@@ -1,13 +1,15 @@
 ---
 title: Chat and Comment
+excerpt: >-
+  LiveLike’s customizable Chat and Comments features enable real-time, moderated
+  interactions that transform passive viewing into engaging, community-driven
+  experiences.
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
 The Chat and Comments systems in LiveLike let audiences connect, react, and participate in real time. They are designed to be easy to integrate, customizable to your brand, and scalable for events of any size. Both features give you flexibility — from public chats to private groups, or threaded comment sections to interactive reactions — while ensuring you have strong moderation and control.
-
-***
 
 ## Why Use Chat & Comments?
 
