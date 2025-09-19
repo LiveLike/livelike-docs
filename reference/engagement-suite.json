@@ -27027,6 +27027,9 @@
                   "profile_custom_id": {
                     "type": "string",
                     "description": "profile_id or profile_custom_id is required."
+                  },
+                  "role_id": {
+                    "type": "string"
                   }
                 }
               }
