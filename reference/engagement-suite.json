@@ -32387,6 +32387,27 @@
           }
         ]
       }
+    },
+    "/applications/{client-id}/daily-streaks/": {
+      "get": {
+        "description": "",
+        "operationId": "get_applications{client-id}daily-streaks",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
