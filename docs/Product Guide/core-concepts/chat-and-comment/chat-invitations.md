@@ -10,8 +10,6 @@ hidden: false
 metadata:
   robots: index
 ---
-Overview
-
 ## Chat invitations support:
 
 1. Adding new users to chat rooms
