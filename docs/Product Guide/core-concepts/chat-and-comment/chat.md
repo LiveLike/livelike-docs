@@ -42,7 +42,7 @@ Chat Experience
 * **Theming** → UI elements like bubbles, input windows, and colors can be customized to match your app’s design.
 * **Nicknames** → Users get random names by default, but you can assign custom names via APIs.
 
-Membership
+### Chat Membership
 
 * When a user joins a room, they remain a member until they leave.
 * Members appear in the room list even when offline.
@@ -51,10 +51,14 @@ Membership
 
 Learn more: [Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
 
-Custom Stickers & Reactions
+### Chat Custom Stickers & Reactions
 
 * Stickers → Images or animations bundled into packs; producers can configure which packs are available in each room.
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
+
+Learn more: 
+Chat Stickers
+Chat Reactions
 
 Moderation & Safety
 
