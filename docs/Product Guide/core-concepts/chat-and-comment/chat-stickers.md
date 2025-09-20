@@ -5,51 +5,71 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
+Stickers bring personality and fun into chat conversations. They’re more than just images — they’re interactive, expressive, and can be tailored to your community or brand.
+Inside the LiveLike chat, users can send stickers just like emojis, but with far more creative flexibility: animated reactions, team logos, brand partnerships, or even exclusive packs for VIP users.
 
-# Chat Stickers
+By using stickers, you can:
 
-![1120](https://files.readme.io/6737954-0347be3-sticker_kb.gif "0347be3-sticker_kb.gif")
-
-Stickers are images or animations that can be used inside of [chat messages](doc:chat).
-They can be customized to match your app’s look and feel.
+* Enrich conversations with creative, on-brand visuals
+* Unlock sponsorship and partnership opportunities
+* Reward and recognize your most engaged users
+* Offer fans new ways to express themselves during live or on-demand content
 
 ***
 
 ## Sticker Packs
 
-Stickers are collected into _packs_ that share a theme or art style. Packs often focus on concepts such as:
+Stickers are grouped into **packs** that share a theme or art style. Packs can be based on:
 
-* Players
-* Teams
-* Leagues
-* Crowd Reactions
-* Personalities
+* Players and Teams
+* Leagues and Tournaments
+* Crowd Reactions (cheers, boos, celebrations)
+* Personalities or Influencers
 
-<Image align="center" alt={563} border={false} caption="Each pack has its own icon that will help people find it in their soft keyboards." title="sticker kb behavior.gif" src="https://files.readme.io/5239f1d-sticker_kb_behavior.gif" width="auto" />
+<Image align="center" alt={563} border={false} caption="Each pack has its own icon, making it easy for users to find in their chat keyboard." title="Sticker Keyboard Behavior" src="https://files.readme.io/5239f1d-sticker_kb_behavior.gif" width="auto" />
 
-> ℹ️ Many packs can be set up for an app. Chats can use different combinations of packs, or share the same packs.
-> One chat can include multiple packs, and different chats can mix and match from the available options.
+💡 **Flexible setup:** You can enable multiple packs across your app, and each chat can use a different combination of packs or share the same ones.
+This means a “match-day chat” could feature team and league stickers, while a “fan community chat” might highlight personality-driven packs.
 
 ***
 
 ## Custom Stickers
 
-Custom stickers can be created by your own team.
-Follow the [Chat Asset Guidelines](doc:chat-sticker-guidelines) for requirements on size, format, and quality.
+Your team can create custom sticker packs to perfectly match your app’s identity.
+For best results, follow the [Chat Asset Guidelines](doc:chat-sticker-guidelines) for size, file format, and styling. -- ---- edit link
+
+Custom packs let you:
+
+* Extend your brand identity inside chat
+* Launch theme-based campaigns or seasonal sticker sets
+* Create limited-time packs for special events
 
 ***
 
 ## Sponsorship Opportunities
 
-Custom stickers can also be used for **brand partnerships and sponsorships**.
-LiveLike provides [analytics and reports](doc:analytics-overview) with insights into **when** and **how** users interact with stickers.
+Stickers can also serve as **sponsored assets**.
+For example, a brand could provide a sticker pack that fans can use to cheer during a live event. This creates **natural engagement** while opening up new **monetization opportunities**.
+
+LiveLike provides [analytics and reports](doc:analytics-overview) so you can track: ------ edit link
+
+* How often sponsored stickers are used
+* Which stickers are most popular
+* User engagement trends during live moments
 
 ***
 
 ## Exclusive Stickers
 
-Exclusive stickers are assigned to specific users so they can stand out in the community.
+Sometimes you want to give certain fans something extra.
+**Exclusive stickers** allow you to assign packs to specific users or groups, so they stand out in the community.
 
-* An exclusive sticker pack can be assigned to **one or multiple profiles**.
-* Only those users will have access to use them.
+Use cases:
+
+* Reward top fans with VIP-only stickers
+* Give premium subscribers access to special packs
+* Build a sense of belonging for select communities
+
+👉 Exclusive packs can be assigned to one or many profiles, but only those users will see and use them.
+
+***
