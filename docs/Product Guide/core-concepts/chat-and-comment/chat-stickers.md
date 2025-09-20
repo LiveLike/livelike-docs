@@ -19,7 +19,7 @@ By using stickers, you can:
 
 ### Sticker Packs
 
-Stickers are grouped into **packs** that share a theme or art style. Packs can be based on:
+Stickers are grouped into packs that share a theme or art style. Packs can be based on:
 
 * Players and Teams
 * Leagues and Tournaments
@@ -48,8 +48,8 @@ Custom packs let you:
 
 ### Sponsorship Opportunities
 
-Stickers can also serve as **sponsored assets**.
-For example, a brand could provide a sticker pack that fans can use to cheer during a live event. This creates **natural engagement** while opening up new **monetization opportunities**.
+Stickers can also serve as sponsored assets.
+For example, a brand could provide a sticker pack that fans can use to cheer during a live event. This creates natural engagement while opening up new monetization opportunities.
 
 LiveLike provides [analytics and reports](doc:analytics-overview) so you can track: ------ edit link
 
