@@ -104,6 +104,42 @@ Reactions are exposed via three main APIs:
   ```
 
   ####
+
+  #### Get Reaction Pack Details
+
+  This could be used to get reaction pack details using reaction pack Id.
+
+  ```javascript
+  LiveLike.getReactionPackDetail({
+      reactionPackId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+  }).then(reactionPack => console.log(reactionPack))
+  ```
+  ```kotlin
+   engagementSDK.reaction()
+              .getReactionPackDetails(< reaction -pack - id >, object: LiveLikeCallback<ReactionPack>(){
+              override fun onResponse(result: ReactionPack?, error: String?) {
+                  result?.let {
+                      //handle success
+                  }
+
+                  error?.let {
+                      //handle error
+                  }
+              }
+              )
+  ```
+  ```swift
+  sdk.reaction.getReactionPackInfo(reactionPackID: packID) { result in
+  	switch result {
+  		case .success(let reactionPack):
+      	//Success block
+      case .failure(let error):
+      	//Failure Block
+  	}
+  }
+  ```
+
+  ###
 </details>
 
 <details>
