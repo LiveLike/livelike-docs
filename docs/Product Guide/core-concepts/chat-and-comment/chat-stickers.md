@@ -59,17 +59,28 @@ LiveLike provides [analytics and reports](doc:analytics-overview) so you can tra
 
 ***
 
-### Exclusive Stickers
+<br />
 
-Sometimes you want to give certain fans something extra.
-**Exclusive stickers** allow you to assign packs to specific users or groups, so they stand out in the community.
+### Exclusive Sticker Packs ✨
 
-Use cases:
+Exclusive stickers unlock a new layer of personalization and recognition inside your community chats.
+Unlike standard packs, exclusive packs are only available to specific users or groups — helping fans feel rewarded and distinguished while opening up new monetization and engagement opportunities.
 
-* Reward top fans with VIP-only stickers
-* Give premium subscribers access to special packs
-* Build a sense of belonging for select communities
+<Callout icon="📘" theme="info">
+  Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat.
+</Callout>
 
-Exclusive packs can be assigned to one or many profiles, but only those users will see and use them.
+ **Sample Use Cases**
+
+* Available through in-app purchases for collectors.
+* Team-specific branded stickers available only to team fans.
+* Collectible packs redeemed in the Rewards Store.
+* Gold-tier members receiving exclusive packs as part of loyalty benefits.
+
+***
+
+## Developer Integration
+
+<br />
 
 ***
