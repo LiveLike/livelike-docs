@@ -70,49 +70,50 @@ Reactions are exposed via three main APIs:
 
 > Expand below for SDK examples in **Web, Android, iOS** 👇
 
-<details>
-  <summary>Reaction Packs API</summary>
-  <summary>1. ###List Reaction Packs
-  Retrieve all reaction packs created through the Producer Suite.</summary>
+\<details>
+&#x20; \<summary>Reaction Packs API\</summary>
+&#x20; \<summary>1. List Reaction Packs
+&#x20; Retrieve all reaction packs created through the Producer Suite.
 
-  ```javascript
-  LiveLike.getReactionPacks().then(({results}) => console.log(results))
-  ```
-  ```kotlin
-    engagementSDK.reaction().getReactionPacks(LiveLikePagination.FIRST,
-              object : LiveLikeCallback<List<ReactionPack>>() {
-                  override fun onResponse(result: List<ReactionPack>?, error: String?) {
-                      result?.let {
-                          //handle success block}
-                      }
-                      error?.let {
-                          //handle failure block
-                      }
-                  })
-  ```
-  ```swift
-  sdk.reaction.getReactionPacks(page: .first) { result in
-  	switch result {
-      case .success(let reactionPacks):
-      	//Success Block
-      case .failure(let error):
-      	//Failure Block
-  	}
-  }
-  ```
-</details>
+&#x20; \`\`\`javascript
+&#x20; LiveLike.getReactionPacks().then((\{results}) => console.log(results))
+&#x20; \`\`\`
+&#x20; \`\`\`kotlin
+&#x20;   engagementSDK.reaction().getReactionPacks(LiveLikePagination.FIRST,
+&#x20;             object : LiveLikeCallback\<List\<ReactionPack>>() \{
+&#x20;                 override fun onResponse(result: List\<ReactionPack>?, error: String?) \{
+&#x20;                     result?.let \{
+&#x20;                         //handle success block}
+&#x20;                     }
+&#x20;                     error?.let \{
+&#x20;                         //handle failure block
+&#x20;                     }
+&#x20;                 })
+&#x20; \`\`\`
+&#x20; \`\`\`swift
+&#x20; sdk.reaction.getReactionPacks(page: .first) \{ result in
+&#x20; 	switch result \{
+&#x20;     case .success(let reactionPacks):
+&#x20;     	//Success Block
+&#x20;     case .failure(let error):
+&#x20;     	//Failure Block
+&#x20; 	}
+&#x20; }
+&#x20; \`\`\`
+\</summary>
+\</details>
 
-<details>
-  <summary>Reaction Spaces API</summary>
+\<details>
+&#x20; \<summary>Reaction Spaces API\</summary>
 
-  ... (existing code snippets)
-</details>
+&#x20; ... (existing code snippets)
+\</details>
 
-<details>
-  <summary>User Reactions API</summary>
+\<details>
+&#x20; \<summary>User Reactions API\</summary>
 
-  ... (existing code snippets)
-</details>
+&#x20; ... (existing code snippets)
+\</details>
 
 ***
 
