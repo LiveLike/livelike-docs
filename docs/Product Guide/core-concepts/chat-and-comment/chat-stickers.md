@@ -17,7 +17,7 @@ By using stickers, you can:
 
 ***
 
-## Sticker Packs
+### Sticker Packs
 
 Stickers are grouped into **packs** that share a theme or art style. Packs can be based on:
 
@@ -33,7 +33,7 @@ This means a “match-day chat” could feature team and league stickers, while 
 
 ***
 
-## Custom Stickers
+### Custom Stickers
 
 Your team can create custom sticker packs to perfectly match your app’s identity.
 For best results, follow the [Chat Asset Guidelines](doc:chat-sticker-guidelines) for size, file format, and styling. -- ---- edit link
@@ -46,7 +46,7 @@ Custom packs let you:
 
 ***
 
-## Sponsorship Opportunities
+### Sponsorship Opportunities
 
 Stickers can also serve as **sponsored assets**.
 For example, a brand could provide a sticker pack that fans can use to cheer during a live event. This creates **natural engagement** while opening up new **monetization opportunities**.
@@ -59,7 +59,7 @@ LiveLike provides [analytics and reports](doc:analytics-overview) so you can tra
 
 ***
 
-## Exclusive Stickers
+### Exclusive Stickers
 
 Sometimes you want to give certain fans something extra.
 **Exclusive stickers** allow you to assign packs to specific users or groups, so they stand out in the community.
@@ -70,6 +70,6 @@ Use cases:
 * Give premium subscribers access to special packs
 * Build a sense of belonging for select communities
 
-👉 Exclusive packs can be assigned to one or many profiles, but only those users will see and use them.
+Exclusive packs can be assigned to one or many profiles, but only those users will see and use them.
 
 ***
