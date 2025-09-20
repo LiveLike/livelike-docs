@@ -22,6 +22,8 @@ Overview
 
 These APIs work across iOS, Android, and Web, with platform-specific implementations for real-time notifications.
 
+***
+
 ## Key Workflows
 
 ### Add New User to Chat Room
@@ -69,7 +71,7 @@ LiveLike.addNewMemberToChatRoom({
 }).then(membership => console.log(membership))
 ```
 
-<br />
+***
 
 ### Invite User to Chat Room
 
@@ -119,7 +121,7 @@ LiveLike.sendChatRoomInviteToProfile({
 }).then(chatRoomInvitation => console.log(chatRoomInvitation))
 ```
 
-<br />
+***
 
 ### Receive Invitation in Real-time
 
@@ -241,7 +243,7 @@ LiveLike.removeChatRoomEventListener(
 )
 ```
 
-<br />
+***
 
 ### Update the Invitation Status for a User
 
@@ -293,7 +295,7 @@ LiveLike.updateChatRoomInviteStatus({
 }).then(chatRoomInvitation => console.log(chatRoomInvitation))
 ```
 
-<br />
+***
 
 ### Get List of Invitations received by the current User
 
