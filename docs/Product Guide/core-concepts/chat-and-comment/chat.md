@@ -56,8 +56,8 @@ Learn more: [Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/
 * Stickers → Images or animations bundled into packs; producers can configure which packs are available in each room.
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
 
-Learn more: 
-Chat Stickers
+Learn more:
+[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
 Chat Reactions
 
 Moderation & Safety
