@@ -18,7 +18,7 @@ Members can be added to a room in a few ways:
 
 * Someone can _join_ a room on their own to become a member
 * A new member can be _added_ to the room by another member
-* Someone can accept an [invitation](doc:chat-room-invitations) to become a member
+* Someone can accept an [invitation](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-invitations#/) to become a member
 
 ## Counting Members
 
