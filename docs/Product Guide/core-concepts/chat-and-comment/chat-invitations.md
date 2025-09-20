@@ -12,10 +12,7 @@ metadata:
 ---
 Overview
 
-
-
-### Chat invitations support:
-
+## Chat invitations support:
 
 * Adding new users to chat rooms
 * Sending invitations to other users
@@ -25,7 +22,9 @@ Overview
 
 These APIs work across iOS, Android, and Web, with platform-specific implementations for real-time notifications.
 
-<br />
+> dwedwe
+>
+> we
 
 ## Key Workflows
 
@@ -76,7 +75,7 @@ LiveLike.addNewMemberToChatRoom({
 
 <br />
 
-## Invite User to Chat Room
+### Invite User to Chat Room
 
 You can allow the User to invite another user to a particular chat room that they are already a part of.
 You can call the `sendChatRoomInviteToUser` method which sends an invitation to the other user where the other user could decide either to `accept` or `reject` the invitation.
