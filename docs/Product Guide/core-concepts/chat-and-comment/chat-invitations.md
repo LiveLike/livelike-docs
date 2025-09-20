@@ -14,17 +14,13 @@ Overview
 
 ## Chat invitations support:
 
-* Adding new users to chat rooms
-* Sending invitations to other users
-* Receiving invitations in real-time
-* Updating invitation status (accepted, rejected, pending)
-* Fetching lists of sent and received invitations
+1. Adding new users to chat rooms
+2. Sending invitations to other users
+3. Receiving invitations in real-time
+4. Updating invitation status (accepted, rejected, pending)
+5. Fetching lists of sent and received invitations
 
 These APIs work across iOS, Android, and Web, with platform-specific implementations for real-time notifications.
-
-> dwedwe
->
-> we
 
 ## Key Workflows
 
@@ -123,6 +119,274 @@ LiveLike.sendChatRoomInviteToProfile({
 }).then(chatRoomInvitation => console.log(chatRoomInvitation))
 ```
 
-##
+<br />
+
+### Receive Invitation in Real-time
+
+> 📘 Platform specific implementation
+>
+> Implementation for receiving real time invitation is different for Web, Android and IOS.
+
+```swift
+/*
+	To receive real-time notifications of the User being added a Chat Room,
+	you need to implement the `ChatClientDelegate`.
+	The method `userDidReceiveInvitation` returns an object of type `ChatRoomInvitation` 
+	that contains all the details related to the Chat Room Invitation.
+*/
+class SomeViewController: UIViewController {
+
+  var sdk: EngagementSDK
+  
+  override func viewDidLoad() {
+    sdk.chat.delegate = self
+  }
+}
+
+class SomeViewController: ChatClientDelegate {
+  func chatClient(_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) {
+        self.showInviteAlert(title: "Invitation Received", 
+                             message: "You've been invited to room")
+  }
+}
+```
+```kotlin
+sdk.chat().chatRoomDelegate =
+            object : ChatRoomDelegate() {
+                override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) {
+                    
+                }
+
+                override fun onReceiveInvitation(invitation: ChatRoomInvitation) {
+                    showToast("Receive invitation from ${invitation.invited_by.nickname} => ${invitation.invited_by.userId}")
+                }
+            }
+```
+```javascript
+// define a listener function to be invoked when user is invitated to some other chatroom
+function onReceieveChatRoomInvitationListener(invitation){
+  console.log(invitation);
+}
+
+LiveLike.addChatRoomEventListener(
+  "chat-room-invite",
+  onReceieveChatRoomInvitationListener
+)
+
+// to remove the attached listener function use removeUserProfileEventListener API
+LiveLike.removeChatRoomEventListener(
+  "chat-room-invite",
+  onReceieveChatRoomInvitationListener
+)
+```
 
 <br />
+
+### Receive notification on adding user to chat room in Real-time
+
+> 📘 Platform specific implementation
+>
+> Implementation for receiving notification when user is added to chat room is different for Web, Android and IOS.
+
+```swift
+/*
+* To receive real-time notifications of the User being added a Chat Room, 
+* you need to implement the `ChatClientDelegate`.
+* The method `userDidBecomeMemberOfChatRoom` returns an object of type `NewChatMembershipInfo`
+* that contains all the details related to the Chat Room Membership.
+*/
+class SomeViewController: UIViewController {
+
+  var sdk: EngagementSDK
+  
+  override func viewDidLoad() {
+    sdk.chat.delegate = self
+  }
+}
+
+class SomeViewController: ChatClientDelegate {
+  func chatClient(_ chatClient: ChatClient, 
+                  userDidBecomeMemberOfChatRoom newChatMembershipInfo: NewChatMembershipInfo) {
+        self.showAlert(title: "Added to Chatroom", message: "You've been added to room: \(String(describing: newChatMembershipInfo.chatRoomTitle)) by \(newChatMembershipInfo.senderNickName)")
+    }
+}
+```
+```kotlin
+sdk.chat().chatRoomDelegate =
+            object : ChatRoomDelegate() {
+                override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) {
+                    
+                }
+
+                override fun onReceiveInvitation(invitation: ChatRoomInvitation) {
+                    showToast("Receive invitation from ${invitation.invited_by.nickname} => ${invitation.invited_by.userId}")
+                }
+            }
+```
+```javascript
+// define a listener function to be invoked when user is added 
+function onNewMemberAddedToChatRoomListener(invitation){
+  console.log(invitation);
+}
+
+LiveLike.addChatRoomEventListener(
+  "chat-room-add",
+  onNewMemberAddedToChatRoomListener
+)
+
+// to remove the attached listener function use removeUserProfileEventListener API
+LiveLike.removeChatRoomEventListener(
+  "chat-room-add",
+  onNewMemberAddedToChatRoomListener
+)
+```
+
+<br />
+
+### Update the Invitation Status for a User
+
+You can update the status of the invitation that the User has received using `updateChatRoomInviteStatus` API.
+
+```swift
+/*
+	"updateChatRoomInviteStatus" method which is a part of the `chat` (ChatClient) object. 
+	On successful completion, it returns a `ChatRoomInvitation` object which contains
+	the details of the Invitation with its updated status. 
+
+	The function requires the `ChatRoomInvitation` object and also a `status` of 
+	type `ChatRoomInvitationStatus` which can be of type `accepted`, `pending` or `rejected`.
+*/
+self.sdk.chat.updateChatRoomInviteStatus(
+  chatRoomInvitation: invitation,
+  invitationStatus: .accepted
+) { 
+  result in
+	switch result {
+		case .success(let invitation):
+			self.showAlert(title: "Invitation Accepted", message: "")
+		case .failure(let error):
+			self.showAlert(title: "Failed to Accept", message: error.localizedDescription)
+	}
+}
+```
+```kotlin
+sdk.chat().updateChatRoomInviteStatus(
+            chatRoomInvitation,
+            ChatRoomInvitationStatus.ACCEPTED,
+            object : LiveLikeCallback<ChatRoomInvitation>() {
+                override fun onResponse(result: ChatRoomInvitation?, error: String?) {
+                    result?.let {
+                        showToast("Status: ${it.status}")
+                    }
+                    error?.let {
+                        showToast(it)
+                    }
+                
+                }
+            })
+```
+```javascript
+// invitationStatus value could be "accepted" | "rejected" | "pending"
+LiveLike.updateChatRoomInviteStatus({
+  invitationId: "28cc0ceb-8934-48cd-abc5-4d3a3a681c1b",
+	invitationStatus: "accepted"
+}).then(chatRoomInvitation => console.log(chatRoomInvitation))
+```
+
+<br />
+
+### Get List of Invitations received by the current User
+
+This API gives you list of received invitation for the current logged in user.
+
+```swift
+/*
+	You can call the `getInvitationsForUserWithInvitationStatus` method 
+	which is a part of the `chat` (ChatClient) object to get a paginated list 
+	of the Invitations that the user has received to join Chat Rooms.
+
+	The function also requires a `ChatRoomInvitationStatus` object to filter 
+	the list of invitations based on type of status.
+*/
+sdk.chat.getInvitationsForUserWithInvitationStatus(
+            invitationStatus: .pending,
+            page: .first
+        ) { result in
+            switch result {
+            case .success(let chatRoomInvitations):
+                self.showAlert(title: "Chat Room Invitations Recieved", message: "No: \(chatRoomInvitations.count)")
+            case .failure(let error):
+                print(error.localizedDescription)
+	}
+}
+```
+```kotlin
+sdk.chat().getInvitationsForCurrentProfileWithInvitationStatus(
+            pagination,
+            ChatRoomInvitationStatus.PENDING,
+            object : LiveLikeCallback<List<ChatRoomInvitation>>() {
+                override fun onResponse(result: List<ChatRoomInvitation>?, error: String?) {
+                    result?.let {
+                       
+                    }
+                    error?.let {
+                        showToast(it)
+                    }
+                    
+                }
+            })
+```
+```javascript
+// invitationStatus value could be "accepted" | "rejected" | "pending"
+LiveLike.getReceivedChatRoomInvitations({
+  invitationStatus: "pending"
+}).then(paginatedInvitations => console.log(paginatedInvitations))
+```
+
+### Get List of Invitations sent by the current User
+
+This API gives you list of sent invitation for the current logged in user.
+
+```swift
+/*
+	You can call the `getInvitationsByUserWithInvitationStatus` method which
+	is a part of the `chat` (ChatClient) object to get a paginated list of the Invitations
+	that the user has sent to join Chat Rooms.
+
+	The function also requires a `ChatRoomInvitationStatus` object 
+	to filter the list of invitations based on type of status.
+*/
+sdk.chat.getInvitationsByUserWithInvitationStatus(
+            invitationStatus: .pending,
+            page: .first
+        ) { result in
+            switch result {
+            case .success(let chatRoomInvitations):
+                self.showAlert(title: "Chat Room Invitations Sent", message: "No: \(chatRoomInvitations.count)")
+            case .failure(let error):
+                print(error.localizedDescription)
+	}
+}
+```
+```kotlin
+sdk.chat().getInvitationsByCurrentProfileWithInvitationStatus(
+                LiveLikePagination.FIRST,
+                ChatRoomInvitationStatus.PENDING,
+                object : LiveLikeCallback<List<ChatRoomInvitation>>() {
+                    override fun onResponse(result: List<ChatRoomInvitation>?, error: String?) {
+                        result?.let {
+                           
+                        }
+                        error?.let {
+                            showToast(it)
+                        }
+                        
+                    }
+                })
+```
+```javascript
+// invitationStatus value could be "accepted" | "rejected" | "pending"
+LiveLike.getSentChatRoomInvitations({
+  invitationStatus: "pending"
+}).then(paginatedInvitations => console.log(paginatedInvitations))
+```
