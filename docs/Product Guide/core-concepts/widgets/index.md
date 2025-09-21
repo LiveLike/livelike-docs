@@ -63,6 +63,8 @@ VOD widgets extend any of the above widget types to **sync with on-demand video 
 * **Work with all widget types** → Polls, Quizzes, Predictions, and more can all be used as VOD widgets.
 * **Stay consistent across replays** → Widgets always appear at the same video moment, even if users rewind or fast-forward.
 
+Learn More: Video on Demand Widget
+
 ***
 
 ## Presentation Modes
