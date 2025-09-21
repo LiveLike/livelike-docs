@@ -86,4 +86,4 @@ Learn more:
 
 Building Custom Widget UI
 
-Deleting Widget
+[Deleting Widget](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/delete-widgets#/)
