@@ -1,5 +1,5 @@
 ---
-title: Video on Demand Widget
+title: Video on Demand (VOD) Widget
 deprecated: false
 hidden: false
 metadata:
