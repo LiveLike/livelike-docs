@@ -70,9 +70,7 @@ Reactions are exposed via three main APIs:
 
 > Expand below for SDK examples in **Web, Android, iOS** 👇
 
-<br />
-
-### Reaction Packs API
+### 1. Reaction Packs API
 
 <details>
   <summary>List Reaction Packs</summary>
@@ -142,7 +140,7 @@ Reactions are exposed via three main APIs:
   ```
 </details>
 
-### Reaction Spaces API
+### 2. Reaction Spaces API
 
 <details>
   <summary>Create a Reaction Space</summary>
@@ -315,7 +313,7 @@ Reactions are exposed via three main APIs:
   ```
 </details>
 
-### User Reactions API
+### 3. User Reactions API
 
 <details>
   <summary>Create Reaction Session</summary>
