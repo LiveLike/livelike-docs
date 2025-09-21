@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 # Overview
 
 The first step in a Widget's lifecycle is creation. To create a widget you will need to provide the content of the Widget as well as other data such as the Program it belongs to. Each widget has distinct content properties that must be provided but some properties are common between all Widgets.
@@ -14,7 +12,6 @@ The first step in a Widget's lifecycle is creation. To create a widget you will 
 After creating the Widget it is time to publish it or schedule it to be published later. When a widget is published it will be pushed out to users to be interacted with.
 
 And then you're done!
-
 The widget will remain available for users to see and interact with. If you'd like to delete a widget see below.
 
 <br />
@@ -498,8 +495,6 @@ For publishing a prediction result, you can either create a follow-up widget wit
   ```
 </details>
 
-<br />
-
 ### Publish Prediction FollowUp
 
 Whenever a prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the prediction widget resource.
@@ -523,6 +518,8 @@ Whenever a prediction widget is created, the backend service automatically creat
   }).then(res => console.log(res))
   ```
 </details>
+
+<br />
 
 ## Number Prediction
 
@@ -608,8 +605,6 @@ Whenever a prediction widget is created, the backend service automatically creat
   ```
 </details>
 
-<br />
-
 ### Number Prediction Result
 
 For publishing a number prediction result, you can update each prediction widget option with the correct number. Once options are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
@@ -654,8 +649,6 @@ For publishing a number prediction result, you can update each prediction widget
   ```
 </details>
 
-<br />
-
 ### Publish Number Prediction Follow-Up
 
 Whenever a number prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the number prediction widget resource.
@@ -695,6 +688,8 @@ Whenever a number prediction widget is created, the backend service automaticall
               }
   ```
 </details>
+
+<br />
 
 ## Quiz
 
@@ -840,6 +835,8 @@ Whenever a number prediction widget is created, the backend service automaticall
 
   ```
 </details>
+
+<br />
 
 ## Text Ask
 
