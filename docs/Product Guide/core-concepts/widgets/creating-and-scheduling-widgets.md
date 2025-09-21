@@ -29,6 +29,8 @@ To create, publish a widget with an application profile you should be a producer
 | Image Poll | create_image_poll        | publish_image_poll        |
 | Alert      | create_alert             | publish_alert             |
 
+<br />
+
 ## Create a Widget
 
 Every widget has some common properties that are provided upon creation which can alter the behavior and uses of the widget.
@@ -45,7 +47,7 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-## Alerts
+### Alerts
 
 | Property   | Description                      | Required |
 | :--------- | :------------------------------- | :------- |
@@ -121,14 +123,14 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-## Polls
+### Polls
 
 | Property | Description              | Required |
 | :------- | :----------------------- | :------- |
 | Question | The question of the poll | Yes      |
 | Options  | The options of the poll  | Yes      |
 
-### Option
+#### Option
 
 | Property  | Description                        | Required                  |
 | :-------- | :--------------------------------- | :------------------------ |
@@ -256,11 +258,153 @@ Every widget has some common properties that are provided upon creation which ca
   ```
 </details>
 
-## Prediction Result
+<br />
+
+### Prediction
+
+| Property             | Description                                          | Required |
+| :------------------- | :--------------------------------------------------- | :------- |
+| Question             | The question of the prediction                       | Yes      |
+| Options              | The options for the prediction                       | Yes      |
+| Confirmation Message | Message to show when user submitted their prediction | No       |
+
+#### Option
+
+| Property  | Description                        | Required                        |
+| :-------- | :--------------------------------- | :------------------------------ |
+| Text      | The text description of the option | Yes                             |
+| Image URL | The image of the option            | Yes (For Image Prediction Only) |
+
+<br />
+
+<details>
+  <summary>Create Text Prediction Widget</summary>
+
+  ```javascript Web
+  LiveLike.createTextPredictionWidget({
+    question: '<prediction question>',
+    programId: '<program-id>',
+    options: [
+      { description: '<option-description-1>' },
+      { description: '<option-description-2>' },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+    confirmationMessage: '<your-confirmation-message>',
+  }).then((res) => console.log(res));
+
+  // create image prediction widget
+  LiveLike.createImagePredictionWidget({
+    question: '<prediction question>',
+    programId: '<program-id>',
+    options: [
+      { 
+        description: '<option-description-1>',
+        imageUrl: '<option-image-url>'
+      },
+      { 
+        description: '<option-description-2>',
+        imageUrl: '<option-image-url>'
+      },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+    confirmationMessage: '<your-confirmation-message>',
+  }).then((res) => console.log(res));
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.createTextPredictionWidget(
+    options: CreateTextPollRequestOptions(
+      common: CommonCreateWidgetOptions(
+        programID: <program - id>
+      ),
+      question: "<question>",
+      options: [
+        .init(text: "<option-text>"),
+        .init(text: "<option-text>"),
+      ]
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+
+  livelike.widgetClient.createImagePredictionWidget(
+    options: CreateImagePollRequestOptions(
+      common: CommonCreateWidgetOptions(
+        programID: <program - id>,
+        timeoutSeconds: 1000
+      ),
+      question: "<question>",
+      options: [
+        .init(text: "<option-text>", imageURL: <image - url>),
+        .init(text: "<option-text>", imageURL: <image - url>),
+      ]
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createTextPrediction(
+        request = CreateTextPredictionRequest(
+            options = "<options>",
+            programId = "<program-id>",
+            question = "<question>",
+           	timeout = "<timeout>",
+            confirmationMessage = "Thanks"
+        ).run { copy(options = options!!.map {this.Option(it.description)})},
+    { result,error -> })
+
+  liveLikeWidgetClient.createImagePrediction(
+        request =  CreateImagePredictionRequest(
+             options = "<options>",
+             programId = "<program-id>",
+           	 question = "<question>",
+          	 timeout = "<timeout>",
+             confirmationMessage = "Thanks"
+        ).run { copy(options = options!!.map { this.Option(it.description, it.image_url!!) })},
+    { result,error -> })
+
+  ```
+</details>
+
+<br />
+
+#### Prediction Result
 
 For publishing a prediction result, you can either create a follow-up widget with the correct option ID or update a prediction widget option to declare which option is correct. Once the option(s) are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
-Approach 1: Create a Follow-Up Widget
+##### Approach 1: Create a Follow-Up Widget
 
 <details>
   <summary>Create Prediction Follow Up Widget</summary>
@@ -289,7 +433,7 @@ Approach 1: Create a Follow-Up Widget
 
 <br />
 
-Approach 2: Update Prediction Option
+##### Approach 2: Update Prediction Option
 
 <details>
   <summary>Update Prediction option</summary>
@@ -364,7 +508,7 @@ Approach 2: Update Prediction Option
 
 <br />
 
-### Publish Prediction FollowUp
+#### Publish Prediction FollowUp
 
 Whenever a prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the prediction widget resource.
 
@@ -390,7 +534,7 @@ Whenever a prediction widget is created, the backend service automatically creat
 
 <br />
 
-## Number Prediction
+### Number Prediction
 
 | Property             | Description                                          | Required |
 | :------------------- | :--------------------------------------------------- | :------- |
@@ -398,7 +542,7 @@ Whenever a prediction widget is created, the backend service automatically creat
 | Options              | The options for the number prediction                | Yes      |
 | Confirmation Message | Message to show when user submitted their prediction | No       |
 
-### Option
+#### Option
 
 | Property  | Description                        | Required |
 | :-------- | :--------------------------------- | :------- |
@@ -476,7 +620,7 @@ Whenever a prediction widget is created, the backend service automatically creat
   ```
 </details>
 
-### Number Prediction Result
+#### Number Prediction Result
 
 For publishing a number prediction result, you can update each prediction widget option with the correct number. Once options are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
@@ -522,7 +666,7 @@ For publishing a number prediction result, you can update each prediction widget
 
 <br />
 
-## Publish Number Prediction Follow-Up
+#### Publish Number Prediction Follow-Up
 
 Whenever a number prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the number prediction widget resource.
 
@@ -564,14 +708,14 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-## Quiz
+### Quiz
 
 | Property | Description              | Required |
 | :------- | :----------------------- | :------- |
 | Question | The question of the Quiz | Yes      |
 | Choices  | The choices for the Quiz | Yes      |
 
-### Option
+#### Option
 
 | Property       | Description                        | Required                  |
 | :------------- | :--------------------------------- | :------------------------ |
@@ -713,7 +857,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-## Text Ask
+### Text Ask
 
 | Property | Description                      | Required |
 | :------- | :------------------------------- | :------- |
@@ -780,7 +924,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-# Publish a Widget
+## Publish a Widget
 
 | Property          | Description                                                 | Required |
 | :---------------- | :---------------------------------------------------------- | :------- |
@@ -833,7 +977,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-# Delete Widget
+## Delete Widget
 
 | Property    | Description                    | Required |
 | :---------- | :----------------------------- | :------- |
