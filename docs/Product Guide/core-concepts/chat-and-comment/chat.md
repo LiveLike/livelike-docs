@@ -57,7 +57,7 @@ Every chat room is defined by a few key attributes:
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
 
 Learn more about:
-👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)  and 
+👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)  and
 👉[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
 ### Moderation
@@ -65,6 +65,6 @@ Learn more about:
 LiveLike offers a powerful moderation toolkit to help you build a safe and engaging chat community.
 Moderation features include automatic filtering of inappropriate content and tools for moderators to manage user behavior.
 
-👉 [Learn more about Moderation](doc:chat-moderation)
+👉 [Learn more about Moderation](https://docs.livelike.com/v1_doc_rewire_vk/docs/chat-moderation-1#/)
 
 <br />
