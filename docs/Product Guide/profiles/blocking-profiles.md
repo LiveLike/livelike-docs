@@ -34,8 +34,6 @@ As an integrator, you can now allow users to block other users from sending invi
 
 > API Details
 >
-> <br />
->
 > <details>
 >   <summary>Creating a Block</summary>
 >
@@ -143,8 +141,6 @@ As an integrator, you can show the user a list of all the profiles blocked by th
 
 > API Details
 >
-> <br />
->
 > <details>
 >   <summary>Getting a List of Blocks</summary>
 >
@@ -243,8 +239,6 @@ You can add listeners/delegators for getting real time block/unblock profile eve
 > Implementation for receiving real time events is different for Web, Android and IOS.
 
 > API Details
->
-> <br />
 >
 > <details>
 >   <summary>Real time block/unblock profile events</summary>
