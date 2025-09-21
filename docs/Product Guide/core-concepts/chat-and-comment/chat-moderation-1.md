@@ -34,4 +34,6 @@ Moderators get additional capabilities for active community management:
 
 ## Learn More
 
-Moderation can also be managed through the **Chat Moderation Tool in CMS**, which provides a dashboard view for real-time monitoring and control.
+Moderation can also be managed through the [Chat Moderation Tool](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-moderation#/) in CMS  
+
+<br />
