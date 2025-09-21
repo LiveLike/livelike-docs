@@ -31,7 +31,7 @@ To create, publish a widget with an application profile you should be a producer
 
 <br />
 
-## Create a Widget
+# Create a Widget
 
 Every widget has some common properties that are provided upon creation which can alter the behavior and uses of the widget.
 
@@ -47,7 +47,7 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-### Alerts
+## Alerts
 
 | Property   | Description                      | Required |
 | :--------- | :------------------------------- | :------- |
@@ -123,14 +123,14 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-### Polls
+## Polls
 
 | Property | Description              | Required |
 | :------- | :----------------------- | :------- |
 | Question | The question of the poll | Yes      |
 | Options  | The options of the poll  | Yes      |
 
-#### Option
+### Option
 
 | Property  | Description                        | Required                  |
 | :-------- | :--------------------------------- | :------------------------ |
@@ -260,7 +260,7 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-### Prediction
+## Prediction
 
 | Property             | Description                                          | Required |
 | :------------------- | :--------------------------------------------------- | :------- |
@@ -268,7 +268,7 @@ Every widget has some common properties that are provided upon creation which ca
 | Options              | The options for the prediction                       | Yes      |
 | Confirmation Message | Message to show when user submitted their prediction | No       |
 
-#### Option
+### Option
 
 | Property  | Description                        | Required                        |
 | :-------- | :--------------------------------- | :------------------------------ |
@@ -400,11 +400,11 @@ Every widget has some common properties that are provided upon creation which ca
 
 <br />
 
-#### Prediction Result
+### Prediction Result
 
 For publishing a prediction result, you can either create a follow-up widget with the correct option ID or update a prediction widget option to declare which option is correct. Once the option(s) are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
-##### Approach 1: Create a Follow-Up Widget
+#### Approach 1: Create a Follow-Up Widget
 
 <details>
   <summary>Create Prediction Follow Up Widget</summary>
@@ -433,7 +433,7 @@ For publishing a prediction result, you can either create a follow-up widget wit
 
 <br />
 
-##### Approach 2: Update Prediction Option
+#### Approach 2: Update Prediction Option
 
 <details>
   <summary>Update Prediction option</summary>
@@ -508,7 +508,7 @@ For publishing a prediction result, you can either create a follow-up widget wit
 
 <br />
 
-#### Publish Prediction FollowUp
+### Publish Prediction FollowUp
 
 Whenever a prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the prediction widget resource.
 
@@ -534,7 +534,7 @@ Whenever a prediction widget is created, the backend service automatically creat
 
 <br />
 
-### Number Prediction
+## Number Prediction
 
 | Property             | Description                                          | Required |
 | :------------------- | :--------------------------------------------------- | :------- |
@@ -542,7 +542,7 @@ Whenever a prediction widget is created, the backend service automatically creat
 | Options              | The options for the number prediction                | Yes      |
 | Confirmation Message | Message to show when user submitted their prediction | No       |
 
-#### Option
+### Option
 
 | Property  | Description                        | Required |
 | :-------- | :--------------------------------- | :------- |
@@ -620,7 +620,7 @@ Whenever a prediction widget is created, the backend service automatically creat
   ```
 </details>
 
-#### Number Prediction Result
+### Number Prediction Result
 
 For publishing a number prediction result, you can update each prediction widget option with the correct number. Once options are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
@@ -666,7 +666,7 @@ For publishing a number prediction result, you can update each prediction widget
 
 <br />
 
-#### Publish Number Prediction Follow-Up
+### Publish Number Prediction Follow-Up
 
 Whenever a number prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the number prediction widget resource.
 
@@ -708,14 +708,14 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-### Quiz
+## Quiz
 
 | Property | Description              | Required |
 | :------- | :----------------------- | :------- |
 | Question | The question of the Quiz | Yes      |
 | Choices  | The choices for the Quiz | Yes      |
 
-#### Option
+### Option
 
 | Property       | Description                        | Required                  |
 | :------------- | :--------------------------------- | :------------------------ |
@@ -857,7 +857,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-### Text Ask
+## Text Ask
 
 | Property | Description                      | Required |
 | :------- | :------------------------------- | :------- |
@@ -924,7 +924,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-## Publish a Widget
+# Publish a Widget
 
 | Property          | Description                                                 | Required |
 | :---------------- | :---------------------------------------------------------- | :------- |
@@ -977,7 +977,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-## Delete Widget
+# Delete Widget
 
 | Property    | Description                    | Required |
 | :---------- | :----------------------------- | :------- |
@@ -1022,3 +1022,5 @@ Whenever a number prediction widget is created, the backend service automaticall
     			{ result, error -> })
   ```
 </details>
+
+<br />
