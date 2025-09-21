@@ -14,7 +14,7 @@ After creating the Widget it is time to publish it or schedule it to be publishe
 And then you're done!
 The widget will remain available for users to see and interact with. If you'd like to delete a widget see below.
 
-<br />
+> **Note:** You can also create **VOD (Video on Demand) Widgets** to schedule interactions at specific playback moments. [Learn more →](link-to-vod-subpage)
 
 ## Permissions
 
@@ -898,6 +898,8 @@ Whenever a number prediction widget is created, the backend service automaticall
   )
   ```
 </details>
+
+<br />
 
 <br />
 
