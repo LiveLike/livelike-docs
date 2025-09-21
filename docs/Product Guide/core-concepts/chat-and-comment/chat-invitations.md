@@ -213,37 +213,65 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
 
 > API Details 👇
 
-\<details>
-&#x20; \<summary>Receive Invitation in Real-time\</summary>
+<details>
+  <summary>Receive Invitation in Real-time</summary>
 
-&#x20; \`\`\`swift
-&#x20; /\*
-&#x20; 	To receive real-time notifications of the User being added a Chat Room,
-&#x20; 	you need to implement the \`ChatClientDelegate\`.
-&#x20; 	The method \`userDidReceiveInvitation\` returns an object of type \`ChatRoomInvitation\`&#x20;
-&#x20; 	that contains all the details related to the Chat Room Invitation.
-&#x20; \*/
-&#x20; class SomeViewController: UIViewController \{
+  ```swift
+  /*
+  	To receive real-time notifications of the User being added a Chat Room,
+  	you need to implement the `ChatClientDelegate`.
+  	The method `userDidReceiveInvitation` returns an object of type `ChatRoomInvitation` 
+  	that contains all the details related to the Chat Room Invitation.
+  */
+  class SomeViewController: UIViewController {
 
-&#x20;   var sdk: EngagementSDK
-&#x20;  &#x20;
-&#x20;   override func viewDidLoad() \{
-&#x20;     sdk.chat.delegate = self
-&#x20;   }
-&#x20; }
+    var sdk: EngagementSDK
+    
+    override func viewDidLoad() {
+      sdk.chat.delegate = self
+    }
+  }
 
-&#x20; class SomeViewController: ChatClientDelegate \{
-&#x20;   func chatClient(\_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) \{
-&#x20;         self.showInviteAlert(title: "Invitation Received",&#x20;
-&#x20;                              message: "You've been invited to room")
-&#x20;   }
-&#x20; }
-&#x20; \`\`\`
-&#x20; \`\`\`kotlin
-&#x20; sdk.chat().chatRoomDelegate =
-&#x20;             object : ChatRoomDelegate() \{
-&#x20;                 override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) \{
-&#x20;                    &#x20;
+  class SomeViewController: ChatClientDelegate {
+    func chatClient(_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) {
+          self.showInviteAlert(title: "Invitation Received", 
+                               message: "You've been invited to room")
+    }
+  }
+  ```
+  ```kotlin
+  sdk.chat().chatRoomDelegate =
+              object : ChatRoomDelegate() {
+                  override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) {
+                      
+                  }
+
+                  override fun onReceiveInvitation(invitation: ChatRoomInvitation) {
+                      showToast("Receive invitation from ${invitation.invited_by.nickname} => ${invitation.invited_by.userId}")
+                  }
+              }
+  ```
+  ```javascript
+  // define a listener function to be invoked when user is invitated to some other chatroom
+  function onReceieveChatRoomInvitationListener(invitation){
+    console.log(invitation);
+  }
+
+  LiveLike.addChatRoomEventListener(
+    "chat-room-invite",
+    onReceieveChatRoomInvitationListener
+  )
+
+  // to remove the attached listener function use removeUserProfileEventListener API
+  LiveLike.removeChatRoomEventListener(
+    "chat-room-invite",
+    onReceieveChatRoomInvitationListener
+  )
+  ```
+</details>
+
+
+                      
 
 ### Update the Invitation Status for a User
 
