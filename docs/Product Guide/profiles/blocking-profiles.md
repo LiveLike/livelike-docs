@@ -33,56 +33,56 @@ Blocks do not prevent passive engagement at the system level. For example, API r
 As an integrator, you can now allow users to block other users from sending invitations or adding them to chat rooms.
 
 > API Details
->
-> <details>
->   <summary>Creating a Block</summary>
->
->   ```swift
->   /*
->   To enable the user to block other users, you can implement the `blockProfile` method which is
->   a part of the `ChatClient`. It accepts a parameter `profileID` which corresponds to the id 
->   of the profile to be blocked.
->
->   On successful completion, the method returns an object of type `BlockInfo` which contains 
->   details of the profile blocked and the profile it was blocked by.
->   */
->
->   sdk.chat.blockProfile(
->   		profileID: profileID
->   ) { result in
->      	switch result {
->       case .success(let blockedProfile):
->            self.showAlert(
->               title: "Profile Blocked",
->            		message: "Id:\(blockedProfile.blockedProfileID)"
->            )
->       case .failure(let error):
->       		self.showAlert(title: "Error", message: error.localizedDescription)
->   		}
->   }
->   ```
->   ```kotlin
->   sdk.blockProfile(
->     profileId,
->     object: LiveLikeCallback < BlockedData > () {
->       override fun onResponse(result: BlockedData ? , error : String ? ) {
->         result?.let {
->           showToast("BLocked User: ${it.blockedProfileID}, BlockID: ${it.id}")
->         }
->         error?.let {
->           it1 -> showToast(it1)
->         }
->       }
->     }
->   )
->   ```
->   ```javascript
->   LiveLike.blockProfile({
->       profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
->   })
->   .then(blockInfo => console.log(blockInfo))
->   ```
-> </details>
+
+<details>
+  <summary>Creating a Block</summary>
+
+  ```swift
+  /*
+  To enable the user to block other users, you can implement the `blockProfile` method which is
+  a part of the `ChatClient`. It accepts a parameter `profileID` which corresponds to the id 
+  of the profile to be blocked.
+
+  On successful completion, the method returns an object of type `BlockInfo` which contains 
+  details of the profile blocked and the profile it was blocked by.
+  */
+
+  sdk.chat.blockProfile(
+  		profileID: profileID
+  ) { result in
+     	switch result {
+      case .success(let blockedProfile):
+           self.showAlert(
+              title: "Profile Blocked",
+           		message: "Id:\(blockedProfile.blockedProfileID)"
+           )
+      case .failure(let error):
+      		self.showAlert(title: "Error", message: error.localizedDescription)
+  		}
+  }
+  ```
+  ```kotlin
+  sdk.blockProfile(
+    profileId,
+    object: LiveLikeCallback < BlockedData > () {
+      override fun onResponse(result: BlockedData ? , error : String ? ) {
+        result?.let {
+          showToast("BLocked User: ${it.blockedProfileID}, BlockID: ${it.id}")
+        }
+        error?.let {
+          it1 -> showToast(it1)
+        }
+      }
+    }
+  )
+  ```
+  ```javascript
+  LiveLike.blockProfile({
+      profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
+  })
+  .then(blockInfo => console.log(blockInfo))
+  ```
+</details>
 
 <br />
 
@@ -248,74 +248,65 @@ You can add listeners/delegators for getting real time block/unblock profile eve
 \<summary>Real time block/unblock profile events
 \</summary>
 
+```
+```
 
-\`\`\`javascript
-// For adding block profile event listener
-function onBlockProfileListener(blockInfo)\{
-&#x20;   console.log(blockInfo);
-}
-
-// When user is blocked, attach listener fn to be called&#x20;
+// When user is blocked, attach listener fn to be called 
 LiveLike.addUserProfileEventListener(
-&#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
-&#x20;   onBlockProfileListener
+    LiveLike.UserProfileEvent.BLOCK_PROFILE,
+    onBlockProfileListener
 )
 
 // to remove block profile event listener
 LiveLike.removeUserProfileEventListener(
-&#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
-&#x20;   onBlockProfileListener
+    LiveLike.UserProfileEvent.BLOCK_PROFILE,
+    onBlockProfileListener
 );
-
 
 // For adding unblock profile event listener
 function onUnblockProfileListener(blockInfo)\{
-&#x20;   console.log(blockInfo);
+    console.log(blockInfo);
 }
 
-// When user is Unblocked, attach listener fn to be called&#x20;
+// When user is Unblocked, attach listener fn to be called 
 LiveLike.addUserProfileEventListener(
-&#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
-&#x20;   onUnblockProfileListener
+    LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
+    onUnblockProfileListener
 )
 
 // to remove unblock profile event listener
 LiveLike.removeUserProfileEventListener(
-&#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
-&#x20;   onUnblockProfileListener
+    LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
+    onUnblockProfileListener
 );
-\`\`\`
-\`\`\`swift
+```
+```swift
 //To receive realtime events for blocking or unblocking a profile.
 //The respective ViewController should confirm to ChatClientDelegate.
 
 class SomeClass: UIViewController \{
-&#x20; override func viewDidLoad() \{
-&#x20;   super.viewDidLoad()
-&#x20;   sdk.chat.delegate = self
-&#x20; }
+  override func viewDidLoad() \{
+    super.viewDidLoad()
+    sdk.chat.delegate = self
+  }
 }
 
 extension SomeClass: ChatClientDelegate \{
-&#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) \{
-&#x20;       //Block Realtime Event Received.
-&#x20;   }
-&#x20;  &#x20;
-&#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) \{
-&#x20;       // Unblock Realtime Event Received.
-&#x20;   }
+    func chatClient(_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) \{
+        //Block Realtime Event Received.
+    }
+
+<br />
+
+```
+```
+
+  }
+
+  override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) \{
+
+  }
 }
-\`\`\`
-\`\`\`kotlin
-sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() \{
-&#x20; override fun onBlockProfile(blockedInfo: BlockedInfo) \{
-
-&#x20; }
-
-&#x20; override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) \{
-
-&#x20; }
-}
-\`\`\`
+```
 
 \</details>
