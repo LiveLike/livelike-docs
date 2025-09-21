@@ -26,10 +26,6 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 
 ### Add New User to Chat Room:
 
-<br />
-
-## Add New User to Chat Room
-
 Use `addNewMemberToChatRoom` API to add other users to chat rooms.
 
 > 🚧 Please Note
