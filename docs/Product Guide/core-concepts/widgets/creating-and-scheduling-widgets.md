@@ -57,8 +57,6 @@ Every widget has some common properties that are provided upon creation which ca
 
 > Create Alert Widget
 
-<br />
-
 <details>
   <summary>Create Alert Widget</summary>
 
@@ -138,8 +136,6 @@ Every widget has some common properties that are provided upon creation which ca
 | Image URL | The image of the option            | Yes (For Image Poll Only) |
 
 > Create TextPoll Widget
-
-<br />
 
 <details>
   <summary>Create TextPoll Widget</summary>
@@ -266,10 +262,7 @@ Every widget has some common properties that are provided upon creation which ca
 
 For publishing a prediction result, you can either create a follow-up widget with the correct option ID or update a prediction widget option to declare which option is correct. Once the option(s) are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
-Approach 1: 
-Create a Follow-Up Widget
-
-<br />
+> Approach 1: Create a Follow-Up Widget
 
 <details>
   <summary>Create Prediction Follow Up Widget</summary>
@@ -296,8 +289,7 @@ Create a Follow-Up Widget
   ```
 </details>
 
-Approach 2: 
-Update Prediction Option
+> Approach 2: Update Prediction Option
 
 <br />
 
@@ -377,8 +369,6 @@ Update Prediction Option
 ### Publish Prediction FollowUp
 
 Whenever a prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the prediction widget resource.
-
-<br />
 
 <details>
   <summary>Get Prediction Widget Resource</summary>
@@ -490,10 +480,7 @@ Whenever a prediction widget is created, the backend service automatically creat
 
 ### Number Prediction Result
 
-
 For publishing a number prediction result, you can update each prediction widget option with the correct number. Once options are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
-
-<br />
 
 <details>
   <summary>Update Number Prediction Option</summary>
@@ -540,8 +527,6 @@ For publishing a number prediction result, you can update each prediction widget
 ## Publish Number Prediction Follow-Up
 
 Whenever a number prediction widget is created, the backend service automatically creates a corresponding follow-up widget. You can get the follow-up widget ID and kind from the number prediction widget resource.
-
-<br />
 
 <details>
   <summary>Get Number Prediction Widget Resource</summary>
