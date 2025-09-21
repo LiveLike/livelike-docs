@@ -767,8 +767,6 @@ Whenever a number prediction widget is created, the backend service automaticall
   ```
 </details>
 
-<br />
-
 <details>
   <summary>Create Image Quiz Widget</summary>
 
