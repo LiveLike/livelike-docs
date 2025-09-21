@@ -6,8 +6,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 Profiles are used to collect activity in chat, widgets, and other features inside a single identity. Profiles can be provisioned arbitrarily and can be used to extend your existing user account records. These profiles can either be local, allowing you to create anonymous experiences, or persisted in your user databases, allowing you to create profiles that persist across a user's devices.
 
 When a profile is first created it is given a unique ID and a credential called an _<Glossary>Access Token</Glossary>_. It is also automatically given a nickname if one is not provided. Profiles will persist for as long as its credentials are stored and passed back to the SDKs & APIs. Nicknames are used for personalization, and show up next to chat messages and in leaderboards.
@@ -60,8 +58,6 @@ Anonymous experiences can be created by persisting credentials in volatile stora
 ## Persistent Profiles
 
 Profiles can also be tied to your own user accounts. The user <Glossary>Access Token</Glossary> can be stored as a field in your user database. That allows you to re-use the same access token when a user reinstalls an app or signs in on another device. To understand how to tie profiles to your user accounts, see [Integrating with Logins](doc:using-profiles-with-logins). --- edit link
-
-<br />
 
 > ❗️ **Track your profiles carefully**
 >
