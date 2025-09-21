@@ -84,6 +84,6 @@ Learn more:
 
 [Creating and scheduling Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/)
 
-Building Custom Widget UI
+[Building Custom Widget UI](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/)
 
 [Deleting Widget](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/delete-widgets#/)
