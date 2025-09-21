@@ -30,7 +30,7 @@ LiveLike provides a flexible chat system to keep your audience engaged:
 * Public Chat: Open rooms where everyone can react and comment in real time, building hype and excitement around the event.
 * Group Chat: Private spaces for friends or closed communities to watch and chat together — without switching apps.
 
-Learn more: Chats
+Learn more: [Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat#/)
 
 ## Spoiler Prevention
 
@@ -50,7 +50,7 @@ Profiles can be:
 * Provisioned anonymously for quick, lightweight experiences
   Profiles store user activity across widgets, chat, and other features, enabling you to build personalized engagement journeys.
 
-Learn More: 
+Learn More:
 [User Profiles](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/profiles#/)
 
 <br />
