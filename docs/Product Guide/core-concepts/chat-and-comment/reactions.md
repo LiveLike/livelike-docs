@@ -73,10 +73,10 @@ Reactions are exposed via three main APIs:
 <br />
 
 <details>
-  <summary> ***Reaction Packs API***</summary>
+  <summary> **Reaction Packs API**</summary>
 
   <details>
-    <summary>### List Reaction Packs</summary>
+    <summary> ***List Reaction Packs***</summary>
 
     This could be used to get list of reaction pack created through producer suite.
 
