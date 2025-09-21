@@ -73,7 +73,7 @@ Reactions are exposed via three main APIs:
 <br />
 
 <details>
-  <summary>## Reaction Packs API</summary>
+  <summary> ***Reaction Packs API***</summary>
 
   <details>
     <summary>### List Reaction Packs</summary>
