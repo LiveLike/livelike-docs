@@ -26,97 +26,51 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 
 ### Add New User to Chat Room
 
-<br />
-
-<details>
-  <summary>Add New User to Chat Room</summary>
-  Use `addNewMemberToChatRoom` API to add other users to chat rooms.
-
-  ```swift
-  sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) { 
-    [weak self] result in
-    	DispatchQueue.main.async {
-    		guard let self = self else { return }
-      	switch result {
-      	case .success(let member):
-      		self.showAlert(title: "Now Member", message: member.url.absoluteString)
-      	case let .failure(error):
-      		self.showAlert(title: "Error", message: error.localizedDescription)
-  		}
-  	}
-  }
-  ```
-  ```kotlin
-  sdk.chat().addUserToChatRoom(chatRoomId,
-                  userId,
-                  object : LiveLikeCallback<ChatRoomMembership>() {
-                      override fun onResponse(result: ChatRoomMembership?, error: String?) {
-                          result?.let {
-                              showToast("User Added Successfully")
-                          }
-                         
-                          error?.let {
-                              showToast(it)
-                          }
-                         
-                      }
-                  })
-  ```
-  ```javascript
-  LiveLike.addNewMemberToChatRoom({
-    roomId: "9e6f1bc4-9f02-4c57-92b7-7521d0f5b027",
-    profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-  }).then(membership => console.log(membership))
-  ```
-</details>
-
-<details>
-  <summary>Add New User to Chat Room</summary>
-  Use `addNewMemberToChatRoom` API to add other users to chat rooms.
-
-  ```swift
-  sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) { 
-    [weak self] result in
-    	DispatchQueue.main.async {
-    		guard let self = self else { return }
-      	switch result {
-      	case .success(let member):
-      		self.showAlert(title: "Now Member", message: member.url.absoluteString)
-      	case let .failure(error):
-      		self.showAlert(title: "Error", message: error.localizedDescription)
-  		}
-  	}
-  }
-  ```
-  ```kotlin
-  sdk.chat().addUserToChatRoom(chatRoomId,
-                  userId,
-                  object : LiveLikeCallback<ChatRoomMembership>() {
-                      override fun onResponse(result: ChatRoomMembership?, error: String?) {
-                          result?.let {
-                              showToast("User Added Successfully")
-                          }
-                         
-                          error?.let {
-                              showToast(it)
-                          }
-                         
-                      }
-                  })
-  ```
-  ```javascript
-  LiveLike.addNewMemberToChatRoom({
-    roomId: "9e6f1bc4-9f02-4c57-92b7-7521d0f5b027",
-    profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-  }).then(membership => console.log(membership))
-  ```
-</details>
-
 > 🚧 Please Note
 >
 > User can add another user to the chat room only if they are already a member of the chat room, use `joinChatRoom` API for becoming a member.
 
-<br />
+<details>
+  <summary>Add New User to Chat Room</summary>
+  Use `addNewMemberToChatRoom` API to add other users to chat rooms.
+
+  ```swift
+  sdk.chat.addNewMemberToChatRoom(roomId: roomId, profileId: profileId) { 
+    [weak self] result in
+    	DispatchQueue.main.async {
+    		guard let self = self else { return }
+      	switch result {
+      	case .success(let member):
+      		self.showAlert(title: "Now Member", message: member.url.absoluteString)
+      	case let .failure(error):
+      		self.showAlert(title: "Error", message: error.localizedDescription)
+  		}
+  	}
+  }
+  ```
+  ```kotlin
+  sdk.chat().addUserToChatRoom(chatRoomId,
+                  userId,
+                  object : LiveLikeCallback<ChatRoomMembership>() {
+                      override fun onResponse(result: ChatRoomMembership?, error: String?) {
+                          result?.let {
+                              showToast("User Added Successfully")
+                          }
+                         
+                          error?.let {
+                              showToast(it)
+                          }
+                         
+                      }
+                  })
+  ```
+  ```javascript
+  LiveLike.addNewMemberToChatRoom({
+    roomId: "9e6f1bc4-9f02-4c57-92b7-7521d0f5b027",
+    profileId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
+  }).then(membership => console.log(membership))
+  ```
+</details>
 
 ***
 
@@ -124,54 +78,7 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 
 <br />
 
-<details>
-  <summary>Invite User to Chat Room</summary>
-  You can allow the User to invite another user to a particular chat room that they are already a part of.
-  You can call the `sendChatRoomInviteToUser` method which sends an invitation to the other user where the other user could decide either to `accept` or `reject` the invitation.
-
-  ```swift
-  sdk.chat.sendChatRoomInviteToUser(roomId: roomId, profileId: profileId) { 
-    [weak self] result in
-  		DispatchQueue.main.async {
-  			guard let self = self else { return }
-  			switch result {
-  			case .success(let invitation):
-  				self.showAlert(title: "Invitation Sent", message: invitation.url.absoluteString)
-  			case let .failure(error):
-  				self.showAlert(title: "Error", message: error.localizedDescription)
-  		}
-  	}
-  }
-  ```
-  ```kotlin
-  sdk.chat().sendChatRoomInviteToUser(
-                  chatRoomId,
-                  userId,
-                  object : LiveLikeCallback<ChatRoomInvitation>() {
-                      override fun onResponse(result: ChatRoomInvitation?, error: String?) {
-                          result?.let {
-                              showToast("User Invited Successfully")
-                          }
-                         
-                          error?.let {
-                              showToast(it)
-                          }
-                          
-                      }
-                  })
-  ```
-  ```javascript
-  // roomId of the chatRoom to which we need to invite other profile
-  const roomId = "9e6f1bc4-9f02-4c57-92b7-7521d0f5b027"
-  // other profile id
-  const profileId = "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-
-  LiveLike.sendChatRoomInviteToProfile({
-    roomId: roomId,
-    profileId: profileId
-  }).then(chatRoomInvitation => console.log(chatRoomInvitation))
-  ```
-</details>
+<br />
 
 ***
 
@@ -182,63 +89,6 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 > Implementation for receiving real time invitation is different for Web, Android and IOS
 
 <br />
-
-<details>
-  <summary>Receive Invitation in Real-time</summary>
-
-  ```swift
-  /*
-  	To receive real-time notifications of the User being added a Chat Room,
-  	you need to implement the `ChatClientDelegate`.
-  	The method `userDidReceiveInvitation` returns an object of type `ChatRoomInvitation` 
-  	that contains all the details related to the Chat Room Invitation.
-  */
-  class SomeViewController: UIViewController {
-
-    var sdk: EngagementSDK
-    
-    override func viewDidLoad() {
-      sdk.chat.delegate = self
-    }
-  }
-
-  class SomeViewController: ChatClientDelegate {
-    func chatClient(_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) {
-          self.showInviteAlert(title: "Invitation Received", 
-                               message: "You've been invited to room")
-    }
-  }
-  ```
-  ```kotlin
-  sdk.chat().chatRoomDelegate =
-              object : ChatRoomDelegate() {
-                  override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) {
-                      
-                  }
-
-                  override fun onReceiveInvitation(invitation: ChatRoomInvitation) {
-                      showToast("Receive invitation from ${invitation.invited_by.nickname} => ${invitation.invited_by.userId}")
-                  }
-              }
-  ```
-  ```javascript
-  // define a listener function to be invoked when user is invitated to some other chatroom
-  function onReceieveChatRoomInvitationListener(invitation){
-    console.log(invitation);
-  }
-
-  LiveLike.addChatRoomEventListener(
-    "chat-room-invite",
-    onReceieveChatRoomInvitationListener
-  )
-
-  // to remove the attached listener function use removeUserProfileEventListener API
-  LiveLike.removeChatRoomEventListener(
-    "chat-room-invite",
-    onReceieveChatRoomInvitationListener
-  )
-  ```
-</details>
 
 ### Receive notification on adding user to chat room in Real-time
 
