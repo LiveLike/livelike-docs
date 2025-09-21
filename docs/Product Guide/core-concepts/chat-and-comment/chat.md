@@ -26,7 +26,7 @@ metadata:
   NOTE: Features like device push notifications, read receipts, typing indicators, and presence indicators are not yet provided by the SDK and require custom development.
 </Callout>
 
-Chat Room Basics
+### Chat Room Basics
 
 Every chat room is defined by a few key attributes:
 
@@ -35,7 +35,7 @@ Every chat room is defined by a few key attributes:
 * **Members** → List of user profiles in the room.
 * **Visibility** → Determines whether non-members can discover the room.
 
-Chat Experience
+### Chat Experience
 
 * **Input** → Supports plain text, emojis, GIFs, and custom sticker packs.
 * **Reactions** → Users can respond to messages with custom reactions.
@@ -60,24 +60,28 @@ Learn more:
 [Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
 [Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
-Moderation & Safety
+<br />
 
-Maintaining a healthy chat environment is critical. LiveLike provides both automatic filtering and moderator tools:
+### Moderation
 
-### Automatic Filtering
+A strong moderation toolkit is essential for building a safe and engaging community. LiveLike provides flexible moderation options that can be tailored to your app’s content policies and moderation workflows.
 
-* Keyword-based → Blocks or flags messages containing words from a customizable bad-word list (supports exact and obfuscated matches).
-* AI-driven → Filters objectionable content using AI models. By default, filtered messages are only visible to the sender.
+#### Automatic Filtering
 
-### Moderator Tools
+Chat messages can be filtered before reaching the community:
 
-* Delete messages
-* Review user reports and act on them
-* Mute users (prevent them from sending new messages)
-* Block users from interacting further
+* **Keyword-driven filtering**: Messages containing words from a customizable bad-word list can be automatically flagged or hidden. Filtering can be strict (whole-word matching) or lenient (detecting partially obfuscated words).
+* **AI-driven filtering**: Messages can be evaluated by AI models that identify objectionable or harmful content in real time.
 
-#### Example Use Cases
+<Callout icon="📘" theme="info">
+  #### **Note:** By default, the SDK hides filtered messages from everyone except the sender.
+</Callout>
 
-* Public Chat → A single global chat room for each Program.
-* Group Chat via Deep Link → Users create a private room and invite friends.
-* Private Social Group Chat → Persistent rooms tied to existing user groups.
+#### Moderator Tools
+
+Moderators get additional capabilities for active community management:
+
+* **Delete messages**: Remove inappropriate or harmful messages directly from the chat.
+* **User reports**: Community members can report objectionable content. Moderators can review these reports and take appropriate action.
+* **User blocking**: Users can block others to prevent unwanted interactions. Read more about blocking.
+* **User muting**: Moderators can mute a user. Once muted, that user can no longer send messages in the chatroom.
