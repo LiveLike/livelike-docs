@@ -58,7 +58,7 @@ Learn more: [Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/
 
 Learn more:
 [Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
-Chat Reactions
+[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
 Moderation & Safety
 
