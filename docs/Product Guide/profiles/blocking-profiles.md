@@ -238,83 +238,83 @@ Use `getProfileBlockInfo` to get block information for a particular profile Id.
 
 You can add listeners/delegators for getting real time block/unblock profile events
 
-> API Details
->
-> \<details>
-> &#x20; \<summary>Real-time block/unblock profile events\</summary>
->
-> &#x20; \<details>
-> &#x20; \<summary>Real-time block/unblock profile events\</summary>
->
-> \`\`\`javascript
-> // For adding block profile event listener
-> function onBlockProfileListener(blockInfo) \{
-> &#x20;   console.log(blockInfo);
-> }
->
-> // When user is blocked, attach listener fn to be called&#x20;
-> LiveLike.addUserProfileEventListener(
-> &#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
-> &#x20;   onBlockProfileListener
-> );
->
-> // To remove block profile event listener
-> LiveLike.removeUserProfileEventListener(
-> &#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
-> &#x20;   onBlockProfileListener
-> );
->
-> // For adding unblock profile event listener
-> function onUnblockProfileListener(blockInfo) \{
-> &#x20;   console.log(blockInfo);
-> }
->
-> // When user is unblocked, attach listener fn to be called&#x20;
-> LiveLike.addUserProfileEventListener(
-> &#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
-> &#x20;   onUnblockProfileListener
-> );
->
-> // To remove unblock profile event listener
-> LiveLike.removeUserProfileEventListener(
-> &#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
-> &#x20;   onUnblockProfileListener
-> );
-> &#x20;   \`\`\`
-> \`\`\`swift
-> // To receive real-time events for blocking or unblocking a profile.
-> // The respective ViewController should conform to ChatClientDelegate.
->
-> class SomeClass: UIViewController \{
-> &#x20; override func viewDidLoad() \{
-> &#x20;   super.viewDidLoad()
-> &#x20;   sdk.chat.delegate = self
-> &#x20; }
-> }
->
-> extension SomeClass: ChatClientDelegate \{
-> &#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) \{
-> &#x20;       // Block real-time event received.
-> &#x20;   }
-> &#x20;  &#x20;
-> &#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) \{
-> &#x20;       // Unblock real-time event received.
-> &#x20;   }
-> &#x20;   }
-> &#x20;   \`\`\`
-> &#x20;   \`\`\`kotlin
-> sdk?.chat()?.chatRoomDelegate = object : ChatRoomDelegate() \{
-> &#x20; override fun onBlockProfile(blockedInfo: BlockedInfo) \{
-> &#x20;     // Block event received
-> &#x20; }
->
-> &#x20; override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) \{
-> &#x20;     // Unblock event received
-> &#x20; }
-> }
-> \`\`\`
-> \</details>
-
 > 📘 Platform specific implementation
 >
 > Implementation for receiving real time events is different for Web, Android and IOS.
+
+> API Details
+>
+> <br />
+>
+> <details>
+>   <summary>Real time block/unblock profile events</summary>
+>
+>   ```javascript
+>   // For adding block profile event listener
+>   function onBlockProfileListener(blockInfo){
+>       console.log(blockInfo);
+>   }
+>
+>   // When user is blocked, attach listener fn to be called 
+>   LiveLike.addUserProfileEventListener(
+>       LiveLike.UserProfileEvent.BLOCK_PROFILE,
+>       onBlockProfileListener
+>   )
+>
+>   // to remove block profile event listener
+>   LiveLike.removeUserProfileEventListener(
+>       LiveLike.UserProfileEvent.BLOCK_PROFILE,
+>       onBlockProfileListener
+>   );
+>
+>
+>   // For adding unblock profile event listener
+>   function onUnblockProfileListener(blockInfo){
+>       console.log(blockInfo);
+>   }
+>
+>   // When user is Unblocked, attach listener fn to be called 
+>   LiveLike.addUserProfileEventListener(
+>       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
+>       onUnblockProfileListener
+>   )
+>
+>   // to remove unblock profile event listener
+>   LiveLike.removeUserProfileEventListener(
+>       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
+>       onUnblockProfileListener
+>   );
+>   ```
+>   ```swift
+>   //To receive realtime events for blocking or unblocking a profile.
+>   //The respective ViewController should confirm to ChatClientDelegate.
+>
+>   class SomeClass: UIViewController {
+>     override func viewDidLoad() {
+>       super.viewDidLoad()
+>       sdk.chat.delegate = self
+>     }
+>   }
+>
+>   extension SomeClass: ChatClientDelegate {
+>       func chatClient(_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) {
+>           //Block Realtime Event Received.
+>       }
+>       
+>       func chatClient(_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) {
+>           // Unblock Realtime Event Received.
+>       }
+>   }
+>   ```
+>   ```kotlin
+>   sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
+>     override fun onBlockProfile(blockedInfo: BlockedInfo) {
+>
+>     }
+>
+>     override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) {
+>
+>     }
+>   }
+>   ```
+> </details>
