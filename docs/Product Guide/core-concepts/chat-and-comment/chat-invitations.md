@@ -270,8 +270,7 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
   ```
 </details>
 
-
-                      
+<br />
 
 ### Update the Invitation Status for a User
 
@@ -328,6 +327,8 @@ You can update the status of the invitation that the User has received using `up
   }).then(chatRoomInvitation => console.log(chatRoomInvitation))
   ```
 </details>
+
+<br />
 
 ### Get List of Invitations received by the current User
 
@@ -440,6 +441,8 @@ This API gives you list of received invitation for the current logged in user.
   }).then(paginatedInvitations => console.log(paginatedInvitations))
   ```
 </details>
+
+<br />
 
 ### Get List of Invitations sent by the current User
 
