@@ -86,4 +86,8 @@ Learn more:
 
 [Building Custom Widget UI](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/)
 
+[Attaching Custom Data to Widget](https://docs.livelike.com/v1_doc_rewire_vk/docs/attaching-custom-data-to-widgets#/)
+
 [Deleting Widget](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/delete-widgets#/)
+
+<br />
