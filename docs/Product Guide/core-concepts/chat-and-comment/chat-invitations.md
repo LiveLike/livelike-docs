@@ -31,7 +31,7 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 > User can add another user to the chat room only if they are already a member of the chat room, use `joinChatRoom` API for becoming a member.
 
 <details>
-  <summary>Add New User to Chat Room</summary>
+  <summary> Add New User to Chat Room </summary>
   Use `addNewMemberToChatRoom` API to add other users to chat rooms.
 
   ```swift
