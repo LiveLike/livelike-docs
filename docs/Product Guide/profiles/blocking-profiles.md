@@ -240,73 +240,80 @@ You can add listeners/delegators for getting real time block/unblock profile eve
 
 > API Details
 >
-> <details>
->   <summary>Real-time block/unblock profile events</summary>
+> \<details>
+> &#x20; \<summary>Real-time block/unblock profile events\</summary>
 >
->   ```javascript
->   // For adding block profile event listener
->   function onBlockProfileListener(blockInfo) {
->       console.log(blockInfo);
->   }
+> &#x20; \<details>
+> &#x20; \<summary>Real-time block/unblock profile events\</summary>
 >
->   // When user is blocked, attach listener fn to be called 
->   LiveLike.addUserProfileEventListener(
->       LiveLike.UserProfileEvent.BLOCK_PROFILE,
->       onBlockProfileListener
->   );
+> \`\`\`javascript
+> // For adding block profile event listener
+> function onBlockProfileListener(blockInfo) \{
+> &#x20;   console.log(blockInfo);
+> }
 >
->   // To remove block profile event listener
->   LiveLike.removeUserProfileEventListener(
->       LiveLike.UserProfileEvent.BLOCK_PROFILE,
->       onBlockProfileListener
->   );
+> // When user is blocked, attach listener fn to be called&#x20;
+> LiveLike.addUserProfileEventListener(
+> &#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
+> &#x20;   onBlockProfileListener
+> );
 >
->   // For adding unblock profile event listener
->   function onUnblockProfileListener(blockInfo) {
->       console.log(blockInfo);
->   }
+> // To remove block profile event listener
+> LiveLike.removeUserProfileEventListener(
+> &#x20;   LiveLike.UserProfileEvent.BLOCK\_PROFILE,
+> &#x20;   onBlockProfileListener
+> );
 >
->   // When user is unblocked, attach listener fn to be called 
->   LiveLike.addUserProfileEventListener(
->       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
->       onUnblockProfileListener
->   );
+> // For adding unblock profile event listener
+> function onUnblockProfileListener(blockInfo) \{
+> &#x20;   console.log(blockInfo);
+> }
 >
->   // To remove unblock profile event listener
->   LiveLike.removeUserProfileEventListener(
->       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
->       onUnblockProfileListener
->   );
->   // To receive real-time events for blocking or unblocking a profile.
->   // The respective ViewController should conform to ChatClientDelegate.
+> // When user is unblocked, attach listener fn to be called&#x20;
+> LiveLike.addUserProfileEventListener(
+> &#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
+> &#x20;   onUnblockProfileListener
+> );
 >
->   class SomeClass: UIViewController {
->     override func viewDidLoad() {
->       super.viewDidLoad()
->       sdk.chat.delegate = self
->     }
->   }
+> // To remove unblock profile event listener
+> LiveLike.removeUserProfileEventListener(
+> &#x20;   LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
+> &#x20;   onUnblockProfileListener
+> );
+> &#x20;   \`\`\`
+> \`\`\`swift
+> // To receive real-time events for blocking or unblocking a profile.
+> // The respective ViewController should conform to ChatClientDelegate.
 >
->   extension SomeClass: ChatClientDelegate {
->       func chatClient(_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) {
->           // Block real-time event received.
->       }
->       
->       func chatClient(_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) {
->           // Unblock real-time event received.
->       }
->   }
->   sdk?.chat()?.chatRoomDelegate = object : ChatRoomDelegate() {
->     override fun onBlockProfile(blockedInfo: BlockedInfo) {
->         // Block event received
->     }
+> class SomeClass: UIViewController \{
+> &#x20; override func viewDidLoad() \{
+> &#x20;   super.viewDidLoad()
+> &#x20;   sdk.chat.delegate = self
+> &#x20; }
+> }
 >
->     override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) {
->         // Unblock event received
->     }
->   }
->   ```
-> </details>
+> extension SomeClass: ChatClientDelegate \{
+> &#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) \{
+> &#x20;       // Block real-time event received.
+> &#x20;   }
+> &#x20;  &#x20;
+> &#x20;   func chatClient(\_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) \{
+> &#x20;       // Unblock real-time event received.
+> &#x20;   }
+> &#x20;   }
+> &#x20;   \`\`\`
+> &#x20;   \`\`\`kotlin
+> sdk?.chat()?.chatRoomDelegate = object : ChatRoomDelegate() \{
+> &#x20; override fun onBlockProfile(blockedInfo: BlockedInfo) \{
+> &#x20;     // Block event received
+> &#x20; }
+>
+> &#x20; override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) \{
+> &#x20;     // Unblock event received
+> &#x20; }
+> }
+> \`\`\`
+> \</details>
 
 > 📘 Platform specific implementation
 >
