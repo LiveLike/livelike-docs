@@ -57,8 +57,6 @@ Every widget has some common properties that are provided upon creation which ca
 | Link Label | The label of a link to the alert | No       |
 | Link URL   | The link to the alert            | No       |
 
-<br />
-
 <details>
   <summary>Create Alert Widget</summary>
 
@@ -136,8 +134,6 @@ Every widget has some common properties that are provided upon creation which ca
 | :-------- | :--------------------------------- | :------------------------ |
 | Text      | The text description of the option | Yes                       |
 | Image URL | The image of the option            | Yes (For Image Poll Only) |
-
-<br />
 
 <details>
   <summary>Create TextPoll Widget</summary>
@@ -274,8 +270,6 @@ Every widget has some common properties that are provided upon creation which ca
 | :-------- | :--------------------------------- | :------------------------------ |
 | Text      | The text description of the option | Yes                             |
 | Image URL | The image of the option            | Yes (For Image Prediction Only) |
-
-<br />
 
 <details>
   <summary>Create Text Prediction Widget</summary>
@@ -431,8 +425,6 @@ For publishing a prediction result, you can either create a follow-up widget wit
   ```
 </details>
 
-<br />
-
 #### Approach 2: Update Prediction Option
 
 <details>
@@ -532,8 +524,6 @@ Whenever a prediction widget is created, the backend service automatically creat
   ```
 </details>
 
-<br />
-
 ## Number Prediction
 
 | Property             | Description                                          | Required |
@@ -548,8 +538,6 @@ Whenever a prediction widget is created, the backend service automatically creat
 | :-------- | :--------------------------------- | :------- |
 | Text      | The text description of the option | Yes      |
 | Image URL | The image of the option            | Yes      |
-
-<br />
 
 <details>
   <summary>Create Image Number Prediction Widget</summary>
@@ -619,6 +607,8 @@ Whenever a prediction widget is created, the backend service automatically creat
   }
   ```
 </details>
+
+<br />
 
 ### Number Prediction Result
 
@@ -706,8 +696,6 @@ Whenever a number prediction widget is created, the backend service automaticall
   ```
 </details>
 
-<br />
-
 ## Quiz
 
 | Property | Description              | Required |
@@ -722,8 +710,6 @@ Whenever a number prediction widget is created, the backend service automaticall
 | Text           | The text description of the Option | Yes                       |
 | Image URL      | The image of the option            | Yes (For Image Quiz Only) |
 | Correct Option | The correct option of the Quiz     | Yes                       |
-
-<br />
 
 <details>
   <summary>Create Text Quiz Widget</summary>
@@ -855,16 +841,12 @@ Whenever a number prediction widget is created, the backend service automaticall
   ```
 </details>
 
-<br />
-
 ## Text Ask
 
 | Property | Description                      | Required |
 | :------- | :------------------------------- | :------- |
 | Title    | The title of the text ask widget | Yes      |
 | Prompt   | The prompt question              | Yes      |
-
-<br />
 
 <details>
   <summary>Create Text Ask Widget</summary>
@@ -933,8 +915,6 @@ Whenever a number prediction widget is created, the backend service automaticall
 | Publish Delay     | The duration at which the widget will be delayed to publish | No       |
 | Program Date Time | A hint for live video synchronization                       | No       |
 
-<br />
-
 <details>
   <summary>Publish Widget</summary>
 
@@ -983,8 +963,6 @@ Whenever a number prediction widget is created, the backend service automaticall
 | :---------- | :----------------------------- | :------- |
 | Widget ID   | The id of the widget to delete | Yes      |
 | Widget Kind | The kind of widget to delete   | Yes      |
-
-<br />
 
 <details>
   <summary>Delete Widget</summary>
