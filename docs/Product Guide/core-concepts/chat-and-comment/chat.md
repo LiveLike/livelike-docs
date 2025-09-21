@@ -49,42 +49,22 @@ Every chat room is defined by a few key attributes:
 * Membership isn’t required to send messages — you can allow “drop-in” participation if you don’t need to track history.
 * A common pattern is to persist memberships for private chats but allow public event chats to expire, so they don’t clutter the UI.
 
-Learn more:
-[Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
+👉[Learn more about Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
 
 ### Chat Custom Stickers & Reactions
 
 * Stickers → Images or animations bundled into packs; producers can configure which packs are available in each room.
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
 
-Learn more:
-[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
-[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
+Learn more about:
+👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
+👉[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
 ### Moderation
 
-A strong moderation toolkit is essential for building a safe and engaging community. LiveLike provides flexible moderation options that can be tailored to your app’s content policies and moderation workflows.
+LiveLike offers a powerful moderation toolkit to help you build a safe and engaging chat community.
+Moderation features include automatic filtering of inappropriate content and tools for moderators to manage user behavior.
 
-#### Automatic Filtering
-
-Chat messages can be filtered before reaching the community:
-
-* **Keyword-driven filtering**: Messages containing words from a customizable bad-word list can be automatically flagged or hidden. Filtering can be strict (whole-word matching) or lenient (detecting partially obfuscated words).
-* **AI-driven filtering**: Messages can be evaluated by AI models that identify objectionable or harmful content in real time.
-
-<Callout icon="📘" theme="info">
-  #### **Note:** By default, the SDK hides filtered messages from everyone except the sender.
-</Callout>
-
-#### Moderator Tools
-
-Moderators get additional capabilities for active community management:
-
-* **Delete messages**: Remove inappropriate or harmful messages directly from the chat.
-* **User reports**: Community members can report objectionable content. Moderators can review these reports and take appropriate action.
-* **User blocking**: Users can block others to prevent unwanted interactions. Read more about [Blocking](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/blocking-profiles#/).
-* **User muting**: Moderators can mute a user. Once muted, that user can no longer send messages in the chatroom.
-
-Learn More: [Chat Moderation](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-moderation#/) Tool in CMS
+👉 [Learn more about Moderation](doc:chat-moderation)
 
 <br />
