@@ -55,71 +55,69 @@ Every widget has some common properties that are provided upon creation which ca
 | Link Label | The label of a link to the alert | No       |
 | Link URL   | The link to the alert            | No       |
 
-> Create Alert Widget
->
-> <br />
->
-> <details>
->   <summary>Create Alert Widget</summary>
->
->   ```javascript Web
->   LiveLike.createAlertWidget({
->     programId: '<program-id>',
->     text: '<alert text>',
->     title: '<alert title>',
->     imageUrl: '<imag-url>',
->     linkLabel: '<link-label>',
->     linkUrl: '<link-url>',
->     customData: '<stringified-custom-data-object>',
->     widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
->     programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
->     // video playback time for showing video on demand widget
->     playbackTimeMs: 2000,
->     // UI interactive timeout value
->     timeout: 'P0DT0H0M30S',
->     interactiveUntil: '<date-time>',
->   }).then((res) => console.log(res));
->   ```
->   ```swift
->   let livelike: LiveLike
->
->   livelike.widgetClient.createAlertWidget(
->     options: CreateAlertRequestOptions(
->       common: CommonCreateWidgetOptions(
->         programID: <program - id>
->       ),
->       title: "<title>",
->       text: "<text>",
->       imageURL: <image - url>,
->       linkLabel: "<link-label>",
->       linkURL: <link - url>
->     ),
->     completion: {
->       result
->       switch result {
->       case .success(let widget):
->         break
->       case .failure(let error):
->         break
->       }
->     }
->   )
->
->   ```
->   ```kotlin
->   val liveLikeWidgetClient = sdk.widget()
->   liveLikeWidgetClient.createAlert(
->       request = CreateAlertRequest(
->                  programId = request.program_id!!,
->                  timeout = request.timeout!!,
->                  title = request.title,
->                  text = request.text,
->                  imageURL = request.image_url,
->                  linkLabel = request.link_label,
->                  linkURL = request.link_url,
->       ), { result,error -> })
->   ```
-> </details>
+<br />
+
+<details>
+  <summary>Create Alert Widget</summary>
+
+  ```javascript Web
+  LiveLike.createAlertWidget({
+    programId: '<program-id>',
+    text: '<alert text>',
+    title: '<alert title>',
+    imageUrl: '<imag-url>',
+    linkLabel: '<link-label>',
+    linkUrl: '<link-url>',
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+  }).then((res) => console.log(res));
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.createAlertWidget(
+    options: CreateAlertRequestOptions(
+      common: CommonCreateWidgetOptions(
+        programID: <program - id>
+      ),
+      title: "<title>",
+      text: "<text>",
+      imageURL: <image - url>,
+      linkLabel: "<link-label>",
+      linkURL: <link - url>
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createAlert(
+      request = CreateAlertRequest(
+                 programId = request.program_id!!,
+                 timeout = request.timeout!!,
+                 title = request.title,
+                 text = request.text,
+                 imageURL = request.image_url,
+                 linkLabel = request.link_label,
+                 linkURL = request.link_url,
+      ), { result,error -> })
+  ```
+</details>
 
 <br />
 
@@ -137,236 +135,232 @@ Every widget has some common properties that are provided upon creation which ca
 | Text      | The text description of the option | Yes                       |
 | Image URL | The image of the option            | Yes (For Image Poll Only) |
 
-> Create TextPoll Widget
->
-> <br />
->
-> <details>
->   <summary>Create TextPoll Widget</summary>
->
->   ```javascript Web
->   LiveLike.createTextPollWidget({
->     question: '<poll question>',
->     programId: '<program-id>',
->     options: [
->       { description: '<option-description-1>' },
->       { description: '<option-description-2>' },
->     ],
->     customData: '<stringified-custom-data-object>',
->     widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
->     programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
->     // video playback time for showing video on demand widget
->     playbackTimeMs: 2000,
->     // UI interactive timeout value
->     timeout: 'P0DT0H0M30S',
->     interactiveUntil: '<date-time>',
->   }).then((res) => console.log(res));
->
->   // create image poll widget
->   LiveLike.createImagePollWidget({
->     question: '<poll question>',
->     programId: '<program-id>',
->     options: [
->       { 
->         description: '<option-description-1>',
->         imageUrl: '<option-image-url>',
->       },
->       { 
->         description: '<option-description-2>',
->         imageUrl: '<option-image-url>',
->       },
->     ],
->     customData: '<stringified-custom-data-object>',
->     widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
->     programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
->     // video playback time for showing video on demand widget
->     playbackTimeMs: 2000,
->     // UI interactive timeout value
->     timeout: 'P0DT0H0M30S',
->     interactiveUntil: '<date-time>',
->   }).then((res) => console.log(res));
->
->
->   ```
->   ```swift
->   let livelike: LiveLike
->
->   livelike.widgetClient.createTextPollWidget(
->     options: CreateTextPollRequestOptions(
->       common: CommonCreateWidgetOptions(
->         programID: <program - id>
->       ),
->       question: "<question>",
->       options: [
->         .init(text: "<option-text>"),
->         .init(text: "<option-text>"),
->       ]
->     ),
->     completion: {
->       result
->       switch result {
->       case .success(let widget):
->         break
->       case .failure(let error):
->         break
->       }
->     }
->   )
->
->   livelike.widgetClient.createImagePollWidget(
->     options: CreateImagePollRequestOptions(
->       common: CommonCreateWidgetOptions(
->         programID: <program - id>,
->         timeoutSeconds: 1000
->       ),
->       question: "<question>",
->       options: [
->         .init(text: "<option-text>", imageURL: <image - url>),
->         .init(text: "<option-text>", imageURL: <image - url>),
->       ]
->     ),
->     completion: {
->       result
->       switch result {
->       case .success(let widget):
->         break
->       case .failure(let error):
->         break
->       }
->     }
->   )
->
->   ```
->   ```kotlin
->   val liveLikeWidgetClient = sdk.widget()
->   liveLikeWidgetClient.createTextPoll(
->         request = CreateTextPollRequest(
->            	 options = "<options>",
->              programId = "<program-id>",
->            	 question = "<question>",
->           	 timeout = "<timeout>",
->         ).run { copy(options = txtPoll.options.map { this.Option(it.description) }) },
->     { result,error -> })
->
->   liveLikeWidgetClient.createImagePoll(
->         request = CreateImagePollRequest(
->            	 options = "<options>",
->              programId = "<program-id>",
->            	 question = "<question>",
->           	 timeout = "<timeout>",
->         ).run { copy(options = imgPoll.options.map {this.Option(it.description, it.image_url!!)}) },
->     { result,error -> })
->
->   ```
-> </details>
+<br />
+
+<details>
+  <summary>Create TextPoll Widget</summary>
+
+  ```javascript Web
+  LiveLike.createTextPollWidget({
+    question: '<poll question>',
+    programId: '<program-id>',
+    options: [
+      { description: '<option-description-1>' },
+      { description: '<option-description-2>' },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+  }).then((res) => console.log(res));
+
+  // create image poll widget
+  LiveLike.createImagePollWidget({
+    question: '<poll question>',
+    programId: '<program-id>',
+    options: [
+      { 
+        description: '<option-description-1>',
+        imageUrl: '<option-image-url>',
+      },
+      { 
+        description: '<option-description-2>',
+        imageUrl: '<option-image-url>',
+      },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+  }).then((res) => console.log(res));
+
+
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.createTextPollWidget(
+    options: CreateTextPollRequestOptions(
+      common: CommonCreateWidgetOptions(
+        programID: <program - id>
+      ),
+      question: "<question>",
+      options: [
+        .init(text: "<option-text>"),
+        .init(text: "<option-text>"),
+      ]
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+
+  livelike.widgetClient.createImagePollWidget(
+    options: CreateImagePollRequestOptions(
+      common: CommonCreateWidgetOptions(
+        programID: <program - id>,
+        timeoutSeconds: 1000
+      ),
+      question: "<question>",
+      options: [
+        .init(text: "<option-text>", imageURL: <image - url>),
+        .init(text: "<option-text>", imageURL: <image - url>),
+      ]
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createTextPoll(
+        request = CreateTextPollRequest(
+           	 options = "<options>",
+             programId = "<program-id>",
+           	 question = "<question>",
+          	 timeout = "<timeout>",
+        ).run { copy(options = txtPoll.options.map { this.Option(it.description) }) },
+    { result,error -> })
+
+  liveLikeWidgetClient.createImagePoll(
+        request = CreateImagePollRequest(
+           	 options = "<options>",
+             programId = "<program-id>",
+           	 question = "<question>",
+          	 timeout = "<timeout>",
+        ).run { copy(options = imgPoll.options.map {this.Option(it.description, it.image_url!!)}) },
+    { result,error -> })
+
+  ```
+</details>
 
 ## Prediction Result
 
 For publishing a prediction result, you can either create a follow-up widget with the correct option ID or update a prediction widget option to declare which option is correct. Once the option(s) are updated, you may then publish a prediction follow-up widget that shows the prediction result to your users.
 
-> Approach 1: Create a Follow-Up Widget
->
-> <br />
->
-> <details>
->   <summary>Create Prediction Follow Up Widget</summary>
->
->   ```javascript Web
->   LiveLike.createPredictionFollowUpWidget({
->       widgetId: "<widget-id>",
->     	// this could be LiveLike.WidgetKind.TEXT_PREDICTION or LiveLike.WidgetKind.IMAGE_PREDICTION 
->       widgetKind: LiveLike.WidgetKind.TEXT_PREDICTION,
->       correctOptionId: "<option-id>",
->       sponsorIds: ["sponsor-id"]
->   }).then(res => console.log(res))
->   ```
->   ```kotlin
->   val liveLikeWidgetClient = sdk.widget()
->   liveLikeWidgetClient.createPredictionFollowUpWidget(
->                   CreatePredictionFollowUpWidgetRequest(
->                       widgetId, widgetType, correctOptionId
->                   )
->               ) { result, error ->          
->   						
->   							}
->
->   ```
-> </details>
+Approach 1: Create a Follow-Up Widget
 
-> Approach 2: Update Prediction Option
->
-> <br />
->
-> <details>
->   <summary>Update Prediction option</summary>
->
->   ```javascript Web
->   // for updating text prediction option
->   LiveLike.updateTextPredictionWidgetOption({
->     widgetId: "ec55d288-5e7d-43ce-83fb-768f98c6d8af",
->     optionId: "742abe83-0bb8-4825-9b93-bc26fadb48f9",
->     isCorrect: true,
->     // optional rewardItemId in case there an need to add reward
->     rewardItemId: "<reward-id>",
->     // optional rewardItemAmount in case there an need to add reward
->   	rewardItemAmount: 30
->   }).then(res => console.log(res))
->
->   // for updating image prediction option
->   LiveLike.updateTextPredictionWidgetOption({
->     widgetId: "ec55d288-5e7d-43ce-83fb-768f98c6d8af",
->     optionId: "742abe83-0bb8-4825-9b93-bc26fadb48f9",
->     isCorrect: true,
->     // optional if image url needs to be updated
->     imageUrl: "<updated-image-url>"
->     // optional rewardItemId in case there an need to add reward
->     rewardItemId: "<reward-id>",
->     // optional rewardItemAmount in case there an need to add reward
->   	rewardItemAmount: 30
->   }).then(res => console.log(res))
->   ```
->   ```kotlin
->   val liveLikeWidgetClient = sdk.widget()
->   liveLikeWidgetClient.updateTextPredictionOption(
->                   UpdateTextPredictionOptions(
->                       textPrediction.id, textPredictionOptionId, null,isCorrect = true, null
->                   )
->               ) { result, error ->          
->   						
->   							}
->
->   liveLikeWidgetClient.updateImagePredictionOption(
->                   UpdateImagePredictionOptions(
->                       imagePrediction.id, imagePredictionOptionsId, null,isCorrect= true, null
->                   )
->               ) { result, error ->
->                   
->               }
->   ```
->   ```swift Swift
->   // Updating text prediction follow up option
->   livelike.widgetClient.updateTextPredictionFollowUpWidgetOption(
->   	options: UpdateTextPredictionFollowUpRequestOptions(
->   		predictionID: "prediction-id",
->   		optionID: "prediction-option-id",
->   		isCorrect: true
->   	)
->   ) { result in
->   	...
->   }
->
->   // Updating image prediction follow up option
->   livelike.widgetClient.updateImagePredictionFollowUpWidgetOption(
->   	options: UpdateImagePredictionFollowUpRequestOptions(
->   		predictionID: "prediction-id",
->   		optionID: "prediction-option-id",
->       isCorrect: true
->   	)
->   ) { result in
->   	...
->   }
->   ```
-> </details>
+<details>
+  <summary>Create Prediction Follow Up Widget</summary>
+
+  ```javascript Web
+  LiveLike.createPredictionFollowUpWidget({
+      widgetId: "<widget-id>",
+    	// this could be LiveLike.WidgetKind.TEXT_PREDICTION or LiveLike.WidgetKind.IMAGE_PREDICTION 
+      widgetKind: LiveLike.WidgetKind.TEXT_PREDICTION,
+      correctOptionId: "<option-id>",
+      sponsorIds: ["sponsor-id"]
+  }).then(res => console.log(res))
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createPredictionFollowUpWidget(
+                  CreatePredictionFollowUpWidgetRequest(
+                      widgetId, widgetType, correctOptionId
+                  )
+              ) { result, error ->          
+  						
+  							}
+
+  ```
+</details>
+
+<br />
+
+Approach 2: Update Prediction Option
+
+<details>
+  <summary>Update Prediction option</summary>
+
+  ```javascript Web
+  // for updating text prediction option
+  LiveLike.updateTextPredictionWidgetOption({
+    widgetId: "ec55d288-5e7d-43ce-83fb-768f98c6d8af",
+    optionId: "742abe83-0bb8-4825-9b93-bc26fadb48f9",
+    isCorrect: true,
+    // optional rewardItemId in case there an need to add reward
+    rewardItemId: "<reward-id>",
+    // optional rewardItemAmount in case there an need to add reward
+  	rewardItemAmount: 30
+  }).then(res => console.log(res))
+
+  // for updating image prediction option
+  LiveLike.updateTextPredictionWidgetOption({
+    widgetId: "ec55d288-5e7d-43ce-83fb-768f98c6d8af",
+    optionId: "742abe83-0bb8-4825-9b93-bc26fadb48f9",
+    isCorrect: true,
+    // optional if image url needs to be updated
+    imageUrl: "<updated-image-url>"
+    // optional rewardItemId in case there an need to add reward
+    rewardItemId: "<reward-id>",
+    // optional rewardItemAmount in case there an need to add reward
+  	rewardItemAmount: 30
+  }).then(res => console.log(res))
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.updateTextPredictionOption(
+                  UpdateTextPredictionOptions(
+                      textPrediction.id, textPredictionOptionId, null,isCorrect = true, null
+                  )
+              ) { result, error ->          
+  						
+  							}
+
+  liveLikeWidgetClient.updateImagePredictionOption(
+                  UpdateImagePredictionOptions(
+                      imagePrediction.id, imagePredictionOptionsId, null,isCorrect= true, null
+                  )
+              ) { result, error ->
+                  
+              }
+  ```
+  ```swift Swift
+  // Updating text prediction follow up option
+  livelike.widgetClient.updateTextPredictionFollowUpWidgetOption(
+  	options: UpdateTextPredictionFollowUpRequestOptions(
+  		predictionID: "prediction-id",
+  		optionID: "prediction-option-id",
+  		isCorrect: true
+  	)
+  ) { result in
+  	...
+  }
+
+  // Updating image prediction follow up option
+  livelike.widgetClient.updateImagePredictionFollowUpWidgetOption(
+  	options: UpdateImagePredictionFollowUpRequestOptions(
+  		predictionID: "prediction-id",
+  		optionID: "prediction-option-id",
+      isCorrect: true
+  	)
+  ) { result in
+  	...
+  }
+  ```
+</details>
 
 <br />
 
