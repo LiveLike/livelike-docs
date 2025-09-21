@@ -211,70 +211,45 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
 >
 > Implementation for receiving real time invitation is different for Web, Android and IOS.
 
-<details>
-  <summary>Receive Invitation in Real-time</summary>
+> API Details 👇
 
-  ```swift
-  /*
-  	To receive real-time notifications of the User being added a Chat Room,
-  	you need to implement the `ChatClientDelegate`.
-  	The method `userDidReceiveInvitation` returns an object of type `ChatRoomInvitation` 
-  	that contains all the details related to the Chat Room Invitation.
-  */
-  class SomeViewController: UIViewController {
+\<details>
+&#x20; \<summary>Receive Invitation in Real-time\</summary>
 
-    var sdk: EngagementSDK
-    
-    override func viewDidLoad() {
-      sdk.chat.delegate = self
-    }
-  }
+&#x20; \`\`\`swift
+&#x20; /\*
+&#x20; 	To receive real-time notifications of the User being added a Chat Room,
+&#x20; 	you need to implement the \`ChatClientDelegate\`.
+&#x20; 	The method \`userDidReceiveInvitation\` returns an object of type \`ChatRoomInvitation\`&#x20;
+&#x20; 	that contains all the details related to the Chat Room Invitation.
+&#x20; \*/
+&#x20; class SomeViewController: UIViewController \{
 
-  class SomeViewController: ChatClientDelegate {
-    func chatClient(_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) {
-          self.showInviteAlert(title: "Invitation Received", 
-                               message: "You've been invited to room")
-    }
-  }
-  ```
-  ```kotlin
-  sdk.chat().chatRoomDelegate =
-              object : ChatRoomDelegate() {
-                  override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) {
-                      
-                  }
+&#x20;   var sdk: EngagementSDK
+&#x20;  &#x20;
+&#x20;   override func viewDidLoad() \{
+&#x20;     sdk.chat.delegate = self
+&#x20;   }
+&#x20; }
 
-                  override fun onReceiveInvitation(invitation: ChatRoomInvitation) {
-                      showToast("Receive invitation from ${invitation.invited_by.nickname} => ${invitation.invited_by.userId}")
-                  }
-              }
-  ```
-  ```javascript
-  // define a listener function to be invoked when user is invitated to some other chatroom
-  function onReceieveChatRoomInvitationListener(invitation){
-    console.log(invitation);
-  }
-
-  LiveLike.addChatRoomEventListener(
-    "chat-room-invite",
-    onReceieveChatRoomInvitationListener
-  )
-
-  // to remove the attached listener function use removeUserProfileEventListener API
-  LiveLike.removeChatRoomEventListener(
-    "chat-room-invite",
-    onReceieveChatRoomInvitationListener
-  )
-  ```
-</details>
-
-<br />
+&#x20; class SomeViewController: ChatClientDelegate \{
+&#x20;   func chatClient(\_ chatClient: ChatClient, userDidReceiveInvitation newInvitationInfo: ChatRoomInvitation) \{
+&#x20;         self.showInviteAlert(title: "Invitation Received",&#x20;
+&#x20;                              message: "You've been invited to room")
+&#x20;   }
+&#x20; }
+&#x20; \`\`\`
+&#x20; \`\`\`kotlin
+&#x20; sdk.chat().chatRoomDelegate =
+&#x20;             object : ChatRoomDelegate() \{
+&#x20;                 override fun onNewChatRoomAdded(chatRoomAdd: ChatRoomAdd) \{
+&#x20;                    &#x20;
 
 ### Update the Invitation Status for a User
 
 You can update the status of the invitation that the User has received using `updateChatRoomInviteStatus` API.
 
-> API details
+> API Details 👇
 
 <details>
   <summary>Update the Invitation Status for a User</summary>
@@ -330,7 +305,7 @@ You can update the status of the invitation that the User has received using `up
 
 This API gives you list of received invitation for the current logged in user.
 
-> API Details
+> API Details 👇
 
 <details>
   <summary>Get List of Invitations received by the current User</summary>
@@ -388,7 +363,7 @@ This API gives you list of received invitation for the current logged in user.
 
 This API gives you list of received invitation for the current logged in user.
 
-> API Details
+> API Details 👇
 
 <details>
   <summary>Get List of Invitations received by the current User</summary>
@@ -442,7 +417,7 @@ This API gives you list of received invitation for the current logged in user.
 
 This API gives you list of sent invitation for the current logged in user.
 
-> API Details
+> API Details 👇
 
 <details>
   <summary>Get List of Invitations sent by the current User</summary>
