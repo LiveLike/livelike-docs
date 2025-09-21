@@ -50,4 +50,7 @@ Profiles can be:
 * Provisioned anonymously for quick, lightweight experiences
   Profiles store user activity across widgets, chat, and other features, enabling you to build personalized engagement journeys.
 
+Learn More: 
+[User Profiles](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/profiles#/)
+
 <br />
