@@ -952,48 +952,4 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-# Delete Widget
-
-| Property    | Description                    | Required |
-| :---------- | :----------------------------- | :------- |
-| Widget ID   | The id of the widget to delete | Yes      |
-| Widget Kind | The kind of widget to delete   | Yes      |
-
-<details>
-  <summary>Delete Widget</summary>
-
-  ```javascript Web
-  LiveLike.deleteWidget({
-    widgetId: '<widget-id>',
-    widgetKind: '<widget-kind>',
-  }).then((res) => console.log(res));
-
-  ```
-  ```swift
-  let livelike: LiveLike
-
-  livelike.widgetClient.deleteWidget(
-    options: DeleteWidgetRequestOptions(
-      kind: <widget-kind>,
-      id: "<widget-id>"
-    )
-  ) { result
-  	switch result {
-    case .success(let widget):
-      break
-    case .failure(let error):
-      break
-    }
-  }
-  ```
-  ```kotlin
-  val liveLikeWidgetClient = sdk.widget()
-  liveLikeWidgetClient.deleteWidget(
-          request = DeleteWidgetRequest(
-                 type = liveLikeWidget.getWidgetType()!!,
-                 id = liveLikeWidget.id),
-    			{ result, error -> })
-  ```
-</details>
-
-<br />
+[Learn about Deleting Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/delete-widgets#/)
