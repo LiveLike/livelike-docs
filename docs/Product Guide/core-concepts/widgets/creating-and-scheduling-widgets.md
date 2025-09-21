@@ -561,3 +561,320 @@ Whenever a number prediction widget is created, the backend service automaticall
               }
   ```
 </details>
+
+<br />
+
+## Quiz
+
+| Property | Description              | Required |
+| :------- | :----------------------- | :------- |
+| Question | The question of the Quiz | Yes      |
+| Choices  | The choices for the Quiz | Yes      |
+
+### Option
+
+| Property       | Description                        | Required                  |
+| :------------- | :--------------------------------- | :------------------------ |
+| Text           | The text description of the Option | Yes                       |
+| Image URL      | The image of the option            | Yes (For Image Quiz Only) |
+| Correct Option | The correct option of the Quiz     | Yes                       |
+
+<br />
+
+<details>
+  <summary>Create Text Quiz Widget</summary>
+
+  ```javascript Web
+  // create text quiz widget
+  LiveLike.createTextQuizWidget({
+    question: '<quiz question>',
+    programId: '<program-id>',
+    choices: [
+      { description: '<choice-description-1>', isCorrect: true },
+      { description: '<choice-description-2>' },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+    confirmationMessage: '<your-confirmation-message on submit>',
+  }).then((res) => console.log(res));
+
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createTextQuiz(
+        request = CreateTextQuizRequest(
+           choices = listOf(Choice("<description>","<is_correct>")),
+           programId = "<program-id>",
+           question = "<question>",
+           timeout = "<timeout>"
+        ),
+    { result,error -> })
+
+  ```
+  ```swift
+  let livelike: LiveLike
+  livelike.widgetClient.createTextQuizWidget(
+    options: CreateTextQuizWidgetOptions(
+      common: CommonCreateWidgetOptions(
+        programID: self.config.programID
+      ),
+      question: "<question>",
+      choices: [
+        .init(text: "option 1", isCorrect: true),
+        .init(text: "option 2", isCorrect: false),
+      ]
+    )
+  ) { result in
+    switch result {
+    case .failure(let error):
+      break
+    case .success(let model):
+      break
+    }
+  }
+
+  ```
+</details>
+
+<br />
+
+<details>
+  <summary>Create Image Quiz Widget</summary>
+
+  ```javascript Web
+  // create image quiz widget
+  LiveLike.createImageQuizWidget({
+    question: '<quiz question>',
+    programId: '<program-id>',
+    choices: [
+      { 
+        description: '<choice-description-1>',
+        imageUrl: '<choice-image-url>'
+      },
+      { 
+        description: '<option-description-2>',
+        imageUrl: '<option-image-url>',
+        isCorrect: true
+      },
+    ],
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+    confirmationMessage: '<your-confirmation-message on submit>',
+  }).then((res) => console.log(res));
+
+  ```
+  ```kotlin
+  liveLikeWidgetClient.createImageQuiz(
+        request = CreateImageQuizRequest(
+           choices = listOf(Choice("<description>","<is_correct>","<image_url>")),
+           programId = "<program-id>",
+           question = "<question>",
+           timeout = "<timeout>"
+        ),
+    { result,error -> })
+
+  ```
+  ```swift
+  let livelike: LiveLike
+  livelike.widgetClient.createImageQuizWidget(
+    options: CreateImageQuizWidgetOptions(
+      common: CommonCreateWidgetOptions(
+        programID: self.config.programID
+      ),
+      question: "<question>",
+      choices: [
+        .init(text: "option 1", imageURL: URL(string: "<image-url>"), isCorrect: true),
+        .init(text: "option 2", imageURL: URL(string: "<image-url>"), isCorrect: false),
+      ]
+    )
+  ) { result in
+    switch result {
+    case .failure(let error):
+      break
+    case .success(let model):
+      break
+    }
+  }
+
+  ```
+</details>
+
+<br />
+
+## Text Ask
+
+| Property | Description                      | Required |
+| :------- | :------------------------------- | :------- |
+| Title    | The title of the text ask widget | Yes      |
+| Prompt   | The prompt question              | Yes      |
+
+<br />
+
+<details>
+  <summary>Create Text Ask Widget</summary>
+
+  ```javascript Web
+  LiveLike.createTextAskWidget({
+    programId: '<program-id>',
+    prompt: "< your question prompt>", 
+    title: "<your title>",
+    customData: '<stringified-custom-data-object>',
+    widgetAttributes: [{ key: '<attribute-key>', value: '<atribute-value>' }],
+    programDateTime: '<date-time-for-syncing-widget-with-video-timestamp>',
+    // video playback time for showing video on demand widget
+    playbackTimeMs: 2000,
+    // UI interactive timeout value
+    timeout: 'P0DT0H0M30S',
+    interactiveUntil: '<date-time>',
+    confirmationMessage: '<your-confirmation-message on submit>',
+  }).then((res) => console.log(res));
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.createTextAsk(
+        request = CreateTextAskRequest(
+           prompt = "<prompt>",
+           programId = "<program-id>",
+           title = "<title>",
+           timeout = "<timeout>",
+           confirmationMessage = "Thanks for submission"
+        ),
+    { result,error -> })
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.createTextAskWidget(
+    options: CreateTextAskWidgetOptions(
+      common: CommonCreateWidgetOptions(
+        programID: config.programID
+      ),
+      title: "<title>",
+      prompt: "<prompt>",
+      confirmationMessage: "<confirmation-message>"
+    ),
+    completion: {
+      result
+      switch result {
+      case .success(let widget):
+        break
+      case .failure(let error):
+        break
+      }
+    }
+  )
+  ```
+</details>
+
+<br />
+
+# Publish a Widget
+
+| Property          | Description                                                 | Required |
+| :---------------- | :---------------------------------------------------------- | :------- |
+| Widget ID         | The ID of the widget to publish                             | Yes      |
+| Widget Kind       | The kind of widget to publish                               | Yes      |
+| Publish Delay     | The duration at which the widget will be delayed to publish | No       |
+| Program Date Time | A hint for live video synchronization                       | No       |
+
+<br />
+
+<details>
+  <summary>Publish Widget</summary>
+
+  ```javascript Web
+  LiveLike.publishWidget({
+    widgetId: '<widget-id>',
+    widgetKind: '<widget-kind>',
+    programDateTime: 'date-time-in-ISO-string-format'
+  }).then((res) => console.log(res));
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.publishWidget(
+    options: PublishWidgetRequestOptions(
+      kind: <widget-kind>,
+      id: "<widget-id>",
+      publishDelaySeconds: <publish-delay-seconds>
+    )
+  ) { result
+  	switch result {
+    case .success(let widget):
+      break
+    case .failure(let error):
+      break
+    }
+  }
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.publishWidget(
+          request = PublishWidgetRequest(
+                 type = liveLikeWidget.getWidgetType()!!,
+                 id = liveLikeWidget.id,
+                 publishDelay = "P0DT00H00M00S",
+                 programDateTime = null),
+    			{ result, error -> })
+  ```
+</details>
+
+<br />
+
+# Delete Widget
+
+| Property    | Description                    | Required |
+| :---------- | :----------------------------- | :------- |
+| Widget ID   | The id of the widget to delete | Yes      |
+| Widget Kind | The kind of widget to delete   | Yes      |
+
+<br />
+
+<details>
+  <summary>Delete Widget</summary>
+
+  ```javascript Web
+  LiveLike.deleteWidget({
+    widgetId: '<widget-id>',
+    widgetKind: '<widget-kind>',
+  }).then((res) => console.log(res));
+
+  ```
+  ```swift
+  let livelike: LiveLike
+
+  livelike.widgetClient.deleteWidget(
+    options: DeleteWidgetRequestOptions(
+      kind: <widget-kind>,
+      id: "<widget-id>"
+    )
+  ) { result
+  	switch result {
+    case .success(let widget):
+      break
+    case .failure(let error):
+      break
+    }
+  }
+  ```
+  ```kotlin
+  val liveLikeWidgetClient = sdk.widget()
+  liveLikeWidgetClient.deleteWidget(
+          request = DeleteWidgetRequest(
+                 type = liveLikeWidget.getWidgetType()!!,
+                 id = liveLikeWidget.id),
+    			{ result, error -> })
+  ```
+</details>
