@@ -82,5 +82,5 @@ Moderators get additional capabilities for active community management:
 
 * **Delete messages**: Remove inappropriate or harmful messages directly from the chat.
 * **User reports**: Community members can report objectionable content. Moderators can review these reports and take appropriate action.
-* **User blocking**: Users can block others to prevent unwanted interactions. Read more about blocking.
+* **User blocking**: Users can block others to prevent unwanted interactions. Read more about [Blocking](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/blocking-profiles#/).
 * **User muting**: Moderators can mute a user. Once muted, that user can no longer send messages in the chatroom.
