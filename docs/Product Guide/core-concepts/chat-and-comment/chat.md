@@ -49,7 +49,8 @@ Every chat room is defined by a few key attributes:
 * Membership isn’t required to send messages — you can allow “drop-in” participation if you don’t need to track history.
 * A common pattern is to persist memberships for private chats but allow public event chats to expire, so they don’t clutter the UI.
 
-Learn more: [Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
+Learn more:
+[Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
 
 ### Chat Custom Stickers & Reactions
 
@@ -59,8 +60,6 @@ Learn more: [Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/
 Learn more:
 [Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
 [Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
-
-<br />
 
 ### Moderation
 
