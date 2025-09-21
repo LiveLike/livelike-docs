@@ -26,6 +26,16 @@ These APIs work across iOS, Android, and Web, with platform-specific implementat
 
 ### Add New User to Chat Room:
 
+<br />
+
+## Add New User to Chat Room
+
+Use `addNewMemberToChatRoom` API to add other users to chat rooms.
+
+> 🚧 Please Note
+>
+> User can add another user to the chat room only if they are already a member of the chat room, use `joinChatRoom` API for becoming a member.
+
 Use `addNewMemberToChatRoom` API to add other users to chat rooms.
 
 > API details 👇
@@ -75,7 +85,7 @@ Use `addNewMemberToChatRoom` API to add other users to chat rooms.
 
 ### Invite User to Chat Room:
 
-ou can allow the User to invite another user to a particular chat room that they are already a part of.
+You can allow the User to invite another user to a particular chat room that they are already a part of.
 You can call the `sendChatRoomInviteToUser` method which sends an invitation to the other user where the other user could decide either to `accept` or `reject` the invitation.
 
 > API Details 👇
@@ -129,14 +139,16 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
 
 <br />
 
-### Receive notification on adding user to chat room in Real-time: 
+### Receive notification on adding user to chat room in Real-time:
 
-ou can allow the User to invite another user to a particular chat room that they are already a part of.
+> 📘 Platform specific implementation
+>
+> Implementation for receiving notification when user is added to chat room is different for Web, Android and IOS.
+
+You can allow the User to invite another user to a particular chat room that they are already a part of.
 You can call the `sendChatRoomInviteToUser` method which sends an invitation to the other user where the other user could decide either to `accept` or `reject` the invitation.
 
 > API Details 👇
-
-<br />
 
 <details>
   <summary>Receive notification on adding user to chat room in Real-time</summary>
@@ -194,6 +206,8 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
   )
   ```
 </details>
+
+<br />
 
 ### Receive Invitation in Real-time
 
@@ -264,9 +278,7 @@ You can call the `sendChatRoomInviteToUser` method which sends an invitation to 
 
 You can update the status of the invitation that the User has received using `updateChatRoomInviteStatus` API.
 
-> API details 
-
-<br />
+> API details
 
 <details>
   <summary>Update the Invitation Status for a User</summary>
@@ -324,8 +336,6 @@ This API gives you list of received invitation for the current logged in user.
 
 > API Details
 
-<br />
-
 <details>
   <summary>Get List of Invitations received by the current User</summary>
 
@@ -384,8 +394,6 @@ This API gives you list of received invitation for the current logged in user.
 
 > API Details
 
-<br />
-
 <details>
   <summary>Get List of Invitations received by the current User</summary>
 
@@ -439,8 +447,6 @@ This API gives you list of received invitation for the current logged in user.
 This API gives you list of sent invitation for the current logged in user.
 
 > API Details
-
-<br />
 
 <details>
   <summary>Get List of Invitations sent by the current User</summary>
