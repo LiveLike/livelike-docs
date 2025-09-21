@@ -500,13 +500,25 @@ Reactions are exposed via three main APIs:
 
 ## Real-Time Events
 
-Developers can subscribe to **real-time events** such as:
+For real time updates of user reactions, please conform to **ReactionSessionDelegate**
 
-* `ADD_REACTION` – when a user reacts.
-* `REMOVE_REACTION` – when a user removes their reaction.
-* `UPDATE_REACTION_SPACE` – when packs linked to a space change.
+Realtime notifications for addition and removal of user reactions.
 
-SDK delegates and listeners are available across **Web, Android, and iOS**.
+```swift
+func reactionSession(_ reactionSession: ReactionSession, didAddReaction reaction: UserReaction)
+
+func reactionSession(_ reactionSession: ReactionSession, didRemoveReaction reaction: UserReaction)
+```
+
+### Real Time Reaction Space events
+
+For real time updates of reactions, please conform to **ReactionClientDelegate**
+
+This event is triggered whenever a reaction space is updated with its name or reaction pack ids. You may need to use this event to update your reaction list based on updated reaction pack Ids.
+
+```swift
+func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace newReactionSpace: ReactionSpace)
+```
 
 ***
 
