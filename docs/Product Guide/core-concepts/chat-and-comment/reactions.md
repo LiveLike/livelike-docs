@@ -72,7 +72,7 @@ Reactions are exposed via three main APIs:
 
 <br />
 
-## Reaction Packs API
+### Reaction Packs API
 
 <details>
   <summary>List Reaction Packs</summary>
@@ -142,7 +142,7 @@ Reactions are exposed via three main APIs:
   ```
 </details>
 
-## Reaction Spaces API
+### Reaction Spaces API
 
 <details>
   <summary>Create a Reaction Space</summary>
@@ -288,7 +288,7 @@ Reactions are exposed via three main APIs:
 </details>
 
 <details>
-  <summary>#### Get Reaction Space details by target group ID </summary>
+  <summary>Get Reaction Space details by target group ID </summary>
 
   This could be preferred way which helps you avoid storing reaction space ID for a given target group ID in your system.
 
@@ -315,7 +315,7 @@ Reactions are exposed via three main APIs:
   ```
 </details>
 
-## User Reactions API
+### User Reactions API
 
 <details>
   <summary>Create Reaction Session</summary>
