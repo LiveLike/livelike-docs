@@ -50,6 +50,14 @@ Widgets fall into three broad categories:
 * Rewards → Distribute virtual goods or incentives.
 * Achievements → Recognize milestones like streaks or event participation.
 
+### Video on demand
+
+VOD (Video on Demand) widgets let you sync interactive widgets with on-demand video playback. By attaching a playback timestamp (in milliseconds) when creating a widget, you can control exactly when it appears during video playback, ensuring users see the right interaction at the right moment.
+
+<br />
+
+Learn More about VOD Widget
+
 ## Presentation Modes
 
 How widgets appear in your app can be just as important as the content itself.
@@ -79,6 +87,8 @@ LiveLike supports three main formats:
 * Social sharing capabilities
 * Full branding and customization support
 * Analytics and tracking to measure performance
+
+<br />
 
 Learn more:
 
