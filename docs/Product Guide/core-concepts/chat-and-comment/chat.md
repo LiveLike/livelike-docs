@@ -49,7 +49,7 @@ Every chat room is defined by a few key attributes:
 * Membership isn’t required to send messages — you can allow “drop-in” participation if you don’t need to track history.
 * A common pattern is to persist memberships for private chats but allow public event chats to expire, so they don’t clutter the UI.
 
-👉[Learn more about Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
+[Learn more about Chat Membership](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-membership#/)
 
 ### Chat Custom Stickers & Reactions
 
@@ -57,14 +57,39 @@ Every chat room is defined by a few key attributes:
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
 
 Learn more about:
-👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)  and
-👉[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
+[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)  and
+[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
 ### Moderation
 
 LiveLike offers a powerful moderation toolkit to help you build a safe and engaging chat community.
 Moderation features include automatic filtering of inappropriate content and tools for moderators to manage user behavior.
 
-👉 [Learn more about Moderation](https://docs.livelike.com/v1_doc_rewire_vk/docs/chat-moderation-1#/)
+[Learn more about Moderation](https://docs.livelike.com/v1_doc_rewire_vk/docs/chat-moderation-1#/)
+
+More about Chat: --- yet to add--- IN PROGRESS
+Threads in Chat
+
+Private Chat
+
+Counting Unread Messages
+
+Chat Mentions
+
+Customizing Chat Input
+
+Chat Message Links
+
+Sending Custom Chat Messages
+
+Pinning Chat Messages
+
+Quote Message
+
+Token Gating Chat
+
+Token Gating Chat
+
+Message Metadata
 
 <br />
