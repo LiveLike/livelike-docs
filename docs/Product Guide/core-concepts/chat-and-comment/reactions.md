@@ -73,10 +73,10 @@ Reactions are exposed via three main APIs:
 <br />
 
 <details>
-  <summary>Reaction Packs API</summary>
+  <summary>## Reaction Packs API</summary>
 
   <details>
-    <summary>List Reaction Packs</summary>
+    <summary>### List Reaction Packs</summary>
 
     This could be used to get list of reaction pack created through producer suite.
 
@@ -108,7 +108,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Get Reaction Pack Details</summary>
+    <summary>### Get Reaction Pack Details</summary>
 
     This could be used to get reaction pack details using reaction pack Id.
 
@@ -145,10 +145,10 @@ Reactions are exposed via three main APIs:
 </details>
 
 <details>
-  <summary>Reaction Spaces API</summary>
+  <summary>## Reaction Spaces API</summary>
 
   <details>
-    <summary>Create a Reaction Space</summary>
+    <summary>### Create a Reaction Space</summary>
 
     For creating a reaction space, you would need reaction pack Ids where each pack id is a collection of reactions to be used by your users and a target group Id which is a unique identifier of your content referencing collection of items.
 
@@ -184,7 +184,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Update a Reaction Space</summary>
+    <summary>### Update a Reaction Space</summary>
 
     You can update name and reaction pack Ids of an existing reaction space
 
@@ -213,7 +213,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Delete a Reaction Space</summary>
+    <summary>### Delete a Reaction Space</summary>
 
     ```javascript
     LiveLike.deleteReactionSpace({
@@ -239,7 +239,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>List Reaction Spaces</summary>
+    <summary>### List Reaction Spaces</summary>
 
     This could be used to get list of reaction spaces in an application
 
@@ -265,7 +265,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Get Reaction Space details by reaction space ID</summary>
+    <summary>### Get Reaction Space details by reaction space ID</summary>
 
     ```javascript
     LiveLike.getReactionSpaceDetail({
@@ -320,10 +320,10 @@ Reactions are exposed via three main APIs:
 </details>
 
 <details>
-  <summary>User Reactions API</summary>
+  <summary>## User Reactions API</summary>
 
   <details>
-    <summary>Create Reaction Session</summary>
+    <summary>### Create Reaction Session</summary>
 
     ```kotlin
     val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<target-group-id>,errorDelegate)
@@ -334,7 +334,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Add User Reaction</summary>
+    <summary>### Add User Reaction</summary>
 
     This API requires:
 
@@ -369,7 +369,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>List User Reactions by target ID</summary>
+    <summary>### List User Reactions by target ID</summary>
 
     ```javascript
     LiveLike.getUserReactions({
@@ -403,9 +403,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>List User Reactions by reaction type ID</summary>
-
-    #### List User Reactions by reaction type ID
+    <summary>### List User Reactions by reaction type ID</summary>
 
     ```javascript
     LiveLike.getUserReactions({
@@ -439,7 +437,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Count User Reactions by target IDs</summary>
+    <summary>### Count User Reactions by target IDs</summary>
 
     This API could be used in case you just need reaction with total count for a given target Id.
     You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.
@@ -474,7 +472,7 @@ Reactions are exposed via three main APIs:
   </details>
 
   <details>
-    <summary>Remove User Reaction</summary>
+    <summary>### Remove User Reaction</summary>
 
     Remove a user reaction using user reaction Id which is Id of the user reaction object created when a user adds a reaction.
 
@@ -516,14 +514,5 @@ SDK delegates and listeners are available across **Web, Android, and iOS**.
 
 ***
 
-## Example Use Cases
-
-* ❤️ React to specific **chat messages** in a live chat.
-* 🎬 Show excitement during **video highlights** or time-coded moments.
-* 📝 Add reactions to **comments on blog posts**.
-* 🎉 Provide **exclusive sponsor-branded reactions** for premium fans.
-
-***
-
-👉 In short: **Reactions make every piece of content more interactive, expressive, and fun.**
+In short: **Reactions make every piece of content more interactive, expressive, and fun.**
 They’re lightweight for users, flexible for integrators, and powerful for PMs to drive engagement and monetization.
