@@ -319,6 +319,191 @@ Reactions are exposed via three main APIs:
   </details>
 </details>
 
+<details>
+  <summary>User Reactions API</summary>
+
+  <details>
+    <summary>Create Reaction Session</summary>
+
+    ```kotlin
+    val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<target-group-id>,errorDelegate)
+    ```
+    ```swift
+    reactionSession = self.sdk.reaction.createReactionSession(reactionSpace: reactionSpace)
+    ```
+  </details>
+
+  <details>
+    <summary>Add User Reaction</summary>
+
+    This API requires:
+
+    1. reaction space Id
+    2. reaction Id of a reaction from a reaction pack
+    3. target Id which is unique identifier of the subjected entity being reacted upon
+
+    ```javascript
+    LiveLike.addUserReaction({
+        targetId: "target-1",
+        reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+        reactionId: "0fddc166-b8c3-4ce9-990e-848bde12188b"
+    }).then(reaction => console.log(reaction))
+    ```
+    ```kotlin
+    reactionSession.addUserReaction(<target-id>,<reaction-id>,<custom-data>,object:LiveLikeCallback<UserReaction>(){
+    	override fun onResponse(result: UserReaction?, error: String?) {
+        
+      }
+    })
+    ```
+    ```swift
+    reactionSession.addUserReaction(targetID: targetID, reactionID: reactionID, customData: nil) { result in
+    	switch result {
+    		case .success(let userReaction):
+        	//Success Block
+    		case .failure(let error):
+        	// Failure Block
+    	}
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>List User Reactions by target ID</summary>
+
+    ```javascript
+    LiveLike.getUserReactions({
+        reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+        targetId: "0fddc166-b8c3-4ce9-990e-848bde12188b"
+    }).then(paginatedReactions => console.log(paginatedReactions))
+    ```
+    ```kotlin
+    reactionSession.getUserReactions(LiveLikePagination.FIRST,<target-id>,object:LiveLikeCallback<List<UserReaction>>(){
+    	override fun onResponse(result: List<UserReaction>?, error: String?) {
+        
+      }
+    })
+    ```
+    ```swift
+    reactionSession.getUserReactions(
+      page: .first, 
+      reactionSpaceID: spaceID, 
+      options: GetUserReactionsRequestOptions(reactionID: nil, 
+                                              targetID: targetID, 
+                                              reactionByID: nil)
+    ) { result in
+       switch result {
+    		case .success(let userReaction):
+        	//Success Block
+    		case .failure(let error):
+        	// Failure Block
+    	}
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>List User Reactions by reaction type ID</summary>
+
+    #### List User Reactions by reaction type ID
+
+    ```javascript
+    LiveLike.getUserReactions({
+        reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+        reactionId: "2gddc166-b8c3-4ce9-990e-52352fskj29"
+    }).then(paginatedReactions => console.log(paginatedReactions))
+    ```
+    ```kotlin
+    reactionSession.getUserReactions(LiveLikePagination.FIRST,<reaction-id>,object:LiveLikeCallback<List<UserReaction>>(){
+    	override fun onResponse(result: List<UserReaction>?, error: String?) {
+        
+      }
+    })
+    ```
+    ```swift
+    reactionSession.getUserReactions(
+      page: .first, 
+      reactionSpaceID: spaceID, 
+      options: GetUserReactionsRequestOptions(reactionID: reactionID, 
+                                              targetID: nil, 
+                                              reactionByID: nil)
+    ) { result in
+       switch result {
+    		case .success(let userReaction):
+        	//Success Block
+    		case .failure(let error):
+        	// Failure Block
+    	}
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Count User Reactions by target IDs</summary>
+
+    This API could be used in case you just need reaction with total count for a given target Id.
+    You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.
+
+    ```javascript
+    LiveLike.getUserReactionsCount({
+        reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+        targetIds: ["0fddc166-b8c3-4ce9-990e-848bde12188b"],
+    }).then(reaction => console.log(reaction))
+    ```
+    ```kotlin
+    reactionSession.getUserReactionsCount(<list-of-target-ids>,LiveLikePagination.FIRST,object:LiveLikeCallback<List<TargetUserReactionCount>>(){
+    	override fun onResponse(result: List<TargetUserReactionCount>?, error: String?) {
+        
+      }
+    })
+    ```
+    ```swift
+    reactionSession.getUserReactionsCount(
+      reactionSpaceID: spaceID, 
+      targetID: [targetID], 
+      page: .first
+    ) { result in
+    	switch result {
+    		case .success(let reactionCount):
+        	//Success Block
+        case .failure(let error):
+        	//Failure Block
+    	}
+    }
+    ```
+  </details>
+
+  <details>
+    <summary>Remove User Reaction</summary>
+
+    Remove a user reaction using user reaction Id which is Id of the user reaction object created when a user adds a reaction.
+
+    ```javascript
+    LiveLike.removeUserReaction({
+        reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7",
+        userReactionId: "0fddc166-b8c3-4ce9-990e-848bde12188b"
+    })
+    ```
+    ```kotlin
+    reactionSession.removeUserReaction(<user-reaction-id>,object:LiveLikeCallback<Unit>(){
+    	override fun onResponse(result: Unit?, error: String?) {
+        
+      }
+    })
+    ```
+    ```swift
+    reactionSession.removeUserReaction(userReactionID: reactionID) { result in
+    	switch result {
+    		case .success:
+        	//Success Block
+    		case .failure(let error):
+    			//Failure block
+    	}
+    }
+    ```
+  </details>
+</details>
+
 ## Real-Time Events
 
 Developers can subscribe to **real-time events** such as:
