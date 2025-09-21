@@ -92,8 +92,6 @@ As an integrator, you can now allow users to unblock users they had previously b
 
 > API Details
 >
-> <br />
->
 > <details>
 >   <summary>Removing a Block</summary>
 >
@@ -135,10 +133,20 @@ As an integrator, you can now allow users to unblock users they had previously b
 >    })
 >   .then(response => console.log(response))
 >   ```
+> </details>
+
+<br />
+
+## Getting a list of Blocks
+
+As an integrator, you can show the user a list of all the profiles blocked by the user.
+
+> API Details
 >
->   ## Getting a List of Blocks
+> <br />
 >
->   As an integrator, you can show the user a list of all the profiles blocked by the user.
+> <details>
+>   <summary>Getting a List of Blocks</summary>
 >
 >   ```swift
 >   /*
@@ -197,8 +205,6 @@ Use `getProfileBlockInfo` to get block information for a particular profile Id.
 
 > API Details
 >
-> <br />
->
 > <details>
 >   <summary>Getting block profile info</summary>
 >
@@ -224,81 +230,91 @@ Use `getProfileBlockInfo` to get block information for a particular profile Id.
 >   //receive result or error
 >   })
 >   ```
->
->   ## Real time block/unblock profile events
->
->   You can add listeners/delegators for getting real time block/unblock profile events
->
->   > 📘 Platform specific implementation
->   >
->   > Implementation for receiving real time events is different for Web, Android and IOS.
->
->   ```javascript
->   // For adding block profile event listener
->   function onBlockProfileListener(blockInfo){
->       console.log(blockInfo);
->   }
->
->   // When user is blocked, attach listener fn to be called 
->   LiveLike.addUserProfileEventListener(
->       LiveLike.UserProfileEvent.BLOCK_PROFILE,
->       onBlockProfileListener
->   )
->
->   // to remove block profile event listener
->   LiveLike.removeUserProfileEventListener(
->       LiveLike.UserProfileEvent.BLOCK_PROFILE,
->       onBlockProfileListener
->   );
->
->
->   // For adding unblock profile event listener
->   function onUnblockProfileListener(blockInfo){
->       console.log(blockInfo);
->   }
->
->   // When user is Unblocked, attach listener fn to be called 
->   LiveLike.addUserProfileEventListener(
->       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
->       onUnblockProfileListener
->   )
->
->   // to remove unblock profile event listener
->   LiveLike.removeUserProfileEventListener(
->       LiveLike.UserProfileEvent.UNBLOCK_PROFILE,
->       onUnblockProfileListener
->   );
->   ```
->   ```swift
->   //To receive realtime events for blocking or unblocking a profile.
->   //The respective ViewController should confirm to ChatClientDelegate.
->
->   class SomeClass: UIViewController {
->     override func viewDidLoad() {
->       super.viewDidLoad()
->       sdk.chat.delegate = self
->     }
->   }
->
->   extension SomeClass: ChatClientDelegate {
->       func chatClient(_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) {
->           //Block Realtime Event Received.
->       }
->       
->       func chatClient(_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) {
->           // Unblock Realtime Event Received.
->       }
->   }
->   ```
->   ```kotlin
->   sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
->     override fun onBlockProfile(blockedInfo: BlockedInfo) {
->
->     }
->
->     override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) {
->
->     }
->   }
->   ```
 > </details>
+
+<br />
+
+## Real time block/unblock profile events
+
+You can add listeners/delegators for getting real time block/unblock profile events
+
+> 📘 Platform specific implementation
+>
+> Implementation for receiving real time events is different for Web, Android and IOS.
+
+> API Details
+>
+> \<details>
+> \<summary>Real time block/unblock profile events
+> \</summary>
+>
+> &#x20; \`\`\`javascript
+> &#x20; // For adding block profile event listener
+> &#x20; function onBlockProfileListener(blockInfo)\{
+> &#x20;     console.log(blockInfo);
+> &#x20; }
+>
+> &#x20; // When user is blocked, attach listener fn to be called&#x20;
+> &#x20; LiveLike.addUserProfileEventListener(
+> &#x20;     LiveLike.UserProfileEvent.BLOCK\_PROFILE,
+> &#x20;     onBlockProfileListener
+> &#x20; )
+>
+> &#x20; // to remove block profile event listener
+> &#x20; LiveLike.removeUserProfileEventListener(
+> &#x20;     LiveLike.UserProfileEvent.BLOCK\_PROFILE,
+> &#x20;     onBlockProfileListener
+> &#x20; );
+>
+>
+> &#x20; // For adding unblock profile event listener
+> &#x20; function onUnblockProfileListener(blockInfo)\{
+> &#x20;     console.log(blockInfo);
+> &#x20; }
+>
+> &#x20; // When user is Unblocked, attach listener fn to be called&#x20;
+> &#x20; LiveLike.addUserProfileEventListener(
+> &#x20;     LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
+> &#x20;     onUnblockProfileListener
+> &#x20; )
+>
+> &#x20; // to remove unblock profile event listener
+> &#x20; LiveLike.removeUserProfileEventListener(
+> &#x20;     LiveLike.UserProfileEvent.UNBLOCK\_PROFILE,
+> &#x20;     onUnblockProfileListener
+> &#x20; );
+> &#x20; \`\`\`
+> &#x20; \`\`\`swift
+> &#x20; //To receive realtime events for blocking or unblocking a profile.
+> &#x20; //The respective ViewController should confirm to ChatClientDelegate.
+>
+> &#x20; class SomeClass: UIViewController \{
+> &#x20;   override func viewDidLoad() \{
+> &#x20;     super.viewDidLoad()
+> &#x20;     sdk.chat.delegate = self
+> &#x20;   }
+> &#x20; }
+>
+> &#x20; extension SomeClass: ChatClientDelegate \{
+> &#x20;     func chatClient(\_ chatClient: ChatClient, userDidGetBlocked blockInfo: BlockInfo) \{
+> &#x20;         //Block Realtime Event Received.
+> &#x20;     }
+> &#x20;    &#x20;
+> &#x20;     func chatClient(\_ chatClient: ChatClient, userDidGetUnblocked unblockInfo: UnblockInfo) \{
+> &#x20;         // Unblock Realtime Event Received.
+> &#x20;     }
+> &#x20; }
+> &#x20; \`\`\`
+> &#x20; \`\`\`kotlin
+> &#x20; sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() \{
+> &#x20;   override fun onBlockProfile(blockedInfo: BlockedInfo) \{
+>
+> &#x20;   }
+>
+> &#x20;   override fun onUnBlockProfile(blockInfoId: String, blockProfileId: String) \{
+>
+> &#x20;   }
+> &#x20; }
+> &#x20; \`\`\`
+> \</details>
+>
