@@ -79,3 +79,8 @@ LiveLike supports three main formats:
 * Social sharing capabilities
 * Full branding and customization support
 * Analytics and tracking to measure performance
+
+
+Learn more:
+
+Creating and scheduling Widgets
