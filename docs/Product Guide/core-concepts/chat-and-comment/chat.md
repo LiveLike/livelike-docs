@@ -57,7 +57,7 @@ Every chat room is defined by a few key attributes:
 * Reactions → Images or icons grouped into packs; uploaded via Producer Suite for users to react to messages.
 
 Learn more about:
-👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)
+👉[Chat Stickers](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-stickers#/)  and 
 👉[Reactions](https://docs.livelike.com/v1_doc_rewire_vk/docs/reactions#/)
 
 ### Moderation
