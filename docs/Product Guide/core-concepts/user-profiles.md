@@ -1,5 +1,6 @@
 ---
 title: User Profiles
+excerpt: Extending your user data with LiveLike profiles
 deprecated: false
 hidden: false
 metadata:
