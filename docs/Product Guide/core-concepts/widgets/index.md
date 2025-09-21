@@ -25,6 +25,8 @@ Widgets are interactive elements published during a live stream or on-demand vid
 
 Every widget is associated with a Program. Programs group multiple widgets around a piece of content and carry a unique Program ID. Programs also hold scheduling and metadata to help producers organize events inside the dashboard.
 
+***
+
 ## Core Widget Types
 
 Widgets fall into three broad categories:
@@ -50,13 +52,18 @@ Widgets fall into three broad categories:
 * Rewards → Distribute virtual goods or incentives.
 * Achievements → Recognize milestones like streaks or event participation.
 
-### Video on demand
+***
 
-VOD (Video on Demand) widgets let you sync interactive widgets with on-demand video playback. By attaching a playback timestamp (in milliseconds) when creating a widget, you can control exactly when it appears during video playback, ensuring users see the right interaction at the right moment.
+### Video on Demand (VOD) Widgets
 
-<br />
+VOD widgets extend any of the above widget types to **sync with on-demand video playback**:
 
-Learn More about VOD Widget
+* **Sync with playback** → Add a playback timestamp (in milliseconds) to a widget.
+* **Trigger at the right moment** → Display the widget exactly when the video reaches that point.
+* **Work with all widget types** → Polls, Quizzes, Predictions, and more can all be used as VOD widgets.
+* **Stay consistent across replays** → Widgets always appear at the same video moment, even if users rewind or fast-forward.
+
+***
 
 ## Presentation Modes
 
@@ -66,6 +73,8 @@ LiveLike supports three main formats:
 * Popup Widgets → Appear one at a time for a limited window. Great for polls, trivia, or quick predictions.
 * Timeline Widgets → Display in a scrollable feed, letting audiences revisit past widgets. Ideal for live blogs, commentary, and multi-question games.
 * Embedded Widgets → Added directly into web pages via embed codes or custom templates. Perfect for standalone or sponsor-driven activations.
+
+***
 
 ## How Widgets Work
 
@@ -88,7 +97,7 @@ LiveLike supports three main formats:
 * Full branding and customization support
 * Analytics and tracking to measure performance
 
-<br />
+***
 
 Learn more:
 
