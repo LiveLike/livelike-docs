@@ -80,7 +80,10 @@ LiveLike supports three main formats:
 * Full branding and customization support
 * Analytics and tracking to measure performance
 
-
 Learn more:
 
-Creating and scheduling Widgets
+[Creating and scheduling Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/)
+
+Building Custom Widget UI
+
+Deleting Widget
