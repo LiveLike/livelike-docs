@@ -55,8 +55,11 @@ With LiveLike, **any content that has a unique identifier can support reactions*
 
 ## Exclusive Reaction Packs 🔒
 
-Like stickers, reactions can also be **exclusive**.
-Only specific users (based on profile rules) can access them — perfect for **tiered memberships, sponsor rewards, or collectible reaction sets**.
+Just like stickers, reactions can also be exclusive — giving fans a unique way to stand out in chats and comments. These packs can be tied to tiered memberships, sponsor rewards, purchases, or collectibles, making reactions more meaningful and rewarding.
+
+<Callout icon="📘" theme="info">
+   Exclusive packs are managed at the **profile level**. Only profiles that have been granted access will see and use them in chat or comments. 
+</Callout>
 
 ***
 
