@@ -73,6 +73,24 @@ Moderation features include automatic filtering of inappropriate content and too
 
 **Some of the additional features include:**
 
+<Cards columns={4}>
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
+
 * [Threads in Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/threads-in-chat#/) : Replying to messages in chat using threads
 * [Private Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/private-chat#/) : Let users create and join their own chats
 * [Counting Unread Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/counting-unread-messages#/) : Helps track how many unseen messages a user has across multiple chat rooms.
@@ -85,5 +103,6 @@ Moderation features include automatic filtering of inappropriate content and too
 * [Token Gating Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/token-gating-chat#/) : Token gating restricts chat access to users meeting specific criteria, like owning NFTs.
 * [Toggle Filtered Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/toggle-filtered-messages#/) : Filtered Messages are the messages having banned words in them
 * [Message Metadata](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/message-metadata#/) : Add custom metadata to chat messages for tailored behavior or display.
+* Chat Messages Throttling : Throttling limits how often users can send messages to prevent spam and maintain chat flow.
 
 <br />
