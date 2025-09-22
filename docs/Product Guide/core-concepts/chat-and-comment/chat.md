@@ -78,8 +78,8 @@ Moderation features include automatic filtering of inappropriate content and too
 * [Counting Unread Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/counting-unread-messages#/) : Helps track how many unseen messages a user has across multiple chat rooms.
 * [Chat Mentions](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-mentions#/) : Allow users to tag specific profiles in messages
 * [Customizing Chat Input](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/customizing-chat-input#/) : Customized to control who can send messages or guide users with prompts like login/signup CTAs.
-* Chat Message Links : Controlling whether or not links are clickable in chat messages
-* Sending Custom Chat Messages
+* [Chat Message Links](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-message-links#/) : Controlling whether or not links are clickable in chat messages
+* Sending Custom Chat Messages : Enable users to send messages that contain custom data
 * Pinning Chat Messages
 * Quote Message
 * Token Gating Chat
