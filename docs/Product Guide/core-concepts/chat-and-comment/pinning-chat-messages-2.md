@@ -21,7 +21,7 @@ The function **pinMessage** allows the producer or the creator of the chatroom t
 > `PinMessageInfo` is an object which contains information related to pin messages like `roomId`, `messageId`, `pinById` etc. For doing any operation on pinned message, you may require the pinMessageInfo id (through `getPinMessageInfoList` API)
 
 <details>
-  <summary>Pin Message in Chat</summary>
+  <summary>Pin Message in Chat API</summary>
 
   ```kotlin
   // requires an instance of LiveLikeChatMessage, 
@@ -69,7 +69,7 @@ The function **pinMessage** allows the producer or the creator of the chatroom t
 To Unpin a message use **unpinMessage** API which requires id of PinMessageInfo object and in returns it provide success or error message string.
 
 <details>
-  <summary>Unpin Message in Chat</summary>
+  <summary>Unpin Message in Chat API</summary>
 
   ```kotlin
   sdk.chat().unPinMessage(pinMessageInfoId = pinnedList[index].id!!,
@@ -112,7 +112,7 @@ To get the list of pin messages, use **getPinMessageInfoList** which requires **
 > The API **getPinMessageInfoList** accepts a parameter **orderBy** which lets you choose if the list should be received in ascending ( **asc** ) or descending ( **desc** ) order.
 
 <details>
-  <summary>Get PinMessage Info List</summary>
+  <summary>Get PinMessage Info List API</summary>
 
   ```kotlin
   // Also requires instance of LiveLikePagination and instance of PinMessageOrder 
@@ -155,7 +155,7 @@ In order to receive real-time events for pin/unpin messages, add listeners/deleg
 > Implementation for receiving real time events is different for Web, Android and IOS.
 
 <details>
-  <summary>Pin/Unpin Message</summary>
+  <summary>Pin/Unpin Message API</summary>
 
   ```kotlin
   chatSession.setMessageListener(object: MessageListener {
