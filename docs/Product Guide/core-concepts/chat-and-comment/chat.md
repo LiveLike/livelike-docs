@@ -83,7 +83,7 @@ Moderation features include automatic filtering of inappropriate content and too
 * [Pinning Chat Messages](https://docs.livelike.com/v1_doc_rewire_vk/docs/pinning-chat-messages-2#/) : Producers or chatroom creators can pin, unpin, and track important messages
 * [Quote Message](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/quote-message#/) : Allow the user to quote on a particular message with the user message
 * [Token Gating Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/token-gating-chat#/) : Token gating restricts chat access to users meeting specific criteria, like owning NFTs.
-* Toggle Filtered Messages : Filtered Messages are the messages having banned words in them
-* Message Metadata
+* [Toggle Filtered Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/toggle-filtered-messages#/) : Filtered Messages are the messages having banned words in them
+* Message Metadata : Add custom metadata to chat messages for tailored behavior or display.
 
 <br />
