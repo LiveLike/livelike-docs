@@ -122,7 +122,7 @@ Moderation features include automatic filtering of inappropriate content and too
     Add custom metadata to chat messages for tailored behavior or display.
   </Card>
 
-  <Card title="Chat Messages Throttling" href="https://readme.com" icon="fa-home" target="_blank">
+  <Card title="Chat Messages Throttling" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-messages-throttling#/" icon="fa-home" target="_blank">
     Throttling limits how often users can send messages to prevent spam and maintain chat flow.
   </Card>
 
