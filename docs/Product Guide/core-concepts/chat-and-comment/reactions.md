@@ -59,7 +59,7 @@ Exclusive reactions bring a premium layer of expression to chats and comments.
 Unlike standard reaction packs, exclusive packs are only available to specific users or groups — letting fans show status, loyalty, or collectibility while giving brands and integrators powerful ways to drive engagement and monetization.
 
 <Callout icon="📘" theme="info">
-   Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat or comments. 
+  Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat or comments.
 </Callout>
 
 **Sample Use Cases**
@@ -77,7 +77,7 @@ Unlike standard reaction packs, exclusive packs are only available to specific u
 
 **APIs – Integrator Experience**
 
-* Grant Access to a Reaction Pack: 
+* Grant Access to a Reaction Pack:
   `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
   Grants access to an exclusive reaction pack for the specified profile.
   ```
@@ -98,7 +98,6 @@ Unlike standard reaction packs, exclusive packs are only available to specific u
   Modify `UserReaction` and `ChatRoomMessageReaction` APIs to ensure users can only use exclusive packs if they have access.
 
 #### To support exclusive ownership of reaction packs by fans, we’ll enhance the data model in two ways:
-
 
 1. Add is_exclusive Field to ReactionPack Model
    Distinguishes exclusive packs from public ones.
@@ -137,7 +136,7 @@ Unlike standard reaction packs, exclusive packs are only available to specific u
            ]
    ```
 
-<br />
+***
 
 ## APIs Overview (Developer Reference)
 
