@@ -67,3 +67,19 @@ Profiles can also be tied to your own user accounts. The user <Glossary>Access T
 > * Reuse the same LiveLike profile for each of your app users.
 > * Ensure that every user in your system has only one LiveLike profile associated with them.
 > * Do not create new profiles arbitrarily on every SDK initialization.
+
+## More about Profiles
+
+<Cards columns={4}>
+  <Card title="Integrating with Logins" href="https://readme.com" icon="fa-home" target="_blank">
+    Connect and extend your existing user accounts and logins with Profiles
+  </Card>
+
+  <Card title="Custom Profile IDs" href="https://readme.com" icon="fa-home" target="_blank">
+    Custom Profile IDs let integrations map their users to LiveLike profiles without managing separate ID mappings.
+  </Card>
+
+  <Card title="Roles and Permissions" href="https://readme.com" icon="fa-home" target="_blank">
+    Use roles and permissions to define what actions users can take
+  </Card>
+</Cards>
