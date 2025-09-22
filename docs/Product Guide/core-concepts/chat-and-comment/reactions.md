@@ -53,15 +53,91 @@ With LiveLike, **any content that has a unique identifier can support reactions*
 
 ***
 
-## Exclusive Reaction Packs 🔒
+## Exclusive Reaction Packs
 
-Just like stickers, reactions can also be exclusive — giving fans a unique way to stand out in chats and comments. These packs can be tied to tiered memberships, sponsor rewards, purchases, or collectibles, making reactions more meaningful and rewarding.
+Exclusive reactions bring a premium layer of expression to chats and comments.
+Unlike standard reaction packs, exclusive packs are only available to specific users or groups — letting fans show status, loyalty, or collectibility while giving brands and integrators powerful ways to drive engagement and monetization.
 
 <Callout icon="📘" theme="info">
-   Exclusive packs are managed at the **profile level**. Only profiles that have been granted access will see and use them in chat or comments. 
+   Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat or comments. 
 </Callout>
 
-***
+**Sample Use Cases**
+
+* In-app purchases for fans who want collectible reactions.
+* Team-branded packs available only to official fan groups.
+* Collectible reaction packs redeemable through the Rewards Store.
+* Gold-tier members unlocking exclusive reactions as part of loyalty benefits.
+
+#### How It Works
+
+* Exclusive reaction packs are marked with an is_exclusive flag.
+* Access can be granted, revoked, or automated through purchases, rewards, or tier benefits.
+* Fans only see packs they own, keeping the experience personalized and clutter-free.
+
+**APIs – Integrator Experience**
+
+* Grant Access to a Reaction Pack: 
+  `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
+  Grants access to an exclusive reaction pack for the specified profile.
+  ```
+  {
+      "reaction_pack_id": "6e654321-abcd-4def-9012-9876543210fe",
+      "source": "purchase" 
+  }
+  ```
+* List All Reaction Packs Owned by Profile
+  Retrieves a paginated list of all reaction packs currently owned by the specified profile.
+  `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
+* Revoke Access to a Reaction Pack
+  Revokes the user’s access to a specific reaction pack.
+  `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
+* Reaction Pack Create/Update APIs
+  Update existing APIs to enable integrators to control the value of the `is_exclusive` field.
+* Usage APIs
+  Modify `UserReaction` and `ChatRoomMessageReaction` APIs to ensure users can only use exclusive packs if they have access.
+
+#### To support exclusive ownership of reaction packs by fans, we’ll enhance the data model in two ways:
+
+
+1. Add is_exclusive Field to ReactionPack Model
+   Distinguishes exclusive packs from public ones.
+   ```
+   class ReactionPack(UUIDModel):
+       ...
+       is_exclusive = models.BooleanField(default=False)
+   ```
+2. Add ProfileReactionPack Model
+   Tracks which profile owns which reaction pack. Multiple users can own the same exclusive pack (e.g., via purchase, reward, or tier).
+   ```
+   class ProfileReactionPack(UUIDModel):
+       profile = models.ForeignKey(ApplicationProfile, related_name="profile_reaction_packs")
+       reaction_pack = models.ForeignKey(ReactionPack, related_name="profile_reaction_packs")
+       
+       source = models.CharField( // Don't have it in V1
+           max_length=31,
+           choices=[
+               ("purchase", "Purchase"),
+               ("reward", "Reward"),
+               ("tier", "Tier"),
+               ("manual", "Manual"),
+           ],
+           default="purchase"
+       )
+       created_at = models.DateTimeField(auto_now_add=True)
+       removed_at = models.DateTimeField(null=True, blank=True)
+
+       class Meta:
+           constraints = [
+               models.UniqueConstraint(
+                   fields=("profile", "reaction_pack"),
+                   condition=Q(removed_at__isnull=True),
+                   name="uniq_profile_reactionpack",
+               ),
+           ]
+   ```
+
+<br />
 
 ## APIs Overview (Developer Reference)
 
