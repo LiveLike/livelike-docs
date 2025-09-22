@@ -71,7 +71,7 @@ Profiles can also be tied to your own user accounts. The user <Glossary>Access T
 ## More about Profiles
 
 <Cards columns={4}>
-  <Card title="Integrating with Logins" href="https://readme.com" icon="fa-home" target="_blank">
+  <Card title="Integrating with Logins" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/integrating-with-logins#/" icon="fa-home" target="_blank">
     Connect and extend your existing user accounts and logins with Profiles
   </Card>
 
