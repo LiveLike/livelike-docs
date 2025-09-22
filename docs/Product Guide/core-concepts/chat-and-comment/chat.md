@@ -80,7 +80,7 @@ Moderation features include automatic filtering of inappropriate content and too
 * [Customizing Chat Input](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/customizing-chat-input#/) : Customized to control who can send messages or guide users with prompts like login/signup CTAs.
 * [Chat Message Links](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-message-links#/) : Controlling whether or not links are clickable in chat messages
 * [Sending Custom Chat Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/sending-custom-chat-messages#/) : Enable users to send messages that contain custom data
-* Pinning Chat Messages : Producers or chatroom creators can pin, unpin, and track important messages
+* [Pinning Chat Messages](https://docs.livelike.com/v1_doc_rewire_vk/docs/pinning-chat-messages-2#/) : Producers or chatroom creators can pin, unpin, and track important messages
 * Quote Message
 * Token Gating Chat
 * Message Metadata
