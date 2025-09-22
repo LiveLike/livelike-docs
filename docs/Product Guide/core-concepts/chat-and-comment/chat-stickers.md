@@ -62,7 +62,7 @@ LiveLike provides [analytics and reports](doc:analytics-overview) so you can tra
 ### Exclusive Sticker Packs ✨
 
 Exclusive stickers unlock a new layer of personalization and recognition inside your community chats.
-Unlike standard packs, exclusive packs are only available to specific users or groups — helping fans feel rewarded and distinguished while opening up new monetization and engagement opportunities.
+Unlike standard packs, exclusive packs are only available to specific users or groups — helping fans feel rewarded and distinguished, while also opening up new monetization and engagement opportunities.
 
 <Callout icon="📘" theme="info">
   Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat.
@@ -70,9 +70,74 @@ Unlike standard packs, exclusive packs are only available to specific users or g
 
 **Sample Use Cases**
 
-* Available through in-app purchases for collectors.
-* Team-specific branded stickers available only to team fans.
-* Collectible packs redeemed in the Rewards Store.
-* Gold-tier members receiving exclusive packs as part of loyalty benefits.
+* In-app purchases for fans who love collecting.
+* Team-branded packs available only to official fan groups.
+* Collectible packs redeemable in the Rewards Store.
+* Gold-tier members unlocking exclusive packs as part of loyalty benefits.
 
-<br />
+**How It Works**
+
+* Exclusive sticker packs are marked with an is_exclusive flag.
+* Access can be granted, revoked, or automated through purchases, tier benefits, or quest rewards.
+* Fans will only see packs they have access to, ensuring personalized chat experiences without clutter.
+
+#### APIs – Integrator Experience
+
+* Grant Access to a Sticker Pack
+  `POST /api/v1/profiles/{profile_uuid}/sticker-packs/`
+  Grants access to an exclusive sticker pack for the specified profile.
+  ```Text Request Body
+  { 
+    "sticker_pack_id": "6e654321-abcd-4def-9012-9876543210fe", 
+  }
+  ```
+* List All Sticker Packs Owned by Profile
+  `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
+  Retrieves a paginated list of all sticker packs currently owned by the specified profile.
+* Revoke Access to a Sticker Pack
+  `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
+  Revokes the user’s access to a specific sticker pack.
+* Sticker Pack Create/Update APIs
+  Update existing APIs to enable integrators to control the value of the `is_exclusive` field.
+* Usage APIs
+  Modify the ChatRoom sticker pack API:
+  `GET /api/v1/chat-rooms/{chat-room-id}/sticker-packs/`
+  Ensure users see and use exclusive sticker packs (along with common ones) only if they have access.
+  ```
+  stickers = chat_room.sticker_packs.filter(
+  Q(is_exclusive=False) | Q(is_exclusive=True, profile_sticker_packs__profile=profile)
+  )
+  ```
+
+**To support exclusive ownership of sticker packs by fans, we’ll enhance the data model in two ways:**
+
+1. Add is_exclusive Field to StickerPack Model
+   This field distinguishes exclusive packs from public ones.
+   ```
+   class StickerPack(UUIDModel):
+       ...
+       is_exclusive = models.BooleanField(default=False)
+   ```
+2. Add ProfileStickerPack Model
+   This new model tracks which profile owns which sticker pack. Multiple users can own the same exclusive pack (e.g., via purchase).
+   ```
+   class ProfileStickerPack(models.Model):
+       profile = models.ForeignKey(
+           ApplicationProfile, related_name="profile_sticker_packs", on_delete=models.CASCADE
+       )
+       sticker_pack = models.ForeignKey(
+           StickerPack, related_name="profile_sticker_packs", on_delete=models.CASCADE
+       )
+       created_at = models.DateTimeField(auto_now_add=True)
+       removed_at = models.DateTimeField(null=True, blank=True)
+
+       class Meta:
+           ordering = ("pk",)
+           constraints = [
+               models.UniqueConstraint(
+                   fields=("profile", "sticker_pack"),
+                   condition=Q(removed_at__isnull=True),
+                   name="uniq_profile_stickerpack",
+               ),
+           ]
+   ```
