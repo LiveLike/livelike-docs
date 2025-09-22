@@ -20,8 +20,6 @@ The function **pinMessage** allows the producer or the creator of the chatroom t
 >
 > `PinMessageInfo` is an object which contains information related to pin messages like `roomId`, `messageId`, `pinById` etc. For doing any operation on pinned message, you may require the pinMessageInfo id (through `getPinMessageInfoList` API)
 
-<br />
-
 <details>
   <summary>Pin Message in Chat</summary>
 
@@ -112,8 +110,6 @@ To get the list of pin messages, use **getPinMessageInfoList** which requires **
 > 📘 Ordering of List of PinMessageInfo
 >
 > The API **getPinMessageInfoList** accepts a parameter **orderBy** which lets you choose if the list should be received in ascending ( **asc** ) or descending ( **desc** ) order.
-
-<br />
 
 <details>
   <summary>Get PinMessage Info List</summary>
