@@ -76,7 +76,7 @@ Moderation features include automatic filtering of inappropriate content and too
 * [Threads in Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/threads-in-chat#/) : Replying to messages in chat using threads
 * [Private Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/private-chat#/) : Let users create and join their own chats
 * [Counting Unread Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/counting-unread-messages#/) : Helps track how many unseen messages a user has across multiple chat rooms.
-* Chat Mentions 
+* [Chat Mentions](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-mentions#/) : Allow users to tag specific profiles in messages
 * Customizing Chat Input
 * Chat Message Links
 * Sending Custom Chat Messages
