@@ -59,7 +59,7 @@ LiveLike provides [analytics and reports](doc:analytics-overview) so you can tra
 
 ***
 
-### Exclusive Sticker Packs ✨
+### Exclusive Sticker Packs
 
 Exclusive stickers unlock a new layer of personalization and recognition inside your community chats.
 Unlike standard packs, exclusive packs are only available to specific users or groups — helping fans feel rewarded and distinguished, while also opening up new monetization and engagement opportunities.
