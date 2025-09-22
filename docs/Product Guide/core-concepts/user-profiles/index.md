@@ -79,7 +79,7 @@ Profiles can also be tied to your own user accounts. The user <Glossary>Access T
     Custom Profile IDs let integrations map their users to LiveLike profiles without managing separate ID mappings.
   </Card>
 
-  <Card title="Roles and Permissions" href="https://readme.com" icon="fa-home" target="_blank">
+  <Card title="Roles and Permissions" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/roles-and-permissions#/" icon="fa-home" target="_blank">
     Use roles and permissions to define what actions users can take
   </Card>
 </Cards>
