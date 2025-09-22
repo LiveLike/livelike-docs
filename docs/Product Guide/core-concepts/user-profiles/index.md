@@ -75,7 +75,7 @@ Profiles can also be tied to your own user accounts. The user <Glossary>Access T
     Connect and extend your existing user accounts and logins with Profiles
   </Card>
 
-  <Card title="Custom Profile IDs" href="https://readme.com" icon="fa-home" target="_blank">
+  <Card title="Custom Profile IDs" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/custom-profile-ids#/" icon="fa-home" target="_blank">
     Custom Profile IDs let integrations map their users to LiveLike profiles without managing separate ID mappings.
   </Card>
 
