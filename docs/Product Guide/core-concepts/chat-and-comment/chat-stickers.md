@@ -91,16 +91,18 @@ Unlike standard packs, exclusive packs are only available to specific users or g
     "sticker_pack_id": "6e654321-abcd-4def-9012-9876543210fe", 
   }
   ```
-* List All Sticker Packs Owned by Profile
-  `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
+* **List** All Sticker Packs Owned by Profile
   Retrieves a paginated list of all sticker packs currently owned by the specified profile.
-* Revoke Access to a Sticker Pack
-  `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
+  `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
+* **Revoke** Access to a Sticker Pack
+
   Revokes the user’s access to a specific sticker pack.
+
+  `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
 * Sticker Pack Create/Update APIs
-  Update existing APIs to enable integrators to control the value of the `is_exclusive` field.
+  **Update** existing APIs to enable integrators to control the value of the `is_exclusive` field.
 * Usage APIs
-  Modify the ChatRoom sticker pack API:
+  **Modify** the ChatRoom sticker pack API:
   `GET /api/v1/chat-rooms/{chat-room-id}/sticker-packs/`
   Ensure users see and use exclusive sticker packs (along with common ones) only if they have access.
   ```
