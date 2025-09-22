@@ -67,29 +67,22 @@ Moderation features include automatic filtering of inappropriate content and too
 
 [Learn more about Moderation](https://docs.livelike.com/v1_doc_rewire_vk/docs/chat-moderation-1#/)
 
-More about Chat: --- yet to add--- IN PROGRESS
-Threads in Chat
+***
 
-Private Chat
+### More About Chat
 
-Counting Unread Messages
+**Some of the additional features include:**
 
-Chat Mentions
-
-Customizing Chat Input
-
-Chat Message Links
-
-Sending Custom Chat Messages
-
-Pinning Chat Messages
-
-Quote Message
-
-Token Gating Chat
-
-Token Gating Chat
-
-Message Metadata
+* Threads in Chat
+* Private Chat
+* Counting Unread Messages
+* Chat Mentions
+* Customizing Chat Input
+* Chat Message Links
+* Sending Custom Chat Messages
+* Pinning Chat Messages
+* Quote Message
+* Token Gating Chat
+* Message Metadata
 
 <br />
