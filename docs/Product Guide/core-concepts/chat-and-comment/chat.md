@@ -94,16 +94,32 @@ Moderation features include automatic filtering of inappropriate content and too
     Customized to control who can send messages or guide users with prompts like login/signup CTAs.
   </Card>
 
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Chat Message Links" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-message-links#/" icon="fa-home" target="_blank">
+    Controlling whether or not links are clickable in chat messages
   </Card>
 
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Sending Custom Chat Messages" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/sending-custom-chat-messages#/" icon="fa-home" target="_blank">
+    Enable users to send messages that contain custom data
   </Card>
 
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Pinning Chat Messages" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/pinning-chat-messages-2#/" icon="fa-home" target="_blank">
+    Producers or chatroom creators can pin, unpin, and track important messages
+  </Card>
+
+  <Card title="Quote Message" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/quote-message#/" icon="fa-home" target="_blank">
+    Allow the user to quote on a particular message with the user message
+  </Card>
+
+  <Card title="Token Gating Chat" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/token-gating-chat#/" icon="fa-home" target="_blank">
+    Token gating restricts chat access to users meeting specific criteria, like owning NFTs.
+  </Card>
+
+  <Card title="Toggle Filtered Messages" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/toggle-filtered-messages#/" icon="fa-home" target="_blank">
+    Filtered Messages are the messages having banned words in them
+  </Card>
+
+  <Card title="Message Metadata" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/message-metadata#/" icon="fa-home" target="_blank">
+    Add custom metadata to chat messages for tailored behavior or display.
   </Card>
 
   <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
