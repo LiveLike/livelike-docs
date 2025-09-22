@@ -73,7 +73,7 @@ Moderation features include automatic filtering of inappropriate content and too
 
 **Some of the additional features include:**
 
-* Threads in Chat
+* Threads in Chat : Replying to messages in chat using threads
 * Private Chat
 * Counting Unread Messages
 * Chat Mentions
