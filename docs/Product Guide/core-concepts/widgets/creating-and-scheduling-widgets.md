@@ -954,9 +954,7 @@ Whenever a number prediction widget is created, the backend service automaticall
 
 <br />
 
-Delete Widget
-
-
+# Delete Widget
 
 | Property    | Description                    | Required |
 | :---------- | :----------------------------- | :------- |
