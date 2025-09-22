@@ -74,20 +74,52 @@ Moderation features include automatic filtering of inappropriate content and too
 **Some of the additional features include:**
 
 <Cards columns={4}>
+  <Card title="Threads in Chat" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/threads-in-chat#/" icon="fa-home" target="_blank">
+    Replying to messages in chat using threads
+  </Card>
+
+  <Card title="Private Chat" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/private-chat#/" icon="fa-user">
+    Let users create and join their own chats
+  </Card>
+
+  <Card title="Counting Unread Messages" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/counting-unread-messages#/" icon="fa-home" target="_blank">
+    Helps track how many unseen messages a user has across multiple chat rooms.
+  </Card>
+
+  <Card title="Chat Mentions" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-mentions#/" icon="fa-home" target="_blank">
+    Allow users to tag specific profiles in messages
+  </Card>
+
+  <Card title="Customizing Chat Input" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/customizing-chat-input#/" icon="fa-home" target="_blank">
+    Customized to control who can send messages or guide users with prompts like login/signup CTAs.
+  </Card>
+
   <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
     Neque porro quisquam est qui dolorem ipsum quia
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
   </Card>
 
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
   </Card>
 </Cards>
 
