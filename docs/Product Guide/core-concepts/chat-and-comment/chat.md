@@ -122,8 +122,8 @@ Moderation features include automatic filtering of inappropriate content and too
     Add custom metadata to chat messages for tailored behavior or display.
   </Card>
 
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Chat Messages Throttling" href="https://readme.com" icon="fa-home" target="_blank">
+    Throttling limits how often users can send messages to prevent spam and maintain chat flow.
   </Card>
 
   <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
