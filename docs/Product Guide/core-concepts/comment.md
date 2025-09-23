@@ -175,8 +175,6 @@ sdk.commentBoards
 >   ```
 > </details>
 
-<br />
-
 ### Listing Comment Boards
 
 > Retrieve all comment boards available in your app.
@@ -218,8 +216,6 @@ sdk.commentBoards
 >   LiveLike.getCommentBoards().then(({results}) => console.log(results))
 >   ```
 > </details>
-
-<br />
 
 ### Deleting a Comment Board
 
@@ -348,8 +344,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Reply to a Comment
 
 > Respond to an existing comment on a comment board.
@@ -403,8 +397,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Get Comment
 
 > Retrieve a specific comment by ID.
@@ -443,8 +435,6 @@ import LiveLike from "@livelike/engagementsdk";
 >     .then(({results}) => console.log(results))
 >   ```
 > </details>
-
-<br />
 
 ### Get Top-Level Comments
 
@@ -520,8 +510,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Get Replies to a Comment
 
 > Retrieve all replies for a specific comment.
@@ -582,8 +570,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Edit a Comment
 
 > Update the text of an existing comment.
@@ -635,8 +621,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   }).then(comment => console.log(comment))
 >   ```
 > </details>
-
-<br />
 
 ### Delete a Comment
 
@@ -744,8 +728,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### List Comment Board Bans
 
 > Get a list of comment board bans in an Application. Each comment board ban resource represents restrictive access to the comment board for a given user profile.
@@ -800,8 +782,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Get Comment Board Ban
 
 > Get details of a specific ban.
@@ -836,8 +816,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   }
 >   ```
 > </details>
-
-<br />
 
 ### Delete Comment Board Ban
 
@@ -875,8 +853,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   }
 >   ```
 > </details>
-
-<br />
 
 ### Create Comment Report
 
@@ -927,8 +903,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Get Comment Report
 
 > Retrieve details of a specific report.
@@ -965,8 +939,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   }).then((commentReport) => console.log(commentReport));
 >   ```
 > </details>
-
-<br />
 
 ### List Comment Reports
 
@@ -1017,8 +989,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Delete Comment Report
 
 > Delete a comment report.
@@ -1060,8 +1030,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   ```
 > </details>
 
-<br />
-
 ### Dismiss Comment Report
 
 > Dismiss a specific report.
@@ -1101,8 +1069,6 @@ import LiveLike from "@livelike/engagementsdk";
 >   }).then((commentReport) => console.log(commentReport));
 >   ```
 > </details>
-
-<br />
 
 ### Dismiss All Comment Reports
 
