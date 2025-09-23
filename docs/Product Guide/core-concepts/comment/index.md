@@ -1118,7 +1118,7 @@ Remove a ban from a profile.
 **Some of the additional features include:**
 
 <Cards columns={3}>
-  <Card title="Pinned Comments" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/pinned-comments#/" icon="fa-home" target="_blank">
+  <Card title="Pinned Comments" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/pinned-comments#/" icon="fa-home" target="_blank">
     Highlight important content on comment boards; authorized users (with pin-comment permission, producers, or board owners) can pin/unpin, and pinned comments are auto-removed if the original comment is deleted.
   </Card>
 
