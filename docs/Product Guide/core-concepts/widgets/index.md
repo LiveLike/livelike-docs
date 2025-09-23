@@ -105,22 +105,18 @@ Learn more:
 
 <Cards columns={3}>
   <Card title="Creating and scheduling Widgets" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+    Create with content, publish or schedule, and make it available for user interaction.
   </Card>
 
   <Card title="Building Custom Widget UI" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+    Build your own interface, access widget data, and connect it for a tailored experience.
   </Card>
 
   <Card title="Attaching Custom Data to Widget" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/attaching-custom-data-to-widgets#/" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+    Custom Data: Attach arbitrary string data to widgets for use with Custom Widget UI.
   </Card>
 </Cards>
 
-[Creating and scheduling Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/)
-
-[Building Custom Widget UI](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/)
-
-[Attaching Custom Data to Widget](https://docs.livelike.com/v1_doc_rewire_vk/docs/attaching-custom-data-to-widgets#/)
+<br />
 
 <br />
