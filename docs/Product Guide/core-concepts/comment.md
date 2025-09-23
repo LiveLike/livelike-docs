@@ -1110,3 +1110,9 @@ Remove a ban from a profile.
 >   })
 >   ```
 > </details>
+
+<br />
+
+### More About Chat
+
+**Some of the additional features include:**
