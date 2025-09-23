@@ -74,7 +74,6 @@ With LiveLike, **any content that has a unique identifier can support reactions*
   ```
   {
       "reaction_pack_id": "6e654321-abcd-4def-9012-9876543210fe",
-      "source": "purchase" 
   }
   ```
 * **List All Reaction Packs Owned by Profile**
