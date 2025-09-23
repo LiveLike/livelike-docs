@@ -92,49 +92,8 @@ Unlike standard reaction packs, exclusive packs are only available to specific u
 * Revoke Access to a Reaction Pack
   Revokes the user’s access to a specific reaction pack.
   `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
-* Reaction Pack Create/Update APIs
-  Update existing APIs to enable integrators to control the value of the `is_exclusive` field.
 * Usage APIs
   Modify `UserReaction` and `ChatRoomMessageReaction` APIs to ensure users can only use exclusive packs if they have access.
-
-#### To support exclusive ownership of reaction packs by fans, we’ll enhance the data model in two ways:
-
-1. Add is_exclusive Field to ReactionPack Model
-   Distinguishes exclusive packs from public ones.
-   ```
-   class ReactionPack(UUIDModel):
-       ...
-       is_exclusive = models.BooleanField(default=False)
-   ```
-2. Add ProfileReactionPack Model
-   Tracks which profile owns which reaction pack. Multiple users can own the same exclusive pack (e.g., via purchase, reward, or tier).
-   ```
-   class ProfileReactionPack(UUIDModel):
-       profile = models.ForeignKey(ApplicationProfile, related_name="profile_reaction_packs")
-       reaction_pack = models.ForeignKey(ReactionPack, related_name="profile_reaction_packs")
-       
-       source = models.CharField( // Don't have it in V1
-           max_length=31,
-           choices=[
-               ("purchase", "Purchase"),
-               ("reward", "Reward"),
-               ("tier", "Tier"),
-               ("manual", "Manual"),
-           ],
-           default="purchase"
-       )
-       created_at = models.DateTimeField(auto_now_add=True)
-       removed_at = models.DateTimeField(null=True, blank=True)
-
-       class Meta:
-           constraints = [
-               models.UniqueConstraint(
-                   fields=("profile", "reaction_pack"),
-                   condition=Q(removed_at__isnull=True),
-                   name="uniq_profile_reactionpack",
-               ),
-           ]
-   ```
 
 ***
 
