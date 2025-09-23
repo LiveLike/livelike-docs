@@ -262,7 +262,7 @@ sdk.commentBoards
 The CommentClient allows you to manage comments in a Comment Board. It supports adding, replying, editing, deleting, reporting comments, and performing moderation actions.
 For WebSDK, the APIs are available directly under LiveLike and do not require creating a CommentClient.
 
-#### Initialize CommentClient
+### Initialize CommentClient
 
 ```kotlin
 private var commentClient: LiveLikeCommentClient? = null
