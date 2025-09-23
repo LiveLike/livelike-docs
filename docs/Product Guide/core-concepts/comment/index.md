@@ -1116,3 +1116,21 @@ Remove a ban from a profile.
 ### More About Chat
 
 **Some of the additional features include:**
+
+<Cards columns={4}>
+  <Card title="Pinned Comments" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/pinned-comments#/" icon="fa-home" target="_blank">
+    Highlight important content on comment boards; authorized users (with pin-comment permission, producers, or board owners) can pin/unpin, and pinned comments are auto-removed if the original comment is deleted.
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
