@@ -179,8 +179,6 @@ Modify the properties of an existing comment board, like title, replies depth, o
   ```
 </details>
 
-<br />
-
 ### Listing Comment Boards
 
 Retrieve all comment boards available in your app.
@@ -446,6 +444,8 @@ Retrieve a specific comment by ID.
 
 ### Get Top-Level Comments
 
+Fetch all top-level comments with optional filters.
+
 Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUntil, isReported
 
 <details>
@@ -518,6 +518,8 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
 
 ### Get Replies to a Comment
 
+Retrieve all replies for a specific comment.
+
 <details>
   <summary>List of replies to a Comment</summary>
 
@@ -578,6 +580,8 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
 
 ### Edit a Comment
 
+Update the text of an existing comment.
+
 <details>
   <summary>Edit a Comment</summary>
 
@@ -627,6 +631,8 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
 </details>
 
 ### Delete a Comment
+
+Remove a comment from the board.
 
 <details>
   <summary>Delete a Comment</summary>
@@ -742,8 +748,6 @@ Get a list of comment board bans in an Application. Each comment board ban resou
 2. As a moderator, I can get a list of all comment-board-ban-profile for the comment boards where I am a moderator
 3. As a normal profile, I will get a list of comment-board-ban-profile for myself only.
 
-<br />
-
 <details>
   <summary>List Comment Board Ban</summary>
 
@@ -792,9 +796,7 @@ Get a list of comment board bans in an Application. Each comment board ban resou
 
 ### Get Comment Board Ban
 
-Get Ban details by providing a ban id.
-
-<br />
+Get details of a specific ban.
 
 <details>
   <summary>Get Comment Board Ban</summary>
@@ -831,11 +833,9 @@ Get Ban details by providing a ban id.
 
 ### Delete Comment Board Ban
 
-Remove ban by providing a ban id.
+Remove a ban from a profile.
 
 A profile with moderation tools can unban himself if its get banned by other moderation access profile.
-
-<br />
 
 <details>
   <summary>Delete Comment Board Ban</summary>
@@ -872,9 +872,7 @@ A profile with moderation tools can unban himself if its get banned by other mod
 
 ### Create Comment Report
 
-Users can report comments to moderators.
-
-<br />
+Report a comment to moderators.
 
 <details>
   <summary>Create Comment report</summary>
@@ -925,7 +923,7 @@ Users can report comments to moderators.
 
 ### Get Comment Report
 
-<br />
+Retrieve details of a specific report.
 
 <details>
   <summary>Get Comment report</summary>
@@ -964,7 +962,7 @@ Users can report comments to moderators.
 
 ### List Comment Reports
 
-<br />
+Get all reports for a comment or board.
 
 <details>
   <summary>Get Comment report</summary>
@@ -1015,7 +1013,7 @@ Users can report comments to moderators.
 
 ### Delete Comment Report
 
-<br />
+Delete a comment report.
 
 <details>
   <summary>Delete Comment Report</summary>
@@ -1058,7 +1056,7 @@ Users can report comments to moderators.
 
 ### Dismiss Comment Report
 
-<br />
+Dismiss a specific report.
 
 <details>
   <summary>Dismiss Comment Report</summary>
@@ -1100,7 +1098,7 @@ Users can report comments to moderators.
 
 ### Dismiss All Comment Reports
 
-<br />
+Dismiss all reports for a comment.
 
 <details>
   <summary>Dismiss Comment Report</summary>
