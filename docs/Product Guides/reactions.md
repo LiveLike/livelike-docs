@@ -47,7 +47,44 @@ Imagine you want to allow your users to react to important moments in videos. Ea
 
 ## Exclusive Reaction Packs
 
-Exclusive reaction packs are assigned to specific users so that they can distinguish themselves in the communities they are part of.  An exclusive reaction pack can be assigned to multiple profiles and only those users will be able to use them.
+Reactions let fans instantly express how they feel about content — whether it’s cheering for a team, liking a message, or showing support during a big moment.
+With LiveLike, **any content that has a unique identifier can support reactions**: chat messages, blog posts, comments, videos, polls, or your own custom items.
+
+<Callout icon="📘" theme="info">
+  Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat or comments.
+</Callout>
+
+**Sample Use Cases**
+
+* In-app purchases for fans who want collectible reactions.
+* Team-branded packs available only to official fan groups.
+* Collectible reaction packs redeemable through the Rewards Store.
+* Gold-tier members unlocking exclusive reactions as part of loyalty benefits.
+
+#### How It Works
+
+* Access can be granted, revoked, or automated through purchases, rewards, or membership tiers.
+* Fans only see the packs they own, keeping the experience clutter-free and personalized.
+
+**APIs – Integrator Experience**
+
+* Grant Access to a Reaction Pack:
+  `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
+  Grants access to an exclusive reaction pack for the specified profile.
+  ```
+  {
+      "reaction_pack_id": "6e654321-abcd-4def-9012-9876543210fe",
+      "source": "purchase" 
+  }
+  ```
+* List All Reaction Packs Owned by Profile
+  Retrieves a paginated list of all reaction packs currently owned by the specified profile.
+  `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
+* Revoke Access to a Reaction Pack
+  Revokes the user's access to a specific reaction pack.
+  `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
+
+> Integrators do not need to manage exclusivity flags or models directly — simply use the APIs to control which profiles have access to which packs.
 
 ## Reactions Reference
 
