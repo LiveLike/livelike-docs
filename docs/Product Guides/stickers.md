@@ -62,7 +62,8 @@ Exclusive stickers unlock a new layer of personalization and recognition inside 
 
 #### APIs
 
-* Grant Access to a Sticker Pack
+* **Grant Access to a Reaction Pack:**
+
   `POST /api/v1/profiles/{profile_uuid}/sticker-packs/`
   Grants access to an exclusive sticker pack for the specified profile.
   ```
@@ -70,7 +71,9 @@ Exclusive stickers unlock a new layer of personalization and recognition inside 
       "sticker_pack_id": "6e654321-abcd-4def-9012-9876543210fe"
   }
   ```
-* List Sticker Packs Owned by a Profile
+* **List Sticker Packs Owned by a Profile:**
+
   `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
-* Revoke Access to a Sticker Pack
+* **Revoke Access to a Sticker Pack:**
+
   `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
