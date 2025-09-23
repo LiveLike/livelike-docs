@@ -38,9 +38,7 @@ sdk.commentBoards
 
 <br />
 
-## Creating a Comment Board
-
-<br />
+#### Creating a Comment Board
 
 <details>
   <summary>Create Comment Board</summary>
@@ -108,9 +106,7 @@ sdk.commentBoards
 
 <br />
 
-## Updating a Comment Board
-
-<br />
+#### Updating a Comment Board
 
 <details>
   <summary>Update Comment Board</summary>
@@ -181,9 +177,7 @@ sdk.commentBoards
 
 <br />
 
-## Listing Comment Boards
-
-<br />
+#### Listing Comment Boards
 
 <details>
   <summary>Update Comment Board</summary>
@@ -223,11 +217,7 @@ sdk.commentBoards
   ```
 </details>
 
-<br />
-
-## Deleting a Comment Board
-
-<br />
+#### Deleting a Comment Board
 
 <details>
   <summary>Delete Comment Board</summary>
@@ -296,9 +286,7 @@ import LiveLike from "@livelike/engagementsdk";
 
 <br />
 
-## Creating a Comment
-
-<br />
+#### Creating a Comment
 
 <details>
   <summary>Creating a Comment</summary>
@@ -349,9 +337,7 @@ import LiveLike from "@livelike/engagementsdk";
 
 <br />
 
-## Reply to a Comment
-
-<br />
+#### Reply to a Comment
 
 <details>
   <summary>Reply to a Comment</summary>
@@ -404,9 +390,7 @@ import LiveLike from "@livelike/engagementsdk";
 
 <br />
 
-## Get Comment
-
-<br />
+#### Get Comment
 
 <details>
   <summary>Get Comment</summary>
