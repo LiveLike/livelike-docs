@@ -438,8 +438,8 @@ import LiveLike from "@livelike/engagementsdk";
 
 ### Get Top-Level Comments
 
-> Fetch all top-level comments with optional filters.
->
+Fetch all top-level comments with optional filters.
+
 > Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUntil, isReported
 >
 > <details>
@@ -677,8 +677,8 @@ import LiveLike from "@livelike/engagementsdk";
 
 ### Create Comment Board Ban
 
-> Moderators can ban a profile to restrict its access in a comment board but the banned profile does not lose access to moderation tools if they have that.
->
+Moderators can ban a profile to restrict its access in a comment board but the banned profile does not lose access to moderation tools if they have that.
+
 > 1. profile_id: required,
 > 2. comment_board_id: optional, if not provided, the profile will be banned from all the comment boards in the application, provided the moderator has sufficient permissions to do that.
 > 3. description: optional, this field can be used to provide additional information about a ban or the reason for banning a user.
@@ -730,8 +730,8 @@ import LiveLike from "@livelike/engagementsdk";
 
 ### List Comment Board Bans
 
-> Get a list of comment board bans in an Application. Each comment board ban resource represents restrictive access to the comment board for a given user profile.
->
+Get a list of comment board bans in an Application. Each comment board ban resource represents restrictive access to the comment board for a given user profile.
+
 > 1. As a producer or privileged user I can see all the comment-board-ban-profile from the application
 > 2. As a moderator, I can get a list of all comment-board-ban-profile for the comment boards where I am a moderator
 > 3. As a normal profile, I will get a list of comment-board-ban-profile for myself only.
@@ -819,8 +819,8 @@ import LiveLike from "@livelike/engagementsdk";
 
 ### Delete Comment Board Ban
 
-> Remove a ban from a profile.
->
+Remove a ban from a profile.
+
 > A profile with moderation tools can unban himself if its get banned by other moderation access profile.
 >
 > <details>
