@@ -1126,7 +1126,7 @@ Remove a ban from a profile.
     Fully-featured, customizable Android widget for managing comment boards with reactions, replies, and moderation.
   </Card>
 
-  <Card title="Comment Mentions" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/comment-mentions#/" icon="fa-home" target="_blank">
+  <Card title="Comment Mentions" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/comment-mentions#/" icon="fa-home" target="_blank">
     The Mentions feature lets users tag specific profiles in a comment.
   </Card>
 </Cards>
