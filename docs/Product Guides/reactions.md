@@ -69,6 +69,7 @@ With LiveLike, **any content that has a unique identifier can support reactions*
 **APIs – Integrator Experience**
 
 * **Grant Access to a Reaction Pack:**
+
   `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
   Grants access to an exclusive reaction pack for the specified profile.
   ```
@@ -77,9 +78,11 @@ With LiveLike, **any content that has a unique identifier can support reactions*
   }
   ```
 * **List All Reaction Packs Owned by Profile**
+
   Retrieves a paginated list of all reaction packs currently owned by the specified profile.
   `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
 * **Revoke Access to a Reaction Pack**
+
   Revokes the user's access to a specific reaction pack.
   `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
 
