@@ -38,7 +38,7 @@ sdk.commentBoards
 
 <br />
 
-#### Creating a Comment Board
+### Creating a Comment Board
 
 Create a new comment board where users can post comments and replies
 
@@ -108,7 +108,7 @@ Create a new comment board where users can post comments and replies
 
 <br />
 
-#### Updating a Comment Board
+### Updating a Comment Board
 
 Modify the properties of an existing comment board, like title, replies depth, or description.
 
@@ -181,7 +181,7 @@ Modify the properties of an existing comment board, like title, replies depth, o
 
 <br />
 
-#### Listing Comment Boards
+### Listing Comment Boards
 
 Retrieve all comment boards available in your app.
 
@@ -223,7 +223,7 @@ Retrieve all comment boards available in your app.
   ```
 </details>
 
-#### Deleting a Comment Board
+### Deleting a Comment Board
 
 Remove a comment board and all associated comments.
 
@@ -297,7 +297,7 @@ import LiveLike from "@livelike/engagementsdk";
 
 <br />
 
-#### Creating a Comment
+### Creating a Comment
 
 Post a new comment to a comment board.
 
@@ -350,7 +350,7 @@ Post a new comment to a comment board.
 
 <br />
 
-#### Reply to a Comment
+### Reply to a Comment
 
 Respond to an existing comment on a comment board.
 
@@ -405,7 +405,7 @@ Respond to an existing comment on a comment board.
 
 <br />
 
-#### Get Comment
+### Get Comment
 
 Retrieve a specific comment by ID.
 
@@ -444,11 +444,9 @@ Retrieve a specific comment by ID.
   ```
 </details>
 
-#### Get Top-Level Comments
+### Get Top-Level Comments
 
 Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUntil, isReported
-
-<br />
 
 <details>
   <summary>Get Comment</summary>
@@ -518,9 +516,7 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
   ```
 </details>
 
-#### Get Replies to a Comment
-
-<br />
+### Get Replies to a Comment
 
 <details>
   <summary>List of replies to a Comment</summary>
@@ -580,9 +576,7 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
 
 <br />
 
-#### Edit a Comment
-
-<br />
+### Edit a Comment
 
 <details>
   <summary>Edit a Comment</summary>
@@ -632,9 +626,7 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
   ```
 </details>
 
-#### Delete a Comment
-
-<br />
+### Delete a Comment
 
 <details>
   <summary>Delete a Comment</summary>
