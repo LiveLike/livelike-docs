@@ -99,8 +99,6 @@ Unlike standard packs, exclusive packs are only available to specific users or g
   Revokes the user’s access to a specific sticker pack.
 
   `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
-* Sticker Pack Create/Update APIs
-  **Update** existing APIs to enable integrators to control the value of the `is_exclusive` field.
 * Usage APIs
   **Modify** the ChatRoom sticker pack API:
   `GET /api/v1/chat-rooms/{chat-room-id}/sticker-packs/`
@@ -111,35 +109,4 @@ Unlike standard packs, exclusive packs are only available to specific users or g
   )
   ```
 
-**To support exclusive ownership of sticker packs by fans, we’ll enhance the data model in two ways:**
-
-1. Add is_exclusive Field to StickerPack Model
-   This field distinguishes exclusive packs from public ones.
-   ```
-   class StickerPack(UUIDModel):
-       ...
-       is_exclusive = models.BooleanField(default=False)
-   ```
-2. Add ProfileStickerPack Model
-   This new model tracks which profile owns which sticker pack. Multiple users can own the same exclusive pack (e.g., via purchase).
-   ```
-   class ProfileStickerPack(models.Model):
-       profile = models.ForeignKey(
-           ApplicationProfile, related_name="profile_sticker_packs", on_delete=models.CASCADE
-       )
-       sticker_pack = models.ForeignKey(
-           StickerPack, related_name="profile_sticker_packs", on_delete=models.CASCADE
-       )
-       created_at = models.DateTimeField(auto_now_add=True)
-       removed_at = models.DateTimeField(null=True, blank=True)
-
-       class Meta:
-           ordering = ("pk",)
-           constraints = [
-               models.UniqueConstraint(
-                   fields=("profile", "sticker_pack"),
-                   condition=Q(removed_at__isnull=True),
-                   name="uniq_profile_stickerpack",
-               ),
-           ]
-   ```
+<br />
