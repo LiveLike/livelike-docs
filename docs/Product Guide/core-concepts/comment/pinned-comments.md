@@ -15,7 +15,7 @@ Pinned comments allow integrators to highlight important content on comment boar
 
 ## Pinned Comments Basics
 
-Pinned comments are tied to the existing comments system and subject to **roles and permissions**. Users who have specific permissions can manage pinned comments across different boards. For more details, refer to the [roles and permissions guide](https://docs.livelike.com/docs/roles-and-permissions).
+Pinned comments are tied to the existing comments system and subject to **roles and permissions**. Users who have specific permissions can manage pinned comments across different boards. For more details, refer to the [roles and permissions guide](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/roles-and-permissions#/).
 
 * **Permissions System**: Permissions for pinning and unpinning comments are managed through the platform’s roles and permissions. Users with the **pin-comment** permission, producers or the owner of the comment board can pin or unpin comments.
 * **Cascading Deletes**: If the underlying comment of a pinned comment is deleted, the pinned comment is automatically removed to maintain data consistency.
