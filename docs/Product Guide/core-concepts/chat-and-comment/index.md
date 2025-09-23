@@ -31,4 +31,6 @@ Built-in moderation controls like profanity filters, user bans, and automated ch
 * Keep conversations safe with moderation tools
 * Scale easily for large events with high concurrency
 
+Learn more about [CHAT](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat#/)
+
 <br />
