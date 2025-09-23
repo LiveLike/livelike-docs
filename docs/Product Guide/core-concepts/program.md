@@ -6,7 +6,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Programs are how you organize and represent your content inside of LiveLike. A program can represent a live stream, a blog post, a television episode, or any other unit of content you want to manage. All interactive widgets belong to a program. This ensures that polls, quizzes, alerts, and other widgets published to one program remain isolated from other programs.
+Programs are how you organize and represent your content inside of LiveLike. A program can represent a live stream, a blog post, a television episode, or any other unit of content you want to manage. All interactive [widgets](https://docs.livelike.com/v1_doc_rewire_vk/docs/widgets#/) belong to a program. This ensures that polls, quizzes, alerts, and other widgets published to one program remain isolated from other programs.
 Programs can also be linked to one or more leaderboards. Any rewards earned within a program automatically update all linked leaderboards.
 
 ## Scheduling Programs
