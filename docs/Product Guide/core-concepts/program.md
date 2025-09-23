@@ -26,7 +26,11 @@ A program can be started and stopped multiple times. Live programs appear in the
 * Stopping a program signals it is no longer live.
 
 The live status is primarily for organization within the CMS and for scheduling integrations. Integrations can listen to the program-status-updated pubsub event to trigger custom actions when a program starts or stops.
-📘 Note: Live status does not affect widget publishing. Widgets can always be published to a program regardless of its live status.
+
+<Callout icon="📘" theme="info">
+  Note: Live status does not affect widget publishing. Widgets can always be published to a program regardless of its live status.
+</Callout>
+
 Read more: Using Programs API
 
 ### Custom Identifiers
