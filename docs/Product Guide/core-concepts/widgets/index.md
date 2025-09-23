@@ -103,12 +103,24 @@ LiveLike supports three main formats:
 
 Learn more:
 
+<Cards columns={3}>
+  <Card title="Creating and scheduling Widgets" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Building Custom Widget UI" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Attaching Custom Data to Widget" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/attaching-custom-data-to-widgets#/" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+</Cards>
+
 [Creating and scheduling Widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/creating-and-scheduling-widgets#/)
 
 [Building Custom Widget UI](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/building-custom-widget-ui#/)
 
 [Attaching Custom Data to Widget](https://docs.livelike.com/v1_doc_rewire_vk/docs/attaching-custom-data-to-widgets#/)
-
-[Deleting Widget](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/delete-widgets#/)
 
 <br />
