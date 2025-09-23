@@ -8,8 +8,6 @@ hidden: false
 metadata:
   robots: index
 ---
-## Chat
-
 Chat is designed for real-time audience interaction, helping you create engaging, dynamic conversations within your app. You can set up public rooms to bring everyone together or private rooms for smaller, focused groups.
 Built-in moderation controls like profanity filters, user bans, and automated checks ensure conversations remain safe and on-topic. Plus, the chat UI can be customized to match your brand and integrate seamlessly into your experience.
 
