@@ -23,7 +23,7 @@ Widgets are interactive elements published during a live stream or on-demand vid
 * Flexible enough to fit into live streams, VOD, or standalone experiences
 * Customizable to match your brand’s design and tone
 
-Every widget is associated with a Program. Programs group multiple widgets around a piece of content and carry a unique Program ID. Programs also hold scheduling and metadata to help producers organize events inside the dashboard.
+Every widget is associated with a [Program](https://docs.livelike.com/v1_doc_rewire_vk/docs/program#/). Programs group multiple widgets around a piece of content and carry a unique Program ID. Programs also hold scheduling and metadata to help producers organize events inside the dashboard.
 
 ***
 
