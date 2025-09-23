@@ -38,228 +38,226 @@ sdk.commentBoards
 
 ### Creating a Comment Board
 
-Create a new comment board where users can post comments and replies
-
-<details>
-  <summary>Create Comment Board</summary>
-
-  ```kotlin
-  commentBoards.createCommentBoard(
-              CreateCommentBoardRequestOptions(
-                  customId = "",
-                  title = "",
-                  allowComments = true,
-                  replyDepth = 1,
-                  customData = "",
-                  description = "",
-                  contentFilter = "filtered"
-              ),
-              object : LiveLikeCallback<CommentBoard>() {
-                  override fun onResponse(
-                      result: CommentBoard?,
-                      error: String?
-                  ) {
-                      result?.let {
-                          //handle success
-                      }
-                      error?.let {
-                          //handle error
-
-                      }
-                  }
-              }
-          )
-  ```
-  ```swift Swift
-  let sdk: EngagementSDK
-
-  let createBoardOptions = CreateCommentBoardRequestOptions(
-    title: "",
-    customID: "",
-    allowComments: true,
-    repliesDepth: 1
-  )
-
-  sdk.commentBoards.createCommentBoard(
-    createCommentBoardOptions: createBoardOptions
-  ) { result in
-     switch result {
-       case .success(let commentBoard):
-       // handle success
-       case .failure(let error):
-       // handle failure
-     }
-  }
-  ```
-  ```javascript
-  LiveLike.createCommentBoard({
-    title: 'sd',
-    customId: 'postid1',
-    repliesDepth: 2,
-    allowComments: true,
-    description: 'desc',
-    customData: 'abc',
-    contentFilter: 'filtered'
-  }).then((commentBoard) => console.log(commentBoard));
-  ```
-</details>
-
-<br />
+> Create a new comment board where users can post comments and replies
+>
+> <details>
+>   <summary>Create Comment Board</summary>
+>
+>   ```kotlin
+>   commentBoards.createCommentBoard(
+>               CreateCommentBoardRequestOptions(
+>                   customId = "",
+>                   title = "",
+>                   allowComments = true,
+>                   replyDepth = 1,
+>                   customData = "",
+>                   description = "",
+>                   contentFilter = "filtered"
+>               ),
+>               object : LiveLikeCallback<CommentBoard>() {
+>                   override fun onResponse(
+>                       result: CommentBoard?,
+>                       error: String?
+>                   ) {
+>                       result?.let {
+>                           //handle success
+>                       }
+>                       error?.let {
+>                           //handle error
+>
+>                       }
+>                   }
+>               }
+>           )
+>   ```
+>   ```swift Swift
+>   let sdk: EngagementSDK
+>
+>   let createBoardOptions = CreateCommentBoardRequestOptions(
+>     title: "",
+>     customID: "",
+>     allowComments: true,
+>     repliesDepth: 1
+>   )
+>
+>   sdk.commentBoards.createCommentBoard(
+>     createCommentBoardOptions: createBoardOptions
+>   ) { result in
+>      switch result {
+>        case .success(let commentBoard):
+>        // handle success
+>        case .failure(let error):
+>        // handle failure
+>      }
+>   }
+>   ```
+>   ```javascript
+>   LiveLike.createCommentBoard({
+>     title: 'sd',
+>     customId: 'postid1',
+>     repliesDepth: 2,
+>     allowComments: true,
+>     description: 'desc',
+>     customData: 'abc',
+>     contentFilter: 'filtered'
+>   }).then((commentBoard) => console.log(commentBoard));
+>   ```
+> </details>
 
 ### Updating a Comment Board
 
-Modify the properties of an existing comment board, like title, replies depth, or description.
-
-<details>
-  <summary>Update Comment Board</summary>
-
-  ```kotlin
-  commentBoards.updateCommentBoard(
-              UpdateCommentBoardRequestOptions(
-                  commentBoardId = "",
-                  customId = "",
-                  title = "",
-                  allowComment = true,
-                  replyDepth = 1,
-                  customData = "",
-                  description = "",
-                  contentFilter = "filtered"
-              ),
-              object : LiveLikeCallback<CommentBoard>() {
-                  override fun onResponse(
-                      result: CommentBoard?,
-                      error: String?
-                  ) {
-                      result?.let {
-                          //handle success
-                      }
-                      error?.let {
-                          //handle error
-
-                      }
-                  }
-              }
-          )
-  ```
-  ```swift Swift
-  let sdk: EngagementSDK
-
-  let updateBoardOptions = UpdateCommentBoardRequestOptions(
-    title: "",
-    customID: "",
-    allowComments: true,
-    repliesDepth: 1
-  )
-
-  sdk.commentBoards.updateCommentBoard(
-    commentBoardID: "", 
-    updateCommentBoardOptions: updateBoardOptions
-  ) { result in
-     switch result {
-       case .success(let commentBoard):
-       // handle success
-       case .failure(let error):
-       // handle failure
-     }
-   }
-  ```
-  ```javascript
-  LiveLike.updateCommentBoard({
-    commentBoardId: '5f5fea99-569b-42f3-875d-5b3943b64ba0',
-    title: 'title',
-    customId: 'postID431',
-    repliesDepth: 1,
-    allowComments: true,
-    description: 'abc',
-    customData: 'custom data',
-    contentFilter: 'filtered'
-  }).then((commentBoard) => console.log(commentBoard));
-  ```
-</details>
+> Modify the properties of an existing comment board, like title, replies depth, or description.
+>
+> <details>
+>   <summary>Update Comment Board</summary>
+>
+>   ```kotlin
+>   commentBoards.updateCommentBoard(
+>               UpdateCommentBoardRequestOptions(
+>                   commentBoardId = "",
+>                   customId = "",
+>                   title = "",
+>                   allowComment = true,
+>                   replyDepth = 1,
+>                   customData = "",
+>                   description = "",
+>                   contentFilter = "filtered"
+>               ),
+>               object : LiveLikeCallback<CommentBoard>() {
+>                   override fun onResponse(
+>                       result: CommentBoard?,
+>                       error: String?
+>                   ) {
+>                       result?.let {
+>                           //handle success
+>                       }
+>                       error?.let {
+>                           //handle error
+>
+>                       }
+>                   }
+>               }
+>           )
+>   ```
+>   ```swift Swift
+>   let sdk: EngagementSDK
+>
+>   let updateBoardOptions = UpdateCommentBoardRequestOptions(
+>     title: "",
+>     customID: "",
+>     allowComments: true,
+>     repliesDepth: 1
+>   )
+>
+>   sdk.commentBoards.updateCommentBoard(
+>     commentBoardID: "", 
+>     updateCommentBoardOptions: updateBoardOptions
+>   ) { result in
+>      switch result {
+>        case .success(let commentBoard):
+>        // handle success
+>        case .failure(let error):
+>        // handle failure
+>      }
+>    }
+>   ```
+>   ```javascript
+>   LiveLike.updateCommentBoard({
+>     commentBoardId: '5f5fea99-569b-42f3-875d-5b3943b64ba0',
+>     title: 'title',
+>     customId: 'postID431',
+>     repliesDepth: 1,
+>     allowComments: true,
+>     description: 'abc',
+>     customData: 'custom data',
+>     contentFilter: 'filtered'
+>   }).then((commentBoard) => console.log(commentBoard));
+>   ```
+> </details>
 
 <br />
 
 ### Listing Comment Boards
 
-Retrieve all comment boards available in your app.
-
-<details>
-  <summary>Update Comment Board</summary>
-
-  ```kotlin
-  commentBoards.getCommentBoards(
-              LiveLikePagination.FIRST,
-              object : LiveLikeCallback<List<CommentBoard>>() {
-                  override fun onResponse(result: List<CommentBoard>?, error: String?) {
-                      result?.let {
-                          //handle success
-                      }
-                      error?.let {
-                          //handle error
-
-                      }
-                  }
-              }
-          )
-  ```
-  ```swift
-  let sdk: EngagementSDK
-
-  sdk.commentBoards.getCommentBoards(
-    page: .first
-  ) { result in
-     switch result {
-       case .success(let commentBoards):
-       // handle success
-       case .failure(let error):
-       // handle failure
-     }
-   }
-  ```
-  ```javascript
-  LiveLike.getCommentBoards().then(({results}) => console.log(results))
-  ```
-</details>
+> Retrieve all comment boards available in your app.
+>
+> <details>
+>   <summary>Update Comment Board</summary>
+>
+>   ```kotlin
+>   commentBoards.getCommentBoards(
+>               LiveLikePagination.FIRST,
+>               object : LiveLikeCallback<List<CommentBoard>>() {
+>                   override fun onResponse(result: List<CommentBoard>?, error: String?) {
+>                       result?.let {
+>                           //handle success
+>                       }
+>                       error?.let {
+>                           //handle error
+>
+>                       }
+>                   }
+>               }
+>           )
+>   ```
+>   ```swift
+>   let sdk: EngagementSDK
+>
+>   sdk.commentBoards.getCommentBoards(
+>     page: .first
+>   ) { result in
+>      switch result {
+>        case .success(let commentBoards):
+>        // handle success
+>        case .failure(let error):
+>        // handle failure
+>      }
+>    }
+>   ```
+>   ```javascript
+>   LiveLike.getCommentBoards().then(({results}) => console.log(results))
+>   ```
+> </details>
 
 <br />
 
 ### Deleting a Comment Board
 
-Remove a comment board and all associated comments.
-
-<details>
-  <summary>Delete Comment Board</summary>
-
-  ```kotlin
-  commentBoards.deleteCommentBoards(
-      DeleteCommentBoardRequestOptions(commentBoardId = ""),
-      object : LiveLikeCallback<LiveLikeEmptyResponse>() {
-          override fun onResponse(result: LiveLikeEmptyResponse?, error: String?) {
-              
-          }
-      }
-  )
-  ```
-  ```swift Swift
-  let sdk: EngagementSDK
-
-  sdk.commentBoards.deleteCommentBoard(
-    commentBoardID: ""
-  ) { result in
-     switch result {
-       case .success:
-       // handle succes
-       case .failure(let error):
-       // handle failure
-     }
-  }
-  ```
-  ```javascript
-  LiveLike.deleteCommentBoard({
-    commentBoardId: 'aa7e03fc-01f0-4a98-a2e0-3fed689632d7',
-  }).then(({ results }) => console.log(results));
-  ```
-</details>
+> Remove a comment board and all associated comments.
+>
+> <details>
+>   <summary>Delete Comment Board</summary>
+>
+>   ```kotlin
+>   commentBoards.deleteCommentBoards(
+>       DeleteCommentBoardRequestOptions(commentBoardId = ""),
+>       object : LiveLikeCallback<LiveLikeEmptyResponse>() {
+>           override fun onResponse(result: LiveLikeEmptyResponse?, error: String?) {
+>               
+>           }
+>       }
+>   )
+>   ```
+>   ```swift Swift
+>   let sdk: EngagementSDK
+>
+>   sdk.commentBoards.deleteCommentBoard(
+>     commentBoardID: ""
+>   ) { result in
+>      switch result {
+>        case .success:
+>        // handle succes
+>        case .failure(let error):
+>        // handle failure
+>      }
+>   }
+>   ```
+>   ```javascript
+>   LiveLike.deleteCommentBoard({
+>     commentBoardId: 'aa7e03fc-01f0-4a98-a2e0-3fed689632d7',
+>   }).then(({ results }) => console.log(results));
+>   ```
+> </details>
 
 <br />
 
@@ -301,117 +299,115 @@ import LiveLike from "@livelike/engagementsdk";
 
 ### Creating a Comment
 
-Post a new comment to a comment board.
-
-<details>
-  <summary>Creating a Comment</summary>
-
-  ```kotlin
-  commentClient.addComment(
-              AddCommentRequestOptions(
-                  text = "",
-                  customData = "",
-                  authorImageUrl = profileImageUrl
-              ), object : LiveLikeCallback<Comment>() {
-                  override fun onResponse(result: Comment?, error: String?) {
-                      result?.let {
-                          //handle success
-                      }
-                      error?.let {
-                          //handle error
-
-                      }
-                  }
-              }
-          )
-  ```
-  ```swift
-  let commentClient: CommentClient
-
-  commentClient.addComment(
-    text: "",
-    authorImageURL: imageURL,
-    customData: ""
-  ) { result in
-     switch result {
-       case .success(let comment):
-       // handle success
-       case .failure(let error):
-       // handle failure
-     }
-  }
-  ```
-  ```javascript
-  LiveLike.addComment({
-       text: '<Your text comment>',
-       customData:'<Your custom data to send with reply comment>',
-       commentBoardId:'<Your comment board Id>'
-     }).then(comment => console.log(comment));
-  ```
-</details>
+> Post a new comment to a comment board.
+>
+> <details>
+>   <summary>Creating a Comment</summary>
+>
+>   ```kotlin
+>   commentClient.addComment(
+>               AddCommentRequestOptions(
+>                   text = "",
+>                   customData = "",
+>                   authorImageUrl = profileImageUrl
+>               ), object : LiveLikeCallback<Comment>() {
+>                   override fun onResponse(result: Comment?, error: String?) {
+>                       result?.let {
+>                           //handle success
+>                       }
+>                       error?.let {
+>                           //handle error
+>
+>                       }
+>                   }
+>               }
+>           )
+>   ```
+>   ```swift
+>   let commentClient: CommentClient
+>
+>   commentClient.addComment(
+>     text: "",
+>     authorImageURL: imageURL,
+>     customData: ""
+>   ) { result in
+>      switch result {
+>        case .success(let comment):
+>        // handle success
+>        case .failure(let error):
+>        // handle failure
+>      }
+>   }
+>   ```
+>   ```javascript
+>   LiveLike.addComment({
+>        text: '<Your text comment>',
+>        customData:'<Your custom data to send with reply comment>',
+>        commentBoardId:'<Your comment board Id>'
+>      }).then(comment => console.log(comment));
+>   ```
+> </details>
 
 <br />
 
 ### Reply to a Comment
 
-Respond to an existing comment on a comment board.
-
-<details>
-  <summary>Reply to a Comment</summary>
-
-  ```kotlin
-  commentClient.addCommentReply(
-              AddCommentReplyRequestOptions(
-                  parentCommentId = "",
-                  text = "",
-                  customData = "",
-                  authorImageUrl = profileImageUrl
-              ), object : LiveLikeCallback<Comment>() {
-                  override fun onResponse(result: Comment?, error: String?) {
-                      result?.let {
-                          //handle success
-                      }
-                      error?.let {
-                          //handle error
-
-                      }
-                  }
-                  )
-  ```
-  ```swift
-  let commentClient: CommentClient
-
-  commentClient.addCommentReply(
-    parentCommentID: "",
-    text: "",
-    authorImageURL: imageURL,
-    customData: ""
-  ) { result in
-     switch result {
-       case .success(let comment):
-       // handle success
-       case .failure(let error):
-       // handle failure
-     }
-  }
-  ```
-  ```javascript
-  LiveLike.addCommentReply({
-       text: '<Your text comment>',
-       customData: '<Your custom data to send with reply comment>',
-       commentBoardId: '<Your comment board Id>',
-       parentCommentId: '<Your parent  comment Id>'
-  }).then(comment => console.log(comment));
-  ```
-</details>
+> Respond to an existing comment on a comment board.
+>
+> <details>
+>   <summary>Reply to a Comment</summary>
+>
+>   ```kotlin
+>   commentClient.addCommentReply(
+>               AddCommentReplyRequestOptions(
+>                   parentCommentId = "",
+>                   text = "",
+>                   customData = "",
+>                   authorImageUrl = profileImageUrl
+>               ), object : LiveLikeCallback<Comment>() {
+>                   override fun onResponse(result: Comment?, error: String?) {
+>                       result?.let {
+>                           //handle success
+>                       }
+>                       error?.let {
+>                           //handle error
+>
+>                       }
+>                   }
+>                   )
+>   ```
+>   ```swift
+>   let commentClient: CommentClient
+>
+>   commentClient.addCommentReply(
+>     parentCommentID: "",
+>     text: "",
+>     authorImageURL: imageURL,
+>     customData: ""
+>   ) { result in
+>      switch result {
+>        case .success(let comment):
+>        // handle success
+>        case .failure(let error):
+>        // handle failure
+>      }
+>   }
+>   ```
+>   ```javascript
+>   LiveLike.addCommentReply({
+>        text: '<Your text comment>',
+>        customData: '<Your custom data to send with reply comment>',
+>        commentBoardId: '<Your comment board Id>',
+>        parentCommentId: '<Your parent  comment Id>'
+>   }).then(comment => console.log(comment));
+>   ```
+> </details>
 
 <br />
 
 ### Get Comment
 
-Retrieve a specific comment by ID.
-
-> <br />
+> Retrieve a specific comment by ID.
 >
 > <details>
 >   <summary>Get Comment</summary>
@@ -448,13 +444,13 @@ Retrieve a specific comment by ID.
 >   ```
 > </details>
 
+<br />
+
 ### Get Top-Level Comments
 
-Fetch all top-level comments with optional filters.
-
-Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUntil, isReported
-
-> <br />
+> Fetch all top-level comments with optional filters.
+>
+> Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUntil, isReported
 >
 > <details>
 >   <summary>Get Comment</summary>
@@ -524,11 +520,11 @@ Filters: NEWEST, OLDEST, OLDEST_REPLIES, NEWEST_REPLIES, repliedSince, repliedUn
 >   ```
 > </details>
 
+<br />
+
 ### Get Replies to a Comment
 
-Retrieve all replies for a specific comment.
-
-> <br />
+> Retrieve all replies for a specific comment.
 >
 > <details>
 >   <summary>List of replies to a Comment</summary>
@@ -590,9 +586,7 @@ Retrieve all replies for a specific comment.
 
 ### Edit a Comment
 
-Update the text of an existing comment.
-
-> <br />
+> Update the text of an existing comment.
 >
 > <details>
 >   <summary>Edit a Comment</summary>
@@ -642,11 +636,11 @@ Update the text of an existing comment.
 >   ```
 > </details>
 
+<br />
+
 ### Delete a Comment
 
-Remove a comment from the board.
-
-> <br />
+> Remove a comment from the board.
 >
 > <details>
 >   <summary>Delete a Comment</summary>
@@ -699,118 +693,118 @@ Remove a comment from the board.
 
 ### Create Comment Board Ban
 
-Moderators can ban a profile to restrict its access in a comment board but the banned profile does not lose access to moderation tools if they have that.
-
-1. profile_id: required,
-2. comment_board_id: optional, if not provided, the profile will be banned from all the comment boards in the application, provided the moderator has sufficient permissions to do that.
-3. description: optional, this field can be used to provide additional information about a ban or the reason for banning a user.
-
-<details>
-  <summary>Create Comment Board Ban</summary>
-
-  ```kotlin
-  commentBoards.createCommentBoardBan(
-      CreateCommentBanRequestOptions(
-          profileId="",
-          commentBoardId=""),
-          description="")
-      ),
-      object : LiveLikeCallback<CommentBoardBanDetails>() {
-          override fun onResponse(result: CommentBoardBanDetails?, error: String?) {
-              showToast(error, "comment board ban")
-              showToast(result?.toString(), "comment board ban")
-          }
-      }
-  )
-  ```
-  ```javascript
-  LiveLike.createCommentBoardBan({
-    profileId: '<profile_id>',
-    commentBoardId: '<comment_board_id>',
-    description: '<Reason for banning>',
-  }).then((commentBoardBan) => console.log(commentBoardBan));
-  ```
-  ```swift
-  let createCommentBoardBanOptions = CommentBoardBanRequestOptions(
-        commentBoardID: commentBoardID,
-        description: description
-  )
-          
-  sdk.commentBoards.createCommentBoardBan(
-        profileID: profileID, 
-        options: createCommentBoardBanOptions
-  ) { result in
-        switch result {
-        case .success(let commentBoardBan):
-            //Success block
-        case .failure(let error):
-            //Failure Block
-        }
-  }
-  ```
-</details>
+> Moderators can ban a profile to restrict its access in a comment board but the banned profile does not lose access to moderation tools if they have that.
+>
+> 1. profile_id: required,
+> 2. comment_board_id: optional, if not provided, the profile will be banned from all the comment boards in the application, provided the moderator has sufficient permissions to do that.
+> 3. description: optional, this field can be used to provide additional information about a ban or the reason for banning a user.
+>
+> <details>
+>   <summary>Create Comment Board Ban</summary>
+>
+>   ```kotlin
+>   commentBoards.createCommentBoardBan(
+>       CreateCommentBanRequestOptions(
+>           profileId="",
+>           commentBoardId=""),
+>           description="")
+>       ),
+>       object : LiveLikeCallback<CommentBoardBanDetails>() {
+>           override fun onResponse(result: CommentBoardBanDetails?, error: String?) {
+>               showToast(error, "comment board ban")
+>               showToast(result?.toString(), "comment board ban")
+>           }
+>       }
+>   )
+>   ```
+>   ```javascript
+>   LiveLike.createCommentBoardBan({
+>     profileId: '<profile_id>',
+>     commentBoardId: '<comment_board_id>',
+>     description: '<Reason for banning>',
+>   }).then((commentBoardBan) => console.log(commentBoardBan));
+>   ```
+>   ```swift
+>   let createCommentBoardBanOptions = CommentBoardBanRequestOptions(
+>         commentBoardID: commentBoardID,
+>         description: description
+>   )
+>           
+>   sdk.commentBoards.createCommentBoardBan(
+>         profileID: profileID, 
+>         options: createCommentBoardBanOptions
+>   ) { result in
+>         switch result {
+>         case .success(let commentBoardBan):
+>             //Success block
+>         case .failure(let error):
+>             //Failure Block
+>         }
+>   }
+>   ```
+> </details>
 
 <br />
 
 ### List Comment Board Bans
 
-Get a list of comment board bans in an Application. Each comment board ban resource represents restrictive access to the comment board for a given user profile.
-
-1. As a producer or privileged user I can see all the comment-board-ban-profile from the application
-2. As a moderator, I can get a list of all comment-board-ban-profile for the comment boards where I am a moderator
-3. As a normal profile, I will get a list of comment-board-ban-profile for myself only.
-
-<details>
-  <summary>List Comment Board Ban</summary>
-
-  ```kotlin
-  commentBoards.getCommentBoardBans(
-      ListCommentBoardBanRequestOptions(
-          profileId="",
-          commentBoardId="")
-      ),
-      LiveLikePagination.FIRST,
-      object : LiveLikeCallback<List<CommentBoardBanDetails>>() {
-          override fun onResponse(result: List<CommentBoardBanDetails>?, error: String?) {
-              showToast(error, "comment board ban")
-              showToast(result?.toString(), "comment board ban list")
-          }
-      }
-  )
-  ```
-  ```javascript
-  LiveLike.getCommentBoardBans({
-    profileId: '<profile_id>',
-    commentBoardId: '<comment_board_id>',
-  }).then((paginatedResponse) => console.log(paginatedResponse));
-  ```
-  ```swift
-  let options = GetCommentBoardBansListRequestOptions(
-        profileID: profileID,
-        commentBoardID: commentBoardID
-  )
-          
-  sdk.commentBoards.getCommentBoardBans(
-        page: .first,
-        options: options
-  ) { result in
-        switch result {
-        case .success(let commentBoardBans):
-            //Success Block
-        case .failure(let error):
-            //Failure Block
-        }
-  }
-  ```
-</details>
+> Get a list of comment board bans in an Application. Each comment board ban resource represents restrictive access to the comment board for a given user profile.
+>
+> 1. As a producer or privileged user I can see all the comment-board-ban-profile from the application
+> 2. As a moderator, I can get a list of all comment-board-ban-profile for the comment boards where I am a moderator
+> 3. As a normal profile, I will get a list of comment-board-ban-profile for myself only.
+>
+> <br />
+>
+> <details>
+>   <summary>List Comment Board Ban</summary>
+>
+>   ```kotlin
+>   commentBoards.getCommentBoardBans(
+>       ListCommentBoardBanRequestOptions(
+>           profileId="",
+>           commentBoardId="")
+>       ),
+>       LiveLikePagination.FIRST,
+>       object : LiveLikeCallback<List<CommentBoardBanDetails>>() {
+>           override fun onResponse(result: List<CommentBoardBanDetails>?, error: String?) {
+>               showToast(error, "comment board ban")
+>               showToast(result?.toString(), "comment board ban list")
+>           }
+>       }
+>   )
+>   ```
+>   ```javascript
+>   LiveLike.getCommentBoardBans({
+>     profileId: '<profile_id>',
+>     commentBoardId: '<comment_board_id>',
+>   }).then((paginatedResponse) => console.log(paginatedResponse));
+>   ```
+>   ```swift
+>   let options = GetCommentBoardBansListRequestOptions(
+>         profileID: profileID,
+>         commentBoardID: commentBoardID
+>   )
+>           
+>   sdk.commentBoards.getCommentBoardBans(
+>         page: .first,
+>         options: options
+>   ) { result in
+>         switch result {
+>         case .success(let commentBoardBans):
+>             //Success Block
+>         case .failure(let error):
+>             //Failure Block
+>         }
+>   }
+>   ```
+> </details>
 
 <br />
 
 ### Get Comment Board Ban
 
-Get details of a specific ban.
-
-> <br />
+> Get details of a specific ban.
 >
 > <details>
 >   <summary>Get Comment Board Ban</summary>
@@ -847,11 +841,9 @@ Get details of a specific ban.
 
 ### Delete Comment Board Ban
 
-Remove a ban from a profile.
-
-A profile with moderation tools can unban himself if its get banned by other moderation access profile.
-
-> <br />
+> Remove a ban from a profile.
+>
+> A profile with moderation tools can unban himself if its get banned by other moderation access profile.
 >
 > <details>
 >   <summary>Delete Comment Board Ban</summary>
@@ -884,11 +876,11 @@ A profile with moderation tools can unban himself if its get banned by other mod
 >   ```
 > </details>
 
+<br />
+
 ### Create Comment Report
 
-Report a comment to moderators.
-
-> <br />
+> Report a comment to moderators.
 >
 > <details>
 >   <summary>Create Comment report</summary>
@@ -935,11 +927,11 @@ Report a comment to moderators.
 >   ```
 > </details>
 
+<br />
+
 ### Get Comment Report
 
-Retrieve details of a specific report.
-
-> <br />
+> Retrieve details of a specific report.
 >
 > <details>
 >   <summary>Get Comment report</summary>
@@ -974,11 +966,11 @@ Retrieve details of a specific report.
 >   ```
 > </details>
 
+<br />
+
 ### List Comment Reports
 
-Get all reports for a comment or board.
-
-> <br />
+> Get all reports for a comment or board.
 >
 > <details>
 >   <summary>Get Comment report</summary>
@@ -1025,11 +1017,11 @@ Get all reports for a comment or board.
 >   ```
 > </details>
 
+<br />
+
 ### Delete Comment Report
 
-Delete a comment report.
-
-> <br />
+> Delete a comment report.
 >
 > <details>
 >   <summary>Delete Comment Report</summary>
@@ -1068,11 +1060,11 @@ Delete a comment report.
 >   ```
 > </details>
 
+<br />
+
 ### Dismiss Comment Report
 
-Dismiss a specific report.
-
-> <br />
+> Dismiss a specific report.
 >
 > <details>
 >   <summary>Dismiss Comment Report</summary>
@@ -1110,11 +1102,11 @@ Dismiss a specific report.
 >   ```
 > </details>
 
+<br />
+
 ### Dismiss All Comment Reports
 
-Dismiss all reports for a comment.
-
-> <br />
+> Dismiss all reports for a comment.
 >
 > <details>
 >   <summary>Dismiss Comment Report</summary>
