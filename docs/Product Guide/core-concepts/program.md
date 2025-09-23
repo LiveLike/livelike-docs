@@ -13,10 +13,10 @@ Programs can also be linked to one or more leaderboards. Any rewards earned with
 
 Each program has scheduling fields to manage its lifecycle:
 
-* Status → Can be future, live, or past.
-* Scheduled At → Planned start time.
-* Started At → The most recent time the program was started (null if never started).
-* Stopped At → The most recent time the program was stopped (null if never stopped).
+* **Status** → Can be future, live, or past.
+* **Scheduled At** → Planned start time.
+* **Started At** → The most recent time the program was started (null if never started).
+* **Stopped At** → The most recent time the program was stopped (null if never stopped).
 
 A program can be started and stopped multiple times. Live programs appear in the Live Now tab, upcoming programs in the Upcoming tab, and past programs in the History tab.
 
