@@ -23,9 +23,9 @@ The Comments service enables app developers to add commenting functionality to a
 * **Comment**: A post made on a board. Comments can be top-level or replies to other comments.
 * **Reply**: A comment in direct response to another comment.
 
-## Working with Comment Boards in Swift and Kotlin
+## Working with Comment Boards SDK
 
-Comment Board functionality is accessed through the `CommentBoardClient` in the Swift and Kotlin SDKs.
+Comment Board functionality is accessed through the `CommentBoardClient` in the Swift, Kotlin and Javascript SDKs.
 
 ```kotlin
 val liveLikeEngagementSDK: EngagementSDK
