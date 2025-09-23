@@ -46,3 +46,9 @@ At render time, placeholder text in the comment can be replaced with the nicknam
 
    * The mentioner has blocked the mentioned profile
    * The mentioned profile has blocked the mentioner
+
+## Learn more:
+
+[Send Comments with Mentions](https://docs.livelike.com/update/reference/create-a-comment#/)
+
+[Fetch Comments with Mentions](https://docs.livelike.com/update/reference/list-comments#/)
