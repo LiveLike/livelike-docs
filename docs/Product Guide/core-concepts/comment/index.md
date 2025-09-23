@@ -1122,15 +1122,9 @@ Remove a ban from a profile.
     Highlight important content on comment boards; authorized users (with pin-comment permission, producers, or board owners) can pin/unpin, and pinned comments are auto-removed if the original comment is deleted.
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
-  </Card>
-
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
-  </Card>
-
-  <Card title="Fourth Card" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Comments Stock UI (Android)" href="https://docs.livelike.com/v1_doc_rewire_vk/docs/comments-stock-ui-android#/" icon="fa-home" target="_blank">
+    Fully-featured, customizable Android widget for managing comment boards with reactions, replies, and moderation.
   </Card>
 </Cards>
+
+<br />
