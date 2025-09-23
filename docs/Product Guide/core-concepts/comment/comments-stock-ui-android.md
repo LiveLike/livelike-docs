@@ -8,7 +8,7 @@ metadata:
 ---
 The Comments Stock UI is a powerful and flexible Android widget that allows developers to easily integrate a fully functional comment board and comment system into their Android applications. This widget comes packed with features such as sending and receiving comments, replying to comments, reacting to comments, and comprehensive moderation capabilities including reporting, blocking, and deleting comments. Additionally, developers can customize the appearance of the CommentView by utilizing custom theme attributes. CommentSession needs to be created to use comments stock UI
 
-# Getting Started
+**Getting Started:**
 
 ## Installation
 
