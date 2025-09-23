@@ -42,14 +42,13 @@ Custom stickers are also opportunities for brand partnerships and sponsorships. 
 
 ## Exclusive Stickers
 
-Exclusive stickers unlock a new layer of personalization and recognition inside community chats. Unlike standard packs, exclusive packs are only available to specific profiles — helping fans feel rewarded and distinguished, while also opening up new monetization and engagement opportunities.
+Exclusive stickers unlock a new layer of personalization and recognition inside community chats. Unlike standard packs, exclusive packs are only available to specific profiles, helping fans feel rewarded and distinguished, while also opening up new monetization and engagement opportunities.
 
 <Callout icon="📘" theme="info">
-   Exclusive packs are tied to profiles only. Access is managed at the profile level, and only those profiles granted access will see or use them inside chat. 
+  Exclusive packs are tied to profiles only. Access is managed at the profile level, and only those profiles granted access will see or use them inside chat.
 </Callout>
 
 #### Sample Use Cases
-
 
 * In-app purchases for fans who love collecting
 * Team-branded packs available only to official fan communities (via individual profile assignment)
@@ -61,8 +60,7 @@ Exclusive stickers unlock a new layer of personalization and recognition inside 
 * Access to exclusive sticker packs can be granted, revoked, or automated through purchases, loyalty tiers, or rewards.
 * Fans will only see packs they own, ensuring clutter-free and personalized chat experiences.
 
-#### APIs – Integrator Experience
-
+#### APIs
 
 * Grant Access to a Sticker Pack
   `POST /api/v1/profiles/{profile_uuid}/sticker-packs/`
@@ -76,7 +74,3 @@ Exclusive stickers unlock a new layer of personalization and recognition inside 
   `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
 * Revoke Access to a Sticker Pack
   `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
-
-Integrators don’t need to manage exclusivity flags or backend models directly — simply use the APIs above to control which profiles have access.
-
-<br />
