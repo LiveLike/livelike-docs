@@ -42,6 +42,41 @@ Custom stickers are also opportunities for brand partnerships and sponsorships. 
 
 ## Exclusive Stickers
 
-Exclusive stickers are assigned to specific users so that they can distinguish themselves in the communities they are part of.  An exclusive sticker pack can be assigned to multiple profiles and only those users will be able to use them.
+Exclusive stickers unlock a new layer of personalization and recognition inside community chats. Unlike standard packs, exclusive packs are only available to specific profiles — helping fans feel rewarded and distinguished, while also opening up new monetization and engagement opportunities.
+
+<Callout icon="📘" theme="info">
+   Exclusive packs are tied to profiles only. Access is managed at the profile level, and only those profiles granted access will see or use them inside chat. 
+</Callout>
+
+#### Sample Use Cases
+
+
+* In-app purchases for fans who love collecting
+* Team-branded packs available only to official fan communities (via individual profile assignment)
+* Collectible packs redeemable through a Rewards Store
+* Loyalty programs (e.g., Gold-tier members unlocking exclusive packs)
+
+#### How It Works
+
+* Access to exclusive sticker packs can be granted, revoked, or automated through purchases, loyalty tiers, or rewards.
+* Fans will only see packs they own, ensuring clutter-free and personalized chat experiences.
+
+#### APIs – Integrator Experience
+
+
+* Grant Access to a Sticker Pack
+  `POST /api/v1/profiles/{profile_uuid}/sticker-packs/`
+  Grants access to an exclusive sticker pack for the specified profile.
+  ```
+  {
+      "sticker_pack_id": "6e654321-abcd-4def-9012-9876543210fe"
+  }
+  ```
+* List Sticker Packs Owned by a Profile
+  `GET /api/v1/profiles/{profile_uuid}/sticker-packs/`
+* Revoke Access to a Sticker Pack
+  `DELETE /api/v1/profiles/{profile_uuid}/sticker-packs/{sticker_pack_id}/`
+
+Integrators don’t need to manage exclusivity flags or backend models directly — simply use the APIs above to control which profiles have access.
 
 <br />
