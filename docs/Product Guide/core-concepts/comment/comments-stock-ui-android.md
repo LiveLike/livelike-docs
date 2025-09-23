@@ -63,7 +63,7 @@ Provides an expressive way for users to engage with content.
 
 <Image align="center" width="400px" src="https://files.readme.io/056f43e-Screenshot_2023-09-11_at_5.51.05_PM.png" />
 
-### Moderation
+## Moderation
 
 Comprehensive moderation tools for maintaining a safe and respectful environment.
 Features include reporting, blocking, and deleting comments.
@@ -178,6 +178,6 @@ Create Comment Session. Additionally, enable reactions that can be integrated wi
 
 <br />
 
-### Conclusion
+## Conclusion
 
 The CommentView is a versatile and feature-rich solution for integrating a comment board and comment system into your Android application. It offers seamless customization options and provides a user-friendly experience for commenting, reacting, and moderating comments. By following this documentation, you can quickly and effectively implement this powerful widget into your project.
