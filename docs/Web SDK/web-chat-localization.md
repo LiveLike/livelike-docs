@@ -14,6 +14,8 @@ next:
 ---
 As an integrator you have the ability to localize the EngagementSDK features. Multiple languages can be used, and they can be changed on the fly.
 
+The built-in user interface provided by the web SDK is internationalized so that things like placeholder text, button labels, and other UI elements can be localized as part of the integration. Localizations are provided in the _localization object_ format, and localizations can be added at init or at runtime. The HTML elements provided by the LiveLike SDK respect the `lang` attribute and will use the corresponding localization key if it exists.
+
 ## The localization object
 
 Localizations are represented as nested objects. The outer object keys are [ISO 639-1 Language Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), and the inner objects are mappings from placeholder keys to their localized values.
@@ -64,8 +66,6 @@ The SDK comes with an English localization by default, with this structure:
 <br />
 
 ## Setting the language
-
-<br />
 
 Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
 
