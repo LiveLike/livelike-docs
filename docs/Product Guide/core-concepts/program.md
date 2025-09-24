@@ -31,7 +31,7 @@ The live status is primarily for organization within the CMS and for scheduling 
   Note: Live status does not affect widget publishing. Widgets can always be published to a program regardless of its live status.
 </Callout>
 
-Read more: Using Programs API
+Read more: [Using Programs API](https://docs.livelike.com/v1_doc_rewire_vk/reference/using-programs-api#/)
 
 ### Custom Identifiers
 
