@@ -101,7 +101,7 @@ LiveLike.init({
       "chat.giphyPicker.stickerSelectionButton.ariaLabel": "<stickerName> GIF",
       "chat.reactions.openButton.ariaLabel": "Reacciones de mensajes",
       "chat.reactions.reactionSelectionButton.ariaLabel": "Reacción <reactionName>"
-  	}
+    }
   }       
 })
 </script>
