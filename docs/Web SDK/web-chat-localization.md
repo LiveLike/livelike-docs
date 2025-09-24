@@ -1,5 +1,5 @@
 ---
-title: Localization
+title: Localization (Web)
 excerpt: ''
 deprecated: false
 hidden: false
@@ -12,13 +12,13 @@ metadata:
 next:
   description: ''
 ---
-As an integrator you have the ability to localize the EngagementSDK chat and widget experience. Multiple languages can be used, and they can be changed on the fly. 
+As an integrator you have the ability to localize the EngagementSDK chat and widget experience. Multiple languages can be used, and they can be changed on the fly.
 
-These localizations are stored in the `localizedStrings` object, which has [ISO 639-1 Language Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) as keys, and a value of an object of translations.
+## The localization object
 
-## Default Localization
+Localizations are represented as nested objects. The outer object keys are [ISO 639-1 Language Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), and the inner objects are mappings from placeholder keys to their localized values.
 
-The SDK comes with an English localisation by default. The default `localizedStrings` object is shown below.
+The SDK comes with an English localization by default, with this structure:
 
 ```javascript Default localization
 "en": {
@@ -61,11 +61,13 @@ The SDK comes with an English localisation by default. The default `localizedStr
 }
 ```
 
-## Setting Custom Localizations
+## Adding localizations
 
-The `localizedStrings` object can be set by passing custom localizations to either the `LiveLike.init` method's `localizedStrings` argument, or the `LiveLike.applyLocalization` method.
+Add localizations by passing a localization object to `LiveLike.init` method's `localizedStrings` argument, or the `LiveLike.applyLocalization` method.
 
-## LiveLike.applyLocalization
+### Add a localization at runtime
+
+Localizations can be added at runtime by passing a localization object to the `LiveLike.applyLocalization` method.
 
 ```javascript
 LiveLike.applyLocalization({
@@ -97,15 +99,17 @@ LiveLike.applyLocalization({
 })
 ```
 
-## LiveLike.init argument
+### Add a localization during initialization
 
-<Embed url="https://codepen.io/abhi1599/pen/QWgqRqK" title="Localization LiveLike.init argument" favicon="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" provider="codepen.io" href="https://codepen.io/abhi1599/pen/QWgqRqK" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FQWgqRqK'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
+Pass a localization object to the `localizedStrings`  argument of the `LiveLike.init` method to add localizations during initialization.
 
-## Usage
+<Embed url="https://codepen.io/abhi1599/pen/QWgqRqK" href="https://codepen.io/abhi1599/pen/QWgqRqK" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FQWgqRqK'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
 
-The keys of `localizedStrings` are valid language codes, and they will match the [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) used in HTML tags.
+<br />
 
-## Single language
+## Setting the language
+
+Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
 
 For example, if a Spanish localization is used, the language code is `es`. The `es` language code will be used as both the `localizedStrings` key, and the `lang` attribute.
 
@@ -145,13 +149,9 @@ LiveLike.init({
 </script>
 ```
 
-## Multiple Languages
+## Overriding localizations
 
-Multiple language keys can be added to the `localizedStrings` object. These languages can then be dynamically changed in your application.
-
-## Limited Keys
-
-Integrators can override default values by setting the keys they want to change. 
+Override localizations by passing a partial localization object to the `applyLocalization` method. It will merge the new localization object with any previously applied localizations.
 
 ```javascript
 LiveLike.applyLocalization({
