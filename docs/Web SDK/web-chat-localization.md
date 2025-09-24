@@ -61,6 +61,52 @@ The SDK comes with an English localization by default, with this structure:
 }
 ```
 
+<br />
+
+## Setting the language
+
+Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
+
+For example, if a Spanish localization is used, the language code is `es`. The `es` language code will be used as both the `localizedStrings` key, and the `lang` attribute.
+
+```html
+<livelike-chat lang="es" roomid=""></livelike-chat>
+<script>
+LiveLike.init({
+  clientId: '',
+  localizedStrings: {
+    es: {
+      "chat.inputPlaceholder": "Dices Algo",
+      "chat.messageMenu.blockUser": "Bloquea a esta persona",
+      "chat.messageMenu.reportMessage": "Reporte este mensaje",
+      "chat.messageMenu.cancel": "Cancelar",
+      "chat.messageMenu.ariaLabel": "Opciones de mensaje",
+      "chat.blockConfirmation.message": "Ya no recibirás mensajes de <username>.",
+      "chat.reportConfirmation.message": "El mensaje ha sido informado a los moderadores. Gracias.",
+      "chat.errorMessage": "Hubo un error. Inténtalo de nuevo.",
+      "chat.messageDeleted": "Este mensaje ha sido eliminado.",
+      "chat.sendButton.ariaLabel": "Enviar mensaje",
+      "chat.scrollDownButton.ariaLabel": "Desplazarse hacia abajo",
+      "chat.stickerPicker.title": "Pegatinas",
+      "chat.stickerPicker.openButton.ariaLabel": "Abrir pegatinas",
+      "chat.stickerPicker.closeButton.ariaLabel": "Cerrar pegatinas",
+      "chat.stickerPicker.stickerPackTab.ariaLabel": "Paquete de pegatinas <packName>",
+      "chat.stickerPicker.stickerSelectionButton.ariaLabel": "<stickerName> pegatina",
+      "chat.giphyPicker.title": "GIPHY",
+      "chat.giphyPicker.placeholder": "Buscar GIF a través de GIPHY",
+      "chat.giphyPicker.openButton.ariaLabel": "Abrir GIPHY",
+      "chat.giphyPicker.closeButton.ariaLabel": "Cerrar GIPHY",
+      "chat.giphyPicker.stickerSelectionButton.ariaLabel": "<stickerName> GIF",
+      "chat.reactions.openButton.ariaLabel": "Reacciones de mensajes",
+      "chat.reactions.reactionSelectionButton.ariaLabel": "Reacción <reactionName>"
+  	}
+  }       
+})
+</script>
+```
+
+##
+
 ## Adding localizations
 
 Add localizations by passing a localization object to `LiveLike.init` method's `localizedStrings` argument, or the `LiveLike.applyLocalization` method.
@@ -106,48 +152,6 @@ Pass a localization object to the `localizedStrings`  argument of the `LiveLike.
 <Embed url="https://codepen.io/abhi1599/pen/QWgqRqK" href="https://codepen.io/abhi1599/pen/QWgqRqK" html="%3Ciframe%20height%3D'350'%20scrolling%3D'no'%20src%3D'https%3A%2F%2Fcodepen.io%2Fabhi1599%2Fembed%2FQWgqRqK'%20frameborder%3D'no'%20allowtransparency%3D'true'%20allowfullscreen%3D'true'%20style%3D'width%3A%20100%25%3B'%3E%3C%2Fiframe%3E" />
 
 <br />
-
-## Setting the language
-
-Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
-
-For example, if a Spanish localization is used, the language code is `es`. The `es` language code will be used as both the `localizedStrings` key, and the `lang` attribute.
-
-```html
-<livelike-chat lang="es" roomid=""></livelike-chat>
-<script>
-LiveLike.init({
-  clientId: '',
-  localizedStrings: {
-    es: {
-      "chat.inputPlaceholder": "Dices Algo",
-      "chat.messageMenu.blockUser": "Bloquea a esta persona",
-      "chat.messageMenu.reportMessage": "Reporte este mensaje",
-      "chat.messageMenu.cancel": "Cancelar",
-      "chat.messageMenu.ariaLabel": "Opciones de mensaje",
-      "chat.blockConfirmation.message": "Ya no recibirás mensajes de <username>.",
-      "chat.reportConfirmation.message": "El mensaje ha sido informado a los moderadores. Gracias.",
-      "chat.errorMessage": "Hubo un error. Inténtalo de nuevo.",
-      "chat.messageDeleted": "Este mensaje ha sido eliminado.",
-      "chat.sendButton.ariaLabel": "Enviar mensaje",
-      "chat.scrollDownButton.ariaLabel": "Desplazarse hacia abajo",
-      "chat.stickerPicker.title": "Pegatinas",
-      "chat.stickerPicker.openButton.ariaLabel": "Abrir pegatinas",
-      "chat.stickerPicker.closeButton.ariaLabel": "Cerrar pegatinas",
-      "chat.stickerPicker.stickerPackTab.ariaLabel": "Paquete de pegatinas <packName>",
-      "chat.stickerPicker.stickerSelectionButton.ariaLabel": "<stickerName> pegatina",
-      "chat.giphyPicker.title": "GIPHY",
-      "chat.giphyPicker.placeholder": "Buscar GIF a través de GIPHY",
-      "chat.giphyPicker.openButton.ariaLabel": "Abrir GIPHY",
-      "chat.giphyPicker.closeButton.ariaLabel": "Cerrar GIPHY",
-      "chat.giphyPicker.stickerSelectionButton.ariaLabel": "<stickerName> GIF",
-      "chat.reactions.openButton.ariaLabel": "Reacciones de mensajes",
-      "chat.reactions.reactionSelectionButton.ariaLabel": "Reacción <reactionName>"
-  	}
-  }       
-})
-</script>
-```
 
 ## Overriding localizations
 
