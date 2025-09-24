@@ -12,7 +12,7 @@ metadata:
 next:
   description: ''
 ---
-As an integrator you have the ability to localize the EngagementSDK chat and widget experience. Multiple languages can be used, and they can be changed on the fly.
+As an integrator you have the ability to localize the EngagementSDK features. Multiple languages can be used, and they can be changed on the fly.
 
 ## The localization object
 
@@ -65,6 +65,8 @@ The SDK comes with an English localization by default, with this structure:
 
 ## Setting the language
 
+<br />
+
 Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
 
 For example, if a Spanish localization is used, the language code is `es`. The `es` language code will be used as both the `localizedStrings` key, and the `lang` attribute.
@@ -105,7 +107,7 @@ LiveLike.init({
 </script>
 ```
 
-##
+<br />
 
 ## Adding localizations
 
