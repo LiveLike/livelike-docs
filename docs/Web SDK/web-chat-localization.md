@@ -65,7 +65,7 @@ The SDK comes with an English localization by default, with this structure:
 
 <br />
 
-## Setting the language
+## Setting the UI language
 
 Set the `lang` attribute on elements provided by the LiveLike SDK to set the language for that tag. The `lang` attribute value should be one of the language codes supplied by a localization object.
 
@@ -109,11 +109,11 @@ LiveLike.init({
 
 <br />
 
-## Adding localizations
+## Adding UI localizations
 
 Add localizations by passing a localization object to `LiveLike.init` method's `localizedStrings` argument, or the `LiveLike.applyLocalization` method.
 
-### Add a localization at runtime
+### Add a UI localization at runtime
 
 Localizations can be added at runtime by passing a localization object to the `LiveLike.applyLocalization` method.
 
@@ -147,7 +147,7 @@ LiveLike.applyLocalization({
 })
 ```
 
-### Add a localization during initialization
+### Add a UI localization during initialization
 
 Pass a localization object to the `localizedStrings`  argument of the `LiveLike.init` method to add localizations during initialization.
 
@@ -155,7 +155,7 @@ Pass a localization object to the `localizedStrings`  argument of the `LiveLike.
 
 <br />
 
-## Overriding localizations
+## Overriding UI localizations
 
 Override localizations by passing a partial localization object to the `applyLocalization` method. It will merge the new localization object with any previously applied localizations.
 
@@ -167,3 +167,13 @@ LiveLike.applyLocalization({
   }
 })
 ```
+
+## Setting the API request language
+
+Some API responses can be localized too, such as widget details. Use the `LiveLike.setLanguage` method to set the language to make API requests with. If the response can be localized, it will use the supplied language.
+
+```
+LiveLike.setLanguage("en")
+```
+
+Under the hood, this will cause API requests to include the appropriate `Accept-Language` HTTP header.
