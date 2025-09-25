@@ -212,7 +212,7 @@ A user that competes is considered a leaderboard entry. Use the code samples bel
 
 <br />
 
-## Getting leaderboard entry for a given profile
+### Getting leaderboard entry for a given profile
 
 Details about a leaderboard entry can be retrieved by providing a profile id and a leaderboard id. This can be useful if there is a leaderboard entry you are interested in keeping track of.
 
@@ -259,7 +259,7 @@ Details about a leaderboard entry can be retrieved by providing a profile id and
 
 <br />
 
-## Getting a leaderboard entry for the current user profile
+### Getting a leaderboard entry for the current user profile
 
 Retrieving details about the current user's profile can be done using the code samples below. This can be used to look up the current user's ranking in a specific leaderboard.
 
@@ -317,7 +317,7 @@ You can subscribe to the current user's Leaderboard position to receive updates 
 > Android:
 > Web: 2.0.0
 
-#### Get LeaderboardClients from Content Session
+### Get LeaderboardClients from Content Session
 
 <details>
   <summary>Get LeaderboardClients from Content Session</summary>
