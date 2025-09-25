@@ -18,7 +18,7 @@ Built-in moderation controls like profanity filters, user bans, and automated ch
 * Automated and manual moderation controls
 * Custom branding and responsive UI
 
-### Common Use Cases
+### Use Cases
 
 * Live Events → Host-audience communication, fan excitement
 * Media & Entertainment → Show discussions, episode feedback, fan forums
