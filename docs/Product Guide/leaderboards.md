@@ -57,8 +57,6 @@ Below are common operations with code examples in Swift, JavaScript, Kotlin, and
 
 You have the option to retrieve all leaderboards associated to a program by using the code samples below. This function will return an array of leaderboards.
 
-<br />
-
 <details>
   <summary>Get Leaderboards for a Program</summary>
 
@@ -103,8 +101,6 @@ You have the option to retrieve all leaderboards associated to a program by usin
 
 If you know a leaderboard id, you are able to get its details by using the code samples below. This can be useful if you would like to know the name of the leaderboard or the type of reward a user can earn.
 
-<br />
-
 <details>
   <summary>Get Leaderboard Details</summary>
 
@@ -145,13 +141,9 @@ If you know a leaderboard id, you are able to get its details by using the code 
 
 <br />
 
-<br />
-
 ### Getting leaderboard entries
 
 A user that competes is considered a leaderboard entry. Use the code samples below to retrieve leaderboard entries for a specific leaderboard. Due to the nature of leaderboard entries growing to a very high number, this call is paginated with each page returning 20 leaderboard entries.
-
-<br />
 
 <details>
   <summary>Get Leaderboard Entries</summary>
@@ -220,13 +212,9 @@ A user that competes is considered a leaderboard entry. Use the code samples bel
 
 <br />
 
-<br />
-
 ## Getting leaderboard entry for a given profile
 
 Details about a leaderboard entry can be retrieved by providing a profile id and a leaderboard id. This can be useful if there is a leaderboard entry you are interested in keeping track of.
-
-<br />
 
 <details>
   <summary>Get a Profile’s Entry</summary>
@@ -275,8 +263,6 @@ Details about a leaderboard entry can be retrieved by providing a profile id and
 
 Retrieving details about the current user's profile can be done using the code samples below. This can be used to look up the current user's ranking in a specific leaderboard.
 
-<br />
-
 <details>
   <summary>Get Current User’s Entry</summary>
 
@@ -321,8 +307,6 @@ Retrieving details about the current user's profile can be done using the code s
 
 <br />
 
-<br />
-
 ## Subscribe to the Current User's Leaderboard Position
 
 You can subscribe to the current user's Leaderboard position to receive updates when their position changes.
@@ -334,8 +318,6 @@ You can subscribe to the current user's Leaderboard position to receive updates 
 > Web: 2.0.0
 
 #### Get LeaderboardClients from Content Session
-
-<br />
 
 <details>
   <summary>Get LeaderboardClients from Content Session</summary>
