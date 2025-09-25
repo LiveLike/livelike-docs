@@ -28,7 +28,7 @@ Users can collect and build up their items over time.
 ## Reward Actions
 
 A Reward Action is something a user does that can earn them rewards.
-Built-in actions include:
+Built-in actions for interacting with [widgets](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/widgets#/):
 
 * Voting in a poll
 * Answering a quiz correctly
@@ -41,7 +41,7 @@ You can also define custom actions for activities outside LiveLike, such as:
 * Completing a profile
 * Watching a video
 
-Once you recognize a user has completed the action, you can trigger it and deliver the rewards.
+Once you recognize a user has completed the action, you can [invoke an action](https://docs.livelike.com/reference/invoking-custom-actions) to trigger it and grant rewards from Reward Tables and Quests.
 
 ## Reward Tables
 
