@@ -199,6 +199,8 @@ The placement of the percentage and option text animation are examples of design
 
 <br />
 
+# Learn more about:
+
 <Cards columns={4}>
   <Card title="Building Custom Widget UI" href="https://docs.livelike.com/docs/custom-widget-ui#/" icon="fa-home" target="_blank">
     Build your own interface, access widget data, and connect it for a tailored experience.
