@@ -125,32 +125,8 @@ Moderation features include automatic filtering of inappropriate content and too
   <Card title="Chat Messages Throttling" href="https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-messages-throttling#/" icon="fa-home" target="_blank">
     Throttling limits how often users can send messages to prevent spam and maintain chat flow.
   </Card>
-
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
-  </Card>
-
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
-  </Card>
-
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
-  </Card>
 </Cards>
 
-* [Threads in Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/threads-in-chat#/) : Replying to messages in chat using threads
-* [Private Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/private-chat#/) : Let users create and join their own chats
-* [Counting Unread Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/counting-unread-messages#/) : Helps track how many unseen messages a user has across multiple chat rooms.
-* [Chat Mentions](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-mentions#/) : Allow users to tag specific profiles in messages
-* [Customizing Chat Input](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/customizing-chat-input#/) : Customized to control who can send messages or guide users with prompts like login/signup CTAs.
-* [Chat Message Links](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/chat-message-links#/) : Controlling whether or not links are clickable in chat messages
-* [Sending Custom Chat Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/sending-custom-chat-messages#/) : Enable users to send messages that contain custom data
-* [Pinning Chat Messages](https://docs.livelike.com/v1_doc_rewire_vk/docs/pinning-chat-messages-2#/) : Producers or chatroom creators can pin, unpin, and track important messages
-* [Quote Message](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/quote-message#/) : Allow the user to quote on a particular message with the user message
-* [Token Gating Chat](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/token-gating-chat#/) : Token gating restricts chat access to users meeting specific criteria, like owning NFTs.
-* [Toggle Filtered Messages](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/toggle-filtered-messages#/) : Filtered Messages are the messages having banned words in them
-* [Message Metadata](https://docs.livelike.com/v1_doc_rewire_vk/update/docs/message-metadata#/) : Add custom metadata to chat messages for tailored behavior or display.
-* Chat Messages Throttling : Throttling limits how often users can send messages to prevent spam and maintain chat flow.
+* <br />
 
 <br />
