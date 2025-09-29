@@ -1,37 +1,34 @@
 ---
-title: Guess What Events (COPY)
+title: Guess The Word Events
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-Below is a list of analytics events triggered in Guess What, along with their details.  
+Below is a list of analytics events triggered in Guess The Word, along with their details.
 
-**Note:** For a practical implementation reference, explore our [demo](https://stackblitz.com/edit/vitejs-vite-orguuifq), where event listeners have been integrated and forwarded to Google Analytics (GA).  
+**Note:** For a practical implementation reference, explore our [demo](https://stackblitz.com/edit/livelike-gtw), where event listeners have been integrated and forwarded to Google Analytics (GA).
 
 ### **Event List**
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Name**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Trigger Condition**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Properties**
 
-
-
-
-        *(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )*
+        _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Description**
       </th>
     </tr>
@@ -39,135 +36,135 @@ Below is a list of analytics events triggered in Guess What, along with their de
 
   <tbody>
     <tr>
-      <td>
-        **session\_start**
+      <td style={{ textAlign: "left" }}>
+        **session_start**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user starts a web session.
       </td>
 
-      <td>
-        —
+      <td style={{ textAlign: "left" }}>
+        `word_length` (number)
+        `game_mode` (string)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Marks the beginning of a session.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **session\_stop**
+      <td style={{ textAlign: "left" }}>
+        **session_stop**
       </td>
 
-      <td>
-        When the user exits the web session. 
+      <td style={{ textAlign: "left" }}>
+        When the user exits the web session.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `duration` (in seconds)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks the total session length.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_play**
+      <td style={{ textAlign: "left" }}>
+        **click_play**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When users starts the game by clicking on play button.
       </td>
 
-      <td>
-        —
+      <td style={{ textAlign: "left" }}>
+        `word_length` (number)
+        `game_mode` (string)
+        `top_win_streak` (number)
+        `play_streak` (number)
+        `games_played` (number)
+        `games_won` (number)
+        `best_try` (number)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when started playing.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **game\_completed**
+      <td style={{ textAlign: "left" }}>
+        **game_completed**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When game is over and result screen is displayed.
       </td>
 
-      <td>
-        `give_up` (boolean)\
-        `is_winner` (boolean)\
-        `number_of_questions` (number)\
-        `tags` (string)\
-        `accuracy` (number)\
-        `is_journey_final_step` (boolean)\
-        `hints_used` (boolean)
+      <td style={{ textAlign: "left" }}>
+        `word_length` (number)
+        `game_mode` (string)
+        `top_win_streak` (number)
+        `play_streak` (number)
+        `games_played` (number)
+        `games_won` (number)
+        `best_try` (number)
+        `guess_result` (string)
+        `attempt_number` (number)
+        `is_journey_final_step` (boolean)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Captures when the game is over.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_share**
+      <td style={{ textAlign: "left" }}>
+        **click_share**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When user clicks on share button after game over (if enabled)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when user shares the stats.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_play\_again**
+      <td style={{ textAlign: "left" }}>
+        **click_stats**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When user clicks on play again button after game over.
       </td>
 
-      <td>
-        —
+      <td style={{ textAlign: "left" }}>
+        `word_length` (number)
+        `game_mode` (string)
+        `top_win_streak` (number)
+        `play_streak` (number)
+        `games_played` (number)
+        `games_won` (number)
+        `best_try` (number)
       </td>
 
-      <td>
-        Tracks when attempts play again.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **click\_play\_more**
-      </td>
-
-      <td>
-        When user clicks on play more button after game over.
-      </td>
-
-      <td>
-        —
-      </td>
-
-      <td>
-        Tracks when user explores play more.
+      <td style={{ textAlign: "left" }}>
+        Tracks when user opens stats.
       </td>
     </tr>
   </tbody>
 </Table>
+
+<br />
