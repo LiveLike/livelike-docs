@@ -1,5 +1,5 @@
 ---
-title: Developing Custom Widget UI
+title: Interacting with Widgets
 excerpt: Build your own Widget UI using our REST and Pubnub APIs
 deprecated: false
 hidden: false
