@@ -1,5 +1,5 @@
 ---
-title: Leaderboards
+title: Leaderboards (Flutter)
 excerpt: Leaderboard API's for handling leaderboard data
 deprecated: false
 hidden: false
