@@ -1,7 +1,7 @@
 ---
 title: '[Deprecated] Widget Timeline View Controller'
 excerpt: ''
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   title: '[Deprecated] Widget Timeline View Controller |  iOS SDK | LiveLike'
