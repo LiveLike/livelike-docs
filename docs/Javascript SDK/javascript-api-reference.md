@@ -1,8 +1,10 @@
 ---
-title: API reference
+title: Javascript API Reference
 excerpt: ''
 deprecated: false
 hidden: false
+link:
+  url: https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=init
 metadata:
   title: ''
   description: ''
