@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: React Native
 excerpt: ''
 deprecated: false
 hidden: false
