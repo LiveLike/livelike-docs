@@ -1,5 +1,5 @@
 ---
-title: Chat View (Flutter)
+title: Chat View
 excerpt: Showing livelike chatview in your flutter app
 deprecated: false
 hidden: false
