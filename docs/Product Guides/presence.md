@@ -1,5 +1,5 @@
 ---
-title: User Presence
+title: Presence
 excerpt: ''
 deprecated: false
 hidden: false
