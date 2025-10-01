@@ -1,5 +1,5 @@
 ---
-title: Comments custom UI
+title: Customize Comments Web UI
 excerpt: ''
 deprecated: false
 hidden: true
