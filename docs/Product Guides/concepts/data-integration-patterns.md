@@ -1,5 +1,5 @@
 ---
-title: Data Integration Patterns
+title: IDs and Attributes
 excerpt: ''
 deprecated: false
 hidden: false
