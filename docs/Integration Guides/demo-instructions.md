@@ -2,7 +2,7 @@
 title: Demo Instructions
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: Demo Instructions | LiveLike Developer Hub | Engagement SDK
   description: >-
