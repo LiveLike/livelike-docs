@@ -13,9 +13,17 @@ metadata:
 next:
   description: ''
 ---
-A sponsor is an object that is created on the Application level in the [Producer Site](https://cf-blast.livelikecdn.com/producer). Sponsor maintains a many to many relationship with Programs and Chatrooms which can be managed in the Sponsors section of your application in the [Producer Site](https://cf-blast.livelikecdn.com/producer)
+Programs, chat rooms, quests, and other resources inside LiveLike can have sponsor information attached to them.
 
-## Creating a Sponsor
+## Sponsor object
+
+Each sponsor has a unique identifier that will be the same everywhere the sponsor is used.
+
+* **Name** is the name of the sponsor, helpful for labeling and organization.
+* **Image** should be some kind of creative asset, like a logo or a banner.
+* **Brand color** helps theme features using the sponsor's brand color.
+
+## Creating a sponsor
 
 1. Head to your Application on the [Producer Site](https://cf-blast.livelikecdn.com/producer/)
 2. Select "Sponsors" in the Sidebar
@@ -23,11 +31,11 @@ A sponsor is an object that is created on the Application level in the [Producer
 4. Enter Sponsor Name, pick a logo image to upload and select the brand color
 5. Select "Create" to finish
 
-<Image width="smart" src="https://files.readme.io/51db0db-Screenshot_2022-01-20_at_12.25.28_PM.png" />
+<Image align="center" border={false} width="smart" src="https://files.readme.io/51db0db-Screenshot_2022-01-20_at_12.25.28_PM.png" />
 
-At this point you have a sponsor that is ready to be linked to a program.
+At this point you have a sponsor that is ready to be linked to programs, chat rooms, 
 
-## Linking Sponsor(s) with a Program
+## Linking sponsors with programs
 
 1. Head to your Application on the [Producer Site](https://cf-blast.livelikecdn.com/producer/)
 2. Select "Programs" in the Sidebar
@@ -38,9 +46,9 @@ At this point you have a sponsor that is ready to be linked to a program.
 7. Select/Unselect the Sponsor you would like to link (use ctrl select for multiple sponsor selections)
 8. Press "Update" to update Sponsor link changes that have been made to the program
 
-Now you have Sponsors that are linked to a program. 
+Now you have Sponsors that are linked to a program.
 
-## Retrieving Application Sponsor(s) in the SDK
+## List all sponsors
 
 Get list of all sponsors created in a given application
 
@@ -68,7 +76,7 @@ sdk.sponsor().fetchForApplication(LiveLikePagination.FIRST, object : LiveLikeCal
 })
 ```
 
-## Retrieving Program Sponsor(s) in the SDK
+## Get sponsors for program
 
 Now that you have linked sponsor(s) to a program, you will now be able to retrieve sponsor information through our SDK interfaces.
 
@@ -107,7 +115,7 @@ sdk.sponsor().fetchByProgramId(
 final sponsorsList =await sdk.sponsor.fetchByProgramId(<program-id>)
 ```
 
-## Retrieving Chatroom Sponsor(s) in the SDK
+## Get sponsors for chat room
 
 ```javascript
 LiveLike.getChatRoomSponsors({ roomId: "room-id" })
