@@ -148,3 +148,7 @@ sdk.sponsor().fetchByChatRoomId(
 
     })
 ```
+
+## Displaying sponsors
+
+Sponsor details like name, image URL, and brand color are included in API responses and SDK objects. The integration should customize the UI to display the sponsor as needed.
