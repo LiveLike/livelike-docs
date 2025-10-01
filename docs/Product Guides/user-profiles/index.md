@@ -68,13 +68,15 @@ sdk.setUserDisplayName("<new display name>") { [weak self] result in
 >
 > Avatars are handled as part of the chat system. Read more in the [Chat Avatars](doc:chat-avatar) section.
 
-## Local Profiles
+## Integration strategies
+
+### Local profiles
 
 Anonymous experiences can be created by persisting credentials in volatile storage, like a session store. These profiles will persist for the lifetime of the store. For example on mobile devices, you can store the profile in local storage. The profile can be reused, as long as the user doesn't clear local storage or reinstall the application.
 
 <Image alt={671} border={false} caption="Workflow for storing profile access tokens locally" title="Local Profiles (1).png" src="https://files.readme.io/446c86d-Local_Profiles_1.png" />
 
-## Persistent Profiles
+### Persistent profiles
 
 Profiles can also be tied to your own user accounts. The user <Glossary>Access Token</Glossary> can be stored as a field in your user database. That allows you to re-use the same access token when a user reinstalls an app or signs in on another device. To understand how to tie profiles to your user accounts, see [Integrating with Logins](doc:using-profiles-with-logins).
 
