@@ -278,9 +278,9 @@ sdk.leaderboard().getLeaderBoardEntryForCurrentUserProfile("<leaderboardID>") { 
 final LeaderBoardEntry result = await sdk.getLeaderBoardEntryForCurrentUserProfile(<leaderboard-id>);
 ```
 
-## Subscribe to the Current User's Leaderboard Position
+## Subscribe to the current user's leaderboard position
 
-You can subscribe to the current user's Leaderboard position to receive updates when their position changes.
+You can subscribe to the current user's leaderboard position to receive updates when their position changes.
 
 > 📘 Minimum SDK Version
 >
