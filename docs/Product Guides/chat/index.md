@@ -16,7 +16,7 @@ next:
       slug: cms-chat-moderation
       title: Chat Moderation Tools
 ---
-![](https://files.readme.io/412f672-banner_chats.jpg "banner_chats.jpg")
+<Image border={false} src="https://files.readme.io/412f672-banner_chats.jpg" title="banner_chats.jpg" />
 
 The LiveLike SDK provides you with Chat UI and APIs to create your preferred chat experience, ranging from one-on-one direct messaging to large public chat rooms. The supported features of the chat system include:
 
@@ -49,17 +49,13 @@ The basic attributes that all Chat Rooms have in common are:
 
 Chat input can be plain text, standard emojis, images & gifs from 3rd Party sources, and custom sticker packs uploaded on our Producer Suite. Beyond chat input, users can also react to messages from others with custom reactions.
 
-![](https://files.readme.io/97b9423-chat_input.gif "chat input.gif")
+<Image border={false} src="https://files.readme.io/97b9423-chat_input.gif" title="chat input.gif" />
 
 ### Custom Theming
 
 The chat UI elements, including input window, chat body and chat bubbles can be customized per your design guidelines.
 
-![](https://files.readme.io/5a2c21d-custom_chat.gif "custom chat.gif")
-
-### Nicknames
-
-By default, users are assigned a randomized nickname. You can use our APIs to assign names to users based on your user profile data.
+<Image border={false} src="https://files.readme.io/5a2c21d-custom_chat.gif" title="custom chat.gif" />
 
 ## Sample Use Cases
 
@@ -77,7 +73,7 @@ These rooms can be used in a variety of ways including, but not limited to:
 
 Reactions are images that can be used to react to chat messages. They are grouped into Reaction Packs and can be uploaded to your application ([see instructions](https://docs.livelike.com/docs/chat-sticker-guidelines#section-reactions)).
 
-![](https://files.readme.io/1859c1e-reaction.gif "reaction.gif")
+<Image border={false} src="https://files.readme.io/1859c1e-reaction.gif" title="reaction.gif" />
 
 ## Membership
 
