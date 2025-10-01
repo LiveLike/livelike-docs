@@ -202,19 +202,19 @@ The placement of the percentage and option text animation are examples of design
 # Learn more about:
 
 <Cards columns={4}>
-  <Card title="Building Custom Widget UI" href="https://docs.livelike.com/docs/custom-widget-ui#/" icon="fa-home" target="_blank">
+  <Card title="Building Custom Widget UI" href="https://docs.livelike.com/docs/custom-widget-ui#/" icon="fa-home">
     Build your own interface, access widget data, and connect it for a tailored experience.
   </Card>
 
-  <Card title="Creating and Scheduling Widgets" href="https://docs.livelike.com/docs/creating-and-scheduling-widgets#/" icon="fa-home" target="_blank">
+  <Card title="Creating and Scheduling Widgets" href="https://docs.livelike.com/docs/creating-and-scheduling-widgets#/" icon="fa-home">
     Create with content, publish or schedule, and make it available for user interaction.
   </Card>
 
-  <Card title="Attaching Custom Data to Widgets" href="https://docs.livelike.com/docs/attaching-custom-data-to-widgets#/" icon="fa-home" target="_blank">
+  <Card title="Attaching Custom Data to Widgets" href="https://docs.livelike.com/docs/attaching-custom-data-to-widgets#/" icon="fa-home">
     Custom Data: Attach arbitrary string data to widgets for use with Custom Widget UI.
   </Card>
 
-  <Card title="VOD Widgets" href="https://docs.livelike.com/docs/vod-widgets#/" icon="fa-home" target="_blank">
+  <Card title="VOD Widgets" href="https://docs.livelike.com/docs/vod-widgets#/" icon="fa-home">
     VOD widgets extend any of the widget types to sync with on-demand video playback.
   </Card>
 </Cards>
