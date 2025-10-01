@@ -1,5 +1,5 @@
 ---
-title: Native Mobile WebViews
+title: Web SDK in Webviews
 excerpt: Using the Web SDK inside of native mobile WebViews
 deprecated: false
 hidden: false
