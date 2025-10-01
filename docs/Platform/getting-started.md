@@ -34,9 +34,9 @@ We support several platforms through our SDK, which include end-to-end UI to get
 * [Web SDK](doc:getting-started-with-the-web-sdk)
 * [REST APIs](doc:rest-api-getting-started)
 
-## Management and ops
+## Producers
 
-[Get to know](doc:ps-getting-started) ins and outs of the LiveLike producer suite.
+Content editors, community managers, and program designers should check out the [Getting Started](doc:ps-getting-started) section for the CMS.
 
 ## Support
 
