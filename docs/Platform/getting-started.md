@@ -36,7 +36,7 @@ We support several platforms through our SDK, which include end-to-end UI to get
 
 ## Producers
 
-Content editors, community managers, and program designers should check out the [Getting Started](doc:ps-getting-started) section for the CMS.
+Content editors, community managers, and program designers should check out the [Getting Started](doc:ps-getting-started) guide for the CMS.
 
 ## Support
 
