@@ -1,5 +1,5 @@
 ---
-title: Package on NPM
+title: NPM Package
 excerpt: ''
 deprecated: false
 hidden: false
