@@ -14,12 +14,12 @@ The Kotlin SDK provides you with Chat APIs to create your preferred chat experie
 
 ## Chat Room
 
-A Chat Room is an entity that contains Users and Chat Messages. 
+A Chat Room is an entity that contains Users and Chat Messages.
 
-For more information see [https://docs.livelike.com/docs/private-group-chat](https://docs.livelike.com/docs/private-group-chat)
+For more information see [Chat Rooms](doc:private-group-chat)
 
 ## Chat Session
 
 A Chat Session represents a connection to a Chat Room. You can interact with a Chat Room via a Chat Session.
 
-For more information see [https://docs.livelike.com/docs/chat-session-1](https://docs.livelike.com/docs/chat-session-1)
+For more information see [Chat Session](doc:android-chat-session)
