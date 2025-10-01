@@ -1,5 +1,5 @@
 ---
-title: Livelike Analytics Dictionary
+title: Analytics Dictionary
 excerpt: 'Created by: Livelike Analytics Team'
 deprecated: false
 hidden: false
