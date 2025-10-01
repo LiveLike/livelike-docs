@@ -1,6 +1,7 @@
 - getting-started-with-the-web-sdk
 - web-widgets
 - web-chat
+- web-comments
 - web-embeds
 - web-chat-localization
 - web-video-player-integration
@@ -8,6 +9,5 @@
 - web-tutorials
 - package-on-npm
 - common-web-solutions
-- web-comments
 - web-request
 - api-reference
