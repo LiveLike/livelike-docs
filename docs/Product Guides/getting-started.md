@@ -19,13 +19,13 @@ next:
 ---
 Welcome to the LiveLike Engagement Suite documentation hub where you can find all the information you need to get started with adding interactivity to your apps.
 
-The LiveLike SDK enhances the fan experience in mobile apps and on the web. Interactive polls, quizzes, mini-games, and more can enhance your content. Users playing along can chat with everyone else, or just their friends, while they earn points and collect rewards for participating.
+The LiveLike SDK enhances the digital fan experience. pPolls, quizzes, mini-games, and more make your content more interactive. Users can chat and comment along with everyone else, or just their friends, while they earn points and collect rewards for participating.
 
-**Product Documentation**
+## Platform
 
-To get started, you can continue to the  [Core Concepts](doc:concepts)  or pick your platform below and start building!
+To learn more about the platform and its capabilities, you can continue to the  [Core Concepts](doc:concepts)  or pick your platform below and start building!
 
-**Technical Documentation**
+## Developers
 
 We support several platforms through our SDK, which include end-to-end UI to get you started. You can also leverage our REST API to create your own user experiences for platforms we do not currently offer or to automate other aspects of our product experience.
 
@@ -34,10 +34,10 @@ We support several platforms through our SDK, which include end-to-end UI to get
 * [Web SDK](doc:getting-started-with-the-web-sdk)
 * [REST APIs](doc:rest-api-getting-started)
 
-**Producer Suite**
+## Management and ops
 
 [Get to know](doc:ps-getting-started) ins and outs of the LiveLike producer suite.
 
-**Support**
+## Support
 
 If you have any questions, please do not hesitate to reach out to [support@livelike.com](mailto:support@livelike.com). If you have already begun an integration with us, please request us to add you to our Slack channel for speedier communication.
