@@ -88,13 +88,13 @@ sdk.leaderboard().getLeaderBoardsForProgram(
                     }
                 }
 ```
-```text Flutter
+```text Dart
 final List<LeaderBoard> list = await sdk.getLeaderBoards(<program-id>);
 ```
 
 ## Getting leaderboard details
 
-If you know a leaderboard id, you are able to get its details by using the code samples below. This can be useful if you would like to know the name of the leaderboard or the type of reward a user can earn. 
+If you know a leaderboard id, you are able to get its details by using the code samples below. This can be useful if you would like to know the name of the leaderboard or the type of reward a user can earn.
 
 ```swift
 class HelloWorld {
@@ -126,13 +126,13 @@ sdk.getLeaderBoardDetails("<leaderboard id>",
 
                         })
 ```
-```text Flutter
+```text Dart
 final LeaderBoard detail=await sdk.getLeaderBoardDetails(<leaderBoardId>);
 ```
 
 ## Getting leaderboard entries
 
-A user that competes is considered a leaderboard entry. Use the code samples below to retrieve leaderboard entries for a specific leaderboard. Due to the nature of leaderboard entries growing to a very high number, this call is paginated with each page returning 20 leaderboard entries. 
+A user that competes is considered a leaderboard entry. Use the code samples below to retrieve leaderboard entries for a specific leaderboard. Due to the nature of leaderboard entries growing to a very high number, this call is paginated with each page returning 20 leaderboard entries.
 
 ```swift
 class HelloWorld {
@@ -190,14 +190,14 @@ sdk.leaderboard().getEntriesForLeaderBoard(
                 }
             }
 ```
-```text Flutter
+```text Dart
 final List<LeaderBoardEntry> result = await sdk.getEntriesForLeaderBoard(
         <leaderboard-id>, <LiveLikePagination>);
 ```
 
 ## Getting leaderboard entry for a given profile
 
-Details about a leaderboard entry can be retrieved by providing a profile id and a leaderboard id. This can be useful if there is a leaderboard entry you are interested in keeping track of. 
+Details about a leaderboard entry can be retrieved by providing a profile id and a leaderboard id. This can be useful if there is a leaderboard entry you are interested in keeping track of.
 
 ```swift
 class HelloWorld {
@@ -231,7 +231,7 @@ sdk.leaderboard().getLeaderBoardEntryForProfile(
     }  
 }
 ```
-```text Flutter
+```text Dart
 final LeaderBoardEntry result = await sdk.getLeaderBoardEntryForProfile(
         <leaderboard-id>, <profile-id>);
 ```
@@ -274,7 +274,7 @@ sdk.leaderboard().getLeaderBoardEntryForCurrentUserProfile("<leaderboardID>") { 
                         }
                     }
 ```
-```text Flutter
+```text Dart
 final LeaderBoardEntry result = await sdk.getLeaderBoardEntryForCurrentUserProfile(<leaderboard-id>);
 ```
 
@@ -284,8 +284,8 @@ You can subscribe to the current user's Leaderboard position to receive updates 
 
 > 📘 Minimum SDK Version
 >
-> iOS: 2.9\
-> Android:\
+> iOS: 2.9
+> Android:
 > Web: 2.0.0
 
 #### Get LeaderboardClients from Content Session
@@ -363,7 +363,7 @@ extension MyViewController: LeaderboardDelegate {
 
 ## Getting the total count of leaderboard entries
 
-Integrators can fetch the total count of leaderboard entries to contextualize the user’s own rank. 
+Integrators can fetch the total count of leaderboard entries to contextualize the user’s own rank.
 
 ```swift
 let sdk: EngagementSDK
@@ -505,7 +505,7 @@ var sdk: EngagementSDK
 
 ## Get Leaderboard By Custom ID
 
-Integrators can fetch the leaderboard via Custom ID 
+Integrators can fetch the leaderboard via Custom ID
 
 ```kotlin
 // Available for SDK version 2.98.9 onwards
