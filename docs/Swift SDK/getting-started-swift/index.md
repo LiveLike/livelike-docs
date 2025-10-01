@@ -1,5 +1,5 @@
 ---
-title: Getting Started with LiveLikeSwift
+title: Swift SDK
 excerpt: ''
 deprecated: false
 hidden: false
