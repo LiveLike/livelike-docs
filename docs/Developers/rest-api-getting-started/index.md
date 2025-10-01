@@ -1,5 +1,5 @@
 ---
-title: REST
+title: REST API
 excerpt: ''
 deprecated: false
 hidden: false
