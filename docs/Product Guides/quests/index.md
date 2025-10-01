@@ -1,6 +1,6 @@
 ---
 title: Quests
-excerpt: ''
+excerpt: Complete multi-step challenges to earn one-time prizes
 deprecated: false
 hidden: false
 metadata:
