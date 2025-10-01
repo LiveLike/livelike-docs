@@ -18,7 +18,7 @@ LiveLike provides a few ways to integrate your own data to make lookups and filt
 
 ## Custom IDs
 
-Custom IDs are best used when there is a one-to-one mapping between entities in your system and LiveLike, such as  users to profiles, or content to programs. Custom IDs are unique within a resource and application, so two profiles in the same app can't have the same custom ID.
+Custom IDs are best used when there is a one-to-one mapping between entities in your system and LiveLike, such as  users to profiles, or content to programs. Custom IDs are unique within a resource and application, so no two resources of the same type in the same app can have the same custom ID.
 
 Some use cases for custom IDs are:
 
