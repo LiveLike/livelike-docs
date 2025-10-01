@@ -19,7 +19,7 @@ next:
 ---
 Welcome to the LiveLike Engagement Suite documentation hub where you can find all the information you need to get started with adding interactivity to your apps.
 
-The LiveLike SDK enhances the digital fan experience. pPolls, quizzes, mini-games, and more make your content more interactive. Users can chat and comment along with everyone else, or just their friends, while they earn points and collect rewards for participating.
+The LiveLike SDK enhances the digital fan experience. Polls, quizzes, mini-games, and more make your content more interactive. Users can chat and comment along with everyone else, or just their friends, while they earn points and collect rewards for participating.
 
 ## Platform
 
