@@ -1,5 +1,5 @@
 ---
-title: Livelike Analytics Dashboard
+title: Analytics Dashboard
 excerpt: ''
 deprecated: false
 hidden: false
