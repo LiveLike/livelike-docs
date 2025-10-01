@@ -1,5 +1,5 @@
 ---
-title: Widget Configuration
+title: Widgets Web UI
 excerpt: ''
 deprecated: false
 hidden: false
