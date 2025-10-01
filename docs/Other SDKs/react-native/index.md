@@ -1,5 +1,5 @@
 ---
-title: Reactive Native
+title: React Native
 excerpt: ''
 deprecated: false
 hidden: false
