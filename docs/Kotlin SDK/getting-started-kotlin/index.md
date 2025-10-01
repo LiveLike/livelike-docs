@@ -1,5 +1,5 @@
 ---
-title: Getting started with LiveLikeKotlin
+title: Kotlin SDK
 excerpt: ''
 deprecated: false
 hidden: false
