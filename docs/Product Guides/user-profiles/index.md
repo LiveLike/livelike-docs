@@ -27,7 +27,7 @@ next:
 ---
 Profiles are used to collect activity in chat, widgets, and other features inside a single identity. Profiles can be provisioned arbitrarily and can be used to extend your existing user account records. These profiles can either be local, allowing you to create anonymous experiences, or persisted in your user databases, allowing you to create profiles that persist across a user's devices.
 
-When a profile is first created it is given a unique ID and a credential called an *<Glossary>Access Token</Glossary>*. It is also automatically given a nickname if one is not provided. Profiles will persist for as long as its credentials are stored and passed back to the SDKs & APIs. Nicknames are used for personalization, and show up next to chat messages and in leaderboards.
+When a profile is first created it is given a unique ID and a credential called an _<Glossary>Access Token</Glossary>_. It is also automatically given a nickname if one is not provided. Profiles will persist for as long as its credentials are stored and passed back to the SDKs & APIs. Nicknames are used for personalization, and show up next to chat messages and in leaderboards.
 
 > 🚧 Nicknames are not unique!
 >
@@ -72,13 +72,42 @@ sdk.setUserDisplayName("<new display name>") { [weak self] result in
 
 Anonymous experiences can be created by persisting credentials in volatile storage, like a session store. These profiles will persist for the lifetime of the store. For example on mobile devices, you can store the profile in local storage. The profile can be reused, as long as the user doesn't clear local storage or reinstall the application.
 
-<Image title="Local Profiles (1).png" alt={671} src="https://files.readme.io/446c86d-Local_Profiles_1.png">
-  Workflow for storing profile access tokens locally
-</Image>
+<Image alt={671} border={false} caption="Workflow for storing profile access tokens locally" title="Local Profiles (1).png" src="https://files.readme.io/446c86d-Local_Profiles_1.png" />
 
 ## Persistent Profiles
 
 Profiles can also be tied to your own user accounts. The user <Glossary>Access Token</Glossary> can be stored as a field in your user database. That allows you to re-use the same access token when a user reinstalls an app or signs in on another device. To understand how to tie profiles to your user accounts, see [Integrating with Logins](doc:using-profiles-with-logins).
+
+If you have an access token, you can initialize the SDK with it to reuse the same profile across sessions.
+
+```swift
+// You cannot set the access token outside of this initializer.
+// If you need to change or remove an access token you should reinitialize the EngagementSDK.
+
+class SampleClass {
+    private func setupEngagementSDK(clientID: "<client-id>") {
+        var sdkConfig = EngagementSDKConfig(clientID: clientID)
+        sdkConfig.accessTokenStorage = self
+        let sdk = EngagementSDK(config: sdkConfig)
+    }
+}
+
+extension SampleClass: AccessTokenStorage {
+    func fetchAccessToken() -> String? {
+         return "<access token>"
+    }
+    
+    func storeAccessToken(accessToken: String) {
+        // store access token
+    }
+}
+```
+```javascript
+const profile = await LiveLike.init({
+  clientId,
+  accessToken
+});
+```
 
 > ❗️ Track your profiles!
 >
