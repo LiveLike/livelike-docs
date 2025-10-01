@@ -10,30 +10,52 @@ metadata:
     inside a single identity. Learn how to update local and persistent profiles.
   robots: index
 next:
-  description: ''
   pages:
-    - type: basic
-      slug: using-profiles-with-logins
+    - slug: using-profiles-with-logins
       title: Integrating with Logins
-    - type: link
-      title: User Profile Integration on iOS
-      url: https://docs.livelike.com/docs/ios-user-profiles
-    - type: link
-      title: User Profile Integration on Web
-      url: https://docs.livelike.com/docs/web-user-profile-integration
-    - type: basic
-      slug: chat-avatar
+      type: basic
+    - slug: chat-avatar
       title: Chat Avatars
+      type: basic
 ---
 Profiles are used to collect activity in chat, widgets, and other features inside a single identity. Profiles can be provisioned arbitrarily and can be used to extend your existing user account records. These profiles can either be local, allowing you to create anonymous experiences, or persisted in your user databases, allowing you to create profiles that persist across a user's devices.
 
-When a profile is first created it is given a unique ID and a credential called an _<Glossary>Access Token</Glossary>_. It is also automatically given a nickname if one is not provided. Profiles will persist for as long as its credentials are stored and passed back to the SDKs & APIs. Nicknames are used for personalization, and show up next to chat messages and in leaderboards.
+## Identifiers
 
-> 🚧 Nicknames are not unique!
->
-> The profile ID and access token are the identifying fields of a profile. Nicknames are not guaranteed to be unique and can often be freely updated by users.
+Each profile has an ID an an optional *custom ID*. The ID is assigned by LiveLike, but you can assign your own custom IDs. If you want to reuse user IDs from your system, store them in [Custom Profile IDs](doc:custom-profile-ids).
 
-## Updating a Profile
+## Authenticating
+
+Interactions with the LiveLike service are authenticated with an _<Glossary>Access Token</Glossary>_. You can generate your own access tokens from your backend with [Client-generated Access Tokens](doc:client-generated-access-tokens), or you can store the access tokens that are generated when creating a new profile.
+
+## Personalizing and customizing
+
+ Nicknames are used for personalization, and show up next to chat messages and in leaderboards. If you have a username or display name in your system, you should use it as the profile's nickname.
+
+<Callout icon="🚧" theme="warn">
+  Nicknames are not guaranteed to be unique and can often be freely updated by users.
+</Callout>
+
+## Creating a profile
+
+A new profile will be created when initializing the SDKs without an access token. 
+
+```javascript
+const newProfile = await LiveLike.init({ accessToken })
+```
+
+<br />
+
+Profiles can also be explicitly created.
+
+```javascript
+const newProfile = await LiveLike.createUserProfile({ nickname: 'New Nickname' })
+// the access token is in profile.access_token
+```
+
+<br />
+
+## Updating a profile
 
 ```javascript
 const updatedProfile = await LiveLike.updateUserProfile({
