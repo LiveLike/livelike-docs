@@ -1,5 +1,5 @@
 ---
-title: Analytics Event Glossary
+title: SDK Analytics Event Glossary
 excerpt: ''
 deprecated: false
 hidden: false
