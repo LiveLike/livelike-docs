@@ -1,5 +1,5 @@
 ---
-title: Request
+title: Web API Requests
 excerpt: ''
 deprecated: false
 hidden: false
@@ -12,7 +12,7 @@ next:
 ---
 In case you feel the need to use our backend REST API due to some extreme edge cases that our SDK API doesn't support, you can use `request` API that is also internally used by our SDK to make any backend request.
 
-## Request
+## Request interface
 
 `request` API lets you easily make a backend request without needing to manually create needed endpoints with set of query parameters, add authorisation token in a given format, etc.
 
@@ -37,7 +37,7 @@ LiveLike.request({
 
 In case you need to pass your own authorisation token, you can use `createUserProfileAuth`or `createPersonalApiAuth` API that takes a token string as argument and returns authorisation value
 
-### createUserProfileAuth
+### Profile access token authorization
 
 ```typescript Web
 const accessToken = LiveLike.userProfile.access_token;
@@ -47,9 +47,9 @@ LiveLike.request({
 }).then(res => console.log(res))
 ```
 
-### createPersonalApiAuth
+### Personal API token authorization
 
-Be extra careful when defining and accessing personal API token, for eg: do not commit personal API token in code base and inject it using environment variables  
+Be extra careful when defining and accessing personal API token, for eg: do not commit personal API token in code base and inject it using environment variables
 
 ```typescript Web
 const personApiToken = ENV.PERSONAL_API_TOKEN;
