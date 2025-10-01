@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Javascript SDK
 excerpt: How to get started with the Javascript SDK
 deprecated: false
 hidden: false
