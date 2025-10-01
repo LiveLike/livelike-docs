@@ -21,7 +21,7 @@ next:
       slug: custom-profile-ids
       title: Custom Profile IDs
 ---
-..Profiles are used to accumulate points, virtual goods, and interaction history for users. Profiles are meant to enhance your existing user records if you already have them, but they can also be used independently. For a higher-level view of what profiles do and how they work, read more about them in the [profiles section of the product guide](doc:user-profiles).
+Profiles are used to accumulate points, virtual goods, and interaction history for users. Profiles are meant to enhance your existing user records if you already have them, but they can also be used independently. For a higher-level view of what profiles do and how they work, read more about them in the [profiles section of the product guide](doc:user-profiles).
 
 This guide assumes your project already has user logins, and want to extend them with things like points and leaderboards, or the ability to join chats. Connecting user accounts with LiveLike profiles enables a persistent experience where interaction histories, reward balances, and preferences carry over between sessions.
 
@@ -45,9 +45,7 @@ If you know which user to associate the profile with, you should store the acces
 * A logged-in user enters a section of the app that has chat or widgets for the first time. Their user account doesn't have a LiveLike access token already stored on it, so a new profile is created with the LiveLike SDK. You then store the access token in the logged-in user's account records.
 * A new user signs up in your app. Your backend calls the LiveLike API to create the profile, and stores the profile access token on the new user record.
 
-<Image title="Login Integration.png" alt={630} align="center" src="https://files.readme.io/cc74a91-Login_Integration.png">
-  An existing user logging in to an app with the LiveLike SDK integrated.
-</Image>
+<Image align="center" alt={630} border={false} caption="An existing user logging in to an app with the LiveLike SDK integrated." title="Login Integration.png" src="https://files.readme.io/cc74a91-Login_Integration.png" />
 
 Now going forward, the LiveLike SDK's should be initialized with that access token. The user associated with that profile will now continue to earn points, gain ranks on the leaderboard, and everything else that the LiveLike SDK allows. Storing the profile access token on the user record allows progress to be saved across installs, devices, and platforms.
 
@@ -59,7 +57,7 @@ A profile can be created before a user login is available, and then kept in sess
 
 ## Retrieving Current Profile Id
 
-Once your user is associated with a profile your application may need the profile Id to complete other tasks within the LiveLike systems. 
+Once your user is associated with a profile your application may need the profile Id to complete other tasks within the LiveLike systems.
 
 ```kotlin
 sdk.getCurrentUserDetails(object :
