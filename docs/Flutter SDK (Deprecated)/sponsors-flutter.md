@@ -1,5 +1,5 @@
 ---
-title: Sponsors (Flutter)
+title: Sponsors
 excerpt: ''
 deprecated: false
 hidden: false
