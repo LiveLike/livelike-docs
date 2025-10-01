@@ -455,6 +455,12 @@ LiveLike.getUserQuestRewards({
 }).then(paginatedResponse => console.log(paginatedResponse))
 ```
 
+## Completing a user quest
+
+When all of the tasks in a user quest are completed, the quest itself is considered completed.
+
+Completed user quests can have their rewards *claimed* by the user. Rewards for a quest can only be claimed once per user completing the quest.
+
 ## Claiming rewards for completed user quests
 
 Claims the rewards associated with a quest once the quest is completed.
