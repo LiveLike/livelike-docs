@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Reactive Native
 excerpt: ''
 deprecated: false
 hidden: false
