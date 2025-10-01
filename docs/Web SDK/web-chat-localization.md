@@ -1,5 +1,5 @@
 ---
-title: Localization (Web)
+title: Web Localization
 excerpt: ''
 deprecated: false
 hidden: false
