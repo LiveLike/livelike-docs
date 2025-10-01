@@ -39,7 +39,7 @@ From the CMS:
 
 The quest is now created and should be visible in the Quest list view.
 
-## Listing quests
+## Listing available quests
 
 You can fetch a list of Quests available in current application. This list can be filtered by Quest IDs if you want to fetch only a few particular quests.
 
@@ -99,6 +99,8 @@ quests.getQuests(
 
 ```
 
+<br />
+
 ## Starting a quest
 
 A UserQuest is an instance of a Quest that is attached to a user.  Upon creating a UserQuest, UserQuestTasks will automatically be created, which will then be used to track progress, status, etc.
@@ -138,6 +140,8 @@ quests.startUserQuest(
         }
     })
 ```
+
+Quests can have limited eligibility. For example, they might only be available during a specific time window, or restricted to certain [Profile Groups](doc:profile-groups). Starting a quest will fail if the profile doesn't meet the eligibility requirements.
 
 ## Listing user quests
 
