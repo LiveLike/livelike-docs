@@ -1,5 +1,5 @@
 ---
-title: Comment
+title: Comments
 excerpt: ''
 deprecated: false
 hidden: false
