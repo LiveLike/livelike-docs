@@ -18,13 +18,14 @@ The Comment Mentions feature allows your users to tag specific profiles inside t
 
 ## Mentions basics
 
-Client send a list of mention objects when creating a comment. Each object includes:
+Clients should send a list of mention objects when creating a comment. Each object includes:
 
 * The profile being mentioned, either `mentioned_profile_id` or `mentioned_profile_custom_id`
 * The `start_index` and `end_index` refer to the character positions of the mention placeholder in the message text. Indices must be within text bounds and non-overlapping.
 
-```curl
+```http
 POST /api/v1/comments/
+
 {
   "comment_board_id": "4ec4cdc9-8b80-4ef1-aff2-610125141035",
   "text": "hello @mention1_placeholder, How are you?",
