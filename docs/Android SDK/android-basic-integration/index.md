@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Android SDK
 excerpt: Get a basic integration up and running with the Android SDK
 deprecated: false
 hidden: false
