@@ -1,5 +1,5 @@
 ---
-title: Comments and Social Graph (COPY)
+title: Reactions and Social Graph
 deprecated: false
 hidden: true
 metadata:
@@ -10,7 +10,7 @@ next:
       title: Social Graph
       type: basic
 ---
-Use the built-in integration between [Comments](doc:cms-comments) and [Social Graph](doc:social-graph-service) to filter and count comments by authors that fans follow.
+Use the built-in integration between [Reactions](doc:reactions) and [Social Graph](doc:social-graph-service) to filter and count user reactions by others that fans follow.
 
 ## Common parameters
 
@@ -18,27 +18,26 @@ The `relationship_type` parameter species what kind of relationship to filter re
 
 The `relationship_from_profile_id` species the perspective that the filtering should be from. Its value should be the profile ID in the _from_ part of the relationship. For example, if Alice follows Bob, then the relationship is from Alice to Bob, and Alice would be the from part. If this parameter is not provided then it defaults to the authenticated user.
 
-## Filter comments by profile relationship
+## Filter reactions by profile relationship
 
-Use the `relationship_type` and `relationship_from_profile_id` parameters on the [List comments](ref:list-comments) endpoint to filter comments by authors matching the given relationship. For example, to find comments authored by users that example-profile-id follows:
+Use the `relationship_type` and `relationship_from_profile_id` parameters on the [List user reactions](ref:list-user-reactions) endpoint to filter reactions by authors matching the given relationship. For example, to find reactions from users that example-profile-id follows:
 
 ```http
-GET /api/v1/comments/?relationship_type=follow&relationship_from_profile_id=example-profile-id&comment_board_id=example-board-id
+GET /api/v1/user-reactions/?relationship_type=follow&relationship_from_profile_id=example-profile-id&reaction_space_id=example-space-id
 ```
 
 If the `relationship_from_profile_id` is omitted, it is assumed to be the authenticated profile:
 
 ```http
-GET /api/v1/comments/?relationship_type=follow&comment_board_id=example-board-id
-Authorization: Bearer {access-token}
+GET /api/v1/user-reactions/?relationship_type=follow&reaction_space_id=example-space-id
 ```
 
-The above will return comments authored by users that the authenticated user follows.
+The above will return reactions from users that the authenticated user follows.
 
-## Count comments by profile relationship
+## Count reactions by profile relationship
 
-Use the `relationship_type` and `relationship_from_profile_id` parameters on the [Get comment counts](ref:get-comment-counts) endpoint to count comments by authors that match the given relationship.
+Use the `relationship_type` and `relationship_from_profile_id` parameters on the [Get user reaction count](ref:get-user-reaction-count) endpoint to count reactions from users that match the given relationship.
 
 ```http
-GET /api/v1/comments/?relationship_type=follow&relationship_from_profile_id=example-profile-id&comment_board_id=example-board-id
+GET /api/v1/user-reactions-count/?relationship_type=follow&relationship_from_profile_id=example-profile-id&reaction_space_id=example-space-id
 ```
