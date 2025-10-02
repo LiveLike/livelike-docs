@@ -180,7 +180,7 @@ LiveLike.getBlockInfoList()
 .then(paginatedBlockInfo => console.log(paginatedBlockInfo))
 ```
 
-You can [Get Blocked Profile Ids](ref:get-blocked-profile-ids) for a list of blocked profile IDs that isn't paginated.
+You can also [Get Blocked Profile Ids](ref:get-blocked-profile-ids) for a list of blocked profile IDs that isn't paginated.
 
 ## Getting block profile info
 
