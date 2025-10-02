@@ -1,7 +1,7 @@
 ---
 title: Comments and Social Graph (COPY)
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 next:
