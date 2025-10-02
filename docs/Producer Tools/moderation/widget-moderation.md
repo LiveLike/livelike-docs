@@ -19,7 +19,7 @@ User-generated widgets are interactive components created directly by end users 
 
 This approach allows end users to have more control and flexibility in creating widgets that suit their specific needs, while integrators can offer tailored experiences leveraging our robust backend services.
 
-# UGC Widget moderation
+# Widget moderation
 
 Few users may create widgets, which are offensive in nature or don't follow the content guidelines.
 These widgets can be reported by other users and then can be moderated by moderators in the CMS.
