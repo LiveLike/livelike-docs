@@ -16,7 +16,7 @@ Sometimes users are not comfortable, or are being harassed by another user. In o
 
 ## How Blocks Work
 
-When someone blocks someone else, they prevent the blocked person from actively engaging with them. Protections against active engagements are enforced at the system level, from the API layer upwards. Once a bock is in place, it prevents the blocked user from:
+When someone blocks someone else, they prevent the blocked person from direct interactions with them. Protections against direct interactions are enforced at the system level, from the API layer upwards. Once a bock is in place, it prevents the blocked user from:
 
 * inviting them to chat rooms.
 * adding them to chat rooms.
@@ -26,13 +26,13 @@ When someone blocks someone else, they prevent the blocked person from actively 
 * mentioning them in comments.
 * creating social graph relationships with them.
 
-Blocks do not prevent passive engagement at the system level. For example, API responses will include content from others that may be blocked by the current user. Content filtering can be applied at the integration level, and the stock user interface implementations bundled with the SDKs include some basic functionality:
+Blocks do not prevent direct interaction at the system level. For example, API responses will include content from others that may be blocked by the current user. Filtering content from blocked users can be applied at the integration level, and the stock user interface implementations bundled with the SDKs include some of that basic functionality:
 
 * Chat messages sent from blocked users are not shown.
 * Comments authored by blocked users are not shown.
 
 <Callout icon="📘" theme="info">
-  Social features integrated via API have to implement content filtering at the integration level. Active engagement between users are prevented at the system level, but passive engagement is not.
+  Social features integrated via API have to implement content filtering at the integration level. Direct interaction between users are prevented at the system level, but indirect interaction is not.
 </Callout>
 
 ## Creating a Block
