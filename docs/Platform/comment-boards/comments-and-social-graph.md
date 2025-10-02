@@ -43,4 +43,4 @@ Use the `relationship_type` and `relationship_from_profile_id` parameters on the
 GET /api/v1/comments/?relationship_type=follow&relationship_from_profile_id=example-profile-id&comment_board_id=example-board-id
 ```
 
-<br />
+ 
