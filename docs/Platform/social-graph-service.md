@@ -14,6 +14,9 @@ next:
     - slug: blocking-profiles
       title: Blocking Profiles
       type: basic
+    - slug: comment-boards
+      title: Comments
+      type: basic
 ---
 Social Graph is an API-first service that enables products to define and explore the social connections between their users and then use those relationships to personalize features. As a product developer using the Social Graph service, you will be able to:
 
