@@ -1,7 +1,7 @@
 ---
 title: Reactions and Social Graph
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 next:
