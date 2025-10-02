@@ -2,7 +2,7 @@
 title: Flutter SDK
 excerpt: ''
 deprecated: true
-hidden: false
+hidden: true
 metadata:
   title: Getting Started | Flutter SDK | LiveLike Developer Hub
   description: >-
