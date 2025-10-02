@@ -10,7 +10,10 @@ metadata:
   description: ''
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: blocking-profiles
+      title: Blocking Profiles
+      type: basic
 ---
 Social Graph is an API-first service that enables products to define and explore the social connections between their users and then use those relationships to personalize features. As a product developer using the Social Graph service, you will be able to:
 
@@ -73,6 +76,8 @@ sdk.socialGraphClient.getProfileRelationshipTypes(
 ```javascript
 LiveLike.getProfileRelationshipTypes().then(({results}) => console.log(results))
 ```
+
+<br />
 
 ## Querying relationships
 
@@ -172,7 +177,7 @@ LiveLike.getProfileRelationships({
  }).then(({results}) => console.log(results))
 ```
 
-## Managing relationships
+## Creating relationships
 
 Creating relationships is done one at a time via the client interface
 
@@ -218,9 +223,9 @@ LiveLike.createProfileRelationship({
  }).then((profileRelationship) => console.log(profileRelationship))
 ```
 
-> 🚧 Create your relationship types before creating relationships
->
-> A relationship type key must exist before it can be used to define relationships between profiles. Use the [Create a Relationship Type](ref:create-a-relationship-type-1) endpoint to create one.
+Creating a relationship will fail if either of the two profiles block the other.
+
+## Deleting relationships
 
 Deleting relationships is similarly achieved via the client interface
 
