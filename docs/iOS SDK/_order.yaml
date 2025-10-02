@@ -1,4 +1,3 @@
-- ios-spoiler-free-sync
 - ios-basic-integration
 - ios-custom-theming
 - ios-widget-configuration
@@ -6,6 +5,7 @@
 - ios-analytics
 - widget-toggle-plugin-deprecated
 - ios-chat
+- ios-spoiler-free-sync
 - comments-stock-ui
 - role-based-access-control-ios
 - localization-1
