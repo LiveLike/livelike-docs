@@ -12,6 +12,12 @@ next:
 ---
 Use the built-in integration between [Comments](doc:cms-comments) and [Social Graph](doc:social-graph-service) to filter and count comments by authors that fans follow.
 
+## Common parameters
+
+The `relationship_type` parameter species what kind of relationship to filter responses by. Its value should be the *relationship type key* like `follows` belonging to the relationship type from the social graph to filter by.
+
+The `relationship_from_profile_id` species the perspective that the filtering should be from. Its value should be the profile ID in the *from* part of the relationship. For example, if Alice follows Bob, then the relationship is from Alice to Bob, and Alice would be the from part. If this parameter is not provided then it defaults to the authenticated user.
+
 ## Filter comments by author profile relationship
 
 Use the `relationship_type` and `relationship_from_profile_id` parameters on the [List comments](ref:list-comments) endpoint to filter comments by authors matching the given relationship. For example, to find comments authored by users that example-profile-id follows:
