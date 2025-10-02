@@ -1,5 +1,5 @@
 ---
-title: NFTs (Non Fungible Tokens)
+title: NFTs
 excerpt: ''
 deprecated: false
 hidden: false
