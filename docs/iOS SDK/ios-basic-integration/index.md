@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: iOS SDK
 excerpt: Get a basic integration up and running with the iOS SDK
 deprecated: false
 hidden: false
