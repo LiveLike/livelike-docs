@@ -40,7 +40,5 @@ The above will return comments authored by users that the authenticated user fol
 Use the `relationship_type` and `relationship_from_profile_id` parameters on the [Get comment counts](ref:get-comment-counts) endpoint to count comments by authors that match the given relationship.
 
 ```http
-GET /api/v1/comments/?relationship_type=follow&relationship_from_profile_id=example-profile-id&comment_board_id=example-board-id
+GET /api/v1/comment-counts/?relationship_type=follow&relationship_from_profile_id=example-profile-id&comment_board_id=example-board-id
 ```
-
- 
