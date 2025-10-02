@@ -14,7 +14,7 @@ next:
       type: link
       url: https://docs.livelike.com/update/reference/list-comments#/
 ---
-The Comment Mentions feature allows your users to tag specific profiles inside their comments, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included in responses to endpoints like [Create a Comment](ref:create-a-comment) and[List comments](ref:list-comments).
+The Comment Mentions feature allows your users to tag specific profiles inside their comments, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included in responses to endpoints like [Create a Comment](ref:create-a-comment) and [List comments](ref:list-comments).
 
 ## Mentions basics
 
@@ -52,5 +52,3 @@ Use `comment-mention-created` [webhook](docs:webhooks)  to send notifications to
 
    * The mentioner has blocked the mentioned profile
    * The mentioned profile has blocked the mentioner
-
-<br />
