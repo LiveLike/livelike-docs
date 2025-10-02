@@ -26,9 +26,9 @@ The Social Graph system can be thought of a graph where the nodes are Profiles a
 * A **Profile Relationship** represents a connection between two profiles. Each relationship consists of a _from profile_, a _to profile_, and a _relationship type_. A profile relationship is essentially a directed edge of the given type from one profile to another. Two profiles can share more than one relationship as long as the type is unique between them.
 * A **Relationship Type** represents a kind of possible relationship between profiles. Each type has a unique _key_ that is used when creating relationships between profiles. A common relationship type is "follows" but you can define your own types like "studies with" or "rival of."
 
-## Working with the Social Graph Service
+## Social graph client
 
-All social graph functions are available via a single client interface per platform.
+On iOS and Android SDKs the social graph functionality is exposed on a social graph client instance. On the other SDKs functionality is exposed on the LiveLike SDK instance.
 
 ```kotlin
 socialGraphClient = (application as LiveLikeApplication).sdk.socialGraphClient()
