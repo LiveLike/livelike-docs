@@ -1,4 +1,5 @@
 - android-spoiler-free
+- android-chat
 - android-basic-integration
 - android-sessions
 - android-customization
@@ -6,7 +7,6 @@
 - widget-framework-apis
 - android-localization
 - android-analytics
-- android-chat
 - network-utils-android
 - new-widget-ui
 - profile
