@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Web SDK
 excerpt: How to get started with the Web SDK
 deprecated: false
 hidden: false
