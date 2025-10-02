@@ -14,12 +14,11 @@ next:
       type: link
       url: https://docs.livelike.com/update/reference/list-comments#/
 ---
-The Comment Mentions feature allows your users to tag specific profiles inside their comments, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included in responses to endpoints like [Create a Comment](ref:create-a-comment), and[List comments](ref:list-comments).
+The Comment Mentions feature allows your users to tag specific profiles inside their comments, creating more interactive and engaging conversations. Mentions make it easy to bring people into discussions, just like the familiar “@mention” experience on popular social platforms. Mentions are included in responses to endpoints like [Create a Comment](ref:create-a-comment) and[List comments](ref:list-comments).
 
-## How mentions work
+## Mentions basics
 
-Client send structured mention data in the POST request when creating a chat message.
-This includes:
+Client send a list of mention objects when creating a comment. Each object includes:
 
 * The profile being mentioned, either `mentioned_profile_id` or `mentioned_profile_custom_id`
 * The `start_index` and `end_index` refer to the character positions of the mention placeholder in the message text. Indices must be within text bounds and non-overlapping.
