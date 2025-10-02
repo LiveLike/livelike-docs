@@ -25,7 +25,6 @@ Clients should send a list of mention objects when creating a comment. Each obje
 
 ```http
 POST /api/v1/comments/
-
 {
   "comment_board_id": "4ec4cdc9-8b80-4ef1-aff2-610125141035",
   "text": "hello @mention1_placeholder, How are you?",
