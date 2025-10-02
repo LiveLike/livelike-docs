@@ -41,7 +41,7 @@ POST /api/v1/comments/
 
 At render time, placeholder text in the comment can be replaced with the nickname of the mentioned profile.
 
-## Mentions notifications
+## Notifications for mentions
 
 Use `comment-mention-created` [webhook](docs:webhooks)  to send notifications to users when they're mentioned.
 
