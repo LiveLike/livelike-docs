@@ -1,5 +1,5 @@
 ---
-title: Comment Moderation
+title: Comments Moderation
 deprecated: false
 hidden: false
 metadata:
