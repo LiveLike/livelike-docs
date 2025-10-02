@@ -2,11 +2,11 @@
 - ios-custom-theming
 - user-client
 - ios-widget-configuration
-- ios-analytics
 - widget-toggle-plugin-deprecated
 - ios-chat
 - ios-spoiler-free-sync
 - comments-stock-ui
+- ios-analytics
 - role-based-access-control-ios
 - localization-1
 - ios-api-reference
