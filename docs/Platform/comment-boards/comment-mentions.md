@@ -43,7 +43,7 @@ At render time, placeholder text in the comment can be replaced with the nicknam
 
 ## Notifications for mentions
 
-Use `comment-mention-created` [webhook](doc:webhooks)  to send notifications to users when they're mentioned.
+Use the `comment-mention-created` [webhook](doc:webhooks)  to send notifications to users when they're mentioned.
 
 ## Mention limits
 
