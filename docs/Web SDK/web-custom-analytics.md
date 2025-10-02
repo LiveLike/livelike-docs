@@ -1,5 +1,5 @@
 ---
-title: Analytics
+title: Web UI Analytics
 excerpt: ''
 deprecated: false
 hidden: false
