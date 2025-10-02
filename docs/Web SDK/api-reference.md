@@ -1,5 +1,5 @@
 ---
-title: Web API Reference
+title: API Reference
 excerpt: ''
 deprecated: false
 hidden: false
