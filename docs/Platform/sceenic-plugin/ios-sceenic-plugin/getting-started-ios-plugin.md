@@ -85,3 +85,7 @@ class SomeClass {
 ```
 
 <br />
+
+## Getting Video Room Information
+
+Information on a video room can be retrieved by simply calling the `getVideoRoom(roomID: String, completion: (Result<VideoRoomResource, Error>) -> Void)` function.
