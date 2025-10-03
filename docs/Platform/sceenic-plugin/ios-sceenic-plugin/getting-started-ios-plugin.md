@@ -61,7 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-<br />
+## Video rooms
+
+A Video Room is an entity that contains a _Session_ and _Participants_. It is a persistent entity that can be connected to and **interacted** with.
 
 ## Creating a Video Room
 
