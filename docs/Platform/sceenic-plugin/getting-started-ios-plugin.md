@@ -1,5 +1,5 @@
 ---
-title: iOS Sceenic Plugin
+title: Sceenic Plugin for iOS
 excerpt: Get a basic integration up and running with the iOS Sceenic Video Plugin
 deprecated: false
 hidden: false
