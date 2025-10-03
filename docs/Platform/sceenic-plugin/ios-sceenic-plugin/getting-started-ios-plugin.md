@@ -107,3 +107,9 @@ class SomeClass {
 ```
 
 <br />
+
+## Join a Video Room
+
+The integrator can use `joinVideoRoom(roomID: String, username: String?)` to join an active VideoSession.
+
+The integrator can also use the VideoSession object returned using this API to create a custom UI implementation for the Video Room.
