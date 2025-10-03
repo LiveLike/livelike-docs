@@ -66,3 +66,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ## Creating a Video Room
 
 To create a Video Room, use the `livelikeSceenicPlugin.createVideoRoom(title: String?, description: String, completion: (Result<VideoRoomResource, Error>) -> Void)` method on your `LiveLikeSceenicVideoPlugin` instance. As a result, you will receive a `VideoRoomResource` which will contain the details of the newly created Video Room or an `Error` object if the creation of a new Video Room fails.
+
+```swift
+class SomeClass {
+  let plugin: LiveLikeSceenicVideoPlugin
+  
+  func someMethod(){
+    livelikeSceenicPlugin.createVideoRoom(title: "Video Room", description: nil) { result in
+    	switch result {
+    		case .success(let videoRoomResource):
+        	//Handle Success
+    		case .failure(let error):
+        	//Handle Failure
+    	}
+		}
+  }
+}
+```
+
+<br />
