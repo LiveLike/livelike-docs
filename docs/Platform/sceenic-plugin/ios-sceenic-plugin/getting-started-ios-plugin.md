@@ -67,6 +67,8 @@ A Video Room is an entity that contains a _Session_ and _Participants_. It is a 
 
 A Video Room Session represents a connection to a Sceenic Video Room. Integrators can interact and modify video calls within a Sceenic Video Room via a Video Room Session.
 
+A UIViewController provided out-of-the-box in the Sceenic Plugin. This is a plug-and-play UI that enables you to integrate Sceenic Video Calls and many of its features into your application very quickly.
+
 ## Creating a Video Room
 
 To create a Video Room, use the `livelikeSceenicPlugin.createVideoRoom(title: String?, description: String, completion: (Result<VideoRoomResource, Error>) -> Void)` method on your `LiveLikeSceenicVideoPlugin` instance. As a result, you will receive a `VideoRoomResource` which will contain the details of the newly created Video Room or an `Error` object if the creation of a new Video Room fails.
