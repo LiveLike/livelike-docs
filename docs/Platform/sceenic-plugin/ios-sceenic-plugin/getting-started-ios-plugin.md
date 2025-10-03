@@ -113,3 +113,22 @@ class SomeClass {
 The integrator can use `joinVideoRoom(roomID: String, username: String?)` to join an active VideoSession.
 
 The integrator can also use the VideoSession object returned using this API to create a custom UI implementation for the Video Room.
+
+```swift
+class SomeClass {
+  let plugin: LiveLikeSceenicVideoPlugin
+  
+  func someMethod(){
+    livelikeSceenicPlugin.joinVideoRoom(roomID:"<video room id>", username: "<user name>") { result in
+    	switch result {
+    		case let .success(videoRoomSession):
+        	//Handle Success
+    		case let .failure(error):
+        	//Handle Failure
+    	}
+		}
+  }
+}
+```
+
+<br />
