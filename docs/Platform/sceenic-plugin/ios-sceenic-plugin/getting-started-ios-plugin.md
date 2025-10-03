@@ -65,6 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 A Video Room is an entity that contains a _Session_ and _Participants_. It is a persistent entity that can be connected to and **interacted** with.
 
+A Video Room Session represents a connection to a Sceenic Video Room. Integrators can interact and modify video calls within a Sceenic Video Room via a Video Room Session.
+
 ## Creating a Video Room
 
 To create a Video Room, use the `livelikeSceenicPlugin.createVideoRoom(title: String?, description: String, completion: (Result<VideoRoomResource, Error>) -> Void)` method on your `LiveLikeSceenicVideoPlugin` instance. As a result, you will receive a `VideoRoomResource` which will contain the details of the newly created Video Room or an `Error` object if the creation of a new Video Room fails.
