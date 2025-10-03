@@ -67,7 +67,7 @@ A Video Room is an entity that contains a _Session_ and _Participants_. It is a 
 
 A Video Room Session represents a connection to a Sceenic Video Room. Integrators can interact and modify video calls within a Sceenic Video Room via a Video Room Session.
 
-A UIViewController provided out-of-the-box in the Sceenic Plugin. This is a plug-and-play UI that enables you to integrate Sceenic Video Calls and many of its features into your application very quickly.
+The Video Room view controller is a UIViewController provided out-of-the-box in the plugin. This is a plug-and-play UI that enables you to integrate Sceenic video calls and many of its features into your application quickly.
 
 ## Creating a Video Room
 
