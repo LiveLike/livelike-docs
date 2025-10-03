@@ -89,3 +89,21 @@ class SomeClass {
 ## Getting Video Room Information
 
 Information on a video room can be retrieved by simply calling the `getVideoRoom(roomID: String, completion: (Result<VideoRoomResource, Error>) -> Void)` function.
+
+```swift
+class SomeClass {
+  let plugin: LiveLikeSceenicVideoPlugin
+  
+  func someMethod(){
+    livelikeSceenicPlugin.getVideoRoom(roomID: "<video room id>") { result in
+    	switch result {
+      	case let .success(videoRoomResource):
+        	//Handle Success
+        case let .failure(error):
+        	//Handle Failure
+    	}
+  	}
+  }
+```
+
+<br />
