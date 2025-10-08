@@ -32415,7 +32415,52 @@
         "operationId": "get_profiles{ProfileUUID}permissions-check",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "results": [
+                        {
+                          "permission_key": "send_chat_message",
+                          "resource_kind": "chat_room",
+                          "resource_key": "room-uuid-123",
+                          "scope_id": "scope_id1",
+                          "has_permission": true
+                        },
+                        {
+                          "permission_key": "ban_user",
+                          "resource_kind": null,
+                          "resource_key": null,
+                          "scope_id": "invalid_scope_id1",
+                          "has_permission": false
+                        },
+                        {
+                          "permission_key": "moderate_comments",
+                          "resource_kind": "comment_board",
+                          "resource_key": "board-uuid-789",
+                          "scope_id": null,
+                          "has_permission": true
+                        },
+                        {
+                          "permission_key": "moderate_comments",
+                          "resource_kind": "invalid kind",
+                          "resource_key": "invalid key",
+                          "scope_id": null,
+                          "has_permission": false
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
