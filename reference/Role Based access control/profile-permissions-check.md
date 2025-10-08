@@ -13,6 +13,30 @@ link:
 metadata:
   robots: index
 ---
+User can provide mix of `scope_id` AND/OR (`resource_kind` + `resource_key`) combination. 
+
+Parameters can be repeated to support bulk or multiple permission checks in a single request.
+Examples
+
+```shell
+# Check single permission against specific scope
+GET /?permission_key=send-message&scope_id=scope-uuid-123
+
+# Check multiple permissions against specific scope
+GET /?permission_key=send-message&permission_key=delete-message&scope_id=scope-uuid-123
+
+# Check multiple permissions against multiple scope
+GET /?permission_key=send-message&permission_key=delete-message&scope_id=scope-uuid-123&scope_id=scope-uuid-456
+
+# Check permissions against resource kind/key (includes wildcard support)
+GET /?permission_key=send-message&resource_kind=chat-room&resource_key=uuid-456
+
+# Check multiple permissions against multiple resources
+GET /?permission_key=send-message&permission_key=moderate&resource_kind=chat-room&resource_key=uuid-123&resource_key=uuid-456
+```
+
+<br />
+
 **Validation:**
 
 * `permission_key` is required
