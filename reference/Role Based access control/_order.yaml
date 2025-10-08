@@ -17,3 +17,4 @@
 - delete-role-assignment
 - get-list-of-scopes
 - list-role-assignments
+- profile-permissions-check
