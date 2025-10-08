@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-Managing audiences across platforms doesn’t have to be a manual chore. Instead of adding and removing users one by one, you can now sync your Segment Audiences directly to your User Groups on LiveLike. This ensures your  groups always stay up to date with the audiences you define in Segment.
+Segment Audiences can be kept in sync with User Groups on LiveLike. This ensures groups always stay up to date with the audiences you define in Segment.
 
 ## Why sync audiences to groups
 
@@ -19,14 +19,12 @@ Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` o
 
 When syncing a Segment Audience that already contains members, existing users can be imported into LiveLike via a CSV upload of either user_id or profile_id.
 
-If an incoming Segment user does not contain a livelike_profile_id or custom_id property, the system will automatically create a new <Glossary>Profile</Glossary>.
+If an incoming Segment user does not contain a `livelike_profile_id` or `custom_id` property, the system will automatically create a new <Glossary>Profile</Glossary>.
 
 * If a nickname is provided, it will be assigned to the new profile.
 * If no nickname is provided, the system will generate a random nickname. This is the same as if a profile had been created through the API or SDK without a nickname.
 
 ## Setting up group sync
-
-Getting started is simple:
 
 1. Create your audience in Segment. Define who you want to target using events, traits, or existing data.
 
