@@ -32408,6 +32408,27 @@
         },
         "deprecated": false
       }
+    },
+    "/profiles/{ProfileUUID}/permissions-check/": {
+      "get": {
+        "description": "",
+        "operationId": "get_profiles{ProfileUUID}permissions-check",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProfileUUID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
