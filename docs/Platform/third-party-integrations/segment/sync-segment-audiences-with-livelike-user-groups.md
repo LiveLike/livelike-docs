@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-Segment Audiences can be kept in sync with User Groups on LiveLike. This ensures groups always stay up to date with the audiences you define in Segment.
+Segment Audiences can be kept in sync with User Groups on LiveLike. This ensures groups on LiveLike always stay up to date with their corresponding audiences you define in Segment.
 
 ## Why sync audiences to groups
 
