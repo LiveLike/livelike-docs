@@ -32421,21 +32421,6 @@
                 "schema": {
                   "type": "object",
                   "properties": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "property1": {
-                      "type": "string"
-                    }
-                  }
                 },
                 "examples": {
                   "New Example": {
@@ -32471,6 +32456,21 @@
                           "has_permission": false
                         }
                       ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "property1": {
+                      "type": "string"
                     }
                   }
                 }
