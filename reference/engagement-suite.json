@@ -32409,7 +32409,7 @@
         "deprecated": false
       }
     },
-    "/profiles/{ProfileUUID}/permissions-check/": {
+    "/profiles/{ProfileID}/permissions-check/": {
       "get": {
         "description": "",
         "operationId": "get_profiles{ProfileUUID}permissions-check",
@@ -32421,11 +32421,44 @@
         "parameters": [
           {
             "in": "path",
-            "name": "ProfileUUID",
+            "name": "ProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Profile UUID"
+          },
+          {
+            "in": "query",
+            "name": "permission_key",
             "schema": {
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "scope_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "scope object UUID"
+          },
+          {
+            "in": "query",
+            "name": "resource_kind",
+            "schema": {
+              "type": "string"
+            },
+            "description": "e.g comment-board, chat-room"
+          },
+          {
+            "in": "query",
+            "name": "resource_key",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Entity/Object UUID. e.g comment-board-uuid"
           }
         ]
       }
