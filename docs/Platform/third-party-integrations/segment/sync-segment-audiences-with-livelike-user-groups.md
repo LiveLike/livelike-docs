@@ -55,6 +55,8 @@ For optimal setup and data consistency:
 * Create your LiveLike group first,
 * Sync it with the desired Segment Audience before adding any users manually.
 
-This sequence ensures that group membership, IDs, and sync logic are aligned from the start, minimizing rework or data mismatches. With Segment-LiveLike syncing in place, audience management becomes automated, allowing teams to focus on building engaging features rather than keeping their tools up to date.
+This sequence ensures that group membership, IDs, and sync logic are aligned from the start, minimizing rework or data mismatches.
+
+If you already have an existing audience that you want to backfill into a group, export the audience from Segment as CSV, and then import it into the group.
 
 <br />
