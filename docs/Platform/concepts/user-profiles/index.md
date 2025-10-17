@@ -30,7 +30,7 @@ Interactions with the LiveLike service are authenticated with an _<Glossary>Acce
 
 ## Personalizing and customizing
 
-Nicknames are used for personalization, and show up next to chat messages and in leaderboards. If you have a username or display name in your system, you should use it as the profile's nickname.
+Nicknames are used for personalization, and show up next to chat messages and in leaderboards, as well as inside of the CMS to help you identify users. If you have a username or display name in your system, you should use it as the profile's nickname.
 
 <Callout icon="🚧" theme="warn">
   Nicknames are not guaranteed to be unique and can often be freely updated by users.
