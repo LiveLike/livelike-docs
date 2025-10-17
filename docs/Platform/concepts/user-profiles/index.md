@@ -22,7 +22,7 @@ Profiles are used to collect fan activity on LiveLike inside a single identity. 
 
 ## Identifiers
 
-Each profile has an ID an an optional _custom ID_. The ID is assigned by LiveLike, but you can assign your own custom IDs. If you want to reuse user IDs from your system, store them in [Custom Profile IDs](doc:custom-profile-ids).
+Each profile has an ID, and an optional _custom ID_. The ID is assigned by LiveLike, but you can assign your own custom IDs. If you want to reuse user IDs from your system, store them in the [Custom Profile IDs](doc:custom-profile-ids).
 
 ## Authenticating
 
@@ -92,7 +92,7 @@ sdk.setUserDisplayName("<new display name>") { [weak self] result in
 
 ## Integration strategies
 
-Generally integrations should associate each of their users with a LiveLike profile. In that case, using a persistent strategy is the recommended approach. If your integration doesn't have a user concept, or each session should be considered an independent user, the local strategy can work. 
+Generally integrations should associate each of their users with a LiveLike profile. In that case, using a persistent strategy is the recommended approach. If your integration doesn't have a user concept, or each session should be considered an independent user, the local strategy can work.
 
 > 🚧 Track your profiles!
 >
