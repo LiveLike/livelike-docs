@@ -20,7 +20,7 @@ Assign specific quest variants to user profiles for A/B testing purposes.
 PUT /api/v1/profiles/{profile_id}/quest-variant-assignments/
 ```
 
-**Base URL:** `https://cf-blast-game-changers.livelikecdn.com`
+**Base URL:** `https://cf-blast.livelikecdn.com`
 
 ## Authentication
 
@@ -65,7 +65,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ## Complete cURL Example
 
 ```bash
-curl --location --request PUT 'https://cf-blast-game-changers.livelikecdn.com/api/v1/profiles/ee38a391-abd1-4002-8d76-be4a8a171e3e/quest-variant-assignments/' \
+curl --location --request PUT 'https://cf-blast.livelikecdn.com/api/v1/profiles/ee38a391-abd1-4002-8d76-be4a8a171e3e/quest-variant-assignments/' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
 --data '{
@@ -155,7 +155,7 @@ curl --location --request PUT 'https://cf-blast-game-changers.livelikecdn.com/ap
 
 ### JavaScript
 ```javascript
-const response = await fetch(`https://cf-blast-game-changers.livelikecdn.com/api/v1/profiles/${profileId}/quest-variant-assignments/`, {
+const response = await fetch(`https://cf-blast.livelikecdn.com/api/v1/profiles/${profileId}/quest-variant-assignments/`, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ const response = await fetch(`https://cf-blast-game-changers.livelikecdn.com/api
 import requests
 
 response = requests.put(
-  f"https://cf-blast-game-changers.livelikecdn.com/api/v1/profiles/{profile_id}/quest-variant-assignments/",
+  f"https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/quest-variant-assignments/",
   headers={
     'Content-Type': 'application/json',
     'Authorization': f'Bearer {access_token}'
