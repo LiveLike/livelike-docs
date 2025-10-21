@@ -1,5 +1,5 @@
 ---
-title: List A/B quest
+title: List A/B Test quest
 deprecated: false
 hidden: true
 metadata:
