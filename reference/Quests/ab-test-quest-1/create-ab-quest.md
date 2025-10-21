@@ -1,5 +1,5 @@
 ---
-title: Create A/B Quest
+title: Get A/B Test quest details
 deprecated: false
 hidden: true
 metadata:
