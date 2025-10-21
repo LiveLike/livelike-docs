@@ -1,7 +1,7 @@
 ---
 title: A/B Test Quest
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
