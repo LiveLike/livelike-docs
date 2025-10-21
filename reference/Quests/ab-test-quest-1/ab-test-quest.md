@@ -1,5 +1,5 @@
 ---
-title: AB Test Quest
+title: Create A/B Test Quest
 api:
   file: engagement-suite.json
   operationId: post_applications{client_id}ab-test-quests
