@@ -17,7 +17,7 @@ All live updates for widgets are delivered by [PubNub's publish/subscribe](https
 * `event` is the string name of the event, ex. `text-poll-results`
 * `payload` is an object containing data related to the event
 
-> 📘 The SDKs depend on PubNub
+> 📘 The LiveLike SDKs depend on PubNub
 >
 > If you're using one of the client SDKs, like iOS, Android, or Web, then PubNub is already a dependency and the SDK exposes a different interface for subscribing to widgets updates. You probably don't need to add the PubNub library yourself or to interact with it directly. This guide is for integrations that don't use the LiveLike SDKs.
 
