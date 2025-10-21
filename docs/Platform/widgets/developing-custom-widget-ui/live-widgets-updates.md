@@ -17,9 +17,13 @@ All live updates for widgets are delivered by [PubNub's publish/subscribe](https
 * `event` is the string name of the event, ex. `text-poll-results`
 * `payload` is an object containing data related to the event
 
+> 📘 The SDKs depend on PubNub
+>
+> If you're using one of the client SDKs, like iOS, Android, or Web, then PubNub is already a dependency and the SDK exposes a different interface for subscribing to widgets updates. You probably don't need to add the PubNub library yourself or to interact with it directly. This guide is for integrations that don't use the LiveLike SDKs.
+
 ## Configuring PubNub
 
-The PubNub SDK must be initialized with an *origin* and a *subscribe key* in order to subscribe to channels. The configuration details are available on the <Glossary>Application Resource</Glossary> for your application. The origin is inside the `pubnub_origin` property, and the subscribe key is inside the property `pubnub_subscribe_key`.
+The PubNub SDK must be initialized with an _origin_ and a _subscribe key_ in order to subscribe to channels. The configuration details are available on the <Glossary>Application Resource</Glossary> for your application. The origin is inside the `pubnub_origin` property, and the subscribe key is inside the property `pubnub_subscribe_key`.
 
 ```javascript
 var pubnub = new PubNub({
@@ -28,9 +32,9 @@ var pubnub = new PubNub({
 })
 ```
 
-> 🚧 Make sure to use the specified origin and subscribe key!
+> 🚧 Make sure to use the right origin and subscribe key!
 >
-> Your client won't receive updates unless both the LiveLike origin and the subscribe key are configured in the PubNub client.
+> Your client won't receive updates unless the PubNub client is configured with the origin and the subscribe key from the app resource.
 
 ## Subscribing to Channels
 
