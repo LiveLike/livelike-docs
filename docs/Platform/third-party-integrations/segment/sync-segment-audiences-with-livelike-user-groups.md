@@ -17,16 +17,11 @@ Segment Audiences can be kept in sync with User Groups on LiveLike. This ensures
 
 Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` or `custom_id` properties on the Segment user.
 
-If an incoming Segment user does not contain a `livelike_profile_id` or `custom_id` property, the system will automatically create a new <Glossary>Profile</Glossary>.
-
-* If there is a `nickname` field on the Segment user, it will be assigned to the new LiveLike profile.
-* If no nickname is provided, the system will generate a random nickname. This is the same as if a profile had been created through the API or SDK without a nickname.
-
 ## Setting up group sync
 
 1. Create your audience in Segment. Define who you want to target using events, traits, or existing data.
 
-2. Create the corresponding group on LiveLike. Enable Segment Sync and configure the audience ID (starting with `aud_`) from Segment. 
+2. Create the corresponding group on LiveLike. Enable Segment Sync and configure the audience ID (starting with `aud_`) from Segment.
 
    <Image align="center" border={false} src="https://files.readme.io/1eb65e9769b77bff449af608b5a4568544f90628a103484ef805649b38625161-Screenshot_2025-10-17_at_12.53.03_PM.png" />
 
