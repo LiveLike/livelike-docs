@@ -1198,7 +1198,8 @@
         "operationId": "put_{profile_id}quest-variant-assignments",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {}
           }
         },
         "parameters": [
