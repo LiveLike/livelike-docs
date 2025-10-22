@@ -15,7 +15,7 @@ Segment Audiences can be kept in sync with User Groups on LiveLike. This ensures
 
 ## Mapping Segment users to profiles
 
-Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` or `custom_id` properties on the Segment user.
+Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` or `custom_id` properties on the Segment user. The default identifier defined by Segment that is the `user_id` or `segment_user_id` are treated as LiveLike `custom_id` by default.
 
 ## Setting up group sync
 
