@@ -23,7 +23,13 @@ Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` o
 
 2. Create the corresponding group on LiveLike. Enable Segment Sync and configure the audience ID (starting with `aud_`) from Segment.
 
-3. Connect your audience to LiveLike. Select the LiveLike destination inside Segment.
+3. Connect your audience to LiveLike. Select the LiveLike destination inside Segment. 
+
+   <Image align="center" border={false} src="https://files.readme.io/3f379b33ef084a6bf9ee994e9cf1549cbceba32681ba775696c89841319b30ea-Screenshot_2025-10-22_012337.png" />
+
+   <Image align="center" border={false} src="https://files.readme.io/0064046fde1f6b1b6b1cde2915b507e6293d0a898fbd3de232c13cb13247c94d-Screenshot_2025-10-22_012416.png" />
+
+4. <br />
 
 That’s it! Your LiveLike group will now stay in sync with your Segment audience automatically.
 
