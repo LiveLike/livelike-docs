@@ -37,6 +37,22 @@ Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` o
 
    <Image align="center" border={false} src="https://files.readme.io/4c0778456b1f7db852ec4dc9701413aaa1f71f9ff30ccffc5318783a6ca13319-Screenshot_2025-10-22_012535.png" />
 
+6. Add additional required traits like livelike_profile_id, custom_id in your audience. 
+
+   <Image align="center" border={false} src="https://files.readme.io/6357d5ebed58e8404e45a2ea92c01fbccd3b943f0335bf10cf539b908a9e3bd3-Screenshot_2025-10-22_012605.png" />
+
+7. Save and Add the destination.
+
+8. Configure mappings for the added destination for the user group sync. 
+
+   <Image align="center" border={false} src="https://files.readme.io/dde2c422700008e9cccbbcb9f0f7b351ab00c4049acee430be60a93846816ffd-Screenshot_2025-10-22_012733.png" />
+
+9. Choose "Sync to User Group" action. 
+
+   <Image align="center" border={false} src="https://files.readme.io/b3fadce38741f437ce3d63c4f5eba4b65b0c668fa977cf6bcb4d0bf19fb175db-Screenshot_2025-10-22_012812.png" />
+
+10. <br />
+
 That’s it! Your LiveLike group will now stay in sync with your Segment audience automatically.
 
 ## Best practices
