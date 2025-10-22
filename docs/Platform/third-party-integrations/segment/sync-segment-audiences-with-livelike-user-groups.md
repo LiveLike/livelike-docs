@@ -21,7 +21,9 @@ Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` o
 
 1. Create your audience in Segment. Define who you want to target using events, traits, or existing data.
 
-2. Create the corresponding group on LiveLike. Enable Segment Sync and configure the audience ID (starting with `aud_`) from Segment.
+2. Create the corresponding group on LiveLike. Enable Segment Sync and configure the audience ID (starting with `aud_`) from Segment. 
+
+   <Image align="center" border={false} src="https://files.readme.io/d74590e0f846ea7f17677d08e161e0512e864dfae63ce274d19b38a431b706b5-Screenshot_2025-10-22_221002.png" />
 
 3. Connect your audience to LiveLike. Select the LiveLike destination inside Segment. 
 
@@ -73,5 +75,7 @@ For optimal setup and data consistency:
 This sequence ensures that group membership, IDs, and sync logic are aligned from the start, minimizing rework or data mismatches.
 
 If you already have an existing audience that you want to backfill into a group, export the audience from Segment as an unhashed CSV, and then import it into the group using our "Add Segment Users" feature in the CMS as shown below.
+
+<Image align="center" border={false} src="https://files.readme.io/6dea0bb7bfdc02597ea6a6a977d6fbb36967156d3d6cf3aee7f6641f966f6f8c-Screenshot_2025-10-22_232212.png" />
 
 <br />
