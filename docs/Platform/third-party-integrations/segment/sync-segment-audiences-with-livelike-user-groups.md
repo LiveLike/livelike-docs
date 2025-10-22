@@ -51,7 +51,15 @@ Segment users can be mapped to LiveLike profiles via the `livelike_profile_id` o
 
    <Image align="center" border={false} src="https://files.readme.io/b3fadce38741f437ce3d63c4f5eba4b65b0c668fa977cf6bcb4d0bf19fb175db-Screenshot_2025-10-22_012812.png" />
 
-10. <br />
+10. Choose Event trigger type as "Track". 
+
+    <Image align="center" border={false} src="https://files.readme.io/354b6e772566a46563be755151603b3dda34689c84c1fabf3411d513c32b90ad-Screenshot_2025-10-22_012930.png" />
+
+11. Add additional traits to the mapping (For example, custom_id if setup as traits). 
+
+    <Image align="center" border={false} src="https://files.readme.io/8a99d3c5a27e3bd16f3811779c91f3e7d910a5a626b441142ea8a0fd4bc4abdf-Screenshot_2025-10-22_013136.png" />
+
+12. Save and enable the mapping.
 
 That’s it! Your LiveLike group will now stay in sync with your Segment audience automatically.
 
