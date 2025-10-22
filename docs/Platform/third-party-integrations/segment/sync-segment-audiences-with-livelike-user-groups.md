@@ -72,6 +72,6 @@ For optimal setup and data consistency:
 
 This sequence ensures that group membership, IDs, and sync logic are aligned from the start, minimizing rework or data mismatches.
 
-If you already have an existing audience that you want to backfill into a group, export the audience from Segment as CSV, and then import it into the group.
+If you already have an existing audience that you want to backfill into a group, export the audience from Segment as an unhashed CSV, and then import it into the group using our "Add Segment Users" feature in the CMS as shown below.
 
 <br />
