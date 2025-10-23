@@ -1,7 +1,7 @@
 ---
 title: A/B Testing
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
