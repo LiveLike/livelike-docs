@@ -6,10 +6,6 @@ hidden: true
 metadata:
   robots: index
 ---
-<br />
-
-## How to Create a Quest in CMS
-
 #### Log in to the CMS.
 
 ### 1. Navigate to Quest
