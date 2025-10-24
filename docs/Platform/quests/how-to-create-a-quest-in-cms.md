@@ -6,9 +6,13 @@ hidden: true
 metadata:
   robots: index
 ---
+<br />
+
+## How to Create a Quest in CMS
+
 #### Log in to the CMS.
 
-## 1. Navigate to Quest
+### 1. Navigate to Quest
 
 #### From the left-hand menu, click Quests.
 
@@ -26,7 +30,7 @@ metadata:
 
 <Image align="center" border={false} src="https://files.readme.io/0cb6f8d62877eef205019943fed01a16e0a57784c300371f8a00a6d7c70addc4-Screenshot_2025-10-24_at_2.55.44_PM.png" />
 
-## 2. Configure Basic Quest Details
+### 2. Configure Basic Quest Details
 
 #### On the Create Quest page, enter the following details:
 
@@ -44,7 +48,7 @@ metadata:
 
 ***
 
-## 3. Configure Objectives
+### 3. Configure Objectives
 
 #### Each quest consists of one or more tasks that users complete to progress.
 
@@ -67,7 +71,7 @@ metadata:
 
 ***
 
-## 4. Configure Rewards (Optional)
+### 4. Configure Rewards (Optional)
 
 #### You can reward users upon quest completion.
 
@@ -109,7 +113,7 @@ Enable the Sponsors toggle, then select the sponsor you want to include.
 
 ***
 
-## Publish or Save as Draft
+### Publish or Save as Draft
 
 Once all details are configured:
 
