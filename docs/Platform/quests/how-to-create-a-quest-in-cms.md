@@ -53,7 +53,9 @@ metadata:
 
 <Image align="center" border={false} src="https://files.readme.io/c9d7677b2e137e6bd37967a00e63efa3c40f81bc4073392cafaed58eeee86e1f-14-Enter_Voting_into_Quest_Task_Name0A_0A_0A_0A_Task_name_is_required.jpg" />
 
-<br />
+<Callout icon="📘" theme="info">
+  #### Pro Tip: Use actionable task names, e.g., “Vote on a poll in Game Center,” instead of generic names like “Voting.”
+</Callout>
 
 #### Enable Link Action
 
