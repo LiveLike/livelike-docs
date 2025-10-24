@@ -28,7 +28,7 @@ metadata:
 
 #### On the Create Quest page, enter the following details:
 
-* Quest Name – e.g., “New User Onboarding Quest”
+* Quest Name – e.g., “New User Quest”
 * Description (optional) – Brief summary of the quest’s purpose.
 * Quest Duration – Choose one of the three options:
   * No Limit
