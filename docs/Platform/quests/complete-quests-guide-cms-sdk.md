@@ -1,5 +1,5 @@
 ---
-title: 'Complete Quests Guide: CMS + SDK'
+title: 'Quests Guide: CMS + SDK'
 excerpt: >-
   Quests allow users to complete multi-step challenges to earn one-time rewards.
   This guide explains how to create, manage, and track quests in the CMS and via
