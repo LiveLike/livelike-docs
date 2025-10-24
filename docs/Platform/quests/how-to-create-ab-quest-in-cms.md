@@ -44,6 +44,8 @@ metadata:
 
 * Enable A/B Testing – Toggle ON to create an A/B Quest.
 
+<Image align="center" border={false} src="https://files.readme.io/5f8c0d0af0f0aafdd734f51f02edb3f793d44cd94c01f46b5d925fb563652918-Screenshot_2025-10-24_at_3.48.47_PM.png" />
+
 Once enabled, you’ll see the following additional fields:
 
 * Test Name – e.g., “Prediction vs Voting Popularity”
@@ -53,7 +55,7 @@ Once enabled, you’ll see the following additional fields:
 * Variant B Name – e.g., “Voting”
 * Variant B Description (optional) – “Make a vote.”
 
-<Image align="center" border={false} src="https://files.readme.io/5f8c0d0af0f0aafdd734f51f02edb3f793d44cd94c01f46b5d925fb563652918-Screenshot_2025-10-24_at_3.48.47_PM.png" />
+<br />
 
 #### Click "Continue" to proceed.
 
