@@ -57,6 +57,8 @@ metadata:
   #### Pro Tip: Use actionable task names, e.g., “Vote on a poll in Game Center,” instead of generic names like “Voting.”
 </Callout>
 
+<br />
+
 #### Enable Link Action
 
 * Use the dropdown to select or search for the action you want to link to this task.
