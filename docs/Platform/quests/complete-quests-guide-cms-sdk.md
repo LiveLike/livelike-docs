@@ -25,12 +25,11 @@ Quests can be used to build things like:
 * Product and feature tours
 * One-time promotional campaigns
 
-### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
+#### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
 
 ## Save Quests as Drafts
 
 #### Feature Context:
-
 
 You can save your quest as a draft before publishing to prevent unfinished quests from being visible to users and to allow iterative creation.
 
@@ -43,21 +42,7 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 * **Save and Quit** – to save progress as a draft.
 * Exit Without Saving – to discard changes.
 
-<Image align="left" border={false} src="https://files.readme.io/7d7e6c38c4ef318b87b5d4bdd899a16e8e140a603ec81206001560b47f5153a5-Screenshot_2025-10-24_at_2.46.14_PM.png" />
-
-<br />
-
-<br />
-
-<br />
-
-<br />
-
-<br />
-
-<br />
-
-<br />
+<Image align="center" border={false} src="https://files.readme.io/7d7e6c38c4ef318b87b5d4bdd899a16e8e140a603ec81206001560b47f5153a5-Screenshot_2025-10-24_at_2.46.14_PM.png" />
 
 <br />
 
@@ -71,7 +56,7 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 A/B Testing allows you to test two variants of a quest to see which performs better. Users are automatically segmented into Variant A or Variant B, and engagement, completion, and rewards are tracked.
 
-### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
+#### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
 
 <br />
 
