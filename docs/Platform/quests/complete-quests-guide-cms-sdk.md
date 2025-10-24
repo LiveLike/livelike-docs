@@ -9,7 +9,7 @@ hidden: true
 metadata:
   robots: index
 ---
-## What are Quests?
+# What are Quests?
 
 A Quest is a set of tasks a user must complete to achieve a goal.
 Quest Tasks: Individual tasks within a quest.
@@ -29,7 +29,7 @@ One-time promotional campaigns
 
 #### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
 
-### Save Quests as Drafts
+## Save Quests as Drafts
 
 Feature Context:
 You can save your quest as a draft before publishing to prevent unfinished quests from being visible to users and to allow iterative creation.
@@ -65,7 +65,7 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 <br />
 
-### A/B Testing Using Quests
+## A/B Testing Using Quests
 
 #### Feature Context:
 
@@ -75,7 +75,7 @@ A/B Testing allows you to test two variants of a quest to see which performs bet
 
 <br />
 
-### Managing Quests via SDK/API
+## Managing Quests via SDK/API
 
 #### Listing Available Quests
 
@@ -416,7 +416,7 @@ quests.setUserQuestTaskProgress(
 >
 > The `setUserQuestTaskProgress` method can be used to set user quest task progress to a specific value, such as to zero if you'd like to reset the someone's progress on a task. For more API level details, check out the [Update User Quest Task Progress](ref:update-user-quest-task-progress) endpoint and the `custom_progress` field.
 
-### Getting quest rewards
+#### Getting quest rewards
 
 Fetches the list of rewards associated with a given quest id.
 
