@@ -30,6 +30,10 @@ metadata:
 
 ## 2. Configure Basic Quest Details
 
+<Callout icon="📘" theme="info">
+  #### Pro Tip: Use actionable names for Quest and Tasks instead of generic names.
+</Callout>
+
 #### On the Create Quest page, enter the following details:
 
 * Quest Name – e.g., “New User Quest”
