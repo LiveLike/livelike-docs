@@ -117,7 +117,7 @@ Once all details are configured:
 
 Or
 
-#### click Quit, then choose:
+#### Click Quit, then choose:
 
 * Save and Quit – to save progress as a draft.
 * Exit Without Saving – to discard changes.
