@@ -15,23 +15,23 @@ A Quest is a set of tasks a user must complete to achieve a goal.
 Quest Tasks: Individual tasks within a quest.
 Tasks can be completed in any order, but progress toward the overall Quest goal is tracked.
 
-#### Benefits:
+### Why use quests?
 
-Gamify the user experience
-Track progress in real time for users and integrators
-Encourage multi-step interactions to achieve goals
+Quests give the end user a more gamified experience. They have to do multiple things in order to accomplish a single goal. During the quests, the user and integrators are able to see the progress of the quest. This progress allows the user to see how much is left in order for them to complete the quest.
 
-#### Use Cases:
+Quests can be used to build things like:
 
-New user onboarding checklists
-Product or feature tours
-One-time promotional campaigns
+* New user on-boarding checklists
+* Product and feature tours
+* One-time promotional campaigns
 
-#### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
+### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
 
 ## Save Quests as Drafts
 
-Feature Context:
+#### Feature Context:
+
+
 You can save your quest as a draft before publishing to prevent unfinished quests from being visible to users and to allow iterative creation.
 
 #### How to Save as Draft
@@ -71,7 +71,7 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 A/B Testing allows you to test two variants of a quest to see which performs better. Users are automatically segmented into Variant A or Variant B, and engagement, completion, and rewards are tracked.
 
-#### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
+### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
 
 <br />
 
