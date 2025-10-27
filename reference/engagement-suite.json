@@ -1596,126 +1596,6 @@
         "deprecated": false
       }
     },
-    "/applications/{client_id}/profile-groups/ (COPY)": {
-      "post": {
-        "summary": "Create a Group",
-        "description": "",
-        "operationId": "create-a-group",
-        "parameters": [
-          {
-            "name": "client_id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Group Name"
-                  },
-                  "description": {
-                    "type": "string",
-                    "description": "Description for the Group"
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "description": "Add optional attributes to the group",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "key",
-                        "value"
-                      ],
-                      "type": "object"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "201",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"id\": \"21fd0075-853f-49f4-a790-52c92e08d4cb\",\n    \"name\": \"Test Group\",\n    \"is_active\": true,\n    \"description\": \"Group for testing\",\n    \"profile_count\": 0,\n    \"created_at\": \"2025-01-05T15:16:15.137935Z\",\n    \"attributes\": [\n        {\n            \"key\": \"group_key_1\",\n            \"value\": \"01\"\n        },\n        {\n            \"key\": \"group_key_2\",\n            \"value\": \"test\"\n        }\n    ]\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "example": "21fd0075-853f-49f4-a790-52c92e08d4cb"
-                    },
-                    "name": {
-                      "type": "string",
-                      "example": "Test Group"
-                    },
-                    "is_active": {
-                      "type": "boolean",
-                      "example": true,
-                      "default": true
-                    },
-                    "description": {
-                      "type": "string",
-                      "example": "Group for testing"
-                    },
-                    "profile_count": {
-                      "type": "integer",
-                      "example": 0,
-                      "default": 0
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "example": "2025-01-05T15:16:15.137935Z"
-                    },
-                    "attributes": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string",
-                            "example": "group_key_1"
-                          },
-                          "value": {
-                            "type": "string",
-                            "example": "01"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/applications/{client_id}/profile-groups/{group_id}/": {
       "get": {
         "summary": "Get Profile Group Detail",
@@ -32506,6 +32386,126 @@
             "description": "Entity/Object UUID. e.g comment-board-uuid"
           }
         ]
+      }
+    },
+    "/applications/{client_id}/profile-groups/": {
+      "post": {
+        "summary": "Create a Group",
+        "description": "",
+        "operationId": "create-a-group",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Group Name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description for the Group"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Add optional attributes to the group",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "value"
+                      ],
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"21fd0075-853f-49f4-a790-52c92e08d4cb\",\n    \"name\": \"Test Group\",\n    \"is_active\": true,\n    \"description\": \"Group for testing\",\n    \"profile_count\": 0,\n    \"created_at\": \"2025-01-05T15:16:15.137935Z\",\n    \"attributes\": [\n        {\n            \"key\": \"group_key_1\",\n            \"value\": \"01\"\n        },\n        {\n            \"key\": \"group_key_2\",\n            \"value\": \"test\"\n        }\n    ]\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "21fd0075-853f-49f4-a790-52c92e08d4cb"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Test Group"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "Group for testing"
+                    },
+                    "profile_count": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2025-01-05T15:16:15.137935Z"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "example": "group_key_1"
+                          },
+                          "value": {
+                            "type": "string",
+                            "example": "01"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
       }
     }
   },
