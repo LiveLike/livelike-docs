@@ -13,4 +13,3 @@ metadata:
 next:
   description: ''
 ---
-We need to first create a group to segment users, optionally including a description and defining its attributes.
