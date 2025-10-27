@@ -1,5 +1,5 @@
 ---
-title: Update Group
+title: Update Profile Group
 excerpt: ''
 api:
   file: engagement-suite.json
