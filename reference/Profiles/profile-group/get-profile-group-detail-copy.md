@@ -1,5 +1,5 @@
 ---
-title: Get Profile Group Members
+title: List Profile Group Members
 excerpt: ''
 api:
   file: engagement-suite.json
