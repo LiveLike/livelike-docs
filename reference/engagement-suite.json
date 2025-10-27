@@ -1829,9 +1829,7 @@
           }
         },
         "deprecated": false
-      }
-    },
-    "/applications/{client_id}/profile-groups/{group_id}/ (COPY)": {
+      },
       "delete": {
         "summary": "Delete Profile Group",
         "description": "",
