@@ -1,5 +1,5 @@
 ---
-title: Create a Group
+title: Create a Profile Group
 excerpt: ''
 api:
   file: engagement-suite.json
