@@ -32,10 +32,28 @@ metadata:
 
 * Quest Name – e.g., “New User Quest”
 * Description (optional) – Brief summary of the quest’s purpose.
-* Quest Duration – Choose one of the three options:
-  * No Limit
-  * Scheduled Start/End
-  * User-Specific Timer
+* Quest Duration – Choose one of the three options:    
+  <Tabs>
+    <Tab title="No Time Limit">
+  Use this option when the quest doesn’t need a specific start or end time. Ideal for ongoing or evergreen quests that users can complete anytime.
+    </Tab>
+
+    <Tab title="**Scheduled Start / End**">
+  Set a defined start and/or end date for your quest. Perfect for time-based events like seasonal campaigns or holiday specials (e.g., December 24–January 5).
+  You can set only a start date, only an end date, or both.
+  If no start date is defined, the quest begins immediately upon creation.
+    </Tab>
+
+    <Tab title="**User-Specific Timer**">
+      Allows setting personalized time limits for each user once they start the quest.
+  Timers can be set in seconds, minutes, hours, days, weeks, or months.
+  Ideal for time-sensitive challenges like daily tasks, short contests, or multi-week learning goals.
+  💡 Example: In a game or learning app, you can give users 24 hours to complete a daily challenge or 30 days to finish a long-term mission.
+    </Tab>
+  </Tabs>
+
+<br />
+
 * User Groups (optional) – Assign which user groups can access this quest.
 
 <Image align="center" border={false} src="https://files.readme.io/bc904780a8ccbec08ff22ef130ad795453c03cf6c090108f90ec6f270e78bed0-Screenshot_2025-10-28_at_12.15.49_PM.png" />
@@ -121,7 +139,7 @@ Once all details are configured:
 
 #### Click Publish to make the quest live immediately.
 
-<Callout icon="💡">
+<Callout icon="💡" theme="default">
   Tip: Always double-check task consistency and reward setup before publishing.
 </Callout>
 
