@@ -93,6 +93,29 @@ Metrics shown for both A/B and non-A/B quests:
 * Reward Claimed: users who claimed rewards (if applicable)
 * Funnel Graph: Reached → Started → Completed → Claimed
 
+#### Engagement (Expanded View)  
+
+**When A/B Testing is Disabled**
+You’ll see overall engagement and completion metrics for a single quest version:
+
+* Conversion Rate: Started ÷ Reached
+* Completion Rate: Completed ÷ Started
+* Reward Claim Rate: Claimed ÷ Completed
+* Average Time to Completion: From created_at to completed_at  
+
+**When A/B Testing is Enabled**
+Metrics are displayed side-by-side for Variant A and Variant B, allowing for easy comparison:
+
+* Users Assigned: Distribution check between variants
+* Conversion Rate per Variant
+* Completion Rate per Variant
+* Reward Claim Rate per Variant
+* Average Time to Completion: Compare duration across variants
+* Funnel Comparison: Visual breakdown of user flow (A vs B)
+* Performance Highlight: Current Leader — Variant X with Y% Completion
+
+  
+
 #### Benefits
 
 * Data-driven insights – Understand what setup drives engagement
