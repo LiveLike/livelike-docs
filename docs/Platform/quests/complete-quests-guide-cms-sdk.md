@@ -31,7 +31,7 @@ Quests can be used to build things like:
 
 #### Feature Context:
 
-You can save your quest as a draft before publishing to prevent unfinished quests from being visible to users and to allow iterative creation.
+The Save as Draft feature lets producers save quests that are partially configured, so they can return later to complete and publish them. This provides flexibility for iterative creation and collaborative editing.  
 
 #### How to Save as Draft
 
@@ -44,9 +44,25 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 <Image align="center" border={false} src="https://files.readme.io/7d7e6c38c4ef318b87b5d4bdd899a16e8e140a603ec81206001560b47f5153a5-Screenshot_2025-10-24_at_2.46.14_PM.png" />
 
-<br />
-
 > Drafts can be reopened later for editing and publishing.
+
+#### Save as Draft-Specific Behavior
+
+| Behavior            | Description                                                                                                 |
+| :------------------ | :---------------------------------------------------------------------------------------------------------- |
+| Minimum validation  | Only Quest Name is required to save as draft.                                                               |
+| When can you save   | You can save and exit from any step — Basic Settings, Objectives, or Rewards                                |
+| Editable            | All quest fields remain editable while the quest is in Draft state.                                         |
+| Visibility          | Draft quests are not visible to end users in feeds or profiles.                                             |
+| Publishing          | Once all required details are filled, click Publish (available on the Rewards step) to make the quest live. |
+| Status label        | Draft quests appear under the Draft tab on the Quest List page.                                             |
+
+#### Benefits
+
+* Flexible workflow – Create and refine over time
+* Collaborative editing – Different teams can contribute asynchronously
+* Reduced last-minute stress – No rush to finalize everything before launch
+* Faster go-live – Prepare, review, and publish efficiently
 
 <br />
 
@@ -54,11 +70,37 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 #### Feature Context:
 
-A/B Testing allows you to test two variants of a quest to see which performs better. Users are automatically segmented into Variant A or Variant B, and engagement, completion, and rewards are tracked.
+The A/B Testing feature allows producers to create two variants of a single quest (Variant A and Variant B) to test different task setups, reward compositions, or difficulty levels. This helps identify which version drives higher user engagement or completion rates.
 
 #### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
 
-<br />
+#### User Assignment & Tracking
+
+* Users are randomly and evenly assigned to Variant A or Variant B the first time they encounter
+  the quest.
+* Assignment is handled server-side and remains consistent for the user.
+* Key metrics per variant are automatically tracked for performance comparison.
+
+#### Analytics (Coming Soon)
+
+Quest performance analytics will be available on the Quest Details page.
+
+#### **Overview (Default View)**
+
+Metrics shown for both A/B and non-A/B quests:
+
+* Reached (Exposure): total user quests created
+* Started: users who attempted ≥1 task
+* Completed: users who finished all tasks
+* Reward Claimed: users who claimed rewards (if applicable)
+* Funnel Graph: Reached → Started → Completed → Claimed
+
+#### Benefits
+
+* Data-driven insights – Understand what setup drives engagement
+* Easy experimentation – Test without duplicating quests
+* Automatic tracking – System handles random assignment and logging
+* Continuous optimization – Improve quest performance over time
 
 ## Managing Quests via SDK/API
 
