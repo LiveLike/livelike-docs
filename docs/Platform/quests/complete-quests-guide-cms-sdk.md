@@ -46,7 +46,7 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 <br />
 
-#### Save as Draft-Specific Behavior
+#### Save as Draft-Specific Behaviour
 
 | Behavior           | Description                                                                                                 |
 | :----------------- | :---------------------------------------------------------------------------------------------------------- |
