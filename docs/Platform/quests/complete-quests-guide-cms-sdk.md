@@ -11,19 +11,22 @@ metadata:
 ---
 # What are Quests?
 
-A Quest is a set of tasks a user must complete to achieve a goal.
-Quest Tasks: Individual tasks within a quest.
-Tasks can be completed in any order, but progress toward the overall Quest goal is tracked.
+A Quest is a structured set of tasks designed to guide users toward achieving a specific goal.
+
+Each quest consists of Quest Tasks — individual milestones or actions that users can complete in any order. Progress is tracked automatically, helping both users and integrators monitor how close they are to completing the overall quest.
 
 ### Why use quests?
 
-Quests give the end user a more gamified experience. They have to do multiple things in order to accomplish a single goal. During the quests, the user and integrators are able to see the progress of the quest. This progress allows the user to see how much is left in order for them to complete the quest.
+Quests add a gamified, goal-oriented experience to your product. Instead of completing a single action, users engage in a series of meaningful steps that build momentum and motivation.  
+As users progress, both they and the system can visualize completion status — creating a sense of achievement and clarity about what remains to be done.
 
-Quests can be used to build things like:
+#### Common Use Cases
 
-* New user on-boarding checklists
-* Product and feature tours
-* One-time promotional campaigns
+Quests can be used to create:
+
+* New user onboarding checklists — guide users through setup or registration.
+* Product or feature tours — introduce new capabilities interactively.
+* Promotional campaigns — encourage engagement through time-limited challenges or rewards.
 
 #### Creating Quests in CMS  - [How to create a Quest in CMS](https://docs.livelike.com/docs/how-to-create-a-quest-in-cms#/)
 
