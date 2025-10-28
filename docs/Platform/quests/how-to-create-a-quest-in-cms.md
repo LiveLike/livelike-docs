@@ -121,6 +121,10 @@ Once all details are configured:
 
 #### Click Publish to make the quest live immediately.
 
+<Callout icon="💡">
+  Tip: Always double-check task consistency and reward setup before publishing.
+</Callout>
+
 Or
 
 #### Click Quit, then choose:
