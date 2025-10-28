@@ -44,6 +44,8 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 > Drafts can be reopened later for editing and publishing.
 
+<br />
+
 #### Save as Draft-Specific Behavior
 
 | Behavior           | Description                                                                                                 |
