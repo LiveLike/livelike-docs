@@ -46,7 +46,7 @@ metadata:
 
 <Image align="center" border={false} src="https://files.readme.io/117f87a4402e9bc492444e72efb23ab16d5e4dd1273d3c14f4364bda01fffa27-Screenshot_2025-10-28_at_11.33.23_AM.png" />
 
-* Enable A/B Testing – Toggle ON to create an A/B Quest.  
+* Enable A/B Testing – Toggle ON to create an A/B Quest.
 
 <Image align="center" border={false} src="https://files.readme.io/85bab2d7552544c64055523be6e5f7d710ea2d2d22d1cf6546d2d1bc02dd62ff-Screenshot_2025-10-28_at_11.35.40_AM.png" />
 
@@ -130,15 +130,30 @@ You can reward users upon quest completion.
 
 <Image align="center" border={false} src="https://files.readme.io/d0a8750cd1f0e46ede6db65a137d7256813ad760d1b96743e57924e8d5c6fc6f-Screenshot_2025-10-28_at_12.02.55_PM.png" />
 
-## Publish or Save Draft
+## Publish or Save Draft  
+
+<br />
 
 After all configurations are complete:
 
-* Click Publish to make the A/B Quest live.
-* Or choose Save and Quit to save it as a draft.
+* **Click Publish to make the A/B Quest live.  **
+  **Before publishing, both variants must pass all validation checks:**  
+  * Each variant includes at least one task.  
+  * Shared fields — such as quest name, duration, and user group — are consistent across variants.
+  * Task names are unique (no duplicates within the quest or between variants).
+  * If rewards are added, each item must have an assigned value.  
+  Once validation is complete and the quest is published:     
+  * Variants are locked and can no longer be edited or deleted.  
+  * The parent quest status automatically updates to Published.
+
+<Callout icon="💡">
+  **Tip**: Always double-check task consistency and reward setup before publishing, since variants can’t be changed afterward.
+</Callout>
+
+<br />
+
+* Or choose **Save and Quit to save it as a draf**t.
 
 Your A/B Quest is now live!
 
 The CMS will automatically segment users into Variant A or B groups and track their engagement, completion, and rewards.
-
-<br />
