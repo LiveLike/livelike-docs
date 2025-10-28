@@ -72,6 +72,10 @@ The A/B Testing feature allows producers to create two variants of a single ques
 
 #### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
 
+> * Configuring rewards is optional, but if a reward is added, it must include an assigned amount.
+> * There is no cap on the number of reward items per variant (one variant may have several, while
+>   the other may have none).
+
 #### User Assignment & Tracking
 
 * Users are randomly and evenly assigned to Variant A or Variant B the first time they encounter
