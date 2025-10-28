@@ -152,7 +152,7 @@ After all configurations are complete:
 
 <br />
 
-* Or choose **Save and Quit to save it as a draf**t.
+* Or choose **Save and Quit to save it as a draft**.
 
 Your A/B Quest is now live!
 
