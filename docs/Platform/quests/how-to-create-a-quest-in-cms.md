@@ -39,18 +39,18 @@ metadata:
       Use this option when the quest doesn’t need a specific start or end time. Ideal for ongoing or evergreen quests that users can complete anytime.
     </Tab>
 
-    <Tab title="**Scheduled Start / End**">
+    <Tab title="Scheduled Start / End">
       Set a defined start and/or end date for your quest. Perfect for time-based events like seasonal campaigns or holiday specials (e.g., December 24–January 5).
       You can set only a start date, only an end date, or both.
       If no start date is defined, the quest begins immediately upon creation.
     </Tab>
 
-    <Tab title="**User-Specific Timer**">
+    <Tab title="User-Specific Timer">
       Allows setting personalized time limits for each user once they start the quest.
       Timers can be set in seconds, minutes, hours, days, weeks, or months.
       Ideal for time-sensitive challenges like daily tasks, short contests, or multi-week learning goals.
-      
-  Example: In a game or learning app, you can give users 24 hours to complete a daily challenge or 30 days to finish a long-term mission.
+
+      Example: In a game or learning app, you can give users 24 hours to complete a daily challenge or 30 days to finish a long-term mission.
     </Tab>
   </Tabs>
 
