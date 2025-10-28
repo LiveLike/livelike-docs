@@ -39,9 +39,25 @@ metadata:
 * Quest Name – e.g., “New User Quest”
 * Description (optional) – Brief summary of the quest’s purpose.
 * Quest Duration – Choose one of the three options:
-  * No Limit
-  * Scheduled Start/End
-  * User-Specific Timer
+  <Tabs>
+    <Tab title="No Time Limit">
+      Use this option when the quest doesn’t need a specific start or end time. Ideal for ongoing or evergreen quests that users can complete anytime.
+    </Tab>
+
+    <Tab title="**Scheduled Start / End**">
+      Set a defined start and/or end date for your quest. Perfect for time-based events like seasonal campaigns or holiday specials (e.g., December 24–January 5).
+      You can set only a start date, only an end date, or both.
+      If no start date is defined, the quest begins immediately upon creation.
+    </Tab>
+
+    <Tab title="**User-Specific Timer**">
+      Allows setting personalized time limits for each user once they start the quest.
+      Timers can be set in seconds, minutes, hours, days, weeks, or months.
+      Ideal for time-sensitive challenges like daily tasks, short contests, or multi-week learning goals.
+
+      Example: In a game or learning app, you can give users 24 hours to complete a daily challenge or 30 days to finish a long-term mission.
+    </Tab>
+  </Tabs>
 * User Groups (optional) – Assign which user groups can access this quest.
 
 <Image align="center" border={false} src="https://files.readme.io/117f87a4402e9bc492444e72efb23ab16d5e4dd1273d3c14f4364bda01fffa27-Screenshot_2025-10-28_at_11.33.23_AM.png" />
@@ -132,21 +148,21 @@ You can reward users upon quest completion.
 
 <br />
 
-## Publish or Save Draft  
+## Publish or Save Draft
 
 After all configurations are complete:
 
 * **Click Publish to make the A/B Quest live.  **
-  **Before publishing, both variants must pass all validation checks:**  
-  * Each variant includes at least one task.  
+  **Before publishing, both variants must pass all validation checks:**
+  * Each variant includes at least one task.
   * Shared fields — such as quest name, duration, and user group — are consistent across variants.
   * Task names are unique (no duplicates within the quest or between variants).
   * If rewards are added, each item must have an assigned value.  
-  Once validation is complete and the quest is published:     
-  * Variants are locked and can no longer be edited or deleted.  
+    Once validation is complete and the quest is published:
+  * Variants are locked and can no longer be edited or deleted.
   * The parent quest status automatically updates to Published.
 
-<Callout icon="💡">
+<Callout icon="💡" theme="default">
   **Tip**: Always double-check task consistency and reward setup before publishing, since variants can’t be changed afterward.
 </Callout>
 
