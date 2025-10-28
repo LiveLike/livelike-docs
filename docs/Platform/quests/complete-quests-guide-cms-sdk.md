@@ -91,52 +91,51 @@ The A/B Testing feature allows producers to create two variants of a single ques
 #### Benefits
 
 * Data-driven insights – Understand what setup drives engagement
+
 * Easy experimentation – Test without duplicating quests
+
 * Automatic tracking – System handles random assignment and logging
+
 * Continuous optimization – Improve quest performance over time
 
-  
 
-<Accordion title="My Accordion Title" icon="fa-info-circle">
-  #### Analytics (Coming Soon)
+<Accordion title="Analytics (Coming Soon)" icon="fa-info-circle">
+  Quest performance analytics will be available on the Quest Details page.
 
-Quest performance analytics will be available on the Quest Details page.
+  #### **Overview (Default View)**
 
-#### **Overview (Default View)**
+  Metrics shown for both A/B and non-A/B quests:
 
-Metrics shown for both A/B and non-A/B quests:
+  * Reached (Exposure): total user quests created
+  * Started: users who attempted ≥1 task
+  * Completed: users who finished all tasks
+  * Reward Claimed: users who claimed rewards (if applicable)
+  * Funnel Graph: Reached → Started → Completed → Claimed
 
-* Reached (Exposure): total user quests created
-* Started: users who attempted ≥1 task
-* Completed: users who finished all tasks
-* Reward Claimed: users who claimed rewards (if applicable)
-* Funnel Graph: Reached → Started → Completed → Claimed
+  #### Engagement (Expanded View)
 
-#### Engagement (Expanded View)
+  **When A/B Testing is Disabled**
+  You’ll see overall engagement and completion metrics for a single quest version:
 
-**When A/B Testing is Disabled**
-You’ll see overall engagement and completion metrics for a single quest version:
+  * Conversion Rate: Started ÷ Reached
+  * Completion Rate: Completed ÷ Started
+  * Reward Claim Rate: Claimed ÷ Completed
+  * Average Time to Completion: From created\_at to completed\_at
 
-* Conversion Rate: Started ÷ Reached
-* Completion Rate: Completed ÷ Started
-* Reward Claim Rate: Claimed ÷ Completed
-* Average Time to Completion: From created_at to completed_at
+  **When A/B Testing is Enabled**
+  Metrics are displayed side-by-side for Variant A and Variant B, allowing for easy comparison:
 
-**When A/B Testing is Enabled**
-Metrics are displayed side-by-side for Variant A and Variant B, allowing for easy comparison:
+  * Users Assigned: Distribution check between variants
 
-* Users Assigned: Distribution check between variants
+  * Conversion Rate per Variant
 
-* Conversion Rate per Variant
+  * Completion Rate per Variant
 
-* Completion Rate per Variant
+  * Reward Claim Rate per Variant
 
-* Reward Claim Rate per Variant
+  * Average Time to Completion: Compare duration across variants
 
-* Average Time to Completion: Compare duration across variants
+  * Funnel Comparison: Visual breakdown of user flow (A vs B)
 
-* Funnel Comparison: Visual breakdown of user flow (A vs B)
-
-* Performance Highlight: Current Leader — Variant X with Y% Completion
-
+  * Performance Highlight: Current Leader — Variant X with Y% Completion
 </Accordion>
