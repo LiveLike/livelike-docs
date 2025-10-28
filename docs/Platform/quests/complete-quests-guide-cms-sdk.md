@@ -72,9 +72,12 @@ The A/B Testing feature allows producers to create two variants of a single ques
 
 #### Creating A/B Quests in CMS - [How to Create an A/B Quest](https://docs.livelike.com/docs/how-to-create-ab-quest-in-cms#/)
 
-> * Configuring rewards is optional, but if a reward is added, it must include an assigned amount.
-> * There is no cap on the number of reward items per variant (one variant may have several, while
->   the other may have none).
+> Configuring rewards is optional, but if a reward is added, it must include an assigned amount.
+>
+> There is no cap on the number of reward items per variant (one variant may have several, while
+> the other may have none).
+
+<br />
 
 #### User Assignment & Tracking
 
@@ -82,6 +85,8 @@ The A/B Testing feature allows producers to create two variants of a single ques
   the quest.
 * Assignment is handled server-side and remains consistent for the user.
 * Key metrics per variant are automatically tracked for performance comparison.
+
+<br />
 
 #### Analytics (Coming Soon)
 
@@ -97,7 +102,7 @@ Metrics shown for both A/B and non-A/B quests:
 * Reward Claimed: users who claimed rewards (if applicable)
 * Funnel Graph: Reached → Started → Completed → Claimed
 
-#### Engagement (Expanded View)  
+#### Engagement (Expanded View)
 
 **When A/B Testing is Disabled**
 You’ll see overall engagement and completion metrics for a single quest version:
@@ -105,20 +110,26 @@ You’ll see overall engagement and completion metrics for a single quest versio
 * Conversion Rate: Started ÷ Reached
 * Completion Rate: Completed ÷ Started
 * Reward Claim Rate: Claimed ÷ Completed
-* Average Time to Completion: From created_at to completed_at  
+* Average Time to Completion: From created_at to completed_at
 
 **When A/B Testing is Enabled**
 Metrics are displayed side-by-side for Variant A and Variant B, allowing for easy comparison:
 
 * Users Assigned: Distribution check between variants
+
 * Conversion Rate per Variant
+
 * Completion Rate per Variant
+
 * Reward Claim Rate per Variant
+
 * Average Time to Completion: Compare duration across variants
+
 * Funnel Comparison: Visual breakdown of user flow (A vs B)
+
 * Performance Highlight: Current Leader — Variant X with Y% Completion
 
-  
+<br />
 
 #### Benefits
 
