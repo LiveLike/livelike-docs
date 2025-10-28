@@ -38,7 +38,9 @@ metadata:
   * User-Specific Timer
 * User Groups (optional) – Assign which user groups can access this quest.
 
-<Image align="center" border={false} src="https://files.readme.io/449e9f7ece35daab017132c9d44fc7acd9b3cba67fc9e76a93cc9a20a46c5774-3-Enter_Quest_test_CMS_into_Quest_Name0A_0A_0A_0A_Give_Quest_a_Name.jpg" />
+<Image align="center" border={false} src="https://files.readme.io/bc904780a8ccbec08ff22ef130ad795453c03cf6c090108f90ec6f270e78bed0-Screenshot_2025-10-28_at_12.15.49_PM.png" />
+
+<br />
 
 #### Click "Continue" to proceed.
 
@@ -48,13 +50,13 @@ metadata:
 
 #### Each quest consists of one or more tasks that users complete to progress.
 
-* Enter a Quest Task Name (e.g., Voting).
+* Enter a Quest Task Name (e.g., Answer the Quiz Correctly or Make a Prediction).
 * Set the Target Value – the number of times a user must complete the task.
 
-<Image align="center" border={false} src="https://files.readme.io/c9d7677b2e137e6bd37967a00e63efa3c40f81bc4073392cafaed58eeee86e1f-14-Enter_Voting_into_Quest_Task_Name0A_0A_0A_0A_Task_name_is_required.jpg" />
+<Image align="center" border={false} src="https://files.readme.io/9f437e97bdee0323ed0c8f636bf5ac860ddff7f5eb1e1cde3f3ac91308ea4830-Screenshot_2025-10-28_at_12.17.34_PM.png" />
 
 <Callout icon="📘" theme="info">
-  #### Pro Tip: Use actionable task names, e.g., “Vote on a poll in Game Center,” instead of generic names like “Voting.”
+  #### Pro Tip: Use actionable task names, e.g., “Answer the Quiz Correctly,” instead of generic names like “Quiz.”
 </Callout>
 
 <br />
@@ -63,7 +65,7 @@ metadata:
 
 * Use the dropdown to select or search for the action you want to link to this task.
 
-<Image align="center" border={false} src="https://files.readme.io/9e0dc88dbe8e812efd7d79bed39c6efc1e36f6f9dbc29799d09b798f667d8ee5-Screenshot_2025-10-24_at_2.34.35_PM.png" />
+<Image align="center" border={false} src="https://files.readme.io/a7cb1b58b31bbae18835e098c5846f1f7c3ca388b2a291f3bd57b4d69c04c255-Screenshot_2025-10-28_at_12.21.31_PM.png" />
 
 > ### &#x20; To add another task, click + Add Task and repeat the steps.
 
