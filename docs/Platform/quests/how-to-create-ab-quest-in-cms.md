@@ -130,9 +130,9 @@ You can reward users upon quest completion.
 
 <Image align="center" border={false} src="https://files.readme.io/d0a8750cd1f0e46ede6db65a137d7256813ad760d1b96743e57924e8d5c6fc6f-Screenshot_2025-10-28_at_12.02.55_PM.png" />
 
-## Publish or Save Draft  
-
 <br />
+
+## Publish or Save Draft  
 
 After all configurations are complete:
 
