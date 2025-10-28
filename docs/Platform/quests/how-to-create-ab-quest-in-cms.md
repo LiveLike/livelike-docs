@@ -44,20 +44,20 @@ metadata:
   * User-Specific Timer
 * User Groups (optional) – Assign which user groups can access this quest.
 
-<Image align="center" border={false} src="https://files.readme.io/449e9f7ece35daab017132c9d44fc7acd9b3cba67fc9e76a93cc9a20a46c5774-3-Enter_Quest_test_CMS_into_Quest_Name0A_0A_0A_0A_Give_Quest_a_Name.jpg" />
+<Image align="center" border={false} src="https://files.readme.io/117f87a4402e9bc492444e72efb23ab16d5e4dd1273d3c14f4364bda01fffa27-Screenshot_2025-10-28_at_11.33.23_AM.png" />
 
-* Enable A/B Testing – Toggle ON to create an A/B Quest.
+* Enable A/B Testing – Toggle ON to create an A/B Quest.  
 
-<Image align="center" border={false} src="https://files.readme.io/5f8c0d0af0f0aafdd734f51f02edb3f793d44cd94c01f46b5d925fb563652918-Screenshot_2025-10-24_at_3.48.47_PM.png" />
+<Image align="center" border={false} src="https://files.readme.io/85bab2d7552544c64055523be6e5f7d710ea2d2d22d1cf6546d2d1bc02dd62ff-Screenshot_2025-10-28_at_11.35.40_AM.png" />
 
 Once enabled, you’ll see the following additional fields:
 
-* Test Name – e.g., “Prediction vs Voting Popularity”
-* Test Description (optional) – e.g., “To test which is more popular: Predictions or Voting.”
-* Variant A Name – e.g., “Prediction”
-* Variant A Description (optional) – “Predict the correct outcome.”
-* Variant B Name – e.g., “Voting”
-* Variant B Description (optional) – “Make a vote.”
+* Test Name – e.g., “Task Complexity Experiment”
+* Test Description (optional) – e.g., “Test whether shorter, easier tasks (Variant A) or longer, more effortful tasks (Variant B) result in higher quest completion rates and sustained engagement.”
+* Variant A Name – e.g., “Light Engagement”
+* Variant A Description (optional) – “Encourage easy, fast wins to boost overall participation and quest completions.”
+* Variant B Name – e.g., “Deep Engagement”
+* Variant B Description (optional) – “Measure if deeper, more time-intensive tasks create stronger engagement, even with equal rewards.”
 
 <br />
 
@@ -81,7 +81,7 @@ Once enabled, you’ll see the following additional fields:
 * Enable Link Action – Use the dropdown to select or search for the action to link.
 * To add another task for Variant B, click + Add Task and repeat the steps.
 
-<Image align="center" border={false} src="https://files.readme.io/aa9a6847c65b576e724c96416050d47f2bb4e0150964c434f50f98a664ad5e2b-Screenshot_2025-10-24_at_4.03.09_PM.png" />
+<Image align="center" border={false} src="https://files.readme.io/69ff44d991afcc263ae99e8ecb813c772d569e3c127b15f37ad5623ffbfac1fd-Screenshot_2025-10-28_at_12.00.25_PM.png" />
 
 #### Click Continue when both are configured.
 
@@ -103,9 +103,7 @@ You can reward users upon quest completion.
 
 > To add more rewards, click "+ Add Reward" under Var B and repeat.
 
-<Image align="center" border={false} src="https://files.readme.io/01d53d448939deb98f9859a3658290d924d04af402472f5ad278355ba60a84f7-Screenshot_2025-10-24_at_4.05.35_PM.png" />
-
-<br />
+<Image align="center" border={false} src="https://files.readme.io/6a7a1be7ba5fe9e5f24a2b4bd4f0842ed962f85c379a50c31785c58a5976a622-Screenshot_2025-10-28_at_12.01.40_PM.png" />
 
 #### Add to Leaderboard (Optional)
 
@@ -121,9 +119,7 @@ You can reward users upon quest completion.
 * Variant A – Select a badge from Var A available section.
 * Variant B – Select a badge from Var B available section.
 
-<Image align="center" border={false} src="https://files.readme.io/8620d7dfe9339f22883687e25f44b046cd042f253efa4680a899c04c99eacda0-Screenshot_2025-10-24_at_4.08.32_PM.png" />
-
-<br />
+<Image align="center" border={false} src="https://files.readme.io/89b6ba5308b7cdfb9cdc3ce284c2f46cf08a3f10525434d9caab9e49fb4bdfb9-Screenshot_2025-10-28_at_12.02.26_PM.png" />
 
 #### Add Sponsor (Optional)
 
@@ -132,7 +128,7 @@ You can reward users upon quest completion.
 * Select a sponsor for Variant A.
 * Select a sponsor for Variant B.
 
-<Image align="center" border={false} src="https://files.readme.io/e61423793f35c39022695d1f0c565d3b101d64f07eb70014e133dd78387fee6c-Screenshot_2025-10-24_at_4.10.38_PM.png" />
+<Image align="center" border={false} src="https://files.readme.io/d0a8750cd1f0e46ede6db65a137d7256813ad760d1b96743e57924e8d5c6fc6f-Screenshot_2025-10-28_at_12.02.55_PM.png" />
 
 ## Publish or Save Draft
 
@@ -144,3 +140,5 @@ After all configurations are complete:
 Your A/B Quest is now live!
 
 The CMS will automatically segment users into Variant A or B groups and track their engagement, completion, and rewards.
+
+<br />
