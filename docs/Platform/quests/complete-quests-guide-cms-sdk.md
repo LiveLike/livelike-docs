@@ -29,9 +29,7 @@ Quests can be used to build things like:
 
 ## Save Quests as Drafts
 
-#### Feature Context:
-
-The Save as Draft feature lets producers save quests that are partially configured, so they can return later to complete and publish them. This provides flexibility for iterative creation and collaborative editing.  
+The Save as Draft feature lets producers save quests that are partially configured, so they can return later to complete and publish them. This provides flexibility for iterative creation and collaborative editing.
 
 #### How to Save as Draft
 
@@ -48,14 +46,14 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 
 #### Save as Draft-Specific Behavior
 
-| Behavior            | Description                                                                                                 |
-| :------------------ | :---------------------------------------------------------------------------------------------------------- |
-| Minimum validation  | Only Quest Name is required to save as draft.                                                               |
-| When can you save   | You can save and exit from any step — Basic Settings, Objectives, or Rewards                                |
-| Editable            | All quest fields remain editable while the quest is in Draft state.                                         |
-| Visibility          | Draft quests are not visible to end users in feeds or profiles.                                             |
-| Publishing          | Once all required details are filled, click Publish (available on the Rewards step) to make the quest live. |
-| Status label        | Draft quests appear under the Draft tab on the Quest List page.                                             |
+| Behavior           | Description                                                                                                 |
+| :----------------- | :---------------------------------------------------------------------------------------------------------- |
+| Minimum validation | Only Quest Name is required to save as draft.                                                               |
+| When can you save  | You can save and exit from any step — Basic Settings, Objectives, or Rewards                                |
+| Editable           | All quest fields remain editable while the quest is in Draft state.                                         |
+| Visibility         | Draft quests are not visible to end users in feeds or profiles.                                             |
+| Publishing         | Once all required details are filled, click Publish (available on the Rewards step) to make the quest live. |
+| Status label       | Draft quests appear under the Draft tab on the Quest List page.                                             |
 
 #### Benefits
 
@@ -67,8 +65,6 @@ Create a quest as above. [LINK](https://docs.livelike.com/docs/how-to-create-a-q
 <br />
 
 ## A/B Testing Using Quests
-
-#### Feature Context:
 
 The A/B Testing feature allows producers to create two variants of a single quest (Variant A and Variant B) to test different task setups, reward compositions, or difficulty levels. This helps identify which version drives higher user engagement or completion rates.
 
