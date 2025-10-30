@@ -27,6 +27,8 @@ Some use cases for custom IDs are:
 
 ## Attributes
 
+Attributes are arbitrary key-value pairs that you can populate on profiles, programs, widgets, and other objects inside of LiveLike. Your integration specifies both the keys and their values.
+
 Attributes are most useful for one-to-many mappings between entities in your system and LiveLike. Attributes are indexed on our side and can be queried via API, so you can return results matching the presence of a given attribute, or matching specific values.
 
 Common use cases for custom IDs include:
