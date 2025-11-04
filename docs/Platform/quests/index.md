@@ -494,6 +494,8 @@ quests.claimUserQuestRewards("<user quest id>",
                 })
 ```
 
+<br />
+
 <Cards columns={2}>
   <Card title="Link to API doc" href="https://docs.livelike.com/reference/create-quests" icon="fa-star" target="_blank">
     If you intend to generate quests programmatically through the API, please consult the provided technical documentation for comprehensive guidance on the process.
