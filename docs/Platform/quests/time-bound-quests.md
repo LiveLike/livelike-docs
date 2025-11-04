@@ -32,19 +32,19 @@ For instance, in a gaming environment or an educational platform, administrators
 1. Head to your Application on the [Producer Site](https://cf-blast.livelikecdn.com/producer/)
 2. Select **"Quests"** from the sidebar menu
 3. Click on the **"New Quest"** Button
-4. Set the Quest name, Description, and add at least one subtask.\
+4. Set the Quest name, Description, and add at least one subtask.  
    Note: When creating a subtask, you may link a reward action for automating quest task progress
 5. Select Time duration from the below given options
 
    1. No Time Duration Quest
 
-      <Image align="center" src="https://files.readme.io/31022fa-Screenshot_2024-04-05_at_11.45.06_AM.png" />
-   2. Schedule Start/End Quest 
+      <Image align="center" border={false} src="https://files.readme.io/31022fa-Screenshot_2024-04-05_at_11.45.06_AM.png" />
+   2. Schedule Start/End Quest
 
-      ![](https://files.readme.io/ffcca50-Screenshot_2024-04-05_at_12.13.55_PM.png)
-   3. User Specific Timer Quest 
+      <Image border={false} src="https://files.readme.io/ffcca50-Screenshot_2024-04-05_at_12.13.55_PM.png" />
+   3. User Specific Timer Quest
 
-      ![](https://files.readme.io/450ac44-Screenshot_2024-04-05_at_12.14.08_PM.png)
+      <Image border={false} src="https://files.readme.io/450ac44-Screenshot_2024-04-05_at_12.14.08_PM.png" />
 6. Click on the **"Create"** Button to create the quest
 
 ## Link to API doc
