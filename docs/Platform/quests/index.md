@@ -499,7 +499,7 @@ quests.claimUserQuestRewards("<user quest id>",
     If you intend to generate quests programmatically through the API, please consult the provided technical documentation for comprehensive guidance on the process.
   </Card>
 
-  <Card title="Link to Quests CMS Guide" href="https://docs.livelike.com/update/docs/complete-quests-guide-cms-sdk#/" icon="fa-star" target="_blank">
+  <Card title="Quests CMS Guide" href="https://docs.livelike.com/update/docs/complete-quests-guide-cms-sdk#/" icon="fa-star" target="_blank">
     Contains all the details about creating Quests using the CMS.
   </Card>
 </Cards>
