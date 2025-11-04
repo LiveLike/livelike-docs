@@ -5,7 +5,7 @@ excerpt: >-
   This guide explains how to create, manage, and track quests in the CMS and via
   SDK, including Save as Draft and A/B Testing features.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
