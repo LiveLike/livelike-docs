@@ -103,7 +103,7 @@ The A/B Testing feature allows producers to create two variants of a single ques
 
 <br />
 
-<Accordion title="Analytics (Coming Soon)**" icon="fa-info-circle">
+<Accordion title="Analytics in CMS (Coming Soon)**" icon="fa-info-circle">
   Quest performance analytics will be available on the Quest Details page.
 
   #### **Overview (Default View)**
