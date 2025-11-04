@@ -2,8 +2,8 @@
 title: Quests CMS Guide
 excerpt: >-
   Quests allow users to complete multi-step challenges to earn one-time rewards.
-  This guide explains how to create, manage, and track quests in the CMS and via
-  SDK, including Save as Draft and A/B Testing features.
+  This guide explains how to create, manage, and track quests in the CMS,
+  including Save as Draft and A/B Testing features.
 deprecated: false
 hidden: false
 metadata:
