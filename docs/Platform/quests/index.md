@@ -459,7 +459,7 @@ LiveLike.getUserQuestRewards({
 
 When all of the tasks in a user quest are completed, the quest itself is considered completed.
 
-Completed user quests can have their rewards *claimed* by the user. Rewards for a quest can only be claimed once per user completing the quest.
+Completed user quests can have their rewards _claimed_ by the user. Rewards for a quest can only be claimed once per user completing the quest.
 
 ## Claiming rewards for completed user quests
 
@@ -493,3 +493,28 @@ quests.claimUserQuestRewards("<user quest id>",
                     }
                 })
 ```
+
+  
+
+<Cards columns={2}>
+  <Card 
+    title="Link to API doc" 
+    href="https://docs.livelike.com/reference/create-quests" 
+    icon="fa-star" 
+    target="_blank"
+  >
+    If you intend to generate quests programmatically through the API, please consult the provided technical documentation for comprehensive guidance on the process.  
+  </Card>
+
+  <Card 
+    title="Link to Quests CMS Guide" 
+    href="https://docs.livelike.com/update/docs/complete-quests-guide-cms-sdk#/" 
+    icon="fa-user"
+    target="_blank"
+  >
+    Contains all the details about creating Quests using the CMS.
+  </Card>
+</Cards>
+
+
+ 
