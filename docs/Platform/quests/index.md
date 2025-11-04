@@ -494,27 +494,12 @@ quests.claimUserQuestRewards("<user quest id>",
                 })
 ```
 
-  
-
 <Cards columns={2}>
-  <Card 
-    title="Link to API doc" 
-    href="https://docs.livelike.com/reference/create-quests" 
-    icon="fa-star" 
-    target="_blank"
-  >
-    If you intend to generate quests programmatically through the API, please consult the provided technical documentation for comprehensive guidance on the process.  
+  <Card title="Link to API doc" href="https://docs.livelike.com/reference/create-quests" icon="fa-star" target="_blank">
+    If you intend to generate quests programmatically through the API, please consult the provided technical documentation for comprehensive guidance on the process.
   </Card>
 
-  <Card 
-    title="Link to Quests CMS Guide" 
-    href="https://docs.livelike.com/update/docs/complete-quests-guide-cms-sdk#/" 
-    icon="fa-user"
-    target="_blank"
-  >
+  <Card title="Link to Quests CMS Guide" href="https://docs.livelike.com/update/docs/complete-quests-guide-cms-sdk#/" icon="fa-star" target="_blank">
     Contains all the details about creating Quests using the CMS.
   </Card>
 </Cards>
-
-
- 
