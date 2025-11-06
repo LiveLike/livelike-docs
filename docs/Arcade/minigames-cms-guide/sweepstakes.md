@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-A sweepstakes is a promotional giveaway where users enter for a chance to win prizes through random selection. Unlike skill-based contests, winners are chosen purely by luck, making it accessible to everyone. The first entry is always free, and multiple entries are allowed to reward higher engagement. 
+A sweepstakes is a promotional giveaway where users enter for a chance to win prizes through random selection. Unlike skill-based contests, winners are chosen purely by luck, making it accessible to everyone. The first entry is always free, and multiple entries are allowed to reward higher engagement.
 
 Sweepstakes experience is available in the experiences list once you login and choose your application.
 
@@ -19,10 +19,24 @@ The Sweepstakes setup consists of 9 key steps as outlined below:
 
 1. **Game Settings Screen **
 
-         i. Configure the start date and time and the end date and time for the sweepstakes contest
+   i. Configure the start date and time and the end date and time for the sweepstakes contest
 
 <Image border={false} src="https://files.readme.io/3cf7348a8feedaa3ed004f65931a08072703ac15afe63b2bb4ef6e49fd916624-Screenshot_2025-11-06_at_2.01.15PM.png" />
 
 2. Contest Details
+
+Fill in the sweepstakes contest details
+
+i.  Title
+
+ii.  Description
+
+iii. Set CTA text (Join sweepstakes)
+
+iv. Provide the Entry configuration, Single or Multiple. The sweepstakes supports two entry configurations — Single Entry and Multiple Entries. In a single-entry setup, participants can enter only once, and the entry is free.
+
+In a Multiple Entries setup, participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant’s balance.
+
+v. Configure the maximum entries, how many entries the participant can have, and if the entry config is multiple. Additionally, define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry.
 
 <br />
