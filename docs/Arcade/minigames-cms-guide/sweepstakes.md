@@ -47,6 +47,11 @@ Entry Configuration - Multiple
 
 <Image border={false} src="https://files.readme.io/11cdece56be778f2a4d73506a2767f2c9a0c2206873b3f9702310a038d875e6d-Screenshot_2025-11-06_at_3.06.06PM.png" />
 
-<br />
+3. Legal Information
+
+   This section allows you to add the Terms and Conditions and a corresponding acceptance link. You can enable a   toggle to display a checkbox for Terms and Conditions acceptance.
+Similarly, you can define the Rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox. Providing this legal information is optional and can be skipped if not required.
+
+<Image border={false} src="https://files.readme.io/fe98dbf0333a3db0a61752713e0d10ce4d21c855702226bb03414f1dc762cb88-Screenshot_2025-11-06_at_3.12.02PM.png" />
 
 <br />
