@@ -39,4 +39,14 @@ In a Multiple Entries setup, participants can submit multiple entries. The first
 
 v. Configure the maximum entries, how many entries the participant can have, and if the entry config is multiple. Additionally, define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry.
 
+Entry Configuration - Single
+
+<Image border={false} src="https://files.readme.io/38e22a83ee21a95cc161fdee18e943ca293d1dcaa73605e35f6c45e4a62f1700-Screenshot_2025-11-06_at_3.04.34PM.png" />
+
+Entry Configuration - Multiple
+
+<Image border={false} src="https://files.readme.io/11cdece56be778f2a4d73506a2767f2c9a0c2206873b3f9702310a038d875e6d-Screenshot_2025-11-06_at_3.06.06PM.png" />
+
+<br />
+
 <br />
