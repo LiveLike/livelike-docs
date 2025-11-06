@@ -83,7 +83,12 @@ next:
 
 ```
 
-<br />
+* **Sweepstakes**: Add the following script tag to your HTML page:
+
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.1.1.js"></script>
+
+```
 
 ### Step 3: Embed Game Component
 
@@ -134,6 +139,16 @@ next:
 ```html html
 <ll-skill-game accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-skill-game>
 ```
+
+<br />
+
+* #### **Sweepstakes**
+
+```html html
+<ll-sweepstakes profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-sweepstakes>
+```
+
+<br />
 
 ### Required Parameters:
 
