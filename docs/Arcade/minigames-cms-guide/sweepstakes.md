@@ -19,17 +19,17 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image border={false} src="https://files.readme.io/3b70c6aac2834088bfb1be281f4de100b89e1c2b9e59a74be9c92908438e1d70-Screenshot_2025-11-06_at_1.25.42PM.png" />
 
-## Sweepstakes Setup Steps
+**Sweepstakes Setup Steps**
 
 The sweepstakes setup consists of 9 key steps:
 
-### 1. Game Settings
+1. **Game Settings**
 
 Configure the start date and time and the end date and time for the sweepstakes contest.
 
 <Image border={false} src="https://files.readme.io/3cf7348a8feedaa3ed004f65931a08072703ac15afe63b2bb4ef6e49fd916624-Screenshot_2025-11-06_at_2.01.15PM.png" />
 
-### 2. Contest Details
+2. **Contest Details**
 
 Fill in the sweepstakes contest details:
 
@@ -56,7 +56,7 @@ The sweepstakes supports two entry configurations:
 
 <Image border={false} src="https://files.readme.io/11cdece56be778f2a4d73506a2767f2c9a0c2206873b3f9702310a038d875e6d-Screenshot_2025-11-06_at_3.06.06PM.png" />
 
-### 3. Legal Information
+3. **Legal Information**
 
 This section allows you to add legal requirements:
 
@@ -67,7 +67,7 @@ Providing this legal information is optional and can be skipped if not required.
 
 <Image border={false} src="https://files.readme.io/fe98dbf0333a3db0a61752713e0d10ce4d21c855702226bb03414f1dc762cb88-Screenshot_2025-11-06_at_3.12.02PM.png" />
 
-### 4. Form Fields
+4. **Form Fields**
 
 The entry form allows participants to submit their information to enter the contest. You can configure the required fields based on the information needed for participation.
 
@@ -75,7 +75,7 @@ This form section is optional and can be skipped if no user information is requi
 
 <Image border={false} src="https://files.readme.io/604e3660d17864b2dd189010766af725395e1d8487806627b2c91d1107650ef1-Screenshot_2025-11-06_at_3.26.22PM.png" />
 
-### 5. Prize Configuration
+5. **Prize Configuration**
 
 Define the prize details for the sweepstakes winners:
 
@@ -87,7 +87,7 @@ Define the prize details for the sweepstakes winners:
 
 <Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
 
-### 6. Results Configuration
+6. **Results Configuration**
 
 The Results section defines what participants see after they've entered the contest or when the contest has ended. It allows you to customize the display content for both participating and non-participating users.
 
@@ -101,7 +101,7 @@ This section includes:
 
 <Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
 
-### 7. Theme & Branding
+7. **Theme & Branding**
 
 Customize the visual identity of the game to match your brand's theme and styling.
 
@@ -127,14 +127,26 @@ The theming system provides support to:
 
 <Image border={false} src="https://files.readme.io/fcda068348db87b92fe676df69832a96cb97454f609b702087b0f8c57064b75a-Screenshot_2025-11-06_at_3.57.11PM.png" />
 
-### 8. Schedule
+<br />
+
+9. **Sharing**
+
+i. The section includes toggles for showing user stats and enabling stat sharing capabilities.
+
+ii. You can customize a share message to invite others. The Deeplink feature allows configuration of deep linking functionality.
+
+<Image border={false} src="https://files.readme.io/dbf130cdaf80429875cb81b13b0ca406a5d2625c8b5e31a85553b84295d12876-Screenshot_2025-11-06_at_4.09.55PM.png" />
+
+<br />
+
+<br />
+
+8. **Schedule**
 
 Choose launch timing: Either Publish Now or Save as Draft
 
-### 9. Sharing
+<Image border={false} src="https://files.readme.io/7f34a9900d083211ac48785fe52fdeac4c84c4ab87b28bf549a15f7177402555-Screenshot_2025-11-06_at_4.10.31PM.png" />
 
-Once all settings are configured and tested, you can launch and share your sweepstakes:
+9. Control Panel
 
-i. **Launch your sweepstakes**: Deploy the configured sweepstakes to make it live for participants
-
-ii. **Monitor engagement**: Track participant entries and overall contest performance
+ 
