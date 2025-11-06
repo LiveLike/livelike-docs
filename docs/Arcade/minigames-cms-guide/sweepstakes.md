@@ -85,4 +85,18 @@ e.  Extra Chance Title & Description – Displayed when multiple entries are all
 
 <Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
 
-<br />
+7. Theme & Branding
+
+   Customize the visual identity of the game to match the theme and styling of your brand.
+   Theme Selection: Use Existing, Upload, or Create New Theme
+   The Theming provides support to upload the Brand Logo, change the Background image or apply color.
+
+ Please Note:
+   The structure of the Sweepstakes will remain the same.
+   Colors or Background Images on Form Screen, Ongoing Contest Screen, and End Screen can be changed.
+   Text copies can be changed for Form Screen, Ongoing Contest Screen, and End Screen.
+
+   Prize image can be configured for the Ongoing Contest Screen and the End Screen.
+   Positioning, adding and resizing of components cannot be done.
+   Font: Configurable in the Theme setup.
+   Background image: Recommended size 1080x1920 , max size 1mb
