@@ -19,7 +19,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image border={false} src="https://files.readme.io/3b70c6aac2834088bfb1be281f4de100b89e1c2b9e59a74be9c92908438e1d70-Screenshot_2025-11-06_at_1.25.42PM.png" />
 
-## Sweepstakes Setup Steps
+**Sweepstakes Setup Steps**
 
 The sweepstakes setup consists of 9 key steps:
 
