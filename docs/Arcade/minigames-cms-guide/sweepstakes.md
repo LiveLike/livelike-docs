@@ -66,8 +66,8 @@ This form section is optional and can be skipped if no user information is requi
 5. Prize
 
   Define the prize details for the sweepstakes winners, including the prize title, description, and image.
-Specify the number of winners eligible for this prize, or assign how many participants the prize can be allotted to.
-Additionally, set the maximum prize allotment per user to control how many times a single participant can be allotted the prize.
+ Specify the number of winners eligible for this prize, or assign how many participants the prize can be allotted to.
+ Additionally, set the maximum prize allotment per user to control how many times a single participant can be allotted    the prize.
 
 <Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
 
