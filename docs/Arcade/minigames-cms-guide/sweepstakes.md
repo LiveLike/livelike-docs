@@ -83,4 +83,6 @@ c.  Result Titles – Separate titles for users who participated and those who d
 d.  Result Descriptions – Corresponding descriptions for both participating and non-participating users.
 e.  Extra Chance Title & Description – Displayed when multiple entries are allowed, giving users another opportunity to participate.
 
+<Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
+
 <br />
