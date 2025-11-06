@@ -147,6 +147,6 @@ Choose launch timing: Either Publish Now or Save as Draft
 
 <Image border={false} src="https://files.readme.io/7f34a9900d083211ac48785fe52fdeac4c84c4ab87b28bf549a15f7177402555-Screenshot_2025-11-06_at_4.10.31PM.png" />
 
-9. Control Panel
+9. **Control Panel**
 
  
