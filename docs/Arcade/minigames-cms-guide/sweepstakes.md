@@ -7,7 +7,7 @@ link:
 metadata:
   robots: index
 ---
-# Sweepstakes CMS Guide
+<br />
 
 A sweepstakes is a promotional giveaway where users enter for a chance to win prizes through random selection. Unlike skill-based contests, winners are chosen purely by luck, making it accessible to everyone. The first entry is always free, and multiple entries are allowed to reward higher engagement.
 
@@ -103,11 +103,13 @@ This section includes:
 Customize the visual identity of the sweepstakes to match your brand's theme and styling.
 
 **Theme Selection Options**:
+
 * Use Existing Theme
 * Upload Custom Theme
 * Create New Theme
 
 The theming system provides support to:
+
 * Upload brand logo
 * Change background image
 * Apply custom colors
