@@ -122,10 +122,8 @@ The theming system provides support to:
 #### Important Notes:
 
 * The structure of the sweepstakes will remain the same
-* Colors or background images on Form Screen, Ongoing Contest Screen, and End Screen can be changed
-* Text content can be modified for Form Screen, Ongoing Contest Screen, and End Screen
+* Colors or background images  and text on Form Screen, Ongoing Contest Screen, and End Screen can be changed
 * Prize images can be configured for the Ongoing Contest Screen and End Screen
-* Positioning, adding, and resizing of components cannot be done
 * Font is configurable in the theme setup
 * **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
 
