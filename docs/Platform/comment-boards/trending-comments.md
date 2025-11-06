@@ -1,7 +1,7 @@
 ---
 title: Trending Comments
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
