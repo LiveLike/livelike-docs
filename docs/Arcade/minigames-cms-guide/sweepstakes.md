@@ -51,7 +51,7 @@ v. Configure the maximum entries, how many entries the participant can have, and
 
    This section allows you to add the 
 
-   a. Terms and Conditions and a corresponding acceptance link. You can enable a toggle to display a checkbox for           Terms and Conditions acceptance.
+   a. Terms and Conditions and a corresponding acceptance link. You can enable a toggle to display a checkbox for                    Terms and Conditions acceptance.
   b. Rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox. Providing this legal information is optional and can be skipped if not required.
 
 <Image border={false} src="https://files.readme.io/fe98dbf0333a3db0a61752713e0d10ce4d21c855702226bb03414f1dc762cb88-Screenshot_2025-11-06_at_3.12.02PM.png" />
@@ -67,4 +67,20 @@ This form section is optional and can be skipped if no user information is requi
 
   Define the prize details for the sweepstakes winners, including the prize title, description, and image.
 Specify the number of winners eligible for this prize, or assign how many participants the prize can be allotted to.
-Additionally, set the maximum prize redemption limit per user to control how many times a single participant can claim the prize.
+Additionally, set the maximum prize allotment per user to control how many times a single participant can be allotted the prize.
+
+<Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
+
+6. Results
+
+The Results section defines what participants see after they’ve entered the contest or when the contest has ended.
+It allows you to customize the display content for both participating and non-participating users.
+This section includes:
+
+a.  Participation Title – Displayed after a user successfully participates.
+b.  Participation Description – A short message or summary shown post participation.
+c.  Result Titles – Separate titles for users who participated and those who didn’t (e.g., if they visit after the contest has ended).
+d.  Result Descriptions – Corresponding descriptions for both participating and non-participating users.
+e.  Extra Chance Title & Description – Displayed when multiple entries are allowed, giving users another opportunity to participate.
+
+<br />
