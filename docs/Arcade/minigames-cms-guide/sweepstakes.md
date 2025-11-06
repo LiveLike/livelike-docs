@@ -39,19 +39,32 @@ In a Multiple Entries setup, participants can submit multiple entries. The first
 
 v. Configure the maximum entries, how many entries the participant can have, and if the entry config is multiple. Additionally, define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry.
 
-Entry Configuration - Single
+   a.Entry Configuration - Single
 
 <Image border={false} src="https://files.readme.io/38e22a83ee21a95cc161fdee18e943ca293d1dcaa73605e35f6c45e4a62f1700-Screenshot_2025-11-06_at_3.04.34PM.png" />
 
-Entry Configuration - Multiple
+   b.Entry Configuration - Multiple
 
 <Image border={false} src="https://files.readme.io/11cdece56be778f2a4d73506a2767f2c9a0c2206873b3f9702310a038d875e6d-Screenshot_2025-11-06_at_3.06.06PM.png" />
 
 3. Legal Information
 
-   This section allows you to add the Terms and Conditions and a corresponding acceptance link. You can enable a   toggle to display a checkbox for Terms and Conditions acceptance.
-Similarly, you can define the Rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox. Providing this legal information is optional and can be skipped if not required.
+   This section allows you to add the 
+
+   a. Terms and Conditions and a corresponding acceptance link. You can enable a toggle to display a checkbox for           Terms and Conditions acceptance.
+  b. Rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox. Providing this legal information is optional and can be skipped if not required.
 
 <Image border={false} src="https://files.readme.io/fe98dbf0333a3db0a61752713e0d10ce4d21c855702226bb03414f1dc762cb88-Screenshot_2025-11-06_at_3.12.02PM.png" />
 
-<br />
+4. Form Fields
+
+The entry form allows participants to submit their information to enter the contest. You can configure the required fields based on the information needed for participation.
+This form section is optional and can be skipped if no user information is required.
+
+<Image border={false} src="https://files.readme.io/604e3660d17864b2dd189010766af725395e1d8487806627b2c91d1107650ef1-Screenshot_2025-11-06_at_3.26.22PM.png" />
+
+5. Prize
+
+  Define the prize details for the sweepstakes winners, including the prize title, description, and image.
+Specify the number of winners eligible for this prize, or assign how many participants the prize can be allotted to.
+Additionally, set the maximum prize redemption limit per user to control how many times a single participant can claim the prize.
