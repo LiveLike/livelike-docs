@@ -127,9 +127,9 @@ The theming system provides support to:
 * Font is configurable in the theme setup
 * **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
 
-### 8. Preview & Testing
+### 8. Schedule
 
-Preview your sweepstakes configuration to ensure everything appears as expected before going live.
+Choose launch timing: Either Publish Now or Save as Draft
 
 ### 9. Launch & Management
 
