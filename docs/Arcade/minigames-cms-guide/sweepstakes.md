@@ -103,7 +103,7 @@ This section includes:
 
 7. **Theme & Branding**
 
-Customize the visual identity of the game to match your brand's theme and styling.
+Customize the visual identity of sweepstakes to match your brand's theme and styling.
 
 **Theme Selection Options**:
 
