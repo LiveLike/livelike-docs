@@ -150,3 +150,21 @@ Choose launch timing: Either Publish Now or Save as Draft
 9. **Control Panel**
 
  
+
+i. To check the entries of the sweepstakes contest, click on the three dots and click Control Panel
+
+ii. You can check all the entries for the sweepstakes along with the winners.
+
+iii. To randomly select a winner for the sweepstakes, click on the Randomly Select Winner button
+
+iv. You will only be able to select a winner, when the sweepstakes contest is over, and the Randomly select winner button is enabled
+
+v. Export CSV will enable you to export all the entries as well as winners list
+
+<Image border={false} src="https://files.readme.io/054f91d8f7f1c066bf37fdf50009cce0994674f8285577696a67243498a5ad4e-Screenshot_2025-11-06_at_4.16.51PM.png" />
+
+<Image border={false} src="https://files.readme.io/8759207030d10538a67471d0bf0cdfad1ef1108d5b1a1694cf1290c10af51658-Screenshot_2025-11-06_at_4.17.29PM.png" />
+
+<br />
+
+<br />
