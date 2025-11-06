@@ -1,5 +1,5 @@
 ---
-title: Sweepstakes
+title: Sweepstakes CMS Guide
 deprecated: false
 hidden: false
 link:
@@ -7,7 +7,7 @@ link:
 metadata:
   robots: index
 ---
-<br />
+# Sweepstakes CMS Guide
 
 A sweepstakes is a promotional giveaway where users enter for a chance to win prizes through random selection. Unlike skill-based contests, winners are chosen purely by luck, making it accessible to everyone. The first entry is always free, and multiple entries are allowed to reward higher engagement.
 
@@ -19,17 +19,17 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image border={false} src="https://files.readme.io/3b70c6aac2834088bfb1be281f4de100b89e1c2b9e59a74be9c92908438e1d70-Screenshot_2025-11-06_at_1.25.42PM.png" />
 
-**Sweepstakes Setup Steps**
+## Sweepstakes Setup Steps
 
 The sweepstakes setup consists of 9 key steps:
 
-1. **Game Settings**
+### 1. Game Settings
 
 Configure the start date and time and the end date and time for the sweepstakes contest.
 
 <Image border={false} src="https://files.readme.io/3cf7348a8feedaa3ed004f65931a08072703ac15afe63b2bb4ef6e49fd916624-Screenshot_2025-11-06_at_2.01.15PM.png" />
 
-2. **Contest Details**
+### 2. Contest Details
 
 Fill in the sweepstakes contest details:
 
@@ -41,22 +41,19 @@ Fill in the sweepstakes contest details:
 The sweepstakes supports two entry configurations:
 
 * **Single Entry**: Participants can enter only once, and the entry is free
-
 * **Multiple Entries**: Participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant's balance
-
 * **Maximum Entries**: Define how many entries a participant can have (for multiple entry configuration)
-
 * **Reward Configuration**: Define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry
 
-**Single Entry Configuration**
+#### Single Entry Configuration
 
 <Image border={false} src="https://files.readme.io/38e22a83ee21a95cc161fdee18e943ca293d1dcaa73605e35f6c45e4a62f1700-Screenshot_2025-11-06_at_3.04.34PM.png" />
 
-**Multiple Entry Configuration**
+#### Multiple Entry Configuration
 
 <Image border={false} src="https://files.readme.io/11cdece56be778f2a4d73506a2767f2c9a0c2206873b3f9702310a038d875e6d-Screenshot_2025-11-06_at_3.06.06PM.png" />
 
-3. **Legal Information**
+### 3. Legal Information
 
 This section allows you to add legal requirements:
 
@@ -67,7 +64,7 @@ Providing this legal information is optional and can be skipped if not required.
 
 <Image border={false} src="https://files.readme.io/fe98dbf0333a3db0a61752713e0d10ce4d21c855702226bb03414f1dc762cb88-Screenshot_2025-11-06_at_3.12.02PM.png" />
 
-4. **Form Fields**
+### 4. Form Fields
 
 The entry form allows participants to submit their information to enter the contest. You can configure the required fields based on the information needed for participation.
 
@@ -75,7 +72,7 @@ This form section is optional and can be skipped if no user information is requi
 
 <Image border={false} src="https://files.readme.io/604e3660d17864b2dd189010766af725395e1d8487806627b2c91d1107650ef1-Screenshot_2025-11-06_at_3.26.22PM.png" />
 
-5. **Prize Configuration**
+### 5. Prize Configuration
 
 Define the prize details for the sweepstakes winners:
 
@@ -87,7 +84,7 @@ Define the prize details for the sweepstakes winners:
 
 <Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
 
-6. **Results Configuration**
+### 6. Results Configuration
 
 The Results section defines what participants see after they've entered the contest or when the contest has ended. It allows you to customize the display content for both participating and non-participating users.
 
@@ -101,18 +98,16 @@ This section includes:
 
 <Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
 
-7. **Theme & Branding**
+### 7. Theme & Branding
 
-Customize the visual identity of sweepstakes to match your brand's theme and styling.
+Customize the visual identity of the sweepstakes to match your brand's theme and styling.
 
 **Theme Selection Options**:
-
 * Use Existing Theme
 * Upload Custom Theme
 * Create New Theme
 
 The theming system provides support to:
-
 * Upload brand logo
 * Change background image
 * Apply custom colors
@@ -127,9 +122,15 @@ The theming system provides support to:
 
 <Image border={false} src="https://files.readme.io/fcda068348db87b92fe676df69832a96cb97454f609b702087b0f8c57064b75a-Screenshot_2025-11-06_at_3.57.11PM.png" />
 
-<br />
+### 8. Schedule
 
-9. **Sharing**
+Choose launch timing: Either Publish Now or Save as Draft
+
+<Image border={false} src="https://files.readme.io/7f34a9900d083211ac48785fe52fdeac4c84c4ab87b28bf549a15f7177402555-Screenshot_2025-11-06_at_4.10.31PM.png" />
+
+### 9. Sharing
+
+Configure sharing and statistics options:
 
 i. The section includes toggles for showing user stats and enabling stat sharing capabilities.
 
@@ -137,34 +138,20 @@ ii. You can customize a share message to invite others. The Deeplink feature all
 
 <Image border={false} src="https://files.readme.io/dbf130cdaf80429875cb81b13b0ca406a5d2625c8b5e31a85553b84295d12876-Screenshot_2025-11-06_at_4.09.55PM.png" />
 
-<br />
+## Control Panel
 
-<br />
-
-8. **Schedule**
-
-Choose launch timing: Either Publish Now or Save as Draft
-
-<Image border={false} src="https://files.readme.io/7f34a9900d083211ac48785fe52fdeac4c84c4ab87b28bf549a15f7177402555-Screenshot_2025-11-06_at_4.10.31PM.png" />
-
-9. **Control Panel**
-
- 
+To manage your sweepstakes after setup:
 
 i. To check the entries of the sweepstakes contest, click on the three dots and click Control Panel
 
 ii. You can check all the entries for the sweepstakes along with the winners.
 
-iii. To randomly select a winner for the sweepstakes, click on the Randomly Select Winner button
+iii. To randomly select a winner for the sweepstakes, click on the **Randomly Select Winner** button
 
-iv. You will only be able to select a winner, when the sweepstakes contest is over, and the Randomly select winner button is enabled
+iv. You will only be able to select a winner when the sweepstakes contest is over, and the **Randomly select winner** button is enabled
 
-v. Export CSV will enable you to export all the entries as well as winners list
+v. **Export CSV** will enable you to export all the entries as well as winners list
 
 <Image border={false} src="https://files.readme.io/054f91d8f7f1c066bf37fdf50009cce0994674f8285577696a67243498a5ad4e-Screenshot_2025-11-06_at_4.16.51PM.png" />
 
 <Image border={false} src="https://files.readme.io/8759207030d10538a67471d0bf0cdfad1ef1108d5b1a1694cf1290c10af51658-Screenshot_2025-11-06_at_4.17.29PM.png" />
-
-<br />
-
-<br />
