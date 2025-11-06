@@ -7,7 +7,7 @@ link:
 metadata:
   robots: index
 ---
-# Sweepstakes
+<br />
 
 A sweepstakes is a promotional giveaway where users enter for a chance to win prizes through random selection. Unlike skill-based contests, winners are chosen purely by luck, making it accessible to everyone. The first entry is always free, and multiple entries are allowed to reward higher engagement.
 
@@ -33,18 +33,20 @@ Configure the start date and time and the end date and time for the sweepstakes 
 
 Fill in the sweepstakes contest details:
 
-- **Title**: Set the contest title
-- **Description**: Add a detailed contest description
-- **CTA Text**: Set the call-to-action text (e.g., "Join Sweepstakes")
-- **Entry Configuration**: Choose between Single or Multiple entries
+* **Title**: Set the contest title
+* **Description**: Add a detailed contest description
+* **CTA Text**: Set the call-to-action text (e.g., "Join Sweepstakes")
+* **Entry Configuration**: Choose between Single or Multiple entries
 
 The sweepstakes supports two entry configurations:
 
-- **Single Entry**: Participants can enter only once, and the entry is free
-- **Multiple Entries**: Participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant's balance
+* **Single Entry**: Participants can enter only once, and the entry is free
 
-- **Maximum Entries**: Define how many entries a participant can have (for multiple entry configuration)
-- **Reward Configuration**: Define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry
+* **Multiple Entries**: Participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant's balance
+
+* **Maximum Entries**: Define how many entries a participant can have (for multiple entry configuration)
+
+* **Reward Configuration**: Define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry
 
 **Single Entry Configuration**
 
@@ -58,8 +60,8 @@ The sweepstakes supports two entry configurations:
 
 This section allows you to add legal requirements:
 
-- **Terms and Conditions**: Add terms with a corresponding acceptance link. You can enable a toggle to display a checkbox for Terms and Conditions acceptance
-- **Rules**: Add contest rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox
+* **Terms and Conditions**: Add terms with a corresponding acceptance link. You can enable a toggle to display a checkbox for Terms and Conditions acceptance
+* **Rules**: Add contest rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox
 
 Providing this legal information is optional and can be skipped if not required.
 
@@ -77,11 +79,11 @@ This form section is optional and can be skipped if no user information is requi
 
 Define the prize details for the sweepstakes winners:
 
-- **Prize Title**: Set the prize name
-- **Prize Description**: Add detailed prize information
-- **Prize Image**: Upload an image of the prize
-- **Number of Winners**: Specify how many participants are eligible for this prize
-- **Maximum Prize Redemption Per User**: Control how many times a single participant can be awarded the prize
+* **Prize Title**: Set the prize name
+* **Prize Description**: Add detailed prize information
+* **Prize Image**: Upload an image of the prize
+* **Number of Winners**: Specify how many participants are eligible for this prize
+* **Maximum Prize Redemption Per User**: Control how many times a single participant can be awarded the prize
 
 <Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
 
@@ -91,11 +93,11 @@ The Results section defines what participants see after they've entered the cont
 
 This section includes:
 
-- **Participation Title**: Displayed after a user successfully participates
-- **Participation Description**: A short message or summary shown after participation
-- **Result Titles**: Separate titles for users who participated and those who didn't (e.g., if they visit after the contest has ended)
-- **Result Descriptions**: Corresponding descriptions for both participating and non-participating users
-- **Extra Chance Title & Description**: Displayed when multiple entries are allowed, giving users another opportunity to participate
+* **Participation Title**: Displayed after a user successfully participates
+* **Participation Description**: A short message or summary shown after participation
+* **Result Titles**: Separate titles for users who participated and those who didn't (e.g., if they visit after the contest has ended)
+* **Result Descriptions**: Corresponding descriptions for both participating and non-participating users
+* **Extra Chance Title & Description**: Displayed when multiple entries are allowed, giving users another opportunity to participate
 
 <Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
 
@@ -105,23 +107,23 @@ Customize the visual identity of the game to match your brand's theme and stylin
 
 **Theme Selection Options**:
 
-- Use Existing Theme
-- Upload Custom Theme
-- Create New Theme
+* Use Existing Theme
+* Upload Custom Theme
+* Create New Theme
 
 The theming system provides support to:
 
-- Upload brand logo
-- Change background image
-- Apply custom colors
+* Upload brand logo
+* Change background image
+* Apply custom colors
 
 #### Important Notes:
 
-- The structure of the sweepstakes will remain the same
-- Colors, background images, and text on Form Screen, Ongoing Contest Screen, and End Screen can be changed
-- Prize images can be configured for the Ongoing Contest Screen and End Screen
-- Font is configurable in the theme setup
-- **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
+* The structure of the sweepstakes will remain the same
+* Colors, background images, and text on Form Screen, Ongoing Contest Screen, and End Screen can be changed
+* Prize images can be configured for the Ongoing Contest Screen and End Screen
+* Font is configurable in the theme setup
+* **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
 
 <Image border={false} src="https://files.readme.io/fcda068348db87b92fe676df69832a96cb97454f609b702087b0f8c57064b75a-Screenshot_2025-11-06_at_3.57.11PM.png" />
 
@@ -133,6 +135,6 @@ Choose launch timing: Either Publish Now or Save as Draft
 
 Once all settings are configured and tested, you can launch and share your sweepstakes:
 
-   i. **Launch your sweepstakes**: Deploy the configured sweepstakes to make it live for participants
-   
-   ii. **Monitor engagement**: Track participant entries and overall contest performance
+i. **Launch your sweepstakes**: Deploy the configured sweepstakes to make it live for participants
+
+ii. **Monitor engagement**: Track participant entries and overall contest performance
