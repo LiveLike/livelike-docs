@@ -33,18 +33,22 @@ Configure the start date and time and the end date and time for the sweepstakes 
 
 Fill in the sweepstakes contest details:
 
-- **Title**: Set the contest title
-- **Description**: Add a detailed contest description
-- **CTA Text**: Set the call-to-action text (e.g., "Join Sweepstakes")
-- **Entry Configuration**: Choose between Single or Multiple entries
-  
-  The sweepstakes supports two entry configurations:
-  
-  - **Single Entry**: Participants can enter only once, and the entry is free
-  - **Multiple Entries**: Participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant's balance
+* **Title**: Set the contest title
 
-- **Maximum Entries**: Define how many entries a participant can have (for multiple entry configuration)
-- **Reward Configuration**: Define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry
+* **Description**: Add a detailed contest description
+
+* **CTA Text**: Set the call-to-action text (e.g., "Join Sweepstakes")
+
+* **Entry Configuration**: Choose between Single or Multiple entries
+
+  The sweepstakes supports two entry configurations:
+
+  * **Single Entry**: Participants can enter only once, and the entry is free
+  * **Multiple Entries**: Participants can submit multiple entries. The first entry is free, while subsequent entries require redemption of reward points, which will be deducted from the participant's balance
+
+* **Maximum Entries**: Define how many entries a participant can have (for multiple entry configuration)
+
+* **Reward Configuration**: Define the reward item and the number of reward points to be deducted for each subsequent entry beyond the first free entry
 
 #### Single Entry Configuration
 
@@ -58,8 +62,8 @@ Fill in the sweepstakes contest details:
 
 This section allows you to add legal requirements:
 
-- **Terms and Conditions**: Add terms with a corresponding acceptance link. You can enable a toggle to display a checkbox for Terms and Conditions acceptance
-- **Rules**: Add contest rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox
+* **Terms and Conditions**: Add terms with a corresponding acceptance link. You can enable a toggle to display a checkbox for Terms and Conditions acceptance
+* **Rules**: Add contest rules along with acceptance text and enable a toggle to show the Rules acceptance checkbox
 
 Providing this legal information is optional and can be skipped if not required.
 
@@ -77,11 +81,11 @@ This form section is optional and can be skipped if no user information is requi
 
 Define the prize details for the sweepstakes winners:
 
-- **Prize Title**: Set the prize name
-- **Prize Description**: Add detailed prize information
-- **Prize Image**: Upload an image of the prize
-- **Number of Winners**: Specify how many participants are eligible for this prize
-- **Maximum Prize Allotment per User**: Control how many times a single participant can be awarded the prize
+* **Prize Title**: Set the prize name
+* **Prize Description**: Add detailed prize information
+* **Prize Image**: Upload an image of the prize
+* **Number of Winners**: Specify how many participants are eligible for this prize
+* **Maximum Prize Redeemption Per User**: Control how many times a single participant can be awarded the prize
 
 <Image border={false} src="https://files.readme.io/0b9efd62b4ad4ec4695a3e16d1fa03c2786246897a5f0d7fe8cf1aeeb8ba35fe-Screenshot_2025-11-06_at_3.36.44PM.png" />
 
@@ -91,11 +95,11 @@ The Results section defines what participants see after they've entered the cont
 
 This section includes:
 
-- **Participation Title**: Displayed after a user successfully participates
-- **Participation Description**: A short message or summary shown after participation
-- **Result Titles**: Separate titles for users who participated and those who didn't (e.g., if they visit after the contest has ended)
-- **Result Descriptions**: Corresponding descriptions for both participating and non-participating users
-- **Extra Chance Title & Description**: Displayed when multiple entries are allowed, giving users another opportunity to participate
+* **Participation Title**: Displayed after a user successfully participates
+* **Participation Description**: A short message or summary shown after participation
+* **Result Titles**: Separate titles for users who participated and those who didn't (e.g., if they visit after the contest has ended)
+* **Result Descriptions**: Corresponding descriptions for both participating and non-participating users
+* **Extra Chance Title & Description**: Displayed when multiple entries are allowed, giving users another opportunity to participate
 
 <Image border={false} src="https://files.readme.io/8b3f900997d5e95709b2cb753bc0d7276df866df61737f9e2505b6aefa1a70ff-Screenshot_2025-11-06_at_3.45.15PM.png" />
 
@@ -104,24 +108,26 @@ This section includes:
 Customize the visual identity of the game to match your brand's theme and styling.
 
 **Theme Selection Options**:
-- Use Existing Theme
-- Upload Custom Theme
-- Create New Theme
+
+* Use Existing Theme
+* Upload Custom Theme
+* Create New Theme
 
 The theming system provides support to:
-- Upload brand logo
-- Change background image
-- Apply custom colors
+
+* Upload brand logo
+* Change background image
+* Apply custom colors
 
 #### Important Notes:
 
-- The structure of the sweepstakes will remain the same
-- Colors or background images on Form Screen, Ongoing Contest Screen, and End Screen can be changed
-- Text content can be modified for Form Screen, Ongoing Contest Screen, and End Screen
-- Prize images can be configured for the Ongoing Contest Screen and End Screen
-- Positioning, adding, and resizing of components cannot be done
-- Font is configurable in the theme setup
-- **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
+* The structure of the sweepstakes will remain the same
+* Colors or background images on Form Screen, Ongoing Contest Screen, and End Screen can be changed
+* Text content can be modified for Form Screen, Ongoing Contest Screen, and End Screen
+* Prize images can be configured for the Ongoing Contest Screen and End Screen
+* Positioning, adding, and resizing of components cannot be done
+* Font is configurable in the theme setup
+* **Background image requirements**: Recommended size 1080x1920, maximum size 1MB
 
 ### 8. Preview & Testing
 
