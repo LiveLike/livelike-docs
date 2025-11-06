@@ -4,8 +4,13 @@ deprecated: false
 hidden: true
 metadata:
   robots: index
+next:
+  pages:
+    - slug: list-comments
+      title: List comments
+      type: endpoint
 ---
-Each comment is assigned a trending score that summarizes the replies and reactions it has received recently. That score is continuously updated. Lists of comments can be ordered by their `trending_score` to show comments sorted by their trending score.
+Each comment is assigned a trending score that summarizes the replies and reactions it has received recently. Lists of comments can be ordered by their `trending_score` to show comments sorted by their trending score, see the [ordering comments by trending](https://docs.livelike.com/reference/list-comments#trending-comments)  docs for details.
 
 ## Scoring calculation
 
