@@ -37,7 +37,7 @@ curl -X PATCH https://cf-blast.livelikecdn.com/api/v1/applications/<client_id>/ 
     "comment_trending_score_factors": {
       "reply_weight": 1,
   		"reaction_weight": 3,
-      "decay_constant": 0.5,
+      "decay_constant": 0.05,
     }
   }'
 ```
