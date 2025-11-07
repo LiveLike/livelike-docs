@@ -27,4 +27,17 @@ The default trending score is calculate as `(WR * R + WRe * Re)  * e^(-λt)` whe
 
 ## Customizing the scoring calculation
 
-TODO
+```curl
+curl -X PATCH https://cf-blast.dig.livelikecdn.com/api/v1/applications/GH4E2uZ8ED0rJUS1k3vQFJbiBjR7iRsrFrd5wI9F/ \
+  -H "Authorization: Token <Bearer_Token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "comment_trending_score_factors": {
+      "reply_weight": 1,
+  		"reaction_weight": 3,
+      "decay_constant": 0.5,
+    }
+  }'
+```
+
+<br />
