@@ -38,7 +38,7 @@ curl -X PATCH https://cf-blast.livelikecdn.com/api/v1/applications/<client_id>/ 
   "reply_weight": 1,
   "reaction_weight": 3,
   "decay_constant": 0.05,
-}
+ }
   }'
 ```
 
