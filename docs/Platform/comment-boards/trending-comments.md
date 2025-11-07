@@ -27,6 +27,8 @@ The default trending score is calculate as `(WR * R + WRe * Re)  * e^(-λt)` whe
 
 ## Customizing the scoring calculation
 
+The weights (WR, WRe) and the decay constant (λ) can be customized for each client application, allowing flexibility to fine-tune how comment popularity and recency influence the trending score.
+
 ```curl
 curl -X PATCH https://cf-blast.livelikecdn.com/api/v1/applications/<client_id>/ \
   -H "Authorization: Token <Bearer_Token>" \
