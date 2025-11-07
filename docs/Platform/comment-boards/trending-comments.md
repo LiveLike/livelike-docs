@@ -28,7 +28,7 @@ The default trending score is calculate as `(WR * R + WRe * Re)  * e^(-λt)` whe
 ## Customizing the scoring calculation
 
 ```curl
-curl -X PATCH https://cf-blast.dig.livelikecdn.com/api/v1/applications/GH4E2uZ8ED0rJUS1k3vQFJbiBjR7iRsrFrd5wI9F/ \
+curl -X PATCH https://cf-blast.livelikecdn.com/api/v1/applications/<client_id>/ \
   -H "Authorization: Token <Bearer_Token>" \
   -H "Content-Type: application/json" \
   -d '{
