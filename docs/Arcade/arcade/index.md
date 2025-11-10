@@ -139,3 +139,7 @@ next:
 
 * **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
 * **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
+
+## Please Note
+
+* Games that requires socal sharing enablement from Native Android apps or iOS apps requires configuration on the app side as well. Follow the documentation here
