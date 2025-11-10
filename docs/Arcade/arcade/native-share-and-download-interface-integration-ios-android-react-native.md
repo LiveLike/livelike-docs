@@ -198,7 +198,7 @@ Then inject the JS bridge:
 
 ### React Native (WebView)
 
-```tsx
+```typescript
 import * as FileSystem from "expo-file-system/legacy";
 import React, { useRef } from "react";
 import { PermissionsAndroid, Platform, Share, StyleSheet } from "react-native";
