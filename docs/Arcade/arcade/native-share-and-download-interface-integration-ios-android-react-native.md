@@ -127,7 +127,8 @@ Add a `JavascriptInterface` to handle native methods:
 public void handleShare(String text) {
   runOnUiThread(() -> {
     Toast.makeText(mContext, text, Toast.LENGTH_LONG).show();
-    webView.evaluateJavascript("if (window._shareResolve) window._shareResolve();", null);
+    webView.evaluateJavascript("if (window._shareResolve) { window._shareResolve(); delete window._shareResolve; delete window._shareReject; }", null);
+            });
   });
 }
 ```
@@ -141,7 +142,21 @@ public void handleDownload(String data, String fileName, String mimeType) {
   values.put(MediaStore.MediaColumns.MIME_TYPE, mimeType);
   values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
   Uri uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values);
-  ...
+  Uri imageUri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues);
+                if (imageUri == null) {
+                    throw new IOException("Failed to create new MediaStore record.");
+                }
+
+                try (final OutputStream os = resolver.openOutputStream(imageUri)) {
+                    byte[] decodedString = Base64.decode(data, Base64.DEFAULT);
+                    os.write(decodedString);
+                }
+
+                runOnUiThread(() -> {
+                    Toast.makeText(mContext, fileName + " saved to Downloads", Toast.LENGTH_LONG).show();
+                    webView.evaluateJavascript("if (window._downloadResolve) { window._downloadResolve(); delete window._downloadResolve; delete window._downloadReject; }", null);
+                });
+
 }
 ```
 
