@@ -163,18 +163,33 @@ public void handleDownload(String data, String fileName, String mimeType) {
 Then inject the JS bridge:
 
 ```js
-window.ShareInterface = {
-  share: text => new Promise((resolve, reject) => {
-    window._shareResolve = resolve;
-    Android.handleShare(text);
-  })
-};
-window.DownloadInterface = {
-  download: (data, fileName, mimeType) => new Promise((resolve, reject) => {
-    window._downloadResolve = resolve;
-    Android.handleDownload(data, fileName, mimeType);
-  })
-};
+ webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                String jsWrapper = "(function() {" +
+                  "window.ShareInterface = {" +
+                  "  share: function(text) {" +
+                  "    return new Promise(function(resolve, reject) {" +
+                  "      window._shareResolve = resolve;" +
+                  "      window._shareReject = reject;" +
+                  "      Android.handleShare(text);" +
+                  "    });" +
+                  "  }" +
+                  "};" +
+                  "window.DownloadInterface = {" +
+                  "  download: function(data, fileName, mimeType) {" +
+                  "    return new Promise(function(resolve, reject) {" +
+                  "      window._downloadResolve = resolve;" +
+                  "      window._downloadReject = reject;" +
+                  "      Android.handleDownload(data, fileName, mimeType);" +
+                  "    });" +
+                  "  }" +
+                  "};" +
+                "})()";
+                view.evaluateJavascript(jsWrapper, null);
+            }
+        });
 ```
 
 ✅ **For Android 10+**, use `MediaStore` API for saving files in `Downloads`.
