@@ -86,7 +86,8 @@
                       },
                       "type": "object",
                       "required": [
-                        "enabled"
+                        "enabled",
+                        "action_type"
                       ]
                     }
                   },
