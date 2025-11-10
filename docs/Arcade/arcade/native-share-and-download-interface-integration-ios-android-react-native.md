@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-# Native Interface Integration
+#
 
 Integrate native share and download functionality for Arcade games (e.g., _Pick Your Team_) when running inside mobile webviews (iOS, Android, or React Native).
 This ensures a smoother user experience for saving images or sharing content natively.
