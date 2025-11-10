@@ -1,5 +1,5 @@
 ---
-title: Native Share and Download Interface Integration (iOS, Android, React Native)
+title: Native Interface Integration (iOS, Android, React Native)
 deprecated: false
 hidden: true
 metadata:
