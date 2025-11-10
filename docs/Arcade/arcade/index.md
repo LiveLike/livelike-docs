@@ -142,4 +142,4 @@ next:
 
 ## Please Note
 
-* Games that requires socal sharing enablement from Native Android apps or iOS apps requires configuration on the app side as well. Follow the documentation [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
+* Games that require **social sharing enablement** from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
