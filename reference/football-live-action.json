@@ -223,6 +223,189 @@
                             "enabled"
                           ]
                         },
+                        "Subtitution": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "substitution"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "Was the manager right to replace {{playerOffName}} with {{playerOnName}}"
+                            },
+                            "widget_options": {
+                              "type": "array",
+                              "items": {
+                                "properties": {
+                                  "Option 1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "Yes"
+                                      }
+                                    }
+                                  },
+                                  "Option 2": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "No"
+                                      }
+                                    }
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "required": [
+                            "action_type",
+                            "enabled"
+                          ]
+                        },
+                        "Foul": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "foul"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "{{playerName}} committed a foul, was the referee right?"
+                            },
+                            "widget_options": {
+                              "type": "array",
+                              "items": {
+                                "properties": {
+                                  "Option 1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "Yes"
+                                      }
+                                    }
+                                  },
+                                  "Option 2": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "No"
+                                      }
+                                    }
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "required": [
+                            "action_type",
+                            "enabled"
+                          ]
+                        },
+                        "Missed Penalty": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "missed_penalty"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "Did the missed penalty by {{playerMissedPenalty}} cost the game?"
+                            },
+                            "widget_options": {
+                              "type": "array",
+                              "items": {
+                                "properties": {
+                                  "Option 1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "Yes"
+                                      }
+                                    }
+                                  },
+                                  "Option 2": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "default": "No"
+                                      }
+                                    }
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "required": [
+                            "action_type",
+                            "enabled"
+                          ]
+                        },
+                        "Match Start": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "match_start"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "Match is starting between {{teamDescription}}"
+                            }
+                          },
+                          "required": [
+                            "action_type",
+                            "enabled"
+                          ]
+                        },
+                        "Var Event": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "var_event"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "VAR check: {{varType}} to {{playerName}} was varDecision – Final outcome: {{varOutcome}}"
+                            }
+                          },
+                          "required": [
+                            "action_type",
+                            "enabled"
+                          ]
+                        },
                         "name2": {
                           "type": "string"
                         },
