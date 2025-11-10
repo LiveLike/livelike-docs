@@ -4,7 +4,7 @@ excerpt: >-
   This document explains how to integrate native share and download
   functionality for the Arcade games when running in a webview (iOS/Android).
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
