@@ -49,16 +49,18 @@
                           "properties": {
                             "enabled": {
                               "type": "boolean",
-                              "description": "",
+                              "description": "Enable the action",
                               "default": "true"
                             },
                             "action_type": {
                               "type": "string",
-                              "default": "goal"
+                              "default": "goal",
+                              "description": "Action type"
                             },
                             "widget_text": {
                               "type": "string",
-                              "default": "Rate the goal by {{goalScorer}}"
+                              "default": "Rate the goal by {{goalScorer}}",
+                              "description": "Widget Title: goalScored = Player Name"
                             },
                             "localized_data": {
                               "type": "object",
@@ -68,7 +70,53 @@
                                   "properties": {
                                     "question": {
                                       "type": "string",
-                                      "default": "Rate the goal by {{goalScorer}}"
+                                      "default": "Rate the goal by {{goalScorer}}",
+                                      "description": "Localized Widget Title"
+                                    }
+                                  },
+                                  "description": "Language Code"
+                                },
+                                "fr": {
+                                  "type": "object",
+                                  "properties": {
+                                    "question": {
+                                      "type": "string",
+                                      "default": "Évaluez le but de {{goalScorer}}",
+                                      "description": "Localized Widget Title"
+                                    }
+                                  },
+                                  "description": "Language Code"
+                                }
+                              },
+                              "description": "Localization"
+                            }
+                          },
+                          "description": "Goal Emoji Slider Widget"
+                        },
+                        "Shot": {
+                          "type": "object",
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "default": "true"
+                            },
+                            "action_type": {
+                              "type": "string",
+                              "default": "shot"
+                            },
+                            "widget_text": {
+                              "type": "string",
+                              "default": "Do you like the shot of {{playerShot}} ?"
+                            },
+                            "localized_data": {
+                              "type": "object",
+                              "properties": {
+                                "en": {
+                                  "type": "object",
+                                  "properties": {
+                                    "question": {
+                                      "type": "string",
+                                      "default": "Do you like the shot of {{playerShot}} ?"
                                     }
                                   }
                                 },
@@ -77,15 +125,11 @@
                                   "properties": {
                                     "question": {
                                       "type": "string",
-                                      "default": "Évaluez le but de {{goalScorer}}"
+                                      "default": "Aimez-vous la photo de {{playerShot}} ?"
                                     }
                                   }
                                 }
                               }
-                            },
-                            "Red Card": {
-                              "type": "object",
-                              "properties": {}
                             }
                           }
                         }
