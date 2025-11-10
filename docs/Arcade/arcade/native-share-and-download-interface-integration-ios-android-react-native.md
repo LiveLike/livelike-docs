@@ -83,30 +83,55 @@ mWebview.configuration.userContentController.add(self, name: "download")
 Then inject the following scripts:
 
 ```swift
-window.ShareInterface = {
-  share: function(text) {
-    return new Promise(function(resolve, reject) {
-      window._shareResolve = resolve;
-      window._shareReject = reject;
-      window.webkit.messageHandlers.share.postMessage({ text });
-    });
-  }
-};
-```
+        // Inject the ShareInterface script
+        let shareScript = """
+        window.ShareInterface = {
+            share: function(text) {
+                return new Promise(function(resolve, reject) {
+                    window._shareResolve = resolve;
+                    window._shareReject = reject;
+                    window.webkit.messageHandlers.share.postMessage({ text: text });
+                });
+            }
+        };
+        """
+        let shareUserScript = WKUserScript(source: shareScript,
+                                      injectionTime: .atDocumentEnd,
+                                           forMainFrameOnly: false)
 
-```swift
-window.DownloadInterface = {
-  download: function(data, fileName, mimeType) {
-    return new Promise(function(resolve, reject) {
-      const callbackId = 'dlcb_' + Math.random().toString(36).substr(2, 9);
-      window.DownloadInterface._callbacks = window.DownloadInterface._callbacks || {};
-      window.DownloadInterface._callbacks[callbackId] = { resolve, reject };
-      window.webkit.messageHandlers.download.postMessage({ data, fileName, mimeType, callbackId });
-    });
-  },
-  _notifySuccess(callbackId) { ... },
-  _notifyFailure(callbackId, error) { ... }
-};
+
+        // Inject the DownloadInterface script
+        let downloadScript = """
+        window.DownloadInterface = {
+            download: function(data, fileName, mimeType) {
+                return new Promise(function(resolve, reject) {
+                    var callbackId = 'dlcb_' + Math.random().toString(36).substr(2, 9);
+                    window.DownloadInterface._callbacks = window.DownloadInterface._callbacks || {};
+                    window.DownloadInterface._callbacks[callbackId] = {resolve: resolve, reject: reject};
+                    window.webkit.messageHandlers.download.postMessage({
+                        data: data,
+                        fileName: fileName,
+                        mimeType: mimeType,
+                        callbackId: callbackId
+                    });
+                });
+            },
+            _notifySuccess: function(callbackId) {
+                var cb = window.DownloadInterface._callbacks && window.DownloadInterface._callbacks[callbackId];
+                if (cb && cb.resolve) cb.resolve();
+                if (window.DownloadInterface._callbacks) delete window.DownloadInterface._callbacks[callbackId];
+            },
+            _notifyFailure: function(callbackId, error) {
+                var cb = window.DownloadInterface._callbacks && window.DownloadInterface._callbacks[callbackId];
+                if (cb && cb.reject) cb.reject(new Error(error || "Download failed"));
+                if (window.DownloadInterface._callbacks) delete window.DownloadInterface._callbacks[callbackId];
+            }
+        };
+        """
+        let downloadUserScript = WKUserScript(source: downloadScript,
+                                              injectionTime: .atDocumentEnd,
+                                              forMainFrameOnly: false)
+
 ```
 
 **Permissions required:**
@@ -162,7 +187,7 @@ public void handleDownload(String data, String fileName, String mimeType) {
 
 Then inject the JS bridge:
 
-```js
+```java
  webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -198,7 +223,7 @@ Then inject the JS bridge:
 
 ### React Native (WebView)
 
-```typescript
+```typescript GameWebView.tsx
 import * as FileSystem from "expo-file-system/legacy";
 import React, { useRef } from "react";
 import { PermissionsAndroid, Platform, Share, StyleSheet } from "react-native";
