@@ -16,27 +16,24 @@ Below is a list of analytics events triggered in Pick Your Team, along with thei
 
 ### **Event List**
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Name**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Trigger Condition**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Properties**
 
-
-
-
-        *(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )*
+        _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Description**
       </th>
     </tr>
@@ -44,152 +41,152 @@ Below is a list of analytics events triggered in Pick Your Team, along with thei
 
   <tbody>
     <tr>
-      <td>
-        **session\_start**
+      <td style={{ textAlign: "left" }}>
+        **session_start**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user starts a web session.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Marks the beginning of a session.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **session\_stop**
+      <td style={{ textAlign: "left" }}>
+        **session_stop**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user exits the web session.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `duration` (in seconds)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks the total session length.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **visit\_page**
+      <td style={{ textAlign: "left" }}>
+        **visit_page**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user visits any page.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `page_name`
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks user navigation between pages.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **start\_create\_team**
+      <td style={{ textAlign: "left" }}>
+        **start_create_team**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user first adds a player.
       </td>
 
-      <td>
-        `team_name`  (custom name of the team)\
-        `choosen_team`  (name of the team ex. Chelsea)\
+      <td style={{ textAlign: "left" }}>
+        `team_name`  (custom name of the team)  
+        `choosen_team`  (name of the team ex. Chelsea)  
         `fixture_detail`(details of the fixture)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks team creation flow.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **team\_picked**
+      <td style={{ textAlign: "left" }}>
+        **game_completed**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user saves the created team.
       </td>
 
-      <td>
-        `team_name`,\
-        `choosen_team`,\
-        `fixture_detail`,\
-        `time_spent` (time to complete team creation from start\_create\_team to create\_team\_successfully),\
-        `selected_players` (list of selected players),\
+      <td style={{ textAlign: "left" }}>
+        `team_name`,  
+        `choosen_team`,  
+        `fixture_detail`,  
+        `time_spent` (time to complete team creation from start_create_team to create_team_successfully),  
+        `selected_players` (list of selected players),  
         `is_journey_final_step` (boolean)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Captures when user has finalized the team.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_share**
+      <td style={{ textAlign: "left" }}>
+        **click_share**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user clicks on share button after game over.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks sharing of created teams.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_download**
+      <td style={{ textAlign: "left" }}>
+        **click_download**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user clicks on download button after game over.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when users downloads final team.
       </td>
     </tr>
 
     <tr>
-      <td>
-        **click\_edit**
+      <td style={{ textAlign: "left" }}>
+        **click_edit**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user clicks on edit button after game over.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when users edit previously created teams.
       </td>
     </tr>
