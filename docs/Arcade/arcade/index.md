@@ -140,6 +140,6 @@ next:
 * **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
 * **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
 
-## Please Note
+## Please Note 
 
-* Games that require **social sharing enablement** from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
+* Games that require **social sharing or download image enablement** (_for games that supports it_) from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
