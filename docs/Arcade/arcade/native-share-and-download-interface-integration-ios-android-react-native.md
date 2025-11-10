@@ -325,7 +325,7 @@ const styles = StyleSheet.create({
 
 **Handle messages:**
 
-```tsx
+```typescript code.tsx
 const handleMessage = async (event: any) => {
     try {
       const data = JSON.parse(event.nativeEvent.data);
