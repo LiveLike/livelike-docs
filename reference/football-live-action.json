@@ -44,428 +44,50 @@
                     "type": "array",
                     "items": {
                       "properties": {
-                        "Goal": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "description": "Enable the action",
-                              "default": "true"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "goal",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Rate the goal by {{goalScorer}}",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            }
-                          },
-                          "description": "Emoji Slider Widget",
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ]
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "action should be active or not",
+                          "default": "true"
                         },
-                        "Shot": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "shot",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Do you like the shot of {{playerShot}} ?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            }
-                          },
-                          "description": "Emoji Slider Widget",
-                          "required": [
-                            "enabled",
-                            "action_type"
-                          ]
-                        },
-                        "Yellow Card": {
-                          "type": "object",
-                          "description": "Text Poll Widget",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "yellow_card",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Will the {{cardType}} to {{playerName}} for {{cardReason}} will impact the game?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Yes",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "No",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ]
-                        },
-                        "Red Card": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "red_card",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Will the {{cardType}} to {{playerName}} for {{cardReason}} will impact the game?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Yes",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "No",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "description": "Text Poll Widget"
-                        },
-                        "Match Half": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "match_half",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Did you enjoy the first half?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Good",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Bad",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
+                        "action_type": {
+                          "type": "string",
+                          "enum": [
+                            "goal",
+                            "penalty",
+                            "red_card",
+                            "yellow_card",
+                            "match_start",
+                            "match_half",
+                            "match_end",
+                            "substitution",
+                            "shot",
+                            "foul",
+                            "missed_penalty",
+                            "var_event"
                           ],
-                          "description": "Text Poll Widget"
+                          "description": "name of the action to be assigned"
                         },
-                        "Subtitution": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "substitution",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Was the manager right to replace {{playerOffName}} with {{playerOnName}}",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Yes",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "No",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ],
-                          "description": "Text Poll Widget"
+                        "widget_text": {
+                          "type": "string",
+                          "description": "The prompt or question for widget"
                         },
-                        "Foul": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
+                        "widget_options": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "description": {
+                                "type": "string",
+                                "description": "The text associated with the widget option"
+                              }
                             },
-                            "action_type": {
-                              "type": "string",
-                              "default": "foul",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "{{playerName}} committed a foul, was the referee right?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Yes",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "No",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ],
-                          "description": "Text Poll Widget"
-                        },
-                        "Missed Penalty": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "missed_penalty",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Did the missed penalty by {{playerMissedPenalty}} cost the game?",
-                              "description": "Widget Title (\"{{dynamic value}}\")"
-                            },
-                            "widget_options": {
-                              "type": "array",
-                              "items": {
-                                "properties": {
-                                  "Option 1": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "Yes",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  },
-                                  "Option 2": {
-                                    "type": "object",
-                                    "properties": {
-                                      "description": {
-                                        "type": "string",
-                                        "default": "No",
-                                        "description": "Option Label"
-                                      }
-                                    }
-                                  }
-                                },
-                                "type": "object"
-                              },
-                              "description": "Options of the widget"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ],
-                          "description": "Text Poll Widget"
-                        },
-                        "Match Start": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the action"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "match_start",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "Match is starting between {{teamDescription}}",
-                              "description": "Widget Description (\"{{dynamic value}}\")"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ],
-                          "description": "Alert Widget"
-                        },
-                        "Var Event": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean",
-                              "default": "true",
-                              "description": "Enable the widget"
-                            },
-                            "action_type": {
-                              "type": "string",
-                              "default": "var_event",
-                              "description": "Action type"
-                            },
-                            "widget_text": {
-                              "type": "string",
-                              "default": "VAR check: {{varType}} to {{playerName}} was varDecision – Final outcome: {{varOutcome}}",
-                              "description": "Widget Description (\"{{dynamic value}}\")"
-                            }
-                          },
-                          "required": [
-                            "action_type",
-                            "enabled"
-                          ],
-                          "description": "Alert Widget"
+                            "type": "object"
+                          }
                         }
                       },
-                      "type": "object"
+                      "type": "object",
+                      "required": [
+                        "enabled"
+                      ]
                     }
                   },
                   "status": {
