@@ -250,17 +250,31 @@
                     "type": "array",
                     "items": {
                       "properties": {
-                        "action_type": {
-                          "type": "string",
-                          "description": "name of the action to be assigned"
-                        },
                         "enabled": {
                           "type": "boolean",
                           "description": "action should be active or not"
                         },
+                        "action_type": {
+                          "type": "string",
+                          "description": "name of the action to be assigned",
+                          "enum": [
+                            "goal",
+                            "penalty",
+                            "red_card",
+                            "yellow_card",
+                            "match_start",
+                            "match_half",
+                            "match_end",
+                            "substitution",
+                            "shot",
+                            "foul",
+                            "missed_penalty",
+                            "var_event"
+                          ]
+                        },
                         "widget_text": {
                           "type": "string",
-                          "description": "The prompt or question for the prediction to be made"
+                          "description": "The prompt or question for the widget to be made"
                         },
                         "widget_options": {
                           "type": "array",
@@ -268,7 +282,7 @@
                             "properties": {
                               "description": {
                                 "type": "string",
-                                "description": "The text associated with the prediction option"
+                                "description": "The text associated with the widget option"
                               }
                             },
                             "type": "object"
