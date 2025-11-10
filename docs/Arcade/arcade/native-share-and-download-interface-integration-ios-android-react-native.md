@@ -199,40 +199,177 @@ Then inject the JS bridge:
 ### React Native (WebView)
 
 ```tsx
-import { WebView } from 'react-native-webview'
-import { Share, PermissionsAndroid } from 'react-native'
-import * as FileSystem from 'expo-file-system'
+import * as FileSystem from "expo-file-system/legacy";
+import React, { useRef } from "react";
+import { PermissionsAndroid, Platform, Share, StyleSheet } from "react-native";
+import Toast from "react-native-toast-message";
+import { WebView } from "react-native-webview";
 
-const injectedJS = `
-window.ShareInterface = {
-  share: text => new Promise((resolve, reject) => {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'share', text }));
-    window._shareResolve = resolve;
-    window._shareReject = reject;
-  })
+interface GameWebViewProps {
+  url: string;
+}
+
+export const GameWebView: React.FC<GameWebViewProps> = ({ url }) => {
+  const webViewRef = useRef<WebView>(null);
+
+  // inject JavaScript to expose both share and download interfaces
+  const injectedJavaScript = `
+    window.ShareInterface = {
+      share: function(text) {
+        return new Promise(function(resolve, reject) {
+          window.ReactNativeWebView.postMessage(JSON.stringify({
+            type: 'share',
+            text: text
+          }));
+          // store callbacks
+          window._shareResolve = resolve;
+          window._shareReject = reject;
+        });
+      }
+    };
+    window.DownloadInterface = {
+      download: function(data, fileName, mimeType) {
+        return new Promise(function(resolve, reject) {
+          window.ReactNativeWebView.postMessage(JSON.stringify({
+            type: 'download',
+            data: data,
+            fileName: fileName,
+            mimeType: mimeType
+          }));
+          window._downloadResolve = resolve;
+          window._downloadReject = reject;
+        });
+      }
+    };
+    true; // note: this is required, or you'll sometimes get silent failures
+  `;
+
+  const handleDownload = async (
+    base64Data: string,
+    fileName: string,
+    mimeType: string
+  ) => {
+    try {
+      // request storage permission on Android
+      if (Platform.OS === "android") {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE
+        );
+        if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+          webViewRef.current?.injectJavaScript(`
+            if(window._downloadReject) window._downloadReject(new Error('Permission denied'));
+            true;
+          `);
+          return;
+        }
+      }
+
+      // save file to app's document directory (private to the app)
+      // iOS: Documents directory in app sandbox
+      // Android: App data directory
+      const downloadsPath = FileSystem.documentDirectory;
+      if (!downloadsPath) {
+        throw new Error("Could not access document directory");
+      }
+
+      const filePath = `${downloadsPath}${fileName}`;
+
+      // write base64 data to file
+      await FileSystem.writeAsStringAsync(filePath, base64Data, {
+        encoding: FileSystem.EncodingType.Base64,
+      });
+
+      // show success toast
+      Toast.show({
+        type: "success",
+        text1: "Downloaded successfully",
+        text2: `${fileName} saved to app storage`,
+      });
+
+      // resolve promise
+      webViewRef.current?.injectJavaScript(`
+        if(window._downloadResolve) window._downloadResolve();
+        true;
+      `);
+    } catch (error: any) {
+      webViewRef.current?.injectJavaScript(`
+        if(window._downloadReject) window._downloadReject(new Error('${error.message.replace(
+          /'/g,
+          "\\'"
+        )}'));
+        true;
+      `);
+    }
+  };
+
+  return (
+    <WebView
+      ref={webViewRef}
+      source={{ uri: url }}
+      injectedJavaScript={injectedJavaScript}
+      onMessage={handleMessage}
+      javaScriptEnabled={true}
+      domStorageEnabled={true}
+      style={styles.webview}
+    />
+  );
 };
-window.DownloadInterface = {
-  download: (data, fileName, mimeType) => new Promise((resolve, reject) => {
-    window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'download', data, fileName, mimeType }));
-    window._downloadResolve = resolve;
-    window._downloadReject = reject;
-  })
-};
-true;
-`
+
+const styles = StyleSheet.create({
+  webview: {
+    flex: 1,
+  },
+});
+
 ```
 
 **Handle messages:**
 
 ```tsx
-const handleMessage = async event => {
-  const { type, data, fileName, mimeType, text } = JSON.parse(event.nativeEvent.data);
+const handleMessage = async (event: any) => {
+    try {
+      const data = JSON.parse(event.nativeEvent.data);
 
-  if (type === 'share') await Share.share({ message: text });
-  if (type === 'download') {
-    await FileSystem.writeAsStringAsync(`${FileSystem.documentDirectory}${fileName}`, data, { encoding: FileSystem.EncodingType.Base64 });
-  }
-};
+      if (data.type === "download") {
+        await handleDownload(data.data, data.fileName, data.mimeType);
+      } else if (data.type === "share") {
+        Share.share({
+          message: data.text,
+        })
+          .then((result) => {
+            if (result.action === Share.sharedAction) {
+              // share was successful
+              Toast.show({
+                type: "success",
+                text1: "Shared successfully",
+                text2: "Your content has been shared",
+              });
+              webViewRef.current?.injectJavaScript(`
+                if(window._shareResolve) window._shareResolve();
+                true;
+              `);
+            } else if (result.action === Share.dismissedAction) {
+              // share was dismissed
+              webViewRef.current?.injectJavaScript(`
+                if(window._shareReject) window._shareReject(new Error('User cancelled'));
+                true;
+              `);
+            }
+          })
+          .catch((error) => {
+            webViewRef.current?.injectJavaScript(`
+              if(window._shareReject) window._shareReject(new Error('${error.message.replace(
+                /'/g,
+                "\\'"
+              )}'));
+              true;
+            `);
+          });
+      }
+    } catch (error) {
+      console.error("Error handling message:", error);
+    }
+  };
 ```
 
 **Install dependencies:**
