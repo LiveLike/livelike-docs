@@ -82,6 +82,12 @@
                             },
                             "type": "object"
                           }
+                        },
+                        "publish_delay": {
+                          "type": "string",
+                          "format": "date",
+                          "default": "PT2M",
+                          "description": "Delay publishing widgets (ISODuration)"
                         }
                       },
                       "type": "object",
