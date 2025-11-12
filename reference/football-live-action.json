@@ -86,8 +86,8 @@
                         "publish_delay": {
                           "type": "string",
                           "format": "date",
-                          "default": "PT2M",
-                          "description": "Delay publishing widgets (ISODuration)"
+                          "default": "",
+                          "description": "Delay publishing widgets (ISODuration format)"
                         }
                       },
                       "type": "object",
