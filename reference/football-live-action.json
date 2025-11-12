@@ -293,6 +293,10 @@
                             },
                             "type": "object"
                           }
+                        },
+                        "publish_delay": {
+                          "type": "string",
+                          "description": "Delay publishing widgets (ISODuration format)"
                         }
                       },
                       "required": [
