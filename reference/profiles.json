@@ -39,7 +39,36 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"badges\": [],\n  \"id\": \"cf827079-fdca-49b9-a775-f24198496d5e\",\n  \"subscribe_channel\": \"profile.cf827079-fdca-49b9-a775-f24198496d5e\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/\",\n  \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/chat-room-memberships/\",\n  \"blocked_profiles_template_url\": \"https://cf-blast.livelikecdn.com/api/v1/profile-blocks/?blocked_profile_id={blocked_profile_id}\",\n  \"client_id\": \"N8mzx8CUQWzTXBkKrKIXtvh4NY3dztltjxncM68c\",\n  \"reward_item_balances_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-balances/\",\n  \"reward_item_credit_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-credits/\",\n  \"reward_item_debit_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-debits/\",\n  \"custom_data\": null,\n  \"reward_item_transfer_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-transfers/\",\n  \"chat_room_invitations_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-invitations/?client_id={client_id}&invited_profile_id={profile_id}\",\n  \"badges_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/badges/\",\n  \"badge_progress_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/badge-progress/\",\n  \"block_profile_url\": \"https://cf-blast.livelikecdn.com/api/v1/profile-blocks/\",\n  \"blocked_profile_ids_url\": \"https://cf-blast.livelikecdn.com/api/v1/blocked-profile-ids/\",\n  \"points\": 0,\n  \"reported_count\": 0,\n  \"created_at\": \"2019-09-30T15:59:44.933696Z\",\n  \"nickname\": \"Swift Bear\",\n   \"attributes\": [\n    {\n      \"key\": \"team_name\",\n      \"value\": \"All Stars\"\n    }\n   ]\n}"
+                    "value": {
+                      "badges": [],
+                      "id": "cf827079-fdca-49b9-a775-f24198496d5e",
+                      "custom_id": "u_000123",
+                      "subscribe_channel": "profile.cf827079-fdca-49b9-a775-f24198496d5e",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/",
+                      "chat_room_memberships_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/chat-room-memberships/",
+                      "blocked_profiles_template_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/?blocked_profile_id={blocked_profile_id}",
+                      "client_id": "N8mzx8CUQWzTXBkKrKIXtvh4NY3dztltjxncM68c",
+                      "reward_item_balances_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-balances/",
+                      "reward_item_credit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-credits/",
+                      "reward_item_debit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-debits/",
+                      "custom_data": null,
+                      "reward_item_transfer_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/reward-item-transfers/",
+                      "chat_room_invitations_url_template": "https://cf-blast.livelikecdn.com/api/v1/chat-room-invitations/?client_id={client_id}&invited_profile_id={profile_id}",
+                      "badges_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/badges/",
+                      "badge_progress_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/cf827079-fdca-49b9-a775-f24198496d5e/badge-progress/",
+                      "block_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/",
+                      "blocked_profile_ids_url": "https://cf-blast.livelikecdn.com/api/v1/blocked-profile-ids/",
+                      "points": 0,
+                      "reported_count": 0,
+                      "created_at": "2019-09-30T15:59:44.933696Z",
+                      "nickname": "Swift Bear",
+                      "attributes": [
+                        {
+                          "key": "team_name",
+                          "value": "All Stars"
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
