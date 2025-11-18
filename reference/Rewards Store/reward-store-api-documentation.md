@@ -222,8 +222,6 @@ GET /api/categories?populate=*&sort=categorySequence:asc
 }
 ```
 
-<br />
-
 #### GET /api/categories/:id
 
 Get detailed information about a specific category.
@@ -254,9 +252,9 @@ Parameters:
 
 <br />
 
-**Example Request**
+**Example**
 
-```Text Request
+```Text Example Request
 GET /api/orders?filters[livelikeUserId][$eq]=user123&populate=*&sort=createdAt:desc
 
 Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -264,9 +262,7 @@ Authorization: Bearer STORE_API_ACCESS_TOKEN
 livelike-user-token: LIVELIKE_USER_TOKEN
 ```
 
-**Example Response**
-
-```Text Response
+```Text Example Response
 {
   "data": [
     {
@@ -297,8 +293,6 @@ livelike-user-token: LIVELIKE_USER_TOKEN
 }
 
 ```
-
-<br />
 
 #### GET /api/orders/:id
 
@@ -432,8 +426,6 @@ Retrieve all reward items.
 
 ```
 
-<br />
-
 #### GET /api/reward-items/:id
 
 Get detailed information about a specific reward item.
@@ -460,8 +452,6 @@ Retrieve all refund records.
 **Parameters:**
 
 * populate (string): Populate relations (recommended: * to include order details)
-
-<br />
 
 #### GET /api/refunds/:id
 
