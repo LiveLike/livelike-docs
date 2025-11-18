@@ -56,7 +56,7 @@ The API uses standard HTTP status codes and returns detailed error information:
 
 ### Rate Limiting
 
-The API implements rate limiting to ensure fair usage. 
+The API implements rate limiting to ensure fair usage.
 
 Rate limit headers are included in responses:
 
@@ -605,10 +605,12 @@ interface Refund {
    GET /api/products?populate=_&filters[categories][id][$eq]=1
    ```
 2. Check Product Details
-   ```
-   GET /api/products/1?populate=_
-   ```
-3. Redeem Product  
+
+```
+GET /api/products/1?populate=_
+```
+
+1. Redeem Product
    ```
    POST /api/redeem
    Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -620,7 +622,7 @@ interface Refund {
      "quantity": 1
    }
    ```
-4. Check Order Status  
+2. Check Order Status
    ```
    GET /api/orders?filters[livelikeUserId][$eq]=user123&populate=*
    Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -644,6 +646,8 @@ GET /api/orders?filters[livelikeUserId][$eq]=user123&filters[status][$eq]=FULFIL
 Authorization: Bearer STORE_API_ACCESS_TOKEN
 livelike-user-token: LIVELIKE_USER_TOKEN
 ```
+
+<br />
 
 ### Integration Notes
 
