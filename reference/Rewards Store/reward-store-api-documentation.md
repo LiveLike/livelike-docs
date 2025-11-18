@@ -12,7 +12,7 @@ The  Rewards Store API is a comprehensive reward management system. It provides 
 **Base URL**: [https://example.com](https://example.com)
 **Authentication**: Bearer Token (Store API Access Token)
 
-<br />
+***
 
 ### Authentication
 
@@ -64,7 +64,7 @@ Rate limit headers are included in responses:
 * X-RateLimit-Remaining: Remaining requests in current window
 * X-RateLimit-Reset: Time when the rate limit resets
 
-<br />
+***
 
 ## Endpoints
 
@@ -84,13 +84,15 @@ Parameters:
 
 <br />
 
-**Example:**
+**Example Request:**
 
-```Text Example Request
+```Text Request
 GET /api/products?populate=*&filters[categories][id][$eq]=1&sort=createdAt:desc
 ```
 
-```Text Example Response
+**Example Response:**
+
+```Text Response
 {
   "data": [
     {
@@ -194,13 +196,15 @@ Retrieve all product categories.
 * sort (string): Sort order (recommended: categorySequence:asc)
 * locale (string): Locale for i18n content (default: en)
 
-**Example:**
+**Example Request:**
 
-```Text Example Request
+```Text Request
 GET /api/categories?populate=*&sort=categorySequence:asc
 ```
 
-```Text Example Response
+**Example Response:**
+
+```Text Response
 {
   "data": [
     {
@@ -250,9 +254,11 @@ Parameters:
 * populate (string): Populate relations
 * sort (string): Sort order (recommended: createdAt:desc)`
 
-**Example**
+<br />
 
-```Text Example Request
+**Example Request**
+
+```Text Request
 GET /api/orders?filters[livelikeUserId][$eq]=user123&populate=*&sort=createdAt:desc
 
 Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -262,7 +268,7 @@ livelike-user-token: LIVELIKE_USER_TOKEN
 
 **Example Response**
 
-```Text Example Response
+```Text Response
 {
   "data": [
     {
@@ -313,11 +319,15 @@ Get detailed information about a specific order.
 
 * livelike-user-token (string, required): LiveLike user token
 
+<br />
+
 #### POST /api/redeem
 
 Redeem a reward product for the authenticated user.
 
-```Text Request Body
+**Request Body**
+
+```
 {
   "productId": 1,
   "quantity": 1,
@@ -339,11 +349,11 @@ Redeem a reward product for the authenticated user.
 4. User hasn’t exceeded max redemption limit
 5. Product hasn’t expired
 6. User has required badge (if applicable)
-7. Product variant exists (if SKU provided)  
+7. Product variant exists (if SKU provided)
 
 <br />
 
-**Example:**
+**Example Request:**
 
 ```Text Example Request
 POST /api/redeem
@@ -356,6 +366,8 @@ Content-Type: application/json
   "sku": "VARIANT_SKU_001"
 }
 ```
+
+Response:
 
 ```Text Success Response (200)
 {
@@ -403,9 +415,9 @@ Content-Type: application/json
 
 Retrieve all reward items.
 
-**Example:**
+**Example Response:**
 
-```Text Example Response
+```
 {
   "data": [
     {
@@ -451,11 +463,13 @@ Retrieve all refund records.
 
 * populate (string): Populate relations (recommended: * to include order details)
 
+<br />
+
 #### GET /api/refunds/:id
 
 Get detailed information about a specific refund.
 
-<br />
+***
 
 ## Data Models
 
@@ -561,7 +575,7 @@ interface Refund {
 
 ```
 
-<br />
+***
 
 ## Error Codes
 
@@ -578,7 +592,7 @@ interface Refund {
 | 40011 | Product variant SKU missing        |
 | 40012 | Product variant not found          |
 
-<br />
+***
 
 ## Examples
 
@@ -588,11 +602,13 @@ interface Refund {
    ```
    GET /api/products?populate=_&filters[categories][id][$eq]=1
    ```
-2. Check Product Details  
-   ```
-   GET /api/products/1?populate=_
-   ```
-3. Redeem Product
+2. Check Product Details
+
+```
+GET /api/products/1?populate=_
+```
+
+1. Redeem Product
    ```
    POST /api/redeem
    Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -604,7 +620,7 @@ interface Refund {
      "quantity": 1
    }
    ```
-4. Check Order Status
+2. Check Order Status
    ```
    GET /api/orders?filters[livelikeUserId][$eq]=user123&populate=*
    Authorization: Bearer STORE_API_ACCESS_TOKEN
@@ -629,7 +645,7 @@ Authorization: Bearer STORE_API_ACCESS_TOKEN
 livelike-user-token: LIVELIKE_USER_TOKEN
 ```
 
-<br />
+***
 
 ## Integration Notes
 
