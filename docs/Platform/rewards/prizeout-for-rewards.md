@@ -111,7 +111,7 @@ LiveLike provides a complete set of APIs to build your own fully customized stor
 * **Tiers and tier details**
 * **Refunds and refund details**
 
-You can find the full Reward Store API documentation here.
+You can find the full Reward Store API documentation here: [LINK](https://docs.livelike.com/reference/reward-store-api-documentation#/)
 
 ***
 
