@@ -471,7 +471,7 @@ Get detailed information about a specific refund.
 
 <br />
 
-### Data Models
+## Data Models
 
 #### Product
 
@@ -577,9 +577,7 @@ interface Refund {
 
 <br />
 
-### Error Codes
-
-<br />
+## Error Codes
 
 | Code  | Description                        |
 | :---- | :--------------------------------- |
@@ -596,9 +594,9 @@ interface Refund {
 
 <br />
 
-### Examples
+## Examples
 
-#### Complete Redemption Flow
+### Complete Redemption Flow
 
 1. Get Available Products
    ```
@@ -631,7 +629,7 @@ GET /api/products/1?populate=_
 
 <br />
 
-#### Filtering and Pagination
+### Filtering and Pagination
 
 Get products by category with pagination:
 
@@ -649,7 +647,7 @@ livelike-user-token: LIVELIKE_USER_TOKEN
 
 <br />
 
-### Integration Notes
+## Integration Notes
 
 * Authentication: Ensure proper Bearer token is included for protected endpoints
 * Error Handling: Always check for error responses and handle them appropriately
@@ -660,6 +658,6 @@ livelike-user-token: LIVELIKE_USER_TOKEN
 
 <br />
 
-### Support
+## Support
 
 For API support and questions, please contact the development team or refer to the internal documentation for additional technical details.
