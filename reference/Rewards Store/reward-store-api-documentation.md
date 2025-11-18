@@ -10,6 +10,7 @@ metadata:
 The  Rewards Store API is a comprehensive reward management system. It provides endpoints for managing reward products, processing redemptions, tracking orders, and managing user rewards.
 
 **Base URL**: [https://example.com](https://example.com)
+
 **Authentication**: Bearer Token (Store API Access Token)
 
 ***
