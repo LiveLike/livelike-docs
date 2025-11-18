@@ -168,8 +168,6 @@ GET /api/products?populate=*&filters[categories][id][$eq]=1&sort=createdAt:desc
 }
 ```
 
-<br />
-
 #### GET /api/products/:id
 
 Get detailed information about a specific product.
