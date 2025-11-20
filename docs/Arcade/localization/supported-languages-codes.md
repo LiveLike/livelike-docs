@@ -8,6 +8,8 @@ hidden: false
 metadata:
   robots: index
 ---
+[Localisation guide](https://docs.livelike.com/update/docs/localization#/) 
+
 Below is a list of supported languages and their corresponding codes:
 
 | Code | Language          |
