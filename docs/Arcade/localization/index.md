@@ -79,7 +79,8 @@ next:
 ## Preference Order
 
 * **Query Param:**
-  * You can append query param `lang=fr` to make the instance region specific even though we have default lang different set in the localization CMS config.
+  * To make the instance region specific you can append query param with the following format along with the supported language code eg. `lang=fr` 
+  * Even though we have default language different set in the localization CMS config it will first check the region specific language from the query parameter `lang=*`.
   * It will be applied only if that language falls under the supported locales list of the instance.
   * This will have the highest preference.
 * **Device Language:**
