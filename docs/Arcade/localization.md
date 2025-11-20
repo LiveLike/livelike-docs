@@ -1,5 +1,5 @@
 ---
-title: Localization Guide for Arcade CMS
+title: Localization Guide
 excerpt: >-
   Localization in Arcade CMS allows you to manage and deliver content in
   multiple languages for your games and experiences. This feature ensures that
