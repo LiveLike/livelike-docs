@@ -56,6 +56,7 @@ next:
   * Upload CSV files to update multiple translations at once.
 * **Download Template:**
   * Download a CSV template to help you prepare your localization data for bulk upload. The template includes all required fields and headers.
+  * To add more locales in the csv add the supported locale language code in the headers and add translations for it.
 
 ## Synchronization
 
