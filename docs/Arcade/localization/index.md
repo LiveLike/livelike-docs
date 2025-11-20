@@ -85,6 +85,6 @@ next:
   * This will have the highest preference.
 * **Device Language:**
   * Next if query param is not set it will check the device language preference and if it falls under the supported locales list of the instance it will apply that language to the instance.
-  * NOTE: If the device language is English (`en`) it will not get applied and will check the localization config next.
+  * **NOTE**: If the device language is English (`en`) it will not get applied and will check the localization config next.
 * **Instance Default Language:**
   * Finally, the instance will pick the default language set in the config.
