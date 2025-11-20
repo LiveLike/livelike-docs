@@ -28,6 +28,7 @@ next:
 * **Supported Locales:**
   * The CMS supports all standard language codes (e.g., `en` for English, `es` for Spanish).
   * You can add new locales as needed.
+  * The list of supported languages is here [(supported languages)]()
 
 ## How to Add Localization Using CMS
 
@@ -80,7 +81,7 @@ next:
 ## Preference Order
 
 * **Query Param:**
-  * To make the instance region specific you can append query param with the following format along with the supported language code eg. `lang=fr` 
+  * To make the instance region specific you can append query param with the following format along with the supported language code eg. `lang=fr`
   * Even though we have default language different set in the localization CMS config it will first check the region specific language from the query parameter `lang=*`.
   * It will be applied only if that language falls under the supported locales list of the instance.
   * This will have the highest preference.
