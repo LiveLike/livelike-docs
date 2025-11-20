@@ -41,7 +41,7 @@ metadata:
 
 * **Locale List:**
   * Displays all available languages. You can reorder or remove locales.
-  * The first locale in the list (usually 'en') is used as the default language for your app. To set a different default, reorder the locales so your preferred default is first.
+  * The first locale in the list English ('en') is used as the default language for your app. To set a different default, reorder the locales so your preferred default is first.
 * **Screen Selection:**
   * Choose which screens/modules to localize for each language.
 * **Field Editing:**
@@ -69,3 +69,15 @@ metadata:
 * **CSV Upload Errors:**
   * Make sure your CSV file matches the required template format.
   * Check for missing headers or invalid characters.
+
+## Preference Order
+
+* **Query Param:**
+  * You can append query param `lang=fr` to make the instance region specific even though we have default lang different set in the localization CMS config.
+  * It will be applied only if that language falls under the supported locales list of the instance.
+  * This will have the highest preference.
+* **Device Language:**
+  * Next if query param is not set it will check the device language preference and if it falls under the supported locales list of the instance it will apply that language to the instance.
+  * NOTE: If the device language is English (`en`) it will not get applied and will check the localization config next.
+* **Instance Default Language:**
+  * Finally, the instance will pick the default language set in the config.
