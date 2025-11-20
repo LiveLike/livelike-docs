@@ -10,8 +10,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 ## Usage
 
 * **Accessing Localization:**
