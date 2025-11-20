@@ -28,7 +28,7 @@ next:
 * **Supported Locales:**
   * The CMS supports all standard language codes (e.g., `en` for English, `es` for Spanish).
   * You can add new locales as needed.
-  * The list of supported languages is here [(supported languages)]()
+  * The list of supported languages is here [(supported languages)](https://docs.livelike.com/update/docs/supported-languages-codes#/)
 
 ## How to Add Localization Using CMS
 
