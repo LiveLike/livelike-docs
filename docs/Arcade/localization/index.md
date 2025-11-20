@@ -12,7 +12,11 @@ metadata:
 next:
   description: >-
     Check all the Supported Languages and their respective codes for your
-    reference here
+    reference.
+  pages:
+    - slug: supported-languages-codes
+      title: Supported Languages & Codes
+      type: basic
 ---
 ## Usage
 
