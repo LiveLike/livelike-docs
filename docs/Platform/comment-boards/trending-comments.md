@@ -42,4 +42,6 @@ curl -X PATCH https://cf-blast.livelikecdn.com/api/v1/applications/<client_id>/ 
   }'
 ```
 
+If any comment's **Number of direct replies** and **Number of reactions** are zero, the trending score isn’t calculated because the formula will always produce zero hence **trending_score** ends up as the default value, which is null.
+
 <br />
