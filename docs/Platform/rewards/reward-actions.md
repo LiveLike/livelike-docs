@@ -16,7 +16,7 @@ Reward Action are used to trigger the reward engine for the given action. There 
 
 ## Built-in Reward Actions
 
-| Action Name                     | Key                  |
+| Action Name                     | Action Key           |
 | ------------------------------- | -------------------- |
 | Replied to an Ask widget prompt | `ask-replied`        |
 | Made a prediction               | `prediction-made`    |
