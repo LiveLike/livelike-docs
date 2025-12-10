@@ -14962,6 +14962,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filters reward action by type"
           }
         ],
         "responses": {
