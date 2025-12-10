@@ -14967,7 +14967,15 @@
             "in": "query",
             "name": "type",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "built-in",
+                "custom",
+                "segment",
+                "mparticle",
+                "vesper",
+                "gcp_pubsub"
+              ]
             },
             "description": "Filters reward action by type"
           }
