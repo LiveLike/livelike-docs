@@ -32598,11 +32598,11 @@
         "deprecated": false
       }
     },
-    "/image-prediction-options/-1": {
+    "/image-number-prediction-options/": {
       "post": {
-        "summary": "Copy of Copy of Update Image Number Prediction Option",
+        "summary": "Copy of Copy of Copy of Update Image Number Prediction Option",
         "description": "",
-        "operationId": "post_text-prediction-options-1",
+        "operationId": "post_image-prediction-options-1-1",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -32621,6 +32621,9 @@
                   "image_url": {
                     "type": "string",
                     "description": "URL for the option image"
+                  },
+                  "correct_number": {
+                    "type": "string"
                   },
                   "reward_item_id": {
                     "type": "string",
@@ -32678,11 +32681,11 @@
         "deprecated": false
       }
     },
-    "/image-number-prediction-options/": {
+    "/image-prediction-options/": {
       "post": {
-        "summary": "Copy of Copy of Copy of Update Image Number Prediction Option",
+        "summary": "Copy of Copy of Update Image Number Prediction Option",
         "description": "",
-        "operationId": "post_image-prediction-options-1-1",
+        "operationId": "post_text-prediction-options-1",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -32701,9 +32704,6 @@
                   "image_url": {
                     "type": "string",
                     "description": "URL for the option image"
-                  },
-                  "correct_number": {
-                    "type": "string"
                   },
                   "reward_item_id": {
                     "type": "string",
