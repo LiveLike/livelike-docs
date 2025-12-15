@@ -1,5 +1,5 @@
 ---
-title: Copy of Update Image Number Prediction Option
+title: Create Text Prediction Option
 api:
   file: engagement-suite.json
   operationId: patch_image-number-prediction-options{option_id}-1
