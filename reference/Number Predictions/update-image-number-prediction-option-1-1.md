@@ -1,5 +1,5 @@
 ---
-title: Copy of Create Text Prediction Option
+title: Create Image Prediction Option
 api:
   file: engagement-suite.json
   operationId: post_text-prediction-options-1
