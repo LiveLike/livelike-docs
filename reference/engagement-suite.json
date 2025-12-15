@@ -32523,28 +32523,26 @@
       }
     },
     "/text-prediction-follow-ups/-1": {},
-    "/image-number-prediction-options/{option_id}/-1": {
-      "patch": {
+    "/text-prediction-options/": {
+      "post": {
         "summary": "Copy of Update Image Number Prediction Option",
         "description": "",
         "operationId": "patch_image-number-prediction-options{option_id}-1",
-        "parameters": [
-          {
-            "name": "option_id",
-            "in": "path",
-            "description": "The ID of the image prediction option",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
+                  "prediction_id": {
+                    "type": "string",
+                    "description": "ID of the prediction widget"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Option description"
+                  },
                   "reward_item_id": {
                     "type": "string",
                     "description": "The ID of the reward item to give when this option is correct"
@@ -32553,91 +32551,12 @@
                     "type": "integer",
                     "description": "The amount of the reward to give when this option is correct",
                     "format": "int32"
-                  },
-                  "correct_number": {
-                    "type": "integer",
-                    "description": "The correct number",
-                    "format": "int32"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
                   }
                 },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/image-number-prediction-options/{option_id}/-1-1": {
-      "patch": {
-        "summary": "Copy of Copy of Update Image Number Prediction Option",
-        "description": "",
-        "operationId": "patch_image-number-prediction-options{option_id}-1-1",
-        "parameters": [
-          {
-            "name": "option_id",
-            "in": "path",
-            "description": "The ID of the image prediction option",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "reward_item_id": {
-                    "type": "string",
-                    "description": "The ID of the reward item to give when this option is correct"
-                  },
-                  "reward_item_amount": {
-                    "type": "integer",
-                    "description": "The amount of the reward to give when this option is correct",
-                    "format": "int32"
-                  },
-                  "correct_number": {
-                    "type": "integer",
-                    "description": "The correct number",
-                    "format": "int32"
-                  }
-                }
+                "required": [
+                  "prediction_id",
+                  "description"
+                ]
               }
             }
           }
