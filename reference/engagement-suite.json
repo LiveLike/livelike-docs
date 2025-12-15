@@ -32598,7 +32598,7 @@
         "deprecated": false
       }
     },
-    "/text-prediction-options/-1": {
+    "/image-prediction-options/-1": {
       "post": {
         "summary": "Copy of Copy of Update Image Number Prediction Option",
         "description": "",
@@ -32618,6 +32618,10 @@
                     "type": "string",
                     "description": "Option description"
                   },
+                  "image_url": {
+                    "type": "string",
+                    "description": "URL for the option image"
+                  },
                   "reward_item_id": {
                     "type": "string",
                     "description": "The ID of the reward item to give when this option is correct"
@@ -32630,7 +32634,8 @@
                 },
                 "required": [
                   "prediction_id",
-                  "description"
+                  "description",
+                  "image_url"
                 ]
               }
             }
