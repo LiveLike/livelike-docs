@@ -32678,7 +32678,7 @@
         "deprecated": false
       }
     },
-    "/image-prediction-options/-1-1": {
+    "/image-number-prediction-options/": {
       "post": {
         "summary": "Copy of Copy of Copy of Update Image Number Prediction Option",
         "description": "",
@@ -32701,6 +32701,9 @@
                   "image_url": {
                     "type": "string",
                     "description": "URL for the option image"
+                  },
+                  "correct_number": {
+                    "type": "string"
                   },
                   "reward_item_id": {
                     "type": "string",
