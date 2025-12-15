@@ -32521,6 +32521,244 @@
         },
         "deprecated": false
       }
+    },
+    "/text-prediction-follow-ups/-1": {
+      "post": {
+        "summary": "Copy of Create Text Prediction Follow-up",
+        "description": "",
+        "operationId": "post_text-prediction-follow-ups-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "text_prediction_id",
+                  "correct_option_id"
+                ],
+                "properties": {
+                  "text_prediction_id": {
+                    "type": "string",
+                    "description": "The ID of the prediction to create this follow-up for"
+                  },
+                  "correct_option_id": {
+                    "type": "string",
+                    "description": "The ID of the option to mark as correct"
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "description": "Links the ```sponsors``` with this Follow-up. Note that only valid sponsor_ids will be linked to a Follow-up.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"f2324ce8-e489-44f9-94fb-cf856a98fc93\",\n    \"pubnub_enabled\": true,\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/\",\n    \"program_id\": \"94762042-f447-42e8-aea8-07ad65edd910\",\n    \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n    \"text_prediction_id\": \"5f1a5c3f-a17c-4f97-b88f-59a3e72ef013\",\n    \"text_prediction_url\": \"https://cf-blast.livelikecdn.com/api/v1/text-predictions/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/\",\n    \"correct_option_id\": null,\n    \"timeout\": \"P0DT00H00M30S\",\n    \"published_at\": null,\n    \"scheduled_at\": null,\n    \"interactive_until\": null,\n    \"created_at\": \"2023-12-13T06:35:28.059748Z\",\n    \"subscribe_channel\": \"program.widget.94762042-f447-42e8-aea8-07ad65edd910\",\n    \"kind\": \"text-prediction-follow-up\",\n    \"options\": [\n        {\n            \"id\": \"48b9a173-a100-4751-9d30-cc33bef035e0\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/text-prediction-options/48b9a173-a100-4751-9d30-cc33bef035e0/\",\n            \"description\": \"1\",\n            \"is_correct\": false,\n            \"vote_count\": 0,\n            \"vote_url\": \"https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-prediction/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/options/48b9a173-a100-4751-9d30-cc33bef035e0/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCbGVWQ3dpendjOFFQX3RqVWZXZ0xLZ2pSdVF3a2l6bUsyeWNUVEVHXzZfU0F0eW1PT2FGZXNsY1c3WkJJbVdNbkhRa2Vkcnl3VGcteHhKZkx4QmR4cWxhNkVkUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3MDI0NDkzMjh9.LQBrAc55k1k-FA-l_qcifRrs8DMxxqUm3_Vn-GhvZ9E/\",\n            \"reward_item_id\": null,\n            \"reward_item_amount\": 0,\n            \"earnable_rewards\": [],\n            \"translations\": {},\n            \"translatable_fields\": [\n                \"description\"\n            ]\n        },\n        {\n            \"id\": \"1a86751e-32a8-4fb6-9bbe-56f6cf3939ef\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/text-prediction-options/1a86751e-32a8-4fb6-9bbe-56f6cf3939ef/\",\n            \"description\": \"1\",\n            \"is_correct\": false,\n            \"vote_count\": 0,\n            \"vote_url\": \"https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-prediction/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/options/1a86751e-32a8-4fb6-9bbe-56f6cf3939ef/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCbGVWQ3daeDN4aGdvQzlFek9LN241anZST0IxZDFJZWNIaTFiTzM2ZHl3OTgzMjdxWXV4cjNRRnF5RUM0eFpLekM3QkZNUUdsWTY5QUloUVF6ZFdCZTV1SjB3UT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3MDI0NDkzMjh9.ZOkWRCMzAp0Wpl8g9jNAtvscX0vj0Q2DoJiyEd5QWXI/\",\n            \"reward_item_id\": null,\n            \"reward_item_amount\": 0,\n            \"earnable_rewards\": [],\n            \"translations\": {},\n            \"translatable_fields\": [\n                \"description\"\n            ]\n        }\n    ],\n    \"question\": \"new\",\n    \"program_date_time\": null,\n    \"publish_delay\": \"P0DT00H00M00S\",\n    \"interaction_url\": \"https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/interactions/\",\n    \"impression_url\": \"https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-prediction-follow-up/f2324ce8-e489-44f9-94fb-cf856a98fc93/\",\n    \"impression_count\": 0,\n    \"unique_impression_count\": 0,\n    \"engagement_count\": null,\n    \"engagement_percent\": null,\n    \"status\": \"pending\",\n    \"created_by\": {\n        \"id\": \"fccbb60d-c8b0-49fd-958c-87dc8f059bf8\",\n        \"name\": null,\n        \"image_url\": null\n    },\n    \"schedule_url\": \"https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/schedule/\",\n    \"rewards_url\": null,\n    \"translations\": {},\n    \"translatable_fields\": [],\n    \"reactions\": [],\n    \"custom_data\": null,\n    \"claim_url\": \"https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interaction-claims/text-prediction/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/claims/\",\n    \"sponsors\": [],\n    \"earnable_rewards\": [],\n    \"widget_interactions_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_prediction_id=5f1a5c3f-a17c-4f97-b88f-59a3e72ef013\",\n    \"widget_attributes\": [],\n    \"playback_time_ms\": null\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "f2324ce8-e489-44f9-94fb-cf856a98fc93"
+                    },
+                    "pubnub_enabled": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/"
+                    },
+                    "program_id": {
+                      "type": "string",
+                      "example": "94762042-f447-42e8-aea8-07ad65edd910"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS"
+                    },
+                    "text_prediction_id": {
+                      "type": "string",
+                      "example": "5f1a5c3f-a17c-4f97-b88f-59a3e72ef013"
+                    },
+                    "text_prediction_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-predictions/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/"
+                    },
+                    "correct_option_id": {},
+                    "timeout": {
+                      "type": "string",
+                      "example": "P0DT00H00M30S"
+                    },
+                    "published_at": {},
+                    "scheduled_at": {},
+                    "interactive_until": {},
+                    "created_at": {
+                      "type": "string",
+                      "example": "2023-12-13T06:35:28.059748Z"
+                    },
+                    "subscribe_channel": {
+                      "type": "string",
+                      "example": "program.widget.94762042-f447-42e8-aea8-07ad65edd910"
+                    },
+                    "kind": {
+                      "type": "string",
+                      "example": "text-prediction-follow-up"
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "48b9a173-a100-4751-9d30-cc33bef035e0"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/text-prediction-options/48b9a173-a100-4751-9d30-cc33bef035e0/"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "1"
+                          },
+                          "is_correct": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          },
+                          "vote_count": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "vote_url": {
+                            "type": "string",
+                            "example": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-prediction/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/options/48b9a173-a100-4751-9d30-cc33bef035e0/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCbGVWQ3dpendjOFFQX3RqVWZXZ0xLZ2pSdVF3a2l6bUsyeWNUVEVHXzZfU0F0eW1PT2FGZXNsY1c3WkJJbVdNbkhRa2Vkcnl3VGcteHhKZkx4QmR4cWxhNkVkUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3MDI0NDkzMjh9.LQBrAc55k1k-FA-l_qcifRrs8DMxxqUm3_Vn-GhvZ9E/"
+                          },
+                          "reward_item_id": {},
+                          "reward_item_amount": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "earnable_rewards": {
+                            "type": "array"
+                          },
+                          "translations": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "translatable_fields": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "example": "description"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "question": {
+                      "type": "string",
+                      "example": "new"
+                    },
+                    "program_date_time": {},
+                    "publish_delay": {
+                      "type": "string",
+                      "example": "P0DT00H00M00S"
+                    },
+                    "interaction_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/interactions/"
+                    },
+                    "impression_url": {
+                      "type": "string",
+                      "example": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-prediction-follow-up/f2324ce8-e489-44f9-94fb-cf856a98fc93/"
+                    },
+                    "impression_count": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "unique_impression_count": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "engagement_count": {},
+                    "engagement_percent": {},
+                    "status": {
+                      "type": "string",
+                      "example": "pending"
+                    },
+                    "created_by": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "fccbb60d-c8b0-49fd-958c-87dc8f059bf8"
+                        },
+                        "name": {},
+                        "image_url": {}
+                      }
+                    },
+                    "schedule_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-prediction-follow-ups/f2324ce8-e489-44f9-94fb-cf856a98fc93/schedule/"
+                    },
+                    "rewards_url": {},
+                    "translations": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "translatable_fields": {
+                      "type": "array"
+                    },
+                    "reactions": {
+                      "type": "array"
+                    },
+                    "custom_data": {},
+                    "claim_url": {
+                      "type": "string",
+                      "example": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interaction-claims/text-prediction/5f1a5c3f-a17c-4f97-b88f-59a3e72ef013/claims/"
+                    },
+                    "sponsors": {
+                      "type": "array"
+                    },
+                    "earnable_rewards": {
+                      "type": "array"
+                    },
+                    "widget_interactions_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_prediction_id=5f1a5c3f-a17c-4f97-b88f-59a3e72ef013"
+                    },
+                    "widget_attributes": {
+                      "type": "array"
+                    },
+                    "playback_time_ms": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-readme": {
