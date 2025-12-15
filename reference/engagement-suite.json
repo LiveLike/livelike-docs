@@ -32677,6 +32677,86 @@
         },
         "deprecated": false
       }
+    },
+    "/image-prediction-options/-1-1": {
+      "post": {
+        "summary": "Copy of Copy of Copy of Update Image Number Prediction Option",
+        "description": "",
+        "operationId": "post_image-prediction-options-1-1",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prediction_id": {
+                    "type": "string",
+                    "description": "ID of the prediction widget"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Option description"
+                  },
+                  "image_url": {
+                    "type": "string",
+                    "description": "URL for the option image"
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "description": "The ID of the reward item to give when this option is correct"
+                  },
+                  "reward_item_amount": {
+                    "type": "integer",
+                    "description": "The amount of the reward to give when this option is correct",
+                    "format": "int32"
+                  }
+                },
+                "required": [
+                  "prediction_id",
+                  "description",
+                  "image_url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-readme": {
