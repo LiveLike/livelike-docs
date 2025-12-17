@@ -1,5 +1,5 @@
 ---
-title: Delete A Flair
+title: Delete A Flair Scope
 api:
   file: engagement-suite.json
   operationId: delete_flairs{flair_id}-1
