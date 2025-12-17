@@ -1,6 +1,6 @@
 ---
 title: Flairs
-excerpt: ' A label(text and/or image) that can be displayed next to a user or entity.'
+excerpt: ' A universal and reusable label system that adds identity, status, and context to users, content, and experiences across the platform.'
 deprecated: false
 hidden: false
 metadata:
