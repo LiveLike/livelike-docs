@@ -1,5 +1,5 @@
 ---
-title: Copy of List Flairs
+title: List Flair Scopes
 api:
   file: engagement-suite.json
   operationId: get_flairs-1
