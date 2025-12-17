@@ -1,5 +1,5 @@
 ---
-title: Flair
+title: Flairs
 excerpt: >-
   A universal and reusable label system that adds identity, status, and context
   to users, content, and experiences across the platform.
@@ -20,21 +20,14 @@ One flair definition can be used in many places and rendered consistently wherev
 
 Flair helps users and systems quickly understand who someone is, what something represents, or why it matters, without needing extra explanation.
 
-### Identity and Status
-
-Flairs can represent roles and recognition such as VIP users, verified hosts, moderators, team members, or creators. This builds trust and clarity, especially in live and social environments.
-
-### Achievements and Progress
-
-Flairs can mark accomplishments like milestones, streaks, quest completion, or earned rewards. They give visible recognition and encourage repeat engagement.
-
-### Contextual Labels
-
-Flairs can label entities like chatrooms, quests, rewards, or events. Examples include difficulty levels, official status, rarity, or event-specific badges.
-
-### Personal Expression
-
-When allowed, users can select or create flairs to express themselves. These flairs appear consistently across supported surfaces such as profiles or chat.
+* **Identity and Status**
+  * Flairs can represent roles and recognition such as VIP users, verified hosts, moderators, team members, or creators. This builds trust and clarity, especially in live and social environments.
+* **Achievements and Progress**
+  * Flairs can mark accomplishments like milestones, streaks, quest completion, or earned rewards. They give visible recognition and encourage repeat engagement.
+* **Contextual Labels**
+  * Flairs can label entities like chatrooms, quests, rewards, or events. Examples include difficulty levels, official status, rarity, or event-specific badges.
+* **Personal Expression**
+  * When allowed, users can select or create flairs to express themselves. These flairs appear consistently across supported surfaces such as profiles or chat.
 
 ## Where Flair Appears
 
