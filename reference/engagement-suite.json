@@ -32876,6 +32876,28 @@
         },
         "parameters": []
       }
+    },
+    "/flairs/{flair_id}-1": {
+      "get": {
+        "description": "",
+        "operationId": "get_flairs{flair_id}-1",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Copy of "
+      }
     }
   },
   "x-readme": {
