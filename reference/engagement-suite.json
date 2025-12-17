@@ -32897,6 +32897,25 @@
           }
         ],
         "summary": "Copy of "
+      },
+      "patch": {
+        "description": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_scope_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
