@@ -438,7 +438,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.created_at`      | `datetime` | Timestamp when the chat mention was created                     |
 | `created_at`           | `datetime` | Timestamp when the event was created                            |
 
-## role-assignment-created`
+## `role-assignment-created`
 
 ### Payload Example:
 
