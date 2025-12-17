@@ -438,6 +438,40 @@ This document details the webhook events sent by our system, including their pay
 | `data.created_at`      | `datetime` | Timestamp when the chat mention was created                     |
 | `created_at`           | `datetime` | Timestamp when the event was created                            |
 
+## role-assignment-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "7ffdf932-c6f6-47fd-ae80-2cd560404172",
+  "event": "role-assignment-created",
+  "data": {
+    "profile_id": "96e3ffe4-70c6-4abe-85b3-16c57327b29f",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "role_id": "3cbc1aaa-530a-4335-ab8f-d7e015676c36",
+    "role_key": "custom-widget-publisher",
+    "scope_id": "fff01e6a-f93c-4e8d-b614-342381d5c704",
+    "created_at": "2025-12-17T10:19:40.883240Z"
+  },
+  "created_at": "2025-12-17T10:19:40.939632+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name        | Type       | Description                                               |
+| :---------------- | :--------- | :-------------------------------------------------------- |
+| `id`              | `string`   | Unique identifier for the event                           |
+| `event`           | `string`   | Event type {`role-assignment-created`}                    |
+| `data.profile_id` | `string`   | Unique identifier for the profile the role is assigned to |
+| `data.client_id`  | `string`   | Client-specific identifier                                |
+| `data.role_id`    | `string`   | Unique identifier for the role being assigned             |
+| `data.role_key`   | `string`   | Unique key for the role being assigned                    |
+| `data.scope_id`   | `string`   | Unique identifier for the scope the role is assigned in   |
+| `data.created_at` | `datetime` | Timestamp when the role assignment was created            |
+| `created_at`      | `datetime` | Timestamp when the event was created                      |
+
 ***
 
 ## Notes
