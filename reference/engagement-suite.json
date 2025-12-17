@@ -32802,6 +32802,25 @@
             "required": true
           }
         ]
+      },
+      "patch": {
+        "description": "",
+        "operationId": "patch_flairs{flair_id}",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
