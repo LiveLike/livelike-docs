@@ -32853,6 +32853,18 @@
         },
         "parameters": []
       }
+    },
+    "/flair-assignments": {
+      "post": {
+        "description": "",
+        "operationId": "post_flair-assignments",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "x-readme": {
