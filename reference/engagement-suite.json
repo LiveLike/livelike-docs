@@ -32878,9 +32878,9 @@
       }
     },
     "/flairs/{flair_id}-1": {
-      "patch": {
+      "delete": {
         "description": "",
-        "operationId": "patch_flairs{flair_id}-1",
+        "operationId": "delete_flairs{flair_id}-1",
         "responses": {
           "200": {
             "description": ""
