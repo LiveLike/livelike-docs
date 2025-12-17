@@ -1,5 +1,5 @@
 ---
-title: Flairs
+title: Flair
 deprecated: false
 hidden: false
 metadata:
