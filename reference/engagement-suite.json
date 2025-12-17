@@ -32771,6 +32771,16 @@
           }
         },
         "parameters": []
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_flairs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
       }
     }
   },
