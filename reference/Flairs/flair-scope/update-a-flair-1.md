@@ -1,5 +1,5 @@
 ---
-title: Update A Flair
+title: Update A Flair Scope
 api:
   file: engagement-suite.json
   operationId: patch_flair-scopes-flair-scope-id
