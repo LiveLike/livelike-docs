@@ -32946,6 +32946,27 @@
           }
         ]
       }
+    },
+    "/flair-assignments/{flair_assignment_id}": {
+      "get": {
+        "description": "",
+        "operationId": "get_flair-assignments{flair_assignment_id}",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_assignment_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
     }
   },
   "x-readme": {
