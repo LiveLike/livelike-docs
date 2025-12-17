@@ -32841,6 +32841,18 @@
           }
         ]
       }
+    },
+    "/flair-scopes": {
+      "post": {
+        "description": "",
+        "operationId": "post_flair-scopes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "x-readme": {
