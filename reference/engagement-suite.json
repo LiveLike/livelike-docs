@@ -32760,6 +32760,18 @@
         },
         "deprecated": false
       }
+    },
+    "/flairs": {
+      "post": {
+        "description": "",
+        "operationId": "post_flairs",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "x-readme": {
