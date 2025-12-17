@@ -32865,6 +32865,19 @@
         },
         "parameters": []
       }
+    },
+    "/flairs-1": {
+      "get": {
+        "description": "",
+        "operationId": "get_flairs-1",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "summary": "Copy of "
+      }
     }
   },
   "x-readme": {
