@@ -2,7 +2,7 @@
 title: Update A Flair
 api:
   file: engagement-suite.json
-  operationId: patch_flairs{flair_id}-1
+  operationId: patch_flair-scopes-flair-scope-id
 deprecated: false
 hidden: false
 link:
