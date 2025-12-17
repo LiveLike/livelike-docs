@@ -1,5 +1,5 @@
 ---
-title: Copy of Update A Flair
+title: Update A Flair
 api:
   file: engagement-suite.json
   operationId: patch_flairs{flair_id}-1
