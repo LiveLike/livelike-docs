@@ -1,5 +1,5 @@
 ---
-title: Flair Detail
+title: Flair Scope Detail
 api:
   file: engagement-suite.json
   operationId: get_flair-scopes-flair-scope-id
