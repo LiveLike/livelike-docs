@@ -32875,6 +32875,16 @@
           }
         },
         "parameters": []
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_flair-assignments",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
       }
     },
     "/flair-scopes/{flair_scope_id}": {
