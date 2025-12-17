@@ -32877,7 +32877,7 @@
         "parameters": []
       }
     },
-    "/flairs/{flair_id}-1": {
+    "/flair-scopes/{flair_scope_id}": {
       "delete": {
         "description": "",
         "operationId": "delete_flairs{flair_id}-1",
@@ -32889,7 +32889,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "flair_id",
+            "name": "flair_scope_id",
             "schema": {
               "type": "string"
             },
