@@ -1,5 +1,5 @@
 ---
-title: Flair Assignments
+title: Flair Assignment
 deprecated: false
 hidden: false
 metadata:
