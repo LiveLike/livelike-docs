@@ -1,8 +1,8 @@
 ---
-title: Copy of Flair Detail
+title: Flair Detail
 api:
   file: engagement-suite.json
-  operationId: get_flairs{flair_id}-1
+  operationId: get_flair-scopes-flair-scope-id
 deprecated: false
 hidden: false
 link:
