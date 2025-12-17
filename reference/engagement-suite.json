@@ -32852,6 +32852,17 @@
           }
         },
         "parameters": []
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_flairs-1",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "summary": "Copy of "
       }
     },
     "/flair-assignments": {
@@ -32864,19 +32875,6 @@
           }
         },
         "parameters": []
-      }
-    },
-    "/flairs-1": {
-      "get": {
-        "description": "",
-        "operationId": "get_flairs-1",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "summary": "Copy of "
       }
     }
   },
