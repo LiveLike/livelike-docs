@@ -7,11 +7,6 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
-next:
-  pages:
-    - slug: flairs
-      title: Flairs
-      type: basic
 ---
 ## What is Flair?
 
