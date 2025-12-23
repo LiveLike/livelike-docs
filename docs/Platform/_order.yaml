@@ -6,6 +6,7 @@
 - reactions
 - presence
 - social-graph-service
+- flairs
 - rewards
 - leaderboards
 - badges
@@ -20,4 +21,3 @@
 - prediction-game-tutorial
 - third-party-integrations
 - support
-- flairs
