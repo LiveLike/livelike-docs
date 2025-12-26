@@ -91,39 +91,39 @@ next:
 
 <br />
 
-* #### **Guess The Word** ([Demo](https://stackblitz.com/edit/livelike-gtw))
+* #### **Guess The Word** ([Demo](https://stackblitz.com/edit/livelike-gtw-bzlbxnum?file=package.json))
 
 ```html
 <ll-guess-the-word accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-word>
 
 ```
 
-* #### **Trivia**: ([Demo](https://stackblitz.com/edit/livelike-trivia))
+* #### **Trivia**: ([Demo](https://stackblitz.com/edit/vitejs-vite-utaxefne?file=package.json))
 
 ```html
 <ll-trivia accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-trivia>
 
 ```
 
-* #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/livelike-pyt))
+* #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nez9f9nx?file=package.json))
 
 ```html
 <ll-pick-your-team accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-pick-your-team>
 ```
 
-* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/react-vxwfaksw?file=src%2FApp.js))
+* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/vitejs-vite-bnf79vqn?file=package.json))
 
 ```html html
 <ll-predictor accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor>
 ```
 
-* #### **Guess What**: ([Demo](https://stackblitz.com/edit/vitejs-vite-orguuifq))
+* #### **Guess What**: ([Demo](https://stackblitz.com/edit/vitejs-vite-atjqhe2q?file=package.json))
 
 ```html html
 <ll-guess-what accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-what>
 ```
 
-* #### **Spin The Wheel**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nsxe4pgr?file=src%2FApp.jsx))
+* #### **Spin The Wheel**: ([Demo](https://stackblitz.com/edit/vitejs-vite-lu5379v7?file=index.html))
 
 ```html html
 <ll-spin-the-wheel accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-spin-the-wheel>
