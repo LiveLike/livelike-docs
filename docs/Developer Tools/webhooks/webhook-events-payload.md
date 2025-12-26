@@ -472,6 +472,36 @@ This document details the webhook events sent by our system, including their pay
 | `data.created_at` | `datetime` | Timestamp when the role assignment was created            |
 | `created_at`      | `datetime` | Timestamp when the event was created                      |
 
+## `chat-message-throttle-updated`
+
+### Payload Example:
+
+```json
+{
+  "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
+  "event": "chat-message-throttle-updated",
+  "data": {
+    "chat_room_id": "8c479fe1-761d-4ef3-8d61-91c95066fdd2",
+    "chat_message_throttle_seconds": 5,
+    "title": "Test Chat Room 3",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+  },
+  "created_at": "2025-12-26T13:27:45.141277+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name                           | Type       | Description                                          |
+| :----------------------------------- | :--------- | :--------------------------------------------------- |
+| `id`                                 | `string`   | Unique identifier for the event                      |
+| `event`                              | `string`   | Event type {`chat-message-throttle-updated`}         |
+| `data.chat_room_id`                  | `string`   | Unique identifier for the chat room that was updated |
+| `data.client_id`                     | `string`   | Client-specific identifier                           |
+| `data.title`                         | `string`   | Title of the chat room that was updated              |
+| `data.chat_message_throttle_seconds` | `string`   | The updated chat throttle time in seconds            |
+| `created_at`                         | `datetime` | Timestamp when the event was created                 |
+
 ***
 
 ## Notes
