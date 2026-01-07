@@ -22392,7 +22392,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "multiple comment_board_ids are accepted."
           },
           {
             "name": "thread_comment_id",
@@ -22541,6 +22542,22 @@
               "type": "string"
             },
             "description": "Profile Id of mentioned user"
+          },
+          {
+            "in": "query",
+            "name": "trending_score_gte",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Trending score greater than or equal to"
+          },
+          {
+            "in": "query",
+            "name": "trending_score_lte",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Trending score less than or equal to"
           }
         ],
         "responses": {
