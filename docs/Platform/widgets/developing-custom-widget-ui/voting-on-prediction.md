@@ -1,18 +1,18 @@
 ---
 title: Voting on Prediction
 excerpt: >-
-  How to vote on text prediction, image prediction, number prediction with the
-  REST API
+  How to vote on text prediction, image prediction and number prediction with
+  the REST API
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-Votes can be added to Text Prediction, Image Prediction and Number Prediction directly through the REST API. Usually the SDK calls the poll voting API's for users interacting with the built-in widgets, but if you are building your own widgets, then your integration code will have to call these API's on the behalf of users.
+Votes can be added to Text Prediction, Image Prediction and Number Prediction directly through the REST API. Usually the SDK calls the prediction voting API's for users interacting with the built-in widgets, but if you are building your own widgets, then your integration code will have to call these API's on the behalf of users.
 
 ## Create a Prediction Vote
 
-Each prediction has a list of options that can be voted for in its `options` field. A new vote is created by making a POST request to the URL in the `vote_url` field on the desired option. Each poll option has its own unique Vote URL, the request body may be empty, and a profile access token is required. Here is an example text prediction widget, with unrelated fields omitted:
+Each prediction has a list of options that can be voted for in its `options` field. A new vote is created by making a POST request to the URL in the `vote_url` field on the desired option. Each prediction option has its own unique Vote URL, the request body may be empty, and a profile access token is required. Here is an example text prediction widget, with unrelated fields omitted:
 
 ```json text-prediction-example.json
 {
@@ -23,16 +23,16 @@ Each prediction has a list of options that can be voted for in its `options` fie
       "id": "example-option-1",
       "description": "For sure! He's done.",
       "vote_count": 0,
-      "vote_url": "https://livelike.example.com/vote-for-option/example-option-1/"
+      "vote_url": "https://livelike.example.com/api/v1/widget-interactions/text-prediction/example-text-prediction/options/example-option-1/votes/"
     },
     {
       "id": "example-option-2",
       "description": "No. He still has a lot left in the tank!",
       "vote_count": 0,
-      "vote_url": "https://livelike.example.com/vote-for-option/example-option-2/"
+      "vote_url": "https://livelike.example.com/api/v1/widget-interactions/text-prediction/example-text-prediction/options/example-option-2/votes/"
     }
   ],
-  "url": "https://livelike.example.com/api/v0/text-polls/example-text-poll/",
+  "url": "https://livelike.example.com/api/v1/text-predictions/example-text-prediction/",
   "program_id": "example-program"
 }
 ```
@@ -64,7 +64,7 @@ If you have already voted on a prediction, you can change the option you voted f
 ```json example-text-prediction-vote.json
 {
   "id": "example-text-prediction-vote",
-  "url": "https://livelike.example.com/api/v1/text-poll-votes/example-text-poll-vote/",
+  "url": "https://livelike.example.com/api/v1/text-prediction/example-text-prediction-vote/",
   "option_id": "example-option-1"
 }
 ```
