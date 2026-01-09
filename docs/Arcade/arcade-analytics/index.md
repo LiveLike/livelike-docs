@@ -76,8 +76,6 @@ The `defaultEventProperties` object contains general metadata about the applicat
 
 ***
 
-<br />
-
 ## Troubleshooting: Getting Analytics Events from an iframe to Parent
 
 If you are embedding an Arcade game or Arcade Analytics inside an iframe and need to capture analytics events in the parent window, follow these steps:
