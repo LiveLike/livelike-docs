@@ -15,7 +15,7 @@ This document outlines a generic approach for integrating a Customer Data Platfo
 
 The payload sent to `window.LLCDPInvoke` in the app follows this interface:
 
-```ts
+```typescript
 interface LlCdpPayload {
 	type?: string // Event type, e.g., 'sweepstakes_entry'
 	gameId?: string // Sweepstakes/game identifier
