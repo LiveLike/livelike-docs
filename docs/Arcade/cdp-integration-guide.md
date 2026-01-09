@@ -13,7 +13,7 @@ This document outlines a generic approach for integrating a Customer Data Platfo
 
 ### Payload Structure
 
-The payload sent to `window.LLCDPInvoke` in the sweepstakes app follows this TypeScript interface:
+The payload sent to `window.LLCDPInvoke` in the app follows this interface:
 
 ```ts
 interface LlCdpPayload {
