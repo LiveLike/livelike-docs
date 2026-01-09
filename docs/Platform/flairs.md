@@ -60,7 +60,7 @@ Operations are supported in CMS and API:
 
 `GET /api/v1/flairs/?client_id={app_id}`
 
-* #### Create a Flair 
+* #### Create a Flair
   Creates a reusable flair definition that can later be assigned to resources. Name and icon are optional, but one must be defined. A flair definition typically includes:
   * Identifier (slug / ID)
   * Name
@@ -75,7 +75,7 @@ Operations are supported in CMS and API:
 
 * #### Update Flair
   Change data of the flair: `PATCH /api/v1/flairs/{flair_id}/`
-* #### Remove Flair 
+* #### Remove Flair
   Delete selected flair (soft delete is processed):`DELETE /api/v1/flairs/{flair_id}/`
 * #### Assign a Flair
   Assigns an existing flair to a supported resource. It must contain flair_id and one of profile_id or profile_custom_id and optionally scope_id.  If assignment contains scope_id flair will be assigned only for defined scope. Assignments are unique. `POST /api/v1/flair-assignments/`
@@ -103,5 +103,32 @@ Operations are supported in CMS and API:
   ##### Examples:
   * Replace one flair with another (e.g. Bronze → Silver)
   * Update assignment metadata (e.g. expiration date)
+
+<br />
+
+### Flair Scopes
+
+Flair Scopes define where a flair applies.
+They represent a resource kind (e.g., chatroom, comment board, widget) and optionally a specific resource instance. Scopes can be created and updated from api and admin app.
+
+Scopes are reusable and can be shared across multiple flair assignments.
+
+Scopes can be global or specific.
+
+#### Global vs Specific Scopes
+
+* ##### Global scope
+  resource_uuid = null → Applies to all resources of that kind in the application.
+  **Example**: All chat rooms have the Official flair.
+* ##### Specific scope
+  resource_uuid = uuid → Applies only to the specific resource instance.
+  **Example**: Chatroom 1234-abcd receives the Live Event flair.
+
+#### API Operations
+
+* List Scopes: `GET /api/v1/flair-scopes/?client_id={app_id}`
+* Create Scope: `POST /api/v1/flair-scopes/` 
+  `{"client_id": {app_id},  "resource_kind": {resource_kind}, "resource_uuid": {resource_uuid}}`
+* Update Scope: `PATCH /api/v1/flair-scopes/{scope_uuid}/?client_id={app_id}`
 
 <br />
