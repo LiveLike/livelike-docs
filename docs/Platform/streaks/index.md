@@ -5,13 +5,13 @@ hidden: true
 metadata:
   robots: index
 ---
-## What are streaks?
+# What are streaks?
 
 Streaks are engagement mechanics that reward users for performing specific actions either repeatedly over time or consistently across events.
 They are designed to encourage habit formation, repeat engagement, and longer user retention by incentivizing users to keep coming back and completing actions.
 A streak progresses when a user completes the configured action and resets when the defined conditions are no longer met.
 
-## Why use streaks?
+# Why use streaks?
 
 Streaks help drive meaningful product outcomes by:
 
@@ -33,7 +33,7 @@ From a business perspective, streaks are especially useful for:
 
 Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Streaks**, with Milestones acting as reward checkpoints.
 
-### **Periodic Streaks**: 
+### Periodic Streaks:
 
 A Periodic Streak encourages users to perform an action at regular time intervals — daily, weekly, or monthly — over a defined period.
 
@@ -47,7 +47,7 @@ Daily predictions
 Weekly challenges
 Monthly engagement programs
 
-### **Consecutive Streaks**: 
+### Consecutive Streaks:
 
 A Consecutive Streak rewards users for completing a specific action X times in a row, regardless of when those actions occur.
 
@@ -61,17 +61,17 @@ Prediction accuracy
 Skill-based games
 Performance-driven challenges
 
-#### Why use Consecutive Streaks?
+### Why use Consecutive Streaks?
 
 Rewards skill and consistency
 Encourages focused participation
 Adds a competitive element
 
-### Milestones
+## Milestones
 
 A Milestone rewards users for completing X actions out of Y opportunities within a defined scope.
 
-#### Why use Milestones?
+### Why use Milestones?
 
 Reduces user drop-off due to strict rules
 Encourages broader participation
@@ -84,14 +84,18 @@ Works well for content releases and campaigns
 Streaks are created and managed via the CMS → Quests section.
 
 * At a high level, configuration includes:
-* Selecting the streak type (Periodic / Consecutive)
-* Defining the triggering user action
-* Setting time windows or action thresholds
-* Assigning milestone-based rewards
-* Publishing the streak to targeted user groups
-* Once published, streak progress and rewards are automatically tracked based on user activity.
 
- 
+* Selecting the streak type (Periodic / Consecutive)
+
+* Defining the triggering user action
+
+* Setting time windows or action thresholds
+
+* Assigning milestone-based rewards
+
+* Publishing the streak to targeted user groups
+
+* Once published, streak progress and rewards are automatically tracked based on user activity.
 
 <Cards>
   <Card title="Periodic Streak CMS Guide" href="https://docs.livelike.com/update/docs/how-to-create-streaks-in-cms" icon="fa-code">
