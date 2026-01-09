@@ -38,13 +38,16 @@ Streaks can be broadly classified into **Periodic Streaks** and **Consecutive St
 A Periodic Streak encourages users to perform an action at regular time intervals — daily, weekly, or monthly — over a defined period.
 
 **Examples**:
+
 Make a prediction every day for 7 days
+
 Play a game weekly for 4 weeks
+
 Log in monthly for 3 months
 
 **Common Use Cases:**
-Daily predictions
-Weekly challenges
+Daily predictions,
+Weekly challenges,
 Monthly engagement programs
 
 ### Consecutive Streaks:
@@ -52,13 +55,16 @@ Monthly engagement programs
 A Consecutive Streak rewards users for completing a specific action X times in a row, regardless of when those actions occur.
 
 **Examples**:
+
 Make 5 correct match predictions in a row
+
 Win 3 games consecutively
+
 Complete 10 challenges back-to-back
 
 **Common Use Cases:**
-Prediction accuracy
-Skill-based games
+Prediction accuracy,
+Skill-based games,
 Performance-driven challenges
 
 ### Why use Consecutive Streaks?
