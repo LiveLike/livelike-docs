@@ -89,7 +89,7 @@ Works well for content releases and campaigns
 
 Streaks are created and managed via the CMS → Streaks section.
 
-* At a high level, configuration includes:
+At a high level, configuration includes:
 
 * Selecting the streak type (Periodic / Consecutive)
 
