@@ -104,8 +104,6 @@ Operations are supported in CMS and API:
   * Replace one flair with another (e.g. Bronze → Silver)
   * Update assignment metadata (e.g. expiration date)
 
-<br />
-
 ### Flair Scopes
 
 Flair Scopes define where a flair applies.
@@ -127,7 +125,7 @@ Scopes can be global or specific.
 #### API Operations
 
 * List Scopes: `GET /api/v1/flair-scopes/?client_id={app_id}`
-* Create Scope: `POST /api/v1/flair-scopes/` 
+* Create Scope: `POST /api/v1/flair-scopes/`
   `{"client_id": {app_id},  "resource_kind": {resource_kind}, "resource_uuid": {resource_uuid}}`
 * Update Scope: `PATCH /api/v1/flair-scopes/{scope_uuid}/?client_id={app_id}`
 
