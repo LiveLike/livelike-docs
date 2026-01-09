@@ -104,11 +104,11 @@ At a high level, configuration includes:
 * Once published, streak progress and rewards are automatically tracked based on user activity.
 
 <Cards>
-  <Card title="Periodic Streak CMS Guide" href="https://docs.livelike.com/update/docs/how-to-create-streaks-in-cms" icon="fa-code">
+  <Card title="Periodic Streak CMS Guide" href="https://docs.livelike.com/docs/how-to-create-streaks-in-cms" icon="fa-code">
     Follow these steps to create and configure a new Periodic Streak in the CMS.
   </Card>
 
-  <Card title="Consecutive Streak CMS Guide" href="https://docs.livelike.com/update/docs/consecutive-streak-cms-guide" icon="fa-code">
+  <Card title="Consecutive Streak CMS Guide" href="https://docs.livelike.com/docs/consecutive-streak-cms-guide" icon="fa-code">
     Follow these steps to create and configure a new Consecutive Streak in the CMS.
   </Card>
 </Cards>
