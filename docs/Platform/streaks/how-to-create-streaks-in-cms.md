@@ -22,10 +22,9 @@ metadata:
 
 <br />
 
-#### After clicking on Create below page will open up  
+#### After clicking on Create below page will open up
 
-
-Select Streak Type: Periodic Streak or Consecutive Action Streak  
+Select Streak Type: Periodic Streak or Consecutive Action Streak
 
 <Image align="center" border={false} src="https://files.readme.io/fe18b9eb64c3f230083a84f259d59641c1acc5e8fc6590dfdcd039c60c4558a8-Screenshot_2026-01-09_at_4.22.29_PM.png" />
 
@@ -47,17 +46,18 @@ On the Periodic Streak Settings page, fill in the following details:
 * Streak Action - Select the user action that will trigger streak progress.
 * Streak Threshold - Define the action threshold required for streak progress.
 * Start Time & End Time - Set the duration during which the streak will be active.
-* Period - Click on dropdown and select one of the following:    
+* Period - Click on dropdown and select one of the following:  
   (**Daily**, **Weekly**, **Monthly**)
 
 <Image align="center" border={false} src="https://files.readme.io/8bf48eeeaeaacd1bcb8d1742ed83e82ff42193a354ec834fe46c437b9a86e914-Screenshot_2026-01-09_at_4.37.15_PM.png" />
 
 * Timezone - Select the applicable timezone.
 * User Group - Select All Users, or Choose a specific User Group to target.
+* Click Continue once all fields are filled. 
 
 <Image align="center" border={false} src="https://files.readme.io/dc4e9fe1ca63e9be5ad096a93057ebbc175772360e4c6d5ea195ecf197ef8bb9-Screenshot_2026-01-09_at_5.21.54_PM.png" />
 
-* Click Continue once all fields are filled.
+<br />
 
 <br />
 
@@ -67,14 +67,30 @@ On the Periodic Streak Settings page, fill in the following details:
 
 * Streak Length - The number of consecutive actions a user must complete to earn the reward.
 * Recurring - Enable this checkbox if users should receive the reward at multiples of the streak length (e.g., streak length 3 → rewards at 3, 6, 9, 12…)
+
+<Image align="center" border={false} src="https://files.readme.io/84ccc687560d0b74d17801d6b61e1479dd92f44bd256a43155673b34c6a2b697-Screenshot_2026-01-09_at_5.27.59_PM.png" />
+
 * Reward Item - Select the reward to be granted.
 * Item Amount - Enter the reward quantity. Only positive integers are allowed.
-* Repeat on Reset - Toggle this option to allow or prevent users from earning the same reward again after a streak reset.
+
+<Image align="center" border={false} src="https://files.readme.io/b285214c6ccc70de7fd38f370be151bb529833d5371647d4b5747c332e0a73e6-Screenshot_2026-01-09_at_5.30.03_PM.png" />
 
 > Add More Rewards - Click + Add reward to add additional rewards under the same milestone.
-> Add More Milestones - Click + Add milestone to configure multiple milestone levels.  
+
+<br />
+
+* Repeat on Reset - Toggle this option to allow or prevent users from earning the same reward again after a streak reset.
+
+<Image align="center" border={false} src="https://files.readme.io/53c4219661c648a1565f9a8150fb6852781e026d666d6dfa5e4d1f68d9a848b6-Screenshot_2026-01-09_at_5.32.23_PM.png" />
+
+<br />
 
 <Image align="center" border={false} src="https://files.readme.io/725971ed67b0a55cef8fe292eca2e9ecfbf39a5c01b73a5a176f0098c57e426c-Screenshot_2026-01-09_at_5.23.26_PM.png" />
 
+> Click + Add milestone to configure multiple milestone levels.
+
+<br />
+
+<br />
 
 Click **Publish** to make the streak live.
