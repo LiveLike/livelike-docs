@@ -87,7 +87,7 @@ Works well for content releases and campaigns
 
 ### How Streaks Are Configured in CMS (High Level)
 
-Streaks are created and managed via the CMS → Quests section.
+Streaks are created and managed via the CMS → Streaks section.
 
 * At a high level, configuration includes:
 
