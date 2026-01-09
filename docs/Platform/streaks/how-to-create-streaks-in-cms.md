@@ -1,6 +1,6 @@
 ---
-title: How to create Periodic Streaks in CMS
-excerpt: Follow these steps to create and configure a new Streak in the CMS.
+title: Periodic Streak CMS Guide
+excerpt: Follow these steps to create and configure a new Periodic Streak in the CMS.
 deprecated: false
 hidden: true
 metadata:
