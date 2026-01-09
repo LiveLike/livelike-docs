@@ -89,6 +89,4 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-<br />
-
 Click **Publish** to make the streak live.
