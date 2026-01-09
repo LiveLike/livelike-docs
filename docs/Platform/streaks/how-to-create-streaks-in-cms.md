@@ -1,5 +1,5 @@
 ---
-title: How to create Streaks in CMS
+title: How to create Periodic Streaks in CMS
 excerpt: Follow these steps to create and configure a new Streak in the CMS.
 deprecated: false
 hidden: true
@@ -25,10 +25,6 @@ metadata:
 #### After clicking on Create below page will open up
 
 Select Streak Type: Periodic Streak or Consecutive Action Streak
-
-<Image align="center" border={false} src="https://files.readme.io/fe18b9eb64c3f230083a84f259d59641c1acc5e8fc6590dfdcd039c60c4558a8-Screenshot_2026-01-09_at_4.22.29_PM.png" />
-
-<br />
 
 #### Below are the Steps for Periodic streak:
 
