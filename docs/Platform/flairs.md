@@ -48,3 +48,60 @@ Flairs are not tied to a single surface. The same system supports flairs on:
 ## Why Flair Matters
 
 Flair creates a shared visual language across LiveLike. It increases clarity, trust, engagement, and emotional connection while enabling new surfaces for rewards, moderation, identity, and revenue.
+
+## Flair Operations
+
+Flairs are defined once and can then be assigned to supported resources based on permissions and rules.
+
+Operations are supported in CMS and API:
+
+* #### List Flairs
+  Retrieves a paginated list of all flairs per application
+
+`GET /api/v1/flairs/?client_id={app_id}`
+
+* #### Create a Flair 
+  Creates a reusable flair definition that can later be assigned to resources. Name and icon are optional, but one must be defined. A flair definition typically includes:
+  * Identifier (slug / ID)
+  * Name
+  * Icon or visual reference (upload icon, or url icon, or default icon), allowed only svg, and png file formats
+  * Text and background color
+  * Optional metadata (description)
+  * Usage rules (who can assign it, where it can appear)
+
+`POST /api/v1/flairs/`
+
+`{ "client_id": "some_id", "name": "some_name", "image_url": "Link to image" }`
+
+* #### Update Flair
+  Change data of the flair: `PATCH /api/v1/flairs/{flair_id}/`
+* #### Remove Flair 
+  Delete selected flair (soft delete is processed):`DELETE /api/v1/flairs/{flair_id}/`
+* #### Assign a Flair
+  Assigns an existing flair to a supported resource. It must contain flair_id and one of profile_id or profile_custom_id and optionally scope_id.  If assignment contains scope_id flair will be assigned only for defined scope. Assignments are unique. `POST /api/v1/flair-assignments/`
+  * A flair assignment:
+    * Links a flair definition to a user and/or resource
+    * Can be manual (admin or moderator action) or automated (rules, achievements, events)
+    * Does not duplicate the flair definition
+    * Tracks who assigned it (assigned_by)
+    * Can be activated or deactivated (Soft Delete)
+* ##### Assignment:
+  * Links a flair definition to a specific entity
+  * Can be manual (admin/moderator action) or automated (rules, achievements, events)
+  * Does not duplicate the flair definition
+* ##### Examples:
+  * Assign a VIP flair to a user
+    * User has vip flair everywhere
+  * Assign an Official flair to a chatroom
+* #### Remove a Flair Assignment
+  Removes an existing flair assignment from a resource.
+  * The flair definition remains intact
+  * Only the association between the flair and the resource is removed
+  * Can be triggered manually or automatically (e.g. expiration, rule violation)
+* #### Update / Replace a Flair Assignment
+  Updates the flair assignment on a resource.
+  ##### Examples:
+  * Replace one flair with another (e.g. Bronze → Silver)
+  * Update assignment metadata (e.g. expiration date)
+
+<br />
