@@ -11,6 +11,35 @@ This document outlines a generic approach for integrating a Customer Data Platfo
 
 ## Integration Flow
 
+### Payload Structure
+
+The payload sent to `window.LLCDPInvoke` in the sweepstakes app follows this TypeScript interface:
+
+```ts
+interface LlCdpPayload {
+	type?: string // Event type, e.g., 'sweepstakes_entry'
+	gameId?: string // Sweepstakes/game identifier
+	instanceId?: string // Instance identifier
+	profileId?: string // User profile identifier
+	data?: Record<string, string> // Arbitrary form or event data
+}
+```
+
+Example payload:
+
+```json
+{
+	"type": "sweepstakes_entry",
+	"gameId": "abc123",
+	"instanceId": "xyz789",
+	"profileId": "user456",
+	"data": {
+		"email": "user@email.com",
+		"name": "Jane Doe"
+	}
+}
+```
+
 ### 1. Define the Generic Integration Hook
 
 Clients (integrators) must define a global function on the window object before the app loads:
