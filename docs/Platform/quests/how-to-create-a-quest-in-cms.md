@@ -2,7 +2,7 @@
 title: How to Create a Quest in CMS
 excerpt: Follow these steps to create and configure a new Quest in the CMS.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
