@@ -53,11 +53,9 @@ On the Periodic Streak Settings page, fill in the following details:
 
 * Timezone - Select the applicable timezone.
 * User Group - Select All Users, or Choose a specific User Group to target.
-* Click Continue once all fields are filled. 
+* Click Continue once all fields are filled.
 
 <Image align="center" border={false} src="https://files.readme.io/dc4e9fe1ca63e9be5ad096a93057ebbc175772360e4c6d5ea195ecf197ef8bb9-Screenshot_2026-01-09_at_5.21.54_PM.png" />
-
-<br />
 
 <br />
 
