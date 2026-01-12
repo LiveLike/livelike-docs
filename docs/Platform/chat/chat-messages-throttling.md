@@ -1,43 +1,39 @@
 ---
 title: Chat Messages Throttling
-excerpt: >-
-  Integrators can configure throttling to control how frequently fans are
-  allowed to send chat messages in a room. This helps reduce spam and maintain
-  healthy conversation flow without completely disabling chat activity.
+excerpt: Throttling controls how frequently fans can send chat messages in a room
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-For example, if throttling is set to 30 seconds, a user can only send one message every 30 seconds per room. Throttling can be set only in seconds. Values 0 seconds disabling throttle.
+Chat message throttling helps reduce spam and maintain healthy conversation flow without completely disabling chat activity. For example, if throttling is set to 30 seconds, a user can only send one message every 30 seconds per room. Use cases for throttling messages include:
 
-**Use Cases:**
-•	**Spam Prevention:** Prevent a single fan from flooding a chat with rapid messages.
-•	**Room-Specific Throttling:** Apply different throttle policies per room depending on audience size or event type.
-•	**Fair Participation:** Ensure all fans have a chance to contribute to the discussion.
+* **Spam Prevention:** Prevent a single fan from flooding a chat with rapid messages.
+* **Room-Specific Throttling:** Apply different throttle policies per room depending on audience size or event type.
+* **Fair Participation:** Ensure all fans have a chance to contribute to the discussion.
 
-How to set chat messages throttling (there are 3 ways to do it):
+## How throttling works
 
-1. **From admin panel in the cms**:
+Each room has an optional message throttle control, specified in seconds, and a value of zero disables the throttle. Different chat rooms can have different throttle values.
 
-![](https://files.readme.io/8b9d51cdcefc29b3de586692e71b96e189e0a6a59ac2b2bda0b8b5795da3617c-Screenshot_2025-09-11_at_12.51.33.png)
+Throttling is enforced client-side, and the LiveLike SDKs include reference implementations.
 
-2. **From CMS during creation or update of chatroom**:
+## Configuring throttling via the CMS
 
-**Create:**
+The "message throttle" field controls the throttle setting for that room. The field is available when creating new chat rooms and when editing existing ones.
 
-![](https://files.readme.io/afe24456b3ca614fb4db090bc972f8a426ced3e5ebb1fd7e8b15857935ef7723-Screenshot_2025-09-11_at_13.04.28.png)
+<Image align="center" border={false} caption="Message throttle can be set when creating a new room." src="https://files.readme.io/afe24456b3ca614fb4db090bc972f8a426ced3e5ebb1fd7e8b15857935ef7723-Screenshot_2025-09-11_at_13.04.28.png" />
 
 <br />
 
-**Edit:**
+<Image align="center" border={false} caption="Message throttle can be set when editing an existing room." src="https://files.readme.io/3c84a032cedd61fc3679f4be74e75b68bf323c1a9b2f71a7ac6510716bcce770-Screenshot_2025-09-11_at_12.53.05.png" />
 
-![](https://files.readme.io/3c84a032cedd61fc3679f4be74e75b68bf323c1a9b2f71a7ac6510716bcce770-Screenshot_2025-09-11_at_12.53.05.png)
+## Configuring throttling via the API
 
-3. **From API:**
+Set the throttle in the `chat_message_throttle_seconds` field when creating or updating a chat room via the API.
 
- **POST:** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms](https://cf-blast.livelikecdn.com/api/v1/chat-rooms)
+**POST:** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms](https://cf-blast.livelikecdn.com/api/v1/chat-rooms)
 
- **PATCH** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms/:id](https://cf-blast.livelikecdn.com/api/v1/chat-rooms/)
+**PATCH** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms/:id](https://cf-blast.livelikecdn.com/api/v1/chat-rooms/)
 
-  Parameter in the body of request **chat_message_throttle_seconds**: number
+<br />
