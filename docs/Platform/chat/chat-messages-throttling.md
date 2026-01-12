@@ -16,7 +16,7 @@ Chat message throttling helps reduce spam and maintain healthy conversation flow
 
 Each room has an optional message throttle control, specified in seconds, and a value of zero disables the throttle. Different chat rooms can have different throttle values.
 
-Throttling is enforced client-side, and the LiveLike SDKs include reference implementations.
+Throttling is enforced by the [Send a Chat Message](ref:send-chat-message) API. When a user sends too many messages and exceeds the throttle, the API will return a 429 Too Many Requests status code.
 
 ## Configuring throttling via the CMS
 
@@ -30,10 +30,4 @@ The "message throttle" field controls the throttle setting for that room. The fi
 
 ## Configuring throttling via the API
 
-Set the throttle in the `chat_message_throttle_seconds` field when creating or updating a chat room via the API.
-
-**POST:** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms](https://cf-blast.livelikecdn.com/api/v1/chat-rooms)
-
-**PATCH** [https://cf-blast.livelikecdn.com/api/v1/chat-rooms/:id](https://cf-blast.livelikecdn.com/api/v1/chat-rooms/)
-
-<br />
+Set the throttle in the `chat_message_throttle_seconds` field to the [Create a Chat Room](ref:create-chat-room) and [Update a Chat Room](ref:update-a-chat-room) API endpoint.
