@@ -1,6 +1,6 @@
 ---
 title: Chat Messages Throttling
-excerpt: Control how frequently fans can send chat messages in a room
+excerpt: Control how frequently fans can send messages in chat rooms
 deprecated: false
 hidden: false
 metadata:
