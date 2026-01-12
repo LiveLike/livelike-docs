@@ -30,4 +30,4 @@ The "message throttle" field controls the throttle setting for that room. The fi
 
 ## Configuring throttling via the API
 
-Set the throttle in the `chat_message_throttle_seconds` field to the [Create a Chat Room](ref:create-chat-room) and [Update a Chat Room](ref:update-a-chat-room) API endpoint.
+Set the throttle in the `chat_message_throttle_seconds` field on the [Create a Chat Room](ref:create-chat-room) and [Update a Chat Room](ref:update-a-chat-room) API endpoints.
