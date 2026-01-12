@@ -73,7 +73,7 @@ Rewards skill and consistency
 Encourages focused participation
 Adds a competitive element
 
-## Milestones
+## Streak Milestones
 
 A Milestone rewards users for completing X actions out of Y opportunities within a defined scope.
 
