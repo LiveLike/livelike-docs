@@ -16,7 +16,7 @@ Chat message throttling helps reduce spam and maintain healthy conversation flow
 
 Each room has an optional message throttle control, specified in seconds, and a value of zero disables the throttle. Different chat rooms can have different throttle values.
 
-Throttling is enforced by the [Send a Chat Message](ref:send-chat-message) API. When an attempt to send a message exceeds the throttle the API returns a 429 Too Many Requests status code.
+Throttles are configured at the room level, and each sender in a room is throttled separately. The throttles are enforced by the [Send a Chat Message](ref:send-chat-message) API, so when an attempt to send a message exceeds the throttle the API returns a 429 Too Many Requests error.
 
 ## Configuring throttling via the CMS
 
