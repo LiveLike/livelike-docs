@@ -32953,10 +32953,131 @@
         "operationId": "get_flairs",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string",
+                            "default": ""
+                          },
+                          "description": {
+                            "type": "string",
+                            "default": "\"\""
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "text_color": {
+                            "type": "string",
+                            "default": "#413EEB"
+                          },
+                          "background_color": {
+                            "type": "string",
+                            "default": "#000000"
+                          },
+                          "is_active": {
+                            "type": "boolean",
+                            "default": "true"
+                          },
+                          "attributes": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "key": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "name1": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "description",
+                          "name",
+                          "client_id",
+                          "url",
+                          "id",
+                          "image",
+                          "text_color",
+                          "background_color",
+                          "is_active"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "param",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/flairs/{flair_id}": {
