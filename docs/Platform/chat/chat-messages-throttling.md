@@ -6,7 +6,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Chat message throttling helps reduce spam and maintain healthy conversation flow without completely disabling chat activity. For example, if throttling is set to 30 seconds, a user can only send one message every 30 seconds per room. Use cases for throttling messages include:
+Chat message throttling helps reduce spam and maintain healthy conversation flow without completely disabling chat activity. For example, if a room's throttling is set to 30 seconds, a user can only send one message every 30 seconds to that room. Use cases for throttling messages include:
 
 * **Spam Prevention:** Prevent a single fan from flooding a chat with rapid messages.
 * **Room-Specific Throttling:** Apply different throttle policies per room depending on audience size or event type.
