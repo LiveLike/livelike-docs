@@ -91,9 +91,9 @@ Click **Continue**
 
 <br />
 
-#### Publish or Save Draft
+### Publish or Save Draft
 
-Click **Publish** to make the streak live.  
+Click **Publish** to make the streak live.
 
 If you want to Save as Draft:
 
