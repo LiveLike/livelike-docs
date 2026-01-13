@@ -2715,7 +2715,19 @@
           }
         },
         "deprecated": false,
-        "security": []
+        "security": [],
+        "x-readme": {
+          "code-samples": [
+            {
+              "code": "curl -L --request GET \\\n     --url https://cf-blast.livelikecdn.com/api/v1/program-by-custom-id/client_id/custom_id \\\n     --header 'accept: application/json'",
+              "language": "shell",
+              "name": ""
+            }
+          ],
+          "samples-languages": [
+            "shell"
+          ]
+        }
       }
     },
     "/chatroom-messages/": {
