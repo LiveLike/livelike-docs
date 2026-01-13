@@ -93,11 +93,13 @@ A streak based on consecutive successful actions, independent of calendar time.
 
 ## Streak Milestones
 
-A flexible streak where users must complete X actions out of Y opportunities.
+A flexible streak where users must complete X actions out of Y opportunities.  
+Milestones are reward checkpoints within a streak.
+Instead of rewarding only at the end, milestones allow rewards at incremental progress points.
 
 ### How it works:
 
-* Allows some misses
+* Allows some misses, keep users motivated even if they don’t complete the full streak
 * Focuses on participation rather than perfection
 * Evaluated within a defined scope or window
 
