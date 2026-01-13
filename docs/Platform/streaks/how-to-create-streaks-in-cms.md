@@ -13,7 +13,7 @@ next:
 ---
 #### Log in to the CMS.
 
-### 1. Navigate to Streaks.
+## 1. Navigate to Streaks.
 
 #### From the left-hand menu, click Streaks.
 
@@ -38,7 +38,7 @@ Click Continue.
 
 <Image align="center" border={false} src="https://files.readme.io/cedbe5dc8412a2afb9fc22c5f39c5e3f21d431cea4affd9c5379cc22775049e6-Screenshot_2026-01-09_at_4.23.50_PM.png" />
 
-### 2. Configure Periodic Streak Settings
+## 2. Configure Periodic Streak Settings
 
 On the Periodic Streak Settings page, fill in the following details:
 
@@ -60,7 +60,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-### 3. Configure Milestone Rewards
+## 3. Configure Milestone Rewards
 
 #### For each milestone, configure the following:
 
@@ -90,7 +90,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-### Publish or Save as Draft:  
+## Publish or Save as Draft:
 
 Click **Publish** to make the streak live.
 
