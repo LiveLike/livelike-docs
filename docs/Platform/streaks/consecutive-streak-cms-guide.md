@@ -10,7 +10,7 @@ metadata:
 ---
 #### Log in to the CMS.
 
-## Navigate to Streaks.
+## 1. Navigate to Streaks.
 
 **From the left-hand menu, click Streaks.**
 
