@@ -6,7 +6,6 @@ hidden: true
 metadata:
   robots: index
 next:
-  description: Periodic Streak CMS Guide
   pages:
     - slug: how-to-create-streaks-in-cms
       title: Periodic Streak CMS Guide
