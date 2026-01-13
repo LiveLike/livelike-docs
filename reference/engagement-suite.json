@@ -33077,7 +33077,77 @@
         "operationId": "get_flairs{flair_id}",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string"
+                    },
+                    "background_color": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url",
+                    "client_id",
+                    "name",
+                    "image",
+                    "text_color",
+                    "background_color",
+                    "is_active",
+                    "attributes",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
