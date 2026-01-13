@@ -10,7 +10,7 @@ metadata:
 ---
 #### Log in to the CMS.
 
-## 1 Navigate to Streaks.
+## Navigate to Streaks.
 
 **From the left-hand menu, click Streaks.**
 
@@ -47,7 +47,7 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 <Image align="center" border={false} src="https://files.readme.io/37653ac997028b56b7931b2be631eff94f2db5f670d8b905d5ea33510d799fc4-Screenshot_2026-01-09_at_5.47.35_PM.png" />
 
-* Click Continue once all fields are filled.  
+* Click Continue once all fields are filled.
 
 <br />
 
@@ -91,7 +91,7 @@ Click **Continue**
 
 <br />
 
-### Publish or Save Draft
+## Publish or Save Draft
 
 Click **Publish** to make the streak live.
 
