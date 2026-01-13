@@ -1,5 +1,6 @@
 ---
 title: Streaks
+excerpt: Streaks turn repeat behavior into a visible, rewarding habit.
 deprecated: false
 hidden: true
 metadata:
@@ -16,8 +17,6 @@ next:
 Streaks are an engagement mechanic that reward users for performing an action consistently over time or across repeated opportunities.
 A streak tracks a user’s progress as they repeat a defined behavior—such as watching content, making predictions, checking in, or completing challenges—and rewards them for maintaining that consistency.  
 A streak starts when a user performs a defined action and continues as long as the user meets the streak rules. If the rules are broken, the streak resets
-
-In short: Streaks turn repeat behavior into a visible, rewarding habit.
 
 # Why use streaks?
 
@@ -111,7 +110,7 @@ Instead of rewarding only at the end, milestones allow rewards at incremental pr
 
 <br />
 
-### How Streaks Are Configured in CMS (High Level)
+## How Streaks Are Configured in CMS (High Level)
 
 Streaks are created and managed via the CMS → Streaks section.
 
