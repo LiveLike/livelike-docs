@@ -1,5 +1,5 @@
 ---
-title: Genie Overview
+title: Getting Started
 deprecated: false
 hidden: false
 metadata:
