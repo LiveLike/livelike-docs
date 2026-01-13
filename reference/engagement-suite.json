@@ -32913,19 +32913,6 @@
         ]
       }
     },
-    "/flair-scopes": {
-      "get": {
-        "description": "",
-        "operationId": "get_flairs-1",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "summary": "Copy of "
-      }
-    },
     "/flair-assignments": {
       "post": {
         "description": "",
@@ -33575,6 +33562,99 @@
             }
           }
         }
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_flairs-1",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "resource_kind": {
+                            "type": "string"
+                          },
+                          "resource_uuid": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "created_at",
+                          "updated_at",
+                          "resource_kind",
+                          "id"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_kind",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Copy of "
       }
     }
   },
