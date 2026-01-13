@@ -5,6 +5,11 @@ deprecated: false
 hidden: true
 metadata:
   robots: index
+next:
+  pages:
+    - slug: consecutive-streak-cms-guide
+      title: Consecutive Streak CMS Guide
+      type: basic
 ---
 #### Log in to the CMS.
 
