@@ -33054,15 +33054,6 @@
         },
         "parameters": [
           {
-            "in": "header",
-            "name": "Authorization",
-            "schema": {
-              "type": "string",
-              "default": "Bearer <AUTH_TOKEN>"
-            },
-            "required": true
-          },
-          {
             "in": "query",
             "name": "client_id",
             "schema": {
