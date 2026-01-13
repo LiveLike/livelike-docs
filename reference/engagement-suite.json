@@ -32974,25 +32974,6 @@
             "required": true
           }
         ]
-      },
-      "get": {
-        "description": "",
-        "operationId": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "flair_scope_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
       }
     },
     "/flair-assignments/{flair_assignment_id}": {
@@ -33655,6 +33636,57 @@
           }
         ],
         "summary": "Copy of "
+      }
+    },
+    "/flair-scopes/{flair_scope_id}/": {
+      "get": {
+        "description": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "resource_kind": {
+                      "type": "string"
+                    },
+                    "resource_uuid": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "resource_kind"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_scope_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
