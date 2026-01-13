@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-deprecated: true
+deprecated: false
 hidden: false
 metadata:
   robots: index
