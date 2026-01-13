@@ -39,7 +39,7 @@ From a business perspective, streaks are especially useful for:
 
 # How Streaks Work (High Level)
 
-* A client configures a streak in CMS using a preset (Daily, Periodic, Consecutive, Milestone).
+* A client configures a streak in CMS using a preset (Periodic, Consecutive, Milestone).
 * The streak listens to eligible user actions (quests, widgets, mini-games, behaviors).
 * Each time the user performs the action:  
   Progress is evaluated against streak rules
