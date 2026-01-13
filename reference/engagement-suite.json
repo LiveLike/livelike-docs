@@ -32779,6 +32779,175 @@
       }
     },
     "/flairs": {
+      "post": {
+        "description": "",
+        "operationId": "post_flairs",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string",
+                      "default": "#413EEB"
+                    },
+                    "default_color": {
+                      "type": "string",
+                      "default": "#000000"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {},
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "id",
+                    "text_color",
+                    "default_color",
+                    "is_active",
+                    "attributes",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "default": "\"The fields client_id, name must make a unique set.\""
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "default": "Authentication credentials were not provided."
+                    },
+                    "error_code": {
+                      "type": "string",
+                      "default": "MISSING_AUTH_CREDENTIALS"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "text_color": {
+                    "type": "string",
+                    "default": "#413EEB",
+                    "description": "Field should be HEX color. "
+                  },
+                  "background_color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "description": "Field should be HEX color. "
+                  },
+                  "is_active": {
+                    "type": "boolean",
+                    "default": "true"
+                  }
+                },
+                "required": [
+                  "client_id"
+                ]
+              }
+            }
+          }
+        }
+      },
       "get": {
         "description": "",
         "operationId": "get_flairs",
@@ -32992,25 +33161,6 @@
           }
         ]
       },
-      "patch": {
-        "description": "",
-        "operationId": "patch_flairs{flair_id}",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "flair_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      },
       "delete": {
         "description": "",
         "operationId": "delete_flairs{flair_id}",
@@ -33195,10 +33345,10 @@
         ]
       }
     },
-    "/flairs/": {
-      "post": {
+    "/flairs/{flair_id}/": {
+      "patch": {
         "description": "",
-        "operationId": "post_flairs",
+        "operationId": "patch_flairs{flair_id}",
         "responses": {
           "200": {
             "description": "",
@@ -33223,86 +33373,51 @@
                       "type": "string"
                     },
                     "image": {
-                      "type": "string"
+                      "type": "string",
+                      "format": "binary"
                     },
                     "text_color": {
-                      "type": "string",
-                      "default": "#413EEB"
+                      "type": "string"
                     },
-                    "default_color": {
-                      "type": "string",
-                      "default": "#000000"
+                    "background_color": {
+                      "type": "string"
                     },
                     "is_active": {
-                      "type": "boolean",
-                      "default": "true"
+                      "type": "boolean"
                     },
                     "attributes": {
                       "type": "array",
                       "items": {
-                        "properties": {},
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
                         "type": "object"
                       }
                     },
                     "updated_at": {
-                      "type": "string",
-                      "format": "date-time"
+                      "type": "string"
                     },
                     "created_at": {
-                      "type": "string",
-                      "format": "date-time"
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "url",
-                    "id",
-                    "text_color",
-                    "default_color",
-                    "is_active",
+                    "name",
+                    "image",
                     "attributes",
-                    "updated_at"
-                  ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "default": "\"The fields client_id, name must make a unique set.\""
-                    }
-                  },
-                  "required": [
-                    "error"
-                  ]
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "default": "Authentication credentials were not provided."
-                    },
-                    "error_code": {
-                      "type": "string",
-                      "default": "MISSING_AUTH_CREDENTIALS"
-                    }
-                  },
-                  "required": [
-                    "detail"
+                    "updated_at",
+                    "created_at",
+                    "is_active",
+                    "background_color",
+                    "text_color",
+                    "id",
+                    "url",
+                    "client_id"
                   ]
                 }
               }
@@ -33310,6 +33425,14 @@
           }
         },
         "parameters": [
+          {
+            "in": "path",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
           {
             "in": "header",
             "name": "Authorization",
@@ -33326,10 +33449,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "client_id": {
+                  "name": {
                     "type": "string"
                   },
-                  "name": {
+                  "description": {
                     "type": "string"
                   },
                   "image": {
@@ -33339,27 +33462,30 @@
                   "image_url": {
                     "type": "string"
                   },
-                  "description": {
+                  "text_color": {
                     "type": "string"
                   },
-                  "text_color": {
-                    "type": "string",
-                    "default": "#413EEB",
-                    "description": "Field should be HEX color. "
-                  },
                   "background_color": {
-                    "type": "string",
-                    "default": "#000000",
-                    "description": "Field should be HEX color. "
+                    "type": "string"
                   },
                   "is_active": {
-                    "type": "boolean",
-                    "default": "true"
+                    "type": "boolean"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
                   }
-                },
-                "required": [
-                  "client_id"
-                ]
+                }
               }
             }
           }
