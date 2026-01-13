@@ -32914,27 +32914,6 @@
       }
     },
     "/flair-scopes/{flair_scope_id}": {},
-    "/flair-assignments/{flair_assignment_id}": {
-      "delete": {
-        "description": "",
-        "operationId": "delete_flair-assignments{flair_assignment_id}",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "flair_assignment_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
     "/flairs/{flair_id}/": {
       "patch": {
         "description": "",
@@ -33998,6 +33977,34 @@
             }
           }
         }
+      },
+      "delete": {
+        "description": "",
+        "operationId": "delete_flair-assignments{flair_assignment_id}",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_assignment_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
