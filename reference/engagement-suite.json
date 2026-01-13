@@ -32914,16 +32914,6 @@
       }
     },
     "/flair-scopes": {
-      "post": {
-        "description": "",
-        "operationId": "post_flair-scopes",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      },
       "get": {
         "description": "",
         "operationId": "get_flairs-1",
@@ -33504,6 +33494,82 @@
                 },
                 "required": [
                   "client_id"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/flair-scopes/": {
+      "post": {
+        "description": "",
+        "operationId": "post_flair-scopes",
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "resource_kind": {
+                      "type": "string"
+                    },
+                    "resource_uuid": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "resource_kind",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_uuid": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "client_id",
+                  "resource_kind"
                 ]
               }
             }
