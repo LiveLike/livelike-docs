@@ -10,7 +10,7 @@ metadata:
 ---
 #### Log in to the CMS.
 
-### 1 Navigate to Streaks.
+## 1 Navigate to Streaks.
 
 **From the left-hand menu, click Streaks.**
 
@@ -33,7 +33,7 @@ Click Continue.
 
 <br />
 
-### 2. Configure Consecutive Streak Settings
+## 2. Configure Consecutive Streak Settings
 
 On the Consecutive Streak Settings page, fill in the following details:
 
@@ -47,11 +47,11 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 <Image align="center" border={false} src="https://files.readme.io/37653ac997028b56b7931b2be631eff94f2db5f670d8b905d5ea33510d799fc4-Screenshot_2026-01-09_at_5.47.35_PM.png" />
 
-* Click Continue once all fields are filled.
+* Click Continue once all fields are filled.  
 
 <br />
 
-### 3. Configure Target settings
+## 3. Configure Target settings
 
 **Set Target** -
 
@@ -65,7 +65,7 @@ Click **Continue**
 
 <br />
 
-### 4. Configure Milestone Rewards
+## 4. Configure Milestone Rewards
 
 **For each milestone, configure the following:**
 
