@@ -32935,28 +32935,7 @@
         "parameters": []
       }
     },
-    "/flair-scopes/{flair_scope_id}": {
-      "delete": {
-        "description": "",
-        "operationId": "delete_flairs{flair_id}-1",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "flair_scope_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Copy of "
-      }
-    },
+    "/flair-scopes/{flair_scope_id}": {},
     "/flair-assignments/{flair_assignment_id}": {
       "get": {
         "description": "",
