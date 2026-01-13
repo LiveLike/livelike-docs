@@ -32779,175 +32779,6 @@
       }
     },
     "/flairs": {
-      "post": {
-        "description": "",
-        "operationId": "post_flairs",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "client_id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "image": {
-                      "type": "string"
-                    },
-                    "text_color": {
-                      "type": "string",
-                      "default": "#413EEB"
-                    },
-                    "default_color": {
-                      "type": "string",
-                      "default": "#000000"
-                    },
-                    "is_active": {
-                      "type": "boolean",
-                      "default": "true"
-                    },
-                    "attributes": {
-                      "type": "array",
-                      "items": {
-                        "properties": {},
-                        "type": "object"
-                      }
-                    },
-                    "updated_at": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-                  },
-                  "required": [
-                    "url",
-                    "id",
-                    "text_color",
-                    "default_color",
-                    "is_active",
-                    "attributes",
-                    "updated_at"
-                  ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "default": "\"The fields client_id, name must make a unique set.\""
-                    }
-                  },
-                  "required": [
-                    "error"
-                  ]
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "default": "Authentication credentials were not provided."
-                    },
-                    "error_code": {
-                      "type": "string",
-                      "default": "MISSING_AUTH_CREDENTIALS"
-                    }
-                  },
-                  "required": [
-                    "detail"
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "schema": {
-              "type": "string",
-              "default": "Bearer <AUTH_TOKEN>"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "client_id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "image_url": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "text_color": {
-                    "type": "string",
-                    "default": "#413EEB",
-                    "description": "Field should be HEX color. "
-                  },
-                  "background_color": {
-                    "type": "string",
-                    "default": "#000000",
-                    "description": "Field should be HEX color. "
-                  },
-                  "is_active": {
-                    "type": "boolean",
-                    "default": "true"
-                  }
-                },
-                "required": [
-                  "client_id"
-                ]
-              }
-            }
-          }
-        }
-      },
       "get": {
         "description": "",
         "operationId": "get_flairs",
@@ -33362,6 +33193,177 @@
             "required": true
           }
         ]
+      }
+    },
+    "/flairs/": {
+      "post": {
+        "description": "",
+        "operationId": "post_flairs",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string",
+                      "default": "#413EEB"
+                    },
+                    "default_color": {
+                      "type": "string",
+                      "default": "#000000"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {},
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "id",
+                    "text_color",
+                    "default_color",
+                    "is_active",
+                    "attributes",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "default": "\"The fields client_id, name must make a unique set.\""
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "default": "Authentication credentials were not provided."
+                    },
+                    "error_code": {
+                      "type": "string",
+                      "default": "MISSING_AUTH_CREDENTIALS"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "text_color": {
+                    "type": "string",
+                    "default": "#413EEB",
+                    "description": "Field should be HEX color. "
+                  },
+                  "background_color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "description": "Field should be HEX color. "
+                  },
+                  "is_active": {
+                    "type": "boolean",
+                    "default": "true"
+                  }
+                },
+                "required": [
+                  "client_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
