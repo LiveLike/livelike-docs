@@ -32845,9 +32845,6 @@
                           },
                           "created_at": {
                             "type": "string"
-                          },
-                          "name1": {
-                            "type": "string"
                           }
                         },
                         "type": "object",
@@ -32894,9 +32891,23 @@
           },
           {
             "in": "query",
-            "name": "param",
+            "name": "created_since",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_active",
+            "schema": {
+              "type": "boolean"
             }
           }
         ]
