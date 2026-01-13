@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 excerpt: '  **LiveLike Genie** is an AI assistant built into the Producer CRM. It helps producers, engineers, and account teams **create, manage, and learn** - all through a chat-like interface.'
-deprecated: false
+deprecated: true
 hidden: false
 metadata:
   robots: index
