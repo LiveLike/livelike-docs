@@ -4,12 +4,20 @@ deprecated: false
 hidden: true
 metadata:
   robots: index
+next:
+  description: Periodic Streak CMS Guide
+  pages:
+    - slug: how-to-create-streaks-in-cms
+      title: Periodic Streak CMS Guide
+      type: basic
 ---
 # What are streaks?
 
-Streaks are engagement mechanics that reward users for performing specific actions either repeatedly over time or consistently across events.
-They are designed to encourage habit formation, repeat engagement, and longer user retention by incentivizing users to keep coming back and completing actions.
-A streak progresses when a user completes the configured action and resets when the defined conditions are no longer met.
+Streaks are an engagement mechanic that reward users for performing an action consistently over time or across repeated opportunities.
+A streak tracks a user’s progress as they repeat a defined behavior—such as watching content, making predictions, checking in, or completing challenges—and rewards them for maintaining that consistency.  
+A streak starts when a user performs a defined action and continues as long as the user meets the streak rules. If the rules are broken, the streak resets
+
+In short: Streaks turn repeat behavior into a visible, rewarding habit.
 
 # Why use streaks?
 
@@ -29,59 +37,75 @@ From a business perspective, streaks are especially useful for:
 * Content consumption (episodes, videos, quizzes)
 * Loyalty and reward programs
 
-## Types of Streaks
+# How Streaks Work (High Level)
 
-Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Streaks**, with Milestones acting as reward checkpoints.
+* A client configures a streak in CMS using a preset (Daily, Periodic, Consecutive, Milestone).
+* The streak listens to eligible user actions (quests, widgets, mini-games, behaviors).
+* Each time the user performs the action:  
+  Progress is evaluated against streak rules
+  Milestones are checked
+  Rewards are granted if thresholds are met
+* Streaks can be:
+  Frozen (user-level or admin-level)
+  Targeted to specific User Groups
+  Timezone-aware
+* All activity is logged for analytics and reporting.
 
-### Periodic Streaks:
+# Types of Streaks
 
-A Periodic Streak encourages users to perform an action at regular time intervals — daily, weekly, or monthly — over a defined period.
+Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Streaks**, with Streak Milestones acting as reward checkpoints.
+
+## Periodic Streaks:
+
+A streak where users must perform an action within a recurring time window (daily, weekly, monthly).
+
+### How it works:
+
+* Each period is evaluated independently
+* Missing a period breaks the streak
+* Timezone-aware
 
 **Examples**:
 
-Make a prediction every day for 7 days
+* Make a prediction every day for 7 days
+* Play a game weekly for 4 weeks
+* Log in monthly for 3 months
 
-Play a game weekly for 4 weeks
+<br />
 
-Log in monthly for 3 months
+## Consecutive Streaks (Action-Based):
 
-**Common Use Cases:**
-Daily predictions,
-Weekly challenges,
-Monthly engagement programs
+A streak based on consecutive successful actions, independent of calendar time.
 
-### Consecutive Streaks:
+### How it works:
 
-A Consecutive Streak rewards users for completing a specific action X times in a row, regardless of when those actions occur.
+* Progress depends on uninterrupted success
+* Time gaps don’t matter
+* One failure resets the streak
 
 **Examples**:
 
-Make 5 correct match predictions in a row
+* Correctly predict 3 matches in a row
+* Win 3 games consecutively
+* Complete 5 challenges back-to-back
 
-Win 3 games consecutively
-
-Complete 10 challenges back-to-back
-
-**Common Use Cases:**
-Prediction accuracy,
-Skill-based games,
-Performance-driven challenges
-
-### Why use Consecutive Streaks?
-
-Rewards skill and consistency
-Encourages focused participation
-Adds a competitive element
+<br />
 
 ## Streak Milestones
 
-A Milestone rewards users for completing X actions out of Y opportunities within a defined scope.
+A flexible streak where users must complete X actions out of Y opportunities.
 
-### Why use Milestones?
+### How it works:
 
-Reduces user drop-off due to strict rules
-Encourages broader participation
-Works well for content releases and campaigns
+* Allows some misses
+* Focuses on participation rather than perfection
+* Evaluated within a defined scope or window
+
+**Examples**:
+
+* Complete 5 out of 7 daily challenges
+* Watch 4 out of 6 episodes released
+* Participate in 3 of 5 events
 
 <br />
 
