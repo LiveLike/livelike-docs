@@ -33160,25 +33160,6 @@
             "required": true
           }
         ]
-      },
-      "delete": {
-        "description": "",
-        "operationId": "delete_flairs{flair_id}",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "flair_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
       }
     },
     "/flair-scopes": {
@@ -33490,6 +33471,33 @@
             }
           }
         }
+      },
+      "delete": {
+        "description": "",
+        "operationId": "delete_flairs{flair_id}",
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            }
+          }
+        ]
       }
     }
   },
