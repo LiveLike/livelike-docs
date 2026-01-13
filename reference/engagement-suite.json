@@ -32914,16 +32914,6 @@
       }
     },
     "/flair-assignments": {
-      "post": {
-        "description": "",
-        "operationId": "post_flair-assignments",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      },
       "get": {
         "description": "",
         "operationId": "get_flair-assignments",
@@ -33718,6 +33708,98 @@
                     "type": "string"
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/flair-assignments/": {
+      "post": {
+        "description": "",
+        "operationId": "post_flair-assignments",
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "assigned_by": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "flair": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "scope": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url",
+                    "is_active",
+                    "assigned_by",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flair_id": {
+                    "type": "string"
+                  },
+                  "profile_id": {
+                    "type": "string"
+                  },
+                  "scope_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "flair_id"
+                ]
               }
             }
           }
