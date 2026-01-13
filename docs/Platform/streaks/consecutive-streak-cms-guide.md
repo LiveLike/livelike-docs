@@ -10,7 +10,7 @@ metadata:
 ---
 #### Log in to the CMS.
 
-### 1. Navigate to Streaks.
+### 1 Navigate to Streaks.
 
 #### From the left-hand menu, click Streaks.
 
@@ -33,7 +33,7 @@ Click Continue.
 
 <br />
 
-### 2. Configure Consecutive Streak Settings
+### 2 Configure Consecutive Streak Settings
 
 On the Consecutive Streak Settings page, fill in the following details:
 
@@ -51,7 +51,7 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 <br />
 
-### 3. Configure Target settings
+### 3 Configure Target settings
 
 Set Target -
 
