@@ -90,8 +90,6 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-<br />
-
 #### Publish or Save as Draft:  
 
 Click **Publish** to make the streak live.
@@ -99,3 +97,7 @@ Click **Publish** to make the streak live.
 Click **Quit** and than **Save & Quit**
 
 <Image align="center" border={false} src="https://files.readme.io/23b7531c6e7bb8156fb508695057e607fe7fdb2100fa8da10fb5b97ba8fb87ca-Screenshot_2026-01-13_at_11.56.55_PM.png" />
+
+<br />
+
+<br />
