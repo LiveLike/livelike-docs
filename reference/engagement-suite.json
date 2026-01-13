@@ -33263,8 +33263,8 @@
         "description": "",
         "operationId": "post_flairs",
         "responses": {
-          "200": {
-            "description": "",
+          "201": {
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
