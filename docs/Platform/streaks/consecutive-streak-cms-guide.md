@@ -12,19 +12,19 @@ metadata:
 
 ### 1 Navigate to Streaks.
 
-#### From the left-hand menu, click Streaks.
+**From the left-hand menu, click Streaks.**
 
 <Image align="center" border={false} src="https://files.readme.io/ecde533947b742b7ef2d292cb81fd450eb43a6c746a18b30d0458da8f0e98400-Screenshot_2026-01-09_at_4.17.24_PM.png" />
 
-#### Click “**Create** ” to create New Streak.
+**Click “Create ” to create New Streak.**
 
 <Image align="center" border={false} src="https://files.readme.io/3f88fd4fb7d8391cb81fcf044be2eaa06357d0fc5f8efc24040b3da16fa33263-Screenshot_2026-01-09_at_4.20.47_PM.png" />
 
-#### After clicking on Create below page will open up
+**After clicking on Create below page will open up**
 
 Select Streak Type: Periodic Streak or Consecutive Action Streak
 
-#### Below are the Steps for Consecutive streak:
+#### Steps for Consecutive streak:
 
 Choose Consecutive Streak.
 Click Continue.
@@ -33,7 +33,7 @@ Click Continue.
 
 <br />
 
-### 2 Configure Consecutive Streak Settings
+### 2. Configure Consecutive Streak Settings
 
 On the Consecutive Streak Settings page, fill in the following details:
 
@@ -51,9 +51,9 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 <br />
 
-### 3 Configure Target settings
+### 3. Configure Target settings
 
-Set Target -
+**Set Target** -
 
 When toggle is off -------------------------- yet to add
 
@@ -67,7 +67,7 @@ Click **Continue**
 
 ### 4. Configure Milestone Rewards
 
-#### For each milestone, configure the following:
+**For each milestone, configure the following:**
 
 * Streak Length - The number of consecutive actions a user must complete to earn the reward.
 * Recurring - Enable this checkbox if users should receive the reward at multiples of the streak length (e.g., streak length 3 → rewards at 3, 6, 9, 12…)
