@@ -39,7 +39,8 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 * Streak Name - Example: Prediction Streak
 * Description (optional) - A brief summary describing the purpose of the streak.
-* Streak Action - Select the user action that will trigger streak progress.
+* Streak Action - Select the user action that will trigger streak progress.    
+  --------Build in action and custom action ------- yet to add.
 * Streak Reset Action - Select the user action that will trigger streak reset.
 * Start Time & End Time - Set the duration during which the streak will be active.
 * User Group - Select All Users, or Choose a specific User Group to target.
@@ -52,7 +53,11 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 ### 3. Configure Target settings
 
-Set Target - When you on this toggle it let you choose targets (such as widgets, mini games or external resources such as tournament IDs, season IDs) on which user actions will be tracked to progress or reset streaks.)
+Set Target -     
+
+When toggle is off -------------------------- yet to add
+
+When you on this toggle it let you choose targets (such as widgets, mini games or external resources such as tournament IDs, season IDs) on which user actions will be tracked to progress or reset streaks.)
 
 <Image align="center" border={false} src="https://files.readme.io/efef35924f70f69f7bf3e0b01ae1e3187fc008e61df1a4528868b593df9aa63f-Screenshot_2026-01-09_at_5.51.32_PM.png" />
 
