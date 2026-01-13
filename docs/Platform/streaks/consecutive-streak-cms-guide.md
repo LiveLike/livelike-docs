@@ -89,6 +89,8 @@ Click **Continue**
 
 <Image align="center" border={false} src="https://files.readme.io/d4b5b74fab8d8bdf3895005a00d8de62b85c2022c7be7076e42eb30fe1db2ce2-Screenshot_2026-01-09_at_5.56.05_PM.png" />
 
-Click **Publish** to make the streak live.
+Click **Publish** to make the streak live.  
+
+<br />
 
 <br />
