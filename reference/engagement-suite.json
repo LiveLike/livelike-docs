@@ -32913,18 +32913,6 @@
         ]
       }
     },
-    "/flair-assignments": {
-      "get": {
-        "description": "",
-        "operationId": "get_flair-assignments",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      }
-    },
     "/flair-scopes/{flair_scope_id}": {},
     "/flair-assignments/{flair_assignment_id}": {
       "get": {
@@ -33804,6 +33792,85 @@
             }
           }
         }
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_flair-assignments",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "is_active": {
+                            "type": "boolean"
+                          },
+                          "assigned_by": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          },
+                          "flair": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "profile": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "scope": {
+                            "type": "object",
+                            "properties": {}
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "updated_at",
+                          "created_at",
+                          "assigned_by",
+                          "is_active",
+                          "url",
+                          "id",
+                          "flair"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "previous": {
+                      "type": "string"
+                    },
+                    "next": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
       }
     }
   },
