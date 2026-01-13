@@ -60,7 +60,7 @@ On the Periodic Streak Settings page, fill in the following details:
 #### For each milestone, configure the following:
 
 * Streak Length - The number of consecutive actions a user must complete to earn the reward.
-* Recurring - Enable this checkbox if users should receive the reward at multiples of the streak length (e.g., streak length 3 → rewards at 3, 6, 9, 12…)
+* Recurring - Enable this checkbox if users should receive the reward at multiples of the streak length (e.g., streak length 2 → rewards at 4, 6, 8, 10…)
 
 <Image align="center" border={false} src="https://files.readme.io/84ccc687560d0b74d17801d6b61e1479dd92f44bd256a43155673b34c6a2b697-Screenshot_2026-01-09_at_5.27.59_PM.png" />
 
@@ -73,7 +73,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-* Repeat on Reset - Toggle this option to allow or prevent users from earning the same reward again after a streak reset.
+* Repeat on Reset - Toggle this option to allow or prevent users from earning reward for the same milestone again after a streak reset.
 
 <Image align="center" border={false} src="https://files.readme.io/53c4219661c648a1565f9a8150fb6852781e026d666d6dfa5e4d1f68d9a848b6-Screenshot_2026-01-09_at_5.32.23_PM.png" />
 
