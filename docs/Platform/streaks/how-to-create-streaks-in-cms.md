@@ -90,7 +90,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-#### Publish or Save as Draft:  
+### Publish or Save as Draft:  
 
 Click **Publish** to make the streak live.
 
