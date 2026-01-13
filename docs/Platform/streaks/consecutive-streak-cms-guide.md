@@ -39,9 +39,9 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 * Streak Name - Example: Prediction Streak
 * Description (optional) - A brief summary describing the purpose of the streak.
-* Streak Action - Select the user action that will trigger streak progress.    
+* Streak Action - Select the user action that will trigger streak progress.  
   --------Build in action and custom action ------- yet to add.
-* Streak Reset Action - Select the user action that will trigger streak reset.
+* Streak Reset Action (optional) - Select the user action that will trigger streak reset.
 * Start Time & End Time - Set the duration during which the streak will be active.
 * User Group - Select All Users, or Choose a specific User Group to target.
 
@@ -53,7 +53,7 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 ### 3. Configure Target settings
 
-Set Target -     
+Set Target -
 
 When toggle is off -------------------------- yet to add
 
@@ -89,8 +89,14 @@ Click **Continue**
 
 <Image align="center" border={false} src="https://files.readme.io/d4b5b74fab8d8bdf3895005a00d8de62b85c2022c7be7076e42eb30fe1db2ce2-Screenshot_2026-01-09_at_5.56.05_PM.png" />
 
+<br />
+
+#### Publish or Save Draft
+
 Click **Publish** to make the streak live.  
 
-<br />
+If you want to Save as Draft:
 
-<br />
+Click **Quit** and Select **Save and Quit**.
+
+<Image align="center" border={false} src="https://files.readme.io/89134ba81488ebc7489dfc4aa714dbbf8bdfe1e1453ca31c87e9996199265be5-Screenshot_2026-01-13_at_11.56.55_PM.png" />
