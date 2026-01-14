@@ -45,15 +45,15 @@ On the Periodic Streak Settings page, fill in the following details:
 * Streak Name - Example: Prediction Streak
 * Description (optional) - A brief summary describing the purpose of the streak.
 * Streak Action - Select the user action that will trigger streak progress.
-* Streak Threshold - Define the action threshold required for streak progress.
-* Start Time & End Time - Set the duration during which the streak will be active.
+* Streak Threshold - Define the action threshold required for streak progress (defaults to 1).
+* Start Time & End Time (optional) - Set the duration during which the streak will be active.
 * Period - Click on dropdown and select one of the following:  
   (**Daily**, **Weekly**, **Monthly**)
 
 <Image align="center" border={false} src="https://files.readme.io/8bf48eeeaeaacd1bcb8d1742ed83e82ff42193a354ec834fe46c437b9a86e914-Screenshot_2026-01-09_at_4.37.15_PM.png" />
 
 * Timezone - Select the applicable timezone.
-* User Group - Select All Users, or Choose a specific User Group to target.
+* User Group - Select All Users, or Choose a specific User Groups to target.
 * Click Continue once all fields are filled.
 
 <Image align="center" border={false} src="https://files.readme.io/dc4e9fe1ca63e9be5ad096a93057ebbc175772360e4c6d5ea195ecf197ef8bb9-Screenshot_2026-01-09_at_5.21.54_PM.png" />
@@ -64,13 +64,13 @@ On the Periodic Streak Settings page, fill in the following details:
 
 #### For each milestone, configure the following:
 
-* Streak Length - The number of consecutive actions a user must complete to earn the reward.
-* Recurring - Enable this checkbox if users should receive the reward at multiples of the streak length (e.g., streak length 2 → rewards at 4, 6, 8, 10…)
+* Streak Length - The number of consecutive, uninterrupted increment of a particular streak, often counted from a minimum of three to a longer sequence.
+* Recurring - Enable this checkbox if users should receive the reward at defined streak length-interval (e.g., streak length 2 → rewards at 2, 4, 6, 8, 10…)
 
 <Image align="center" border={false} src="https://files.readme.io/84ccc687560d0b74d17801d6b61e1479dd92f44bd256a43155673b34c6a2b697-Screenshot_2026-01-09_at_5.27.59_PM.png" />
 
 * Reward Item - Select the reward to be granted.
-* Item Amount - Enter the reward quantity. Only positive integers are allowed.
+* Item Amount - Enter the reward item value. Only positive integers are allowed.
 
 <Image align="center" border={false} src="https://files.readme.io/b285214c6ccc70de7fd38f370be151bb529833d5371647d4b5747c332e0a73e6-Screenshot_2026-01-09_at_5.30.03_PM.png" />
 
@@ -78,7 +78,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 <br />
 
-* Repeat on Reset - Toggle this option to allow or prevent users from earning reward for the same milestone again after a streak reset.
+* Repeat on Reset - Toggle this option to allow or prevent users from earning reward for the same milestone again after they have achieved it once and their streak resets.
 
 <Image align="center" border={false} src="https://files.readme.io/53c4219661c648a1565f9a8150fb6852781e026d666d6dfa5e4d1f68d9a848b6-Screenshot_2026-01-09_at_5.32.23_PM.png" />
 
@@ -94,7 +94,7 @@ On the Periodic Streak Settings page, fill in the following details:
 
 Click **Publish** to make the streak live.
 
-Click **Quit** and than **Save & Quit**
+Else, click **Quit** and than **Save & Quit** to save the streak configuration as a draft.
 
 <Image align="center" border={false} src="https://files.readme.io/23b7531c6e7bb8156fb508695057e607fe7fdb2100fa8da10fb5b97ba8fb87ca-Screenshot_2026-01-13_at_11.56.55_PM.png" />
 
