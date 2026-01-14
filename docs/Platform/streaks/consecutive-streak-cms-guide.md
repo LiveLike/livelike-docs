@@ -40,7 +40,7 @@ On the Consecutive Action Streak Settings page, fill in the following details:
 * Streak Name - Example: Prediction Streak
 * Description (optional) - A brief summary describing the purpose of the streak.
 * Streak Action - Select the user action that will trigger streak progress. (Choose from built-in or custom action)
-* Streak Reset Action (optional) - Select the user action that will trigger streak reset. Some steak actions inherently support a reset action such as "Answer a quiz correctly" resets on incorrect answer.
+* Streak Reset Action (optional, and only applicable to Consecutive Action Streak) - Select the user action that will trigger streak reset. Some steak actions inherently support a reset action such as "Answer a quiz correctly" resets on incorrect answer. If not set, Consecutive Action Streak only resets on skipping a target or manually resetting it by admin. 
 * Start Time & End Time (optional) - Set the duration during which the streak will be active.
 * User Group - Select All Users, or Choose a specific User Groups to target.
 
