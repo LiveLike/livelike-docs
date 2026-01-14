@@ -4,7 +4,7 @@ excerpt: >-
   Follow these steps to create and configure a new Consecutive Action Streak in
   the CMS.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
