@@ -37,21 +37,21 @@ From a business perspective, streaks are especially useful for:
 
 # How Streaks Work (High Level)
 
-* A client configures a streak in CMS using a preset (Periodic, Consecutive, Milestone).
-* The streak listens to eligible user actions (quests, widgets, mini-games, behaviors).
+* A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time based) or Consecutive Action (action based, no time dependency).
+* The streak listens to eligible user actions such as voting, watching content, login, making predictions, playing mini game, etc.).
 * Each time the user performs the action:  
   Progress is evaluated against streak rules
-  Milestones are checked
-  Rewards are granted if thresholds are met
+  Streak milestones are checked
+  Rewards are granted if streak milestones are reached
 * Streaks can be:
-  Frozen (user-level or admin-level)
+  Frozen (user-level or global)
   Targeted to specific User Groups
   Timezone-aware
 * All activity is logged for analytics and reporting.
 
 # Types of Streaks
 
-Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Streaks**, with Streak Milestones acting as reward checkpoints.
+Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Action Streaks**, with Streak Milestones acting as reward checkpoints.
 
 ## Periodic Streaks:
 
@@ -65,15 +65,15 @@ A streak where users must perform an action within a recurring time window (dail
 
 **Examples**:
 
-* Make a prediction every day for 7 days
-* Play a game weekly for 4 weeks
-* Log in monthly for 3 months
+* Make a prediction every day
+* Play 2 trivia games every week
+* Referring 5 friends every month
 
 <br />
 
-## Consecutive Streaks (Action-Based):
+## Consecutive Action Streaks (Action-Based):
 
-A streak based on consecutive successful actions, independent of calendar time.
+A streak based on successful consecutive actions, independent of time / when those actions are performed.
 
 ### How it works:
 
@@ -83,31 +83,32 @@ A streak based on consecutive successful actions, independent of calendar time.
 
 **Examples**:
 
-* Correctly predict 3 matches in a row
+* Correctly predict 3 match outcomes in a row
 * Win 3 games consecutively
-* Complete 5 challenges back-to-back
+* Send a chat message on every match day in a tournament
 
 <br />
 
 ## Streak Milestones
 
-A flexible streak where users must complete X actions out of Y opportunities.  
-Milestones are reward checkpoints within a streak.
-Instead of rewarding only at the end, milestones allow rewards at incremental progress points.
+Streak Milestones are reward checkpoints within a streak. Instead of rewarding only at the end, milestones allow rewards at incremental progress points (streak lengths).
 
 ### How it works:
 
-* Allows some misses, keep users motivated even if they don’t complete the full streak
 * Focuses on participation rather than perfection
-* Evaluated within a defined scope or window
+* Evaluated within a defined scope or window (as long as streak is active)
 
 **Examples**:
 
-* Complete 5 out of 7 daily challenges
-* Watch 4 out of 6 episodes released
-* Participate in 3 of 5 events
+* Get bonus points for 3/5/7 consecutive correct predictions
+* Earn points on every streak length increment
 
-<br />
+Streak Milestones can be of two types:
+
+* Recurring - Set a periodic length interval for users to get rewards 
+* Custom - Define a custom streak length to be rewardable
+
+Streak Milestones inherently can be configured to allow or stop each milestone to be rewardable after user streak resets. 
 
 ## How Streaks Are Configured in CMS (High Level)
 
@@ -115,13 +116,13 @@ Streaks are created and managed via the CMS → Streaks section.
 
 At a high level, configuration includes:
 
-* Selecting the streak type (Periodic / Consecutive)
+* Selecting the streak type (Periodic / Consecutive Action)
 
 * Defining the triggering user action
 
-* Setting time windows or action thresholds
+* Setting time windows or action thresholds (for Periodic); Setting targets (for Consecutive Action)
 
-* Assigning milestone-based rewards
+* Assigning rewards for streaks milestones
 
 * Publishing the streak to targeted user groups
 
