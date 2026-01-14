@@ -2,7 +2,7 @@
 title: Streaks
 excerpt: Streaks turn repeat behavior into a visible, rewarding habit.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 next:
