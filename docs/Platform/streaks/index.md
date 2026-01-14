@@ -37,7 +37,7 @@ From a business perspective, streaks are especially useful for:
 
 # How Streaks Work (High Level)
 
-* A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time based) or Consecutive Action (action based, no time dependency).
+* A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time and action based) or Consecutive Action (only action based, no time dependency).
 * The streak listens to eligible user actions such as voting, watching content, login, making predictions, playing mini game, etc.).
 * Each time the user performs the action:  
   Progress is evaluated against streak rules
@@ -53,7 +53,7 @@ From a business perspective, streaks are especially useful for:
 
 Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Action Streaks**, with Streak Milestones acting as reward checkpoints.
 
-## Periodic Streaks:
+## Periodic Streaks (Time-Dependent):
 
 A streak where users must perform an action within a recurring time window (daily, weekly, monthly).
 
@@ -71,7 +71,7 @@ A streak where users must perform an action within a recurring time window (dail
 
 <br />
 
-## Consecutive Action Streaks (Action-Based):
+## Consecutive Action Streaks (Action-Dependent):
 
 A streak based on successful consecutive actions, independent of time / when those actions are performed.
 
