@@ -133,7 +133,7 @@ At a high level, configuration includes:
     Follow these steps to create and configure a new Periodic Streak in the CMS.
   </Card>
 
-  <Card title="Consecutive Streak CMS Guide" href="https://docs.livelike.com/docs/consecutive-streak-cms-guide" icon="fa-code">
-    Follow these steps to create and configure a new Consecutive Streak in the CMS.
+  <Card title="Consecutive Action Streak CMS Guide" href="https://docs.livelike.com/docs/consecutive-streak-cms-guide" icon="fa-code">
+    Follow these steps to create and configure a new Consecutive Action Streak in the CMS.
   </Card>
 </Cards>
