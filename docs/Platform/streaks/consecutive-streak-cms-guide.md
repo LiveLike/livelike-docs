@@ -39,8 +39,8 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 * Streak Name - Example: Prediction Streak
 * Description (optional) - A brief summary describing the purpose of the streak.
-* Streak Action - Select the user action that will trigger streak progress.  
-  --------Build in action and custom action ------- yet to add.
+* Streak Action - Select the user action that will trigger streak progress. (Built in action  or Custom action)
+* User have to upload CSV to set the targets.
 * Streak Reset Action (optional) - Select the user action that will trigger streak reset.
 * Start Time & End Time - Set the duration during which the streak will be active.
 * User Group - Select All Users, or Choose a specific User Group to target.
@@ -53,17 +53,23 @@ On the Consecutive Streak Settings page, fill in the following details:
 
 ## 3. Configure Target settings
 
-**Set Target** -
+**Set Target** -  When you on this toggle it let you choose targets (such as widgets, mini games or external resources such as tournament IDs, season IDs) on which user actions will be tracked to progress or reset streaks.)
 
-When toggle is off -------------------------- yet to add
-
-When you on this toggle it let you choose targets (such as widgets, mini games or external resources such as tournament IDs, season IDs) on which user actions will be tracked to progress or reset streaks.)
+**For Built in action** - Set Target toggle will be on by default and panel view will be there.
 
 <Image align="center" border={false} src="https://files.readme.io/efef35924f70f69f7bf3e0b01ae1e3187fc008e61df1a4528868b593df9aa63f-Screenshot_2026-01-09_at_5.51.32_PM.png" />
 
+<br />
+
+**For Custom action** - Upload the CSV file.  
+
+<Image align="center" border={false} src="https://files.readme.io/190960598741f16037023f29d1f34d7e4d06d8b32c84372263efdcfc4d101c45-Screenshot_2026-01-14_at_2.10.48_PM.png" />
+
 Click **Continue**
 
-<br />
+Set Target not required - turn off the toggle and Continue
+
+<Image align="center" border={false} src="https://files.readme.io/e830c032f14b7c055fc9f37f07e1fafe9d1c620b32f9cdfb588c691db44d3902-Screenshot_2026-01-14_at_2.11.04_PM.png" />
 
 ## 4. Configure Milestone Rewards
 
