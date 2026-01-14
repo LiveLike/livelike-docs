@@ -105,10 +105,10 @@ Streak Milestones are reward checkpoints within a streak. Instead of rewarding o
 
 Streak Milestones can be of two types:
 
-* Recurring - Set a periodic length interval for users to get rewards 
+* Recurring - Set a periodic length interval for users to get rewards
 * Custom - Define a custom streak length to be rewardable
 
-Streak Milestones inherently can be configured to allow or stop each milestone to be rewardable after user streak resets. 
+Streak Milestones inherently can be configured to allow or stop each achieved milestone to be rewardable after user streak resets.
 
 ## How Streaks Are Configured in CMS (High Level)
 
