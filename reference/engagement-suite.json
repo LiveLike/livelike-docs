@@ -34049,6 +34049,12 @@
                   },
                   "scope_id": {
                     "type": "string"
+                  },
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_id": {
+                    "type": "string"
                   }
                 }
               }
