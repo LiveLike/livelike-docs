@@ -33366,7 +33366,7 @@
                     "resource_kind": {
                       "type": "string"
                     },
-                    "resource_uuid": {
+                    "resource_id": {
                       "type": "string"
                     },
                     "updated_at": {
@@ -33410,7 +33410,7 @@
                   "resource_kind": {
                     "type": "string"
                   },
-                  "resource_uuid": {
+                  "resource_id": {
                     "type": "string"
                   }
                 },
