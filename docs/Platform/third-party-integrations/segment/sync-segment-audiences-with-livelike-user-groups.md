@@ -1,7 +1,7 @@
 ---
 title: Sync Segment Audiences to User Groups
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
