@@ -1,5 +1,6 @@
 ---
 title: Delete A Flair
+excerpt: Soft delete will be applied to the flair.
 api:
   file: engagement-suite.json
   operationId: delete_flairs{flair_id}

@@ -32791,52 +32791,292 @@
       }
     },
     "/flairs": {
-      "post": {
-        "description": "",
-        "operationId": "post_flairs",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      },
       "get": {
         "description": "",
         "operationId": "get_flairs",
         "responses": {
           "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      }
-    },
-    "/flairs/{flair_id}": {
-      "get": {
-        "description": "",
-        "operationId": "get_flairs{flair_id}",
-        "responses": {
-          "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "client_id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string",
+                            "default": ""
+                          },
+                          "description": {
+                            "type": "string",
+                            "default": "\"\""
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "text_color": {
+                            "type": "string",
+                            "default": "#413EEB"
+                          },
+                          "background_color": {
+                            "type": "string",
+                            "default": "#000000"
+                          },
+                          "is_active": {
+                            "type": "boolean",
+                            "default": "true"
+                          },
+                          "attributes": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "key": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "description",
+                          "name",
+                          "client_id",
+                          "url",
+                          "id",
+                          "image",
+                          "text_color",
+                          "background_color",
+                          "is_active"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
           {
-            "in": "path",
-            "name": "flair_id",
+            "in": "query",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_active",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ]
-      },
+      }
+    },
+    "/flair-scopes/{flair_scope_id}": {},
+    "/flairs/{flair_id}/": {
       "patch": {
         "description": "",
         "operationId": "patch_flairs{flair_id}",
         "responses": {
           "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "text_color": {
+                      "type": "string"
+                    },
+                    "background_color": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "image",
+                    "attributes",
+                    "updated_at",
+                    "created_at",
+                    "is_active",
+                    "background_color",
+                    "text_color",
+                    "id",
+                    "url",
+                    "client_id"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "text_color": {
+                    "type": "string"
+                  },
+                  "background_color": {
+                    "type": "string"
+                  },
+                  "is_active": {
+                    "type": "boolean"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "operationId": "delete_flairs{flair_id}",
+        "responses": {
+          "204": {
             "description": ""
           }
         },
@@ -32848,15 +33088,93 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            }
           }
         ]
       },
-      "delete": {
+      "get": {
         "description": "",
-        "operationId": "delete_flairs{flair_id}",
+        "operationId": "get_flairs{flair_id}",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string"
+                    },
+                    "background_color": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url",
+                    "client_id",
+                    "name",
+                    "image",
+                    "text_color",
+                    "background_color",
+                    "is_active",
+                    "attributes",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -32871,58 +33189,390 @@
         ]
       }
     },
-    "/flair-scopes": {
+    "/flairs/": {
+      "post": {
+        "description": "",
+        "operationId": "post_flairs",
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "text_color": {
+                      "type": "string",
+                      "default": "#413EEB"
+                    },
+                    "default_color": {
+                      "type": "string",
+                      "default": "#000000"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "properties": {},
+                        "type": "object"
+                      }
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "id",
+                    "text_color",
+                    "default_color",
+                    "is_active",
+                    "attributes",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "default": "\"The fields client_id, name must make a unique set.\""
+                    }
+                  },
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "default": "Authentication credentials were not provided."
+                    },
+                    "error_code": {
+                      "type": "string",
+                      "default": "MISSING_AUTH_CREDENTIALS"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "text_color": {
+                    "type": "string",
+                    "default": "#413EEB",
+                    "description": "Field should be HEX color. "
+                  },
+                  "background_color": {
+                    "type": "string",
+                    "default": "#000000",
+                    "description": "Field should be HEX color. "
+                  },
+                  "is_active": {
+                    "type": "boolean",
+                    "default": "true"
+                  }
+                },
+                "required": [
+                  "client_id"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/flair-scopes/": {
       "post": {
         "description": "",
         "operationId": "post_flair-scopes",
         "responses": {
-          "200": {
-            "description": ""
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "resource_kind": {
+                      "type": "string"
+                    },
+                    "resource_id": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "resource_kind",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
           }
         },
-        "parameters": []
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "client_id",
+                  "resource_kind"
+                ]
+              }
+            }
+          }
+        }
       },
       "get": {
         "description": "",
         "operationId": "get_flairs-1",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "resource_kind": {
+                            "type": "string"
+                          },
+                          "resource_id": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "created_at",
+                          "updated_at",
+                          "resource_kind",
+                          "id"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_kind",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "summary": "Copy of "
       }
     },
-    "/flair-assignments": {
-      "post": {
-        "description": "",
-        "operationId": "post_flair-assignments",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      },
+    "/flair-scopes/{flair_scope_id}/": {
       "get": {
         "description": "",
-        "operationId": "get_flair-assignments",
+        "operationId": "",
         "responses": {
           "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      }
-    },
-    "/flair-scopes/{flair_scope_id}": {
-      "delete": {
-        "description": "",
-        "operationId": "delete_flairs{flair_id}-1",
-        "responses": {
-          "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "resource_kind": {
+                      "type": "string"
+                    },
+                    "resource_id": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "resource_kind"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -32934,15 +33584,44 @@
             },
             "required": true
           }
-        ],
-        "summary": "Copy of "
+        ]
       },
       "patch": {
         "description": "",
         "operationId": "",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "resource_kind": {
+                      "type": "string"
+                    },
+                    "resource_id": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "resource_kind"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -32953,36 +33632,333 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/flair-assignments/": {
+      "post": {
+        "description": "",
+        "operationId": "post_flair-assignments",
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean",
+                      "default": "true"
+                    },
+                    "assigned_by": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "flair": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "scope": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "url",
+                    "is_active",
+                    "assigned_by",
+                    "updated_at",
+                    "created_at"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flair_id": {
+                    "type": "string"
+                  },
+                  "profile_id": {
+                    "type": "string"
+                  },
+                  "scope_id": {
+                    "type": "string"
+                  },
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "flair_id"
+                ]
+              }
+            }
+          }
+        }
       },
       "get": {
         "description": "",
-        "operationId": "",
+        "operationId": "get_flair-assignments",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "is_active": {
+                            "type": "boolean"
+                          },
+                          "assigned_by": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          },
+                          "flair": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "profile": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "scope": {
+                            "type": "object",
+                            "properties": {}
+                          }
+                        },
+                        "type": "object",
+                        "required": [
+                          "updated_at",
+                          "created_at",
+                          "assigned_by",
+                          "is_active",
+                          "url",
+                          "id",
+                          "flair"
+                        ]
+                      }
+                    },
+                    "count": {
+                      "type": "number"
+                    },
+                    "previous": {
+                      "type": "string"
+                    },
+                    "next": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "results",
+                    "count"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
           {
-            "in": "path",
-            "name": "flair_scope_id",
+            "in": "query",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "profile_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "profile_custom_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scope_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_kind",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "flair_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "created_until",
+            "schema": {
+              "type": "string"
+            }
           }
         ]
       }
     },
-    "/flair-assignments/{flair_assignment_id}": {
+    "/flair-assignments/{flair_assignment_id}/": {
       "get": {
         "description": "",
         "operationId": "get_flair-assignments{flair_assignment_id}",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "assigned_by": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "flair": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "scope": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "assigned_by",
+                    "is_active",
+                    "url",
+                    "flair"
+                  ]
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -33001,6 +33977,108 @@
         "operationId": "patch_flair-assignments{flair_assignment_id}",
         "responses": {
           "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "string"
+                    },
+                    "assigned_by": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "flair": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "scope": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "assigned_by",
+                    "is_active",
+                    "url",
+                    "flair"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "flair_assignment_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flair_id": {
+                    "type": "string"
+                  },
+                  "profile_id": {
+                    "type": "string"
+                  },
+                  "scope_id": {
+                    "type": "string"
+                  },
+                  "resource_kind": {
+                    "type": "string"
+                  },
+                  "resource_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "operationId": "delete_flair-assignments{flair_assignment_id}",
+        "responses": {
+          "204": {
             "description": ""
           }
         },
@@ -33012,23 +34090,13 @@
               "type": "string"
             },
             "required": true
-          }
-        ]
-      },
-      "delete": {
-        "description": "",
-        "operationId": "delete_flair-assignments{flair_assignment_id}",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
+          },
           {
-            "in": "path",
-            "name": "flair_assignment_id",
+            "in": "header",
+            "name": "Authorization",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "Bearer <AUTH_TOKEN>"
             },
             "required": true
           }
