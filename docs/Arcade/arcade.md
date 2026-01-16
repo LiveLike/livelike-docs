@@ -38,7 +38,7 @@ next:
 * **Guess The Word**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.8.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.9.0.js"></script>
 
 ```
 
@@ -58,7 +58,7 @@ next:
 * **Play Predictor**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.4.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.9.0.js"></script>
 
 ```
 
@@ -72,7 +72,7 @@ next:
 * **Spin The Wheel**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.1.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.2.0.js"></script>
 
 ```
 
@@ -86,7 +86,7 @@ next:
 * **Sweepstakes**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.1.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.2.0.js"></script>
 
 ```
 
