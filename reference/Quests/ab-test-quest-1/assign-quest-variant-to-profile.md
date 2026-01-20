@@ -7,7 +7,7 @@ excerpt: >-
   variants and any quests that were skipped.
 api:
   file: new-application.json
-  operationId: put_api-v1-profiles-profile-id-quest-variant-assignment
+  operationId: put_profiles-profile-id-quest-variant-assignment
 deprecated: false
 hidden: true
 link:
