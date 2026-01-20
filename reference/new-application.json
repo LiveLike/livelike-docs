@@ -487,7 +487,8 @@
             "in": "query",
             "name": "quest_name",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "description": "Name of Quest",
             "required": true
