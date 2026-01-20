@@ -1224,45 +1224,7 @@
         ]
       }
     },
-    "/{profile_id}/quest-variant-assignments/": {
-      "put": {
-        "description": "",
-        "operationId": "put_{profile_id}quest-variant-assignments",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {}
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "profile_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "quest_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    "/{profile_id}/quest-variant-assignments/": {}
   },
   "x-readme": {
     "headers": [],
