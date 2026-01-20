@@ -452,9 +452,16 @@
           },
           {
             "in": "query",
-            "name": "quest_id",
+            "name": "page",
             "schema": {
-              "type": "string"
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "number"
             }
           }
         ],
