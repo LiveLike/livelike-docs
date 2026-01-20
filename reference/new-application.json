@@ -449,6 +449,13 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_id",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get_client-id-ab-test-quests"
