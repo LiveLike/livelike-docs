@@ -559,9 +559,7 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [
-                            {}
-                          ]
+                          "sponsors": [{}]
                         },
                         {
                           "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
@@ -602,9 +600,7 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [
-                            {}
-                          ]
+                          "sponsors": [{}]
                         }
                       ],
                       "profile_groups": [],
@@ -1051,8 +1047,7 @@
         "parameters": []
       }
     },
-    "/{client-id}/ab-test-quests/{ab-test-id}": {},
-    "/{client-id}/ab-test-quest/{ab-test-id}/": {
+    "/{client-id}/ab-test-quest/{ab-test-id}": {
       "get": {
         "description": "",
         "responses": {
@@ -1143,9 +1138,7 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [
-                            {}
-                          ]
+                          "sponsors": [{}]
                         },
                         {
                           "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
@@ -1186,9 +1179,7 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [
-                            {}
-                          ]
+                          "sponsors": [{}]
                         }
                       ],
                       "profile_groups": [],
