@@ -466,6 +466,25 @@
           }
         ],
         "operationId": "get_client-id-ab-test-quests"
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-ab-test-quests"
       }
     },
     "/profiles/{profile-id}/quest-variant-assignment": {
