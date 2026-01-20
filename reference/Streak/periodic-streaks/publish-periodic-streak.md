@@ -2,7 +2,7 @@
 title: Publish Periodic Streak
 api:
   file: new-application.json
-  operationId: post_client-id-periodic-streaks-periodic-streak-id-publish
+  operationId: publish-periodic-streak
 deprecated: false
 hidden: true
 link:

@@ -2,7 +2,7 @@
 title: Create a Periodic Streak
 api:
   file: new-application.json
-  operationId: post_client-id-periodic-streaks
+  operationId: create-a-periodic-streak
 deprecated: false
 hidden: false
 link:

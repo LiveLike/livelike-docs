@@ -945,7 +945,7 @@
             "required": true
           }
         ],
-        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-publish"
+        "operationId": "publish-periodic-streak"
       }
     },
     "/{client-id}/periodic-streaks/": {
@@ -1101,7 +1101,7 @@
             "required": true
           }
         ],
-        "operationId": "post_client-id-periodic-streaks",
+        "operationId": "create-a-periodic-streak",
         "requestBody": {
           "content": {
             "application/json": {
