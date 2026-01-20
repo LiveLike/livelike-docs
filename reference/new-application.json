@@ -466,6 +466,171 @@
           }
         ],
         "operationId": "get_client-id-ab-test-quests"
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name of Quest",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_description",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Description of Quest",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name for AB test",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Description for AB Test"
+          },
+          {
+            "in": "query",
+            "name": "profile_group_ids",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "uuids of profile group ids to link to quest"
+          },
+          {
+            "in": "query",
+            "name": "started_at",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "start time of quest in UTC"
+          },
+          {
+            "in": "query",
+            "name": "stopped_at",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "end time of quest in UTC"
+          },
+          {
+            "in": "query",
+            "name": "variants",
+            "schema": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Variant name"
+                  },
+                  "badge_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "A list of badge UUIDs to be linked to a specific variant."
+                  },
+                  "quest_rewards": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "reward_item_id": {
+                          "type": "string",
+                          "description": "uuid if reward item"
+                        },
+                        "reward_item_amount": {
+                          "type": "integer",
+                          "description": "amount value to be awarded "
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "A list of reward objects to be associated with the quest variant."
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "UUIDs of sponsors that should be linked to the quest variant."
+                  },
+                  "quest_tasks": {
+                    "type": "array",
+                    "description": "A list of quest tasks to be associated with the variant for tracking and progressing the quest.",
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "Display name of the quest task."
+                        },
+                        "target_value": {
+                          "type": "string",
+                          "description": "Required count or value to complete the task."
+                        },
+                        "quest_task_actions": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "reward_action_key": {
+                                "type": "string",
+                                "description": "key of the action whose occurrence increments the task’s progress."
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "description": "List of actions that contribute toward progressing this task."
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "description": "Takes exactly two variant objects ",
+            "style": "deepObject",
+            "explode": true,
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-ab-test-quests"
       }
     },
     "/profiles/{profile-id}/quest-variant-assignment": {
@@ -528,158 +693,6 @@
           }
         ],
         "operationId": "put_profiles-profile-id-quest-variant-assignment"
-      }
-    },
-    "/{client-id}/periodic-streaks/": {
-      "post": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": ""
-          },
-          "201": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "Created": {
-                    "summary": "Created",
-                    "value": {
-                      "id": "f7162215-01ed-46f1-9c90-6463f5ffc1dc",
-                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/",
-                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/publish/",
-                      "name": "Monthly Streak test",
-                      "description": null,
-                      "progress_action_key": "prediction-correct",
-                      "created_at": "2026-01-20T05:31:04.234304Z",
-                      "streak_type": "periodic",
-                      "client_id": "Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h",
-                      "started_at": null,
-                      "stopped_at": null,
-                      "freeze_start": null,
-                      "freeze_until": null,
-                      "freeze_reason": null,
-                      "attributes": [
-                        {
-                          "key": "foo",
-                          "value": "bar"
-                        }
-                      ],
-                      "profile_groups": [],
-                      "created_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
-                      "updated_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
-                      "status": "draft",
-                      "period": "monthly",
-                      "timezone": "Asia/Kolkata",
-                      "action_threshold": 1
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Created"
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "operationId": "post_client-id-periodic-streaks",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Name of the streak"
-                  },
-                  "progress_action_key": {
-                    "type": "string",
-                    "description": "The action key "
-                  },
-                  "period": {
-                    "type": "string",
-                    "description": "",
-                    "enum": [
-                      "daily",
-                      "weekly",
-                      "monthly"
-                    ]
-                  },
-                  "timezone": {
-                    "type": "string",
-                    "description": "ISO timezone"
-                  },
-                  "action_threshold": {
-                    "type": "string",
-                    "default": "1",
-                    "description": "Number of times a progress_action_key should be performed to increase streak length by 1 in a period"
-                  },
-                  "started_at": {
-                    "type": "string",
-                    "description": "ISO Datetime when the streak will start, if null then streak is started from the day of creation"
-                  },
-                  "stopped_at": {
-                    "type": "string",
-                    "description": "ISO Datetime when the streak will stop being active, if null then streak will never end, unless its archived."
-                  },
-                  "freeze_start": {
-                    "type": "string",
-                    "description": "ISO Datetime for starting the freeze period for everyone, so that any action performed by user will not result in streak length or any miss will not reset their streak"
-                  },
-                  "freeze_until": {
-                    "type": "string",
-                    "description": "ISO Datetime for ending the freeze period for everyone, so that any action performed by user will not result in streak length or any miss will not reset their streak"
-                  },
-                  "freeze_reason": {
-                    "type": "string",
-                    "description": "Optional reason for freezing the streak, only valid if one of freeze_start or freeze_until is provided"
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string",
-                          "description": "Attribute key, eg. custom_id"
-                        },
-                        "value": {
-                          "type": "string",
-                          "description": "Value of the attribute key."
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "profile_group_ids": {
-                    "type": "array",
-                    "description": "List of Livelike profile group ids to which this streak will be applicable, if not provided, streak will be available for all.",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": [
-                  "name",
-                  "period",
-                  "progress_action_key",
-                  "timezone"
-                ]
-              }
-            }
-          }
-        }
       }
     }
   },
