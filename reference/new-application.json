@@ -869,35 +869,7 @@
         "parameters": []
       }
     },
-    "/{client-id}/ab-test-quests/{ab-test-id}": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "ab-test-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "operationId": "get_client-id-ab-test-quests-ab-test-id"
-      }
-    }
+    "/{client-id}/ab-test-quests/{ab-test-id}": {}
   },
   "components": {
     "securitySchemes": {}
