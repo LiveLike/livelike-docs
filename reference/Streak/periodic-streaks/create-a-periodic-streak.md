@@ -4,7 +4,7 @@ api:
   file: new-application.json
   operationId: post_client-id-periodic-streaks
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
