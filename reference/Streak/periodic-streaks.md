@@ -1,7 +1,7 @@
 ---
 title: Periodic Streaks
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
