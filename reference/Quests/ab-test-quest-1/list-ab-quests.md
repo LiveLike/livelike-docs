@@ -1,5 +1,5 @@
 ---
-title: List A/B Quests
+title: List A/B Test Quests
 api:
   file: applications.json
   operationId: get_client-id-ab-test-quests
