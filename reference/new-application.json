@@ -615,6 +615,21 @@
                             "type": "object"
                           },
                           "description": "List of actions that contribute toward progressing this task."
+                        },
+                        "attributes": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "description": "Quest task attributes"
                         }
                       },
                       "type": "object"
