@@ -1348,7 +1348,278 @@
         }
       }
     },
-    "/{client_id}/ab-test-quests/": {}
+    "/{client_id}/ab-test-quests/": {},
+    "/{client-id}/ab-test-quests/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 2,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "f2cfe8fb-ce6f-4d49-8056-1b79b78a4756",
+                          "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                          "quest_name": "Clone - quest 1",
+                          "quest_description": null,
+                          "name": "                               aa",
+                          "description": "",
+                          "variants": [
+                            {
+                              "id": "ac990b89-341c-4470-b043-60cd7ebb3ea5",
+                              "name": "                                   aa",
+                              "description": "",
+                              "allocation_percentage": "50.00",
+                              "rewards": [],
+                              "tasks": [
+                                {
+                                  "id": "17c35c06-42fd-4db9-86e6-293c4d499ed7",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/17c35c06-42fd-4db9-86e6-293c4d499ed7/",
+                                  "name": "sd",
+                                  "description": null,
+                                  "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                                  "target_value": 3,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T07:16:28.917792Z",
+                                  "attributes": [],
+                                  "quest_task_actions": []
+                                }
+                              ],
+                              "badges": [],
+                              "sponsors": []
+                            },
+                            {
+                              "id": "fbd1d8aa-4cdf-48ce-ae85-a71f3ab52ba6",
+                              "name": "                     a",
+                              "description": "",
+                              "allocation_percentage": "50.00",
+                              "rewards": [],
+                              "tasks": [
+                                {
+                                  "id": "931694ce-0fc3-4375-a297-79c26fd9993f",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/931694ce-0fc3-4375-a297-79c26fd9993f/",
+                                  "name": "cd",
+                                  "description": null,
+                                  "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                                  "target_value": 22,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T07:16:28.901370Z",
+                                  "attributes": [],
+                                  "quest_task_actions": []
+                                }
+                              ],
+                              "badges": [],
+                              "sponsors": []
+                            }
+                          ],
+                          "profile_groups": [],
+                          "attributes": [],
+                          "started_at": null,
+                          "stopped_at": null,
+                          "timeout": null
+                        },
+                        {
+                          "id": "eb847d2a-2fc4-42ad-b798-101f0c82b07f",
+                          "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                          "quest_name": "Weekly Watch Challenge",
+                          "quest_description": "",
+                          "name": "Task Complexity Experiment",
+                          "description": "Test whether shorter, easier tasks (Variant A) or longer, more effortful tasks (Variant B) result in higher quest completion rates and sustained engagement.",
+                          "variants": [
+                            {
+                              "id": "a03b7931-deaa-4559-80b1-0a80b0ffa966",
+                              "name": "Light Engagement",
+                              "description": "Measure if deeper, more time-intensive tasks create stronger engagement, even with equal rewards.",
+                              "allocation_percentage": "50.00",
+                              "rewards": [
+                                {
+                                  "id": "424389a5-1414-4742-9126-b1d1e4b4d93b",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-rewards/424389a5-1414-4742-9126-b1d1e4b4d93b/",
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                                  "reward_item_name": "AB quest reward item",
+                                  "reward_item_amount": 300,
+                                  "test_variants": [
+                                    {
+                                      "id": "a03b7931-deaa-4559-80b1-0a80b0ffa966",
+                                      "name": "Light Engagement",
+                                      "description": "Measure if deeper, more time-intensive tasks create stronger engagement, even with equal rewards.",
+                                      "allocation_percentage": "50.00"
+                                    }
+                                  ],
+                                  "leaderboard_ids": []
+                                }
+                              ],
+                              "tasks": [
+                                {
+                                  "id": "9738f0f0-8191-43f3-912a-618966c205ff",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/9738f0f0-8191-43f3-912a-618966c205ff/",
+                                  "name": "Vote on a poll 1",
+                                  "description": null,
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "target_value": 1,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T06:00:11.415079Z",
+                                  "attributes": [],
+                                  "quest_task_actions": [
+                                    {
+                                      "id": "b7a99aa4-6373-47cb-be3c-1c7e0344928f",
+                                      "quest_task_id": "9738f0f0-8191-43f3-912a-618966c205ff",
+                                      "reward_action_id": "b550b832-17f9-4d8f-80b3-ddf2f019d6db",
+                                      "reward_action_key": "poll-voted",
+                                      "default_progress_increment": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "9ba36399-54ef-404d-bef2-3e26e352e0a8",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/9ba36399-54ef-404d-bef2-3e26e352e0a8/",
+                                  "name": "Make Predictions",
+                                  "description": null,
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "target_value": 2,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T06:00:11.348302Z",
+                                  "attributes": [],
+                                  "quest_task_actions": [
+                                    {
+                                      "id": "1f91deae-07fc-4fdf-9c30-7b4aaab5e123",
+                                      "quest_task_id": "9ba36399-54ef-404d-bef2-3e26e352e0a8",
+                                      "reward_action_id": "0ea81f9c-6619-4c4b-8f4e-05874ea91f9c",
+                                      "reward_action_key": "prediction-made",
+                                      "default_progress_increment": 1
+                                    }
+                                  ]
+                                }
+                              ],
+                              "badges": [],
+                              "sponsors": []
+                            },
+                            {
+                              "id": "25f20450-0b39-423b-b439-628f1e3b43aa",
+                              "name": "Deep Engagement",
+                              "description": "Measure if deeper, more time-intensive tasks create stronger engagement, even with equal rewards.",
+                              "allocation_percentage": "50.00",
+                              "rewards": [
+                                {
+                                  "id": "95da845a-a460-4dc5-9158-e2d676902899",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-rewards/95da845a-a460-4dc5-9158-e2d676902899/",
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                                  "reward_item_name": "AB quest reward item",
+                                  "reward_item_amount": 300,
+                                  "test_variants": [
+                                    {
+                                      "id": "25f20450-0b39-423b-b439-628f1e3b43aa",
+                                      "name": "Deep Engagement",
+                                      "description": "Measure if deeper, more time-intensive tasks create stronger engagement, even with equal rewards.",
+                                      "allocation_percentage": "50.00"
+                                    }
+                                  ],
+                                  "leaderboard_ids": []
+                                }
+                              ],
+                              "tasks": [
+                                {
+                                  "id": "4fbe2aaf-95a0-4764-b0a5-7bb0c90af9d5",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/4fbe2aaf-95a0-4764-b0a5-7bb0c90af9d5/",
+                                  "name": "Vote on a poll",
+                                  "description": null,
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "target_value": 2,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T06:00:11.380946Z",
+                                  "attributes": [],
+                                  "quest_task_actions": [
+                                    {
+                                      "id": "8b80cd41-19cc-417b-8406-56491ee06862",
+                                      "quest_task_id": "4fbe2aaf-95a0-4764-b0a5-7bb0c90af9d5",
+                                      "reward_action_id": "b550b832-17f9-4d8f-80b3-ddf2f019d6db",
+                                      "reward_action_key": "poll-voted",
+                                      "default_progress_increment": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "af5b1273-cb0c-414a-bf84-a603d56069ea",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/af5b1273-cb0c-414a-bf84-a603d56069ea/",
+                                  "name": "Make Correct Predictions",
+                                  "description": null,
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "target_value": 3,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T06:00:11.309697Z",
+                                  "attributes": [],
+                                  "quest_task_actions": [
+                                    {
+                                      "id": "b1a0d747-c5f9-4858-b47c-3fb65ae68064",
+                                      "quest_task_id": "af5b1273-cb0c-414a-bf84-a603d56069ea",
+                                      "reward_action_id": "bf877c29-736f-49fb-96e2-43ef5e23ef0a",
+                                      "reward_action_key": "prediction-correct",
+                                      "default_progress_increment": 1
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "214e3408-6359-4bce-8428-266e4e09ac60",
+                                  "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/214e3408-6359-4bce-8428-266e4e09ac60/",
+                                  "name": "Answer Quiz correctly",
+                                  "description": null,
+                                  "quest_id": "5c8d7c86-3b38-4e77-b599-b500716a6c1b",
+                                  "target_value": 2,
+                                  "default_progress_increment": 1,
+                                  "created_at": "2025-11-17T06:00:11.192407Z",
+                                  "attributes": [],
+                                  "quest_task_actions": [
+                                    {
+                                      "id": "8c0981ea-9d3c-4e77-a068-8dd16eb84558",
+                                      "quest_task_id": "214e3408-6359-4bce-8428-266e4e09ac60",
+                                      "reward_action_id": "52ecc715-be8c-4992-9ff6-e20bffed4628",
+                                      "reward_action_key": "quiz-correct",
+                                      "default_progress_increment": 1
+                                    }
+                                  ]
+                                }
+                              ],
+                              "badges": [],
+                              "sponsors": []
+                            }
+                          ],
+                          "profile_groups": [],
+                          "attributes": [],
+                          "started_at": null,
+                          "stopped_at": null,
+                          "timeout": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-ab-test-quests"
+      }
+    }
   },
   "x-readme": {
     "headers": [],
