@@ -467,6 +467,68 @@
         ],
         "operationId": "get_client-id-ab-test-quests"
       }
+    },
+    "/api/v1/profiles/{profile-id}/quest-variant-assignment": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "profile_id": "efc01b0d-fdeb-471a-8a0d-314220e65e03",
+                      "assigned": [
+                        {
+                          "id": "e4999cbf-855e-4cff-bfca-36c47ac6d79f",
+                          "quest_id": "70d6fb38-8be5-45b1-8ca6-71aca6cba1c8",
+                          "assigned_test_variant": {
+                            "id": "feaba22b-05a7-4e12-97ed-b220f892fea7",
+                            "name": "New Variant",
+                            "description": null,
+                            "allocation_percentage": "50.00"
+                          },
+                          "ab_test": {
+                            "id": "eb2bd245-1043-412e-a45f-0458f3fdfaf3",
+                            "name": "AB Test Variant",
+                            "description": "This is test test ab quest",
+                            "assignment_strategy": "random"
+                          }
+                        }
+                      ],
+                      "skipped": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profile-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_ids",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "operationId": "get_api-v1-profiles-profile-id-quest-variant-assignment"
+      }
     }
   },
   "components": {
