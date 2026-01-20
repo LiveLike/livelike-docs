@@ -869,7 +869,186 @@
         "parameters": []
       }
     },
-    "/{client-id}/ab-test-quests/{ab-test-id}": {}
+    "/{client-id}/ab-test-quests/{ab-test-id}": {},
+    "/{client-id}/ab-test-quest/{ab-test-id}/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                },
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "94d91bab-43bb-4c3b-a8ad-5c00f4588f0c",
+                      "quest_id": "69c98a19-426c-4ae1-a77e-62e0167aa4d1",
+                      "quest_name": "Sample Quest",
+                      "quest_description": "This is a sample AB Quest",
+                      "name": "Test User Engagment",
+                      "description": "Test uesr engagement for different reward amounts",
+                      "variants": [
+                        {
+                          "id": "c96baa68-06be-4c85-8422-44ea102a6735",
+                          "name": "Variant 1",
+                          "description": null,
+                          "allocation_percentage": "50.00",
+                          "rewards": [
+                            {
+                              "id": "4b211889-f5fc-4001-a9d5-11ba76215a46",
+                              "url": "http://localhost:8888/api/v1/quest-rewards/4b211889-f5fc-4001-a9d5-11ba76215a46/",
+                              "quest_id": "69c98a19-426c-4ae1-a77e-62e0167aa4d1",
+                              "reward_item_id": "3021bb8e-a372-41c5-a6c7-d8ca2aedf8f9",
+                              "reward_item_name": "JULY Reward",
+                              "reward_item_amount": 10,
+                              "test_variants": [
+                                {
+                                  "id": "c96baa68-06be-4c85-8422-44ea102a6735",
+                                  "name": "Variant 1",
+                                  "description": null,
+                                  "allocation_percentage": "50.00"
+                                }
+                              ],
+                              "leaderboard_ids": []
+                            }
+                          ],
+                          "tasks": [],
+                          "badges": [
+                            {
+                              "id": "e91e1007-8f77-4e4e-9435-fd2f3255aabd",
+                              "url": "http://localhost:8888/api/v1/badges/e91e1007-8f77-4e4e-9435-fd2f3255aabd/",
+                              "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                              "name": "Badge",
+                              "description": null,
+                              "badge_icon_url": "/media/assets/3ab52963-c7bd-452f-8575-8b00c238ff48.jpg",
+                              "mimetype": "application/octet-stream",
+                              "registered_links": [],
+                              "file": "http://localhost:8888/media/assets/3ab52963-c7bd-452f-8575-8b00c238ff48.jpg",
+                              "attributes": [
+                                {
+                                  "key": "B",
+                                  "value": "1"
+                                },
+                                {
+                                  "key": "C",
+                                  "value": "1"
+                                },
+                                {
+                                  "key": "test1 AAA",
+                                  "value": "1"
+                                },
+                                {
+                                  "key": "AAA",
+                                  "value": "1"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d7265758-9442-49ba-8cb3-1415d9d14812",
+                              "url": "http://localhost:8888/api/v1/badges/d7265758-9442-49ba-8cb3-1415d9d14812/",
+                              "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                              "name": "Badge V1",
+                              "description": null,
+                              "badge_icon_url": "/media/assets/67e3b526-751c-4e0a-b935-a8d4e96047dc.jpg",
+                              "mimetype": "application/octet-stream",
+                              "registered_links": [],
+                              "file": "http://localhost:8888/media/assets/67e3b526-751c-4e0a-b935-a8d4e96047dc.jpg",
+                              "attributes": []
+                            }
+                          ],
+                          "sponsors": [
+                            {}
+                          ]
+                        },
+                        {
+                          "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
+                          "name": "Variant 2",
+                          "description": "Original reward structure",
+                          "allocation_percentage": "50.00",
+                          "rewards": [
+                            {
+                              "id": "ad1a3070-aad7-48ef-a81a-c587e2a74e42",
+                              "url": "http://localhost:8888/api/v1/quest-rewards/ad1a3070-aad7-48ef-a81a-c587e2a74e42/",
+                              "quest_id": "69c98a19-426c-4ae1-a77e-62e0167aa4d1",
+                              "reward_item_id": "2ab53eda-a387-4b0a-bce6-a7972fda1372",
+                              "reward_item_name": "AUG Reward",
+                              "reward_item_amount": 1000,
+                              "test_variants": [
+                                {
+                                  "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
+                                  "name": "Variant 2",
+                                  "description": "Original reward structure",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ],
+                              "leaderboard_ids": []
+                            }
+                          ],
+                          "tasks": [],
+                          "badges": [
+                            {
+                              "id": "75af5676-e116-4100-94ac-9d9461f4023d",
+                              "url": "http://localhost:8888/api/v1/badges/75af5676-e116-4100-94ac-9d9461f4023d/",
+                              "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                              "name": "July Badge",
+                              "description": null,
+                              "badge_icon_url": "/media/assets/3cb7cc10-246a-41c2-9766-7ceee70ba05a.png",
+                              "mimetype": "application/octet-stream",
+                              "registered_links": [],
+                              "file": "http://localhost:8888/media/assets/3cb7cc10-246a-41c2-9766-7ceee70ba05a.png",
+                              "attributes": []
+                            }
+                          ],
+                          "sponsors": [
+                            {}
+                          ]
+                        }
+                      ],
+                      "profile_groups": [],
+                      "attributes": [],
+                      "started_at": "2024-06-25T23:59:59Z",
+                      "stopped_at": "2026-01-25T23:59:59Z",
+                      "timeout": null
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "ab-test-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-ab-test-quest-ab-test-id"
+      }
+    }
   },
   "components": {
     "securitySchemes": {}
