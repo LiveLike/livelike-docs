@@ -468,7 +468,7 @@
         "operationId": "get_client-id-ab-test-quests"
       }
     },
-    "/api/v1/profiles/{profile-id}/quest-variant-assignment": {
+    "/profiles/{profile-id}/quest-variant-assignment": {
       "put": {
         "description": "",
         "responses": {
@@ -527,7 +527,7 @@
             }
           }
         ],
-        "operationId": "put_api-v1-profiles-profile-id-quest-variant-assignment"
+        "operationId": "put_profiles-profile-id-quest-variant-assignment"
       }
     }
   },
