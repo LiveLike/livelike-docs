@@ -1,5 +1,5 @@
 ---
-title: Copy of Periodic Streaks
+title: Consecutive Streaks
 deprecated: false
 hidden: true
 metadata:
