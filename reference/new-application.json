@@ -469,7 +469,7 @@
       }
     },
     "/api/v1/profiles/{profile-id}/quest-variant-assignment": {
-      "get": {
+      "put": {
         "description": "",
         "responses": {
           "200": {
@@ -527,7 +527,7 @@
             }
           }
         ],
-        "operationId": "get_api-v1-profiles-profile-id-quest-variant-assignment"
+        "operationId": "put_api-v1-profiles-profile-id-quest-variant-assignment"
       }
     }
   },
