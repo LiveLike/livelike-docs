@@ -564,7 +564,7 @@
                     "items": {
                       "type": "string"
                     },
-                    "description": "list of uuids of badge to link to specific badge"
+                    "description": "A list of badge UUIDs to be linked to a specific variant."
                   },
                   "quest_rewards": {
                     "type": "array",
@@ -580,7 +580,8 @@
                         }
                       },
                       "type": "object"
-                    }
+                    },
+                    "description": "A list of reward objects to be associated with the quest variant."
                   },
                   "sponsor_ids": {
                     "type": "array",
