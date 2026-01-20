@@ -856,6 +856,18 @@
         ],
         "operationId": "get_client-id-periodic-streaks-periodic-streak-id"
       }
+    },
+    "/new-endpoint-1": {
+      "get": {
+        "description": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
     }
   },
   "components": {
