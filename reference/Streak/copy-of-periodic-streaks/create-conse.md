@@ -1,8 +1,8 @@
 ---
-title: Create Conse
+title: Create Consecutive Streak
 api:
   file: new-application.json
-  operationId: get_new-endpoint-1
+  operationId: post_client-id-consecutive-action-streaks
 deprecated: false
 hidden: true
 link:
