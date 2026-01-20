@@ -19155,6 +19155,22 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "in": "query",
+            "name": "has_ab_test",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Returns Quests that have ab-test enabled, if not provided it returns both types of quests."
+          },
+          {
+            "in": "query",
+            "name": "ab_test_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Returns Quests with specific ab_test_id"
           }
         ],
         "responses": {
@@ -19164,7 +19180,213 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"0d45b284-2dbf-48c1-b41d-0a6004faba78\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/quests/0d45b284-2dbf-48c1-b41d-0a6004faba78/\",\n            \"client_id\": \"cPMSTBaKAeBeVUjabYcqKsEIXljy7NpcPfMU366A\",\n            \"name\": \"29AugTest\",\n            \"description\": \"abc\",\n            \"quest_tasks\": [\n                {\n                    \"id\": \"2d7a000a-0e55-41de-9dcd-b663554bf421\",\n                    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/quest-tasks/2d7a000a-0e55-41de-9dcd-b663554bf421/\",\n                    \"name\": \"1\",\n                    \"description\": \"a123\",\n                    \"quest_id\": \"0d45b284-2dbf-48c1-b41d-0a6004faba78\",\n                    \"target_value\": 10,\n                    \"default_progress_increment\": 2,\n                    \"created_at\": \"2022-08-29T08:47:12.438072Z\"\n                }\n            ],\n          \t\"attributes\": [\n                {\n                    \"key\": \"key1\",\n                    \"value\": \"value1\"\n                },\n                {\n                    \"key\": \"key2\",\n                    \"value\": \"value2\"\n                },\n                {\n                    \"key\": \"type\",\n                    \"value\": \"custom\"\n                },\n                {\n                    \"key\": \"active\",\n                    \"value\": \"true\"\n                }\n            ],\n            \"quest_rewards_url\": \"https://cf-blast.livelikecdn.com/api/v1/quest-rewards/\",\n            \"created_at\": \"2022-08-29T08:47:12.422503Z\",\n            \"profile_groups\": [\n                  {\n                      \"id\": \"85babc2d-d1a1-408d-bfe2-c695d1d65106\",\n                      \"name\": \"test 1\",\n                      \"is_active\": true,\n                      \"description\": \"abc\",\n                      \"profile_count\": 0,\n                      \"custom_id\": null,\n                      \"created_at\": \"2025-04-07T07:46:22.065148Z\",\n                      \"attributes\": []\n                  },\n                  {\n                      \"id\": \"12d3e14f-2dfa-48af-914f-ccb4440f6ad4\",\n                      \"name\": \"test 2\",\n                      \"is_active\": true,\n                      \"description\": \"accc\",\n                      \"profile_count\": 1,\n                      \"custom_id\": null,\n                      \"created_at\": \"2025-04-07T07:46:30.784003Z\",\n                      \"attributes\": []\n                  }\n              ],\n              \"profile_group_ids\": [\n                  \"85babc2d-d1a1-408d-bfe2-c695d1d65106\",\n                  \"12d3e14f-2dfa-48af-914f-ccb4440f6ad4\"\n              ]\n        }\n    ]\n}"
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/quests/2b87051c-4fea-46ca-91a0-f87ca61a94de/",
+                          "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
+                          "name": "AB Quest",
+                          "description": "",
+                          "started_at": null,
+                          "stopped_at": null,
+                          "status": "active",
+                          "quest_tasks": [
+                            {
+                              "id": "931694ce-0fc3-4375-a297-79c26fd9993f",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/931694ce-0fc3-4375-a297-79c26fd9993f/",
+                              "name": "Variant Task B",
+                              "description": null,
+                              "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                              "target_value": 2,
+                              "default_progress_increment": 1,
+                              "created_at": "2025-11-17T07:16:28.901370Z",
+                              "attributes": [],
+                              "quest_task_actions": [
+                                {
+                                  "id": "eaad5d3f-7c5f-4cf2-a127-2a4cfc67d3b7",
+                                  "quest_task_id": "931694ce-0fc3-4375-a297-79c26fd9993f",
+                                  "reward_action_id": "52ecc715-be8c-4992-9ff6-e20bffed4628",
+                                  "reward_action_key": "quiz-correct",
+                                  "default_progress_increment": 1
+                                }
+                              ],
+                              "test_variant": {
+                                "id": "fbd1d8aa-4cdf-48ce-ae85-a71f3ab52ba6",
+                                "name": "Variant B",
+                                "description": "",
+                                "allocation_percentage": "50.00"
+                              }
+                            },
+                            {
+                              "id": "17c35c06-42fd-4db9-86e6-293c4d499ed7",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/quest-tasks/17c35c06-42fd-4db9-86e6-293c4d499ed7/",
+                              "name": "Variant Task A",
+                              "description": null,
+                              "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                              "target_value": 3,
+                              "default_progress_increment": 1,
+                              "created_at": "2025-11-17T07:16:28.917792Z",
+                              "attributes": [],
+                              "quest_task_actions": [
+                                {
+                                  "id": "bceaa5bd-07f4-4233-afd8-4d2616cbf47e",
+                                  "quest_task_id": "17c35c06-42fd-4db9-86e6-293c4d499ed7",
+                                  "reward_action_id": "b550b832-17f9-4d8f-80b3-ddf2f019d6db",
+                                  "reward_action_key": "poll-voted",
+                                  "default_progress_increment": 1
+                                }
+                              ],
+                              "test_variant": {
+                                "id": "ac990b89-341c-4470-b043-60cd7ebb3ea5",
+                                "name": "Variant A",
+                                "description": "",
+                                "allocation_percentage": "50.00"
+                              }
+                            }
+                          ],
+                          "timeout": null,
+                          "quest_rewards": [
+                            {
+                              "id": "eb37d1b2-f966-4efc-a0e5-15a83852b7c3",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/quest-rewards/eb37d1b2-f966-4efc-a0e5-15a83852b7c3/",
+                              "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                              "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                              "reward_item_name": "AB quest reward item",
+                              "reward_item_amount": 20,
+                              "test_variants": [
+                                {
+                                  "id": "ac990b89-341c-4470-b043-60cd7ebb3ea5",
+                                  "name": "Variant A",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "18c4144e-2420-496f-a7fd-bf8780607449",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/quest-rewards/18c4144e-2420-496f-a7fd-bf8780607449/",
+                              "quest_id": "2b87051c-4fea-46ca-91a0-f87ca61a94de",
+                              "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                              "reward_item_name": "AB quest reward item",
+                              "reward_item_amount": 30,
+                              "test_variants": [
+                                {
+                                  "id": "fbd1d8aa-4cdf-48ce-ae85-a71f3ab52ba6",
+                                  "name": "Variant B",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            }
+                          ],
+                          "quest_rewards_url": "https://cf-blast.livelikecdn.com/api/v1/quest-rewards/",
+                          "created_at": "2025-11-17T07:16:28.780336Z",
+                          "attributes": [
+                            {
+                              "key": "foo",
+                              "value": "bar"
+                            }
+                          ],
+                          "sponsors": [
+                            {
+                              "sponsor_id": "7574430b-d20a-4e2f-b0fa-9ba6e7d151df",
+                              "sponsor_name": "test sponsor",
+                              "logo_url": "https://cf-blast-storage-us-east-1.livelikeblast.com/assets/844adf8f-41ff-444c-b0cf-e9dc9b33ffee.png",
+                              "test_variants": [
+                                {
+                                  "id": "ac990b89-341c-4470-b043-60cd7ebb3ea5",
+                                  "name": "Variant A",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            },
+                            {
+                              "sponsor_id": "669934a1-b163-4b47-9598-9843b8898829",
+                              "sponsor_name": "Sponsor QA",
+                              "logo_url": "https://cf-blast-storage-us-east-1.livelikeblast.com/assets/8b4fe403-ddb8-480d-9a04-2b3816e81aa1.png",
+                              "test_variants": [
+                                {
+                                  "id": "fbd1d8aa-4cdf-48ce-ae85-a71f3ab52ba6",
+                                  "name": "Variant B",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            }
+                          ],
+                          "leaderboards": [
+                            {
+                              "id": "271e1a03-e587-482b-a621-f3b1e6f07115",
+                              "url": "https://cf-blast.livelikecdn.com/api/v1/leaderboards/271e1a03-e587-482b-a621-f3b1e6f07115/",
+                              "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
+                              "custom_id": null,
+                              "name": "Leaderboard Test",
+                              "reward_item": {
+                                "id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                                "url": "https://cf-blast.livelikecdn.com/api/v1/reward-items/8c474b3d-3aee-4324-a35c-67274f863dba/",
+                                "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
+                                "name": "AB quest reward item",
+                                "images": [],
+                                "attributes": [],
+                                "prizeout_conversion_rate": null,
+                                "reward_item_points": null,
+                                "prizeout_points": null,
+                                "prizeout_status": null
+                              },
+                              "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                              "is_locked": false,
+                              "entries_url": "https://cf-blast.livelikecdn.com/api/v1/leaderboards/271e1a03-e587-482b-a621-f3b1e6f07115/entries/",
+                              "leaderboard_views_url": "https://cf-blast.livelikecdn.com/api/v1/leaderboards/271e1a03-e587-482b-a621-f3b1e6f07115/leaderboard-views/",
+                              "entry_detail_url_template": "https://cf-blast.livelikecdn.com/api/v1/leaderboards/271e1a03-e587-482b-a621-f3b1e6f07115/entries/{profile_id}/",
+                              "attributes": []
+                            }
+                          ],
+                          "badges": [
+                            {
+                              "badge_id": "8c489767-44a4-4954-8096-4789603c66d7",
+                              "badge_name": "Badge V1",
+                              "badge_icon_url": "https://cf-blast-storage-us-east-1.livelikeblast.com/assets/1e0cbd13-2cf0-416d-b3eb-c6bcc3858add.png",
+                              "test_variants": [
+                                {
+                                  "id": "ac990b89-341c-4470-b043-60cd7ebb3ea5",
+                                  "name": "Variant A",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            },
+                            {
+                              "badge_id": "15973b8e-5352-4e44-9955-fe0f4db0c8a4",
+                              "badge_name": "Badge V2",
+                              "badge_icon_url": "https://cf-blast-storage-us-east-1.livelikeblast.com/assets/650831b7-127c-45ac-95b7-b02eba988279.png",
+                              "test_variants": [
+                                {
+                                  "id": "fbd1d8aa-4cdf-48ce-ae85-a71f3ab52ba6",
+                                  "name": "Variant B",
+                                  "description": "",
+                                  "allocation_percentage": "50.00"
+                                }
+                              ]
+                            }
+                          ],
+                          "quest_badges_url": "https://cf-blast.livelikecdn.com/api/v1/quests/2b87051c-4fea-46ca-91a0-f87ca61a94de/badges",
+                          "profile_groups": [],
+                          "is_active": true,
+                          "ab_test": {
+                            "id": "f2cfe8fb-ce6f-4d49-8056-1b79b78a4756",
+                            "name": "Sample AB Test",
+                            "description": "",
+                            "assignment_strategy": "random"
+                          },
+                          "profile_group_ids": []
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
