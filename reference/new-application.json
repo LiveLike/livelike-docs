@@ -482,6 +482,120 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name of Quest",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "quest_description",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Description of Quest",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Name for AB test",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Description for AB Test"
+          },
+          {
+            "in": "query",
+            "name": "profile_group_ids",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "uuids of profile group ids to link to quest"
+          },
+          {
+            "in": "query",
+            "name": "started_at",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "start time of quest in UTC"
+          },
+          {
+            "in": "query",
+            "name": "stopped_at",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "end time of quest in UTC"
+          },
+          {
+            "in": "query",
+            "name": "variants",
+            "schema": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Variant name"
+                  },
+                  "badge_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "list of uuids of badge to link to specific badge"
+                  },
+                  "quest_rewards": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "reward_item_id": {
+                          "type": "string",
+                          "description": "uuid if reward item"
+                        },
+                        "reward_item_amount": {
+                          "type": "integer",
+                          "description": "amount value to be awarded "
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "UUIDs of sponsors that should be linked to the quest variant."
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "description": "Takes exactly two variant objects ",
+            "style": "deepObject",
+            "explode": true
           }
         ],
         "operationId": "post_client-id-ab-test-quests"
