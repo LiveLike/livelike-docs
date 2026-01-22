@@ -22512,6 +22512,28 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "mentions": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "mentioned_profile_id": {
+                          "type": "string"
+                        },
+                        "start_index": {
+                          "type": "integer"
+                        },
+                        "end_index": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "mentioned_profile_id",
+                        "start_index",
+                        "end_index"
+                      ]
+                    }
                   }
                 }
               }
