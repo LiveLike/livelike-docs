@@ -22610,6 +22610,14 @@
                       }
                     },
                     "summary": "Too many mentions"
+                  },
+                  "Mention index out of bounds": {
+                    "summary": "Mention index out of bounds",
+                    "value": {
+                      "mentions": {
+                        "detail": "Mention 'end_index' out of bounds, should be less than text length"
+                      }
+                    }
                   }
                 },
                 "schema": {
