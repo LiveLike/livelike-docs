@@ -22512,28 +22512,6 @@
                       ],
                       "type": "object"
                     }
-                  },
-                  "mentions": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "mentioned_profile_id": {
-                          "type": "string"
-                        },
-                        "start_index": {
-                          "type": "integer"
-                        },
-                        "end_index": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object",
-                      "required": [
-                        "mentioned_profile_id",
-                        "start_index",
-                        "end_index"
-                      ]
-                    }
                   }
                 }
               }
@@ -23495,7 +23473,8 @@
             "in": "header",
             "description": "Bearer Token",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         ],
@@ -23509,11 +23488,13 @@
                 ],
                 "properties": {
                   "comment_board_id": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                   },
                   "text": {
                     "type": "string",
-                    "description": "Comment text"
+                    "description": "Comment text",
+                    "default": ""
                   },
                   "custom_data": {
                     "type": "string"
@@ -23528,17 +23509,20 @@
                       "properties": {
                         "mentioned_profile_id": {
                           "type": "string",
-                          "description": "Profile Id being mentioned"
+                          "description": "Profile Id being mentioned",
+                          "default": ""
                         },
                         "start_index": {
                           "type": "integer",
                           "description": "Start Index of the mention sub-text",
-                          "format": "int32"
+                          "format": "int32",
+                          "default": ""
                         },
                         "end_index": {
                           "type": "integer",
                           "description": "End Index of the mention sub-text",
-                          "format": "int32"
+                          "format": "int32",
+                          "default": ""
                         }
                       },
                       "required": [
