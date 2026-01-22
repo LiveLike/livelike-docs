@@ -22469,7 +22469,8 @@
             "description": "Bearer Token",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -22524,8 +22525,9 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "Result": {
-                    "value": "{\n    \"id\": \"69d1c606-7759-4aa7-9a8d-747da62d10e6\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/69d1c606-7759-4aa7-9a8d-747da62d10e6/\",\n    \"comment_board_id\": \"d849e096-d36d-406e-bff0-0627f13b19d4\",\n    \"parent_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"thread_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"text\": \"Sample Comment\",\n    \"comment_depth\": 1,\n    \"custom_data\": null,\n    \"author_id\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"is_deleted\": false,\n    \"created_at\": \"2022-12-22T08:59:32.761643Z\",\n    \"replies_url\": null,\n    \"attributes\": [\n      \t{\n          \"key\": \"key-1\",\n          \"value\": \"value-1\"\n      \t}\n      ]\n}"
+                  "New comment created": {
+                    "value": "{\n    \"id\": \"69d1c606-7759-4aa7-9a8d-747da62d10e6\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/69d1c606-7759-4aa7-9a8d-747da62d10e6/\",\n    \"comment_board_id\": \"d849e096-d36d-406e-bff0-0627f13b19d4\",\n    \"parent_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"thread_comment_id\": \"822b69ea-cee0-422b-b0f8-4001a8cdee01\",\n    \"text\": \"Sample Comment\",\n    \"comment_depth\": 1,\n    \"custom_data\": null,\n    \"author_id\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"is_deleted\": false,\n    \"created_at\": \"2022-12-22T08:59:32.761643Z\",\n    \"replies_url\": null,\n    \"attributes\": [\n      \t{\n          \"key\": \"key-1\",\n          \"value\": \"value-1\"\n      \t}\n      ]\n}",
+                    "summary": "New comment created"
                   }
                 },
                 "schema": {
