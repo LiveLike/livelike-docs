@@ -22601,8 +22601,13 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "Result": {
-                    "value": "{}"
+                  "Too many mentions": {
+                    "value": {
+                      "mentions": {
+                        "detail": "You can mention at most 10 users in a comment."
+                      }
+                    },
+                    "summary": "Too many mentions"
                   }
                 },
                 "schema": {
