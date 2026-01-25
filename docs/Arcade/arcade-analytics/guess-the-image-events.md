@@ -7,7 +7,7 @@ metadata:
 ---
 Below is a list of analytics events triggered in Guess The Image, along with their details.
 
-**Note:** For a practical implementation reference, explore our [demo](https://stackblitz.com/edit/livelike-gtw), where event listeners have been integrated and forwarded to Google Analytics (GA).
+**Note:** For a practical implementation reference, explore our <Anchor label="demo" target="_blank" href="https://stackblitz.com/edit/vitejs-vite-7wiwh6jm?file=index.html">demo</Anchor>, where event listeners have been integrated and forwarded to Google Analytics (GA).
 
 ### **Event List**
 
@@ -45,8 +45,7 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
+
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -82,9 +81,9 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
-        `top_win_streak` (number)
+          `total_game_attempts` (number)
+        `pixelation_mode` (boolean)
+        `top_win_streak` (number)
         `play_streak` (number)
         `games_played` (number)
         `games_won` (number)
@@ -106,8 +105,8 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
+        `total_game_attempts` (number)
+        `pixelation_mode` (boolean)
         `top_win_streak` (number)
         `play_streak` (number)
         `games_played` (number)
@@ -151,9 +150,7 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
-        `top_win_streak` (number)
+        `top_win_streak` (number)
         `play_streak` (number)
         `games_played` (number)
         `games_won` (number)
