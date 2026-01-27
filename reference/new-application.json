@@ -1588,33 +1588,28 @@
                   "Created": {
                     "summary": "Created",
                     "value": {
-                      "id": "f7162215-01ed-46f1-9c90-6463f5ffc1dc",
-                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/",
-                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/publish/",
-                      "name": "Monthly Streak test",
-                      "description": null,
+                      "id": "88a55cd9-ece7-4439-b040-2e5427b48eb0",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/",
+                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/publish/",
+                      "name": "test streak",
+                      "description": "Test streak",
                       "progress_action_key": "prediction-correct",
-                      "created_at": "2026-01-20T05:31:04.234304Z",
-                      "streak_type": "periodic",
-                      "client_id": "Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h",
+                      "created_at": "2025-11-04T14:46:40.948028Z",
+                      "streak_type": "consecutive_action",
+                      "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
                       "started_at": null,
                       "stopped_at": null,
                       "freeze_start": null,
                       "freeze_until": null,
-                      "freeze_reason": null,
-                      "attributes": [
-                        {
-                          "key": "foo",
-                          "value": "bar"
-                        }
-                      ],
+                      "freeze_reason": "",
+                      "attributes": [],
                       "profile_groups": [],
-                      "created_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
-                      "updated_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
-                      "status": "draft",
-                      "period": "monthly",
-                      "timezone": "Asia/Kolkata",
-                      "action_threshold": 1
+                      "updated_by_id": "7f250963-3c54-44bc-ac54-c52b5b8a728b",
+                      "status": "live",
+                      "targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-targets/",
+                      "batch_targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/batch-streak-targets/",
+                      "reset_action_key": null,
+                      "require_targets": true
                     }
                   }
                 }
@@ -1647,24 +1642,6 @@
                   "progress_action_key": {
                     "type": "string",
                     "description": "The action key "
-                  },
-                  "period": {
-                    "type": "string",
-                    "description": "",
-                    "enum": [
-                      "daily",
-                      "weekly",
-                      "monthly"
-                    ]
-                  },
-                  "timezone": {
-                    "type": "string",
-                    "description": "ISO timezone"
-                  },
-                  "action_threshold": {
-                    "type": "string",
-                    "default": "1",
-                    "description": "Number of times a progress_action_key should be performed to increase streak length by 1 in a period"
                   },
                   "started_at": {
                     "type": "string",
@@ -1708,13 +1685,15 @@
                     "items": {
                       "type": "string"
                     }
+                  },
+                  "reset_action_key": {
+                    "type": "string",
+                    "description": "User action that will reset the streak."
                   }
                 },
                 "required": [
                   "name",
-                  "period",
-                  "progress_action_key",
-                  "timezone"
+                  "progress_action_key"
                 ]
               }
             }
