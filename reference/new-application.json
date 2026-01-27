@@ -1863,7 +1863,7 @@
         "operationId": "get_client-id-consecutive-action-streaks"
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/-1": {
+    "/{client-id}/consecutive-action-streaks/{consecutive-action-streak-id}/": {
       "get": {
         "description": "",
         "responses": {
@@ -1915,15 +1915,15 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "consecutive-action-streak-id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "get_client-id-periodic-streaks-periodic-streak-id-1",
-        "summary": "Copy of "
+        "summary": "Copy of ",
+        "operationId": "get_client-id-consecutive-action-streaks-consecutive-action-streak-id"
       }
     }
   },
