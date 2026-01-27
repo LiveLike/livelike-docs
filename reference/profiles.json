@@ -1224,7 +1224,89 @@
         ]
       }
     },
-    "/{profile_id}/quest-variant-assignments/": {}
+    "/{profile_id}/quest-variant-assignments/": {},
+    "/{profile-id}/user-streaks/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/user-streaks/8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d/",
+                          "profile_id": "18b0a97d-dbe6-4d96-a891-e0e5a77d61e8",
+                          "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                          "streak": {
+                            "id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                            "name": "test streak",
+                            "period": null,
+                            "streak_type": "consecutive_action"
+                          },
+                          "first_activity": "2026-01-12T07:07:00Z",
+                          "last_activity": "2026-01-13T07:07:00Z",
+                          "current_streak_length": 1,
+                          "maximum_streak_length": 1,
+                          "freeze_start": null,
+                          "freeze_until": null,
+                          "freeze_reason": null,
+                          "milestone_count": 1,
+                          "milestones_url": "https://cf-blast.livelikecdn.com/api/v1/user-streaks/8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d/milestones/",
+                          "status": "broken",
+                          "reason": "Reset user streak break "
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profile-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "streak_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "live",
+                "broken",
+                "paused",
+                "pending_reset",
+                "streak_expired"
+              ]
+            },
+            "description": "streak_expired: Returns user streaks whose streak has expired\npending_reset: Returns user streaks which are about to get reset, next action made by user will reset the user streak \npaused: Returns user streaks which are paused/freezed by user or the streak itself is freezed\nbroken: returns user streaks that are broken\nlive: returns user streaks that currently progressing"
+          }
+        ],
+        "operationId": "get_profile-id-user-streaks"
+      }
+    }
   },
   "x-readme": {
     "headers": [],
