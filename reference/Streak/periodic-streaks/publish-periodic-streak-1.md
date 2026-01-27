@@ -1,5 +1,5 @@
 ---
-title: Copy of Publish Periodic Streak
+title: Publish Consecutive Streak
 api:
   file: new-application.json
   operationId: publish-periodic-streak-1
