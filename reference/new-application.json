@@ -1702,7 +1702,7 @@
         "summary": "Copy of "
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/publish/-1": {
+    "/{client-id}/consecutive-streaks/{consecutive-streak-id}/publish/-1": {
       "post": {
         "description": "",
         "responses": {
@@ -1754,7 +1754,7 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "consecutive-streak-id",
             "schema": {
               "type": "string"
             },
