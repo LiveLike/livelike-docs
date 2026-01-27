@@ -4,7 +4,7 @@ api:
   file: new-application.json
   operationId: create-a-periodic-streak-1
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
