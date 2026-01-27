@@ -559,7 +559,9 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [{}]
+                          "sponsors": [
+                            {}
+                          ]
                         },
                         {
                           "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
@@ -600,7 +602,9 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [{}]
+                          "sponsors": [
+                            {}
+                          ]
                         }
                       ],
                       "profile_groups": [],
@@ -1119,7 +1123,11 @@
                   "period": {
                     "type": "string",
                     "description": "",
-                    "enum": ["daily", "weekly", "monthly"]
+                    "enum": [
+                      "daily",
+                      "weekly",
+                      "monthly"
+                    ]
                   },
                   "timezone": {
                     "type": "string",
@@ -1351,7 +1359,9 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [{}]
+                          "sponsors": [
+                            {}
+                          ]
                         },
                         {
                           "id": "33289387-44b4-4679-9507-5e9d2ad1f32f",
@@ -1392,7 +1402,9 @@
                               "attributes": []
                             }
                           ],
-                          "sponsors": [{}]
+                          "sponsors": [
+                            {}
+                          ]
                         }
                       ],
                       "profile_groups": [],
@@ -1556,6 +1568,159 @@
         ],
         "summary": "Copy of ",
         "operationId": "patch_client-id-ab-test-quests-1"
+      }
+    },
+    "/{client-id}/periodic-streaks/-1": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "f7162215-01ed-46f1-9c90-6463f5ffc1dc",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/",
+                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h/periodic-streaks/f7162215-01ed-46f1-9c90-6463f5ffc1dc/publish/",
+                      "name": "Monthly Streak test",
+                      "description": null,
+                      "progress_action_key": "prediction-correct",
+                      "created_at": "2026-01-20T05:31:04.234304Z",
+                      "streak_type": "periodic",
+                      "client_id": "Iso1WANkUyFcsTod4iJ3ryFcYQOlOGmmZL3g0W5h",
+                      "started_at": null,
+                      "stopped_at": null,
+                      "freeze_start": null,
+                      "freeze_until": null,
+                      "freeze_reason": null,
+                      "attributes": [
+                        {
+                          "key": "foo",
+                          "value": "bar"
+                        }
+                      ],
+                      "profile_groups": [],
+                      "created_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
+                      "updated_by_id": "0da010a2-48ea-4dd8-bc23-1ccc4a84177d",
+                      "status": "draft",
+                      "period": "monthly",
+                      "timezone": "Asia/Kolkata",
+                      "action_threshold": 1
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "create-a-periodic-streak-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the streak"
+                  },
+                  "progress_action_key": {
+                    "type": "string",
+                    "description": "The action key "
+                  },
+                  "period": {
+                    "type": "string",
+                    "description": "",
+                    "enum": [
+                      "daily",
+                      "weekly",
+                      "monthly"
+                    ]
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "ISO timezone"
+                  },
+                  "action_threshold": {
+                    "type": "string",
+                    "default": "1",
+                    "description": "Number of times a progress_action_key should be performed to increase streak length by 1 in a period"
+                  },
+                  "started_at": {
+                    "type": "string",
+                    "description": "ISO Datetime when the streak will start, if null then streak is started from the day of creation"
+                  },
+                  "stopped_at": {
+                    "type": "string",
+                    "description": "ISO Datetime when the streak will stop being active, if null then streak will never end, unless its archived."
+                  },
+                  "freeze_start": {
+                    "type": "string",
+                    "description": "ISO Datetime for starting the freeze period for everyone, so that any action performed by user will not result in streak length or any miss will not reset their streak"
+                  },
+                  "freeze_until": {
+                    "type": "string",
+                    "description": "ISO Datetime for ending the freeze period for everyone, so that any action performed by user will not result in streak length or any miss will not reset their streak"
+                  },
+                  "freeze_reason": {
+                    "type": "string",
+                    "description": "Optional reason for freezing the streak, only valid if one of freeze_start or freeze_until is provided"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "description": "Attribute key, eg. custom_id"
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "Value of the attribute key."
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "profile_group_ids": {
+                    "type": "array",
+                    "description": "List of Livelike profile group ids to which this streak will be applicable, if not provided, streak will be available for all.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "period",
+                  "progress_action_key",
+                  "timezone"
+                ]
+              }
+            }
+          }
+        },
+        "summary": "Copy of "
       }
     }
   },
