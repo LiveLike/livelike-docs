@@ -11,26 +11,24 @@ Below is a list of analytics events triggered in Guess The Image, along with the
 
 ### **Event List**
 
-<br />
-
 <Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Name**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Trigger Condition**
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Properties**
 
         _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         **Event Description**
       </th>
     </tr>
@@ -38,51 +36,51 @@ Below is a list of analytics events triggered in Guess The Image, along with the
 
   <tbody>
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **session_start**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user starts a web session.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Marks the beginning of a session.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **session_stop**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When the user exits the web session.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `duration` (in seconds)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks the total session length.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **click_play**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When users starts the game by clicking on play button.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `total_game_attempts`(number)  
         `pixelation_mode` (boolean)  
         `top_win_streak` (number)  
@@ -92,21 +90,21 @@ Below is a list of analytics events triggered in Guess The Image, along with the
         `best_try` (number)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when started playing.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **game_completed**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When game is over and result screen is displayed.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `total_game_attempts` (number)  
         `pixelation_mode` (boolean)  
         `top_win_streak` (number)  
@@ -119,39 +117,39 @@ Below is a list of analytics events triggered in Guess The Image, along with the
         `is_journey_final_step` (boolean)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Captures when the game is over.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **click_share**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When user clicks on share button after game over (if enabled)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         —
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when user shares the stats.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         **click_stats**
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         When user clicks on play again button after game over.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         `top_win_streak`(number)  
         `play_streak` (number)  
         `games_played` (number)  
@@ -159,165 +157,11 @@ Below is a list of analytics events triggered in Guess The Image, along with the
         `best_try` (number)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Tracks when user opens stats.
       </td>
     </tr>
   </tbody>
 </Table>
-
-<Table align={["center","center","center","center"]}>
-  <thead>
-    <tr>
-      <th>
-        **Event Name**
-      </th>
-
-      <th>
-        **Event Trigger  Condition**
-      </th>
-
-      <th>
-        **Event Properties**  
-        _(not included default event properties as outlined [here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics)  )_
-      </th>
-
-      <th>
-        **Event Description**
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        **session_start**
-      </td>
-
-      <td>
-        When the user starts a web session.
-      </td>
-
-      <td>
-        —
-      </td>
-
-      <td>
-        Marks the beginning of a session.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **session_stop**
-      </td>
-
-      <td>
-        When the user exits the web session.
-      </td>
-
-      <td>
-        `duration` (in seconds)
-      </td>
-
-      <td>
-        Tracks the total session length.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **click_play**
-      </td>
-
-      <td>
-        When users starts the game by clicking on play button.
-      </td>
-
-      <td>
-        `total_game_attempts`(number)  
-        `pixelation_mode` (boolean)  
-        `top_win_streak` (number)  
-        `play_streak` (number)  
-        `games_played` (number)  
-        `games_won` (number)  
-        `best_try` (number)
-      </td>
-
-      <td>
-        Tracks when started playing.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **game_completed**
-      </td>
-
-      <td>
-        When game is over and result screen is displayed.
-      </td>
-
-      <td>
-        `total_game_attempts` (number)  
-        `pixelation_mode` (boolean)  
-        `top_win_streak` (number)  
-        `play_streak` (number)  
-        `games_played` (number)  
-        `games_won` (number)  
-        `best_try` (number)  
-        `guess_result` (string)  
-        `attempt_number` (number)  
-        `is_journey_final_step` (boolean)
-      </td>
-
-      <td>
-        Captures when the game is over.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **click_share**
-      </td>
-
-      <td>
-        When user clicks on share button after game over (if enabled)
-      </td>
-
-      <td>
-        —
-      </td>
-
-      <td>
-        Tracks when user shares the stats.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **click_stats**
-      </td>
-
-      <td>
-        When user clicks on play again button after game over.
-      </td>
-
-      <td>
-        `top_win_streak`(number)  
-        `play_streak` (number)  
-        `games_played` (number)  
-        `games_won` (number)  
-        `best_try` (number)
-      </td>
-
-      <td>
-        Tracks when user opens stats.
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-<br />
 
 <br />
