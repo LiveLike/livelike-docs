@@ -79,13 +79,11 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Triggers when the user clicks the Spin button
+         When the user clicks on the Spin button
       </td>
 
       <td>
-
         `spin_type` (string)
-
       </td>
 
       <td>
@@ -99,11 +97,12 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Triggers when the wheel stops spinning.
+         When the wheel stops spinning.
       </td>
 
       <td>
-        `outcome_type` (string)
+        `outcome_type` (string)
+
         `reward_type` (string)
       </td>
 
@@ -136,7 +135,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        This event is triggered when the user has no available spins
+        When the user has no available spins
       </td>
 
       <td>
@@ -154,11 +153,11 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Triggers when the user visits any of the available pages.
+        When the user visits any of the available pages.
       </td>
 
       <td>
-        `page_name` (string)
+        `page_name` (string)
       </td>
 
       <td>
@@ -172,7 +171,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Triggers when user clicks on the sponsor logo (only if clickable)
+        When user clicks on the sponsor logo (only if clickable)
       </td>
 
       <td>
