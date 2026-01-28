@@ -23,7 +23,7 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </th>
 
       <th style={{ textAlign: "left" }}>
-        **Event Properties**  
+        **Event Properties**
 
         _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
@@ -113,7 +113,8 @@ Below is a list of analytics events triggered in Guess The Image, along with the
         `games_won` (number)
         `best_try` (number)
         `guess_result` (string)
-        `attempt_number` (number)
+        `attempt_number` (number)  
+
         `is_journey_final_step` (boolean)
       </td>
 
