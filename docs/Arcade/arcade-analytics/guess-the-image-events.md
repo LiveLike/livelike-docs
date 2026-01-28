@@ -23,9 +23,9 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </th>
 
       <th style={{ textAlign: "left" }}>
-                    **Event Properties**
+        **Event Properties**
 
-              _(not included default event                 properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics)  )_
+        _(not included default event                 properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics)  )_
       </th>
 
       <th style={{ textAlign: "left" }}>
@@ -81,14 +81,7 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `total_game_attempts` (number)
-        `pixelation_mode` (boolean)
-
-        `top_win_streak` (number)
-        `play_streak` (number)
-        `games_played` (number)
-        `games_won` (number)
-        `best_try` (number)
+        `total_game_attempts`(number)`pixelation_mode` (boolean)`top_win_streak` (number)`play_streak` (number)`games_played` (number)`games_won` (number)`best_try` (number)
       </td>
 
       <td style={{ textAlign: "left" }}>
