@@ -15,11 +15,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
   <thead>
     <tr>
       <th style={{ textAlign: "left" }}>
-        **Event Trigger Condition**
+        **Event Name**
       </th>
 
       <th style={{ textAlign: "left" }}>
-        **Event Name**
+        **Event Trigger Condition**
       </th>
 
       <th style={{ textAlign: "left" }}>
@@ -37,11 +37,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
   <tbody>
     <tr>
       <td style={{ textAlign: "left" }}>
-        When the user starts a web session.
+        **session_start**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        **session_start**
+        When the user starts a web session.
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -55,11 +55,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        When the user exits the web session.
+        **session_stop**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        **session_stop**
+        When the user exits the web session.
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -73,11 +73,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        Triggers when the user starts the game, or when the first question loads if the welcome screen is skipped.
+        **click_play**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        **click_play**
+        Triggers when the user starts the game, or when the first question loads if the welcome screen is skipped.
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -91,11 +91,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        When game is over and result screen is displayed.
+        **game_completed**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        **game_completed**
+        When game is over and result screen is displayed.
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -111,11 +111,11 @@ Below is a list of analytics events triggered in Trivia, along with their detail
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        When user clicks on share button after game over (if enabled)
+        **click_share**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        **click_share**
+        When user clicks on share button after game over (if enabled)
       </td>
 
       <td style={{ textAlign: "left" }}>
