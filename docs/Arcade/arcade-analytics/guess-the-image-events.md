@@ -150,7 +150,11 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `top_win_streak`(number)        `play_streak` (number)        `games_played` (number)        `games_won` (number)        `best_try` (number)
+        `top_win_streak`(number)          
+        `play_streak` (number)          
+        `games_played` (number)          
+        `games_won` (number)          
+        `best_try` (number)
       </td>
 
       <td style={{ textAlign: "left" }}>
