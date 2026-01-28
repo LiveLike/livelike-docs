@@ -23,13 +23,13 @@ Below is a list of analytics events triggered in Guess The Image, along with the
       </th>
 
       <th style={{ textAlign: "left" }}>
-        **Event Properties**    
+                      **Event Properties**
 
         _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics)  )_
       </th>
 
       <th style={{ textAlign: "left" }}>
-        **Event Description**
+         **Event Description**
       </th>
     </tr>
   </thead>
