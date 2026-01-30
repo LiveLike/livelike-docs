@@ -283,6 +283,41 @@ This document details the webhook events sent by our system, including their pay
 | `data.nickname`              | `string`   | Nickname of the user.                                        |
 | `created_at`                 | `datetime` | Timestamp when the event was created.                        |
 
+## `comment-created`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "comment-created",
+  "data": {
+    "comment_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "author_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+    "author_nickname": "Charming Trout",
+    "author_image_url": null,
+    "comment_text": "Test Comment",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "created_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name              | Type       | Description                                                    |
+| :---------------------- | :--------- | :------------------------------------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event                                |
+| `event`                 | `string`   | Event type {`comment-created`}                                 |
+| `data.comment_id`       | `string`   | Unique identifier for the comment to which the reply was given |
+| `data.author_nickname`  | `string`   | Nickname for the author of the comment                         |
+| `data.author_image_url` | `string`   | The url for the profile image for the author of the comment    |
+| `data.comment_text`     | `string`   | The actual text content of the comment                         |
+| `data.client_id`        | `string`   | Client-specific identifier                                     |
+| `data.created_at`       | `string`   | Timestamp when the comment was created                         |
+| `created_at`            | `datetime` | Timestamp when the event was created                           |
+
 ## `comment-reply-created`
 
 ### Payload Example:
