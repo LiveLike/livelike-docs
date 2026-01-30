@@ -548,7 +548,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.is_active`        | `boolean`  | Is the flair active                  |
 | `data.attributes`       | `array`    | Attributes of the flair              |
 | `data.created_at`       | `string`   | Timestamp when the flair was created |
-| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `data.updated_at`       | `string`   | Timestamp when flair was updated     |
 | `created_at`            | `datetime` | Timestamp when the event was created |
 
 ## `flair-updated`
@@ -592,7 +592,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.is_active`        | `boolean`  | Is the flair active                  |
 | `data.attributes`       | `array`    | Attributes of the flair              |
 | `data.created_at`       | `string`   | Timestamp when the flair was created |
-| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `data.updated_at`       | `string`   | Timestamp when flair was updated     |
 | `created_at`            | `datetime` | Timestamp when the event was created |
 
 ## `flair-deactivated`
@@ -636,7 +636,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.is_active`        | `boolean`  | Is the flair active                  |
 | `data.attributes`       | `array`    | Attributes of the flair              |
 | `data.created_at`       | `string`   | Timestamp when the flair was created |
-| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `data.updated_at`       | `string`   | Timestamp when flair was updated     |
 | `created_at`            | `datetime` | Timestamp when the event was created |
 
 ## `flair-reactivated`
@@ -680,7 +680,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.is_active`        | `boolean`  | Is the flair active                  |
 | `data.attributes`       | `array`    | Attributes of the flair              |
 | `data.created_at`       | `string`   | Timestamp when the flair was created |
-| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `data.updated_at`       | `string`   | Timestamp when flair was updated     |
 | `created_at`            | `datetime` | Timestamp when the event was created |
 
 ## `flair-assignment-created`
@@ -730,7 +730,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.flair`       | `object`         | Flair which is assigned                              |
 | `data.scope`       | `object \| null` | Scope of the assignment                              |
 | `data.created_at`  | `string`         | Timestamp when the flair was created                 |
-| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
 
 ## `flair-assignment-updated`
@@ -780,7 +780,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.flair`       | `object`         | Flair which is assigned                              |
 | `data.scope`       | `object \| null` | Scope of the assignment                              |
 | `data.created_at`  | `string`         | Timestamp when the flair was created                 |
-| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
 
 ## `flair-assignment-deleted`
@@ -830,7 +830,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.flair`       | `object`         | Flair which is assigned                              |
 | `data.scope`       | `object \| null` | Scope of the assignment                              |
 | `data.created_at`  | `string`         | Timestamp when the flair was created                 |
-| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
 
 ## `chat-message-throttle-updated`
