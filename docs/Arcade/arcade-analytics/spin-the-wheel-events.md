@@ -27,7 +27,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       <th>
         **Event Properties**
 
-        _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
+        _(not included default event properties as outlined [here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
       <th>
@@ -79,7 +79,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-         When the user clicks on the Spin button
+        When the user clicks the Spin button.
       </td>
 
       <td>
@@ -87,7 +87,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Tracks when started playing.
+        Tracks when the user starts playing.
       </td>
     </tr>
 
@@ -97,7 +97,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-         When the wheel stops spinning.
+        When the wheel stops spinning.
       </td>
 
       <td>
@@ -107,7 +107,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        This event captures the spin completion
+        This event captures the spin completion.
       </td>
     </tr>
 
@@ -125,7 +125,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        This event tracks failed spin attempts
+        This event tracks failed spin attempts.
       </td>
     </tr>
 
@@ -135,7 +135,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        When the user has no available spins
+        When the user has no available spins.
       </td>
 
       <td>
@@ -161,7 +161,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        Tracks user visits to any page type
+        Tracks user visits to any page type.
       </td>
     </tr>
 
@@ -171,7 +171,7 @@ Below is a list of analytics events triggered in Spin The Wheel, along with thei
       </td>
 
       <td>
-        When user clicks on the sponsor logo (only if clickable)
+        When the user clicks on the sponsor logo (only if clickable).
       </td>
 
       <td>
