@@ -306,17 +306,17 @@ This document details the webhook events sent by our system, including their pay
 
 ### Field Descriptions
 
-| Field Name              | Type       | Description                                                    |
-| :---------------------- | :--------- | :------------------------------------------------------------- |
-| `id`                    | `string`   | Unique identifier for the event                                |
-| `event`                 | `string`   | Event type {`comment-created`}                                 |
-| `data.comment_id`       | `string`   | Unique identifier for the comment to which the reply was given |
-| `data.author_nickname`  | `string`   | Nickname for the author of the comment                         |
-| `data.author_image_url` | `string`   | The url for the profile image for the author of the comment    |
-| `data.comment_text`     | `string`   | The actual text content of the comment                         |
-| `data.client_id`        | `string`   | Client-specific identifier                                     |
-| `data.created_at`       | `string`   | Timestamp when the comment was created                         |
-| `created_at`            | `datetime` | Timestamp when the event was created                           |
+| Field Name              | Type       | Description                                                 |
+| :---------------------- | :--------- | :---------------------------------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event                             |
+| `event`                 | `string`   | Event type {`comment-created`}                              |
+| `data.comment_id`       | `string`   | Unique identifier for the comment                           |
+| `data.author_nickname`  | `string`   | Nickname for the author of the comment                      |
+| `data.author_image_url` | `string`   | The url for the profile image for the author of the comment |
+| `data.comment_text`     | `string`   | The actual text content of the comment                      |
+| `data.client_id`        | `string`   | Client-specific identifier                                  |
+| `data.created_at`       | `string`   | Timestamp when the comment was created                      |
+| `created_at`            | `datetime` | Timestamp when the event was created                        |
 
 ## `comment-reply-created`
 
@@ -506,6 +506,332 @@ This document details the webhook events sent by our system, including their pay
 | `data.scope_id`   | `string`   | Unique identifier for the scope the role is assigned in   |
 | `data.created_at` | `datetime` | Timestamp when the role assignment was created            |
 | `created_at`      | `datetime` | Timestamp when the event was created                      |
+
+## `flair-created`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-created",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+    "name": "Influencer",
+		"description": "",
+    "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+    "text_color": "#413EEB",
+    "background_color": "#FFFFFF",
+		"is_active": true,
+    "attributes": [],
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name              | Type       | Description                          |
+| :---------------------- | :--------- | :----------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event      |
+| `event`                 | `string`   | Event type {`flair-created`}         |
+| `data.id`               | `string`   | Unique identifier for the flair      |
+| `data.client_id`        | `string`   | Client-specific identifier           |
+| `data.name`             | `string`   | Name of the flair                    |
+| `data.description`      | `string`   | Description of the flair             |
+| `data.image`            | `string`   | Image url of the flair               |
+| `data.text_color`       | `string`   | Color of the text in the flair       |
+| `data.background_color` | `string`   | Background color of the flair        |
+| `data.is_active`        | `boolean`  | Is the flair active                  |
+| `data.attributes`       | `array`    | Attributes of the flair              |
+| `data.created_at`       | `string`   | Timestamp when the flair was created |
+| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `created_at`            | `datetime` | Timestamp when the event was created |
+
+## `flair-updated`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-updated",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+    "name": "Influencer",
+		"description": "",
+    "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+    "text_color": "#413EEB",
+    "background_color": "#FFFFFF",
+		"is_active": true,
+    "attributes": [],
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name              | Type       | Description                          |
+| :---------------------- | :--------- | :----------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event      |
+| `event`                 | `string`   | Event type {`flair-updated`}         |
+| `data.id`               | `string`   | Unique identifier for the flair      |
+| `data.client_id`        | `string`   | Client-specific identifier           |
+| `data.name`             | `string`   | Name of the flair                    |
+| `data.description`      | `string`   | Description of the flair             |
+| `data.image`            | `string`   | Image url of the flair               |
+| `data.text_color`       | `string`   | Color of the text in the flair       |
+| `data.background_color` | `string`   | Background color of the flair        |
+| `data.is_active`        | `boolean`  | Is the flair active                  |
+| `data.attributes`       | `array`    | Attributes of the flair              |
+| `data.created_at`       | `string`   | Timestamp when the flair was created |
+| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `created_at`            | `datetime` | Timestamp when the event was created |
+
+## `flair-deactivated`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-deactivated",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+    "name": "Influencer",
+		"description": "",
+    "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+    "text_color": "#413EEB",
+    "background_color": "#FFFFFF",
+		"is_active": true,
+    "attributes": [],
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name              | Type       | Description                          |
+| :---------------------- | :--------- | :----------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event      |
+| `event`                 | `string`   | Event type {`flair-deactivated`}     |
+| `data.id`               | `string`   | Unique identifier for the flair      |
+| `data.client_id`        | `string`   | Client-specific identifier           |
+| `data.name`             | `string`   | Name of the flair                    |
+| `data.description`      | `string`   | Description of the flair             |
+| `data.image`            | `string`   | Image url of the flair               |
+| `data.text_color`       | `string`   | Color of the text in the flair       |
+| `data.background_color` | `string`   | Background color of the flair        |
+| `data.is_active`        | `boolean`  | Is the flair active                  |
+| `data.attributes`       | `array`    | Attributes of the flair              |
+| `data.created_at`       | `string`   | Timestamp when the flair was created |
+| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `created_at`            | `datetime` | Timestamp when the event was created |
+
+## `flair-reactivated`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-reactivated",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+    "name": "Influencer",
+		"description": "",
+    "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+    "text_color": "#413EEB",
+    "background_color": "#FFFFFF",
+		"is_active": true,
+    "attributes": [],
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name              | Type       | Description                          |
+| :---------------------- | :--------- | :----------------------------------- |
+| `id`                    | `string`   | Unique identifier for the event      |
+| `event`                 | `string`   | Event type {`flair-reactivated`}     |
+| `data.id`               | `string`   | Unique identifier for the flair      |
+| `data.client_id`        | `string`   | Client-specific identifier           |
+| `data.name`             | `string`   | Name of the flair                    |
+| `data.description`      | `string`   | Description of the flair             |
+| `data.image`            | `string`   | Image url of the flair               |
+| `data.text_color`       | `string`   | Color of the text in the flair       |
+| `data.background_color` | `string`   | Background color of the flair        |
+| `data.is_active`        | `boolean`  | Is the flair active                  |
+| `data.attributes`       | `array`    | Attributes of the flair              |
+| `data.created_at`       | `string`   | Timestamp when the flair was created |
+| `data_updated_at`       | `string`   | Timestamp when flair was updated     |
+| `created_at`            | `datetime` | Timestamp when the event was created |
+
+## `flair-assignment-created`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-assignment-created",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "is_active": true,
+    "assigned_by": "Charming Trout",
+		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+    "flair": {
+      "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+      "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+      "name": "Influencer",
+      "description": "",
+      "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+      "text_color": "#413EEB",
+      "background_color": "#FFFFFF",
+      "is_active": true,
+      "attributes": [],
+      "created_at": "2025-06-03T08:00:20.567272Z",
+      "updated_at": "2025-06-03T08:00:20.567272Z"
+		},
+		"scope": null,
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name         | Type             | Description                                          |
+| :----------------- | :--------------- | :--------------------------------------------------- |
+| `id`               | `string`         | Unique identifier for the event                      |
+| `event`            | `string`         | Event type {`flair-assignment-created`}              |
+| `data.id`          | `string`         | Unique identifier for the flair                      |
+| `data.is_active`   | `boolean`        | Is the flair assignment active                       |
+| `data.assigned_by` | `string`         | Name of the profile which created assignment         |
+| `data.profile_id`  | `string`         | Profile id of the profile on which flair is assigned |
+| `data.flair`       | `object`         | Flair which is assigned                              |
+| `data.scope`       | `object \| null` | Scope of the assignment                              |
+| `data.created_at`  | `string`         | Timestamp when the flair was created                 |
+| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `created_at`       | `datetime`       | Timestamp when the event was created                 |
+
+## `flair-assignment-updated`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-assignment-updated",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "is_active": true,
+    "assigned_by": "Charming Trout",
+		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+    "flair": {
+      "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+      "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+      "name": "Influencer",
+      "description": "",
+      "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+      "text_color": "#413EEB",
+      "background_color": "#FFFFFF",
+      "is_active": true,
+      "attributes": [],
+      "created_at": "2025-06-03T08:00:20.567272Z",
+      "updated_at": "2025-06-03T08:00:20.567272Z"
+		},
+		"scope": null,
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name         | Type             | Description                                          |
+| :----------------- | :--------------- | :--------------------------------------------------- |
+| `id`               | `string`         | Unique identifier for the event                      |
+| `event`            | `string`         | Event type {`flair-assignment-updated`}              |
+| `data.id`          | `string`         | Unique identifier for the flair                      |
+| `data.is_active`   | `boolean`        | Is the flair assignment active                       |
+| `data.assigned_by` | `string`         | Name of the profile which created assignment         |
+| `data.profile_id`  | `string`         | Profile id of the profile on which flair is assigned |
+| `data.flair`       | `object`         | Flair which is assigned                              |
+| `data.scope`       | `object \| null` | Scope of the assignment                              |
+| `data.created_at`  | `string`         | Timestamp when the flair was created                 |
+| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `created_at`       | `datetime`       | Timestamp when the event was created                 |
+
+## `flair-assignment-deleted`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "flair-assignment-deleted",
+  "data": {
+    "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "is_active": true,
+    "assigned_by": "Charming Trout",
+		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+    "flair": {
+      "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+      "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
+      "name": "Influencer",
+      "description": "",
+      "image": "{live_like}/media/flairs/b3435235-18eb-4115-ba05-71ff28a06429.svg",
+      "text_color": "#413EEB",
+      "background_color": "#FFFFFF",
+      "is_active": true,
+      "attributes": [],
+      "created_at": "2025-06-03T08:00:20.567272Z",
+      "updated_at": "2025-06-03T08:00:20.567272Z"
+		},
+		"scope": null,
+    "created_at": "2025-06-03T08:00:20.567272Z",
+    "updated_at": "2025-06-03T08:00:20.567272Z"
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name         | Type             | Description                                          |
+| :----------------- | :--------------- | :--------------------------------------------------- |
+| `id`               | `string`         | Unique identifier for the event                      |
+| `event`            | `string`         | Event type {`flair-assignment-deleted`}              |
+| `data.id`          | `string`         | Unique identifier for the flair                      |
+| `data.is_active`   | `boolean`        | Is the flair assignment active                       |
+| `data.assigned_by` | `string`         | Name of the profile which created assignment         |
+| `data.profile_id`  | `string`         | Profile id of the profile on which flair is assigned |
+| `data.flair`       | `object`         | Flair which is assigned                              |
+| `data.scope`       | `object \| null` | Scope of the assignment                              |
+| `data.created_at`  | `string`         | Timestamp when the flair was created                 |
+| `data_updated_at`  | `string`         | Timestamp when flair was updated                     |
+| `created_at`       | `datetime`       | Timestamp when the event was created                 |
 
 ## `chat-message-throttle-updated`
 
