@@ -25,7 +25,7 @@ Below is a list of analytics events triggered in Trivia, along with their detail
       <th style={{ textAlign: "left" }}>
         **Event Properties**
 
-        _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
+        _(not included default event properties as outlined [here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
       <th style={{ textAlign: "left" }}>
@@ -85,7 +85,7 @@ Below is a list of analytics events triggered in Trivia, along with their detail
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Tracks when started playing.
+        Tracks when the user starts playing.
       </td>
     </tr>
 
@@ -95,7 +95,7 @@ Below is a list of analytics events triggered in Trivia, along with their detail
       </td>
 
       <td style={{ textAlign: "left" }}>
-        When game is over and result screen is displayed.
+        When the game is over and the result screen is displayed.
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -115,7 +115,7 @@ Below is a list of analytics events triggered in Trivia, along with their detail
       </td>
 
       <td style={{ textAlign: "left" }}>
-        When user clicks on share button after game over (if enabled)
+        When the user clicks the Share button after the game is over (if enabled).
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -123,7 +123,7 @@ Below is a list of analytics events triggered in Trivia, along with their detail
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Tracks when user shares the stats.
+        Tracks when the user shares the stats.
       </td>
     </tr>
   </tbody>
