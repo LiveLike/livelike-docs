@@ -68,7 +68,9 @@
                 },
                 "required": [
                   "profile_id",
-                  "streak_id"
+                  "streak_id",
+                  "first_activity",
+                  "last_activity"
                 ]
               }
             }
