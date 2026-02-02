@@ -126,6 +126,56 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "last_activity": "2026-01-06T07:07:00Z",
+                      "track_progress_on": {
+                        "target_ids": [
+                          "ae06e550-21c4-4e1d-8365-f42309dccdb8",
+                          "55528958-dcfc-40e0-943f-b4be50b05be8"
+                        ]
+                      },
+                      "reason": "Manual correction for missed event",
+                      "user_streak": {
+                        "id": "77c8115f-66af-4255-a3e1-f6224e76c46c",
+                        "url": "http://localhost:8888/api/v1/user-streaks/77c8115f-66af-4255-a3e1-f6224e76c46c/",
+                        "profile_id": "405f4a9f-4612-4eea-a7d2-80dbc624f9e2",
+                        "streak_id": "49426b34-5c3f-4517-b50f-2be290be472f",
+                        "streak": {
+                          "id": "49426b34-5c3f-4517-b50f-2be290be472f",
+                          "name": "Daily Test - 11 JAN",
+                          "period": "daily",
+                          "streak_type": "periodic"
+                        },
+                        "first_activity": "2026-01-01T07:07:00Z",
+                        "last_activity": "2026-01-06T07:07:00Z",
+                        "reset_at": null,
+                        "current_streak_length": 6,
+                        "maximum_streak_length": 6,
+                        "freeze_start": null,
+                        "freeze_until": null,
+                        "freeze_reason": null,
+                        "milestone_count": 2,
+                        "milestones_url": "http://localhost:8888/api/v1/user-streaks/77c8115f-66af-4255-a3e1-f6224e76c46c/milestones/",
+                        "status": "pending_reset",
+                        "reason": "Manual correction for missed event"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
           }
         },
         "parameters": [
