@@ -2260,6 +2260,70 @@
         ],
         "operationId": "delete_client-id-streak-milestones-milestone-id"
       }
+    },
+    "/{client-id}/streak-targets/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "46effdeb-b0da-44cb-8e30-74473d0671d4",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-targets/46effdeb-b0da-44cb-8e30-74473d0671d4/",
+                          "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                          "name": null,
+                          "attributes": [
+                            {
+                              "key": "widget_id",
+                              "value": "6500684f-b853-4c75-9602-6e0c6f48c855"
+                            },
+                            {
+                              "key": "program_id",
+                              "value": "b187d261-cb3b-438b-a4c8-dd7ba3b77ed9"
+                            },
+                            {
+                              "key": "widget_kind",
+                              "value": "image-prediction-follow-up"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "streak_id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_client-id-streak-targets"
+      }
     }
   },
   "components": {
