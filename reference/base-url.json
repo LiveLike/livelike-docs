@@ -32,7 +32,48 @@
           }
         },
         "parameters": [],
-        "operationId": "post_user-streaks"
+        "operationId": "post_user-streaks",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profile_id": {
+                    "type": "string"
+                  },
+                  "streak_id": {
+                    "type": "string"
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "first_activity": {
+                    "type": "string"
+                  },
+                  "last_activity": {
+                    "type": "string"
+                  },
+                  "track_progress_on": {
+                    "type": "object",
+                    "properties": {
+                      "target_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "profile_id",
+                  "streak_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
