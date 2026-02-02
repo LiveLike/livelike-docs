@@ -2,7 +2,7 @@
 title: Create user streak
 api:
   file: base-url.json
-  operationId: get_user-streaks
+  operationId: post_user-streaks
 deprecated: false
 hidden: true
 link:
