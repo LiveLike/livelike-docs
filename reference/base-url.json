@@ -27,7 +27,7 @@
       "post": {
         "description": "",
         "responses": {
-          "200": {
+          "201": {
             "description": ""
           }
         },
