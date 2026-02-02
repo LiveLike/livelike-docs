@@ -23,16 +23,16 @@
         }
       }
     },
-    "/new-endpoint-1": {
+    "/user-streaks/": {
       "get": {
         "description": "",
-        "operationId": "",
         "responses": {
           "200": {
             "description": ""
           }
         },
-        "parameters": []
+        "parameters": [],
+        "operationId": "get_user-streaks"
       }
     }
   },
