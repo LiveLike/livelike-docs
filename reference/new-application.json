@@ -1925,6 +1925,84 @@
         "summary": "Copy of ",
         "operationId": "get_client-id-consecutive-action-streaks-consecutive-action-streak-id"
       }
+    },
+    "/{client-id}/streak-milestones/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 2,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "94bcf03b-8d70-4581-9f4f-ad6f0fdaf77b",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-milestones/94bcf03b-8d70-4581-9f4f-ad6f0fdaf77b/",
+                          "name": "Milestone 1",
+                          "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                          "milestone_type": "recurring",
+                          "milestone_length": 1,
+                          "milestone_rewards": [
+                            {
+                              "reward_item_id": "d783e521-3906-434c-8ca8-cf1ccf062726",
+                              "reward_item_name": "Streak reward item",
+                              "reward_item_amount": 12
+                            }
+                          ],
+                          "is_repeatable": true,
+                          "created_at": "2025-12-19T12:51:22.461907Z"
+                        },
+                        {
+                          "id": "91af13b1-2da1-4417-9eba-3385019dc249",
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-milestones/91af13b1-2da1-4417-9eba-3385019dc249/",
+                          "name": "Milestone 2",
+                          "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                          "milestone_type": "custom",
+                          "milestone_length": 2,
+                          "milestone_rewards": [
+                            {
+                              "reward_item_id": "8c474b3d-3aee-4324-a35c-67274f863dba",
+                              "reward_item_name": "reward item",
+                              "reward_item_amount": 33
+                            }
+                          ],
+                          "is_repeatable": false,
+                          "created_at": "2025-11-27T09:21:34.442418Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "streak_id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_client-id-streak-milestones"
+      }
     }
   },
   "components": {
