@@ -2002,6 +2002,120 @@
           }
         ],
         "operationId": "get_client-id-streak-milestones"
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "f8632593-3aa1-49b2-a95f-6f37ca54c85b",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-milestones/f8632593-3aa1-49b2-a95f-6f37ca54c85b/",
+                      "name": "M2",
+                      "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                      "milestone_type": "custom",
+                      "milestone_length": 1,
+                      "milestone_rewards": [
+                        {
+                          "reward_item_id": "c3e3d251-c7dc-4e77-9368-e0cde88c4cc5",
+                          "reward_item_name": "test",
+                          "reward_item_amount": 1
+                        }
+                      ],
+                      "is_repeatable": true,
+                      "created_at": "2026-02-02T07:15:28.429070Z"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-streak-milestones",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "streak_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "milestone_type": {
+                    "type": "string",
+                    "enum": [
+                      "custom",
+                      "recurring"
+                    ]
+                  },
+                  "milestone_length": {
+                    "type": "integer",
+                    "description": "At what streak length will this user achieve this milestone"
+                  },
+                  "milestone_rewards": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "reward_item_id": {
+                          "type": "string"
+                        },
+                        "reward_item_amount": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                },
+                "required": [
+                  "streak_id"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "streak_id": "{{streak_id}}",
+                    "name": "M2",
+                    "milestone_type": "custom",
+                    "milestone_length": 1,
+                    "milestone_rewards": [
+                      {
+                        "reward_item_id": "c3e3d251-c7dc-4e77-9368-e0cde88c4cc5",
+                        "reward_item_amount": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
