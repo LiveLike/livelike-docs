@@ -1,5 +1,5 @@
 ---
-title: Progress
+title: Progress active User Streak
 api:
   file: base-url.json
   operationId: patch_user-streaks-user-streak-id-progress
