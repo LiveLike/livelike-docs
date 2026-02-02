@@ -119,7 +119,28 @@
         }
       }
     },
-    "/user-streaks/9cd97f41-d6a0-4dca-a145-993d97746851/progress/": {}
+    "/user-streaks/9cd97f41-d6a0-4dca-a145-993d97746851/progress/": {},
+    "/user-streaks/{user-streak-id}/progress/": {
+      "patch": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "patch_user-streaks-user-streak-id-progress"
+      }
+    }
   },
   "components": {
     "securitySchemes": {
