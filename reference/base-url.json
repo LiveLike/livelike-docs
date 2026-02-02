@@ -119,18 +119,7 @@
         }
       }
     },
-    "/user-streaks/9cd97f41-d6a0-4dca-a145-993d97746851/progress/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "operationId": "get_user-streaks-9cd97f41-d6a0-4dca-a145-993d97746851-progress"
-      }
-    }
+    "/user-streaks/9cd97f41-d6a0-4dca-a145-993d97746851/progress/": {}
   },
   "components": {
     "securitySchemes": {
