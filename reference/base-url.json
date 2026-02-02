@@ -24,7 +24,7 @@
       }
     },
     "/user-streaks/": {
-      "get": {
+      "post": {
         "description": "",
         "responses": {
           "200": {
@@ -32,7 +32,7 @@
           }
         },
         "parameters": [],
-        "operationId": "get_user-streaks"
+        "operationId": "post_user-streaks"
       }
     }
   },
