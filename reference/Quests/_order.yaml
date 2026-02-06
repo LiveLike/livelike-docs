@@ -11,6 +11,7 @@
 - update-user-quest-task-progress
 - delete-userquest
 - update-user-quest
+- update-user-quest-1
 - create-quest-rewards
 - remove-a-quest-reward
 - get-list-of-quest-rewards
@@ -21,4 +22,3 @@
 - remove-badge-from-quest
 - claim-user-quest-badges
 - ab-test-quest-1
-- update-user-quest-1
