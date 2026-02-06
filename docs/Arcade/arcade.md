@@ -154,10 +154,12 @@ next:
 ```
 
 * #### **Scratch Card**
-  <br />
-  ```html html
-  <ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
-  ```
+
+```html html
+<ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
+```
+
+<br />
 
 ### Required Parameters:
 
