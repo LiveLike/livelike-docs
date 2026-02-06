@@ -90,6 +90,15 @@ next:
 
 ```
 
+<br />
+
+* **Scratch Card**: Add the following script tag to your HTML page:
+
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.1.0.js"></script>
+
+```
+
 ### Step 3: Embed Game Component
 
 * In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
@@ -149,6 +158,12 @@ next:
 ```
 
 <br />
+
+* #### **Scratch Card**
+  <br />
+  ```html html
+  <ll-scratch-card profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
+  ```
 
 ### Required Parameters:
 
