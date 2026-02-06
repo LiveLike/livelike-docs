@@ -90,8 +90,6 @@ next:
 
 ```
 
-<br />
-
 * **Scratch Card**: Add the following script tag to your HTML page:
 
 ```html
@@ -149,15 +147,11 @@ next:
 <ll-skill-game accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-skill-game>
 ```
 
-<br />
-
 * #### **Sweepstakes**
 
 ```html html
 <ll-sweepstakes profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-sweepstakes>
 ```
-
-<br />
 
 * #### **Scratch Card**
   <br />
