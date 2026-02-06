@@ -10,6 +10,7 @@
 - create-user-quest
 - update-user-quest-task-progress
 - delete-userquest
+- get-user-quest
 - update-user-quest
 - create-quest-rewards
 - remove-a-quest-reward
@@ -21,4 +22,3 @@
 - remove-badge-from-quest
 - claim-user-quest-badges
 - ab-test-quest-1
-- get-user-quest
