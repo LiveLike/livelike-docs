@@ -94,8 +94,9 @@ next:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.2.0.js"></script>
-
 ```
+
+<br />
 
 ### Step 3: Embed Game Component
 
