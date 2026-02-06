@@ -93,7 +93,7 @@ next:
 * **Scratch Card**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.1.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.2.0.js"></script>
 
 ```
 
@@ -150,13 +150,13 @@ next:
 * #### **Sweepstakes**
 
 ```html html
-<ll-sweepstakes profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-sweepstakes>
+<ll-sweepstakes accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-sweepstakes>
 ```
 
 * #### **Scratch Card**
   <br />
   ```html html
-  <ll-scratch-card profileId=${profileId} accessToken=${accessToken} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
+  <ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
   ```
 
 ### Required Parameters:
