@@ -94,8 +94,9 @@ next:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.2.0.js"></script>
-
 ```
+
+<br />
 
 ### Step 3: Embed Game Component
 
@@ -154,10 +155,12 @@ next:
 ```
 
 * #### **Scratch Card**
-  <br />
-  ```html html
-  <ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
-  ```
+
+```html html
+<ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
+```
+
+<br />
 
 ### Required Parameters:
 
