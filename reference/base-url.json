@@ -221,6 +221,27 @@
           }
         }
       }
+    },
+    "/user-quests/{user-quest-id}": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user-quest-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_user-quests-user-quest-id"
+      }
     }
   },
   "components": {
