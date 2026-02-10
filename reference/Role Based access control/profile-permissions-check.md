@@ -7,7 +7,7 @@ api:
   file: engagement-suite.json
   operationId: get_profiles{ProfileUUID}permissions-check
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
