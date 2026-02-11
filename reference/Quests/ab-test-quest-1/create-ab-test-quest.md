@@ -7,7 +7,7 @@ api:
   file: new-application.json
   operationId: post_client-id-ab-test-quests
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
