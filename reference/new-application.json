@@ -446,7 +446,8 @@
             "in": "path",
             "name": "client-id",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "required": true
           },
