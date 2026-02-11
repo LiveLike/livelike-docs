@@ -1,5 +1,5 @@
 ---
-title: Get AB Test QUest
+title: Get AB Test Quest
 excerpt: Get AB Test Quest
 api:
   file: new-application.json
