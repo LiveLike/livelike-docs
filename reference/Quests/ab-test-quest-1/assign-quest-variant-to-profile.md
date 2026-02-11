@@ -9,7 +9,7 @@ api:
   file: new-application.json
   operationId: put_profiles-profile-id-quest-variant-assignment
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
