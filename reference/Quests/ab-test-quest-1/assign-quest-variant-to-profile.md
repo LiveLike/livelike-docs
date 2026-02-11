@@ -1,10 +1,11 @@
 ---
 title: Assign Quest Variant to Profile
 excerpt: >-
-  For each provided quest_id, the API selects a quest variant based on the
-  quest’s A/B test assignment strategy (e.g., random allocation) and creates an
-  assignment for the given profile. The response returns successfully assigned
-  variants and any quests that were skipped.
+  This step is mandatory for A/B test–based quests to progress. For each
+  provided quest_id, the API selects a quest variant based on the quest’s A/B
+  test assignment strategy (e.g., random allocation) and creates an assignment
+  for the given profile. The response returns successfully assigned variants and
+  any quests that were skipped.
 api:
   file: new-application.json
   operationId: put_profiles-profile-id-quest-variant-assignment
