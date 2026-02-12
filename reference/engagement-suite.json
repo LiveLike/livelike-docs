@@ -33970,7 +33970,7 @@
         }
       }
     },
-    "/profiles/{profileID}/profile-blocks/{profileID}/": {
+    "/profiles/{BlockedByProfileID}/profile-blocks/{BlockedProfileID}/": {
       "delete": {
         "summary": "Copy of Unblock profile",
         "description": "",
@@ -34018,7 +34018,15 @@
         "parameters": [
           {
             "in": "path",
-            "name": "profileID",
+            "name": "BlockedProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "BlockedByProfileID",
             "schema": {
               "type": "string"
             },
