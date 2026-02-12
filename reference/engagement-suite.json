@@ -33967,7 +33967,13 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{}"
+                    "value": {
+                      "blocks": {
+                        "non_field_errors": [
+                          "This list may not be empty."
+                        ]
+                      }
+                    }
                   }
                 },
                 "schema": {
