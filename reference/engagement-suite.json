@@ -33779,7 +33779,205 @@
         ]
       }
     },
-    "/user-quests/{user_quest_id}/-1": {}
+    "/user-quests/{user_quest_id}/-1": {},
+    "/text-polls/{id}/-1": {
+      "get": {
+        "summary": "Copy of Get a Text Poll",
+        "description": "",
+        "operationId": "get-a-text-poll-1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the widget",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"client_id\": \"UJQCf1jWIhKmQpOYdhe6H56Uc4Xp50b1zdVaOowO\",\n  \"created_at\": \"2021-09-22T19:37:28.872727Z\",\n  \"created_by\": {\n    \"id\": \"1bf5b2ff-d82b-4400-b4eb-38a8d7bf538c\",\n    \"image_url\": null,\n    \"name\": null\n  },\n  \"custom_data\": null,\n  \"engagement_count\": 1,\n  \"engagement_percent\": \"1.000\",\n  \"id\": \"fa8f2f08-b46d-40d9-9e97-2ef3451b8630\",\n  \"impression_count\": 1,\n  \"impression_url\": \"https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-impressions/text-poll/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/\",\n  \"interaction_url\": \"https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/interactions/\",\n  \"interactive_until\":\"2022-01-18T18:53:56.510Z\",\n  \"kind\": \"text-poll\",\n  \"options\": [\n    {\n      \"description\": \"Seattle Seahawks\",\n      \"id\": \"f3362ee5-cf29-4a1b-81a5-c2d1bffe7e6a\",\n      \"translatable_fields\": [\n        \"description\"\n      ],\n      \"translations\": {},\n      \"vote_count\": 1,\n      \"vote_url\": \"https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-interactions/text-poll/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/options/f3362ee5-cf29-4a1b-81a5-c2d1bffe7e6a/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCaFM0a3Vsc0VRR1U2UjdaSjFhWmMtNEJvemRWRmdtd0RKTVhLLUpSdlAyb3pHRm1INFByYjVCeHpFUWdXeDZ4bV8tS19lc0dZeUFwbV84WlVHbWJwUjlPM1NHUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE2MzIzNDAyNzB9.ACaQenHbmGEyuyMDXw3k3lpM9wKC7S_yWToAJQ9PADc/\"\n    },\n    {\n      \"description\": \"Denver Broncos\",\n      \"id\": \"eb75f960-18f6-4b4d-86bc-65075c095cfb\",\n      \"translatable_fields\": [\n        \"description\"\n      ],\n      \"translations\": {},\n      \"vote_count\": 0,\n      \"vote_url\": \"https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-interactions/text-poll/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/options/eb75f960-18f6-4b4d-86bc-65075c095cfb/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCaFM0a3VpLUZpRFFGQlVweUlSdXZIQjVmUkVMNXhjMGZFVWU2cHNBYUtQODNLR0lYSENfUUVYY1h1YkNZTUZGZzVRR1JzVm4tbmRtOGQ5RW1yeExrVTE4T0hIZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE2MzIzNDAyNzB9.I1zVhWG253_K0V6Pdw6bDpAVWCcwKvijHt6_ZhVB9Qc/\"\n    }\n  ],\n  \"program_date_time\": null,\n  \"program_id\": \"075a1d11-1489-4dd0-b7c4-a7642f5f517f\",\n  \"publish_delay\": \"P0DT00H00M00S\",\n  \"published_at\": \"2021-09-22T19:37:29.150275Z\",\n  \"question\": \"Who do you think will win the game?\",\n  \"reactions\": [],\n  \"rewards_url\": null,\n  \"schedule_url\": \"https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/schedule/\",\n  \"scheduled_at\": \"2021-09-22T19:37:29.050817Z\",\n  \"sponsors\": [],\n  \"status\": \"published\",\n  \"subscribe_channel\": \"program.widget.fa8f2f08-b46d-40d9-9e97-2ef3451b8630\",\n  \"timeout\": \"P0DT00H00M30S\",\n  \"translatable_fields\": [\n    \"question\"\n  ],\n  \"translations\": {},\n  \"unique_impression_count\": 1,\n  \"playback_time_ms\": null,\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/\",\n  \"widget_interactions_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=fa8f2f08-b46d-40d9-9e97-2ef3451b8630\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "client_id": {
+                      "type": "string",
+                      "example": "UJQCf1jWIhKmQpOYdhe6H56Uc4Xp50b1zdVaOowO"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2021-09-22T19:37:28.872727Z"
+                    },
+                    "created_by": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "1bf5b2ff-d82b-4400-b4eb-38a8d7bf538c"
+                        },
+                        "image_url": {},
+                        "name": {}
+                      }
+                    },
+                    "custom_data": {},
+                    "engagement_count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "engagement_percent": {
+                      "type": "string",
+                      "example": "1.000"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "fa8f2f08-b46d-40d9-9e97-2ef3451b8630"
+                    },
+                    "impression_count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "impression_url": {
+                      "type": "string",
+                      "example": "https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-impressions/text-poll/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/"
+                    },
+                    "interaction_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/interactions/"
+                    },
+                    "interactive_until": {
+                      "type": "string",
+                      "example": "2022-01-18T18:53:56.510Z"
+                    },
+                    "kind": {
+                      "type": "string",
+                      "example": "text-poll"
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string",
+                            "example": "Seattle Seahawks"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "f3362ee5-cf29-4a1b-81a5-c2d1bffe7e6a"
+                          },
+                          "translatable_fields": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "example": "description"
+                            }
+                          },
+                          "translations": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "vote_count": {
+                            "type": "integer",
+                            "example": 1,
+                            "default": 0
+                          },
+                          "vote_url": {
+                            "type": "string",
+                            "example": "https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-interactions/text-poll/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/options/f3362ee5-cf29-4a1b-81a5-c2d1bffe7e6a/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCaFM0a3Vsc0VRR1U2UjdaSjFhWmMtNEJvemRWRmdtd0RKTVhLLUpSdlAyb3pHRm1INFByYjVCeHpFUWdXeDZ4bV8tS19lc0dZeUFwbV84WlVHbWJwUjlPM1NHUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE2MzIzNDAyNzB9.ACaQenHbmGEyuyMDXw3k3lpM9wKC7S_yWToAJQ9PADc/"
+                          }
+                        }
+                      }
+                    },
+                    "program_date_time": {},
+                    "program_id": {
+                      "type": "string",
+                      "example": "075a1d11-1489-4dd0-b7c4-a7642f5f517f"
+                    },
+                    "publish_delay": {
+                      "type": "string",
+                      "example": "P0DT00H00M00S"
+                    },
+                    "published_at": {
+                      "type": "string",
+                      "example": "2021-09-22T19:37:29.150275Z"
+                    },
+                    "question": {
+                      "type": "string",
+                      "example": "Who do you think will win the game?"
+                    },
+                    "reactions": {
+                      "type": "array"
+                    },
+                    "rewards_url": {},
+                    "schedule_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/schedule/"
+                    },
+                    "scheduled_at": {
+                      "type": "string",
+                      "example": "2021-09-22T19:37:29.050817Z"
+                    },
+                    "sponsors": {
+                      "type": "array"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "published"
+                    },
+                    "subscribe_channel": {
+                      "type": "string",
+                      "example": "program.widget.fa8f2f08-b46d-40d9-9e97-2ef3451b8630"
+                    },
+                    "timeout": {
+                      "type": "string",
+                      "example": "P0DT00H00M30S"
+                    },
+                    "translatable_fields": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "question"
+                      }
+                    },
+                    "translations": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "unique_impression_count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "playback_time_ms": {},
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/text-polls/fa8f2f08-b46d-40d9-9e97-2ef3451b8630/"
+                    },
+                    "widget_interactions_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=fa8f2f08-b46d-40d9-9e97-2ef3451b8630"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    }
   },
   "x-readme": {
     "headers": [],
