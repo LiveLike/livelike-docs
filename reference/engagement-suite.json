@@ -33836,7 +33836,7 @@
         "deprecated": false
       }
     },
-    "/profile-blocks/{id}-2": {
+    "/profile-blocks/unblock-by-profile-id/{profileID}/": {
       "delete": {
         "summary": "Copy of Unblock profile",
         "description": "",
@@ -33880,7 +33880,17 @@
             }
           }
         },
-        "deprecated": false
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
