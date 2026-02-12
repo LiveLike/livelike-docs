@@ -33922,7 +33922,7 @@
       }
     },
     "/profile-blocks/-1": {},
-    "/profile-blocks/bulk-sync-reciprocal/": {
+    "/profile-blocks/bulk-sync/": {
       "post": {
         "summary": "Copy of Get Blocked Profile Ids",
         "description": "",
