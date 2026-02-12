@@ -2,5 +2,5 @@
 - get-blocked-profiles
 - unblock-profile
 - unblock-profile-by-profile-id
-- unblock-profile-1
+- unblock-profile-by-profile-custom-id
 - get-blocked-profile-ids
