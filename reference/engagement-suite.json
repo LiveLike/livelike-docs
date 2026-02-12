@@ -17439,15 +17439,21 @@
         "operationId": "create-a-profile-block",
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
                   "blocked_profile_id": {
-                    "type": "string",
-                    "description": "profile id which is being blocked"
+                    "type": "string"
+                  },
+                  "is_reciprocal": {
+                    "type": "boolean",
+                    "default": "false"
                   }
-                }
+                },
+                "required": [
+                  "blocked_profile_id"
+                ]
               }
             }
           }
