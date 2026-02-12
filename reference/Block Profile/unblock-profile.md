@@ -1,5 +1,5 @@
 ---
-title: Unblock profile
+title: Unblock profile by Block Object ID
 excerpt: ''
 api:
   file: engagement-suite.json
