@@ -33922,8 +33922,8 @@
       }
     },
     "/profile-blocks/-1": {},
-    "/blocked-profile-ids/-1": {
-      "get": {
+    "/profile-blocks/bulk-sync-reciprocal/": {
+      "post": {
         "summary": "Copy of Get Blocked Profile Ids",
         "description": "",
         "operationId": "get-blocked-profile-ids-1",
