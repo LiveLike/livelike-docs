@@ -33968,11 +33968,9 @@
                 "examples": {
                   "Result": {
                     "value": {
-                      "blocks": {
-                        "non_field_errors": [
-                          "This list may not be empty."
-                        ]
-                      }
+                      "blocks": [
+                        "This list may not be empty"
+                      ]
                     }
                   }
                 },
