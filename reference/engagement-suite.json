@@ -33788,7 +33788,54 @@
       }
     },
     "/user-quests/{user_quest_id}/-1": {},
-    "/text-polls/{id}/-1": {}
+    "/text-polls/{id}/-1": {},
+    "/profile-blocks/{id}-1": {
+      "delete": {
+        "summary": "Copy of Unblock profile",
+        "description": "",
+        "operationId": "unblock-profile-1",
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"detail\": \"Not found.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Not found."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
   },
   "x-readme": {
     "headers": [],
