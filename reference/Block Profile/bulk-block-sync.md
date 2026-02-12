@@ -4,7 +4,7 @@ api:
   file: engagement-suite.json
   operationId: get-blocked-profile-ids-1
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
