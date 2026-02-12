@@ -33934,7 +33934,9 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"count\": 4,\n  \"previous\": null,\n  \"next\": null,\n  \"results\": [\n      \"5ffef83a-78cc-4677-ab94-bdb5ddae8486\",\n      \"57489a5a-2873-4cb9-ac3f-a962daf4b7e7\",\n      \"d41f385d-009f-4170-a669-bc637a7e258e\",\n      \"6c23eda7-6b5f-4f32-b06d-1d1e80f21e49\"\n  ]\n}"
+                    "value": {
+                      "synced_block_count": 1000
+                    }
                   }
                 },
                 "schema": {
