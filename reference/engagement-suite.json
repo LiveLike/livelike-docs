@@ -17974,53 +17974,6 @@
         }
       }
     },
-    "/profile-blocks/{id}": {
-      "delete": {
-        "summary": "Unblock profile",
-        "description": "",
-        "operationId": "unblock-profile",
-        "responses": {
-          "204": {
-            "description": "204",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "404",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"detail\": \"Not found.\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "example": "Not found."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/blocked-profile-ids/": {
       "get": {
         "summary": "Get Blocked Profile Ids",
@@ -33885,6 +33838,63 @@
           {
             "in": "path",
             "name": "profileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/profile-blocks/{BlockID}": {
+      "delete": {
+        "summary": "Unblock profile",
+        "description": "",
+        "operationId": "unblock-profile",
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"detail\": \"Not found.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Not found."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BlockID",
             "schema": {
               "type": "string"
             },
