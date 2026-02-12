@@ -33976,7 +33976,32 @@
             }
           }
         },
-        "deprecated": false
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "blocks": {
+                    "type": "array",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    }
+                  },
+                  "override": {
+                    "type": "boolean",
+                    "default": "true"
+                  }
+                },
+                "required": [
+                  "blocks"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
