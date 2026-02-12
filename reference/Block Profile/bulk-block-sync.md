@@ -1,5 +1,5 @@
 ---
-title: Bulk Block Sync (Reciprocal)
+title: Bulk Block Sync
 api:
   file: engagement-suite.json
   operationId: get-blocked-profile-ids-1
