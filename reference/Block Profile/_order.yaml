@@ -1,6 +1,6 @@
 - create-a-profile-block
 - get-blocked-profiles
 - unblock-profile
-- unblock-profile-2
+- unblock-profile-by-profile-id
 - unblock-profile-1
 - get-blocked-profile-ids
