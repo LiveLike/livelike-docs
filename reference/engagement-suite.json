@@ -33856,7 +33856,7 @@
         ]
       }
     },
-    "/unblock-by-profile-custom-id/{clientID}/{CustomID}/": {
+    "/unblock-by-profile-custom-id/{clientID}/{ProfileCustomID}/": {
       "delete": {
         "summary": "Copy of Unblock profile",
         "description": "",
@@ -33912,7 +33912,7 @@
           },
           {
             "in": "path",
-            "name": "CustomID",
+            "name": "ProfileCustomID",
             "schema": {
               "type": "string"
             },
