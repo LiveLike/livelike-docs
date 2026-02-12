@@ -1,5 +1,5 @@
 ---
-title: Copy of Unblock profile
+title: Unblock profile by Profile ID
 api:
   file: engagement-suite.json
   operationId: unblock-profile-2
