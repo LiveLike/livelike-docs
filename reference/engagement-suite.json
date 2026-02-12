@@ -34015,7 +34015,7 @@
                   },
                   "is_reciprocal": {
                     "type": "boolean",
-                    "default": "true"
+                    "default": "false"
                   }
                 },
                 "required": [
