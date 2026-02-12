@@ -4,4 +4,4 @@
 - unblock-profile-by-profile-id
 - unblock-profile-by-profile-custom-id
 - get-blocked-profile-ids
-- bulk-block-sync-reciprocal
+- bulk-block-sync
