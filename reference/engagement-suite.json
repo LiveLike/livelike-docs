@@ -17444,7 +17444,8 @@
                 "type": "object",
                 "properties": {
                   "blocked_profile_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "profile uuid that is being blocked"
                   },
                   "is_reciprocal": {
                     "type": "boolean",
