@@ -34012,6 +34012,10 @@
                   "override": {
                     "type": "boolean",
                     "default": "true"
+                  },
+                  "is_reciprocal": {
+                    "type": "boolean",
+                    "default": "true"
                   }
                 },
                 "required": [
