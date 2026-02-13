@@ -13,6 +13,7 @@ next:
 This document provides direct CMS links for all LiveLike resources. Replace `{{client_id}}` with your Application ID and resource-specific IDs (e.g., `{{program_id}}`, `{{widget_id}}`) with actual values.
 
 > 📘Finding Your Client ID
+>
 > Your Client ID (Application ID) can be found in **Organization Settings** within the Producer Suite or provided by your LiveLike account representative.
 
 ***
@@ -171,14 +172,6 @@ For developers building integrations or custom tooling, here are the base URL pa
 
 ***
 
-## Related Resources
-
-* [Producer Suite Getting Started](https://docs.livelike.com/docs/ps-getting-started)
-* [REST API Getting Started](https://docs.livelike.com/docs/rest-api-getting-started)
-* [API Reference](https://docs.livelike.com/reference)
-
-***
-
 <Callout icon="💡" theme="default">
-  ### **Tip:** Bookmark this page for quick access to any CMS resource. You can also use browser search (Ctrl/Cmd + F) to quickly find the link you need.
+  **Tip:** Bookmark this page for quick access to any CMS resource. You can also use browser search (Ctrl/Cmd + F) to quickly find the link you need.
 </Callout>
