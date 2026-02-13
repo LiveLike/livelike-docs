@@ -32,7 +32,6 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 
 ***
 
-
 <Accordion title="Programs" icon="fa-info-circle">
   | Resource           | URL                                                                                              |
   | ------------------ | ------------------------------------------------------------------------------------------------ |
@@ -109,7 +108,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
   | Media Library | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/media` |
 </Accordion>
 
----
+***
 
 ## Loyalty & Rewards
 
@@ -170,10 +169,9 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 <Accordion title="Badges" icon="fa-info-circle">
   Badges tabs (Active, Archived) are JS-based and share the same URL. Badge creation and editing use modal dialogs on the list page.
 
-| Resource                   | URL                                                                           |
-| -------------------------- | ----------------------------------------------------------------------------- |
-| Badges (Active / Archived) | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges` |
-
+  | Resource                   | URL                                                                           |
+  | -------------------------- | ----------------------------------------------------------------------------- |
+  | Badges (Active / Archived) | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges` |
 </Accordion>
 
 <Accordion title="NFTs" icon="fa-info-circle">
@@ -182,7 +180,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
   | Manage NFTs | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/nfts` |
 </Accordion>
 
----
+***
 
 ## Business Tools
 
@@ -218,7 +216,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
   | Archived | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys?status=archived` |
 </Accordion>
 
----
+***
 
 ## User Management
 
@@ -242,7 +240,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
   | List all registered links | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/registered_links` |
 </Accordion>
 
----
+***
 
 ## Arcade CMS
 
@@ -250,19 +248,71 @@ The Arcade CMS is a separate portal for managing mini-games and interactive expe
 
 **Base URL:** `https://arcade-cms.livelikecdn.com/application/{{client_id}}`
 
-| Game Type          | List All                                                                            | Edit Game                                                                                                                                  |
-| ------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Trivia**         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia`         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
-| **Spin the Wheel** | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel` | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel/update?game_id={{game_id}}&instance_id={{instance_id}}` |
-| **Guess the Word** | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle`         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
-| **Predictor**      | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor`      | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor/update?game_id={{game_id}}&instance_id={{instance_id}}`      |
-| **Guess What**     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what`     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
-| **Skill Game**     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game`     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
-| **Sweepstakes**    | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes`    | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes/update?game_id={{game_id}}&instance_id={{instance_id}}`    |
-| **Scratch Card**   | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card`   | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card/update?game_id={{game_id}}&instance_id={{instance_id}}`   |
+<Accordion title="Trivia" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                       |
+  | --------- | ------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Spin the Wheel" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                              |
+  | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel`                                              |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Guess the Word" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                       |
+  | --------- | ------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Predictor" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                          |
+  | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Guess What" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                           |
+  | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Skill Game" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                           |
+  | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Sweepstakes" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                            |
+  | --------- | ------------------------------------------------------------------------------------------------------------------------------ |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+<Accordion title="Scratch Card" icon="fa-info-circle">
+  | Resource  | URL                                                                                                                             |
+  | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+  | Game List | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card`                                               |
+  | Edit Game | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+</Accordion>
+
+
+***
+
+<br />
+
+## Arcade Game Preview
 
 <Accordion title="Arcade Preview Links" icon="fa-info-circle">
   `https://arcade-web.livelikecdn.com/{{game-type}}.html?client_id={{client_id}}&game_id={{game_id}}&instance_id={{instance_id}}`
 </Accordion>
 
----
+<br />
