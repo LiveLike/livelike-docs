@@ -4,6 +4,11 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - slug: ps-getting-started
+      title: Getting Started
+      type: basic
 ---
 
 This document provides direct CMS links for all LiveLike resources. Replace `{{client_id}}` with your Application ID and resource-specific IDs (e.g., `{{program_id}}`, `{{widget_id}}`) with actual values.
