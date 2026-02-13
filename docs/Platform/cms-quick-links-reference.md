@@ -12,119 +12,233 @@ next:
 ---
 This document provides direct CMS links for all LiveLike resources. Replace `{{client_id}}` with your Application ID and resource-specific IDs (e.g., `{{program_id}}`, `{{widget_id}}`) with actual values.
 
-<Callout icon="📘" theme="info">
-  Finding Your Client ID
+> **Finding Your Client ID**
+>
+> Your Client ID (Application ID) can be found in the **Producer Suite** dashboard or provided by your LiveLike account representative.
 
-  Your Client ID (Application ID) can be found in **Organization Settings** within the Producer Suite or provided by your LiveLike account representative.
-</Callout>
-
-***
+---
 
 ## Producer Suite
 
-The Producer Suite is your central hub for managing programs, widgets, and chat.
+The Producer Suite is your central hub for managing programs, widgets, chat, and all engagement features.
 
-| Resource                  | Action | URL                                                                              |
-| ------------------------- | ------ | -------------------------------------------------------------------------------- |
-| **Dashboard**             | View   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/dashboard` |
-| **Organization Settings** | Manage | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/settings`  |
+**Base URL:** `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}`
+
+| Resource      | URL                                                                              |
+| ------------- | -------------------------------------------------------------------------------- |
+| **Dashboard** | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/dashboard` |
+
+---
 
 ### Programs
 
-| Action             | URL                                                                                            |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| List all programs  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs`                |
-| View/Edit program  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}` |
-| Create new program | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/new`            |
+| Resource           | URL                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------ |
+| List all programs  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs`                  |
+| Live Now           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=live`      |
+| Upcoming           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=future`    |
+| History            | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=past`      |
+| Moderation         | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reported-widgets`          |
+| Banned Users       | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/banned-users`              |
+| Filtered Widgets   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/widgets/filtered` |
+| View/Edit program  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}`   |
+| Create new program | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/create`           |
 
-### Widgets
+#### Widget Console (Program Detail)
 
-| Action                      | URL                                                                                                    |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Widget Console (by program) | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}/widgets` |
-| View widget details         | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/widgets/{{widget_id}}`           |
+| Resource     | URL                                                                                                                             |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Create       | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}`                                  |
+| Widgets      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}/widgets`                          |
+| Automated    | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?automating=True`                  |
+| Queue        | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?status=pending&ordering=recent`   |
+| Scheduled    | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?status=scheduled&ordering=recent` |
+| History      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?status=published&ordering=recent` |
+| Moderation   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?moderation=True`                  |
+| Banned Users | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}?banned_users=True`                |
 
 ### Chat Rooms
 
-| Action              | URL                                                                                                |
-| ------------------- | -------------------------------------------------------------------------------------------------- |
-| List all chat rooms | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms`                  |
-| View/Edit chat room | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}` |
-| Moderation panel    | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/moderation`                  |
+| Resource          | URL                                                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| List all          | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms`                                  |
+| Moderation        | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reported-chat-messages`                      |
+| Muted Users       | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/globally-muted-users`                        |
+| Banned Words      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/banned-words`                                |
+| Filtered Messages | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/filtered-messages`                           |
+| View/Edit room    | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}`                 |
+| Members           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}/members`         |
+| Room Moderation   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}/moderation`      |
+| Room Muted Users  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}/muted-users`     |
+| Pinned Messages   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/chat-rooms/{{chat_room_id}}/pinned-messages` |
 
-***
+### Comments (Comment Board)
 
-## Engagement & Gamification
+| Resource          | URL                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| Comment Board     | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/comment-board?is_linked=true` |
+| Reported Comments | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reported-comments`            |
+| Banned Users      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/globally-banned-user`         |
+| Filtered Comments | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/all-filtered-comments`        |
+
+### Moderation
+
+| Resource           | URL                                                                                                      |
+| ------------------ | -------------------------------------------------------------------------------------------------------- |
+| Widgets - Reported | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/moderation-reported-widgets`       |
+| Widgets - Filtered | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/filtered-section-widgets`          |
+| Chat Messages      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/moderation-reported-chat-messages` |
+| Comments           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/moderation-comments`               |
+| Image Origins      | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/moderation-image-origins`          |
+| Banned Words       | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/banned-words`                      |
+
+### Asset Packs
+
+| Resource       | URL                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------- |
+| Sticker Packs  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/sticker-packs`  |
+| Reaction Packs | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reaction-packs` |
+| Flairs         | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/flair-list`     |
+
+### Media Library
+
+| Resource      | URL                                                                          |
+| ------------- | ---------------------------------------------------------------------------- |
+| Media Library | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/media` |
+
+---
+
+## Loyalty & Rewards
+
+### User Actions
+
+| Resource           | URL                                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------------- |
+| All Actions        | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions?search=all`       |
+| Built-In           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions?search=built-in`  |
+| Custom             | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions?search=custom`    |
+| Segment            | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions?search=segment`   |
+| mParticle          | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions?search=mParticle` |
+| Create User Action | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/actions/create`           |
 
 ### Rewards
 
-| Resource           | Action    | URL                                                                                                     |
-| ------------------ | --------- | ------------------------------------------------------------------------------------------------------- |
-| **Reward Items**   | List all  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/rewards/items`                    |
-| **Reward Items**   | View/Edit | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/rewards/items/{{reward_item_id}}` |
-| **Reward Actions** | List all  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/rewards/actions`                  |
-| **Reward Tables**  | List all  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/rewards/tables`                   |
-| **Reward Tables**  | View/Edit | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/rewards/tables/{{table_id}}`      |
+| Resource       | URL                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------- |
+| Reward Items   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reward-items`                 |
+| Reward Tables  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reward-tables`                |
+| Archived Items | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reward-items?status=archived` |
 
 ### Leaderboards
 
-| Action                 | URL                                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------------------------ |
-| List all leaderboards  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/leaderboards`                    |
-| View/Edit leaderboard  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/leaderboards/{{leaderboard_id}}` |
-| Create new leaderboard | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/leaderboards/new`                |
+| Resource              | URL                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------ |
+| List all leaderboards | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/leaderboards`                    |
+| View/Edit leaderboard | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/leaderboards/{{leaderboard_id}}` |
+
+### Status Tiers
+
+| Resource          | URL                                                                                                   |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| Active            | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/tier-groups/?is_archived=false` |
+| Archived          | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/tier-groups/?is_archived=true`  |
+| Create Tier Group | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/create-tier-group/`             |
 
 ### Quests
 
-| Action           | URL                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| List all quests  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests`              |
-| View/Edit quest  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests/{{quest_id}}` |
-| Create new quest | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests/new`          |
-
-### Badges
-
-| Action           | URL                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| List all badges  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges`              |
-| View/Edit badge  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges/{{badge_id}}` |
-| Create new badge | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges/new`          |
+| Resource         | URL                                                                                           |
+| ---------------- | --------------------------------------------------------------------------------------------- |
+| Open             | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests`                 |
+| Expired          | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests?is_expired=true` |
+| Archived         | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests?is_active=false` |
+| View/Edit quest  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests/{{quest_id}}`    |
+| Create new quest | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/quests/create`          |
 
 ### Streaks
 
-| Action            | URL                                                                                          |
-| ----------------- | -------------------------------------------------------------------------------------------- |
-| List all streaks  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks`               |
-| View/Edit streak  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks/{{streak_id}}` |
-| Create new streak | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks/new`           |
+| Resource | URL                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| Live     | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks?search=&status=live`     |
+| Upcoming | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks?search=&status=upcoming` |
+| Expired  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks?search=&status=expired`  |
+| Archived | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks?search=&status=archived` |
+| Draft    | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/streaks?search=&status=draft`    |
+
+### Badges
+
+Badges tabs (Active, Archived) are JS-based and share the same URL. Badge creation and editing use modal dialogs on the list page.
+
+| Resource                   | URL                                                                           |
+| -------------------------- | ----------------------------------------------------------------------------- |
+| Badges (Active / Archived) | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/badges` |
+
+### NFTs
+
+| Resource    | URL                                                                         |
+| ----------- | --------------------------------------------------------------------------- |
+| Manage NFTs | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/nfts` |
+
+---
+
+## Business Tools
 
 ### Sponsors
 
-| Action             | URL                                                                                            |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| List all sponsors  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/sponsors`                |
-| View/Edit sponsor  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/sponsors/{{sponsor_id}}` |
-| Create new sponsor | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/sponsors/new`            |
+| Resource          | URL                                                                             |
+| ----------------- | ------------------------------------------------------------------------------- |
+| List all sponsors | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/sponsors` |
 
-***
+### Integrations
+
+| Resource          | URL                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------- |
+| View integrations | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/integrations` |
+
+### Analytics
+
+| Resource            | URL                                                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Analytics Dashboard | `https://cf-blast.livelikecdn.com/analytics/visualization?organization={{organization_id}}&application={{client_id}}` |
+
+### LiveLike Genie (AI Assistant)
+
+| Resource   | URL                                                                          |
+| ---------- | ---------------------------------------------------------------------------- |
+| Open Genie | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/genie` |
+
+### Redemption Keys
+
+| Resource | URL                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| Active   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys`                 |
+| Redeemed | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys?status=redeemed` |
+| Archived | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys?status=archived` |
+
+---
 
 ## User Management
 
-### Profile Groups
+### User Profiles & User Groups
 
-| Action                  | URL                                                                                                |
+| Resource                | URL                                                                                                |
 | ----------------------- | -------------------------------------------------------------------------------------------------- |
-| List all profile groups | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/profile-groups`              |
+| User Profiles           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/user-profile`                |
+| User Groups             | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/profile-groups`              |
 | View/Edit profile group | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/profile-groups/{{group_id}}` |
+
+### User Roles
+
+| Resource       | URL                                                                          |
+| -------------- | ---------------------------------------------------------------------------- |
+| List all roles | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/roles` |
 
 ### Registered Links
 
-| Action                    | URL                                                                                                 |
-| ------------------------- | --------------------------------------------------------------------------------------------------- |
-| List all registered links | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/registered-links`             |
-| View/Edit registered link | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/registered-links/{{link_id}}` |
+| Resource                  | URL                                                                                     |
+| ------------------------- | --------------------------------------------------------------------------------------- |
+| List all registered links | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/registered_links` |
 
-***
+---
 
 ## Arcade CMS
 
@@ -132,48 +246,19 @@ The Arcade CMS is a separate portal for managing mini-games and interactive expe
 
 **Base URL:** `https://arcade-cms.livelikecdn.com/application/{{client_id}}`
 
-| Game Type          | List All                | Edit Game                                                                      |
-| ------------------ | ----------------------- | ------------------------------------------------------------------------------ |
-| **Trivia**         | `/games/trivia`         | `/games/trivia/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
-| **Spin the Wheel** | `/games/spin-the-wheel` | `/games/spin-the-wheel/update?game_id={{game_id}}&instance_id={{instance_id}}` |
-| **Guess the Word** | `/games/wordle`         | `/games/wordle/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
-| **Predictor**      | `/games/predictor`      | `/games/predictor/update?game_id={{game_id}}&instance_id={{instance_id}}`      |
-| **Guess What**     | `/games/guess-what`     | `/games/guess-what/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
-| **Skill Game**     | `/games/skill-game`     | `/games/skill-game/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
-| **Sweepstakes**    | `/games/sweepstakes`    | `/games/sweepstakes/update?game_id={{game_id}}&instance_id={{instance_id}}`    |
-| **Scratch Card**   | `/games/scratch-card`   | `/games/scratch-card/update?game_id={{game_id}}&instance_id={{instance_id}}`   |
+| Game Type          | List All                                                                            | Edit Game                                                                                                                                  |
+| ------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Trivia**         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia`         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/trivia/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
+| **Spin the Wheel** | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel` | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/spin-the-wheel/update?game_id={{game_id}}&instance_id={{instance_id}}` |
+| **Guess the Word** | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle`         | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/wordle/update?game_id={{game_id}}&instance_id={{instance_id}}`         |
+| **Predictor**      | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor`      | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/predictor/update?game_id={{game_id}}&instance_id={{instance_id}}`      |
+| **Guess What**     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what`     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/guess-what/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
+| **Skill Game**     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game`     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/skill-game/update?game_id={{game_id}}&instance_id={{instance_id}}`     |
+| **Sweepstakes**    | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes`    | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/sweepstakes/update?game_id={{game_id}}&instance_id={{instance_id}}`    |
+| **Scratch Card**   | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card`   | `https://arcade-cms.livelikecdn.com/application/{{client_id}}/games/scratch-card/update?game_id={{game_id}}&instance_id={{instance_id}}`   |
 
 ### Arcade Preview Links
 
-To preview arcade games, use the following URL pattern:
-[https://arcade-web.livelikecdn.com/\{\{game-type}}.html?client_id=\{\{client_id}}&game_id=\{\{game_id}}&instance_id=\{\{instance_id}}](https://arcade-web.livelikecdn.com/\{\{game-type}}.html?client_id=\{\{client_id}}\&game_id=\{\{game_id}}\&instance_id=\{\{instance_id}})
+`https://arcade-web.livelikecdn.com/{{game-type}}.html?client_id={{client_id}}&game_id={{game_id}}&instance_id={{instance_id}}`
 
-**Example (Guess the Word):**
-[https://arcade-web.livelikecdn.com/guess-the-word.html?client_id=\{\{client_id}}&game_id=\{\{game_id}}&instance_id=\{\{instance_id}}](https://arcade-web.livelikecdn.com/guess-the-word.html?client_id=\{\{client_id}}\&game_id=\{\{game_id}}\&instance_id=\{\{instance_id}})
-
-***
-
-## Analytics
-
-| Resource            | URL                                                                                                      |
-| ------------------- | -------------------------------------------------------------------------------------------------------- |
-| Analytics Dashboard | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/analytics`                         |
-| Program Analytics   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}/analytics` |
-
-***
-
-## URL Pattern Reference
-
-For developers building integrations or custom tooling, here are the base URL patterns:
-
-| Environment    | Base URL                                                               |
-| -------------- | ---------------------------------------------------------------------- |
-| Producer Suite | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}` |
-| Arcade CMS     | `https://arcade-cms.livelikecdn.com/application/{{client_id}}`         |
-| Arcade Preview | `https://arcade-web.livelikecdn.com/`                                  |
-
-***
-
-<Callout icon="💡" theme="default">
-  **Tip:** Bookmark this page for quick access to any CMS resource. You can also use browser search (Ctrl/Cmd + F) to quickly find the link you need.
-</Callout>
+---
