@@ -32,6 +32,20 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 
 ***
 
+<Accordion title="Programs" icon="fa-info-circle">
+  | Resource           | URL                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------ |
+| List all programs  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs`                  |
+| Live Now           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=live`      |
+| Upcoming           | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=future`    |
+| History            | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs?status=past`      |
+| Moderation         | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/reported-widgets`          |
+| Banned Users       | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/banned-users`              |
+| Filtered Widgets   | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/widgets/filtered` |
+| View/Edit program  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}`   |
+| Create new program | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/create`           |
+</Accordion>
+
 ### Programs
 
 | Resource           | URL                                                                                              |
