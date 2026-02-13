@@ -12,9 +12,11 @@ next:
 ---
 This document provides direct CMS links for all LiveLike resources. Replace `{{client_id}}` with your Application ID and resource-specific IDs (e.g., `{{program_id}}`, `{{widget_id}}`) with actual values.
 
-> 📘Finding Your Client ID
->
-> Your Client ID (Application ID) can be found in **Organization Settings** within the Producer Suite or provided by your LiveLike account representative.
+<Callout icon="📘" theme="info">
+  Finding Your Client ID
+
+  Your Client ID (Application ID) can be found in **Organization Settings** within the Producer Suite or provided by your LiveLike account representative.
+</Callout>
 
 ***
 
