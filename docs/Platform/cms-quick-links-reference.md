@@ -16,7 +16,7 @@ This document provides direct CMS links for all LiveLike resources. Replace `{{c
 >
 > Your Client ID (Application ID) can be found in the **Producer Suite** dashboard or provided by your LiveLike account representative.
 
----
+***
 
 ## Producer Suite
 
@@ -28,7 +28,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 | ------------- | -------------------------------------------------------------------------------- |
 | **Dashboard** | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/dashboard` |
 
----
+***
 
 ### Programs
 
@@ -44,7 +44,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 | View/Edit program  | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/{{program_id}}`   |
 | Create new program | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/programs/create`           |
 
-#### Widget Console (Program Detail)
+#### Widget (Program Detail)
 
 | Resource     | URL                                                                                                                             |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -106,7 +106,7 @@ The Producer Suite is your central hub for managing programs, widgets, chat, and
 | ------------- | ---------------------------------------------------------------------------- |
 | Media Library | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/media` |
 
----
+***
 
 ## Loyalty & Rewards
 
@@ -178,7 +178,7 @@ Badges tabs (Active, Archived) are JS-based and share the same URL. Badge creati
 | ----------- | --------------------------------------------------------------------------- |
 | Manage NFTs | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/nfts` |
 
----
+***
 
 ## Business Tools
 
@@ -214,7 +214,7 @@ Badges tabs (Active, Archived) are JS-based and share the same URL. Badge creati
 | Redeemed | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys?status=redeemed` |
 | Archived | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/redemption_keys?status=archived` |
 
----
+***
 
 ## User Management
 
@@ -238,7 +238,7 @@ Badges tabs (Active, Archived) are JS-based and share the same URL. Badge creati
 | ------------------------- | --------------------------------------------------------------------------------------- |
 | List all registered links | `https://cf-blast.livelikecdn.com/producer/applications/{{client_id}}/registered_links` |
 
----
+***
 
 ## Arcade CMS
 
@@ -261,4 +261,4 @@ The Arcade CMS is a separate portal for managing mini-games and interactive expe
 
 `https://arcade-web.livelikecdn.com/{{game-type}}.html?client_id={{client_id}}&game_id={{game_id}}&instance_id={{instance_id}}`
 
----
+***
