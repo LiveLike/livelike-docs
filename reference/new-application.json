@@ -2408,6 +2408,25 @@
                 "required": [
                   "streak_id"
                 ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "streak_id": "<streak-id>",
+                    "name": "Streak-target 1",
+                    "attributes": [
+                      {
+                        "key": "widget_kind",
+                        "value": "text-poll"
+                      },
+                      {
+                        "key": "widget_id",
+                        "value": "aadb1366-3145-4b90-a388-c2b88331c023"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
