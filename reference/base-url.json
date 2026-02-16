@@ -258,7 +258,40 @@
         "description": "",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "77b07b0a-c6f5-4c5e-a365-934f9d22c39b",
+                      "url": "https://cf-blast-game-changers.livelikecdn.com/api/v1/user-streaks/77b07b0a-c6f5-4c5e-a365-934f9d22c39b/",
+                      "profile_id": "12cc3d8f-8ba9-468d-97eb-45c25ccdca6c",
+                      "streak_id": "6d2d2c99-767c-489b-b9a8-58de76b0bddc",
+                      "streak": {
+                        "id": "6d2d2c99-767c-489b-b9a8-58de76b0bddc",
+                        "name": "Recurring and repeat on reset test 1",
+                        "period": null,
+                        "streak_type": "consecutive_action"
+                      },
+                      "first_activity": "2026-02-16T06:51:07Z",
+                      "last_activity": "2026-02-16T06:51:09Z",
+                      "reset_at": "2026-02-16T06:51:35.442952Z",
+                      "current_streak_length": 1,
+                      "maximum_streak_length": 8,
+                      "freeze_start": null,
+                      "freeze_until": null,
+                      "freeze_reason": "",
+                      "milestone_count": 0,
+                      "milestones_url": "https://cf-blast-game-changers.livelikecdn.com/api/v1/user-streaks/77b07b0a-c6f5-4c5e-a365-934f9d22c39b/milestones/",
+                      "status": "reset",
+                      "reason": "Reset freeze user streak"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
