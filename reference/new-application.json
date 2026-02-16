@@ -2324,6 +2324,94 @@
           }
         ],
         "operationId": "get_client-id-streak-targets"
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "7c5debdb-c086-4b5d-b91d-53fd078adf8d",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-targets/7c5debdb-c086-4b5d-b91d-53fd078adf8d/",
+                      "streak_id": "fbd5cd7f-0778-4e20-8ee3-6e27b7ae6715",
+                      "name": "Streak-target 1",
+                      "attributes": [
+                        {
+                          "key": "widget_id",
+                          "value": "aadb1366-3145-4b90-a388-c2b88331c023"
+                        },
+                        {
+                          "key": "widget_kind",
+                          "value": "text-poll"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-streak-targets",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "streak_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the target"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "description": "attribute key eg. widget_kind"
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "attribute value, eg. text-poll"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  }
+                },
+                "required": [
+                  "streak_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
