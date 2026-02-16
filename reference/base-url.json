@@ -252,6 +252,27 @@
         ],
         "operationId": "get_user-quests-user-quest-id"
       }
+    },
+    "/user-streak/{user-streak-id}/reset/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_user-streak-user-streak-id-reset"
+      }
     }
   },
   "components": {
