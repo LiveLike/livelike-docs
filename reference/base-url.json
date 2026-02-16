@@ -271,7 +271,24 @@
             "required": true
           }
         ],
-        "operationId": "post_user-streak-user-streak-id-reset"
+        "operationId": "post_user-streak-user-streak-id-reset",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
