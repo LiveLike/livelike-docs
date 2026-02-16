@@ -4,7 +4,7 @@ api:
   file: base-url.json
   operationId: post_user-streak-user-streak-id-reset
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
