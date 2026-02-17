@@ -33880,19 +33880,10 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "count": {
+                    "synced_block_count": {
                       "type": "integer",
                       "example": 4,
                       "default": 0
-                    },
-                    "previous": {},
-                    "next": {},
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "example": "5ffef83a-78cc-4677-ab94-bdb5ddae8486"
-                      }
                     }
                   }
                 }
@@ -33950,10 +33941,6 @@
                   "override": {
                     "type": "boolean",
                     "default": "true"
-                  },
-                  "is_reciprocal": {
-                    "type": "boolean",
-                    "default": "false"
                   }
                 },
                 "required": [
