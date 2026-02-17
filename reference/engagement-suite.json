@@ -17446,11 +17446,6 @@
                   "blocked_profile_id": {
                     "type": "string",
                     "description": "profile uuid that is being blocked"
-                  },
-                  "is_reciprocal": {
-                    "type": "boolean",
-                    "default": "false",
-                    "description": "If true, the block is treated as mutual: content is hidden both ways, even though only one way block record exists. If false, the block applies only in the blocked_by → blocked_profile direction."
                   }
                 },
                 "required": [
