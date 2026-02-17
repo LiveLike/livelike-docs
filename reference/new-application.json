@@ -11,7 +11,18 @@
   ],
   "tags": [],
   "paths": {
-    "/new-endpoint": {},
+    "/new-endpoint": {
+      "get": {
+        "summary": "New Endpoint",
+        "description": "This is your first endpoint! Edit this page to start documenting your API.",
+        "operationId": "get_new-endpoint",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
     "/{client-id}/ab-test-quests/": {
       "get": {
         "description": "",
@@ -2549,6 +2560,39 @@
           }
         ],
         "operationId": "delete_client-id-streak-targets-streak-target-id"
+      }
+    },
+    "/new-endpoint-2": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "operationId": "post_new-endpoint-2",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "streak_id": {
+                    "type": "string"
+                  },
+                  "targets_csv": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                },
+                "required": [
+                  "streak_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
