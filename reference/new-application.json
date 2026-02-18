@@ -2584,6 +2584,9 @@
                   "targets_csv": {
                     "type": "object",
                     "properties": {}
+                  },
+                  "name": {
+                    "type": "string"
                   }
                 },
                 "required": [
