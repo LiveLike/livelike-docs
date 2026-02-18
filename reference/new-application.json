@@ -2105,6 +2105,10 @@
                       },
                       "type": "object"
                     }
+                  },
+                  "repeat_on_reset": {
+                    "type": "boolean",
+                    "default": "true"
                   }
                 },
                 "required": [
