@@ -5,4 +5,5 @@
 - create-streak-targets
 - update-streak-target
 - delete-streak-target
+- list-streak-targets
 - create-streak-target-with-csv
