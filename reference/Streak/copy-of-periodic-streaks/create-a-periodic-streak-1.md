@@ -1,5 +1,5 @@
 ---
-title: Create a Consecutive Streak
+title: Create a Consecutive Action Streak
 api:
   file: new-application.json
   operationId: create-a-periodic-streak-1
