@@ -2000,6 +2000,20 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "milestone_type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get_client-id-streak-milestones"
