@@ -1365,6 +1365,34 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "streak_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "milestone_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "milestone_reached_at_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "milestone_reached_at_until",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get_profile-id-user-streak-milestones"
