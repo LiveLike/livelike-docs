@@ -4,7 +4,7 @@ api:
   file: new-application.json
   operationId: post_new-endpoint-2
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
