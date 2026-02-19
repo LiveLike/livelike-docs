@@ -3060,6 +3060,52 @@
         "summary": "Copy of ",
         "operationId": "patch_client-id-consecutive-action-streaks-consecutive-streak-id-1"
       }
+    },
+    "/{client-id}/consecutive-action-streaks/{consecutive-streak-id}/": {
+      "delete": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "No Content": {
+                    "summary": "No Content",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            "description": "No Content"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "consecutive-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "delete_client-id-consecutive-action-streaks-consecutive-streak-id"
+      }
     }
   },
   "components": {
