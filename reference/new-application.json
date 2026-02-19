@@ -2706,6 +2706,36 @@
         ],
         "operationId": "post_client-id-periodic-streaks-periodic-streak-id-unarchive"
       }
+    },
+    "/{client-id}/periodic-streaks/{periodic-streak-id}/unarchive/-1": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "periodic-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-unarchive-1",
+        "summary": "Copy of "
+      }
     }
   },
   "components": {
