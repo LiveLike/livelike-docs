@@ -4,7 +4,7 @@ api:
   file: profiles.json
   operationId: get_profile-id-user-streak-milestones
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
