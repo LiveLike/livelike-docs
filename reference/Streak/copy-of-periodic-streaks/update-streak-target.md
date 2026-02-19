@@ -4,7 +4,7 @@ api:
   file: new-application.json
   operationId: patch_client-id-streak-targets-streak-target-id
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
