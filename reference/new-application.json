@@ -2736,6 +2736,35 @@
         ],
         "operationId": "post_client-id-consecutive-actions-consecutive-action-id-archive"
       }
+    },
+    "/{client-id}/consecutive-action-streaks/{consecutive-action-id}/unarchive/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "consecutive-action-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-consecutive-action-streaks-consecutive-action-id-unarchive"
+      }
     }
   },
   "components": {
