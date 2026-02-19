@@ -8,7 +8,7 @@ api:
   file: base-url.json
   operationId: post_user-streaks
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
