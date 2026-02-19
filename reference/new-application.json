@@ -1382,6 +1382,50 @@
             }
           }
         }
+      },
+      "delete": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "No Content": {
+                    "summary": "No Content",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            "description": "No Content"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "periodic-streak-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "delete_client-id-periodic-streaks-periodic-streak-id"
       }
     },
     "/new-endpoint-1": {
