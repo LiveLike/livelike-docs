@@ -31250,7 +31250,7 @@
       }
     },
     "/profiles/{profile-id}/tier-groups/{tier-group-id}/user-tiers/": {
-      "post": {
+      "put": {
         "summary": "Assign tier to a profile",
         "description": "",
         "operationId": "create-a-user-tier",
