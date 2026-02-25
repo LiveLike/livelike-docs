@@ -22787,6 +22787,14 @@
                           "comment_depth": 0,
                           "custom_data": "custom data",
                           "author_id": "96819c56-063d-4fad-929a-79a0648122f4",
+                          "author": {
+                            "id": "96819c56-063d-4fad-929a-79a0648122f4",
+                            "url": "https://cf-blast.livelikecdn.com/api/v1/profiles/96819c56-063d-4fad-929a-79a0648122f4/",
+                            "created_at": "2023-01-24T13:52:13Z",
+                            "nickname": "Mega Shot",
+                            "custom_id": null,
+                            "custom_data": ""
+                          },
                           "is_deleted": false,
                           "trending_score": 1.05439,
                           "created_at": "2022-12-09T13:06:39.379146Z",
