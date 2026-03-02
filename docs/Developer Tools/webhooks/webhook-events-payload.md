@@ -296,7 +296,9 @@ This document details the webhook events sent by our system, including their pay
     "author_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
     "author_nickname": "Charming Trout",
     "author_image_url": null,
+		"author_custom_id": "customid",
     "comment_text": "Test Comment",
+		"comment_board_id": "eab83c37-1e9e-4180-932f-b9fe27b14865",
     "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
     "created_at": "2025-06-03T08:00:20.567272Z"
   },
@@ -313,7 +315,9 @@ This document details the webhook events sent by our system, including their pay
 | `data.comment_id`       | `string`   | Unique identifier for the comment                           |
 | `data.author_nickname`  | `string`   | Nickname for the author of the comment                      |
 | `data.author_image_url` | `string`   | The url for the profile image for the author of the comment |
+| `data.author_custom_id` | `string`   | Custom id of comment creator (optional)                     |
 | `data.comment_text`     | `string`   | The actual text content of the comment                      |
+| `data.comment_board_id` | `string`   | The id of the comment board                                 |
 | `data.client_id`        | `string`   | Client-specific identifier                                  |
 | `data.created_at`       | `string`   | Timestamp when the comment was created                      |
 | `created_at`            | `datetime` | Timestamp when the event was created                        |
@@ -331,12 +335,15 @@ This document details the webhook events sent by our system, including their pay
     "reply_author_id": "1da10aea-96b9-4842-83b7-257ed3953804",
     "reply_author_nickname": "Humble Hamster",
     "reply_author_image_url": null,
+		"reply_author_custom_id": "cuid",
     "reply_text": "Test Comment Reply 2",
     "comment_id": "51cc5522-6967-46ff-8edb-afbe90e5e3d5",
-    "profile_id": "947d3a03-f87f-4146-8e32-043db3fdd25f",
+    "author_id": "947d3a03-f87f-4146-8e32-043db3fdd25f",
     "author_nickname": "Swift Zebra",
     "author_image_url": null,
+		"author_custom_id": "customid",
     "comment_text": "Test Comment",
+		"comment_board_id": "eab83c37-1e9e-4180-932f-b9fe27b14865",
     "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
     "created_at": "2025-06-03T08:00:20.567272Z"
   },
@@ -346,22 +353,25 @@ This document details the webhook events sent by our system, including their pay
 
 ### Field Descriptions
 
-| Field Name                   | Type       | Description                                                             |
-| :--------------------------- | :--------- | :---------------------------------------------------------------------- |
-| `id`                         | `string`   | Unique identifier for the event                                         |
-| `event`                      | `string`   | Event type {`comment-reply-created`}                                    |
-| `data.reply_comment_id`      | `string`   | Unique identifier for the comment reply                                 |
-| `data.reply_author_id`       | `string`   | Unique identifier for the author of the new comment reply               |
-| `data.reply_author_nickname` | `string`   | Nickname for the author of the new comment reply                        |
-| `data.reply_text`            | `string`   | The actual text content of the new comment reply                        |
-| `data.profile_id`            | `string`   | Unique identifier for the author of the original comment                |
-| `data.comment_id`            | `string`   | Unique identifier for the original comment to which the reply was given |
-| `data.author_nickname`       | `string`   | Nickname for the author of the original comment                         |
-| `data.author_image_url`      | `string`   | The url for the profile image for the author of the original comment    |
-| `data.comment_text`          | `string`   | The actual text content of the original comment                         |
-| `data.client_id`             | `string`   | Client-specific identifier                                              |
-| `data.created_at`            | `string`   | Timestamp when the comment reply was created                            |
-| `created_at`                 | `datetime` | Timestamp when the event was created                                    |
+| Field Name                    | Type       | Description                                                             |
+| :---------------------------- | :--------- | :---------------------------------------------------------------------- |
+| `id`                          | `string`   | Unique identifier for the event                                         |
+| `event`                       | `string`   | Event type {`comment-reply-created`}                                    |
+| `data.reply_comment_id`       | `string`   | Unique identifier for the comment reply                                 |
+| `data.reply_author_id`        | `string`   | Unique identifier for the author of the new comment reply               |
+| `data.reply_author_nickname`  | `string`   | Nickname for the author of the new comment reply                        |
+| `data.reply_author_custom_id` | `string`   | Custo id for the author of the comment reply (optional)                 |
+| `data.reply_text`             | `string`   | The actual text content of the new comment reply                        |
+| `data.author_id`              | `string`   | Unique identifier for the author of the original comment                |
+| `data.comment_id`             | `string`   | Unique identifier for the original comment to which the reply was given |
+| `data.author_nickname`        | `string`   | Nickname for the author of the original comment                         |
+| `data.author_image_url`       | `string`   | The url for the profile image for the author of the original comment    |
+| `data.author_custom_id`       | `string`   | Custom id of original comment creator                                   |
+| `data.comment_text`           | `string`   | The actual text content of the original comment                         |
+| `data.comment_board_id`       | `string`   | The id of the comment board                                             |
+| `data.client_id`              | `string`   | Client-specific identifier                                              |
+| `data.created_at`             | `string`   | Timestamp when the comment reply was created                            |
+| `created_at`                  | `datetime` | Timestamp when the event was created                                    |
 
 ## `comment-mention-created`
 
@@ -373,12 +383,21 @@ This document details the webhook events sent by our system, including their pay
   "event": "comment-mention-created",
   "data": {
     "profile_id": "947d3a03-f87f-4146-8e32-043db3fdd25f",
+    "profile_custom_id": "customid",
+		"profile_nickname": "Charming Throut",
     "mentioned_by_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "mentioned_by_custom_id": "mentioned_custom_id",
+		"mentioned_by_nickname": "Swift Zebra",
     "comment_id": "ce1b34f3-2cdf-4145-87ee-e9c2279f838f",
     "comment_text": "Hey @Swift and @Witty, how are you?",
     "start_index": 4,
     "end_index": 9,
     "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "parent_comment_id": "76a33123-ff4c-4509-a31e-4db5880d8151",
+    "parent_comment_author_id": "bf6051b5-2406-4304-b047-0ff4074c17a0",
+		"parent_comment_author_custom_id": "thisisid",
+    "parent_comment_author_nickname": "Loyal Falcon",
+		"comment_board_id": "eab83c37-1e9e-4180-932f-b9fe27b14865",
     "created_at": "2025-09-10T06:27:03.349873Z"
   },
   "created_at": "2025-09-10T06:27:03.629615+00:00"
@@ -387,19 +406,27 @@ This document details the webhook events sent by our system, including their pay
 
 ### Field Descriptions
 
-| Field Name             | Type       | Description                                                   |
-| :--------------------- | :--------- | :------------------------------------------------------------ |
-| `id`                   | `string`   | Unique identifier for the event                               |
-| `event`                | `string`   | Event type {`comment-mention-created`}                        |
-| `data.profile_id`      | `string`   | Unique identifier for the mentioned profile                   |
-| `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned_by profile                |
-| `data.comment_id`      | `string`   | Unique identifier for the comment                             |
-| `data.comment_text`    | `string`   | Text content of the comment in which mentions were created    |
-| `data.start_index`     | `string`   | Starting index of the mention placeholder in the comment text |
-| `data.end_index`       | `string`   | Ending index of the mention placeholder in the comment text   |
-| `data.client_id`       | `string`   | Client-specific identifier                                    |
-| `data.created_at`      | `datetime` | Timestamp when the comment mention was created                |
-| `created_at`           | `datetime` | Timestamp when the event was created                          |
+| Field Name                             | Type       | Description                                                       |
+| :------------------------------------- | :--------- | :---------------------------------------------------------------- |
+| `id`                                   | `string`   | Unique identifier for the event                                   |
+| `event`                                | `string`   | Event type {`comment-mention-created`}                            |
+| `data.profile_id`                      | `string`   | Unique identifier for the mentioned profile                       |
+| `data.profile_custom_id`               | `string`   | Custom id of mentioned profile                                    |
+| `data.profile_nickname`                | `string`   | Nickname of mentioned profile                                     |
+| `data.mentioned_by_id`                 | `string`   | Unique identifier for the mentioned_by profile                    |
+| `data.mentioned_by_custom_id`          | `string`   | Mentioned by custom id                                            |
+| `data.mentioned_by_nickname`           | `string`   | Mentioned by nickname                                             |
+| `data.comment_id`                      | `string`   | Unique identifier for the comment                                 |
+| `data.comment_text`                    | `string`   | Text content of the comment in which mentions were created        |
+| `data.start_index`                     | `string`   | Starting index of the mention placeholder in the comment text     |
+| `data.end_index`                       | `string`   | Ending index of the mention placeholder in the comment text       |
+| `data.client_id`                       | `string`   | Client-specific identifier                                        |
+| `data.parent_comment_id`               | `string`   | Parent comment id (in mention reply only, optional)               |
+| `data.parent_comment_author_id`        | `string`   | Parent comment author id (in mention reply only, optional)        |
+| `data.parent_comment_author_custom_id` | `string`   | Parent comment author custom id (in mention reply only, optional) |
+| `data.comment_board_id`                | `string`   | The id of the comment board                                       |
+| `data.created_at`                      | `datetime` | Timestamp when the comment mention was created                    |
+| `created_at`                           | `datetime` | Timestamp when the event was created                              |
 
 ## `profile-relationship-created`
 
@@ -412,8 +439,12 @@ This document details the webhook events sent by our system, including their pay
   "data": {
     "relationship_type": "follow",
     "to_profile_id": "31d9b4b0-7ef6-44f8-911c-96035700c7d8",
+    "to_profile_nickname": "Charming Throut",
+    "to_profile_custom_id": "thisisid",
     "is_active": true,
     "profile_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "profile_nickname": "Swift Zebra",
+    "profile_custom_id": "customid",
     "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
     "created_at": "2025-09-10T07:01:46Z"
   },
@@ -423,17 +454,21 @@ This document details the webhook events sent by our system, including their pay
 
 ### Field Descriptions
 
-| Field Name               | Type       | Description                                                |
-| :----------------------- | :--------- | :--------------------------------------------------------- |
-| `id`                     | `string`   | Unique identifier for the event                            |
-| `event`                  | `string`   | Event type {`profile-relationship-created`}                |
-| `data.relationship_type` | `string`   | Unique key for profile relationship type                   |
-| `data.to_profile_id`     | `string`   | Unique identifier for the from profile in the relationship |
-| `data.is_active`         | `boolean`  | Active status for the profile relationship                 |
-| `data.profile_id`        | `string`   | Unique identifier for the to profile in the relationship   |
-| `data.client_id`         | `string`   | Client-specific identifier                                 |
-| `data.created_at`        | `datetime` | Timestamp when the profile relationship was created        |
-| `created_at`             | `datetime` | Timestamp when the event was created                       |
+| Field Name                  | Type       | Description                                                |
+| :-------------------------- | :--------- | :--------------------------------------------------------- |
+| `id`                        | `string`   | Unique identifier for the event                            |
+| `event`                     | `string`   | Event type {`profile-relationship-created`}                |
+| `data.relationship_type`    | `string`   | Unique key for profile relationship type                   |
+| `data.to_profile_id`        | `string`   | Unique identifier for the from profile in the relationship |
+| `data.to_profile_nickname`  | `string`   | Nickname for the from profile in the relationship          |
+| `data.to_profile_custom_id` | `string`   | Customid for the from profile in the relationship          |
+| `data.is_active`            | `boolean`  | Active status for the profile relationship                 |
+| `data.profile_id`           | `string`   | Unique identifier for the to profile in the relationship   |
+| `data.profile_nickname`     | `string`   | Nickname for the to profile in the relationship            |
+| `data.profile_custom_id`    | `string`   | Custom id for the to profile in the relationship           |
+| `data.client_id`            | `string`   | Client-specific identifier                                 |
+| `data.created_at`           | `datetime` | Timestamp when the profile relationship was created        |
+| `created_at`                | `datetime` | Timestamp when the event was created                       |
 
 ## `chat-mention-created`
 
@@ -695,7 +730,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -745,7 +780,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -795,7 +830,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -832,6 +867,46 @@ This document details the webhook events sent by our system, including their pay
 | `data.created_at`  | `string`         | Timestamp when the flair was created                 |
 | `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
+
+## `user-reaction-created` && `user-reaction-deleted`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "user-reaction-created" | "user-reaction-deleted",
+  "data": {
+    "reaction_space_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_space_target_group_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_created_by_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+    "reaction_created_by_custom_id": "thisisid",
+    "reaction_created_by_nickname": "Charming Throut",
+		"reaction_name": "smile_emoji",
+    "reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "user_reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "target_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name                            | Type       | Description                                                                              |
+| :------------------------------------ | :--------- | :--------------------------------------------------------------------------------------- |
+| `id`                                  | `string`   | Unique identifier for the event                                                          |
+| `event`                               | `string`   | Event type {`user-reaction-created`} for create and {`user-reaction-deleted`} for delete |
+| `data.reaction_space_id`              | `string`   | Unique identified of reaction space                                                      |
+| `data.reaction_space_target_group_id` | `string`   | Target id for rection space                                                              |
+| `data.reaction_created_by_id`         | `string`   | User id of the user created reaction                                                     |
+| `data.reaction_created_by_nickname`   | `string`   | User nickname of the user created reaction                                               |
+| `data.reaction_created_by_custom_id`  | `string`   | User custom id of the user created reaction                                              |
+| `data.reaction_name`                  | `string`   | Name of the reaction                                                                     |
+| `data.reaction_id`                    | `string`   | Id of the reaction                                                                       |
+| `data.user_reaction_id`               | `string`   | Id of user reaction                                                                      |
+| `data.target_id`                      | `string`   | Id of the target where reaction is applied                                               |
+| `created_at`                          | `datetime` | Timestamp when the event was created                                                     |
 
 ## `chat-message-throttle-updated`
 
