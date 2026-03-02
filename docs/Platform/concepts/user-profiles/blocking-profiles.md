@@ -144,9 +144,9 @@ LiveLike.unblockProfile({
 Unblocking can be done using alternative APIs
 
 * By blocked user's profile ID
-  `DELETE /api/v1/profiles/{blocked_by_profile_id}/profile-blocks/{blocked_profile_id}/`
+  * `DELETE /api/v1/profiles/{blocked_by_profile_id}/profile-blocks/{blocked_profile_id}/`
 * By blocked user's profile custom ID  
-  `DELETE /api/v1/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/`
+  * `DELETE /api/v1/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/`
 
 ## Getting a List of Blocks
 
