@@ -1,7 +1,7 @@
 ---
 title: Reciprocal Profile Blocking APIs
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
