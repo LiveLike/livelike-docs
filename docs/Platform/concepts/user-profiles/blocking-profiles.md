@@ -305,7 +305,7 @@ Set using Application create or update APIs:
 
 Example payload:
 
-```json
+```json block policy update payload
 {
   "block_policy": "active_only"
 }
