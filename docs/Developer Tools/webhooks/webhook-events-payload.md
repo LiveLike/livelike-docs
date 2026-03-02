@@ -730,7 +730,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -780,7 +780,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -830,7 +830,7 @@ This document details the webhook events sent by our system, including their pay
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
     "assigned_by": "Charming Trout",
-		"profile_id: "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
       "client_id": "56ded114-cb29-4853-9c22-96068cfd23e0",
@@ -867,6 +867,46 @@ This document details the webhook events sent by our system, including their pay
 | `data.created_at`  | `string`         | Timestamp when the flair was created                 |
 | `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
+
+## `user-reaction-created` && `user-reaction-deleted`
+
+### Payload Example:
+
+```json json
+{
+  "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
+  "event": "user-reaction-created" | "user-reaction-deleted",
+  "data": {
+    "reaction_space_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_space_target_group_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_created_by_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
+    "reaction_created_by_custom_id": "thisisid",
+    "reaction_created_by_nickname": "Charming Throut",
+		"reaction_name": "smile_emoji",
+    "reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "user_reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "target_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+  },
+  "created_at": "2025-06-03T08:00:20.766704+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name                            | Type       | Description                                                                              |
+| :------------------------------------ | :--------- | :--------------------------------------------------------------------------------------- |
+| `id`                                  | `string`   | Unique identifier for the event                                                          |
+| `event`                               | `string`   | Event type {`user-reaction-created`} for create and {`user-reaction-deleted`} for delete |
+| `data.reaction_space_id`              | `string`   | Unique identified of reaction space                                                      |
+| `data.reaction_space_target_group_id` | `string`   | Target id for rection space                                                              |
+| `data.reaction_created_by_id`         | `string`   | User id of the user created reaction                                                     |
+| `data.reaction_created_by_nickname`   | `string`   | User nickname of the user created reaction                                               |
+| `data.reaction_created_by_custom_id`  | `string`   | User custom id of the user created reaction                                              |
+| `data.reaction_name`                  | `string`   | Name of the reaction                                                                     |
+| `data.reaction_id`                    | `string`   | Id of the reaction                                                                       |
+| `data.user_reaction_id`               | `string`   | Id of user reaction                                                                      |
+| `data.target_id`                      | `string`   | Id of the target where reaction is applied                                               |
+| `created_at`                          | `datetime` | Timestamp when the event was created                                                     |
 
 ## `chat-message-throttle-updated`
 
