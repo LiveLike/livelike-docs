@@ -1,6 +1,5 @@
 ---
 title: Blocking Profiles
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
@@ -16,20 +15,38 @@ Sometimes users are not comfortable, or are being harassed by another user. In o
 
 ## How Blocks Work
 
-When someone blocks someone else, they prevent the blocked person from direct interactions with them. Protections against direct interactions are enforced at the system level, from the API layer upwards. Once a bock is in place, it prevents the blocked user from:
+When one user blocks another, the restriction applies mutually between both profiles. This means neither user can directly interact with the other. These protections are enforced at the system level, starting from the API layer, and apply across all interaction points. Once a block is in place, both users are prevented from engaging with each other in any restricted way.
 
-* inviting them to chat rooms.
-* adding them to chat rooms.
-* mentioning them in chat messages.
-* directly replying to their comments.
-* commenting on boards they own, and vice versa.
-* mentioning them in comments.
-* creating social graph relationships with them.
+When a block exists between two users, the restriction applies mutually. Neither user can interact with the other across the following areas:
+Comments
 
-Blocks do not prevent direct interaction at the system level. For example, API responses will include content from others that may be blocked by the current user. Filtering content from blocked users can be applied at the integration level, and the stock user interface implementations bundled with the SDKs include some of that basic functionality:
+* Comment creation blocked
+* Comment reply blocked
+* Comment mention blocked
+* Comment reporting blocked
+* Comment reaction blocked (create only)
 
-* Chat messages sent from blocked users are not shown.
-* Comments authored by blocked users are not shown.
+Chat
+
+* Chat message quote blocked
+* Chat message reply blocked
+* Chat mention blocked
+* Chat reaction blocked (create only)
+
+Chatroom
+
+* Chatroom membership blocked
+* Chatroom invitation blocked
+
+Social Graph
+
+* Creating social graph relationships blocked
+
+Read visibility behavior depends on the configured block_policy.
+
+* ACTIVE_AND_PASSIVE: Blocked users’ content is excluded from API responses.
+* ACTIVE_ONLY: Only write interactions are restricted; read visibility is not affected.
+* DISABLED: No block enforcement is applied.
 
 <Callout icon="📘" theme="info">
   Social features integrated via API have to implement content filtering at the integration level. Direct interaction between users are prevented at the system level, but indirect interaction is not.
@@ -286,39 +303,65 @@ sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
 }
 ```
 
-## Block Policy (Application Level)
+<br />
 
-The **block_policy** setting controls how user blocking works across your entire application. It is configured per application and overrides all default behavior. It applies automatically to all supported features.
+## Remove Reciprocal Block
 
-### Policies
+* Same behavior as existing unblock endpoint
+* Alternative path for client convenience
 
-* **DISABLED**: Blocking is ignored. All users can read and interact normally.
-* **ACTIVE_ONLY**: Blocking applies only to actions that create interactions.  Content visibility is **not** affected. Users cannot, send messages, create comments, react or mention blocked users, etc.
-* **ACTIVE_AND_PASSIVE (default)**: Blocking applies to both interactions and visibility. Blocked users cannot interact **or** see each other’s content.
+DELETE /api/v1/profiles/{'{blocked_by_profile_uuid}'}/profile-blocks/{'{blocked_profile_id}'}/
 
-### Set Block Policy (Application Level)
+## Remove Reciprocal Block (Custom ID)
 
-Set using Application create or update APIs:
+Same behavior as existing unblock endpoint
 
-`POST /api/v1/applications/`
-`PATCH /api/v1/applications/`
+POST /api/v1/profile-blocks/bulk-sync/
 
-Example payload:
+## Bulk Sync Block List
 
-```json block policy update payload
+POST /api/v1/profile-blocks/bulk-sync/
+
+**Payload**
+
+```
 {
-  "block_policy": "active_only"
+  "blocks": [
+    {
+      "blocked_by_profile_id": "<uuid>",
+      "blocked_profile_id": "<uuid>"
+    }
+  ],
+  "override": true
 }
+
 ```
 
-Default is `active_and_passive`
+### Rules
 
-Behavior Summary
+* Maximum 1000 items per request (configurable)
+* Both profiles must belong to same application
+* Cannot block self
+* override=true:
+  * Deletes existing block entries
+  * Replaces with new list
+* override=false:
+  * Appends to existing list
 
-| Policy             | Write Blocked | Read Blocked |
-| ------------------ | ------------- | ------------ |
-| DISABLED           | ❌             | ❌            |
-| ACTIVE_ONLY        | ✅             | ❌            |
-| ACTIVE_AND_PASSIVE | ✅             | ✅            |
+### Rationale
 
-Blocking is enforced globally for the application and applies automatically to all supported features.
+* Limit prevents:
+* Long DB locks
+* Timeouts
+* Retry storms
+* Memory spikes
+
+<br />
+
+## Implementation Notes
+
+* Reciprocal enforcement handled logically, not physically
+* DB structure remains one-directional
+* Query filtering applied dynamically
+* Bulk sync should use transaction + batching
+* Validation required at serializer level
