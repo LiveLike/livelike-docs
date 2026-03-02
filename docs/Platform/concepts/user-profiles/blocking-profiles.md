@@ -141,10 +141,10 @@ LiveLike.unblockProfile({
 .then(response => console.log(response))
 ```
 
-Unblocking can be done using alternative APIs   
+Unblocking can be done using alternative APIs
 
 * By block user's profile ID
-  `DELETE /api/v1/profiles/{blocked_by_profile_uuid}/profile-blocks/{blocked_profile_id}/`
+  `DELETE /api/v1/profiles/{blocked_by_profile_id}/profile-blocks/{blocked_profile_id}/`
 * By block user's profile custom ID  
   `DELETE /api/v1/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/`
 
