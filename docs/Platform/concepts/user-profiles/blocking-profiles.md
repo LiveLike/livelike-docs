@@ -288,40 +288,22 @@ sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
 
 ## Block Policy (Application Level)
 
-The **block_policy** setting controls how user blocking works across your entire application. It is configured per application and overrides all default behavior.
+The **block_policy** setting controls how user blocking works across your entire application. It is configured per application and overrides all default behavior. It applies automatically to all supported features.
 
 ### Policies
 
-#### DISABLED
+* **DISABLED**: Blocking is ignored. All users can read and interact normally.
+* **ACTIVE_ONLY**: Blocking applies only to actions that create interactions.  Content visibility is **not** affected. Users cannot, send messages, create comments, react or mention blocked users, etc.
+* **ACTIVE_AND_PASSIVE (default)**: Blocking applies to both interactions and visibility. Blocked users cannot interact **or** see each other’s content.
 
-Blocking is ignored. All users can read and interact normally.
+### Set Block Policy (Application Level)
 
-#### ACTIVE_ONLY
+Set using Application create or update APIs:
 
-Blocking applies only to actions that create interactions.  Content visibility is **not** affected.
+`POST /api/v1/applications/`
+`PATCH /api/v1/applications/`
 
-Users cannot:
-
-* send messages
-* create comments
-* react or mention blocked users
-
-#### ACTIVE_AND_PASSIVE (default)
-
-Blocking applies to both interactions and visibility.
-
-Blocked users cannot interact **or** see each other’s content.
-
-***
-
-### Configuration
-
-Set using Application APIs:
-
-POST /api/v1/applications/
-PATCH /api/v1/applications/
-
-Example:
+Example payload:
 
 ```json
 {
@@ -330,8 +312,6 @@ Example:
 ```
 
 Default is `active_and_passive`
-
-<br />
 
 Behavior Summary
 
