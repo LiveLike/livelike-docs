@@ -42,11 +42,7 @@ Social Graph
 
 * Creating social graph relationships blocked
 
-Read visibility behavior depends on the configured block_policy.
-
-* ACTIVE_AND_PASSIVE: Blocked users’ content is excluded from API responses.
-* ACTIVE_ONLY: Only write interactions are restricted; read visibility is not affected.
-* DISABLED: No block enforcement is applied.
+<br />
 
 <Callout icon="📘" theme="info">
   Social features integrated via API have to implement content filtering at the integration level. Direct interaction between users are prevented at the system level, but indirect interaction is not.
@@ -310,17 +306,17 @@ sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
 * Same behavior as existing unblock endpoint
 * Alternative path for client convenience
 
-DELETE /api/v1/profiles/{'{blocked_by_profile_uuid}'}/profile-blocks/{'{blocked_profile_id}'}/
+`DELETE /api/v1/profiles/{blocked_by_profile_uuid}/profile-blocks/{blocked_profile_id}/`
 
 ## Remove Reciprocal Block (Custom ID)
 
 Same behavior as existing unblock endpoint
 
-POST /api/v1/profile-blocks/bulk-sync/
+`DELETE /api/v1/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/`
 
 ## Bulk Sync Block List
 
-POST /api/v1/profile-blocks/bulk-sync/
+`POST /api/v1/profile-blocks/bulk-sync/`
 
 **Payload**
 
@@ -342,26 +338,8 @@ POST /api/v1/profile-blocks/bulk-sync/
 * Maximum 1000 items per request (configurable)
 * Both profiles must belong to same application
 * Cannot block self
-* override=true:
+* if `override = true`:
   * Deletes existing block entries
   * Replaces with new list
-* override=false:
+* `override = false`:
   * Appends to existing list
-
-### Rationale
-
-* Limit prevents:
-* Long DB locks
-* Timeouts
-* Retry storms
-* Memory spikes
-
-<br />
-
-## Implementation Notes
-
-* Reciprocal enforcement handled logically, not physically
-* DB structure remains one-directional
-* Query filtering applied dynamically
-* Bulk sync should use transaction + batching
-* Validation required at serializer level
