@@ -14,6 +14,8 @@ The current system supports one-way profile blocking using:
 * Creates a single DB row: (A → B)
 * One-way relationship only
 
+***
+
 # Objective
 
 Enhance the system to support:
@@ -23,6 +25,8 @@ Enhance the system to support:
 * Flexible unblocking mechanisms
 * Bulk block synchronization
 * Policy-based enforcement (Active / Passive / Disabled)
+
+***
 
 # Schema
 
@@ -50,7 +54,7 @@ This setting:
 * Overrides default configuration
 * Applies globally per client
 
-```python
+```python BlockPolicy
 class BlockPolicy(models.TextChoices):
     DISABLED = "disabled", "Disabled"
     ACTIVE_ONLY = "active_only", "Active Only"
@@ -71,13 +75,13 @@ block_policy = models.CharField(
 
 ## Policy Behavior
 
-**DISABLED**
+### **DISABLED**
 
 * No blocking applied anywhere
 * All interactions allowed
 * Blocks ignored entirely
 
-**ACTIVE_ONLY**
+### **ACTIVE_ONLY**
 
 * Only write interactions blocked:
 * Comment creation
@@ -86,13 +90,16 @@ block_policy = models.CharField(
 * Reactions
 * Read operations not blocked
 
-**ACTIVE_AND_PASSIVE (Default)**
+### **ACTIVE_AND_PASSIVE (Default)**
+
 Block applies to:
 
 * Write interactions
 * Read interactions (content visibility)
 
-## Blocking Behavior
+***
+
+# Blocking Behavior
 
 If blocking is enabled:
 
@@ -100,9 +107,11 @@ If blocking is enabled:
 * Any block relationship between two users is treated as mutual restriction
 * Applies based on block policy
 
-## APIs
+***
 
-Existing endpoint
+# APIs
+
+**Existing endpoint**
 
 POST /api/v1/profile-blocks/
 
@@ -111,30 +120,30 @@ POST /api/v1/profile-blocks/
 * Creates block entry
 * Reciprocal enforcement handled at policy layer
 
-### Remove Reciprocal Block
+## Remove Reciprocal Block
 
 Existing endpoint
 
 DELETE /api/v1/profile-blocks/{'{db_object_id}'}
 
-### Remove Reciprocal Block
+## Remove Reciprocal Block
 
 * Same behavior as existing unblock endpoint
 * Alternative path for client convenience
 
 DELETE /api/v1/profiles/{'{blocked_by_profile_uuid}'}/profile-blocks/{'{blocked_profile_id}'}/
 
-### Remove Reciprocal Block (Custom ID)
+## Remove Reciprocal Block (Custom ID)
 
 Same behavior as existing unblock endpoint
 
 POST /api/v1/profile-blocks/bulk-sync/
 
-### Bulk Sync Block List
+## Bulk Sync Block List
 
 POST /api/v1/profile-blocks/bulk-sync/
 
-### Bulk Sync Block List
+## Bulk Sync Block List
 
 POST /api/v1/profile-blocks/bulk-sync/
 
@@ -153,7 +162,7 @@ POST /api/v1/profile-blocks/bulk-sync/
 
 ```
 
-## Rules
+### Rules
 
 * Maximum 1000 items per request (configurable)
 * Both profiles must belong to same application
@@ -164,7 +173,7 @@ POST /api/v1/profile-blocks/bulk-sync/
 * override=false:
   * Appends to existing list
 
-## Rationale
+### Rationale
 
 * Limit prevents:
 * Long DB locks
@@ -194,7 +203,9 @@ Default:
 active_and_passive
 ```
 
-## Technical Enforcement
+***
+
+# Technical Enforcement
 
 ### Blocking Active Actions
 
