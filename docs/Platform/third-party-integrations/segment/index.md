@@ -287,7 +287,7 @@ The table below lists the properties included in the Quest published event that 
 | rewards             | The quest rewards objects that includes id, name, amount and test_varaint_ids (the variants associated with the reward in case the quest is part of an A/B test) |
 | badges              | The quest badge object includes id, name, test_variant_ids (the variants associated with the reward in case the quest is part of an A/B test)                    |
 | profile_groups      | Profile Group object includes id, name                                                                                                                           |
-| test_variants       | Includes variant_id and variant_name if quest if an A/B test quest                                                                                               |
+| test_variants       | Includes id and name if quest if an A/B test quest                                                                                                               |
 
 ## Client Side Integration
 
