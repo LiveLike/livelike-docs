@@ -868,7 +868,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.updated_at`  | `string`         | Timestamp when flair was updated                     |
 | `created_at`       | `datetime`       | Timestamp when the event was created                 |
 
-## `user-reaction-created` && `user-reaction-deleted`
+## `user-reaction-created` , `user-reaction-deleted`
 
 ### Payload Example:
 
