@@ -289,6 +289,18 @@ The table below lists the properties included in the Quest published event that 
 | profile_groups      | Profile Group object includes id, name                                                                                                                           |
 | test_variants       | Includes id and name if quest if an A/B test quest                                                                                                               |
 
+## A/B Test Quest Variant Assignment Event
+
+The table below outlines the properties included in the A/B test quest variant assignment event, which is triggered when a user is assigned to one of the two variants in an A/B test quest.
+
+| PROPERTY NAME       | DESCRIPTION                                    |
+| :------------------ | :--------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.           |
+| quest_id            | The ID of the Quest.                           |
+| quest_name          | The name of the Quest.                         |
+| variant_id          | The ID of the variant user got assigned with.  |
+| variant_name        | The name of the variant user got assigned with |
+
 ## Client Side Integration
 
 Before sending evens to Segment and make Livelike compatible to accept the data, you will need to send additional properties in the payload
