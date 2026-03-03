@@ -16,7 +16,7 @@ next:
 ---
 ## What is Segment?
 
-With Segment, you can collect, transform, send, and archive your first-party customer data. Segment simplifies the process of collecting data and connecting new tools, allowing you to spend more time using your data, and less time trying to collect it. You can use Segment to track events that happen when a user interacts with the interfaces. “Interfaces” is Segment’s generic word for any digital properties you own: your website, mobile apps, and processes that run on a server or OTT device.\
+With Segment, you can collect, transform, send, and archive your first-party customer data. Segment simplifies the process of collecting data and connecting new tools, allowing you to spend more time using your data, and less time trying to collect it. You can use Segment to track events that happen when a user interacts with the interfaces. “Interfaces” is Segment’s generic word for any digital properties you own: your website, mobile apps, and processes that run on a server or OTT device.  
 When you capture interaction data in Segment, you can send it (often in real-time) to your marketing, product, analytics tools, and data warehouses. In most cases, you won’t even need to touch your tracking code to connect to new tools.
 
 ## How Segment Works?
@@ -61,7 +61,7 @@ We have made enabling this feature very easy for you and please follow the below
 
 ![](https://files.readme.io/a91cdad-image_3.png "image (3).png")
 
-From the Segment web app dashboard, navigate to Connections > Catalog. Under the Destinations tab, search for “LiveLike Cloud Mode (Actions)”, and select the destination. 
+From the Segment web app dashboard, navigate to Connections > Catalog. Under the Destinations tab, search for “LiveLike Cloud Mode (Actions)”, and select the destination.
 
 #
 
@@ -95,7 +95,7 @@ From the Segment web app dashboard, navigate to Connections > Catalog. Under the
 
 ## Client Side Integration
 
-Before sending events to Segment and making Livelike compatible to accept the data, you will need to send additional properties in the payload.\
+Before sending events to Segment and making Livelike compatible to accept the data, you will need to send additional properties in the payload.  
 Refer to [LiveLike Cloud Mode (Actions) Destination](https://segment.com/docs/connections/destinations/catalog/actions-livelike-cloud/) for more details.
 
 # Segment as a source
@@ -120,7 +120,7 @@ This integration will enable you to receive related engagement and achievement d
 
 3. Give the Source a name and configure any other settings.
 
-   The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, LiveLike\_Prod, LiveLike\_Staging, LiveLike\_Dev).
+   The name is used as a label in the Segment app, and Segment creates a related schema name in your warehouse. The name can be anything, but Segment recommends using something that reflects the source itself and distinguishes amongst your environments (for example, LiveLike_Prod, LiveLike_Staging, LiveLike_Dev).
 
 <Image align="center" src="https://files.readme.io/27f9cd0-segment-source-p3.png" />
 
@@ -162,7 +162,7 @@ User voted on a poll→ Earned points→ Based on the points → Badge rewarded 
 
 LiveLike uses Segment’s stream Source component to send Segment event data. It uses a server-side track method(s) to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
-The default behavior is for LiveLike to pass the userId associated with the event, which usually is your already-known userId, as well as a LiveLike User Profile ID as livelike\_profile\_id inside the Properties object within the Track event payload.
+The default behavior is for LiveLike to pass the userId associated with the event, which usually is your already-known userId, as well as a LiveLike User Profile ID as livelike_profile_id inside the Properties object within the Track event payload.
 
 ## Events
 
@@ -181,86 +181,94 @@ The table below lists events that LiveLike sends to Segment. These events appear
 
 The table below lists the properties included in Badge Rewarded event.
 
-| PROPERTY NAME           | DESCRIPTION                                                                       |
-| :---------------------- | :-------------------------------------------------------------------------------- |
-| livelike\_profile\_id   | The profile ID of the LiveLike user.                                              |
-| badge\_id               | The ID of the specific Badge the user earned.                                     |
-| badge\_title            | The title of the specific Badge the user earned.                                  |
-| description             | The description of the specific Badge the user earned.                            |
-| earned\_badge\_id       | The ID of the specific transaction of the user earning the Badge.                 |
-| image\_url              | The URL of the Badge image.                                                       |
-| reward\_item\_id        | The ID of the Reward Item that’s associated to the threshold to earn the Badge.   |
-| reward\_item\_name      | The name of the Reward Item that’s associated to the threshold to earn the Badge. |
-| reward\_item\_threshold | The threshold amount of the Reward Item that’s associated to earning the Badge.   |
+| PROPERTY NAME         | DESCRIPTION                                                                       |
+| :-------------------- | :-------------------------------------------------------------------------------- |
+| livelike_profile_id   | The profile ID of the LiveLike user.                                              |
+| badge_id              | The ID of the specific Badge the user earned.                                     |
+| badge_title           | The title of the specific Badge the user earned.                                  |
+| description           | The description of the specific Badge the user earned.                            |
+| earned_badge_id       | The ID of the specific transaction of the user earning the Badge.                 |
+| image_url             | The URL of the Badge image.                                                       |
+| reward_item_id        | The ID of the Reward Item that’s associated to the threshold to earn the Badge.   |
+| reward_item_name      | The name of the Reward Item that’s associated to the threshold to earn the Badge. |
+| reward_item_threshold | The threshold amount of the Reward Item that’s associated to earning the Badge.   |
 
 ## Event Properties for Quest Task Completed
 
 The table below lists the properties included in the Quest Task Completed event.
 
-| PROPERTY NAME         | DESCRIPTION                                                               |
-| :-------------------- | :------------------------------------------------------------------------ |
-| livelike\_profile\_id | The profile ID of the LiveLike user.                                      |
-| quest\_id             | The ID of the Quest.                                                      |
-| quest\_name           | The name of the Quest.                                                    |
-| quest\_task\_id       | The ID of the specific Task within the Quest that was completed.          |
-| quest\_task\_name     | The name of the specific Task within the Quest that was completed.        |
-| user\_quest\_id       | The ID of the specific relationship between the User and that Quest.      |
-| user\_quest\_task\_id | The ID of the specific relationship between the User and that Quest Task. |
+| PROPERTY NAME       | DESCRIPTION                                                               |
+| :------------------ | :------------------------------------------------------------------------ |
+| livelike_profile_id | The profile ID of the LiveLike user.                                      |
+| quest_id            | The ID of the Quest.                                                      |
+| quest_name          | The name of the Quest.                                                    |
+| quest_task_id       | The ID of the specific Task within the Quest that was completed.          |
+| quest_task_name     | The name of the specific Task within the Quest that was completed.        |
+| user_quest_id       | The ID of the specific relationship between the User and that Quest.      |
+| user_quest_task_id  | The ID of the specific relationship between the User and that Quest Task. |
+| variant_id          | Quest A/B test variant ID if applicable                                   |
+| variant_name        | Quest A/B test variant name if applicable                                 |
 
 ## Event Properties for Quest Reward Awarded
 
 The table below lists the properties included in the Quest Reward Awarded event.
 
-| PROPERTY NAME                 | DESCRIPTION                                                               |
-| :---------------------------- | :------------------------------------------------------------------------ |
-| livelike\_profile\_id         | The profile ID of the LiveLike user.                                      |
-| quest\_id                     | The ID of the Quest the user completed to earn Rewards (if applicable).   |
-| quest\_name                   | The name of the Quest the user completed to earn Rewards (if applicable). |
-| reward\_item\_name            | The name of the Reward Item that was rewarded.                            |
-| reward\_item\_amount          | The amount of the Reward Item that was rewarded.                          |
-| reward\_item\_balance         | The new balance of the Reward Item for the user.                          |
-| reward\_item\_id              | The ID of the Reward Item that was rewarded.                              |
-| reward\_item\_transaction\_id | The ID of the transaction of the User being rewarded.                     |
+| PROPERTY NAME              | DESCRIPTION                                                               |
+| :------------------------- | :------------------------------------------------------------------------ |
+| livelike_profile_id        | The profile ID of the LiveLike user.                                      |
+| quest_id                   | The ID of the Quest the user completed to earn Rewards (if applicable).   |
+| quest_name                 | The name of the Quest the user completed to earn Rewards (if applicable). |
+| reward_item_name           | The name of the Reward Item that was rewarded.                            |
+| reward_item_amount         | The amount of the Reward Item that was rewarded.                          |
+| reward_item_balance        | The new balance of the Reward Item for the user.                          |
+| reward_item_id             | The ID of the Reward Item that was rewarded.                              |
+| reward_item_transaction_id | The ID of the transaction of the User being rewarded.                     |
+| variant_id                 | Quest A/B test variant ID if applicable                                   |
+| variant_name               | Quest A/B test variant name if applicable                                 |
 
 ## Event Properties for Reward Item Rewarded
 
 The table below lists the properties included in the Reward Item Rewarded event.
 
-| PROPERTY NAME                 | DESCRIPTION                                           |
-| :---------------------------- | :---------------------------------------------------- |
-| livelike\_profile\_id         | The profile ID of the LiveLike user.                  |
-| reward\_item\_name            | The name of the Reward Item that was rewarded.        |
-| reward\_item\_amount          | The amount of the Reward Item that was rewarded.      |
-| reward\_item\_balance         | The new balance of the Reward Item for the user.      |
-| reward\_item\_id              | The ID of the Reward Item that was rewarded.          |
-| reward\_item\_transaction\_id | The ID of the transaction of the User being rewarded. |
+| PROPERTY NAME              | DESCRIPTION                                           |
+| :------------------------- | :---------------------------------------------------- |
+| livelike_profile_id        | The profile ID of the LiveLike user.                  |
+| reward_item_name           | The name of the Reward Item that was rewarded.        |
+| reward_item_amount         | The amount of the Reward Item that was rewarded.      |
+| reward_item_balance        | The new balance of the Reward Item for the user.      |
+| reward_item_id             | The ID of the Reward Item that was rewarded.          |
+| reward_item_transaction_id | The ID of the transaction of the User being rewarded. |
 
 ## Event Properties for User Quest Task Progressed
 
 The table below lists the properties included in the User Quest Task Progressed event.
 
-| PROPERTY NAME               | DESCRIPTION                                                                 |
-| :-------------------------- | :-------------------------------------------------------------------------- |
-| livelike\_profile\_id       | The profile ID of the LiveLike user.                                        |
-| quest\_id                   | The ID of the Quest.                                                        |
-| quest\_name                 | The name of the Quest.                                                      |
-| quest\_task\_id             | The ID of the specific Task within the Quest that was completed.            |
-| quest\_task\_name           | The name of the specific Task within the Quest that was completed.          |
-| quest\_task\_target\_value  | The target number of times this Task needs to be done to complete the Task. |
-| user\_quest\_id             | The ID of the specific relationship between the User and that Quest.        |
-| user\_quest\_task\_id       | The ID of the specific relationship between the User and that Quest Task.   |
-| user\_quest\_task\_progress | The number of times this Task has been done so far.                         |
+| PROPERTY NAME            | DESCRIPTION                                                                 |
+| :----------------------- | :-------------------------------------------------------------------------- |
+| livelike_profile_id      | The profile ID of the LiveLike user.                                        |
+| quest_id                 | The ID of the Quest.                                                        |
+| quest_name               | The name of the Quest.                                                      |
+| quest_task_id            | The ID of the specific Task within the Quest that was completed.            |
+| quest_task_name          | The name of the specific Task within the Quest that was completed.          |
+| quest_task_target_value  | The target number of times this Task needs to be done to complete the Task. |
+| user_quest_id            | The ID of the specific relationship between the User and that Quest.        |
+| user_quest_task_id       | The ID of the specific relationship between the User and that Quest Task.   |
+| user_quest_task_progress | The number of times this Task has been done so far.                         |
+| variant_id               | Quest A/B test variant ID if applicable                                     |
+| variant_name             | Quest A/B test variant name if applicable                                   |
 
 ## Event Properties for User Quest Completed
 
 The table below lists the properties included in the User Quest Completed event.
 
-| PROPERTY NAME         | DESCRIPTION                                                          |
-| :-------------------- | :------------------------------------------------------------------- |
-| livelike\_profile\_id | The profile ID of the LiveLike user.                                 |
-| quest\_id             | The ID of the Quest.                                                 |
-| quest\_name           | The name of the Quest.                                               |
-| user\_quest\_id       | The ID of the specific relationship between the User and that Quest. |
+| PROPERTY NAME       | DESCRIPTION                                                          |
+| :------------------ | :------------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.                                 |
+| quest_id            | The ID of the Quest.                                                 |
+| quest_name          | The name of the Quest.                                               |
+| user_quest_id       | The ID of the specific relationship between the User and that Quest. |
+| variant_id          | Quest A/B test variant ID if applicable                              |
+| variant_name        | Quest A/B test variant name if applicable                            |
 
 #
 
