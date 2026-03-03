@@ -270,8 +270,6 @@ The table below lists the properties included in the User Quest Completed event.
 | variant_id          | Quest A/B test variant ID if applicable                              |
 | variant_name        | Quest A/B test variant name if applicable                            |
 
-<br />
-
 ## Quest Published Event
 
 The table below lists the properties included in the Quest published event that is triggered when a quest is published via CMS.
