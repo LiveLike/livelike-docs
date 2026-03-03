@@ -299,6 +299,25 @@ The table below outlines the properties included in the A/B test quest variant a
 | variant_id          | The ID of the variant user got assigned with.  |
 | variant_name        | The name of the variant user got assigned with |
 
+## Event Properties for Badge Rewarded for Quest Completion
+
+The table below lists the properties included in Badge Rewarded for Quest event.
+
+| PROPERTY NAME       | DESCRIPTION                                                                                                                               |
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.                                                                                                      |
+| badge_id            | The ID of the specific Badge the user earned.                                                                                             |
+| badge_title         | The title of the specific Badge the user earned.                                                                                          |
+| description         | The description of the specific Badge the user earned.                                                                                    |
+| earned_badge_id     | The ID of the specific transaction of the user earning the Badge.                                                                         |
+| image_url           | The URL of the Badge image.                                                                                                               |
+| quest_id            | The if of quest on completion on which user got awarded badge                                                                             |
+| quest_name          | The name of quest on completion on which user got awarded badge                                                                           |
+| user_quest_id       | The ID of User Quest                                                                                                                      |
+| source              | Indicates the origin of the event. In this case, the value is **quest_completion**, as the event is triggered when a quest is completed.n |
+| variant_id          | The name of the variant to which the user was assigned, in case the quest is an A/B test quest.                                           |
+| variant_name        | The name of the variant to which the user was assigned, in case the quest is an A/B test quest.                                           |
+
 ## Client Side Integration
 
 Before sending evens to Segment and make Livelike compatible to accept the data, you will need to send additional properties in the payload
