@@ -877,15 +877,15 @@ This document details the webhook events sent by our system, including their pay
   "id": "782e5b83-9213-4d2a-90c6-767dc0c26db5",
   "event": "user-reaction-created" | "user-reaction-deleted",
   "data": {
-    "reaction_space_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_name": "smile_emoji",
+    "reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "target_id": "b78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "user_reaction_id": "e78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_space_id": "a78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "reaction_space_target_group_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "reaction_created_by_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "reaction_created_by_custom_id": "thisisid",
-    "reaction_created_by_nickname": "Charming Throut",
-		"reaction_name": "smile_emoji",
-    "reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
-    "user_reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
-    "target_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "reaction_created_by_nickname": "Charming Throut"
   },
   "created_at": "2025-06-03T08:00:20.766704+00:00"
 }
