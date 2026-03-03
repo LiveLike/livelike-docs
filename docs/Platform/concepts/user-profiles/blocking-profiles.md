@@ -45,7 +45,8 @@ Social Graph
 <br />
 
 <Callout icon="📘" theme="info">
-  Social features integrated via API have to implement content filtering at the integration level. Direct interaction between users are prevented at the system level, but indirect interaction is not.
+  Social features integrated via API must handle block-based filtering where explicitly noted.
+  For chat messages list, block filtering is currently handled at the integration level. Direct interaction between users are prevented at the system level.
 </Callout>
 
 ## Creating a Block
@@ -145,7 +146,7 @@ Unblocking can be done using alternative APIs
 
 * By blocked user's profile ID
   * `DELETE /api/v1/profiles/{blocked_by_profile_id}/profile-blocks/{blocked_profile_id}/`
-* By blocked user's profile custom ID  
+* By blocked user's profile custom ID
   * `DELETE /api/v1/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/`
 
 ## Getting a List of Blocks
