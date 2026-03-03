@@ -270,7 +270,24 @@ The table below lists the properties included in the User Quest Completed event.
 | variant_id          | Quest A/B test variant ID if applicable                              |
 | variant_name        | Quest A/B test variant name if applicable                            |
 
-#
+<br />
+
+## Quest Published Event
+
+The table below lists the properties included in the Quest published event that is triggered when a quest is published via CMS.
+
+| PROPERTY NAME       | DESCRIPTION                                                                                                                                                                                          |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the producer.                                                                                                                                                                      |
+| quest_id            | The ID of the Quest.                                                                                                                                                                                 |
+| quest_name          | The name of the Quest.                                                                                                                                                                               |
+| quest_start_at      | The start time of quest if any.                                                                                                                                                                      |
+| quest_end_at        | The end time of quest if any                                                                                                                                                                         |
+| user_specific_timer | User specific timer if any                                                                                                                                                                           |
+| rewards             | The quest rewards objects that includes reward_item_id, reward_item_name, reward_item_amount and test_varaint_ids (the variants associated with the reward in case the quest is part of an A/B test) |
+| badges              | The quest badge object includes badge_id, badge_name, test_variant_ids (the variants associated with the reward in case the quest is part of an A/B test)                                            |
+| profile_groups      | Profile Group object includes id, name                                                                                                                                                               |
+| test_variants       | Includes variant_id and variant_name if quest if an A/B test quest                                                                                                                                   |
 
 ## Client Side Integration
 
