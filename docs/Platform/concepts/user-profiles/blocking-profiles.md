@@ -311,7 +311,9 @@ sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
 
 ## Bulk Sync Block List
 
-`POST /api/v1/profile-blocks/bulk-sync/`
+`POST /api/v1/applications/{client_id}/profile-blocks-bulk-sync/`
+
+Note: Access to this API requires a valid API access token.
 
 **Payload**
 
