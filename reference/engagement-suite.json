@@ -33934,7 +33934,7 @@
         ]
       }
     },
-    "/profile-blocks-bulk-sync/": {
+    "/applications/{ClientID}/profile-blocks-bulk-sync/": {
       "post": {
         "summary": "Copy of Get Blocked Profile Ids",
         "description": "",
@@ -34023,7 +34023,17 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ClientID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
