@@ -1,5 +1,6 @@
 ---
 title: Bulk Block Sync
+excerpt: Access to this API requires a valid API access token.
 api:
   file: engagement-suite.json
   operationId: get-blocked-profile-ids-1
