@@ -1,5 +1,5 @@
 ---
-title: Bulk Block Sync
+title: Profile Blocks Bulk Sync
 excerpt: Access to this API requires a valid API access token.
 api:
   file: engagement-suite.json
