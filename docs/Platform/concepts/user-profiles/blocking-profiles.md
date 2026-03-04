@@ -313,7 +313,7 @@ sdk?.chat()?.chatRoomDelegate = object: ChatRoomDelegate() {
 
 `POST /api/v1/applications/{client_id}/profile-blocks-bulk-sync/`
 
-Note: Access to this API requires a valid API access token.
+Note: Access to this API requires a valid Bearer token.
 
 **Payload**
 
