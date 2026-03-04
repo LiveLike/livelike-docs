@@ -12,28 +12,25 @@ metadata:
 next:
   description: ''
 ---
-## What are Redemption Keys?
+## Redemption Keys basics
 
-A redemption key is an object that is created on the Application level in the [Producer Site](https://cf-blast.livelikecdn.com/producer).\
-As an integrator, you can issue unique redemption keys to users that can be redeemed in first-party or third-party systems.\
-These keys can be created from CMS ([https://cf-blast.livelikecdn.com/producer](https://cf-blast.livelikecdn.com/producer)) and then can be issued to users\
-As a user, you can redeem these unique keys (using code/id)
+Redemption Keys facilitate exchanging codes for virtual or physical goods. Each redemption key these properties:
 
-## Creating Redemption Key
+* **Code**: the value shown to users that they would enter to exchange the key for something.
+* **Status**: represents whether the key has been redeemed or not to prevent using the same key multiple times. 
+* **Assignee**: the profile the key is assigned to. If the key is assigned to a profile, it can only be redeemed by that profile.
+
+## Creating Redemption Keys
 
 1. Head to your Application on the [Producer Site](https://cf-blast.livelikecdn.com/producer/)
-2. Select "Redemption Keys" in the Sidebar
+2. Select "Redemption Keys" in the sidebar
 3. Select the "New Redemption Key" button on the top right hand side
-4. Enter Key Name, Description and a custom code (optional)
+4. Enter Key name, description and a custom code (optional)
 5. Select "Create" to finish
 
-![](https://files.readme.io/ff65525-Screenshot_2022-02-14_at_1.49.26_PM.png "Screenshot 2022-02-14 at 1.49.26 PM.png")
+## Listing Redemption Keys
 
-## Fetching Redemption Keys  in the SDK
-
-You can fetch all Redemption Keys (non producer users can see only keys redeemed by them) using the SDK interface **getRedemptionKeys**\
-This interface supports **status** as filter\
-This interface returns paginated list of Redemption Keys
+You can fetch all Redemption Keys (non producer users can see only keys redeemed by them) using the SDK interface **getRedemptionKeys**.  This interface supports **status** as a filter and returns a paginated list of Redemption Keys.
 
 ```swift
 let sdk: EngagementSDK
@@ -67,7 +64,7 @@ rewardsClient.getRedemptionKeys(LiveLikePagination.FIRST,
 })
 ```
 
-## Redeem Key By Code  in the SDK
+## Redeeming Keys by Code
 
 Keys can be redeemed using the SDK interface **redeemKeyByCode** by passing the code of the Redemption Key
 
@@ -99,7 +96,7 @@ rewardsClient.redeemKeyWithCode("xxxxxxxxx",
     })
 ```
 
-## Redeem Key By ID  in the SDK
+## Redeem Keys by ID
 
 Keys can be redeemed using the SDK interface **redeemKeyById** by passing the id of the Redemption Key
 
@@ -131,7 +128,7 @@ rewardsClient.redeemKeyWithId("xxxxxxxxx",
     })
 ```
 
-## Unassign Redeem Key to CurrentProfile
+## Unassign Key from Current Profile
 
 Redeem Key can be unassigned from the current Profile
 
