@@ -33869,7 +33869,72 @@
       }
     },
     "/profile-blocks/-1": {},
-    "/profile-blocks/bulk-sync/": {
+    "/profiles/{BlockedByProfileID}/profile-blocks/{BlockedProfileID}/": {
+      "delete": {
+        "summary": "Copy of Unblock profile",
+        "description": "",
+        "operationId": "unblock-profile-2",
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"detail\": \"Not found.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "Not found."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BlockedProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "BlockedByProfileID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
+      }
+    },
+    "/profile-blocks-bulk-sync/": {
       "post": {
         "summary": "Copy of Get Blocked Profile Ids",
         "description": "",
@@ -33959,71 +34024,6 @@
             }
           }
         }
-      }
-    },
-    "/profiles/{BlockedByProfileID}/profile-blocks/{BlockedProfileID}/": {
-      "delete": {
-        "summary": "Copy of Unblock profile",
-        "description": "",
-        "operationId": "unblock-profile-2",
-        "responses": {
-          "204": {
-            "description": "204",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "404",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"detail\": \"Not found.\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "example": "Not found."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "BlockedProfileID",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "BlockedByProfileID",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
       }
     }
   },
