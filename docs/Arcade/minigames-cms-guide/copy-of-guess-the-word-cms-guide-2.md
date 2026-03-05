@@ -92,11 +92,23 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 5. **Social features**
    1. The section includes toggles for showing user stats and enabling stat sharing capabilities.
-   2. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that display a countdown when today's game ends but the new game hasn't started yet,indicating when the next game day begins.
-   3. Count Down features when enabled displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
+   2. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
+   3. Count Down features when enabled, displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
 
-<Image align="center" src="https://files.readme.io/f134fd99d7fecb15e2804be8fa608b733bf4dce6d461c0b9cdfe1446bcc1a754-Screenshot_2025-08-13_at_10.04.57.png" />
+![](https://files.readme.io/b3de62c1f9586fd0a38f83d1c2de1515d6989c1cbf6620eaa1367151b3da3f09-image.png)
+
+6. **Localization**
+   1. Localized content
+   2. New localized data
+
+![](https://files.readme.io/a94c92cb7dfb51e690b68ddda20adc8a5b221fa7933fba24320df20a8d417bb7-image.png)
+
+<br />
 
 6. **Live Game Manager**
    1. This section provides real-time management capabilities for your GTW game.
    2. This interface includes a "Publish Game" button for launching your game and displays a word timeline.
+
+![](https://files.readme.io/04d15f747ea21378258db81cc6860434a087bebbe21fef93c6cc51def06e9ade-image.png)
+
+<br />
