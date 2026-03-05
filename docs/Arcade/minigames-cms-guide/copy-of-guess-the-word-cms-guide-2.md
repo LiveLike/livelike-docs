@@ -105,20 +105,14 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    1. The Localization section allows Producers to configure language support, fonts, and keyboard layouts.
    2. Add Language: Allows Producers to add additional languages to the game.
-
-      Example:
-
-   ```
-   ```
-
-   1. Select Default Language: Defines the default language displayed to players.
-   2. Allow Language Switch: Allows players to switch between supported languages.
-   3. Select Language: Defines which language the font configuration applies to.
-   4. Language Font: Allows Producers to upload fonts specific to the selected language.
-   5. Select Default Keyboard Layout: Defines the keyboard layout used for player input.
+   3. Select Default Language: Defines the default language displayed to players.
+   4. Allow Language Switch: Allows players to switch between supported languages.
+   5. Select Language: Defines which language the font configuration applies to.
+   6. Language Font: Allows Producers to upload fonts specific to the selected language.
+   7. Select Default Keyboard Layout: Defines the keyboard layout used for player input.
 
       Example: QWERTY
-   6. Allow Keyboard Switch: Allows players to switch keyboard layouts if multiple layouts are configured.
+   8. Allow Keyboard Switch: Allows players to switch keyboard layouts if multiple layouts are configured.
 
    <br />
 
