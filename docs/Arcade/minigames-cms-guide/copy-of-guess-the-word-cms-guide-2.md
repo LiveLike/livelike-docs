@@ -103,12 +103,22 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    ![](https://files.readme.io/b3de62c1f9586fd0a38f83d1c2de1515d6989c1cbf6620eaa1367151b3da3f09-image.png)
 7. **Localization**
 
-   1. Localized content
-   2. New localized data
+   1. The Localization section allows Producers to configure language support, fonts, and keyboard layouts.
+   2. Add Language: Allows Producers to add additional languages to the game.
+
+      Example:en – English
+   3. Select Default Language: Defines the default language displayed to players.
+   4. Allow Language Switch: Allows players to switch between supported languages.
+   5. Select Language: Defines which language the font configuration applies to.
+   6. Language Font: Allows Producers to upload fonts specific to the selected language.
+   7. Select Default Keyboard Layout:Defines the keyboard layout used for player input.
+
+      Example:QWERTY
+   8. Allow Keyboard Switch: Allows players to switch keyboard layouts if multiple layouts are configured.
 
    <br />
 
-   ![](https://files.readme.io/a94c92cb7dfb51e690b68ddda20adc8a5b221fa7933fba24320df20a8d417bb7-image.png)
+   ![](https://files.readme.io/e684de71128ddb42c9a74cfeaf2791ac690a14ff43e3f310f8bbb19e1aa3c38a-image.png)
 8. **Live Game Manager**
    1. This section provides real-time management capabilities for your GTI game.
    2. This interface includes a "Publish Game" button for launching your game and displays the word and image timeline.
