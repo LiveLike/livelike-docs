@@ -5,22 +5,26 @@ hidden: false
 metadata:
   robots: index
 ---
-Guess The Word (GTW) is a daily word puzzle game where players have six attempts to guess the correct word. Each guess provides color-coded feedback, helping players identify correct letters and positions. The game features customizable word lengths, themed word lists, and refreshes daily to maintain player engagement.
+Guess the Image minigame challenges users to identify an image using a limited number of attempts. Images can optionally appear pixelated to increase the difficulty of the challenge. Players attempt to guess the correct answer before exhausting their allowed attempts.
+
+Producers can configure the game schedule, rules, attempts, themes, and localization through the MiniGames CMS.
 
 **CMS Setup**
 
-GTW (Guess The Word) is available in the experiences list.
+GTI (Guess The Image) is available in the experiences list.
 
-<Image align="center" width="600px" src="https://files.readme.io/b168f6551190ec686ce15f7e3d7be670a51f38974147cf90de3096a598366d9f-Screenshot_2025-08-13_at_10.02.17.png" />
+![](https://files.readme.io/ade6c984b8221e07c7ff6102690df38bce0dfd3b41d0d9c76cab21144288597b-image.png)
 
 To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps.
 
-<Image align="center" src="https://files.readme.io/05ad214c6ede453c044b22c4f619ea85e079d50446db7e09fb3758142b4d1e03-ttt.gif" />
+![](https://files.readme.io/ca2811c9bf3bd98cd8133a96f92eda233526fdf07cf8ccbd4a8dc5cfec7c5da9-image.png)
+
+<br />
 
 1. **Game Settings**
    1. Game Timezone: Set primary timezone (e.g., Asia/Kolkata) based on target audience
    2. Word Reset Time: Configure daily refresh time in 24-hour format (e.g., 07:00)
-   3. Game Start Date: Define launch date (e.g., December 17th, 2024)\
+   3. Game Start Date: Define launch date (e.g., December 17th, 2024)  
       Tip: Align launch with marketing activities
 
 <Image align="center" width="650px" src="https://files.readme.io/3658431b18236b9aab0d32cbb56d0fef191359be41f47a1c489bf066409e4f59-Screenshot_2024-12-18_at_10.56.09.png" />
