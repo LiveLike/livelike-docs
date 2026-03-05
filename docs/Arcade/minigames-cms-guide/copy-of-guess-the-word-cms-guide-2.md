@@ -38,6 +38,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 <br />
 
 2. **Game Rules** This section allows Producers to configure instructional content and game rules shown to players.
+
    1. How to Play Screen: Enable this option to display a How to Play screen explaining the gameplay.
    2. Rules: Enable this option to display a Rules screen before the game begins.
    3. Rules Title: Defines the title displayed on the rules page.
@@ -48,7 +49,10 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    4. Rules Information: Allows Producers to provide instructions explaining how to play the game.
    5. Terms & Conditions: Optional field to add legal terms or participation conditions.
    6. URL: Allows Producers to link to an external Terms & Conditions page.
-      <br />
+
+   ![](https://files.readme.io/8db5b3ecfa845c49cfcc38bba361f8745796feca7520f28f8b1612e1ef0f7975-image.png)
+
+   <br />
 3. **Game Copies** Configure game text elements:
    1. Welcome screen with custom greeting and start button
    2. End screen with closing message
