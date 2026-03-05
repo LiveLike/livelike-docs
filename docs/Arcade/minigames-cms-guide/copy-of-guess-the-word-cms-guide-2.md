@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Guess the Image minigame challenges users to identify an image using a limited number of attempts. Images can optionally appear pixelated to increase the difficulty of the challenge. Players attempt to guess the correct answer before exhausting their allowed attempts.
+Guess The Image minigame challenges users to identify an image using a limited number of attempts. Images can optionally appear pixelated to increase the difficulty of the challenge. Players attempt to guess the correct answer before exhausting their allowed attempts.
 
 Producers can configure the game schedule, rules, attempts, themes, and localization through the MiniGames CMS.
 
@@ -74,7 +74,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    <br />
 5. **Theme Setup**
    1. In this step, you can customize the visual branding and theme elements of your game.
-   2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTW implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
+   2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTI implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
    3. **Please note:**
 
       1. The structure of the game stays the same. Positioning, adding, and resizing of components cannot be done
