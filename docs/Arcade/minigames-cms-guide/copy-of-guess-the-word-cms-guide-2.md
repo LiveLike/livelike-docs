@@ -54,23 +54,22 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    <br />
 3. **Game Copies** Configure game text elements:
+
    1. Welcome screen with custom greeting and start button
    2. End screen with closing message
    3. Result screen with two display types: Single/Score Based
 
-<Image align="center" src="https://files.readme.io/f0d1224c5d53067e314e8e7b33aba769bb095d3b0abdaed4c9d8356038518139-ScreenRecording2024-12-18at10.59.15-ezgif.com-video-to-gif-converter.gif" />
+   <br />
 
-3. **Word Database**
+   ![](https://files.readme.io/211d9ccb2826c2c688368fa726daa02270b28468ec45f18516db57504685e8fc-image.png)
+4. **Word Database**
    1. You can set up target words for each date, with support for word lengths ranging from 5 to 10 letters.
    2. The platform provides fields to enter different word lengths per day, helping you create varied and engaging gameplay.
    3. By default, we provide a database of per-configured words for 100days.
    4. Currently, manual word entry is the supported method for adding words to the database. You can add or delete the rows and columns to manage the words.
    5. **Upload allowed word:** If your game includes words not found in the standard dictionary, you can upload a CSV file containing custom words that match your theme. These will be recognized as valid entries during gameplay else the words entered if not part of the dictionary will throw an error.
    6. **New Updates** allows you to toggle off support for Dictionary words or define the cadence of when the word should go live, either daily, weekly or custom. Just click on the date and pick the date you want the word to go-live on.
-
-<Image align="center" src="https://files.readme.io/ea25ca9686b59ac764e6db480e680566118ab2cd093f5ea91a0035a676c85514-ezgif-2-9b6a19bee6.gif" />
-
-4. **Theme Setup**
+5. **Theme Setup**
    1. In this step, you can customize the visual branding and theme elements of your game.
    2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTW implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
    3. **Please note:**
@@ -82,6 +81,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       6. Game logo: Max size: 42x300 pixels
       7. Sponsor Logo: Max size: 42x300 pixels
       8. Background image: Recommended size 1080x1920 , max size 1mb
+   <br />
+
+<br />
 
 <Image align="center" src="https://files.readme.io/7068cc08423bfee8b8806475ddc8be970380b516e77f854739ff54ee5b05cd3c-ezgif-5-70918d4920.gif" />
 
