@@ -108,15 +108,16 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
       Example:
 
-           en – English
+   ```
+   ```
 
    1. Select Default Language: Defines the default language displayed to players.
    2. Allow Language Switch: Allows players to switch between supported languages.
    3. Select Language: Defines which language the font configuration applies to.
    4. Language Font: Allows Producers to upload fonts specific to the selected language.
-   5. Select Default Keyboard Layout:Defines the keyboard layout used for player input.
+   5. Select Default Keyboard Layout: Defines the keyboard layout used for player input.
 
-      Example:QWERTY
+      Example: QWERTY
    6. Allow Keyboard Switch: Allows players to switch keyboard layouts if multiple layouts are configured.
 
    <br />
