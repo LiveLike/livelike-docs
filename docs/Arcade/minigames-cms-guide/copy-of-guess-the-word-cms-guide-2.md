@@ -1,5 +1,5 @@
 ---
-title: Copy of Guess The Word CMS Guide
+title: Guess The Image CMS Guide
 deprecated: false
 hidden: false
 metadata:
