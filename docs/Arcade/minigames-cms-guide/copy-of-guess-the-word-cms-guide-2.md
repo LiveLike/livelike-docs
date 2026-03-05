@@ -55,7 +55,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    <br />
 3. **Game Copies** Configure game text elements:
 
-   1. Welcome screen with custom greeting and start button
+   1. Welcome screen with a custom greeting and a start button
    2. End screen with closing message
    3. Result screen with two display types: Single/Score Based
 
@@ -64,12 +64,10 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    ![](https://files.readme.io/211d9ccb2826c2c688368fa726daa02270b28468ec45f18516db57504685e8fc-image.png)
 4. **Word Database**
 
-   1. You can set up target words for each date, with support for word lengths ranging from 5 to 10 letters.
-   2. The platform provides fields to enter different word lengths per day, helping you create varied and engaging gameplay.
-   3. By default, we provide a database of per-configured words for 100days.
-   4. Currently, manual word entry is the supported method for adding words to the database. You can add or delete the rows and columns to manage the words.
-   5. **Upload allowed word:** If your game includes words not found in the standard dictionary, you can upload a CSV file containing custom words that match your theme. These will be recognized as valid entries during gameplay else the words entered if not part of the dictionary will throw an error.
-   6. **New Updates** allows you to toggle off support for Dictionary words or define the cadence of when the word should go live, either daily, weekly or custom. Just click on the date and pick the date you want the word to go-live on.
+   1. You can set up target words and images for each date, with support for word lengths ranging from 5 to 10 letters.
+   2. By default, we provide a database of pre-configured words for 15 days.
+   3. Currently, manual word and images entry is the supported method for adding words to the database. You can add or delete the rows and columns to manage the words.
+   4. <br />
 
    ![](https://files.readme.io/0d4951a78e87a5d385afc0045512316824baf01183c92ede39d434437143633d-image.png)
 
