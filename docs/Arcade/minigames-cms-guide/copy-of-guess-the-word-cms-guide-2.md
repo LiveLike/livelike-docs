@@ -78,6 +78,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    1. In this step, you can customize the visual branding and theme elements of your game.
    2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTW implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
    3. **Please note:**
+
       1. The structure of the game stays the same. Positioning, adding, and resizing of components cannot be done
       2. Only colors/background images and text copies can be customised
       3. Brand Logo -  Max size: 42x300 pixels
@@ -86,14 +87,13 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       6. Game logo: Max size: 42x300 pixels
       7. Sponsor Logo: Max size: 42x300 pixels
       8. Background image: Recommended size 1080x1920 , max size 1mb
-   <br />
 
-![](https://files.readme.io/fe69cbb447236fde487b2d0e7cf2b549e70dbe32fb0504dd566cdf603e5efa53-image.png)
+      <br />
 
-5. **Social features**
-   1. The section includes toggles for showing user stats and enabling stat sharing capabilities.
-   2. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
-   3. Count Down features when enabled, displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
+      ![](https://files.readme.io/fe69cbb447236fde487b2d0e7cf2b549e70dbe32fb0504dd566cdf603e5efa53-image.png)
+6. **Social features**The section includes toggles for showing user stats and enabling stat sharing capabilities.
+   1. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
+   2. Count Down features when enabled, displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
 
 ![](https://files.readme.io/b3de62c1f9586fd0a38f83d1c2de1515d6989c1cbf6620eaa1367151b3da3f09-image.png)
 
