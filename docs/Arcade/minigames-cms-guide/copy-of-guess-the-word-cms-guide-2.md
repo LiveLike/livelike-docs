@@ -109,6 +109,6 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    1. This section provides real-time management capabilities for your GTI game.
    2. This interface includes a "Publish Game" button for launching your game and displays the word and image timeline.
 
-![](https://files.readme.io/04d15f747ea21378258db81cc6860434a087bebbe21fef93c6cc51def06e9ade-image.png)
+<Image align="right" src="https://files.readme.io/04d15f747ea21378258db81cc6860434a087bebbe21fef93c6cc51def06e9ade-image.png" />
 
 <br />
