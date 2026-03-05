@@ -66,8 +66,12 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    1. You can set up target words and images for each date, with support for word lengths ranging from 5 to 10 letters.
    2. By default, we provide a database of pre-configured words for 15 days.
-   3. Currently, manual word and images entry is the supported method for adding words to the database. You can add or delete the rows and columns to manage the words.
-   4. <br />
+   3. Allow Playing Same Word Until Next Word is Added
+      1. When enabled, the current image will remain active until a new image is added to the database.
+   4. Enable Pixelation Mode
+      1. When enabled, images will appear pixelated during gameplay to increase difficulty.
+   5. Attempts
+      1. Defines the maximum number of guesses a player can make per image.
 
    ![](https://files.readme.io/0d4951a78e87a5d385afc0045512316824baf01183c92ede39d434437143633d-image.png)
 
