@@ -15,23 +15,41 @@ GTI (Guess The Image) is available in the experiences list.
 
 ![](https://files.readme.io/ade6c984b8221e07c7ff6102690df38bce0dfd3b41d0d9c76cab21144288597b-image.png)
 
-To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps.
+To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 8 key steps.
 
 ![](https://files.readme.io/ca2811c9bf3bd98cd8133a96f92eda233526fdf07cf8ccbd4a8dc5cfec7c5da9-image.png)
 
 <br />
 
 1. **Game Settings**
-   1. Game Timezone: Set primary timezone (e.g., Asia/Kolkata) based on target audience
-   2. Word Reset Time: Configure daily refresh time in 24-hour format (e.g., 07:00)
-   3. Game Start Date: Define launch date (e.g., December 17th, 2024)  
-      Tip: Align launch with marketing activities
+   1. The Game Settings section defines when the game starts and when new images reset.
+      1. Game Start Date: Defines the date when the game becomes active and available to players.
+      2. Word Reset Time (UTC): Defines the time when the next scheduled image becomes active.
+      3. The reset time determines when a new image from the database will be displayed to users.
+      4. Summary: The CMS displays a summary showing the reset time converted into the Producer’s local timezone.
 
-<Image align="center" width="650px" src="https://files.readme.io/3658431b18236b9aab0d32cbb56d0fef191359be41f47a1c489bf066409e4f59-Screenshot_2024-12-18_at_10.56.09.png" />
+         Example:
+
+         UTC Time: 12:00 AM
+         Local Time: 05:30 AM IST
+
+![](https://files.readme.io/da4241caa9585352cb478a0e70fb7a72a5438dbe3b566bb372384c8ef4194727-image.png)
 
 <br />
 
-2. **Game Copies** Configure game text elements:
+2. **Game Rules** This section allows Producers to configure instructional content and game rules shown to players.
+   1. How to Play Screen: Enable this option to display a How to Play screen explaining the gameplay.
+   2. Rules: Enable this option to display a Rules screen before the game begins.
+   3. Rules Title: Defines the title displayed on the rules page.
+
+      Example:
+
+      Guess the Image Rules
+   4. Rules Information: Allows Producers to provide instructions explaining how to play the game.
+   5. Terms & Conditions: Optional field to add legal terms or participation conditions.
+   6. URL: Allows Producers to link to an external Terms & Conditions page.
+      <br />
+3. **Game Copies** Configure game text elements:
    1. Welcome screen with custom greeting and start button
    2. End screen with closing message
    3. Result screen with two display types: Single/Score Based
