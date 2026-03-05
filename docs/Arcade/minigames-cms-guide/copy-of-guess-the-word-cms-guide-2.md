@@ -78,10 +78,10 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    1. In this step, you can customize the visual branding and theme elements of your game.
    2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTW implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
    3. **Please note:**
-      1. The structure of the game stays the same. Poistioning, adding and resizing of components cannot be done
+      1. The structure of the game stays the same. Positioning, adding, and resizing of components cannot be done
       2. Only colors/background images and text copies can be customised
       3. Brand Logo -  Max size: 42x300 pixels
-      4. Game Font: Applied to all text except letters inputed in the Grid.
+      4. Game Font: Applied to all text except letters input in the Grid.
       5. Grid Font: Applied to only Letters in the Grid.
       6. Game logo: Max size: 42x300 pixels
       7. Sponsor Logo: Max size: 42x300 pixels
