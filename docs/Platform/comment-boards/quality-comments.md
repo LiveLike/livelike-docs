@@ -21,7 +21,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
    1. AI moderation signals
       1. Sentiment analysis (positive, neutral, negative) - Calculated as a score ranging from -1 to 1, -1 being the most negative and 1 being the most positive.
       2. Toxicity analysis (high, medium, low) - Calculated as a score ranging from 0 to 1, 0 being the least toxic and 1 being the most toxic.
-   2. **Content Signals**
+   2. Content Signals
       1. Minimum character count - Whitespaces excluded from this count
       2. Allowed or disallowed characters
       3. Emoji to text ratio
@@ -31,7 +31,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
 
 ## System Tags Comments as High Quality
 
-1. Based on the configured rules, the system assigns a quality flag to each comment. **(is_high_quality = true | false)**
+1. Based on the configured rules, the system assigns a quality flag to each comment. `is_high_quality = true | false`
 2. This flag is returned in the Comment List API allowing clients to filter comments that meet the quality criteria.
 
 <br />
@@ -41,9 +41,9 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
 1. Clients can further refine results using trending score filters.
 2. Trending score reflects how much engagement a comment is receiving.
 3. Available filters:
-   1. **trending_score_gte** - return comments with scores greater than or equal to a value
-   2. **trending_score_lte** - return comments with scores less than or equal to a value
-   3. Example: trending_score_gte=3; This helps surface comments that are gaining attention or engagement.
+   1. `trending_score_gte` - return comments with scores greater than or equal to a value
+   2. `trending_score_lte` - return comments with scores less than or equal to a value
+   3. Example: `trending_score_gte=3`; This helps surface comments that are gaining attention or engagement.
 
 <br />
 
@@ -57,7 +57,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
 ## Limit Comments per board
 
 1. To ensure balanced results, clients can limit the number of comments returned per board.
-2. For example: per_board_limit=5; This returns up to 5 comments from each comment board, preventing one board from dominating the results.
+2. For example: `per_board_limit=5`; This returns up to 5 comments from each comment board, preventing one board from dominating the results.
 
 <br />
 
@@ -96,7 +96,7 @@ For more details on the List Comments API,  please check this out: <Anchor label
 1. Only comments marked as high quality are displayed.
 2. UI Displayed as:
    1. Curated comment feed
-   2.  Premium discussion mode
+   2. Premium discussion mode
 3. Example Experience: Instead of showing every message, the platform surfaces comments that add value to the conversation.
 
 <br />
