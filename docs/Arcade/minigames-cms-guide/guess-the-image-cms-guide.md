@@ -17,7 +17,7 @@ GTI (Guess The Image) is available in the experiences list.
 
 To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 8 key steps.
 
-![](https://files.readme.io/ca2811c9bf3bd98cd8133a96f92eda233526fdf07cf8ccbd4a8dc5cfec7c5da9-image.png)
+![](https://files.readme.io/9166ca10b3b439c8bf700b7279c3e14f1b5e2d403369291dfb9b5215c2a5a05c-image.png)
 
 1. **Game Settings**
    1. The Game Settings section defines when the game starts and when new images reset.
