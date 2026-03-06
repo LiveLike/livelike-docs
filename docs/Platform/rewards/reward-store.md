@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-# Reward Store
-
 LiveLike now powers a complete end-to-end rewards economy — enabling your users to **earn** points through LiveLike experiences and **burn** those points by redeeming rewards directly inside your product. With this expansion, LiveLike provides everything you need to build a flexible, scalable loyalty ecosystem.
 
 ## Overview
