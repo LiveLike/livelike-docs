@@ -1,5 +1,5 @@
 ---
-title: '# Prizeout Integration'
+title: Prizeout Integration
 excerpt: ''
 deprecated: false
 hidden: false
