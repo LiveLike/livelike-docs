@@ -1,5 +1,5 @@
 ---
-title: Points Redemption
+title: '# Prizeout Integration'
 excerpt: ''
 deprecated: false
 hidden: false
@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-# Prizeout Integration
+# Overview
 
 LiveLike enables point redemption by integrating Prizeout with CMS. Prizeout is an innovative withdrawal platform that gives users more purchasing power in the form of digital gift cards with bonus offers. Those who choose Prizeout withdrawals usually receive their gift cards via e-mail within minutes and can redeem them at mainstream retailers such as Airbnb, Apple, GameStop, Lowe’s, and more.
 
