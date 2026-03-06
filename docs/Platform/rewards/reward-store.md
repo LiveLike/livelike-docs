@@ -9,8 +9,6 @@ metadata:
 
 LiveLike now powers a complete end-to-end rewards economy — enabling your users to **earn** points through LiveLike experiences and **burn** those points by redeeming rewards directly inside your product. With this expansion, LiveLike provides everything you need to build a flexible, scalable loyalty ecosystem.
 
-Alongside long-standing earning features like **Quests**, **Widgets**, **User Actions** (internal & external), and **Mini Games**,
-
 ## Overview
 
 The LiveLike Reward Store lets you curate a catalog of redeemable items — digital or physical — and define custom redemption rules for different user segments. Whether you're building a loyalty marketplace, a simple perk catalog, or a gated tiered shop, the Reward Store gives you full control over what users can redeem and when.
