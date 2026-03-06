@@ -49,7 +49,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
 
 ## Retrieve comments from multiple comment boards
 
-1. Clients can request comments from multiple comment boards in a single API call. `comment_board_id={'<id_1>'}`; `comment_board_id={'<id_2>'}`.
+1. Clients can request comments from multiple comment boards in a single API call. `comment_board_id={'<id_1>'}&comment_board_id={'<id_2>'}`.
 2. This is useful for Events with multiple chat rooms or Aggregating conversations across different topics or moments.
 
 <br />
@@ -74,13 +74,13 @@ For more details on the List Comments API,  please check this out: <Anchor label
 
 <br />
 
-## Implementation Example
+# Implementation Examples
 
 <br />
 
-### Top Fan Comments
+## Top Fan Comments
 
-1. Top Fan Comments: Highlight the most meaningful comments from fans during an event.
+1. Highlight the most meaningful comments from fans during an event.
 2. How it works: The client fetches comments that are marked high quality & have a valid trending score.
 3. UI Displayed as:
    1. Top Comments section
@@ -91,7 +91,7 @@ For more details on the List Comments API,  please check this out: <Anchor label
 
 <br />
 
-### Noise Reduction
+## Noise Reduction
 
 1. Only comments marked as high quality are displayed.
 2. UI Displayed as:
