@@ -22763,6 +22763,22 @@
               "type": "number"
             },
             "description": "Trending score less than or equal to"
+          },
+          {
+            "in": "query",
+            "name": "is_high_quality",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Filter comments that have been categorized as high quality passing all comment quality rules"
+          },
+          {
+            "in": "query",
+            "name": "per_board_limit",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Limit the number of comments for each passed comment board ID by a certain number"
           }
         ],
         "responses": {
