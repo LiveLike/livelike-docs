@@ -343,7 +343,7 @@
       }
     },
     "/profiles/{blocked_by_profile_id}/profile-blocks/{blocked_profile_id}/": {
-      "get": {
+      "delete": {
         "description": "",
         "responses": {
           "200": {
@@ -368,7 +368,7 @@
             "required": true
           }
         ],
-        "operationId": "get_profiles-blocked-by-profile-id-profile-blocks-blocked-profile-id"
+        "operationId": "delete_profiles-blocked-by-profile-id-profile-blocks-blocked-profile-id"
       }
     }
   },
