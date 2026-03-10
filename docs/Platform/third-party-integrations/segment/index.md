@@ -214,8 +214,8 @@ The table below lists the properties included in the Quest Task Completed event.
 | quest_task_name     | The name of the specific Task within the Quest that was completed.        |
 | user_quest_id       | The ID of the specific relationship between the User and that Quest.      |
 | user_quest_task_id  | The ID of the specific relationship between the User and that Quest Task. |
-| variant_id          | Quest A/B test variant ID if applicable                                   |
-| variant_name        | Quest A/B test variant name if applicable                                 |
+| variant_id          | The ID of the A/B Test variants in Quest.                                 |
+| variant_name        | The name of the A/B Test variants in Quest.                               |
 
 ## Event Properties for Quest Reward Awarded
 
@@ -231,8 +231,8 @@ The table below lists the properties included in the Quest Reward Awarded event.
 | reward_item_balance        | The new balance of the Reward Item for the user.                          |
 | reward_item_id             | The ID of the Reward Item that was rewarded.                              |
 | reward_item_transaction_id | The ID of the transaction of the User being rewarded.                     |
-| variant_id                 | Quest A/B test variant ID if applicable                                   |
-| variant_name               | Quest A/B test variant name if applicable                                 |
+| variant_id                 | The ID of the A/B Test variants in Quest.                                 |
+| variant_name               | The name of the A/B Test variants in Quest.                               |
 
 ## Event Properties for Reward Item Rewarded
 
@@ -262,8 +262,8 @@ The table below lists the properties included in the User Quest Task Progressed 
 | user_quest_id            | The ID of the specific relationship between the User and that Quest.        |
 | user_quest_task_id       | The ID of the specific relationship between the User and that Quest Task.   |
 | user_quest_task_progress | The number of times this Task has been done so far.                         |
-| variant_id               | Quest A/B test variant ID if applicable                                     |
-| variant_name             | Quest A/B test variant name if applicable                                   |
+| variant_id               | The ID of the A/B Test variant assigned to a user in Quest.                 |
+| variant_name             | The name of the A/B Test variant assigned to a user in Quest.               |
 
 ## Event Properties for User Quest Completed
 
@@ -275,8 +275,8 @@ The table below lists the properties included in the User Quest Completed event.
 | quest_id            | The ID of the Quest.                                                 |
 | quest_name          | The name of the Quest.                                               |
 | user_quest_id       | The ID of the specific relationship between the User and that Quest. |
-| variant_id          | Quest A/B test variant ID if applicable                              |
-| variant_name        | Quest A/B test variant name if applicable                            |
+| variant_id          | The ID of the A/B Test variant assigned to a user in Quest.          |
+| variant_name        | The name of the A/B Test variant assigned to a user in Quest.        |
 
 ## Event Properties for Quest Published
 
@@ -292,7 +292,7 @@ The table below lists the properties included in the Quest Published event.
 | user_specific_timer | The user-specific duration of Quest, if any.                    |
 | rewards             | The object with details for quest reward items.                 |
 | badges              | The object with details for quest badges.                       |
-| profile_groups      | The details of user groups linked to Quest, if any.             |
+| profile_groups      | The object with details of user groups linked to Quest, if any. |
 | test_variants       | The object with details of A/B Test variant in a quest, if any. |
 
 ## Event Properties for A/B Test Variant Assignment
