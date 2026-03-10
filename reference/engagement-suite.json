@@ -41,8 +41,19 @@
                   "blocks": {
                     "type": "array",
                     "items": {
-                      "properties": {},
-                      "type": "object"
+                      "properties": {
+                        "blocked_by_profile_id": {
+                          "type": "string"
+                        },
+                        "blocked_profile_id": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "blocked_by_profile_id",
+                        "blocked_profile_id"
+                      ]
                     }
                   },
                   "override": {
