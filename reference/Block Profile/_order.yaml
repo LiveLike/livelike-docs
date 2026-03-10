@@ -1,7 +1,6 @@
 - create-a-profile-block
 - get-blocked-profiles
 - unblock-profile
-- unblock-profile-by-profile-id
 - get-blocked-profile-ids
 - bulk-block-sync
 - unblock-profile-by-profile-custom-id
