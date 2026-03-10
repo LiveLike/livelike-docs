@@ -4,7 +4,7 @@ api:
   file: engagement-suite.json
   operationId: unblock-profile-1
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
