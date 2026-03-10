@@ -17665,6 +17665,14 @@
                         "Provide only one of blocked_profile_id or blocked_profile_custom_id"
                       ]
                     }
+                  },
+                  "If no blocked_profile_id or blocked_profile_custom_id provided": {
+                    "summary": "If no blocked_profile_id or blocked_profile_custom_id provided",
+                    "value": {
+                      "detail": [
+                        "Provide either blocked_profile_id or blocked_profile_custom_id"
+                      ]
+                    }
                   }
                 },
                 "schema": {
