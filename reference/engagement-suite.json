@@ -312,6 +312,35 @@
           ]
         }
       }
+    },
+    "/unblock-by-profile-custom-id/{client_id}/{blocked_profile_custom_id}/": {
+      "delete": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "blocked_profile_custom_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "delete_unblock-by-profile-custom-id-client-id-blocked-profile-custom-id"
+      }
     }
   },
   "x-readme": {
