@@ -299,13 +299,13 @@ The table below lists the properties included in the Quest Published event.
 
 The table below outlines the properties included in the A/B Test Variant Assignment event.
 
-| PROPERTY NAME       | DESCRIPTION                                                      |
-| :------------------ | :--------------------------------------------------------------- |
-| livelike_profile_id | The profile ID of the LiveLike user.                             |
-| quest_id            | The ID of the Quest.                                             |
-| quest_name          | The name of the Quest.                                           |
-| variant_id          | The ID of the A/B quest variant that was assigned to the user.   |
-| variant_name        | The name of the A/B quest variant that was assigned to the user. |
+| PROPERTY NAME       | DESCRIPTION                                                              |
+| :------------------ | :----------------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.                                     |
+| quest_id            | The ID of the Quest.                                                     |
+| quest_name          | The name of the Quest.                                                   |
+| variant_id          | The ID of the A/B Test variant that was assigned to the user in Quest.   |
+| variant_name        | The name of the A/B Test variant that was assigned to the user in Quest. |
 
 ## Client Side Integration
 
