@@ -282,18 +282,18 @@ The table below lists the properties included in the User Quest Completed event.
 
 The table below lists the properties included in the Quest Published event.
 
-| PROPERTY NAME       | DESCRIPTION                                                                                                                                                      |
-| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| livelike_profile_id | The profile ID of the producer.                                                                                                                                  |
-| quest_id            | The ID of the Quest.                                                                                                                                             |
-| quest_name          | The name of the Quest.                                                                                                                                           |
-| quest_start_at      | The start time of quest if any.                                                                                                                                  |
-| quest_end_at        | The end time of quest if any                                                                                                                                     |
-| user_specific_timer | User specific timer if any                                                                                                                                       |
-| rewards             | The quest rewards objects that includes id, name, amount and test_varaint_ids (the variants associated with the reward in case the quest is part of an A/B test) |
-| badges              | The quest badge object includes id, name, test_variant_ids (the variants associated with the reward in case the quest is part of an A/B test)                    |
-| profile_groups      | The details of Profile Group including ID, name.                                                                                                                 |
-| test_variants       | Includes ID and name of A/B test variants in a quest.                                                                                                            |
+| PROPERTY NAME       | DESCRIPTION                                                     |
+| :------------------ | :-------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the producer.                                 |
+| quest_id            | The ID of the Quest.                                            |
+| quest_name          | The name of the Quest.                                          |
+| quest_start_at      | The start time of Quest, if any.                                |
+| quest_end_at        | The end time of Quest, if any.                                  |
+| user_specific_timer | The user-specific duration of Quest, if any.                    |
+| rewards             | The object with details for quest reward items.                 |
+| badges              | The object with details for quest badges.                       |
+| profile_groups      | The details of user groups linked to Quest, if any.             |
+| test_variants       | The object with details of A/B Test variant in a quest, if any. |
 
 ## Event Properties for A/B Test Variant Assignment
 
