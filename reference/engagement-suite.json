@@ -17446,11 +17446,12 @@
                   "blocked_profile_id": {
                     "type": "string",
                     "description": "profile uuid that is being blocked"
+                  },
+                  "blocked_profile_custom_id": {
+                    "type": "string",
+                    "description": "profile custom id that is being blocked"
                   }
-                },
-                "required": [
-                  "blocked_profile_id"
-                ]
+                }
               }
             }
           }
@@ -17651,7 +17652,19 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"blocked_profile_id\": [\n        \"'7eb85742-64d1-451d-966e-d8f8cfeab9221' is not a valid UUID.\"\n    ]\n}"
+                    "value": {
+                      "detail": [
+                        "Blocked profile not found"
+                      ]
+                    }
+                  },
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "detail": [
+                        "Provide only one of blocked_profile_id or blocked_profile_custom_id"
+                      ]
+                    }
                   }
                 },
                 "schema": {
