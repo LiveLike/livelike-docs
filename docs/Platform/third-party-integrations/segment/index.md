@@ -171,6 +171,8 @@ The table below lists events that LiveLike sends to Segment. These events appear
 | EVENT NAME                 | DESCRIPTION                                                |
 | :------------------------- | :--------------------------------------------------------- |
 | Badge Rewarded             | When a user receives a badge.                              |
+| Quest Published            | When a quest is published for users to interact with.      |
+| A/B Test Variant Assigned  | When a user is assigned an A/B test variant in a quest.    |
 | Quest Task Completed       | When a user completes a Quest Task.                        |
 | Quest Reward Awarded       | When a user receives a Reward Item via a Quest Completion. |
 | Reward Item Rewarded       | When a user is rewarded via a Reward Table.                |
@@ -181,18 +183,23 @@ The table below lists events that LiveLike sends to Segment. These events appear
 
 The table below lists the properties included in Badge Rewarded event.
 
-| PROPERTY NAME         | DESCRIPTION                                                                                                                                             |
-| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| livelike_profile_id   | The profile ID of the LiveLike user.                                                                                                                    |
-| badge_id              | The ID of the specific Badge the user earned.                                                                                                           |
-| badge_title           | The title of the specific Badge the user earned.                                                                                                        |
-| description           | The description of the specific Badge the user earned.                                                                                                  |
-| earned_badge_id       | The ID of the specific transaction of the user earning the Badge.                                                                                       |
-| image_url             | The URL of the Badge image.                                                                                                                             |
-| reward_item_id        | The ID of the Reward Item that’s associated to the threshold to earn the Badge.                                                                         |
-| reward_item_name      | The name of the Reward Item that’s associated to the threshold to earn the Badge.                                                                       |
-| reward_item_threshold | The threshold amount of the Reward Item that’s associated to earning the Badge.                                                                         |
-| source                | Indicates the origin of the event. In this case, the value is reward_transaction, as the event is triggered for badge earned due to reward transaction. |
+| PROPERTY NAME         | DESCRIPTION                                                                                                     |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| livelike_profile_id   | The profile ID of the LiveLike user.                                                                            |
+| badge_id              | The ID of the specific Badge the user earned.                                                                   |
+| badge_title           | The title of the specific Badge the user earned.                                                                |
+| description           | The description of the specific Badge the user earned.                                                          |
+| earned_badge_id       | The ID of the specific transaction of the user earning the Badge.                                               |
+| image_url             | The URL of the Badge image.                                                                                     |
+| source                | The trigger point or origin of the badge that user earned.                                                      |
+| quest_id              | The ID of Quest, if source of badge was a quest completion.                                                     |
+| quest_name            | The name of Quest, if source of badge was a quest completion.                                                   |
+| user_quest_id         | The ID of the specific relationship between the User and that Quest, if source of badge was a quest completion. |
+| variant_id            | The ID of the A/B quest variant that was assigned to the user, if source was an A/B Quest.                      |
+| variant_name          | The name of the A/B quest variant that was assigned to the user, if source was an A/B Quest.                    |
+| reward_item_id        | The ID of the Reward Item that’s associated to the threshold to earn the Badge, if source was Reward Item.      |
+| reward_item_name      | The name of the Reward Item that’s associated to the threshold to earn the Badge, if source was Reward Item.    |
+| reward_item_threshold | The threshold amount of the Reward Item that’s associated to earning the Badge, if source was Reward Item.      |
 
 ## Event Properties for Quest Task Completed
 
