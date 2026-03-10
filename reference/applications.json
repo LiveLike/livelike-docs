@@ -744,39 +744,7 @@
         "deprecated": false
       }
     },
-    "/new-endpoint": {
-      "post": {
-        "description": "",
-        "operationId": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "security": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "organization_id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object",
-                "required": [
-                  "organization_id"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
+    "/new-endpoint": {},
     "/new-endpoint-1": {
       "get": {
         "description": "",
