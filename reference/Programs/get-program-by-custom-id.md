@@ -1,6 +1,6 @@
 ---
 title: Get Program by Custom ID
-excerpt: ''
+excerpt: .
 api:
   file: engagement-suite.json
   operationId: get-program-by-custom-id
