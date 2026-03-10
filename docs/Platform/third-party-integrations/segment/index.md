@@ -271,7 +271,7 @@ The table below lists the properties included in the User Quest Completed event.
 | variant_id          | Quest A/B test variant ID if applicable                              |
 | variant_name        | Quest A/B test variant name if applicable                            |
 
-## Quest Published Event
+## Event Properties for Quest Published
 
 The table below lists the properties included in the Quest published event that is triggered when a quest is published via CMS.
 
@@ -285,39 +285,39 @@ The table below lists the properties included in the Quest published event that 
 | user_specific_timer | User specific timer if any                                                                                                                                       |
 | rewards             | The quest rewards objects that includes id, name, amount and test_varaint_ids (the variants associated with the reward in case the quest is part of an A/B test) |
 | badges              | The quest badge object includes id, name, test_variant_ids (the variants associated with the reward in case the quest is part of an A/B test)                    |
-| profile_groups      | Profile Group object includes id, name                                                                                                                           |
-| test_variants       | Includes id and name if quest if an A/B test quest                                                                                                               |
+| profile_groups      | The details of Profile Group including ID, name.                                                                                                                 |
+| test_variants       | Includes ID and name of A/B test variants in a quest.                                                                                                            |
 
-## A/B Test Quest Variant Assignment Event
+## Event Properties for A/B Test Variant Assignment
 
 The table below outlines the properties included in the A/B test quest variant assignment event, which is triggered when a user is assigned to one of the two variants in an A/B test quest.
 
-| PROPERTY NAME       | DESCRIPTION                                    |
-| :------------------ | :--------------------------------------------- |
-| livelike_profile_id | The profile ID of the LiveLike user.           |
-| quest_id            | The ID of the Quest.                           |
-| quest_name          | The name of the Quest.                         |
-| variant_id          | The ID of the variant user got assigned with.  |
-| variant_name        | The name of the variant user got assigned with |
+| PROPERTY NAME       | DESCRIPTION                                                      |
+| :------------------ | :--------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.                             |
+| quest_id            | The ID of the Quest.                                             |
+| quest_name          | The name of the Quest.                                           |
+| variant_id          | The ID of the A/B quest variant that was assigned to the user.   |
+| variant_name        | The name of the A/B quest variant that was assigned to the user. |
 
 ## Event Properties for Badge Rewarded for Quest Completion
 
 The table below lists the properties included in Badge Rewarded for Quest event.
 
-| PROPERTY NAME       | DESCRIPTION                                                                                                                               |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| livelike_profile_id | The profile ID of the LiveLike user.                                                                                                      |
-| badge_id            | The ID of the specific Badge the user earned.                                                                                             |
-| badge_title         | The title of the specific Badge the user earned.                                                                                          |
-| description         | The description of the specific Badge the user earned.                                                                                    |
-| earned_badge_id     | The ID of the specific transaction of the user earning the Badge.                                                                         |
-| image_url           | The URL of the Badge image.                                                                                                               |
-| quest_id            | The if of quest on completion on which user got awarded badge                                                                             |
-| quest_name          | The name of quest on completion on which user got awarded badge                                                                           |
-| user_quest_id       | The ID of User Quest                                                                                                                      |
-| source              | Indicates the origin of the event. In this case, the value is **quest_completion**, as the event is triggered when a quest is completed.n |
-| variant_id          | The name of the variant to which the user was assigned, in case the quest is an A/B test quest.                                           |
-| variant_name        | The name of the variant to which the user was assigned, in case the quest is an A/B test quest.                                           |
+| PROPERTY NAME       | DESCRIPTION                                                          |
+| :------------------ | :------------------------------------------------------------------- |
+| livelike_profile_id | The profile ID of the LiveLike user.                                 |
+| badge_id            | The ID of the specific Badge the user earned.                        |
+| badge_title         | The title of the specific Badge the user earned.                     |
+| description         | The description of the specific Badge the user earned.               |
+| earned_badge_id     | The ID of the specific transaction of the user earning the Badge.    |
+| image_url           | The URL of the Badge image.                                          |
+| quest_id            | The ID of Quest.                                                     |
+| quest_name          | The name of Quest.                                                   |
+| user_quest_id       | The ID of the specific relationship between the User and that Quest. |
+| source              | The trigger point or origin of the badge that user earned.           |
+| variant_id          | The ID of the A/B quest variant that was assigned to the user.       |
+| variant_name        | The name of the A/B quest variant that was assigned to the user.     |
 
 ## Client Side Integration
 
