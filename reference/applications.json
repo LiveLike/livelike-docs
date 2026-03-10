@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "applications",
+    "title": "applications.",
     "version": "1"
   },
   "servers": [
