@@ -22170,7 +22170,7 @@
           {
             "name": "reaction_space_id",
             "in": "query",
-            "description": "there can be multiple reaction_space_id filters eg, reaction_space_id=abcd&reaction_space_id=1234",
+            "description": "Repeat this parameter for multiple reaction spaces. Limit 100 different spaces.",
             "required": true,
             "schema": {
               "type": "string"
@@ -22179,7 +22179,7 @@
           {
             "name": "target_group_id",
             "in": "query",
-            "description": "either reaction-space_id or target_group_id is required",
+            "description": "Either reaction-space_id or target_group_id is required. Repeat this parameter for multiple target group IDs. Limit 100.",
             "required": true,
             "schema": {
               "type": "string"
