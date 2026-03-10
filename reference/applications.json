@@ -775,16 +775,6 @@
             }
           }
         }
-      },
-      "get": {
-        "description": "",
-        "operationId": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
       }
     },
     "/new-endpoint-1": {
