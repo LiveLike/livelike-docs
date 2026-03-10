@@ -304,20 +304,23 @@ The table below outlines the properties included in the A/B test quest variant a
 
 The table below lists the properties included in Badge Rewarded for Quest event.
 
-| PROPERTY NAME       | DESCRIPTION                                                                                  |
-| :------------------ | :------------------------------------------------------------------------------------------- |
-| livelike_profile_id | The profile ID of the LiveLike user.                                                         |
-| badge_id            | The ID of the specific Badge the user earned.                                                |
-| badge_title         | The title of the specific Badge the user earned.                                             |
-| description         | The description of the specific Badge the user earned.                                       |
-| earned_badge_id     | The ID of the specific transaction of the user earning the Badge.                            |
-| image_url           | The URL of the Badge image.                                                                  |
-| source              | The trigger point or origin of the badge that user earned.                                   |
-| quest_id            | The ID of Quest, if source of badge was a quest completion.                                  |
-| quest_name          | The name of Quest, if source of badge was a quest completion.                                |
-| user_quest_id       | The ID of the specific relationship between the User and that Quest.                         |
-| variant_id          | The ID of the A/B quest variant that was assigned to the user, if source was an A/B Quest.   |
-| variant_name        | The name of the A/B quest variant that was assigned to the user, if source was an A/B Quest. |
+| PROPERTY NAME         | DESCRIPTION                                                                                                  |
+| :-------------------- | :----------------------------------------------------------------------------------------------------------- |
+| livelike_profile_id   | The profile ID of the LiveLike user.                                                                         |
+| badge_id              | The ID of the specific Badge the user earned.                                                                |
+| badge_title           | The title of the specific Badge the user earned.                                                             |
+| description           | The description of the specific Badge the user earned.                                                       |
+| earned_badge_id       | The ID of the specific transaction of the user earning the Badge.                                            |
+| image_url             | The URL of the Badge image.                                                                                  |
+| source                | The trigger point or origin of the badge that user earned.                                                   |
+| quest_id              | The ID of Quest, if source of badge was a quest completion.                                                  |
+| quest_name            | The name of Quest, if source of badge was a quest completion.                                                |
+| user_quest_id         | The ID of the specific relationship between the User and that Quest.                                         |
+| variant_id            | The ID of the A/B quest variant that was assigned to the user, if source was an A/B Quest.                   |
+| variant_name          | The name of the A/B quest variant that was assigned to the user, if source was an A/B Quest.                 |
+| reward_item_id        | The ID of the Reward Item that’s associated to the threshold to earn the Badge, if source was Reward Item.   |
+| reward_item_name      | The name of the Reward Item that’s associated to the threshold to earn the Badge, if source was Reward Item. |
+| reward_item_threshold | The threshold amount of the Reward Item that’s associated to earning the Badge, if source was Reward Item.   |
 
 ## Client Side Integration
 
