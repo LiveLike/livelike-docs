@@ -370,6 +370,27 @@
         ],
         "operationId": "delete_profiles-blocked-by-profile-id-profile-blocks-blocked-profile-id"
       }
+    },
+    "/applications/{client_id}/profile-blocks-bulk-sync/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_applications-client-id-profile-blocks-bulk-sync"
+      }
     }
   },
   "x-readme": {
