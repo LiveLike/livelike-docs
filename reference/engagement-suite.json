@@ -389,7 +389,32 @@
             "required": true
           }
         ],
-        "operationId": "post_applications-client-id-profile-blocks-bulk-sync"
+        "operationId": "post_applications-client-id-profile-blocks-bulk-sync",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "blocks": {
+                    "type": "array",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    }
+                  },
+                  "override": {
+                    "type": "boolean",
+                    "default": "true"
+                  }
+                },
+                "required": [
+                  "blocks"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
