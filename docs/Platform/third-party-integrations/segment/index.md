@@ -307,8 +307,6 @@ The table below outlines the properties included in the A/B Test Variant Assignm
 | variant_id          | The ID of the A/B quest variant that was assigned to the user.   |
 | variant_name        | The name of the A/B quest variant that was assigned to the user. |
 
-<br />
-
 ## Client Side Integration
 
 Before sending evens to Segment and make Livelike compatible to accept the data, you will need to send additional properties in the payload
