@@ -42,6 +42,13 @@ next:
 
 ```
 
+* **Guess The Image**: Add the following script tag to your HTML page:
+
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-image-1.3.1.js"></script>
+
+```
+
 * **Trivia**: Add the following script tag to your HTML page:
 
 ```html
@@ -108,6 +115,13 @@ next:
 
 ```html
 <ll-guess-the-word accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-word>
+
+```
+
+* #### **Guess The Image** ([Demo](https://stackblitz.com/edit/vitejs-vite-7wiwh6jm?file=index.html))
+
+```html
+<ll-guess-the-image accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-image>
 
 ```
 
