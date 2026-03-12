@@ -34077,7 +34077,7 @@
       "delete": {
         "description": "",
         "responses": {
-          "200": {
+          "204": {
             "description": ""
           }
         },
