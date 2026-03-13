@@ -34204,16 +34204,17 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "Result": {
-                    "value": {
-                      "image": "Images cannot be added, removed, or changed after publishing."
-                    }
-                  },
                   "Bad Request": {
                     "summary": "Bad Request",
                     "value": {
                       "edit_count": "A published rich post can only be edited 1 time."
                     }
+                  },
+                  "Bad Request 1": {
+                    "value": {
+                      "image": "Images cannot be added, removed, or changed after publishing."
+                    },
+                    "summary": "Bad Request 1"
                   }
                 },
                 "schema": {
