@@ -34179,7 +34179,21 @@
                   },
                   "localized_data": {
                     "type": "object",
-                    "properties": {},
+                    "properties": {
+                      "locale": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "description": "localized title"
+                          },
+                          "content": {
+                            "type": "string",
+                            "description": "localized content"
+                          }
+                        }
+                      }
+                    },
                     "description": "Localized title and content keyed by locale code"
                   }
                 }
