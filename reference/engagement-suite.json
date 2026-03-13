@@ -34112,7 +34112,8 @@
             "in": "path",
             "name": "rich_post_id",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "required": true,
             "description": "The unique ID of the published Rich Post to edit"
