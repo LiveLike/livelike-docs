@@ -34101,6 +34101,227 @@
         ],
         "operationId": "delete_unblock-by-profile-custom-id-client-id-blocked-profile-custom-id"
       }
+    },
+    "/rich-posts/{rich_post_id}/": {
+      "patch": {
+        "summary": "Copy of List Rich Posts",
+        "description": "",
+        "operationId": "list-rich-posts-1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "rich_post_id",
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "required": true,
+            "description": "The unique ID of the published Rich Post to edit"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Bearer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": {
+                      "id": "1d5f6d45-ceae-4c69-9d64-172e65a3f8d8",
+                      "pubnub_enabled": false,
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1d5f6d45-ceae-4c69-9d64-172e65a3f8d8/",
+                      "program_id": "551052ea-c6c4-41f8-97f3-ad0c732730b7",
+                      "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                      "created_at": "2026-03-13T11:39:05.672236Z",
+                      "kind": "rich-post",
+                      "published_at": "2026-03-13T11:39:05.970825Z",
+                      "scheduled_at": "2026-03-13T11:39:05.831274Z",
+                      "interactive_until": null,
+                      "title": "Updated",
+                      "content": "Updated",
+                      "timeout": "P0DT00H00M30S",
+                      "subscribe_channel": "program.widget.551052ea-c6c4-41f8-97f3-ad0c732730b7",
+                      "program_date_time": null,
+                      "publish_delay": "P0DT00H00M00S",
+                      "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1d5f6d45-ceae-4c69-9d64-172e65a3f8d8/interactions/",
+                      "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/rich-post/1d5f6d45-ceae-4c69-9d64-172e65a3f8d8/",
+                      "impression_count": 0,
+                      "unique_impression_count": 0,
+                      "engagement_count": null,
+                      "engagement_percent": null,
+                      "status": "published",
+                      "created_by": {
+                        "id": "7422ab80-ff8d-4bc4-89cd-4e9db67f9ab5",
+                        "name": "Aditya Kumar",
+                        "image_url": null,
+                        "custom_id": null
+                      },
+                      "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1d5f6d45-ceae-4c69-9d64-172e65a3f8d8/schedule/",
+                      "rewards_url": null,
+                      "translations": {},
+                      "translatable_fields": [
+                        "title",
+                        "content"
+                      ],
+                      "reactions": [],
+                      "custom_data": null,
+                      "sponsors": [],
+                      "earnable_rewards": [],
+                      "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=1d5f6d45-ceae-4c69-9d64-172e65a3f8d8",
+                      "widget_attributes": [],
+                      "playback_time_ms": null,
+                      "report_counts": {
+                        "total": 0,
+                        "pending": 0,
+                        "accepted": 0,
+                        "dismissed": 0
+                      },
+                      "filtered_title": null,
+                      "filtered_content": null,
+                      "content_filter": [],
+                      "edit_count": 1
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "edit_count": "A published rich post can only be edited 1 time."
+                    }
+                  },
+                  "Bad Request 1": {
+                    "value": {
+                      "image": "Images cannot be added, removed, or changed after publishing."
+                    },
+                    "summary": "Bad Request 1"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Updated title of the rich post."
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Updated HTML content of the post. Text only — images cannot be changed after publishing"
+                  },
+                  "localized_data": {
+                    "type": "object",
+                    "properties": {
+                      "locale": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "description": "localized title"
+                          },
+                          "content": {
+                            "type": "string",
+                            "description": "localized content"
+                          }
+                        }
+                      }
+                    },
+                    "description": "Localized title and content keyed by locale code"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Copy of Copy of List Rich Posts",
+        "description": "",
+        "operationId": "list-rich-posts-1-1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "rich_post_id",
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "required": true,
+            "description": "The unique ID of the published Rich Post to edit"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Bearer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "No Content": {
+                    "summary": "No Content",
+                    "value": "{}"
+                  }
+                }
+              }
+            },
+            "description": "No Content"
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-readme": {
