@@ -99,12 +99,12 @@ curl -X PATCH "https://cf-blast.livelikecdn.com/api/v1/rich-posts/{rich_post_id}
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer {ACCESS_TOKEN}" \
   --data '{
-    "title": "Hello, I updated the title",
-    "content": "<p>Updated content here<br></p>",
+    "title": "Updated post title",
+    "content": "<p>Updated post content<br></p>",
     "localized_data": {
       "aa": {
-        "title": "localized updated title",
-        "content": "localized updated content"
+        "title": "Localized title",
+        "content": "Localized content"
       }
     }
   }'
