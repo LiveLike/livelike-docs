@@ -1,6 +1,8 @@
 ---
-title: Edit and Delete Published Rich Posts
-excerpt: Guide how to edit and delete end-user published Rich Posts with the REST API.
+title: Update and Delete Published Rich Posts
+excerpt: >-
+  Guide how to Update and delete end-user published Rich Posts with the REST
+  API.
 deprecated: false
 hidden: false
 metadata:
@@ -36,9 +38,9 @@ A successful delete returns `204 No Content` with an empty body.
 
 ***
 
-## Edit a Rich Post
+## Update a Published Rich Post
 
-A user can edit the text content of their own Rich Post within a configurable edit limit and time window after posting.
+A user can update the text content of their own Rich Post within a configurable edit limit and time window after posting.
 
 ### Rules & Constraints
 
