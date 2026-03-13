@@ -1,5 +1,5 @@
 ---
-title: Copy of List Rich Posts
+title: Update Published Rich Post
 api:
   file: engagement-suite.json
   operationId: list-rich-posts-1
