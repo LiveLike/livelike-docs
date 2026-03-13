@@ -34101,6 +34101,59 @@
         ],
         "operationId": "delete_unblock-by-profile-custom-id-client-id-blocked-profile-custom-id"
       }
+    },
+    "/rich-posts/-1": {
+      "get": {
+        "summary": "Copy of List Rich Posts",
+        "description": "",
+        "operationId": "list-rich-posts-1",
+        "parameters": [
+          {
+            "name": "program_id",
+            "in": "query",
+            "description": "Include only rich posts belonging to this program",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-readme": {
