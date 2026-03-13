@@ -103,8 +103,8 @@ curl -X PATCH "https://cf-blast.livelikecdn.com/api/v1/rich-posts/{rich_post_id}
     "content": "<p>Updated content here<br></p>",
     "localized_data": {
       "aa": {
-        "title": "qwerty",
-        "content": "qwerty 2"
+        "title": "localized updated title",
+        "content": "localized updated content"
       }
     }
   }'
