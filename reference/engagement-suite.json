@@ -34117,6 +34117,15 @@
             },
             "required": true,
             "description": "The unique ID of the published Rich Post to edit"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Bearer"
           }
         ],
         "responses": {
