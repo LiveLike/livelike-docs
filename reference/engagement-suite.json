@@ -34205,7 +34205,15 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{}"
+                    "value": {
+                      "image": "Images cannot be added, removed, or changed after publishing."
+                    }
+                  },
+                  "Bad Request": {
+                    "summary": "Bad Request",
+                    "value": {
+                      "edit_count": "A published rich post can only be edited 1 time."
+                    }
                   }
                 },
                 "schema": {
