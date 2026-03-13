@@ -1,6 +1,6 @@
 ---
 title: Edit and Delete Published Rich Posts
-excerpt: '  #Guide how to edit and delete end-user published Rich Posts with the REST API.'
+excerpt: Guide how to edit and delete end-user published Rich Posts with the REST API.
 deprecated: false
 hidden: false
 metadata:
