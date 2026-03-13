@@ -34102,20 +34102,20 @@
         "operationId": "delete_unblock-by-profile-custom-id-client-id-blocked-profile-custom-id"
       }
     },
-    "/rich-posts/-1": {
-      "get": {
+    "/rich-posts/{rich_post_id}/": {
+      "patch": {
         "summary": "Copy of List Rich Posts",
         "description": "",
         "operationId": "list-rich-posts-1",
         "parameters": [
           {
-            "name": "program_id",
-            "in": "query",
-            "description": "Include only rich posts belonging to this program",
-            "required": true,
+            "in": "path",
+            "name": "rich_post_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true,
+            "description": "The unique ID of the published Rich Post to edit"
           }
         ],
         "responses": {
@@ -34152,7 +34152,31 @@
             }
           }
         },
-        "deprecated": false
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Updated title of the rich post."
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Updated HTML content of the post. Text only — images cannot be changed after publishing"
+                  },
+                  "localized_data": {
+                    "type": "object",
+                    "properties": {},
+                    "description": "Localized title and content keyed by locale code"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
