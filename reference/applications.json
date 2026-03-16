@@ -511,8 +511,6 @@
         "deprecated": false
       }
     },
-    "/": {},
-    "/new-endpoint": {},
     "/new-endpoint-1": {},
     "/new-endpoint-2": {},
     "/new-endpoint-3": {},
@@ -866,6 +864,27 @@
           }
         ],
         "operationId": "get_client-id-ab-test-quests"
+      }
+    },
+    "/{client_id}/comment-quality-rules/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-comment-quality-rules"
       }
     }
   },
