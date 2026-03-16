@@ -2,7 +2,7 @@
 title: Create comment quality rules
 api:
   file: applications.json
-  operationId: get_client-id-comment-quality-rules
+  operationId: post_client-id-comment-quality-rules
 deprecated: false
 hidden: true
 link:
