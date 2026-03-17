@@ -4,7 +4,7 @@ api:
   file: applications.json
   operationId: post_client-id-comment-quality-rules
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
