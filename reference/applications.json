@@ -818,6 +818,117 @@
           }
         },
         "operationId": "post_client-id-comment-quality-rules"
+      },
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "a4f14056-94f7-41bc-8a7f-2d8c0f106813",
+                          "url": "http://localhost:8888/api/v1/applications/FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu/comment-quality-rules/a4f14056-94f7-41bc-8a7f-2d8c0f106813/",
+                          "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                          "min_char_count": 0,
+                          "disallowed_chars": "*",
+                          "emoji_ratio_threshold": 0.7,
+                          "min_sentiment_score": 0.2,
+                          "max_toxicity_score": 0.1,
+                          "updated_at": "2026-03-16T07:02:55.560651Z",
+                          "created_at": "2026-03-16T07:02:55.560661Z"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "a4f14056-94f7-41bc-8a7f-2d8c0f106813"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "http://localhost:8888/api/v1/applications/FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu/comment-quality-rules/a4f14056-94f7-41bc-8a7f-2d8c0f106813/"
+                          },
+                          "client_id": {
+                            "type": "string",
+                            "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                          },
+                          "min_char_count": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "disallowed_chars": {
+                            "type": "string",
+                            "example": "*"
+                          },
+                          "emoji_ratio_threshold": {
+                            "type": "number",
+                            "example": 0.7,
+                            "default": 0
+                          },
+                          "min_sentiment_score": {
+                            "type": "number",
+                            "example": 0.2,
+                            "default": 0
+                          },
+                          "max_toxicity_score": {
+                            "type": "number",
+                            "example": 0.1,
+                            "default": 0
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2026-03-16T07:02:55.560651Z"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2026-03-16T07:02:55.560661Z"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-comment-quality-rules"
       }
     },
     "/{client_id}/comment-quality-rules/{uuid}/": {
