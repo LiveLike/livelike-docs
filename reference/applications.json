@@ -755,6 +755,15 @@
             },
             "required": true,
             "description": "Client ID of the application the comment quality rules are to be assigned for."
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Bearer Token"
           }
         ],
         "requestBody": {
