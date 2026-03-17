@@ -656,7 +656,7 @@
         "description": "",
         "responses": {
           "201": {
-            "description": "",
+            "description": "Created",
             "content": {
               "application/json": {
                 "examples": {
