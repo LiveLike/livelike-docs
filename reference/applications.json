@@ -62,7 +62,8 @@
                       "disabled",
                       "active",
                       "active_and_passive"
-                    ]
+                    ],
+                    "description": "Controls how block relationships restrict actions and visibility"
                   }
                 }
               }
