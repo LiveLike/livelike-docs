@@ -55,6 +55,14 @@
                     "type": "string",
                     "description": "The default content filter applied to new chat rooms created in the application.  Choices are \"none\" (no filtering), \"profanity\" (profanity is filtered), and \"producer\" (only Producer users can post chat messages.)",
                     "default": "none"
+                  },
+                  "block_policy": {
+                    "type": "string",
+                    "enum": [
+                      "disabled",
+                      "active",
+                      "active_and_passive"
+                    ]
                   }
                 }
               }
