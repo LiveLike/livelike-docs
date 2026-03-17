@@ -929,6 +929,34 @@
           }
         ],
         "operationId": "get_client-id-comment-quality-rules"
+      },
+      "delete": {
+        "description": "",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Bearer Token"
+          }
+        ],
+        "operationId": "delete_client-id-comment-quality-rules"
       }
     },
     "/{client_id}/comment-quality-rules/{uuid}/": {
