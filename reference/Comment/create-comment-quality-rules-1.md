@@ -1,10 +1,10 @@
 ---
-title: Copy of Create comment quality rules
+title: Update comment quality rules
 api:
   file: applications.json
-  operationId: post_client-id-comment-quality-rules-1
+  operationId: patch_client-id-comment-quality-rules-uuid
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
