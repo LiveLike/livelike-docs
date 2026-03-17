@@ -361,6 +361,15 @@
                   "comment_trending_score_factors": {
                     "type": "string",
                     "description": "Value can be one of the next items: reply_weight, reaction_weight, decay_constant"
+                  },
+                  "block_policy": {
+                    "type": "string",
+                    "default": "active_and_passive",
+                    "enum": [
+                      "disabled",
+                      "active",
+                      "active_and_passive"
+                    ]
                   }
                 },
                 "type": "object",
