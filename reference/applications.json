@@ -370,7 +370,7 @@
                       "active",
                       "active_and_passive"
                     ],
-                    "description": "Controls how block relationships restrict actions and visibilty"
+                    "description": "Controls how block relationships restrict actions and visibility"
                   }
                 },
                 "type": "object",
