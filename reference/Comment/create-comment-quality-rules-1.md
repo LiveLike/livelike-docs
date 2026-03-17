@@ -4,7 +4,7 @@ api:
   file: applications.json
   operationId: patch_client-id-comment-quality-rules-uuid
 deprecated: false
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
