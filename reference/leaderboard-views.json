@@ -1,1 +1,534 @@
-{"openapi":"3.1.0","info":{"title":"leaderboard-views","version":"1"},"servers":[{"url":"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views"}],"components":{"securitySchemes":{}},"security":[{}],"paths":{"/":{"post":{"summary":"Create a Leaderboard View","description":"","operationId":"create-a-leaderboard-view","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["leaderboard_id"],"properties":{"leaderboard_id":{"type":"string","description":"The ID of the Leaderboard for which to create the view"},"name":{"type":"string","description":"Optional name to assign to the view."},"profile_ids":{"type":"array","description":"The initial set of Profile IDs to add to the view","items":{"type":"string"}}}}}}},"responses":{"201":{"description":"201","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"}}}}}},"deprecated":false},"get":{"description":"","operationId":"get_","responses":{"200":{"description":"","content":{"application/json":{"examples":{"New Example":{"summary":"New Example","value":{"count":1,"next":null,"previous":null,"results":[{"id":"9960e10a-0e89-4a85-a8b7-1a0a1704b0d2","url":"https://cf-blast-dig.livelikecdn.com/api/v1/leaderboard-views/9960e10a-0e89-4a85-a8b7-1a0a1704b0d2/","leaderboard_id":"1992c8c5-e24a-454f-8d13-c173439c3971","name":"test view","profiles_url":"https://cf-blast-dig.livelikecdn.com/api/v1/leaderboard-views/9960e10a-0e89-4a85-a8b7-1a0a1704b0d2/profiles/"}]}}}}}}},"parameters":[{"name":"leaderboard_id","in":"query","required":true,"description":"","schema":{"type":"string","default":""}},{"name":"Authorization","in":"header","required":true,"description":"Bearer Token","schema":{"type":"string","default":""}}]}},"/{id}/":{"put":{"summary":"Replace Profiles in a View","description":"Existing Profiles not in this set will be removed.","operationId":"replace-profiles-in-a-view","parameters":[{"name":"id","in":"path","description":"The Leaderboard View ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"profile_ids":{"type":"array","description":"The IDs of the Profiles that are now assigned to this view.  An empty list will remove all existing Profiles.  The Profiles do not have to already exist as entries on the Leaderboard.","items":{"type":"string"}}}}}}},"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"}}}}}},"deprecated":false},"patch":{"summary":"Add Profiles to a Leaderboard View","description":"Existing Profiles in the view will be preserved.","operationId":"add-profiles-to-a-leaderboard-view","parameters":[{"name":"id","in":"path","description":"The Leaderboard View ID","schema":{"type":"string"},"required":true}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["profile_ids"],"properties":{"profile_ids":{"type":"array","description":"One or more Profile IDs to add to the Leaderboard View.  The Profiles do not have to already exist as entries on the Leaderboard.","items":{"type":"string"}}}}}}},"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"}}}}}},"deprecated":false},"delete":{"summary":"Delete a Leaderboard View","description":"","operationId":"delete-a-leaderboard-view","parameters":[{"name":"id","in":"path","description":"The Leaderboard View ID","schema":{"type":"string"},"required":true}],"responses":{"204":{"description":"204","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}}},"deprecated":false}},"/{id}/profiles/{profile_id}/":{"delete":{"summary":"Delete a Profile from a Leaderboard View","description":"Remove a single Profile from a Leaderboard View","operationId":"delete-a-profile-from-a-leaderboard-view","parameters":[{"name":"id","in":"path","description":"The ID of the Leaderboard View","schema":{"type":"string"},"required":true},{"name":"profile_id","in":"path","description":"The ID of the Profile to delete from the Leaderboard View","schema":{"type":"string"},"required":true}],"responses":{"204":{"description":"204","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}},"400":{"description":"400","content":{"application/json":{"examples":{"Result":{"value":"{}"}},"schema":{"type":"object","properties":{}}}}}},"deprecated":false}},"/{id}/profiles/":{"get":{"summary":"List Profiles for a Leaderboard View","description":"Existing Profiles not in this set will be removed.","operationId":"list-profiles-for-a-leaderboard-view","parameters":[{"name":"id","in":"path","description":"The Leaderboard View ID","schema":{"type":"string"},"required":true}],"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n  \"count\": 1,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"5c92f58f-f987-4269-8a32-83efa6693999\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/\",\n      \"profile\": {\n        \"id\": \"26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/\",\n        \"created_at\": \"2020-04-16T23:15:07.550000Z\",\n        \"nickname\": \"Wise Bee\",\n        \"subscribe_channel\": \"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/\"\n      }\n    }\n  ]\n}"}},"schema":{"type":"object","properties":{"count":{"type":"integer","example":1,"default":0},"next":{},"previous":{},"results":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","example":"5c92f58f-f987-4269-8a32-83efa6693999"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/"},"profile":{"type":"object","properties":{"id":{"type":"string","example":"26b0cae1-3890-486c-b6c0-0b36005c76d6"},"url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/"},"created_at":{"type":"string","example":"2020-04-16T23:15:07.550000Z"},"nickname":{"type":"string","example":"Wise Bee"},"subscribe_channel":{"type":"string","example":"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6"},"reported_count":{"type":"integer","example":0,"default":0},"chat_room_memberships_url":{"type":"string","example":"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/"}}}}}}}}}}}},"deprecated":false}},"/#":{"get":{"summary":"List Views for a Leaderboard","description":"","operationId":"list-views-for-a-leaderboard","parameters":[{"name":"leaderboard_id","in":"query","description":"The Leaderboard ID","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"200","content":{"application/json":{"examples":{"Result":{"value":"{\n   \"count\": 1,\n   \"next\": null,\n   \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n            \"name\": \"North America\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n            \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n            \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n        }\n    ]\n}"}}}}}},"deprecated":false}}},"x-readme":{"headers":[],"explorer-enabled":true,"proxy-enabled":true},"x-readme-fauxas":true}
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "leaderboard-views",
+    "version": "1"
+  },
+  "servers": [
+    {
+      "url": "https://cf-blast.livelikecdn.com/api/v1/leaderboard-views"
+    }
+  ],
+  "components": {
+    "securitySchemes": {}
+  },
+  "security": [
+    {}
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Create a Leaderboard View",
+        "description": "",
+        "operationId": "create-a-leaderboard-view",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "leaderboard_id"
+                ],
+                "properties": {
+                  "leaderboard_id": {
+                    "type": "string",
+                    "description": "The ID of the Leaderboard for which to create the view"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Optional name to assign to the view."
+                  },
+                  "profile_ids": {
+                    "type": "array",
+                    "description": "The initial set of Profile IDs to add to the view",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "description": "",
+        "operationId": "get_",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "9960e10a-0e89-4a85-a8b7-1a0a1704b0d2",
+                          "url": "https://cf-blast-dig.livelikecdn.com/api/v1/leaderboard-views/9960e10a-0e89-4a85-a8b7-1a0a1704b0d2/",
+                          "leaderboard_id": "1992c8c5-e24a-454f-8d13-c173439c3971",
+                          "name": "test view",
+                          "profiles_url": "https://cf-blast-dig.livelikecdn.com/api/v1/leaderboard-views/9960e10a-0e89-4a85-a8b7-1a0a1704b0d2/profiles/"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "leaderboard_id",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Bearer Token",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          }
+        ]
+      }
+    },
+    "/{id}/": {
+      "put": {
+        "summary": "Replace Profiles in a View",
+        "description": "Existing Profiles not in this set will be removed.",
+        "operationId": "replace-profiles-in-a-view",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Leaderboard View ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profile_ids": {
+                    "type": "array",
+                    "description": "The IDs of the Profiles that are now assigned to this view.  An empty list will remove all existing Profiles.  The Profiles do not have to already exist as entries on the Leaderboard.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "summary": "Add Profiles to a Leaderboard View",
+        "description": "Existing Profiles in the view will be preserved.",
+        "operationId": "add-profiles-to-a-leaderboard-view",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Leaderboard View ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "profile_ids"
+                ],
+                "properties": {
+                  "profile_ids": {
+                    "type": "array",
+                    "description": "One or more Profile IDs to add to the Leaderboard View.  The Profiles do not have to already exist as entries on the Leaderboard.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n  \"name\": \"North America\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n  \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n  \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "summary": "Delete a Leaderboard View",
+        "description": "",
+        "operationId": "delete-a-leaderboard-view",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Leaderboard View ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{id}/profiles/{profile_id}/": {
+      "delete": {
+        "summary": "Delete a Profile from a Leaderboard View",
+        "description": "Remove a single Profile from a Leaderboard View",
+        "operationId": "delete-a-profile-from-a-leaderboard-view",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the Leaderboard View",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "profile_id",
+            "in": "path",
+            "description": "The ID of the Profile to delete from the Leaderboard View",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{id}/profiles/": {
+      "get": {
+        "summary": "List Profiles for a Leaderboard View",
+        "description": "Existing Profiles not in this set will be removed.",
+        "operationId": "list-profiles-for-a-leaderboard-view",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Leaderboard View ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"count\": 1,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"5c92f58f-f987-4269-8a32-83efa6693999\",\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/\",\n      \"profile\": {\n        \"id\": \"26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/\",\n        \"created_at\": \"2020-04-16T23:15:07.550000Z\",\n        \"nickname\": \"Wise Bee\",\n        \"subscribe_channel\": \"profile.26b0cae1-3890-486c-b6c0-0b36005c76d6\",\n        \"reported_count\": 0,\n        \"chat_room_memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/\"\n      }\n    }\n  ]\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "5c92f58f-f987-4269-8a32-83efa6693999"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/chat-room-memberships/5c92f58f-f987-4269-8a32-83efa6693999/"
+                          },
+                          "profile": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "26b0cae1-3890-486c-b6c0-0b36005c76d6"
+                              },
+                              "url": {
+                                "type": "string",
+                                "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2020-04-16T23:15:07.550000Z"
+                              },
+                              "nickname": {
+                                "type": "string",
+                                "example": "Wise Bee"
+                              },
+                              "subscribe_channel": {
+                                "type": "string",
+                                "example": "profile.26b0cae1-3890-486c-b6c0-0b36005c76d6"
+                              },
+                              "reported_count": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "chat_room_memberships_url": {
+                                "type": "string",
+                                "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/26b0cae1-3890-486c-b6c0-0b36005c76d6/chat-room-memberships/"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/#": {
+      "get": {
+        "summary": "List Views for a Leaderboard",
+        "description": "",
+        "operationId": "list-views-for-a-leaderboard",
+        "parameters": [
+          {
+            "name": "leaderboard_id",
+            "in": "query",
+            "description": "The Leaderboard ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"count\": 1,\n   \"next\": null,\n   \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"8f24038e-c137-4190-a34f-dfd990a348d7\",\n            \"name\": \"North America\",\n            \"url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/\",\n            \"leaderboard_id\": \"68baf816-53de-4a8b-a3d3-efb7a47c59c0\",\n            \"profiles_url\": \"https://cf-blast.livelikecdn.com/api/v1/leaderboard-views/8f24038e-c137-4190-a34f-dfd990a348d7/profiles/\",\n        }\n    ]\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{leaderboard-view-id}/profiles/{profile-id}/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "score": 900,
+                      "profile_id": "c59f665b-9d16-46fa-88c3-306cd64f339c",
+                      "profile_nickname": "Gleaming Octopus",
+                      "rank": 1,
+                      "percentile_rank": "1.000",
+                      "profile": {
+                        "nickname": "Gleaming Octopus",
+                        "leaderboards_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/leaderboards/",
+                        "chat_room_invitations_url_template": "https://cf-blast.livelikecdn.com/api/v1/chat-room-invitations/?client_id={client_id}&invited_profile_id={profile_id}",
+                        "created_at": "2026-03-16T13:18:39.000Z",
+                        "reward_item_balances_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/reward-item-balances/",
+                        "reward_item_credit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/reward-item-credits/",
+                        "attributes": [],
+                        "reward_item_debit_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/reward-item-debits/",
+                        "id": "c59f665b-9d16-46fa-88c3-306cd64f339c",
+                        "custom_data": null,
+                        "url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/",
+                        "points": 0,
+                        "badges": [],
+                        "reported_count": 0,
+                        "subscribe_channel": "profile.c59f665b-9d16-46fa-88c3-306cd64f339c",
+                        "streak_milestones_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/streak-milestones/",
+                        "chat_room_memberships_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/chat-room-memberships/",
+                        "custom_id": null,
+                        "redemption_keys_url": "https://cf-blast.livelikecdn.com/api/v1/redemption-keys/",
+                        "pk": "570934",
+                        "blocked_profile_ids_url": "https://cf-blast.livelikecdn.com/api/v1/blocked-profile-ids/",
+                        "blocked_profiles_template_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/?blocked_profile_id={blocked_profile_id}",
+                        "block_profile_url": "https://cf-blast.livelikecdn.com/api/v1/profile-blocks/",
+                        "badge_progress_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/badge-progress/",
+                        "badges_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/badges/",
+                        "reward_item_transfer_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/reward-item-transfers/",
+                        "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
+                        "leaderboard_views_url": "https://cf-blast.livelikecdn.com/api/v1/profiles/c59f665b-9d16-46fa-88c3-306cd64f339c/leaderboard-views/"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "leaderboard-view-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "profile-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_leaderboard-view-id-profiles-profile-id"
+      }
+    }
+  },
+  "x-readme": {
+    "headers": [],
+    "explorer-enabled": true,
+    "proxy-enabled": true
+  },
+  "x-readme-fauxas": true
+}
