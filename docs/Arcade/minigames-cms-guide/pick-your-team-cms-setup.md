@@ -128,8 +128,6 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 ![](https://files.readme.io/d82a9f0d1c3f6ea66fd64f2db4a4c65ebd3c2a93f1cf8f4e0c379ca04f6c8985-image.png)
 
-<Image align="center" src="https://files.readme.io/c6833efa49f9d88ed27c424e1e9c0f4a5ff88799df29ce3815a96b1bd691ac6b-Screenshot_2025-01-17_at_16.41.03.png" />
-
 5. **Theming**
    1. The Theme & Branding section allows you to customize the visual identity of your Pick Your Team game. The interface is divided into different tabs: Brand & Theme name, Welcome screen, Team/fixtures, The playground, Players list, and Information.
    2. **Theme Configuration:**
@@ -168,7 +166,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image align="center" src="https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png" />
 
-6. **Schedule**
+6. **Localization**        
+
+7. **Schedule**
    1. **Control game availability:**
       1. Publish immediately
       2. Schedule for future date/time
@@ -179,3 +179,5 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    Click on the 3 dot icon and click Preview to preview the experience you created.
 
 <Image align="center" src="https://files.readme.io/71dc46116d8965912b1fe593e503cc85b3e2b618c31ab7e796648f389d571cc8-Screenshot_2025-01-17_at_16.50.17.png" />
+
+<br />
