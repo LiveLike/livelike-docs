@@ -166,8 +166,13 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image align="center" src="https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png" />
 
-6. **Localization**        
+6. **Localization**          
 
+     
+
+     
+
+   ![](https://files.readme.io/fd0b63684af324b534e6e9d74493b3f3302fff4cb7a46097c47ac23c1262cf73-image.png)
 7. **Schedule**
    1. **Control game availability:**
       1. Publish immediately
