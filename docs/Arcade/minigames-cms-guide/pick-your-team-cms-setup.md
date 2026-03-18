@@ -178,7 +178,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. Publish immediately
       2. Schedule for future date/time
 
-<Image align="center" src="https://files.readme.io/5c29710ceec7f132d8731c3a0126cece06e12125990f38fa1046a6366a40367f-Screenshot_2025-01-17_at_16.47.09.png" />
+![](https://files.readme.io/a512427165a1ea73a594254dfb7322b1883fc3f4dfdf82453de92d323f5a7f75-image.png)
 
 7. **Preview**  
    Click on the 3 dot icon and click Preview to preview the experience you created.
