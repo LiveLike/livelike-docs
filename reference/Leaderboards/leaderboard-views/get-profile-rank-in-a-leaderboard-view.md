@@ -1,5 +1,6 @@
 ---
 title: Get profile rank in a leaderboard view
+excerpt: Returns profiles rank in a leaderboard view.
 api:
   file: leaderboard-views.json
   operationId: get_leaderboard-view-id-profiles-profile-id
