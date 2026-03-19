@@ -73,7 +73,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       2. All teams: Users can pick players from any participating team
    5. **Key Considerations:**
       1. Ensure data source credentials are valid
-      2. Verify all selected teams have complete player data
+      2. Verify that all selected teams have complete player data
       3. Check fixture dates align with your game schedule
 
 ![](https://files.readme.io/91b7c6a0bb86a0737c58a9912844b3256fe3c31828fc688db2a18fac56557b94-image.png)
