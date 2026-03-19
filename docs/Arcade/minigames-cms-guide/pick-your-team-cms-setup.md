@@ -10,11 +10,11 @@ metadata:
 next:
   description: ''
 ---
-Pick Your Team is a strategic game where users select players to create their ideal sports team. The game features include, Strategic team building with players making thoughtful choices about team composition and Customizable theming to match your brand identity
+Pick Your Team is a strategic game where users select players to create their ideal sports team. The game features include Strategic team building with players making thoughtful choices about team composition, and Customizable theming to match your brand identity
 
 Upcoming features include
 
-1. Multi sport support
+1. Multi-sport support
 2. Points-based scoring system that rewards optimal player selections
 3. Competitive elements through leaderboards and social features
 
@@ -65,7 +65,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. Source Integration
       2. CSV File Upload (coming soon)
    3. **Tournament Setup**
-      1. Select specific tournament (e.g., UEFA Champions League)
+      1. Select a specific tournament (e.g., UEFA Champions League)
       2. Choose participating teams from the tournament
       3. Select relevant fixtures/matches
    4. **Select game type**
@@ -166,13 +166,15 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image align="center" src="https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png" />
 
-6. **Localization**          
+6. **Localization**  
 
-     
+     The Localization section allows Producers to configure language, fonts, and input settings.    
 
-     
+   <br />
 
-   ![](https://files.readme.io/fd0b63684af324b534e6e9d74493b3f3302fff4cb7a46097c47ac23c1262cf73-image.png)
+   ![](https://files.readme.io/40b4e18757330c035dc0b3d2df6303ce714675cd89cae6fcd8b9e8ba25d9eb62-image.png)
+
+   <br />
 7. **Schedule**
    1. **Control game availability:**
       1. Publish immediately
