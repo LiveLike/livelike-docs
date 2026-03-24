@@ -84,11 +84,11 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    The Media Library section allows you to manage and upload images for teams and players in your Pick Your Team game.
    1. **Image Upload Process**
       1. **Download Template**
-         1. Click "Download images template" link to get the CSV format
+         1. Click the "Download images template" link to get the CSV format
          2. Use this template to prepare your image information
       2. **CSV File Upload**
          1. Click "Browse file" to upload your images CSV file
-         2. File must follow the template format
+         2. The file must follow the template format
          3. Contains image information for both teams and players
    2. **Image Requirements**
       1. Recommended minimum size: 400 x 900 pixels
@@ -98,7 +98,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. Select teams from the dropdown to preview their assets
       2. View both team and player images
    4. **Key Features**
-      1. Skip this step toggle available if needed
+      1. Skip this step, toggle available if needed
       2. Preview functionality to verify uploaded images
       3. Hierarchical display with team and player images
       4. Organized view of all media assets
@@ -106,7 +106,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. Ensure all images meet the size requirements
       2. Verify all required images are included in the CSV
       3. Check image quality in the preview before proceeding
-      4. Maintain consistent image dimensions for professional appearance
+      4. Maintain consistent image dimensions for a professional appearance
 
 **Note: The media library is crucial for creating an engaging visual experience. Proper image assets help players easily identify teams and players during the selection process.**
 
