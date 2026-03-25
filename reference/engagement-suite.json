@@ -34359,11 +34359,6 @@
             "description": "200",
             "content": {
               "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"previous\": null,\n    \"results\": [\n        {\n            \"reactions\": [\n                {\n                    \"reaction_id\": \"b08ce04d-6fbd-40e4-b20d-879471f91daa\",\n                    \"count\": 1,\n                    \"self_reacted_user_reaction_id\": \"519b7fa6-51f5-4d94-ad9e-24fb2e579ef6\"\n                }\n            ],\n            \"target_id\": \"test26\"\n        }\n    ],\n    \"next\": null,\n    \"count\": 1\n}"
-                  }
-                },
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -34416,11 +34411,6 @@
             "description": "400",
             "content": {
               "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
                 "schema": {
                   "type": "object",
                   "properties": {}
