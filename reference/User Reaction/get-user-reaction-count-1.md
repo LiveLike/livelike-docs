@@ -1,5 +1,5 @@
 ---
-title: Copy of Count user reactions per target
+title: Count user reactions per target
 api:
   file: engagement-suite.json
   operationId: get-user-reaction-count-1
