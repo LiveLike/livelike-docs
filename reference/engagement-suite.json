@@ -34198,7 +34198,106 @@
         "deprecated": false
       }
     },
-    "/user-reactions-count/-1": {
+    "/applications/{client-id}/reaction-space-counts/": {
+      "get": {
+        "summary": "Get user reaction count",
+        "description": "",
+        "operationId": "get-user-reaction-count",
+        "parameters": [
+          {
+            "name": "reaction_space_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "target_group_id",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "reactions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "reaction_id": {
+                                  "type": "string",
+                                  "example": "b08ce04d-6fbd-40e4-b20d-879471f91daa"
+                                },
+                                "count": {
+                                  "type": "integer",
+                                  "example": 1,
+                                  "default": 0
+                                },
+                                "self_reacted_user_reaction_id": {
+                                  "type": "string",
+                                  "example": "519b7fa6-51f5-4d94-ad9e-24fb2e579ef6"
+                                }
+                              }
+                            }
+                          },
+                          "target_id": {
+                            "type": "string",
+                            "example": "test26"
+                          }
+                        }
+                      }
+                    },
+                    "next": {},
+                    "count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user-reactions-count/": {
       "get": {
         "summary": "Copy of Get user reaction count",
         "description": "",
@@ -34312,105 +34411,6 @@
                     "value": "{}"
                   }
                 },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/applications/{client-id}/reaction-space-counts/": {
-      "get": {
-        "summary": "Get user reaction count",
-        "description": "",
-        "operationId": "get-user-reaction-count",
-        "parameters": [
-          {
-            "name": "reaction_space_id",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "target_group_id",
-            "in": "query",
-            "description": "",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "previous": {},
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "reactions": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "reaction_id": {
-                                  "type": "string",
-                                  "example": "b08ce04d-6fbd-40e4-b20d-879471f91daa"
-                                },
-                                "count": {
-                                  "type": "integer",
-                                  "example": 1,
-                                  "default": 0
-                                },
-                                "self_reacted_user_reaction_id": {
-                                  "type": "string",
-                                  "example": "519b7fa6-51f5-4d94-ad9e-24fb2e579ef6"
-                                }
-                              }
-                            }
-                          },
-                          "target_id": {
-                            "type": "string",
-                            "example": "test26"
-                          }
-                        }
-                      }
-                    },
-                    "next": {},
-                    "count": {
-                      "type": "integer",
-                      "example": 1,
-                      "default": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {}
