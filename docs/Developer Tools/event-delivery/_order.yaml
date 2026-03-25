@@ -1,3 +1,4 @@
 - supported-events-and-payloads
 - delivery-channel-sqs
 - delivery-channel-webhooks
+- delivery-channel-gcp
