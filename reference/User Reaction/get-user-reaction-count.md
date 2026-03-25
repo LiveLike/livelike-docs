@@ -1,5 +1,5 @@
 ---
-title: Count user reactions per target
+title: Count user reactions per space
 excerpt: ''
 api:
   file: engagement-suite.json
