@@ -34322,6 +34322,131 @@
         },
         "deprecated": false
       }
+    },
+    "/user-reactions-count/-1": {
+      "get": {
+        "summary": "Copy of Get user reaction count",
+        "description": "",
+        "operationId": "get-user-reaction-count-1",
+        "parameters": [
+          {
+            "name": "reaction_space_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "target_id",
+            "in": "query",
+            "description": "there can be multiple target_id as filter eg, target_id=abcd&target_id=1234",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "reacted_by_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Profile ID used to personalize the response in fields like `self_reacted_user_reaction_id`"
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Unique keys for profile relationship types (Example - follow, friend)"
+          },
+          {
+            "in": "query",
+            "name": "relationship_from_profile_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Profile UUID for the from_profile in a profile relationship. This parameter or an auth token for the from_profile is required with relationship_type."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"previous\": null,\n    \"results\": [\n        {\n            \"reactions\": [\n                {\n                    \"reaction_id\": \"b08ce04d-6fbd-40e4-b20d-879471f91daa\",\n                    \"count\": 1,\n                    \"self_reacted_user_reaction_id\": \"519b7fa6-51f5-4d94-ad9e-24fb2e579ef6\"\n                }\n            ],\n            \"target_id\": \"test26\"\n        }\n    ],\n    \"next\": null,\n    \"count\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "reactions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "reaction_id": {
+                                  "type": "string",
+                                  "example": "b08ce04d-6fbd-40e4-b20d-879471f91daa"
+                                },
+                                "count": {
+                                  "type": "integer",
+                                  "example": 1,
+                                  "default": 0
+                                },
+                                "self_reacted_user_reaction_id": {
+                                  "type": "string",
+                                  "example": "519b7fa6-51f5-4d94-ad9e-24fb2e579ef6"
+                                }
+                              }
+                            }
+                          },
+                          "target_id": {
+                            "type": "string",
+                            "example": "test26"
+                          }
+                        }
+                      }
+                    },
+                    "next": {},
+                    "count": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "x-readme": {
