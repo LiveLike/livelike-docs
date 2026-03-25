@@ -1,7 +1,7 @@
 ---
 title: Delivery Channel – GCP
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
