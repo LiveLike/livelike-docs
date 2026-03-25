@@ -2,4 +2,4 @@
 - list-user-reactions
 - delete-a-user-reaction
 - get-user-reaction-count-per-space
-- get-user-reaction-count-1
+- get-user-reaction-count
