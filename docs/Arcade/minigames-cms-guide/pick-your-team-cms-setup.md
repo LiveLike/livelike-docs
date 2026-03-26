@@ -162,7 +162,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 6. **Localization**
 
-   The Localization section allows Producers to configure language, fonts, and input settings.
+   The Localization step allows producers to configure language settings, upload language-specific fonts, and manage translated game content. This step has two tabs: Configuration and Game Content.
 
    <br />
 
