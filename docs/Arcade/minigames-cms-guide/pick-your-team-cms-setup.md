@@ -18,7 +18,7 @@ Pick Your Team is a strategic game where users select players to create their id
 
 Pick Your Team is available in the experiences list once you login and choose your application.
 
-<Image align="center" width="600px" src="https://files.readme.io/604ce5c86eaf8dbc31f1622c3654b2a689d71881e0dde79ec76e063025d46287-Screenshot_2025-01-17_at_16.12.49.png" />
+![](https://files.readme.io/12ae6be9b4d151532210d7f23834fd448821439c778e728183cbc1b4600bfa3c-image.png)
 
 To begin, either select an existing game or click "Create New" to start fresh. The setup process consists of 6 key steps.
 
