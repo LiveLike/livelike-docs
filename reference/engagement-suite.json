@@ -19808,6 +19808,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string"
+            },
+            "description": "created_at. For descending order use \"-\" eg. -created_at."
           }
         ],
         "responses": {
