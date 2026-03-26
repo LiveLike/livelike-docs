@@ -108,17 +108,62 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 4. **Rewards and Social Features**
    1. The Rewards and Social step allows you to configure how players share their game experience, earn points, and compete on leaderboards. This step is divided into two areas: **Social Sharing and Points & Rewards**.
-   2. **Key Features:**
-      1. Allow share image toggle
-      2. Customizable share message
-      3. Deeplink configuration
-      4. Image download options
-   3. **Process Overview:**
-      1. Enable or disable image sharing functionality
-      2. Customize the default share message (e.g., "Join me in today's pick your team")
-      3. Configure the deeplink URL for game access
-      4. Control whether users can download images
-      5. The social features help increase engagement and virality by letting players share their team selections and invite others to participate.
+   <br />
+   ### Social Sharing
+   This section focuses on customizing sharing options and social engagement settings.
+   1. **Allow Share Image** _(toggle)_
+      1. Enable to allow players to share a generated image of their team on social media
+
+   2. **Share Message**
+      1. Customize the default text that accompanies a shared post
+      2. Example: `Just picked my dream team! Ready to compete! 🏆 #PickYourTeam`
+
+   3. **Deeplink**
+      1. Enter the URL that the share link will direct recipients to when clicked
+      2. Example: `https://www.livelike.com`
+
+   4. **Preview — Include Image URL?** _(checkbox)_
+      1. When **enabled** — a preview-enabled share link is generated and the deeplink is embedded within the preview page
+      2. When **disabled** — the deeplink is included directly in the share message
+      3. Note: Some platforms do not display link previews when multiple links are shared — this setting ensures consistent behavior across platforms
+
+   5. **Subdomain**
+      1. Enter your organization's subdomain to generate a branded share link
+      2. Example: `myorg`
+      3. The generated share link will follow the format: `https://link.livelike.games/<share_code>`
+
+   6. **Allow Download Image** _(toggle)_
+      1. Enable to allow players to download their team image directly to their device
+   ### Points & Rewards
+   1. **Enable Points Per Correct Answer** _(toggle)_
+      1. Enable to award points to players based on their team performance after resolution
+
+   2. **Points Per Correct Answer**
+      1. Enter the number of points awarded for each correct player pick
+      2. Default value: `10`
+
+   3. **Reward Points for Correct Formation** _(checkbox)_
+      1. Check this box to award additional points when a player's chosen formation matches the actual match formation
+      2. Requires **Enable Formation Option** to be turned on in Step 2
+
+   4. **Points Label**
+      1. Enter the label used to display points to players within the game
+      2. Default value: `Points`
+
+   5. **Select Reward Item**
+      1. Choose a reward item from the dropdown to grant to players upon earning points
+   ### Leaderboard
+   1. **Select Existing Leaderboard**
+      1. Attach an existing leaderboard to this game
+      2. > **Note:** Any leaderboard attached here will be treated as a **global leaderboard** and shared across all applicable fixtures
+
+   2. **Select Leaderboard Type**
+      1. Choose the leaderboard aggregation type to determine how scores are grouped and ranked
+      2. Example: `Monthly, Fixture`
+   ### Key Features
+   1. Social features increase engagement and virality by letting players share their team selections and invite others to participate
+   2. Points and rewards incentivize accurate team selections
+   3. Leaderboard integration creates competitive engagement across fixtures
 
 ![](https://files.readme.io/d82a9f0d1c3f6ea66fd64f2db4a4c65ebd3c2a93f1cf8f4e0c379ca04f6c8985-image.png)
 
