@@ -166,6 +166,28 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    <br />
 
+   ### Tab: Configuration
+
+   1. **Language**
+      1. **Add Language** — Select a language using the language code dropdown and click **Add Language** to support it in your game
+         * Example: `en` for English
+      2. **Select Default Language** — Choose the default language displayed to players when they first enter the game
+         * Example: `(en) English`
+      3. **Allow Language Switch** _(toggle)_ — Enable to allow players to switch between supported languages within the game interface
+
+   2. **Font**
+      1. **Select Language** — Choose the language for which you want to assign a custom font
+      2. **Language Font** — Upload a custom font file (.ttf) to apply for the selected language
+         * Click **Browse File** to upload your font
+
+   ### Tab: Game Content
+
+   1. Use this tab to manage translated text strings for each language added in the Configuration tab
+   2. Enter localized versions of all in-game labels, messages, and UI text
+   3. Each added language will have its own column of translatable strings
+
+   ***
+
    ![](https://files.readme.io/40b4e18757330c035dc0b3d2df6303ce714675cd89cae6fcd8b9e8ba25d9eb62-image.png)
 
    <br />
