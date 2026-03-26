@@ -295,6 +295,14 @@ The Control Panel is where producers manage the **resolution** of each fixture �
 
 To access the Control Panel, click the **⋮** menu on any game instance and select **Control Panel**.
 
+![](https://files.readme.io/a730949b9e5f0bb6046a757f17b66744d3b8a40f376168a4c1c201370ea53411-image.png)
+
+![](https://files.readme.io/39c607c9806e5b16514de49117ad0148cbc12a6fd3831d9013972018d40c35c7-image.png)
+
+![](https://files.readme.io/7197821eac10e203e0a8b24bf1894d85a9e5ff565fc01316c296e5da09d700d0-image.png)
+
+<br />
+
 ### AI Resolution vs. Manual Resolution
 
 > **If Enable AI Resolution is turned on**, the system will **automatically resolve the lineup 30 minutes after the match start time** using AI and live data feed. In this case, you do **not** need to manually select the team or players — resolution happens automatically.
