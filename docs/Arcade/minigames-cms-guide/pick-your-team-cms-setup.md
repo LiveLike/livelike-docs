@@ -54,7 +54,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 2. **Sports and Tournaments:**  
    This section allows you to set up the core elements of your Pick Your Team game by configuring the sport, data source, and tournament settings.
 
-   1. **Sport Selection**: Choose the sport for your game (e.g., Football) This determines the available tournaments and team options.
+   1. **Sport Selection**: Choose the sport for your game (e.g., Football). This determines the available tournaments and team options.
    2. **Data Source Configuration**: Two options for adding player and team data:
       1. Source Integration
       2. CSV File Upload (coming soon)
