@@ -12,13 +12,7 @@ next:
 ---
 Pick Your Team is a strategic game where users select players to create their ideal sports team. The game features include Strategic team building with players making thoughtful choices about team composition, and Customizable theming to match your brand identity
 
-Upcoming features include
-
-1. Multi-sport support
-2. Points-based scoring system that rewards optimal player selections
-3. Competitive elements through leaderboards and social features
-
-Let's get started!
+<br />
 
 ***
 
@@ -166,9 +160,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
 <Image align="center" src="https://files.readme.io/dc4ec287f26d3e1040b36a1e65adca1385ed4b182294b3e127e285b03eb0baba-Screenshot_2025-01-17_at_16.44.17.png" />
 
-6. **Localization**  
+6. **Localization**
 
-     The Localization section allows Producers to configure language, fonts, and input settings.    
+   The Localization section allows Producers to configure language, fonts, and input settings.
 
    <br />
 
