@@ -107,7 +107,8 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 ![](https://files.readme.io/be2e6b69570a1d5726a2aa4b6e7633620f69eee85d221f797caec8fb020f4468-image.png)
 
 4. **Rewards and Social Features**
-   1. The Rewards and Social step allows you to configure how players share their game experience, earn points, and compete on leaderboards. This step is divided into two areas: **Social Sharing and Points & Rewards**.
+
+   The Rewards and Social step allows you to configure how players share their game experience, earn points, and compete on leaderboards. This step is divided into two areas: **Social Sharing and Points & Rewards**.
    <br />
    ### Social Sharing
    This section focuses on customizing sharing options and social engagement settings.
