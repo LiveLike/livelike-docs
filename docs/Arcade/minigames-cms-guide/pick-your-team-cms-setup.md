@@ -248,3 +248,130 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 <Image align="center" src="https://files.readme.io/71dc46116d8965912b1fe593e503cc85b3e2b618c31ab7e796648f389d571cc8-Screenshot_2025-01-17_at_16.50.17.png" />
 
 <br />
+
+## Managing Your Games
+
+### Game Instances
+
+Once your Pick Your Team game is created, it will appear in the **Game Instances** list. This page provides a full overview of all games created within your application.
+
+**Page Tabs**
+
+| Tab                | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **Game Instances** | Lists all created Pick Your Team games with their current status and details |
+| **Activity Logs**  | View a history of all actions taken on games within this application         |
+| **What's New**     | See the latest updates and new features added to Pick Your Team              |
+
+**Game List Columns**
+
+| Column         | Description                                                                             |
+| -------------- | --------------------------------------------------------------------------------------- |
+| **Name**       | The name of the game instance                                                           |
+| **Created By** | The producer who created the game                                                       |
+| **Created On** | The date the game was created                                                           |
+| **Updated By** | The producer who last made changes                                                      |
+| **Updated On** | When the game was last updated                                                          |
+| **Type**       | Current status — **Active** (live and visible to players) or **Inactive** (unpublished) |
+
+### Three-Dot Menu Options
+
+Click the **⋮** icon on any game instance to access the following actions:
+
+| Option             | Description                                                           |
+| ------------------ | --------------------------------------------------------------------- |
+| **Preview**        | Preview the game experience as a player without publishing            |
+| **Unpublish Game** | Take the game offline — it will no longer be visible to players       |
+| **Edit**           | Return to the 7-step setup flow to modify the game configuration      |
+| **Control Panel**  | Open the Control Panel to manage fixture resolution                   |
+| **Delete**         | Permanently delete the game instance _(this action cannot be undone)_ |
+| **Documentation**  | Open the Pick Your Team documentation directly from the CMS           |
+
+***
+
+## Control Panel
+
+The Control Panel is where producers manage the **resolution** of each fixture — publishing the official starting XI and formation that will be used to score player submissions.
+
+To access the Control Panel, click the **⋮** menu on any game instance and select **Control Panel**.
+
+### AI Resolution vs. Manual Resolution
+
+> **If Enable AI Resolution is turned on**, the system will **automatically resolve the lineup 30 minutes after the match start time** using AI and live data feed. In this case, you do **not** need to manually select the team or players — resolution happens automatically.
+>
+> **If AI resolution fails** for a fixture, go to the fixture in the Control Panel and click **Publish with AI**. This will publish the lineup without requiring manual player selection.
+>
+> **Manual resolution** (steps below) is only required when AI resolution is disabled or unavailable.
+
+### Section 1: Select Fixture
+
+1. **Enable AI Resolution** _(toggle)_
+   1. Enable to allow the system to automatically resolve lineups using AI and live data feed
+   2. Automatic resolution will occur **30 minutes after the match start time**
+
+2. **Search**
+   1. Search for a specific fixture by fixture ID, team ID, or team name
+
+3. **Fixture Filter Tabs**
+   1. **Past** — Fixtures that have already taken place
+   2. **Future** — Upcoming fixtures that have not yet been played
+   3. **Published** — Fixtures that are live and visible to players
+   4. **Not Published** — Fixtures not yet visible to players
+
+4. Each fixture card displays the tournament name, match teams, and kickoff date and time (UTC)
+
+5. Fixtures with a green checkmark have already been resolved
+
+6. Select a fixture to proceed to **Select Team**
+
+### Section 2: Select Team
+
+1. After selecting a fixture, choose which team's starting XI you want to manage
+
+2. The **Fixture ID** is displayed for reference and can be copied using the copy icon
+
+3. Teams are shown with their availability status:
+   * **Available** — This team can be selected for resolution
+   * **Not Available** — This team cannot be managed for this fixture
+
+4. Select the available team to proceed to **Select Players**
+
+5. **Publish with AI** _(button)_
+   1. Click to publish the resolved lineup using AI and data feed, without manually selecting players
+   2. Use this as a **fallback if automatic AI resolution has failed** for a fixture
+   3. Available once a fixture and team have been selected
+
+### Section 3: Select Players
+
+This section is only required for **manual resolution**.
+
+1. **Fixture & Team Info**
+   1. Displays the selected fixture and the team being managed
+   2. Example: `Arsenal vs Chelsea — Mar 1, 2026 4:30 PM UTC | Team: Chelsea`
+
+2. **Select Formation**
+   1. Choose the formation used by the team in this match from the dropdown
+   2. Used for formation-based scoring if the formation reward option is enabled
+
+3. **Search Players**
+   1. Search for a specific player by name within the squad
+
+4. **Position Filters**
+   1. Filter the player list by position to find players quickly:
+      * **All** — Show all positions
+      * **Goalkeeper** — Show goalkeepers only
+      * **Defender** — Show defenders only
+      * **Midfielder** — Show midfielders only
+      * **Attacker** — Show attackers only
+
+5. **Player List**
+   1. Browse the full squad and click the **+** button next to each player to add them to the starting XI
+   2. The counter at the top right tracks progress (e.g., `0/11 selected`)
+   3. Select all 11 players and confirm the lineup to complete resolution
+
+### Key Considerations
+
+1. Always verify fixture selection before proceeding — resolution cannot easily be undone
+2. If AI resolution is enabled, monitor the first few fixtures to confirm it is resolving correctly
+3. Use **Publish with AI** as your first fallback option before resorting to manual selection
+4. Ensure the correct formation is selected if formation-based scoring is enabled in your game
