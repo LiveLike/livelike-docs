@@ -19816,6 +19816,14 @@
               "type": "string"
             },
             "description": "created_at. For descending order use \"-\" eg. -created_at."
+          },
+          {
+            "in": "query",
+            "name": "quest_status",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter user quests by status (active, expired, inactive)."
           }
         ],
         "responses": {
