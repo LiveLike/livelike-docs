@@ -19813,7 +19813,11 @@
             "in": "query",
             "name": "ordering",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at"
+              ]
             },
             "description": "created_at. For descending order use \"-\" eg. -created_at."
           },
@@ -19821,7 +19825,12 @@
             "in": "query",
             "name": "quest_status",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "active",
+                "expired",
+                "inactive"
+              ]
             },
             "description": "Filter user quests by status (active, expired, inactive)."
           }
