@@ -12,8 +12,6 @@ next:
 ---
 Pick Your Team is a strategic game where users select players to create their ideal sports team. The game features include Strategic team building with players making thoughtful choices about team composition, and Customizable theming to match your brand identity
 
-<br />
-
 ***
 
 Pick Your Team is available in the experiences list once you login and choose your application.
@@ -109,9 +107,13 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 4. **Rewards and Social Features**
 
    The Rewards and Social step allows you to configure how players share their game experience, earn points, and compete on leaderboards. This step is divided into two areas: **Social Sharing and Points & Rewards**.
+
    <br />
+
    ### Social Sharing
+
    This section focuses on customizing sharing options and social engagement settings.
+
    1. **Allow Share Image** _(toggle)_
       1. Enable to allow players to share a generated image of their team on social media
 
@@ -135,7 +137,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    6. **Allow Download Image** _(toggle)_
       1. Enable to allow players to download their team image directly to their device
+
    ### Points & Rewards
+
    1. **Enable Points Per Correct Answer** _(toggle)_
       1. Enable to award points to players based on their team performance after resolution
 
@@ -153,7 +157,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    5. **Select Reward Item**
       1. Choose a reward item from the dropdown to grant to players upon earning points
+
    ### Leaderboard
+
    1. **Select Existing Leaderboard**
       1. Attach an existing leaderboard to this game
       2. > **Note:** Any leaderboard attached here will be treated as a **global leaderboard** and shared across all applicable fixtures
@@ -161,7 +167,9 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    2. **Select Leaderboard Type**
       1. Choose the leaderboard aggregation type to determine how scores are grouped and ranked
       2. Example: `Monthly, Fixture`
+
    ### Key Features
+
    1. Social features increase engagement and virality by letting players share their team selections and invite others to participate
    2. Points and rewards incentivize accurate team selections
    3. Leaderboard integration creates competitive engagement across fixtures
