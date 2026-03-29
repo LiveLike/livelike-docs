@@ -14,7 +14,7 @@ next:
 ---
 ## API Reference
 
-[API Reference](https://websdk.livelikecdn.com/docs/2.52.0/index.html)
+[API Reference](https://websdk.livelikecdn.com/docs/index.html)
 
 ## Elements Reference
 
