@@ -33362,7 +33362,8 @@
                             "type": "boolean"
                           },
                           "assigned_by": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {}
                           },
                           "created_at": {
                             "type": "string"
@@ -33383,16 +33384,7 @@
                             "properties": {}
                           }
                         },
-                        "type": "object",
-                        "required": [
-                          "updated_at",
-                          "created_at",
-                          "assigned_by",
-                          "is_active",
-                          "url",
-                          "id",
-                          "flair"
-                        ]
+                        "type": "object"
                       }
                     },
                     "count": {
@@ -33404,11 +33396,7 @@
                     "next": {
                       "type": "string"
                     }
-                  },
-                  "required": [
-                    "results",
-                    "count"
-                  ]
+                  }
                 }
               }
             }
