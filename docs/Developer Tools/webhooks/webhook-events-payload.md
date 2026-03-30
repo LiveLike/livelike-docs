@@ -729,7 +729,9 @@ This document details the webhook events sent by our system, including their pay
   "data": {
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
-    "assigned_by": "Charming Trout",
+    "assigned_by_id": "<uuid>",
+    "assigned_by_nickname": "Charming Trout",
+    "assigned_by_custom_id": "<assigned by profile's custom id>",
 		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
@@ -779,7 +781,9 @@ This document details the webhook events sent by our system, including their pay
   "data": {
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
-    "assigned_by": "Charming Trout",
+    "assigned_by_id": "<uuid>",
+    "assigned_by_nickname": "Charming Trout",
+    "assigned_by_custom_id": "<assigned by profile's custom id>",
 		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
@@ -829,7 +833,9 @@ This document details the webhook events sent by our system, including their pay
   "data": {
     "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "is_active": true,
-    "assigned_by": "Charming Trout",
+    "assigned_by_id": "<uuid>",
+    "assigned_by_nickname": "Charming Trout",
+    "assigned_by_custom_id": "<assigned by profile's custom id>",
 		"profile_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "flair": {
       "id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
