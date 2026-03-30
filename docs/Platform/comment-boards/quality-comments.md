@@ -4,6 +4,8 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  description: https://docs.livelike.com/reference/create-comment-quality-rules
 ---
 The Quality Comments feature allows clients to programmatically retrieve the most meaningful, engaging, and high-signal comments from one or multiple comment boards. This helps highlight the best fan comments, reduce noise, and power experiences such as Top Comments or Highlights. This capability is powered by comment quality signals.
 
