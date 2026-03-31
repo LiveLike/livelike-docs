@@ -1,9 +1,8 @@
 ---
 title: Listing Widgets
 excerpt: >-
-  Fetch text-poll and image-poll data across an application, including
-  cross-program engagement metrics, pagination, and daily incremental sync
-  guidance.
+  List widgets at the program and application level, including cross-program
+  poll engagement data and incremental sync filters.
 deprecated: false
 hidden: false
 metadata:
@@ -80,223 +79,101 @@ Use the `since` and `until` filters to run incremental syncs based on widget int
 | `status` | `string` | Widget status |
 | `created_at` | `datetime` | Creation timestamp |
 | `published_at` | `datetime` | When widget went live |
-Use this endpoint to fetch all `text-poll` and `image-poll` data across your application for engagement dashboards, analytics reports, and automated data pipelines.
+| `interactive_until` | `datetime` / `null` | When poll stops accepting votes |
+| `engagement_count` | `integer` | Total users who voted |
+| `engagement_percent` | `decimal string` | Engagement rate (max `1.000`) |
+| `impression_count` | `integer` | Total impressions |
+| `unique_impression_count` | `integer` | Unique viewers |
+| `custom_data` | `string` / `null` | Free-form data |
+| `widget_attributes` | `array` | Key-value attributes |
 
-## Endpoint
+#### Options-level
 
-```http
-GET /api/v1/applications/<your_client_id>/widgets/
-```
-
-This is a read-only endpoint that returns a unified, cross-program view of widget engagement data for a single application.
-
-## Quick Start
-
-Run the request to fetch all published polls.
-
-```bash
-curl "https://api.example.com/api/v1/applications/<your_client_id>/widgets/"
-```
-
-## Filtering
-
-### By widget type
-
-```text
-# Only text-polls
-?kind=text-poll
-
-# Only image-polls
-?kind=image-poll
-
-# Both (default if omitted)
-?kind=text-poll&kind=image-poll
-```
-
-### By status
-
-```text
-# Published only (default)
-?status=published
-
-# Pending (draft)
-?status=pending
-```
-
-### By program
-
-```text
-?program_id=<program_uuid>
-```
-
-### By interaction time
-
-Use `since` and `until` to run incremental syncs based on widget interactions.
-
-```text
-# Widgets with votes since a specific time
-?since=2026-03-25T00:00:00Z
-
-# Widgets with votes before a specific time
-?until=2026-03-28T00:00:00Z
-
-# Widgets with votes in a date range
-?since=2026-03-01T00:00:00Z&until=2026-03-15T00:00:00Z
-```
-
-### Pagination
-
-```text
-# 10 items per page
-?page_size=10
-
-# Go to page 2
-?page=2&page_size=10
-```
-
-### Combined example
-
-```text
-?kind=text-poll&status=published&since=2026-03-25T00:00:00Z&program_id=<uuid>&page_size=50
-```
-
-## Query Parameters
-
-| Parameter | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `kind` | `string` (multi-value) | No | `text-poll`, `image-poll` | Widget types to return |
-| `status` | `string` | No | `published` | Widget status filter |
-| `since` | `ISO 8601 datetime` | No | — | Widgets with interactions at or after this time |
-| `until` | `ISO 8601 datetime` | No | — | Widgets with interactions before this time |
-| `program_id` | `UUID` | No | — | Filter by specific program |
-| `page` | `integer` | No | `1` | Page number |
-| `page_size` | `integer` | No | `20` | Results per page |
-
-## Response Structure
-
-```json
-{
-  "count": 150,
-  "next": "https://api.example.com/.../widgets/?page=2",
-  "previous": null,
-  "results": [
-    {
-      "id": "3c245bb7-...",
-      "kind": "text-poll",
-      "program_id": "8d1885c6-...",
-      "program_name": "Premier League Matchday",
-      "client_id": "your_client_id",
-      "question": "Who will win tonight?",
-      "status": "published",
-      "created_at": "2026-03-20T10:00:00Z",
-      "published_at": "2026-03-20T12:00:00Z",
-      "interactive_until": "2026-03-20T14:00:00Z",
-      "engagement_count": 250,
-      "engagement_percent": "0.500",
-      "impression_count": 1000,
-      "unique_impression_count": 500,
-      "custom_data": "backend_ref_123",
-      "widget_attributes": [
-        {
-          "key": "br_id",
-          "value": "match_456"
-        }
-      ],
-      "options": [
-        {
-          "id": "e9a06fb7-...",
-          "description": "Team A",
-          "vote_count": 150
-        },
-        {
-          "id": "b541ada4-...",
-          "description": "Team B",
-          "vote_count": 100
-        }
-      ]
-    }
-  ]
-}
-```
-
-## Field Reference
-
-### Widget Fields
-
-| Field | Type | What it tells you |
+| Field | Type | Description |
 | --- | --- | --- |
-| `id` | `UUID` | Unique widget identifier |
-| `kind` | `string` | `text-poll` or `image-poll` |
-| `program_id` | `UUID` | Which program or channel this belongs to |
-| `program_name` | `string` | Human-readable program name |
-| `question` | `string` | The poll question |
-| `status` | `string` | Current state of the widget |
-| `created_at` | `datetime` | When it was created |
-| `published_at` | `datetime` | When it went live |
-| `interactive_until` | `datetime` / `null` | When voting closes. `null` means no limit |
-| `engagement_count` | `integer` | How many users voted |
-| `engagement_percent` | `string` | `engagement_count ÷ unique_impression_count`. For example, `"0.500"` means 50% |
-| `impression_count` | `integer` | Total times the widget was shown |
-| `unique_impression_count` | `integer` | Unique users who saw the widget |
-| `custom_data` | `string` / `null` | Your custom metadata |
-| `widget_attributes` | `array` | Key-value pairs attached to the widget |
+| `options[].id` | `UUID` | Option identifier |
+| `options[].description` | `string` | Option text |
+| `options[].vote_count` | `integer` | Votes for this option |
+| `options[].image_url` | `string` | Image URL (`image-poll` only) |
 
-### Option Fields
+## Filtering Widget Lists
 
-These fields are nested in `options[]`.
+The default behavior is to return all widgets that have been created. The list responses can be filtered by the `status` parameter. The valid statuses are:
 
-| Field | Type | What it tells you |
-| --- | --- | --- |
-| `id` | `UUID` | Option identifier |
-| `description` | `string` | The option text, for example `"Team A"` |
-| `vote_count` | `integer` | How many users picked this option |
-| `image_url` | `string` | Option image (`image-poll` only) |
+* `pending` List widgets that have been created but not scheduled
+* `scheduled` List widgets that have been scheduled but not yet published
+* `published` List widgets that have been published
 
-### Pagination Fields
+### Showing Only Published Widgets
 
-| Field | Type | What it tells you |
-| --- | --- | --- |
-| `count` | `integer` | Total matching widgets across all pages |
-| `next` | `URL` / `null` | Link to the next page. `null` means this is the last page |
-| `previous` | `URL` / `null` | Link to the previous page. `null` means this is the first page |
-
-## Setting Up Daily Incremental Sync
-
-Follow this flow to keep your analytics data current without reloading the full dataset every day.
-
-### 1. Run the initial full load
-
-Fetch everything the first time.
-
-```http
-GET /api/v1/applications/<client_id>/widgets/
+```python
+# Fetch only published widgets in a program
+r = requests.get(program['widgets_url'], params={'status': 'published'})
+history = r.json()
 ```
 
-1. Page through all results by following the `next` link.
-2. Store all widget data in your system.
-3. Record the current timestamp as your sync marker.
+Widgets can also be ordered by most recent.
 
-### 2. Run daily incremental loads
-
-Each day, fetch only widgets that had new activity.
-
-```http
-GET /api/v1/applications/<client_id>/widgets/?since=<last_sync_timestamp>
+```python
+# Fetch widgets ordered by most recently published
+r = requests.get(program['widgets_url'], params={'status': 'published', 'ordering': 'recent'})
+recent_history = r.json()
 ```
 
-Recommended flow:
+### Showing Widgets Created by Specific Profile
 
-1. Record the current time as `sync_start`.
-2. Call the API with `?since=<last_sync_timestamp>`.
-3. Page through all results.
-4. Update your analytics tables with the new vote counts and engagement data.
-5. Save `sync_start` as your new `last_sync_timestamp`.
+Use the `created_by_id` query parameter to return widgets created by a given profile ID. The parameter can be specified multiple times to return widgets created by more than one profile.
 
-### What triggers a widget to appear in `since` queries?
+```python
+# Fetch published widgets authored by profile '91e9bbf9-1a51-48c6-a7fe-e0bd8cc3fc64'
+requests.get(
+    program["widgets_url"],
+    params={
+        "status": "published",
+      	"created_by_id": "91e9bbf9-1a51-48c6-a7fe-e0bd8cc3fc64"
+    },
+)
+```
 
-User votes. When a user votes on a poll, the widget becomes visible to `since` queries with timestamps before that vote.
+<br />
 
-### What about widgets with no votes yet?
+### Showing Widgets of Specific Kind
 
-Widgets with no interaction timestamp do not appear in `since` queries. They do appear in requests without `since`, so your initial full load captures them.
-If clients set `CommentBoard.custom_id = widget.uuid` by convention, BR can call `GET /comment-boards/?custom_id={widget_uuid}` separately — `comments_count` is on that response.
+Widgets can be filtered by `kind` as well.  Multiple `kind` parameters can be given.
+
+```python
+# Fetch poll widgets ordered by most recently published
+r = requests.get(
+    program["widgets_url"],
+    params={
+        "status": "published",
+        "ordering": "recent",
+        "kind": ["text-poll", "image-poll"],
+	      "widget_attribute": "key:value",
+      	"created_by_id": "91e9bbf9-1a51-48c6-a7fe-e0bd8cc3fc64"
+    },
+)
+recent_poll_history = r.json()
+```
+
+By default the API will return 20 widgets per-page.  This limit can be increased with the `page_size` parameter.
+
+```python
+# Fetch poll widgets ordered by most recently published
+r = requests.get(
+    program["widgets_url"],
+    params={
+        "status": "published",
+        "ordering": "recent",
+        "kind": ["text-poll", "image-poll"],
+	      "widget_attribute": "key:value",
+      	"created_by_id": "91e9bbf9-1a51-48c6-a7fe-e0bd8cc3fc64"
+        "page_size": 100
+    },
+)
+recent_poll_history = r.json()
+```
+
+> 🚧 Widgets Page Size
+>
+> The maximum number of widgets that can be returned in a single page is 1,000.  But be careful fetching large numbers of widgets in a single API call since rendering them on the client device can cause issues with performance and memory usage.  Using smaller page sizes and a "Load More" button can help to alleviate those issues.
