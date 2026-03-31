@@ -1,6 +1,8 @@
 ---
 title: Listing Widgets
-excerpt: ''
+excerpt: >-
+  List widgets at the program and application level, including cross-program
+  poll engagement data and incremental sync filters.
 deprecated: false
 hidden: false
 metadata:
@@ -25,6 +27,74 @@ program = r.json()
 r = requests.get(program['widgets_url'])
 history = r.json()
 ```
+
+## List Widgets For Application
+
+Use `GET /api/v1/applications/<client_id>/widgets/` to retrieve a read-only, cross-program view of poll widget engagement data for a single application. This endpoint is designed for daily incremental loads and returns text poll and image poll widget data with nested option-level vote counts.
+
+```python
+import requests
+
+client_id = "YOUR_CLIENT_ID"
+
+r = requests.get(
+    f"https://cf-blast.livelikecdn.com/api/v1/applications/{client_id}/widgets/",
+    params={
+        "kind": ["text-poll", "image-poll"],
+        "status": "published",
+        "page": 1,
+        "page_size": 20,
+    },
+)
+
+widgets = r.json()
+```
+
+Use the `since` and `until` filters to run incremental syncs based on widget interactions.
+
+### Query Parameters
+
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| `kind` | `string` (multi-value) | No | `text-poll`, `image-poll` | Widget types to return |
+| `status` | `string` | No | `published` | Widget status filter |
+| `since` | `ISO 8601 datetime` | No | — | Widgets with interactions at or after this time |
+| `until` | `ISO 8601 datetime` | No | — | Widgets with interactions before this time |
+| `program_id` | `UUID` | No | — | Filter by specific program |
+| `page` | `integer` | No | `1` | Page number |
+| `page_size` | `integer` | No | `20` | Results per page |
+
+### Response Fields
+
+#### Widget-level
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `UUID` | Widget identifier |
+| `kind` | `string` | `text-poll` or `image-poll` |
+| `program_id` | `UUID` | Program/channel ID |
+| `program_name` | `string` | Program/channel name |
+| `client_id` | `string` | Application client ID |
+| `question` | `string` | Poll question text |
+| `status` | `string` | Widget status |
+| `created_at` | `datetime` | Creation timestamp |
+| `published_at` | `datetime` | When widget went live |
+| `interactive_until` | `datetime` / `null` | When poll stops accepting votes |
+| `engagement_count` | `integer` | Total users who voted |
+| `engagement_percent` | `decimal string` | Engagement rate (max `1.000`) |
+| `impression_count` | `integer` | Total impressions |
+| `unique_impression_count` | `integer` | Unique viewers |
+| `custom_data` | `string` / `null` | Free-form data |
+| `widget_attributes` | `array` | Key-value attributes |
+
+#### Options-level
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `options[].id` | `UUID` | Option identifier |
+| `options[].description` | `string` | Option text |
+| `options[].vote_count` | `integer` | Votes for this option |
+| `options[].image_url` | `string` | Image URL (`image-poll` only) |
 
 ## Filtering Widget Lists
 
