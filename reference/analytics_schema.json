@@ -374,7 +374,11 @@
             "description": "The ID of the Dashboard this Dashcard belongs to."
           },
           "card": {
-            "$ref": "#/components/schemas/CardMetadata",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CardMetadata"
+              }
+            ],
             "description": "The embedded Card metadata — includes `name`, `display`, `parameters`, and `result_metadata`."
           },
           "parameter_mappings": {
@@ -1304,6 +1308,16 @@
   },
   "x-readme": {
     "explorer-enabled": true,
-    "proxy-enabled": true
+    "proxy-enabled": true,
+    "x-tagGroups": [
+      {
+        "name": "API Reference",
+        "tags": [
+          "Collections",
+          "Cards",
+          "Dashboards"
+        ]
+      }
+    ]
   }
 }
