@@ -299,4 +299,29 @@ User votes. When a user votes on a poll, the widget becomes visible to `since` q
 ### What about widgets with no votes yet?
 
 Widgets with no interaction timestamp do not appear in `since` queries. They do appear in requests without `since`, so your initial full load captures them.
-If clients set `CommentBoard.custom_id = widget.uuid` by convention, BR can call `GET /comment-boards/?custom_id={widget_uuid}` separately — `comments_count` is on that response.
+
+## Comments and Replies
+
+Comment data is available through a separate endpoint. Widgets are linked to comment boards through the widget ID.
+
+### Fetch comment counts for a widget
+
+```http
+GET /api/v1/comment-boards/?client_id=<client_id>&custom_id=<widget_id>
+```
+
+Response:
+
+```json
+{
+  "comments_count": 45,
+  "top_level_comments_count": 30
+}
+```
+
+| Field | What it tells you |
+| --- | --- |
+| `comments_count` | Total comments including replies |
+| `top_level_comments_count` | Only root-level comments, not replies |
+
+Reply count = `comments_count - top_level_comments_count` = `15 replies`
