@@ -13,22 +13,6 @@ metadata:
 next:
   description: ''
 ---
-## List Widgets For Program
-
-Each program has a `widgets_url` hyperlink field that can be requested to get all of the widgets created that program. The widget history resource is paginated.
-
-```python
-import requests
-
-# Fetch program resource
-r = requests.get('https://cf-blast.livelikecdn.com/api/v1/programs/f1938a34-2611-4cff-9043-ad6b3dd2f6fd/')
-program = r.json()
-
-# Fetch all of a program's widgets with widgets_url
-r = requests.get(program['widgets_url'])
-history = r.json()
-```
-
 ## List Widgets For Application
 
 Use `GET /api/v1/applications/<client_id>/widgets/` to retrieve a read-only, cross-program view of poll widget engagement data for a single application. This endpoint is designed for daily incremental loads and returns text poll and image poll widget data with nested option-level vote counts.
@@ -55,32 +39,32 @@ Use the `since` and `until` filters to run incremental syncs based on widget int
 
 ### Query Parameters
 
-| Parameter | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `kind` | `string` (multi-value) | No | `text-poll`, `image-poll` | Widget types to return |
-| `status` | `string` | No | `published` | Widget status filter |
-| `since` | `ISO 8601 datetime` | No | — | Widgets with interactions at or after this time |
-| `until` | `ISO 8601 datetime` | No | — | Widgets with interactions before this time |
-| `program_id` | `UUID` | No | — | Filter by specific program |
-| `page` | `integer` | No | `1` | Page number |
-| `page_size` | `integer` | No | `20` | Results per page |
+| Parameter    | Type                   | Required | Default                   | Description                                     |
+| ------------ | ---------------------- | -------- | ------------------------- | ----------------------------------------------- |
+| `kind`       | `string` (multi-value) | No       | `text-poll`, `image-poll` | Widget types to return                          |
+| `status`     | `string`               | No       | `published`               | Widget status filter                            |
+| `since`      | `ISO 8601 datetime`    | No       | —                         | Widgets with interactions at or after this time |
+| `until`      | `ISO 8601 datetime`    | No       | —                         | Widgets with interactions before this time      |
+| `program_id` | `UUID`                 | No       | —                         | Filter by specific program                      |
+| `page`       | `integer`              | No       | `1`                       | Page number                                     |
+| `page_size`  | `integer`              | No       | `20`                      | Results per page                                |
 
 ### Response Fields
 
 #### Widget-level
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `id` | `UUID` | Widget identifier |
-| `kind` | `string` | `text-poll` or `image-poll` |
-| `program_id` | `UUID` | Program/channel ID |
-| `program_name` | `string` | Program/channel name |
-| `client_id` | `string` | Application client ID |
-| `question` | `string` | Poll question text |
-| `status` | `string` | Widget status |
-| `created_at` | `datetime` | Creation timestamp |
-| `published_at` | `datetime` | When widget went live |
-Use this endpoint to fetch all `text-poll` and `image-poll` data across your application for engagement dashboards, analytics reports, and automated data pipelines.
+| Field                                                                                                                                                                | Type       | Description                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------------------- |
+| `id`                                                                                                                                                                 | `UUID`     | Widget identifier           |
+| `kind`                                                                                                                                                               | `string`   | `text-poll` or `image-poll` |
+| `program_id`                                                                                                                                                         | `UUID`     | Program/channel ID          |
+| `program_name`                                                                                                                                                       | `string`   | Program/channel name        |
+| `client_id`                                                                                                                                                          | `string`   | Application client ID       |
+| `question`                                                                                                                                                           | `string`   | Poll question text          |
+| `status`                                                                                                                                                             | `string`   | Widget status               |
+| `created_at`                                                                                                                                                         | `datetime` | Creation timestamp          |
+| `published_at`                                                                                                                                                       | `datetime` | When widget went live       |
+| Use this endpoint to fetch all `text-poll` and `image-poll` data across your application for engagement dashboards, analytics reports, and automated data pipelines. |            |                             |
 
 ## Endpoint
 
@@ -162,15 +146,15 @@ Use `since` and `until` to run incremental syncs based on widget interactions.
 
 ## Query Parameters
 
-| Parameter | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `kind` | `string` (multi-value) | No | `text-poll`, `image-poll` | Widget types to return |
-| `status` | `string` | No | `published` | Widget status filter |
-| `since` | `ISO 8601 datetime` | No | — | Widgets with interactions at or after this time |
-| `until` | `ISO 8601 datetime` | No | — | Widgets with interactions before this time |
-| `program_id` | `UUID` | No | — | Filter by specific program |
-| `page` | `integer` | No | `1` | Page number |
-| `page_size` | `integer` | No | `20` | Results per page |
+| Parameter    | Type                   | Required | Default                   | Description                                     |
+| ------------ | ---------------------- | -------- | ------------------------- | ----------------------------------------------- |
+| `kind`       | `string` (multi-value) | No       | `text-poll`, `image-poll` | Widget types to return                          |
+| `status`     | `string`               | No       | `published`               | Widget status filter                            |
+| `since`      | `ISO 8601 datetime`    | No       | —                         | Widgets with interactions at or after this time |
+| `until`      | `ISO 8601 datetime`    | No       | —                         | Widgets with interactions before this time      |
+| `program_id` | `UUID`                 | No       | —                         | Filter by specific program                      |
+| `page`       | `integer`              | No       | `1`                       | Page number                                     |
+| `page_size`  | `integer`              | No       | `20`                      | Results per page                                |
 
 ## Response Structure
 
@@ -223,41 +207,41 @@ Use `since` and `until` to run incremental syncs based on widget interactions.
 
 ### Widget Fields
 
-| Field | Type | What it tells you |
-| --- | --- | --- |
-| `id` | `UUID` | Unique widget identifier |
-| `kind` | `string` | `text-poll` or `image-poll` |
-| `program_id` | `UUID` | Which program or channel this belongs to |
-| `program_name` | `string` | Human-readable program name |
-| `question` | `string` | The poll question |
-| `status` | `string` | Current state of the widget |
-| `created_at` | `datetime` | When it was created |
-| `published_at` | `datetime` | When it went live |
-| `interactive_until` | `datetime` / `null` | When voting closes. `null` means no limit |
-| `engagement_count` | `integer` | How many users voted |
-| `engagement_percent` | `string` | `engagement_count ÷ unique_impression_count`. For example, `"0.500"` means 50% |
-| `impression_count` | `integer` | Total times the widget was shown |
-| `unique_impression_count` | `integer` | Unique users who saw the widget |
-| `custom_data` | `string` / `null` | Your custom metadata |
-| `widget_attributes` | `array` | Key-value pairs attached to the widget |
+| Field                     | Type                | What it tells you                                                              |
+| ------------------------- | ------------------- | ------------------------------------------------------------------------------ |
+| `id`                      | `UUID`              | Unique widget identifier                                                       |
+| `kind`                    | `string`            | `text-poll` or `image-poll`                                                    |
+| `program_id`              | `UUID`              | Which program or channel this belongs to                                       |
+| `program_name`            | `string`            | Human-readable program name                                                    |
+| `question`                | `string`            | The poll question                                                              |
+| `status`                  | `string`            | Current state of the widget                                                    |
+| `created_at`              | `datetime`          | When it was created                                                            |
+| `published_at`            | `datetime`          | When it went live                                                              |
+| `interactive_until`       | `datetime` / `null` | When voting closes. `null` means no limit                                      |
+| `engagement_count`        | `integer`           | How many users voted                                                           |
+| `engagement_percent`      | `string`            | `engagement_count ÷ unique_impression_count`. For example, `"0.500"` means 50% |
+| `impression_count`        | `integer`           | Total times the widget was shown                                               |
+| `unique_impression_count` | `integer`           | Unique users who saw the widget                                                |
+| `custom_data`             | `string` / `null`   | Your custom metadata                                                           |
+| `widget_attributes`       | `array`             | Key-value pairs attached to the widget                                         |
 
 ### Option Fields
 
 These fields are nested in `options[]`.
 
-| Field | Type | What it tells you |
-| --- | --- | --- |
-| `id` | `UUID` | Option identifier |
-| `description` | `string` | The option text, for example `"Team A"` |
-| `vote_count` | `integer` | How many users picked this option |
-| `image_url` | `string` | Option image (`image-poll` only) |
+| Field         | Type      | What it tells you                       |
+| ------------- | --------- | --------------------------------------- |
+| `id`          | `UUID`    | Option identifier                       |
+| `description` | `string`  | The option text, for example `"Team A"` |
+| `vote_count`  | `integer` | How many users picked this option       |
+| `image_url`   | `string`  | Option image (`image-poll` only)        |
 
 ### Pagination Fields
 
-| Field | Type | What it tells you |
-| --- | --- | --- |
-| `count` | `integer` | Total matching widgets across all pages |
-| `next` | `URL` / `null` | Link to the next page. `null` means this is the last page |
+| Field      | Type           | What it tells you                                              |
+| ---------- | -------------- | -------------------------------------------------------------- |
+| `count`    | `integer`      | Total matching widgets across all pages                        |
+| `next`     | `URL` / `null` | Link to the next page. `null` means this is the last page      |
 | `previous` | `URL` / `null` | Link to the previous page. `null` means this is the first page |
 
 ## Setting Up Daily Incremental Sync
@@ -302,7 +286,7 @@ Widgets with no interaction timestamp do not appear in `since` queries. They do 
 
 ## Comments and Replies
 
-Comment data is available through a separate endpoint. Widgets are linked to comment boards through the widget ID.
+Comment data is available through a separate endpoint. Widgets are linked to comment boards through the widget ID. If you follow the convention of setting `CommentBoard.custom_id` = `widget.uuid`, you can fetch the corresponding comment board using below endpoint, where the comments_count is included in the response.
 
 ### Fetch comment counts for a widget
 
@@ -319,9 +303,9 @@ Response:
 }
 ```
 
-| Field | What it tells you |
-| --- | --- |
-| `comments_count` | Total comments including replies |
+| Field                      | What it tells you                     |
+| -------------------------- | ------------------------------------- |
+| `comments_count`           | Total comments including replies      |
 | `top_level_comments_count` | Only root-level comments, not replies |
 
 Reply count = `comments_count - top_level_comments_count` = `15 replies`
