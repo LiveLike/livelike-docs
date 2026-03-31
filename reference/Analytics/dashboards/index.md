@@ -5,4 +5,3 @@ excerpt: >-
   metrics and lets one filter control update several charts at the same time.
 hidden: false
 ---
-Key Facts
