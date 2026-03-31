@@ -1,23 +1,21 @@
 ---
 title: List Collection Items
 excerpt: >-
-  Returns a paginated list of items (Cards, Dashboards, and Documents) inside
-  the specified Collection. Use the `models` query parameter to restrict results
-  to a specific type. Use `limit` and `offset` to paginate through large
-  Collections.
+  Lists the Cards, Dashboards, and Documents inside a Collection. Use `models`
+  to filter by type. Use `limit` and `offset` to page through large Collections.
 
 
-  **Extracting IDs for downstream calls:**
+  **Grabbing IDs for next steps:**
 
-  - For `model: "card"` items → use `id` as `card_id` in `GET /api/card/{id}`
-  and the Card download endpoint.
+  - `model: "card"` items → use `id` as `card_id` in `GET /api/card/{id}` and
+  the Card download endpoint.
 
-  - For `model: "dashboard"` items → use `id` as `dashboard_id` in `GET
+  - `model: "dashboard"` items → use `id` as `dashboard_id` in `GET
   /api/dashboard/{id}` and the Dashboard download endpoint.
 
 
-  > **Note:** `total` may be `null` when the Collection is empty. Always check
-  `data.length` rather than relying on `total`.
+  > **Note:** `total` can be null when the Collection is empty. Check
+  `data.length` instead of relying on `total`.
 api:
   file: analytics_schema.json
   operationId: get_collection_items

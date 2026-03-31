@@ -1,35 +1,34 @@
 ---
 title: Download Card Data
 excerpt: >-
-  Executes the Card's query and returns the results in the requested format.
-  Supports `csv`, `json`, and `xlsx`.
+  Runs the Card's query and returns the results in the format you choose —
+  `csv`, `json`, or `xlsx`.
 
 
-  **Request body:** Pass a `parameters` array to filter the results. Each entry
-  targets one template tag on the Card. Pass an empty array `[]` if no filters
-  are needed (or all tags have defaults).
+  **Request body:** Pass a `parameters` array with one entry per filter slot you
+  want to set. Pass an empty array `[]` if there are no required filters or you
+  want the defaults.
 
 
-  **JSON format:** Returns a flat array of objects. Each object represents one
-  row; keys are the `display_name` values from `result_metadata`.
+  **JSON format:** Returns a flat array of objects. Each object is one row, and
+  the keys are the `display_name` values from `result_metadata`.
 
 
-  **Choosing an export format:**
+  **Picking a format:**
 
-  | Format | Use when… |
+  | Format | Best for |
 
-  |--------|-----------|
+  |--------|----------|
 
-  | `json` | You need to process results programmatically in code |
+  | `json` | Processing results in code |
 
-  | `csv`  | You want a lightweight flat file for spreadsheets or data pipelines
-  |
+  | `csv`  | Spreadsheets or data pipelines |
 
-  | `xlsx` | You need a formatted Excel file for end-user consumption |
+  | `xlsx` | Formatted Excel files for end users |
 
 
-  > **Note:** This endpoint uses `POST`, not `GET`, because filter parameters
-  are passed in the request body — not as query string parameters.
+  > **Note:** This endpoint is a `POST`, not a `GET`, because filter values go
+  in the request body — not the URL.
 api:
   file: analytics_schema.json
   operationId: post_card_query_export

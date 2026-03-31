@@ -1,18 +1,18 @@
 ---
 title: List Collections
 excerpt: >-
-  Returns a flat array of all Collections accessible to your API key. Use the
-  returned `id` values to list the contents of a Collection via `GET
+  Returns a flat list of all Collections your API key can see. Use the `id`
+  values to dig into a specific Collection with `GET
   /api/collection/{id}/items`.
 
 
-  **When to use vs. `/api/collection/tree`:** Use this endpoint when you need a
-  flat list without hierarchy. Use `/api/collection/tree` when you need the
-  nested parent-child structure in a single call.
+  **Flat list vs. tree:** Use this endpoint when you just need a simple list.
+  Use `/api/collection/tree` when you need to see the parent-child nesting in
+  one call.
 
 
-  > **Note:** The root Collection has `id: "root"` (a string). All other
-  Collection IDs are integers.
+  > **Note:** The root Collection has `id: "root"` (a string). All others have
+  integer IDs.
 api:
   file: analytics_schema.json
   operationId: get_collections

@@ -1,26 +1,27 @@
 ---
 title: Get Card Metadata
 excerpt: >-
-  Fetches the full metadata for a Card without executing the query. Use this
-  endpoint to:
+  Gets the full metadata for a Card without actually running the query. Call
+  this first to understand what you're working with before hitting the download
+  endpoint.
 
 
-  - Inspect the Card's `parameters` array to understand what template-tag
-  filters it accepts and whether they are required.
+  **What you'll learn from this:**
 
-  - Read `result_metadata` to know the exact column names (use `display_name`)
-  and data types of the output rows before downloading.
+  - `parameters` — what filter slots exist and whether they're required.
 
-  - Check `query_type` (`"native"` vs `"query"`) and `display` to understand the
-  Card's visualisation type.
+  - `result_metadata` — the exact column names (use `display_name`) and data
+  types of the output before you download.
 
-  - Verify `fully_parameterized` — if `true`, you can call the download endpoint
-  with `parameters: []`.
+  - `query_type` and `display` — how the Card was built and what chart type it
+  uses.
+
+  - `fully_parameterized` — if `true`, you can call the download endpoint with
+  `parameters: []` and it'll work.
 
 
-  > **Tip:** Always call this endpoint before your first download call to a new
-  Card. The `display_name` values in `result_metadata` are the exact keys in
-  JSON export rows.
+  > **Tip:** The `display_name` values in `result_metadata` are the exact keys
+  in JSON export rows.
 api:
   file: analytics_schema.json
   operationId: get_card

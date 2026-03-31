@@ -1,20 +1,19 @@
 ---
 title: Get Collection Tree
 excerpt: >-
-  Returns the full Collection hierarchy visible to your API key as a nested
-  tree. Each Collection object includes a `children` array of its direct
-  sub-collections, recursively. This is more efficient than calling `GET
-  /api/collection/` and manually reconstructing the hierarchy from `location`
-  paths.
+  Returns the full Collection hierarchy as a nested tree. Each Collection
+  includes a `children` array with its sub-collections, all the way down. This
+  saves you from having to call `/api/collection/` and manually reconstructing
+  the tree from `location` paths.
 
 
-  **When to use:** Use this endpoint when building navigation UIs, discovering
-  nested client sub-collections, or programmatically walking the full hierarchy
-  to find a deeply-nested Collection by name.
+  **When to use:** Reach for this endpoint when building navigation, discovering
+  nested client sub-folders, or walking the full hierarchy to find a deeply
+  nested Collection by name.
 
 
-  > **Tip:** The `entity_id` field is stable across renames and moves — prefer
-  it over `id` or `slug` when storing references.
+  > **Tip:** The `entity_id` field stays stable across renames and moves — it's
+  safer to store than `id` or `slug`.
 api:
   file: analytics_schema.json
   operationId: get_collection_tree
