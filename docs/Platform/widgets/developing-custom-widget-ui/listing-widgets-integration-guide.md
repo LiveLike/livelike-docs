@@ -9,6 +9,12 @@ hidden: false
 metadata:
   robots: index
 ---
+<br />
+
+## API Endpoint
+
+[https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1](https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1)
+
 ## List Widgets For Application
 
 Use `GET /api/v1/applications/<client_id>/widgets/` to retrieve a read-only, cross-program view of poll widget engagement data for a single application. This endpoint is designed for daily incremental loads and returns text poll and image poll widget data with nested option-level vote counts.
@@ -308,5 +314,4 @@ Response:
 
 Reply count = `comments_count - top_level_comments_count` = `15 replies`
 
-### API Endpoint  
-https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1
+<br />
