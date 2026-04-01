@@ -1,5 +1,5 @@
 ---
-title: Copy of List widget reports
+title: Listing Applications Widgets
 api:
   file: engagement-suite.json
   operationId: list-widget-reports-1
