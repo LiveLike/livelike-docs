@@ -1163,6 +1163,27 @@
         ],
         "operationId": "delete_client-id-comment-quality-rules-uuid"
       }
+    },
+    "/{client_id}/widgets/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-widgets"
+      }
     }
   },
   "x-readme": {
