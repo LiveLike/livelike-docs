@@ -43,9 +43,11 @@ These events are triggered by moderation actions on comment boards.
 
 ### Event Keys:
 
-`CREATE_COMMENT_BOARD_BAN_EVENT_KEY = "create-comment-board-ban"
+CREATE_COMMENT_BOARD_BAN_EVENT_KEY = "create-comment-board-ban"
+
 UPDATE_COMMENT_BOARD_BAN_EVENT_KEY = "update-comment-board-ban"
-DELETE_COMMENT_BOARD_BAN_EVENT_KEY = "delete-comment-board-ban"`
+
+DELETE_COMMENT_BOARD_BAN_EVENT_KEY = "delete-comment-board-ban"
 
 ### Event Payload Structure:
 
@@ -68,16 +70,27 @@ These events are triggered by mute and shadow-mute moderation actions within cha
 ### Event Keys:
 
 CREATE_CHATROOM_MUTE = "create-chatroom-mute"
+
 CREATE_GLOBAL_CHATROOM_MUTE = "create-global-chatroom-mute"
+
 CREATE_CHATROOM_SHADOW_MUTE = "create-chatroom-shadow-mute"
+
 CREATE_GLOBAL_CHATROOM_SHADOW_MUTE = "create-global-chatroom-shadow-mute"
+
 UPDATE_CHATROOM_MUTE = "update-chatroom-mute"
+
 UPDATE_GLOBAL_CHATROOM_MUTE = "update-global-chatroom-mute"
+
 UPDATE_CHATROOM_SHADOW_MUTE = "update-chatroom-shadow-mute"
+
 UPDATE_GLOBAL_CHATROOM_SHADOW_MUTE = "update-global-chatroom-shadow-mute"
+
 DELETE_CHATROOM_MUTE = "delete-chatroom-mute"
+
 DELETE_GLOBAL_CHATROOM_MUTE = "delete-global-chatroom-mute"
+
 DELETE_CHATROOM_SHADOW_MUTE = "delete-chatroom-shadow-mute"
+
 DELETE_GLOBAL_CHATROOM_SHADOW_MUTE = "delete-global-chatroom-shadow-mute"
 
 ### Event Payload Structure:
