@@ -51,17 +51,19 @@ DELETE_COMMENT_BOARD_BAN_EVENT_KEY = "delete-comment-board-ban"
 
 ### Event Payload Structure:
 
-> `{
->     "event_key": "<EVENT_KEY>",
->     "event_data": {
->         "id": "<uuid>",
->         "comment_board_id": "<uuid>",
->         "banned_by_profile_id": "<uuid>",
->         "banned_profile_id": "<uuid>",
->         "created_at": "<DateTime>",
->         "description": "string"
->     }
-> }`
+```json
+{
+    "event_key": "<EVENT_KEY>",
+    "event_data": {
+        "id": "<uuid>",
+        "comment_board_id": "<uuid>",
+        "banned_by_profile_id": "<uuid>",
+        "banned_profile_id": "<uuid>",
+        "created_at": "<DateTime>",
+        "description": "string"
+    }
+}
+```
 
 ## Chat Room Moderation Events
 
@@ -95,16 +97,20 @@ DELETE_GLOBAL_CHATROOM_SHADOW_MUTE = "delete-global-chatroom-shadow-mute"
 
 ### Event Payload Structure:
 
-> `{
->     "event_key": "EVENT_KEY",
->     "event_data": {
->         "id": "<uuid>",
->         "chat_room_id": "<uuid>",
->         "muted_profile_id": "<uuid>",
->         "muted_by_profile_id": "<uuid>",
->         "created_at": "<DateTime>"
->     }
-> }`
+```json
+{
+    "event_key": "EVENT_KEY",
+    "event_data": {
+        "id": "<uuid>",
+        "chat_room_id": "<uuid>",
+        "muted_profile_id": "<uuid>",
+        "muted_by_profile_id": "<uuid>",
+        "created_at": "<DateTime>"
+    }
+}
+```
+
+<br />
 
 ## Consuming SQS Events
 
