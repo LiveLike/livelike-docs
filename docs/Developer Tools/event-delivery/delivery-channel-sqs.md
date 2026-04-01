@@ -67,7 +67,7 @@ These events are triggered by mute and shadow-mute moderation actions within cha
 
 ### Event Keys:
 
-`CREATE_CHATROOM_MUTE = "create-chatroom-mute"
+CREATE_CHATROOM_MUTE = "create-chatroom-mute"
 CREATE_GLOBAL_CHATROOM_MUTE = "create-global-chatroom-mute"
 CREATE_CHATROOM_SHADOW_MUTE = "create-chatroom-shadow-mute"
 CREATE_GLOBAL_CHATROOM_SHADOW_MUTE = "create-global-chatroom-shadow-mute"
@@ -78,7 +78,7 @@ UPDATE_GLOBAL_CHATROOM_SHADOW_MUTE = "update-global-chatroom-shadow-mute"
 DELETE_CHATROOM_MUTE = "delete-chatroom-mute"
 DELETE_GLOBAL_CHATROOM_MUTE = "delete-global-chatroom-mute"
 DELETE_CHATROOM_SHADOW_MUTE = "delete-chatroom-shadow-mute"
-DELETE_GLOBAL_CHATROOM_SHADOW_MUTE = "delete-global-chatroom-shadow-mute"`
+DELETE_GLOBAL_CHATROOM_SHADOW_MUTE = "delete-global-chatroom-shadow-mute"
 
 ### Event Payload Structure:
 
