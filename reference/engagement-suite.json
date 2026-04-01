@@ -34463,7 +34463,10 @@
             "description": "Filter widget reports with a specific status.  Can be one of published, pending, scheduled, inflight.",
             "schema": {
               "type": "string",
-              "default": ""
+              "default": "",
+              "enum": [
+                "published"
+              ]
             }
           },
           {
