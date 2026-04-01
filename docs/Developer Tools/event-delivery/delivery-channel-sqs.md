@@ -8,9 +8,9 @@ metadata:
 ---
 ### To enable sending events to SQS, application needs to have below details:
 
-Enable SQS Events
-Valid Sqs Event Queue Url
-SQS queue will be shared between LiveLike and client.
+* Enable SQS Events
+* Valid Sqs Event Queue Url
+* SQS queue will be shared between LiveLike and client.
 
 # What Are SQS Events?
 
