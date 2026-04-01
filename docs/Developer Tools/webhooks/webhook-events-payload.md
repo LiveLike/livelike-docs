@@ -914,6 +914,42 @@ This document details the webhook events sent by our system, including their pay
 | `data.target_id`                      | `string`   | Id of the target where reaction is applied                                               |
 | `created_at`                          | `datetime` | Timestamp when the event was created                                                     |
 
+## `create-comment-board-ban` & `delete-comment-board-ban`
+
+### Payload Example:
+
+```json
+{
+  "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
+  "event": "create-comment-board-ban" | "update-comment-board-ban" | "delete-comment-board-ban",
+  "data": {
+    "id": "8c479fe1-761d-4ef3-8d61-91c95066fdd2",
+    "banned_profile_id": "9fcd964f-627a-4c57-a47c-46b5277a26d8",
+    "banned_profile_custom_id": "some_id",
+    "banned_by_profile_id": "174cc6dd-c1da-42d2-886e-c48b2bf803a8",
+    "banned_by_profile_custom_id": "some id",
+    "description": "",
+		"created_at": "2025-08-27T21:06:35Z"
+  },
+  "created_at": "2025-12-26T13:27:45.141277+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name                         | Type       | Description                                                          |
+| :--------------------------------- | :--------- | :------------------------------------------------------------------- |
+| `id`                               | `string`   | Unique identifier for the event                                      |
+| `event`                            | `string`   | Event type {`chat-message-throttle-updated`}                         |
+| `data.id`                          | `string`   | Unique identifier for the banned comment that was created or deleted |
+| `data.banned_profile_id`           | `string`   | Id of banned profile                                                 |
+| `data.banned_profile_custom_id`    | `string`   | Custom Id of banned profile                                          |
+| `data.banned_by_profile_id`        | `string`   | The Id of the moderator who banned user                              |
+| `data.banned_by_profile_custom_id` | `string`   | The Custom Id of the moderator who banned user                       |
+| `data.description`                 | `string`   | Reason for banning (Desc. of ban)                                    |
+| `data.created_at`                  | `string`   | Timestamp when ban was created                                       |
+| `created_at`                       | `datetime` | Timestamp when the event was created                                 |
+
 ## `chat-message-throttle-updated`
 
 ### Payload Example:
