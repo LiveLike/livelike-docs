@@ -1169,7 +1169,1681 @@
         "description": "",
         "responses": {
           "200": {
-            "description": ""
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "properties": {},
+                        "type": "object"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Result": {
+                    "summary": "Result",
+                    "value": {
+                      "count": 24,
+                      "next": "https://cf-blast.livelikecdn.com/api/v1/applications/ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm/widgets/?page=2&page_size=20",
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "faa71723-9dc3-4342-b904-5fc80ef397a7",
+                          "pubnub_enabled": false,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/faa71723-9dc3-4342-b904-5fc80ef397a7/",
+                          "kind": "text-poll",
+                          "program_id": "f45e3794-6b3b-484c-9c6d-e27e96fac78e",
+                          "program_name": "Avengers AI Generated",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-11-13T22:07:55.045436Z",
+                          "published_at": "2025-11-13T22:07:55.287124Z",
+                          "scheduled_at": "2025-11-13T22:07:55.202369Z",
+                          "interactive_until": null,
+                          "question": "e3qw",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "1ebaef1d-9489-49cc-aa59-0bf367d04ec1",
+                              "description": "ads",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/faa71723-9dc3-4342-b904-5fc80ef397a7/options/1ebaef1d-9489-49cc-aa59-0bf367d04ec1/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJwdzRISVRzeWFXejFBX0htU284ZXBNeUxfVzVFWXRlQXhzN3dEZzJYR28zQ01LY1E5M096akw1WDQ5a3lKa29wSU1PaGJYaHQwN1hVMkNtNkNhSmhWQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.qHoGqXOzbbalwQtkcYdMU8tzOKXQyXDYJk3hiAYkxIo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "25cf2b4a-2821-4780-821f-6859c77c2c3a",
+                              "description": "das",
+                              "vote_count": 1,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/faa71723-9dc3-4342-b904-5fc80ef397a7/options/25cf2b4a-2821-4780-821f-6859c77c2c3a/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJVOG5kUUpXM21JbWJybmxqMF9PRWNwWGR1SkpTb0JOMmZIRVBEME9jbVZ4Y3hma2d3VUxDX0tEQ1ZxZTFCRmVNbFlJV2J2c0h4Ukl5RHZaZVRRS2g0Zz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.1LmONRll8uHGnhVtVoJRFIAqXxHIwEOnW-iBCH0JXY4/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.f45e3794-6b3b-484c-9c6d-e27e96fac78e",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/faa71723-9dc3-4342-b904-5fc80ef397a7/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/faa71723-9dc3-4342-b904-5fc80ef397a7/",
+                          "impression_count": 10,
+                          "unique_impression_count": 2,
+                          "engagement_count": 1,
+                          "engagement_percent": "0.500",
+                          "status": "published",
+                          "created_by": {
+                            "id": "7fb574ac-ba56-483b-822b-0de813119e58",
+                            "name": "Atish Abhang",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/faa71723-9dc3-4342-b904-5fc80ef397a7/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=faa71723-9dc3-4342-b904-5fc80ef397a7",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "94db6631-c23b-4138-b035-43bd68024589",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/94db6631-c23b-4138-b035-43bd68024589/",
+                          "kind": "text-poll",
+                          "program_id": "db81f9e8-81c5-442f-ba08-707a0aba8ad0",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-11-09T09:52:34.509832Z",
+                          "published_at": "2025-11-09T09:53:58.197150Z",
+                          "scheduled_at": "2025-11-09T09:53:58.025846Z",
+                          "interactive_until": null,
+                          "question": "Who is Fabiola23",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "089c6c9b-21fc-4609-b89e-53c64311e015",
+                              "description": "optical",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/94db6631-c23b-4138-b035-43bd68024589/options/089c6c9b-21fc-4609-b89e-53c64311e015/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJTLWhtM1pjYkdvRXVsQUlHYlgxZEZsX1ZDQndkQTFQaERzczNPTHVESElYaVBUTlNMRjlzaFA4WWU0TEM1QnZSNXBDTnhUZWhlazhHQ243Unh0cmFzZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.JOdUQyrgGIQybb6UIjNg14wTJ7-GkvzRVU2uixCLDmo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "a1bd05a4-7e02-48b3-8519-67091f5f6770",
+                              "description": "multi-byte",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/94db6631-c23b-4138-b035-43bd68024589/options/a1bd05a4-7e02-48b3-8519-67091f5f6770/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJYZzl0UEdyQkhTRFYzSGF3azhhWk5BNE5aMHcyclhWdTZQODlxek54LVRfVDdYRlctZjZ2UUczUTZVbUlkbTRUQzZCcm1EZXhZWTM2dV9TbzYyUE1oZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.Xdg82JVX09Zcs974jouN6jtZtU0w1op1y_rAwox_BUM/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.db81f9e8-81c5-442f-ba08-707a0aba8ad0",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/94db6631-c23b-4138-b035-43bd68024589/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/94db6631-c23b-4138-b035-43bd68024589/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "7fb574ac-ba56-483b-822b-0de813119e58",
+                            "name": "Atish Abhang",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/94db6631-c23b-4138-b035-43bd68024589/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=94db6631-c23b-4138-b035-43bd68024589",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "3f05a212-da70-47e7-8c89-075674869ffe",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3f05a212-da70-47e7-8c89-075674869ffe/",
+                          "kind": "text-poll",
+                          "program_id": "db81f9e8-81c5-442f-ba08-707a0aba8ad0",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-11-08T15:20:13.047352Z",
+                          "published_at": "2025-11-08T15:20:40.454560Z",
+                          "scheduled_at": "2025-11-08T15:20:13.238977Z",
+                          "interactive_until": null,
+                          "question": "What is your favorite color? (PATCH Update)",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "0199b2d9-e007-416e-8f9e-18b58281fe21",
+                              "description": "neural (PATCH Update)",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/3f05a212-da70-47e7-8c89-075674869ffe/options/0199b2d9-e007-416e-8f9e-18b58281fe21/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJ2ZzdYSHVTX0JTZEhkSURDaENycGZVRE03VVdIR3N5dDVhT2wwTXhkZXhCclZoaVlNVkk1WWNhQkhfN3lYV0JVVENQQUVndGlYazhlX0RNcE1Wa1lLZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.NNOLbMtS3wdXZo8BFr6oWumxf-AVvly4oSo-6AfHMqo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.db81f9e8-81c5-442f-ba08-707a0aba8ad0",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3f05a212-da70-47e7-8c89-075674869ffe/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/3f05a212-da70-47e7-8c89-075674869ffe/",
+                          "impression_count": 1,
+                          "unique_impression_count": 1,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "7fb574ac-ba56-483b-822b-0de813119e58",
+                            "name": "Atish Abhang",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3f05a212-da70-47e7-8c89-075674869ffe/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=3f05a212-da70-47e7-8c89-075674869ffe",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:18.422991Z",
+                          "published_at": "2025-08-13T07:52:18.484770Z",
+                          "scheduled_at": "2025-08-13T07:52:18.422871Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace L. Lauberbach with J. Ngoy ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "fed64d9d-0937-4d6a-81da-691a0609f99d",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/options/fed64d9d-0937-4d6a-81da-691a0609f99d/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJqOUxnX3hPUDVaUzB5Y2FJYkpKRHlJM1haemhBQWxFOGJmUVVCeGVTblhvU0pmM2lBSlZKOS1tbHREbi1NV1cwUGwxY0JORmVTTEwtLUd2c18wV19iUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.GSIaV_jrCFzKqOM190B-bQy-opKrhcIiF-n4fQXMtvg/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "61f42526-5e18-4fec-8857-b0479c578813",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/options/61f42526-5e18-4fec-8857-b0479c578813/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjI4Zll3MnU1UmFsaG9EdDdZbXRaLW1Cc0kxR2k4ZTRJMk9HR3Fpdm54NFMxMC1oTTJ1djdSUWo3aGdiZXEzRzd3bDJOamlmdVM3QTN1SzZ5UWU4WU9PUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.72XEpvaQg-1JKLsfWzmIYKN5PcosYZqEJrCqiLTamEU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=c81d41a4-c84f-4d1d-ab5e-31d9c13b4b24",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "821d140c-4142-449d-b828-c7663c98a000",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/821d140c-4142-449d-b828-c7663c98a000/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:18.157183Z",
+                          "published_at": "2025-08-13T07:52:18.262533Z",
+                          "scheduled_at": "2025-08-13T07:52:18.157055Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace José Marsà with R. Belghali ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "8fda16f1-a47f-4454-a137-8efe623b8ec7",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/821d140c-4142-449d-b828-c7663c98a000/options/8fda16f1-a47f-4454-a137-8efe623b8ec7/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJPbG5LeWlac2Z5bW1QSTR5dVpteGNyUEZ2c3VVV1BIRXJXTlhnT1pVTWdic3RyLVd1SFVDMVNXTEFhcVgwZ1c0SXk2WUtaM0xLaXJfUVh3N3FRZEREZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.O-Ir3J4LOqHv-y4rGP1CK_DrSGivt9ZK-tus-KWfZ00/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "7d8bb8f4-6377-46ed-8005-459c29d8f500",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/821d140c-4142-449d-b828-c7663c98a000/options/7d8bb8f4-6377-46ed-8005-459c29d8f500/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJ1Vjd2YVpjeDI0ckRyeUpHeHVqaklleWsxM1lhcUNvSWpYNU8tS2FPRF9NTEo1WkdlYTU3U3ExemFNR3pIME1ROFVEU1pvV0ZwUk00alFCWTlZNkdxZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.A7AJWIw-yN6BMP1Rz9tEdEAiJbGyCTdRAEauHb8asCk/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/821d140c-4142-449d-b828-c7663c98a000/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/821d140c-4142-449d-b828-c7663c98a000/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/821d140c-4142-449d-b828-c7663c98a000/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=821d140c-4142-449d-b828-c7663c98a000",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "93e0a59c-eb06-445c-994f-ec7de31190fe",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93e0a59c-eb06-445c-994f-ec7de31190fe/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:17.932444Z",
+                          "published_at": "2025-08-13T07:52:17.982043Z",
+                          "scheduled_at": "2025-08-13T07:52:17.932322Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace A. Nusa with A. Skov Olsen ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "a1eaf40d-3622-4fd9-8288-5a2acb2c6229",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/93e0a59c-eb06-445c-994f-ec7de31190fe/options/a1eaf40d-3622-4fd9-8288-5a2acb2c6229/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJOX1JSc21nWmFUNXNST3RPMV9Xdkpwa0pQeXVvUDhEZzBQekZfSXhCM2ZOc2Y2Yjk3VEoxdnlBQ3cxYzNUZ0RqeHowaHl1MVplZWhvWEJhbkJMSnlLZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.MPl6zpxWPfHysXCGFTKafuIM2SpzuItp0-Mqxf8zKwk/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "19370d9b-28ed-4596-8e28-3d1e60f56a00",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/93e0a59c-eb06-445c-994f-ec7de31190fe/options/19370d9b-28ed-4596-8e28-3d1e60f56a00/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJXOTg1X21zcjZwQUdvS0wySnhlWjRuYW4waTVCVGtKU1lnRkRzdTE2ZFFFaENVeV8wcjdENElJVVFZb1dEblpMMVJhcTB2Z1BJelN2cS1MX2NaWkRwdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.0QxqWPG3-ty3pMGzaOzSijKzYict1-qe5xRdH2ovcss/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93e0a59c-eb06-445c-994f-ec7de31190fe/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/93e0a59c-eb06-445c-994f-ec7de31190fe/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93e0a59c-eb06-445c-994f-ec7de31190fe/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=93e0a59c-eb06-445c-994f-ec7de31190fe",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "a1a5f944-c744-4b5f-88a5-d20cd5795b3e",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:17.655798Z",
+                          "published_at": "2025-08-13T07:52:17.706425Z",
+                          "scheduled_at": "2025-08-13T07:52:17.655682Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace H. Vetlesen with C. Nielsen ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "404151b5-9b6a-4b79-b532-3c33867f7043",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/options/404151b5-9b6a-4b79-b532-3c33867f7043/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJoMVZLbTBINkpTNDRsWHI1WnBaQjF1bG9wWWtlZGZtVTI2UDd3RzJ2U0xkSTl0MWlmckxlX2JrY2xhRGpLVWNwdlNYdllGT2o5c2VySE5pNlYwSFZsUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.FMiefyIeW5fsNO6cD8rDc3GDR1jLlKvPqPlGFUIlRww/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "1e0fd736-fd09-4f8d-a798-fa1188208e81",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/options/1e0fd736-fd09-4f8d-a798-fa1188208e81/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJtc2tvR0JFQUl5SUdWWHhnQVpsMWRlaGVlTV84MGNmWXJNQmozX2Q2LUx6T1VLMzNneEhmRWxoN0RxOHZvT2lIbzJUV0s5aG4zWkpwQmRwcW5pY09Jdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9._5EWepYYlctey2mPoxWm-3aHsqY7WlkLaqqUtgNxS2g/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a1a5f944-c744-4b5f-88a5-d20cd5795b3e/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=a1a5f944-c744-4b5f-88a5-d20cd5795b3e",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "58a705a1-ea0d-4abb-8179-5e2b924c9d6e",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:17.451788Z",
+                          "published_at": "2025-08-13T07:52:17.505403Z",
+                          "scheduled_at": "2025-08-13T07:52:17.451674Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace C. Tzolis with H. Siquet ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "73697800-cd45-49fe-9beb-20bde49a8fec",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/options/73697800-cd45-49fe-9beb-20bde49a8fec/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjI5d3c0eG9nR0c5ajdVSTFZR0lvMUkxWTNtbVdmUnVTVFZKZHR2SHVkSTlqdTBfeWN3YV9TdVFuMXJ4MXpLNjNIMnp5RjRiV1h4Vm9JU2NGeFdZZkpjQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.REu1TCjWhrQ6wVW8jv_K71XNo8hSQrJIT79sZKUhOmw/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "44aab39c-416a-4b82-91b0-7fc881fc2fbb",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/options/44aab39c-416a-4b82-91b0-7fc881fc2fbb/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjIycG5VWmsyd3hYRDBwQ3N5b1h0RDcwS2I2Ri1KRjgxTC1CV3RMWTFRY3ZBSGE0OHdSazQ2aXg2VEtUM2Q3OURJTUFHTDdKclRXMHhESFpHeFVRLVFrQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.V9TGYBmGW3_6VZSVhZ93VAhg6ZslmpiSodYuE-Jp1rw/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/58a705a1-ea0d-4abb-8179-5e2b924c9d6e/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=58a705a1-ea0d-4abb-8179-5e2b924c9d6e",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "0eb35f0c-3209-4449-a0d5-97db144b0140",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/0eb35f0c-3209-4449-a0d5-97db144b0140/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:17.234305Z",
+                          "published_at": "2025-08-13T07:52:17.287536Z",
+                          "scheduled_at": "2025-08-13T07:52:17.234194Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace M. De Cuyper with M. Skóraś ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "d77cf312-7d28-4115-9a41-d1b8397615bf",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/0eb35f0c-3209-4449-a0d5-97db144b0140/options/d77cf312-7d28-4115-9a41-d1b8397615bf/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjIzSzM4UlJYamoxcHFHSjZzbVpCeV9YZk54akdCa2J1VnNWVWtueld2dU1hV244TlpqaUpVOVdjWUVCTWZyRThROWJmTjMyaktNN1ZBR2F5VnNrbzJQUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.lUGCabWXZS1CGsz58RP3DR9MjCzUJbuKVh93XK9FvnM/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "05a5ae10-7ec9-4bba-86cb-01472acc964f",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/0eb35f0c-3209-4449-a0d5-97db144b0140/options/05a5ae10-7ec9-4bba-86cb-01472acc964f/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJhSVNrNHZNSjBwVWhaNXFMNG1GdGxQVUduV3dMOFdqRG5wY0hKaWdfUnd2bG83ZUZHd1NGRFhUdF9YdjlkejItX19iZFJTaUJ1Ymx6MXVYTF9sMHU5UT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.WLuWV4WOGpOzZUq2THgFXmwGU4VDQWVvi9IVE2c-Hpo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/0eb35f0c-3209-4449-a0d5-97db144b0140/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/0eb35f0c-3209-4449-a0d5-97db144b0140/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/0eb35f0c-3209-4449-a0d5-97db144b0140/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=0eb35f0c-3209-4449-a0d5-97db144b0140",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "5286473a-27a2-4ce0-8f72-15c8f4b85968",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/5286473a-27a2-4ce0-8f72-15c8f4b85968/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:16.639616Z",
+                          "published_at": "2025-08-13T07:52:16.744647Z",
+                          "scheduled_at": "2025-08-13T07:52:16.639455Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace G. Hairemans with P. Dahl ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "0ef75d1e-f240-4568-9da0-fad8b5d611eb",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/5286473a-27a2-4ce0-8f72-15c8f4b85968/options/0ef75d1e-f240-4568-9da0-fad8b5d611eb/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJNSk1HMkF6b25tclBwN3NTcWRyUk04UWw2Wk1XRXBGT01yLXJENVFqaDd5UklPYUdrQ1pxYVBlS002WDhqUXB6YTU5NEJvU0FzZTZqdk55VzAyS2htQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.bf8-3dUjDPMmhgr9wV_0ulfNzZmKjdkC3CMY6xW4m8g/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "eed9ce9c-3288-4026-89c2-79ee85958b20",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/5286473a-27a2-4ce0-8f72-15c8f4b85968/options/eed9ce9c-3288-4026-89c2-79ee85958b20/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJQc2xDT2JJZkxBczJxeUZsdXZRd1J2eHJaYWtpZnl6Yk1XalhXS3FTb05JSGN3Rm1Qb2pWMFUzRDJqSE1uYVZoaVJBQ1EwV3NHREQydjYtc29UYm5NQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.SCrDD7yMyFzhxHYmwi6zNYvAN8-qsWr2NpakyPiMeYc/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/5286473a-27a2-4ce0-8f72-15c8f4b85968/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/5286473a-27a2-4ce0-8f72-15c8f4b85968/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/5286473a-27a2-4ce0-8f72-15c8f4b85968/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=5286473a-27a2-4ce0-8f72-15c8f4b85968",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "06e52e3d-911f-45a2-ad0f-83d71130bb1e",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/06e52e3d-911f-45a2-ad0f-83d71130bb1e/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:16.388592Z",
+                          "published_at": "2025-08-13T07:52:16.468256Z",
+                          "scheduled_at": "2025-08-13T07:52:16.388431Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace K. Mrabti with B. Bafdili ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "2cdbf9f1-00bf-4dfe-9bf7-1489b1badb6b",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/06e52e3d-911f-45a2-ad0f-83d71130bb1e/options/2cdbf9f1-00bf-4dfe-9bf7-1489b1badb6b/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJCd1FVVzdYZkd4UDJjZHQ0TFdDa2dTbTRKZno1cmc2OHdCV3hLb3UtcjZuTWVaQTJ6S29VWUJzSGxCVXVJLUV2aVFNQU9yQjRNd0t6WUlsbDExNDNHdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9._GGEJFhMnm2GsuUDeB-iZ_eFjt1S29yWujFGTLxKUeY/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "55023886-15ae-4938-b939-3f56407b4a6a",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/06e52e3d-911f-45a2-ad0f-83d71130bb1e/options/55023886-15ae-4938-b939-3f56407b4a6a/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjIzR3U3UU1fdEtOT3IzSFlmYm90SUpaTkdOMmUwZkxmTFZReWppN00yM3JVZXQtMXdEdDZQQ1JjbUp4MmZ5bmo0a3Jmc05DTGY1WGhkY3ZnU0p1dkV4QT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.Ykjdd64Wy2GdqSNhvsDWzHXToa9tzBcc8aPitrfKSlc/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/06e52e3d-911f-45a2-ad0f-83d71130bb1e/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/06e52e3d-911f-45a2-ad0f-83d71130bb1e/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/06e52e3d-911f-45a2-ad0f-83d71130bb1e/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=06e52e3d-911f-45a2-ad0f-83d71130bb1e",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "717aa784-ca2b-408c-8381-02bbd3f3f3da",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/717aa784-ca2b-408c-8381-02bbd3f3f3da/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:16.048673Z",
+                          "published_at": "2025-08-13T07:52:16.209460Z",
+                          "scheduled_at": "2025-08-13T07:52:16.048547Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace S. Walsh with T. Raemaekers ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "4a59eb82-8fd9-4077-907a-6b0d5745fc90",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/717aa784-ca2b-408c-8381-02bbd3f3f3da/options/4a59eb82-8fd9-4077-907a-6b0d5745fc90/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJReHcwSkVkaHF0ek5aN1BSbjI0WmVQWlNXejZNUnp2MkRydGJJY2d2X0lXRFdkTDh1QW9DZldnVlZIb2tGUU9kYnlobEhHaXplOWhkUHZLR0dGbFVLdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.nSuAlUNVTkhIeBpHO3K0fht8DTWopU20jiIURvpUNX4/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "0a23f693-7841-4ac1-bfcd-e3ed79d39569",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/717aa784-ca2b-408c-8381-02bbd3f3f3da/options/0a23f693-7841-4ac1-bfcd-e3ed79d39569/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJRMmI0LWJ4ODdOZjFCcmlWV2FiR3NGTzdfMXdPd0ZKYTlWR1ppdlVBdnoxY1BjZHhYNm5nd3dZTzJxOG1MZlFmaE5oaWFKN25yRXQzYk05UTVUdS1UZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.423nssWAEHvqaIK-oD-uujCYkQwN5Hr1NGhh-HX7vIc/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/717aa784-ca2b-408c-8381-02bbd3f3f3da/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/717aa784-ca2b-408c-8381-02bbd3f3f3da/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/717aa784-ca2b-408c-8381-02bbd3f3f3da/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=717aa784-ca2b-408c-8381-02bbd3f3f3da",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "d87391af-c1b4-4ff6-9549-8ff74251ddbf",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/d87391af-c1b4-4ff6-9549-8ff74251ddbf/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:52:14.879020Z",
+                          "published_at": "2025-08-13T07:52:15.066007Z",
+                          "scheduled_at": "2025-08-13T07:52:14.878775Z",
+                          "interactive_until": null,
+                          "question": "Was the manager right to replace R. Onyedika with Ferran Jutglà ?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "a6a2cefd-8125-42a2-a1d9-36a4ae9e1741",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/d87391af-c1b4-4ff6-9549-8ff74251ddbf/options/a6a2cefd-8125-42a2-a1d9-36a4ae9e1741/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJ5ZmhGMTY4cTRRQ28zeTZsbGlvNXpCX09aemk2WkZlbENueXdpRDQ2YVdyanRyQ3hWTVFuTEZCZXU0MUFiaGplZklkVUgybW4wc1RWRFU4NjNyNGhsdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.suvLn57u8ANpg4mXCXKwq_ed68T7BMwY4DMaXSqS_Tw/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "ce0b2800-79c2-452f-ac8c-96e6bdfc4e83",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/d87391af-c1b4-4ff6-9549-8ff74251ddbf/options/ce0b2800-79c2-452f-ac8c-96e6bdfc4e83/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJpUWViZlpXdk9yNndNbWhPRW9iNURxT1I2OHFaWmJrRlZkeDVGQkNJTGxZdmZMUmhlNUhxTWVLQ05aY3VkSnVaN0lZcGJjVjBMYlVBQmR1M2Y2RmgzZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.IkJg-kAbNyqK9UIfHYY-uMs9W-WQwwY_ZEAliWGqpV0/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/d87391af-c1b4-4ff6-9549-8ff74251ddbf/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/d87391af-c1b4-4ff6-9549-8ff74251ddbf/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/d87391af-c1b4-4ff6-9549-8ff74251ddbf/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=d87391af-c1b4-4ff6-9549-8ff74251ddbf",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "301dbdde-ab14-450e-b260-63a00e775a4c",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/301dbdde-ab14-450e-b260-63a00e775a4c/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:51:28.265800Z",
+                          "published_at": "2025-08-13T07:51:28.326527Z",
+                          "scheduled_at": "2025-08-13T07:51:28.265676Z",
+                          "interactive_until": null,
+                          "question": "Will the Yellow card to M. Konaté for Foul will impact the game?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "b7a2ebcf-0115-4df4-a33b-af72bdb981cf",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/301dbdde-ab14-450e-b260-63a00e775a4c/options/b7a2ebcf-0115-4df4-a33b-af72bdb981cf/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJGLUdmZ1JOdHJmNEZFaHhPbEROS2xPUUVOT2Z4bjNxTVJ2eXl3WmR4WG10M3hBdm9jWVVTTjg4RE8zX042ZUZILXB0NDZYVXhnUmNkbXJISTVEalljUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.9prwj5P-F5sEyzziQudxuCLVrjule0RrffCiEfrkqlo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "9d246dc1-aa4e-4bec-8568-a1be2dbd2305",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/301dbdde-ab14-450e-b260-63a00e775a4c/options/9d246dc1-aa4e-4bec-8568-a1be2dbd2305/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjIzdDlVeHV3cks5aURlaVpKenM2M1R4bm00QWNsSUs0di1sSzlsckk3ZHJvRmwyQV9vNjN6WWxaWGdsbXpNcEo5OWhJWEhZUWMzdkc2QzROMmswcV9EUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.Hi0fnB5gLuH2bNhLmiI--iazUlC2iaAbUbGf-KGt8QM/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/301dbdde-ab14-450e-b260-63a00e775a4c/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/301dbdde-ab14-450e-b260-63a00e775a4c/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/301dbdde-ab14-450e-b260-63a00e775a4c/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=301dbdde-ab14-450e-b260-63a00e775a4c",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "93195fe0-8c51-43d7-a168-0f99a76cdd26",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93195fe0-8c51-43d7-a168-0f99a76cdd26/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:51:28.054114Z",
+                          "published_at": "2025-08-13T07:51:28.104062Z",
+                          "scheduled_at": "2025-08-13T07:51:28.053897Z",
+                          "interactive_until": null,
+                          "question": "Will the Yellow card to H. Siquet for Foul will impact the game?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "1aa87e26-dd4a-4ee4-b2eb-b027998e2f1e",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/93195fe0-8c51-43d7-a168-0f99a76cdd26/options/1aa87e26-dd4a-4ee4-b2eb-b027998e2f1e/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJIZUZ0UGpQeFRRSGl4Vm85RUhaTXJNcmlMcHpGYkpUcEtVaWdwNDJRb0V5RDVxbHFWR3UxSlNBa0NpcGMwVlNOS2FQNmdXQ194SmtVREZBdmlaSWs1UT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9._fou4oXUp3fEalwEltr3mb47s6qJJBvfyqh0_tKkglo/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "ac9ef4b3-fb74-4942-b4a7-b4b47df7c01c",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/93195fe0-8c51-43d7-a168-0f99a76cdd26/options/ac9ef4b3-fb74-4942-b4a7-b4b47df7c01c/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJqbjktb0tBZ3Q0R3Z2RnZnMENpekdqZTNUaEJRRjJwdnB4T3hya2tFZHEzWWdDbG56MnpXajJjQThlS0ZzQWd0OW4zc1VwM1FvYlRaU1VpNzhVaUpXdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.8d6pClMDXpeqghIz6end2g9nbutVMNHB5VcAroSMLoU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93195fe0-8c51-43d7-a168-0f99a76cdd26/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/93195fe0-8c51-43d7-a168-0f99a76cdd26/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/93195fe0-8c51-43d7-a168-0f99a76cdd26/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=93195fe0-8c51-43d7-a168-0f99a76cdd26",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "decac9c5-fe0d-443b-8bf8-57d56a38bdad",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/decac9c5-fe0d-443b-8bf8-57d56a38bdad/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:51:27.700218Z",
+                          "published_at": "2025-08-13T07:51:27.829943Z",
+                          "scheduled_at": "2025-08-13T07:51:27.700102Z",
+                          "interactive_until": null,
+                          "question": "Will the Yellow card to S. Walsh for Foul will impact the game?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "65542d3d-25d0-41aa-a884-bddc67942d08",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/decac9c5-fe0d-443b-8bf8-57d56a38bdad/options/65542d3d-25d0-41aa-a884-bddc67942d08/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJock9wVVg2Ri1pZS1tNTVKLUtYajVnOVBLbkdPaUhQbnlvTU0yN1RJTWdVQkVrZThkbkpSajhFRVh2VnFwSVh1dnM1QXBXUnNiMThrMko5cmh6NVMyQT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.w0oBo7XM5hI_QEsykqhiN1PS_aVL-dQol_VL0mettig/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "ce499b83-cd99-4f89-b870-7dedbdbdee83",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/decac9c5-fe0d-443b-8bf8-57d56a38bdad/options/ce499b83-cd99-4f89-b870-7dedbdbdee83/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJsTThRNENNSlhIVW13d2hMRlM3MXNzc3BPX0VNQ1IwZnBiNzhUa2tSTDFwNkR3dk5wX0dQNFZ0eGhPQ1dBZWpvUmEwdkZBMVJ6TjBqSzJNNXFweW9PZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.ltKcuCIPlBR9lK6afKXahl8ul-6amX1JAqBuTm33_5I/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/decac9c5-fe0d-443b-8bf8-57d56a38bdad/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/decac9c5-fe0d-443b-8bf8-57d56a38bdad/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/decac9c5-fe0d-443b-8bf8-57d56a38bdad/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=decac9c5-fe0d-443b-8bf8-57d56a38bdad",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "947d748e-4895-4a9f-8281-70dc68278a9b",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/947d748e-4895-4a9f-8281-70dc68278a9b/",
+                          "kind": "text-poll",
+                          "program_id": "24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_name": "Test",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-08-13T07:50:29.015173Z",
+                          "published_at": "2025-08-13T07:50:29.124849Z",
+                          "scheduled_at": "2025-08-13T07:50:29.014995Z",
+                          "interactive_until": null,
+                          "question": "Did you enjoy the first half?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "61b10260-fb37-4bd9-a45a-dfc0c28c01e7",
+                              "description": "Yes",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/947d748e-4895-4a9f-8281-70dc68278a9b/options/61b10260-fb37-4bd9-a45a-dfc0c28c01e7/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJPcWhVT0FkVkZ6cmk1a3ZuVG1BRVpveUxVMVdENXNyUV9tYnJ0ZU55eE03cGMzX3hKUDR4VFRrMkhPTVJZZ1dDeFRzMFpGZkN3eXNFLXdQSVVTR1VVZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.AWQqCPF6r-xUGsD3ord3sdbgIALQ3Z3e_AfnWvzStuU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "18e40849-5dbc-4b1f-9e97-61e7eaca7885",
+                              "description": "No",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/947d748e-4895-4a9f-8281-70dc68278a9b/options/18e40849-5dbc-4b1f-9e97-61e7eaca7885/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJ2eTRrbElqMXNmZkpKWmZoYjNNR1hHVUxJTHpFM2JEY0o2aE56WnU0SGxRMHM2UVRBemdUelkxc1N2aW1uaVZNbzZtbkFMS19NWWJtT255azBIYUFDZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.HodkSULVbMDSm4_OkDTRA7SE971N4mcohOoTvCpicWw/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.24736b40-14ce-4630-a148-3e13690146ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/947d748e-4895-4a9f-8281-70dc68278a9b/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/947d748e-4895-4a9f-8281-70dc68278a9b/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/947d748e-4895-4a9f-8281-70dc68278a9b/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=947d748e-4895-4a9f-8281-70dc68278a9b",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/",
+                          "kind": "text-poll",
+                          "program_id": "ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_name": "ARCADE PROGRAM",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-06-05T08:14:02.505084Z",
+                          "published_at": "2025-06-05T08:14:10.991238Z",
+                          "scheduled_at": "2025-06-05T08:14:10.856699Z",
+                          "interactive_until": null,
+                          "question": "What is this?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "0783efd3-cc9d-4481-9b69-0965cf8ab0c2",
+                              "description": "1",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/options/0783efd3-cc9d-4481-9b69-0965cf8ab0c2/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJERWpUWlBmbHY2SjEwbmhCblFiNTRKSDVOUWhKU1Zfbmh4VUt5ZEVDM05XSElUWFNzTTZzQ2huODg5ejlxUlNrYlRYVUtMaWdGTUZPRkZlU0s0QVNudz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.5_oUTqkGQz5s5sJXS8I9aGNEhuTBfsN3ZByWqmaA36I/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "06649b24-bf71-4012-8203-06be055b8c0e",
+                              "description": "2",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/options/06649b24-bf71-4012-8203-06be055b8c0e/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJ1ejRmUXVCS01TMTIta090anRxbWdVand5N0VlbnVFb2FCUG9MV25LeWdER1B0REx3cC1acFU5Rmp6YzlkQXFHU1RkcW44UmRBMEJNRmtsd1RYcmh1dz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.OHfH3tG59jNjdnSbvVxkdME_NLat--MpTDUyGzztIuU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "1ad0ea3b-fde4-4d3f-adda-d025b7daa9bf",
+                              "description": "3",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/options/1ad0ea3b-fde4-4d3f-adda-d025b7daa9bf/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJJdWk1aGRBa212ZXhBTE5uSk1xc2Q0amFpOGozNU1NVmtZd0xva3M3eFJEb0cyb3h3MjIyakJBSWY3VmtLelZUUzkzWGt3dmxVVFp4V2VuS0M1QlJVZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.2_VdDyVm5rWTqi7q6w8Sn7Mlz-u2qMJI-zEo38rc7fg/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "9e87f6f3-3707-4fe4-b828-58de7173006e",
+                              "description": "4",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/options/9e87f6f3-3707-4fe4-b828-58de7173006e/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJPT3QybE5feUNQQlVKUUl2OS1RMnl3c0RYUTg4Z0x0M0xDOXF4ZWtWVVVKSThhZUdnc2dhcVp0X0hYTHV5TXN2Zk00S0luckhJVTFucExCVmJ0XzBSUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.CvcJDBISs6LnQ6QiLLFXae3ITnjt9DCKAhoqa-h-Hkw/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/",
+                          "impression_count": 1,
+                          "unique_impression_count": 1,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=a15cd9a8-88a3-4ef6-bc00-dc7b8fbf9ba9",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "3b7066b3-b968-426d-a487-5e77e3164de5",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3b7066b3-b968-426d-a487-5e77e3164de5/",
+                          "kind": "text-poll",
+                          "program_id": "ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_name": "ARCADE PROGRAM",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-06-05T08:13:53.895571Z",
+                          "published_at": "2025-06-05T08:14:02.814121Z",
+                          "scheduled_at": "2025-06-05T08:14:02.675163Z",
+                          "interactive_until": null,
+                          "question": "What is this?",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "b2e62b88-fb1a-4bc9-a8cb-cbf39fc2fc28",
+                              "description": "1",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/3b7066b3-b968-426d-a487-5e77e3164de5/options/b2e62b88-fb1a-4bc9-a8cb-cbf39fc2fc28/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJPYS03dGZsNzRRRnJvRXIxNTRWS0Y1aHRNSjdrd19uU0RLY051MEdxNzhtbHFkamhSeXlpOFo3NkhFdmZJRDA0YWdVWFlCWlhCTkEzY3dMbUU1a2c3Zz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.wF6hwOKJ_v8XvRV34YWA3WhjysnNGMCGv4WUkqUAGx8/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "28ce74dd-3c76-464e-94f7-3ef2e936468e",
+                              "description": "2",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/3b7066b3-b968-426d-a487-5e77e3164de5/options/28ce74dd-3c76-464e-94f7-3ef2e936468e/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJVSjJsS1RieGgxNWFBZkUxT2RxNWcxcDNiUjdVeFY4Z0pJN1M5WE5rbHpPbGlDbEFNYzlYVldvR1JyNGdhMnZvXzZWX2VtX1FCdEdIT3daeTF6WVlVUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.NfB-nKrxInIubEWugQway2oAYNnYPlQfgUHY9u4JOUs/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "3db9cac8-bbb4-42ef-af66-958ad9e4c6a8",
+                              "description": "3",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/3b7066b3-b968-426d-a487-5e77e3164de5/options/3db9cac8-bbb4-42ef-af66-958ad9e4c6a8/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjIyby1CeDRhSUZlR1NkdUtkNWhaNHdoVjhEcG9EaDFpd2dpZXluLVJzdlNUTGMtYi1ycEI0NjI3SlRqZTF1UTVrSENOVGltOWlBZVYyME9IRUo2dXZCdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.fQ8de9UM8s_WipHwK4oJZUlqRSk6MexBSbhQ01-f8oU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "1f6f7ccc-3db8-4766-b6b4-6a1c9954a529",
+                              "description": "4",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/3b7066b3-b968-426d-a487-5e77e3164de5/options/1f6f7ccc-3db8-4766-b6b4-6a1c9954a529/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJWVFU4TGlSTnBqUmZFZlpUR1NFbVdSWXBqY0Z6c3JnRGxtck93NkxOLWYwTW9NekIwaFdENTVGWXd5bUxuWjBhdUtxdVg2cm1yUTc2UnYtYXc5MWQxdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.C5KvDHQS4IF-L8UaJksjPpW5rB6_waT9qb6sHWNd6II/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3b7066b3-b968-426d-a487-5e77e3164de5/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/3b7066b3-b968-426d-a487-5e77e3164de5/",
+                          "impression_count": 1,
+                          "unique_impression_count": 1,
+                          "engagement_count": 0,
+                          "engagement_percent": "0.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/3b7066b3-b968-426d-a487-5e77e3164de5/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=3b7066b3-b968-426d-a487-5e77e3164de5",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        },
+                        {
+                          "id": "b02ecd17-db09-4059-b3c5-fb68b739d410",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/b02ecd17-db09-4059-b3c5-fb68b739d410/",
+                          "kind": "text-poll",
+                          "program_id": "ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_name": "ARCADE PROGRAM",
+                          "client_id": "ynXbpUC6IerIdOBYl1VicTvwh8H2u3z0rcW7IJtm",
+                          "created_at": "2025-06-05T08:10:23.691888Z",
+                          "published_at": "2025-06-05T08:12:49.647945Z",
+                          "scheduled_at": "2025-06-05T08:12:49.510638Z",
+                          "interactive_until": null,
+                          "question": "XYZ",
+                          "timeout": "P0DT00H00M30S",
+                          "options": [
+                            {
+                              "id": "d6ed8b7f-932f-4e87-9e8b-ade550b60b62",
+                              "description": "5",
+                              "vote_count": 1,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/b02ecd17-db09-4059-b3c5-fb68b739d410/options/d6ed8b7f-932f-4e87-9e8b-ade550b60b62/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJEZng4QXExZkFIVHA0NnpGVTMzcnl4N0RjVktPUGtvS203S0VtUWVXcTlfZWoxdDlwYlBYNkpHaVVRcm5GMDNNX251eXBJRzRPWjlhRHVhbEhjWkk2UT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.MkF3w_p8JwM7iQ2cdRulAZwBHKI_eAjLIFxkv42xhqM/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "a2c3b458-3a60-4e24-b35a-a7dad32b7866",
+                              "description": "6",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/b02ecd17-db09-4059-b3c5-fb68b739d410/options/a2c3b458-3a60-4e24-b35a-a7dad32b7866/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjI0eFZUMHJsYkxKS2pMSXI2d0l0OV92akpYTTAzdFZzMXp1UV9tbkpMOE83a2daRmJKaFFwN1RzZ1hsbVI4WjdnQ3BURTlva3lJYUYwdFIxZUNfLWNJUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.7w7b9U4lFilqt_-nYMbkq8g3b8eZFGP99SO0Jz3f_p8/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "8d706e27-e4b2-4d46-bee4-2ff5cc4ce3bb",
+                              "description": "7",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/b02ecd17-db09-4059-b3c5-fb68b739d410/options/8d706e27-e4b2-4d46-bee4-2ff5cc4ce3bb/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJWaHNPRGNfNm5JbjV2WWlEYlNaYlREVl9NWlpxMDlzV1E3b1Q5MllLbm12MTdlSTAtOE5QUzI1d05MUlBpRW5qeHFqVEZuZDJUWjZBTlVER0NBc0xfZz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.s44WVIkkR4xWAEyYkQiJt9CeNyCrVUcSiN8z-2YmCoU/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            },
+                            {
+                              "id": "1f02a0ac-57ba-4265-a28c-c2053866e868",
+                              "description": "8",
+                              "vote_count": 0,
+                              "vote_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/b02ecd17-db09-4059-b3c5-fb68b739d410/options/1f02a0ac-57ba-4265-a28c-c2053866e868/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcHpMbjJDYkZ1YXFWWEN6bWVuZnlhel9ZYjA5akN4UXF5QVlYbmdEbjVpSUlCV1BOc0t6aURMNG42T2NvMWxYY2NEOWlxSl84aEZpc0dRN1dDUjQtZklTZ05Ydz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3NzUwMjQ2MzB9.Q4hVHLE68BGTrC96ys2l10HhB3feyDS8mBbZzEUX0p8/",
+                              "translations": {},
+                              "translatable_fields": [
+                                "description"
+                              ],
+                              "filtered_description": null,
+                              "content_filter": []
+                            }
+                          ],
+                          "subscribe_channel": "program.widget.ea2d02bd-3f9a-45f6-8148-7a4bf3e0d7ee",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/b02ecd17-db09-4059-b3c5-fb68b739d410/interactions/",
+                          "impression_url": "https://blast-prod-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/b02ecd17-db09-4059-b3c5-fb68b739d410/",
+                          "impression_count": 1,
+                          "unique_impression_count": 1,
+                          "engagement_count": 1,
+                          "engagement_percent": "1.000",
+                          "status": "published",
+                          "created_by": {
+                            "id": "17ea6891-f5dc-4789-98db-c27eb0cd0119",
+                            "name": "Prasad Kajarekar",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/text-polls/b02ecd17-db09-4059-b3c5-fb68b739d410/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "question"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=b02ecd17-db09-4059-b3c5-fb68b739d410",
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_question": null,
+                          "content_filter": []
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "": {
+                    "summary": "",
+                    "value": "{}"
+                  },
+                  "Result": {
+                    "summary": "Result",
+                    "value": "{}"
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -1180,6 +2854,76 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "program_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Program Id"
+          },
+          {
+            "in": "query",
+            "name": "kind",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text-poll",
+                "image-poll"
+              ]
+            },
+            "description": "Widget types to return (text-poll, image-poll)"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "published",
+                "pending",
+                "inflight",
+                "scheduled"
+              ]
+            },
+            "description": "Filter widget reports with a specific status.  Can be one of published, pending, scheduled, inflight."
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Widgets with interactions at or after this time"
+          },
+          {
+            "in": "query",
+            "name": "until",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Widgets with interactions before this time"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "description": "Page Number"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer",
+              "default": "20"
+            },
+            "description": "Results per page"
           }
         ],
         "operationId": "get_client-id-widgets"
