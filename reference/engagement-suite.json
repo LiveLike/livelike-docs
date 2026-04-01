@@ -34452,13 +34452,9 @@
           {
             "name": "kind",
             "in": "query",
-            "description": "Widget kind",
+            "description": "Widget types to return (text-poll, image-poll)",
             "schema": {
-              "type": "string",
-              "enum": [
-                "text-poll",
-                "image-poll"
-              ]
+              "type": "string"
             }
           },
           {
