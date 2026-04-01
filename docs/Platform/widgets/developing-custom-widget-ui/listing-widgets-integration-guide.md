@@ -307,3 +307,6 @@ Response:
 | `top_level_comments_count` | Only root-level comments, not replies |
 
 Reply count = `comments_count - top_level_comments_count` = `15 replies`
+
+### API Endpoint  
+https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1
