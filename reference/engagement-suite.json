@@ -34435,20 +34435,12 @@
         "deprecated": false
       }
     },
-    "/widget-reports/-1": {
+    "/applications/{client_id}/widgets/": {
       "get": {
         "summary": "Copy of List widget reports",
         "description": "",
         "operationId": "list-widget-reports-1",
         "parameters": [
-          {
-            "name": "client_id",
-            "in": "query",
-            "description": "Application Client ID",
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "program_id",
             "in": "query",
@@ -34458,80 +34450,69 @@
             }
           },
           {
-            "name": "widget_kind",
+            "name": "kind",
             "in": "query",
             "description": "Widget kind",
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "widget_id",
-            "in": "query",
-            "description": "Widget ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "created_by_id",
-            "in": "query",
-            "description": "ID of the profile that submitted the widget report",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "created_since",
-            "in": "query",
-            "description": "Filter widget report created since this time",
-            "schema": {
               "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "created_until",
-            "in": "query",
-            "description": "Filter widget reports created before this time",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "moderated_by_id",
-            "in": "query",
-            "description": "The ID of the profile that moderated the widget report",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "moderated_since",
-            "in": "query",
-            "description": "Filter widget reports moderated since this time",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "moderated_until",
-            "in": "query",
-            "description": "Filter widget reports moderated before this time",
-            "schema": {
-              "type": "string",
-              "format": "date"
+              "enum": [
+                "text-poll",
+                "image-poll"
+              ]
             }
           },
           {
             "name": "status",
             "in": "query",
-            "description": "Filter widget reports with a specific status.  Can be one of pending, accepted, dismissed.",
+            "description": "Filter widget reports with a specific status.  Can be one of published, pending, scheduled, inflight.",
+            "schema": {
+              "type": "string",
+              "default": "published"
+            }
+          },
+          {
+            "in": "path",
+            "name": "client_id",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Widgets with interactions at or after this time"
+          },
+          {
+            "in": "query",
+            "name": "until",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Widgets with interactions before this time"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": "1"
+            },
+            "description": "Page number"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer",
+              "default": "20"
+            },
+            "description": "Results per page"
           }
         ],
         "responses": {
