@@ -9,7 +9,7 @@ hidden: false
 metadata:
   robots: index
 ---
-## <Anchor label="API Endpoint" target="_blank" href="[https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1](https://docs.livelike.com/v1_application_widgets/reference/list-widget-reports-1)">API Endpoint</Anchor>
+## <Anchor label="API Endpoint" target="_blank" href="https://docs.livelike.com/reference/listing-applications-widgets">API Endpoint</Anchor>
 
 ## List Widgets For Application
 
