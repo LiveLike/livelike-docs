@@ -34454,7 +34454,11 @@
             "in": "query",
             "description": "Widget types to return (text-poll, image-poll)",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "text-poll",
+                "image-poll"
+              ]
             }
           },
           {
@@ -34465,7 +34469,10 @@
               "type": "string",
               "default": "",
               "enum": [
-                "published"
+                "published",
+                "scheduled",
+                "inflight",
+                "pending"
               ]
             }
           },
