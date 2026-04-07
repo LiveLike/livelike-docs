@@ -5,6 +5,12 @@ excerpt: >-
   `csv`, `json`, or `xlsx`.
 
 
+  **Before calling this:** Check `fully_parameterized` on the Card. If it is
+  `false`, call `GET /api/card/{id}` first and look for parameters where
+  `required: true` and `default` is not set — you must include those in the
+  request body or this call will fail.
+
+
   **Request body:** Pass a `parameters` array with one entry per filter slot you
   want to set. Pass an empty array `[]` if there are no required filters or you
   want the defaults.

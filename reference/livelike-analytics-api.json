@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "title": "LiveLike Analytics API",
     "description": "The LiveLike Analytics API gives you direct access to the same data that powers your LiveLike dashboards. Under the hood it talks to [Metabase](https://www.metabase.com/), so if you've used Metabase before, the patterns here will feel familiar.\n\n## Core Concepts\n\n### Collections\nA **Collection** is just a folder. It holds your Cards, Dashboards, and Documents and can be nested inside other Collections, so you can organise things however your team works. Everything lives in exactly one Collection. The top of the folder tree is the special **root** Collection (id `\"root\"`). Start here when you're trying to find a specific report or dashboard.\n\n### Cards\nA **Card** is a single saved query with a chart attached. Each Card runs against one database, uses either raw SQL (`query_type: \"native\"`) or the Metabase GUI query builder (`query_type: \"query\"`), and renders as a specific chart type — `scalar`, `table`, `bar`, `line`, `pie`, and so on. Cards can have **template-tag parameters** — these are filter slots you fill in when you download data. Use Cards to pull raw data for a single metric or report.\n\n### Dashboards\nA **Dashboard** is a collection of Cards arranged on a canvas. Each Card placed on a Dashboard is called a **Dashcard** and has its own `id` (the `dashcard_id`), which is separate from the underlying Card's `id` (`card_id`). Dashboards can also have **dashboard-level filters** that are wired to multiple Dashcards at once — set one filter value and it fans out to all connected charts. To download data from a Dashboard Card, you need three IDs: `dashboard_id`, `dashcard_id`, and `card_id`.\n\n## Authentication\nEvery request needs an API key in the `x-api-key` header. Keys are scoped to specific Collections — if your key can't reach a Collection or Card, you'll get a `403 Forbidden` back.\n\n## How it typically works\n1. **Find your content** — Call `GET /api/collection/tree` to browse the folder structure and locate the right Collection.\n2. **List what's inside** — Call `GET /api/collection/{id}/items` to see the Cards and Dashboards in that Collection.\n3. **Check what filters it needs** — Call `GET /api/card/{id}` or `GET /api/dashboard/{id}` to see what parameters a Card or Dashboard accepts.\n4. **Download the data** — Call `POST /api/card/{id}/query/{format}` or `POST /api/dashboard/{dashboard_id}/dashcard/{dashcard_id}/card/{card_id}/query/{format}` with any filter values in the request body."
   },
@@ -14,15 +14,15 @@
   "tags": [
     {
       "name": "Collections",
-      "description": "Collections are folders. They hold Cards (saved queries), Dashboards, and Documents, and they can be nested as deep as you need to match your team's structure or client hierarchy.\n\n**Things worth knowing:**\n- Every Card and Dashboard belongs to exactly one Collection.\n- The root Collection uses the string id `\"root\"`, not an integer.\n- The `location` field shows the full folder path — for example, `\"/11/74/\"` means this Collection sits inside Collection 74, which sits inside Collection 11.\n- Your API key only sees Collections that have been shared with it.\n- Use `GET /api/collection/tree` to get the whole folder tree in one call. Use `GET /api/collection/` for a flat list. Use `GET /api/collection/{id}/items` to see what's inside a specific Collection."
+      "description": "Collections are folders. They hold Cards (saved queries), Dashboards, and Documents, and they can be nested as deep as you need to match your team's structure or client hierarchy.\n\n**Things worth knowing:**\n- Every Card and Dashboard belongs to exactly one Collection.\n- The root Collection uses the string id `\"root\"`, not an integer.\n- The `location` field shows the full folder path — for example, `\"/11/74/\"` means this Collection sits inside Collection 74, which sits inside Collection 11.\n- Your API key only sees Collections that have been shared with it.\n- Items where `is_personal: true` are individual users' private folders — skip these when browsing for shared analytics content.\n- Use `GET /api/collection/tree` to get the whole folder tree in one call. Use `GET /api/collection/` for a flat list. Use `GET /api/collection/{id}/items` to see what's inside a specific Collection."
     },
     {
       "name": "Cards",
-      "description": "A Card is a single saved analytics query paired with a chart. Every chart on a Dashboard and every standalone report you can download is backed by a Card.\n\n**Things worth knowing:**\n- `query_type` is either `\"native\"` (written in SQL) or `\"query\"` (built with the Metabase drag-and-drop query builder).\n- `display` is the chart type: `scalar` (a single big number), `table`, `bar`, `line`, `pie`, `row`, `area`, `combo`, `funnel`, `object`, and others.\n- `parameters` lists the filter slots on this Card — these are the values you pass in when you want filtered results.\n- `result_metadata` lists the output columns. The `display_name` of each column is the exact key you'll see in JSON export rows.\n- `database_id` tells you which database the Card queries — for example, `3` is blast-prod PostgreSQL and `2` is Redshift analytics.\n- `fully_parameterized` being `true` means all filter slots have defaults and the Card will run without you passing anything."
+      "description": "A Card is a single saved analytics query paired with a chart. Every chart on a Dashboard and every standalone report you can download is backed by a Card.\n\n**Things worth knowing:**\n- `query_type` is either `\"native\"` (written in SQL) or `\"query\"` (built with the Metabase drag-and-drop query builder).\n- `display` is the chart type: `scalar` (a single big number), `table`, `bar`, `line`, `pie`, `row`, `area`, `combo`, `funnel`, `object`, and others.\n- `parameters` lists the filter slots on this Card — these are the values you pass in when you want filtered results.\n- `result_metadata` lists the output columns. The `display_name` of each column is the exact key you'll see in JSON export rows.\n- `database_id` tells you which database the Card queries — for example, `3` is blast-prod PostgreSQL and `2` is Redshift analytics.\n- `fully_parameterized` being `true` means all filter slots have defaults and the Card will run without you passing anything. If it is `false`, check `parameters[]` for entries where `required` is `true` and `default` is not set — you must supply values for those or the download will fail."
     },
     {
       "name": "Dashboards",
-      "description": "A Dashboard is a canvas of Cards. It gives you a single view across multiple metrics and lets one filter control update several charts at the same time.\n\n**Things worth knowing:**\n- A Dashboard contains one or more **Dashcards** — each one is a Card placed on the canvas.\n- A Dashcard has two IDs you need: `id` (the `dashcard_id`, specific to this placement) and `card_id` (the underlying Card). You need both to download data via the Dashboard Card download endpoint.\n- `parameters` on the Dashboard are the **dashboard-level filters** you see in the Metabase UI — things like a date range picker or a client selector.\n- `parameter_mappings` on each Dashcard shows how a dashboard filter connects to a specific template tag on that Card.\n- `tabs` appear when the Dashboard uses a tabbed layout; each tab holds a subset of the Dashcards.\n- Always call `GET /api/dashboard/{id}` first to get the `dashcard_id` and `card_id` you need before hitting the download endpoint."
+      "description": "A Dashboard is a canvas of Cards. It gives you a single view across multiple metrics and lets one filter control update several charts at the same time.\n\n**Things worth knowing:**\n- A Dashboard contains one or more **Dashcards** — each one is a Card placed on the canvas.\n- A Dashcard has two IDs you need: `id` (the `dashcard_id`, specific to this placement) and `card_id` (the underlying Card). You need both to download data via the Dashboard Card download endpoint.\n- `parameters` on the Dashboard are the **dashboard-level filters** you see in the Metabase UI — things like a date range picker or a client selector. Some filters control which rows are returned (e.g. `client_id`, `date_range`); others control the **aggregation grain** of the data (e.g. an `interval` filter with values like `day`, `week`, or `month`). Check `parameter_mappings` on each Dashcard to see which Cards a filter is wired to.\n- `parameter_mappings` on each Dashcard shows how a dashboard filter connects to a specific template tag on that Card.\n- `tabs` appear when the Dashboard uses a tabbed layout; each tab holds a subset of the Dashcards.\n- Always call `GET /api/dashboard/{id}` first to get the `dashcard_id` and `card_id` you need before hitting the download endpoint."
     }
   ],
   "components": {
@@ -70,7 +70,7 @@
           },
           "is_personal": {
             "type": "boolean",
-            "description": "`true` if this Collection belongs to a specific Metabase user's personal space. Personal Collections aren't usually relevant when using the API."
+            "description": "`true` if this Collection belongs to a specific Metabase user's personal space. Personal Collections aren't relevant when using the API — filter these out when browsing for shared analytics content."
           },
           "archived": {
             "type": "boolean",
@@ -158,7 +158,7 @@
           },
           "fully_parameterized": {
             "type": "boolean",
-            "description": "`true` means all filter slots on the Card have defaults — so it'll run without you passing any parameters. `false` means at least one parameter is required."
+            "description": "For **Cards**: `true` means all filter slots have defaults and the Card will run without you passing any parameters. `false` means at least one parameter has no default — call `GET /api/card/{id}` to find which ones are required before downloading. For **Dashboards**: this field is always `false` and can be ignored — inspect individual Cards via `GET /api/dashboard/{id}` instead."
           }
         }
       },
@@ -217,10 +217,10 @@
           },
           "required": {
             "type": "boolean",
-            "description": "`true` if you must provide a value for the Card to run."
+            "description": "`true` means you must include this parameter in the download request body. If `required` is `true` and no `default` is set, calling the download endpoint without it will return a `400 Bad Request` or trigger a `500` query error. Always check this field before calling the download endpoint."
           },
           "default": {
-            "description": "The value used when you don't pass anything explicitly. If this is set, `fully_parameterized` on the Card will be `true`."
+            "description": "The value used when you don't pass anything explicitly. If this is set, the Card can run without you providing this parameter, and `fully_parameterized` on the Card will be `true`."
           }
         }
       },
@@ -249,7 +249,7 @@
       },
       "CardMetadata": {
         "type": "object",
-        "description": "Full metadata for a saved Card. This doesn't run the query or return any data — use the download endpoints for that. You mainly call this to understand what filters the Card expects and what columns it returns.",
+        "description": "Full metadata for a saved Card. This doesn't run the query or return any data — use the download endpoints for that. You mainly call this to understand what filters the Card expects and what columns it returns.\n\n**Before downloading:** Check `fully_parameterized`. If it is `false`, look through `parameters[]` for any entry where `required` is `true` and `default` is absent — you must supply a value for each of those in the download request body, or the call will fail with a `400` or `500`.",
         "properties": {
           "id": {
             "type": "integer",
@@ -316,7 +316,7 @@
       },
       "DashboardParameter": {
         "type": "object",
-        "description": "A filter control that lives at the Dashboard level — like a date range picker or a client selector at the top of a dashboard. When you pass a value for this in a download request, it automatically flows through to all Cards wired up to it via `parameter_mappings`.",
+        "description": "A filter control that lives at the Dashboard level — like a date range picker or a client selector at the top of a dashboard. When you pass a value for this in a download request, it automatically flows through to all Cards wired up to it via `parameter_mappings`.\n\nNote that not all dashboard filters narrow down rows — some control the **aggregation grain** of the data (for example, an `interval` filter accepting `day`, `week`, or `month` changes how results are grouped in time, rather than filtering which rows are included). Check the filter's `slug` and `type` to understand its role.",
         "properties": {
           "id": {
             "type": "string",
@@ -332,7 +332,7 @@
           },
           "type": {
             "type": "string",
-            "description": "The filter type, e.g. `\"category\"`, `\"date/single\"`, `\"date/range\"`, `\"number/=\"`, `\"string/=\"`."
+            "description": "The filter type. Common values: `\"category\"` (exact match on a text field), `\"string/=\"` (string equality), `\"date/single\"` (a single date), `\"date/range\"` (a date range), `\"number/=\"` (numeric equality). Use the `slug` to identify what the filter controls."
           },
           "default": {
             "description": "The value applied when you don't pass anything explicitly."
@@ -445,7 +445,7 @@
           },
           "parameters": {
             "type": "array",
-            "description": "The dashboard-level filter controls visible in the Metabase UI. Pass values for these in download requests to filter all connected Dashcards at once.",
+            "description": "The dashboard-level filter controls visible in the Metabase UI. Pass values for these in download requests to filter all connected Dashcards at once. Some filters narrow rows (e.g. a client or date filter); others change the aggregation grain (e.g. an interval filter switching between `day`, `week`, and `month`).",
             "items": {
               "$ref": "#/components/schemas/DashboardParameter"
             }
@@ -507,7 +507,7 @@
         "properties": {
           "parameters": {
             "type": "array",
-            "description": "The filter values to apply when running the query. Pass an **empty array `[]`** if the Card has no required filters or you're happy with the defaults. Add one `QueryFilterParameter` object for each filter slot you want to set.",
+            "description": "The filter values to apply when running the query. Pass an **empty array `[]`** if the Card has no required filters or you're happy with the defaults. Add one `QueryFilterParameter` object for each filter slot you want to set. If you omit a parameter that has `required: true` and no `default`, the request will fail with a `400` or `500`.",
             "items": {
               "$ref": "#/components/schemas/QueryFilterParameter"
             }
@@ -538,7 +538,7 @@
           "Collections"
         ],
         "summary": "List All Collections",
-        "description": "Returns a flat list of all Collections your API key can see. Use the `id` values to dig into a specific Collection with `GET /api/collection/{id}/items`.\n\n**Flat list vs. tree:** Use this endpoint when you just need a simple list. Use `/api/collection/tree` when you need to see the parent-child nesting in one call.\n\n> **Note:** The root Collection has `id: \"root\"` (a string). All others have integer IDs.",
+        "description": "Returns a flat list of all Collections your API key can see. Use the `id` values to dig into a specific Collection with `GET /api/collection/{id}/items`.\n\n**Flat list vs. tree:** Use this endpoint when you just need a simple list. Use `/api/collection/tree` when you need to see the parent-child nesting in one call.\n\n> **Note:** The root Collection has `id: \"root\"` (a string). All others have integer IDs.\n\n> **Tip:** Filter out items where `is_personal: true` to skip individual user folders — these appear in the list but are not relevant for shared analytics content.",
         "operationId": "get_collections",
         "responses": {
           "200": {
@@ -757,7 +757,7 @@
           "Cards"
         ],
         "summary": "Get Card Metadata",
-        "description": "Gets the full metadata for a Card without actually running the query. Call this first to understand what you're working with before hitting the download endpoint.\n\n**What you'll learn from this:**\n- `parameters` — what filter slots exist and whether they're required.\n- `result_metadata` — the exact column names (use `display_name`) and data types of the output before you download.\n- `query_type` and `display` — how the Card was built and what chart type it uses.\n- `fully_parameterized` — if `true`, you can call the download endpoint with `parameters: []` and it'll work.\n\n> **Tip:** The `display_name` values in `result_metadata` are the exact keys in JSON export rows.",
+        "description": "Gets the full metadata for a Card without actually running the query. Call this first to understand what you're working with before hitting the download endpoint.\n\n**What you'll learn from this:**\n- `parameters` — what filter slots exist and whether they're required.\n- `result_metadata` — the exact column names (use `display_name`) and data types of the output before you download.\n- `query_type` and `display` — how the Card was built and what chart type it uses.\n- `fully_parameterized` — if `true`, you can call the download endpoint with `parameters: []` and it'll work. If `false`, check `parameters[]` for entries where `required: true` and `default` is absent — you must pass values for those or the download will fail with a `400` or `500`.\n\n> **Tip:** The `display_name` values in `result_metadata` are the exact keys in JSON export rows.",
         "operationId": "get_card",
         "parameters": [
           {
@@ -858,7 +858,7 @@
           "Cards"
         ],
         "summary": "Download Card Data",
-        "description": "Runs the Card's query and returns the results in the format you choose — `csv`, `json`, or `xlsx`.\n\n**Request body:** Pass a `parameters` array with one entry per filter slot you want to set. Pass an empty array `[]` if there are no required filters or you want the defaults.\n\n**JSON format:** Returns a flat array of objects. Each object is one row, and the keys are the `display_name` values from `result_metadata`.\n\n**Picking a format:**\n| Format | Best for |\n|--------|----------|\n| `json` | Processing results in code |\n| `csv`  | Spreadsheets or data pipelines |\n| `xlsx` | Formatted Excel files for end users |\n\n> **Note:** This endpoint is a `POST`, not a `GET`, because filter values go in the request body — not the URL.",
+        "description": "Runs the Card's query and returns the results in the format you choose — `csv`, `json`, or `xlsx`.\n\n**Before calling this:** Check `fully_parameterized` on the Card. If it is `false`, call `GET /api/card/{id}` first and look for parameters where `required: true` and `default` is not set — you must include those in the request body or this call will fail.\n\n**Request body:** Pass a `parameters` array with one entry per filter slot you want to set. Pass an empty array `[]` if there are no required filters or you want the defaults.\n\n**JSON format:** Returns a flat array of objects. Each object is one row, and the keys are the `display_name` values from `result_metadata`.\n\n**Picking a format:**\n| Format | Best for |\n|--------|----------|\n| `json` | Processing results in code |\n| `csv`  | Spreadsheets or data pipelines |\n| `xlsx` | Formatted Excel files for end users |\n\n> **Note:** This endpoint is a `POST`, not a `GET`, because filter values go in the request body — not the URL.",
         "operationId": "post_card_query_export",
         "parameters": [
           {
@@ -1000,7 +1000,7 @@
             "description": "Card not found."
           },
           "500": {
-            "description": "Query failed — the Card's SQL threw a database error. Check that your `client_id` is valid and all required parameters are present."
+            "description": "Query failed — the Card's SQL threw a database error. This often means a required template tag parameter was not passed or was set to an invalid value. Check `parameters[]` on the Card and ensure all entries with `required: true` are included."
           }
         }
       }

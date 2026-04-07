@@ -17,7 +17,9 @@ excerpt: >-
   uses.
 
   - `fully_parameterized` — if `true`, you can call the download endpoint with
-  `parameters: []` and it'll work.
+  `parameters: []` and it'll work. If `false`, check `parameters[]` for entries
+  where `required: true` and `default` is absent — you must pass values for
+  those or the download will fail with a `400` or `500`.
 
 
   > **Tip:** The `display_name` values in `result_metadata` are the exact keys
