@@ -1309,15 +1309,16 @@
   "x-readme": {
     "explorer-enabled": true,
     "proxy-enabled": true,
-    "x-tagGroups": [
-      {
-        "name": "API Reference",
-        "tags": [
-          "Collections",
-          "Cards",
-          "Dashboards"
-        ]
-      }
-    ]
-  }
+    "headers": []
+  },
+  "x-tagGroups": [
+    {
+      "name": "API Reference",
+      "tags": [
+        "Collections",
+        "Cards",
+        "Dashboards"
+      ]
+    }
+  ]
 }
