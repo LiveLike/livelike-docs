@@ -3,7 +3,7 @@
   "info": {
     "version": "1.1.0",
     "title": "LiveLike Analytics API",
-    "description": "The LiveLike Analytics API lets you pull data from your LiveLike dashboards directly into your own systems.\n\nLiveLike sets up your collection and reports for you. All you need to do is use this API to fetch the data.\n\n## Getting started\n\nYour collection ID and API key are provided by your LiveLike account manager. If you don't have them yet, reach out to your account manager to get set up.\n\nOnce you have them, the flow is straightforward:\n\n1. Call `GET /api/collection/{id}/items` with your collection ID to see your available reports (Cards).\n2. Call `GET /api/card/{id}` to check if a report needs any filters before you download it.\n3. Call `POST /api/card/{id}/query/{format}` to download the data in CSV, JSON, or Excel.\n\n## Authentication\n\nAdd your API key to every request as a header:\n\n```\nx-api-key: YOUR_API_KEY\n```\n\nDon't have a key? Contact your LiveLike account manager."
+    "description": "Access the data behind your LiveLike dashboards. Contact your LiveLike account manager to get your API key."
   },
   "servers": [
     {
@@ -51,7 +51,7 @@
                 "type": "string"
               }
             ],
-            "description": "Your collection ID. Use this in `GET /api/collection/{id}/items`."
+            "description": "Collection ID. Use this in `GET /api/collection/{id}/items` to list your reports."
           },
           "name": {
             "type": "string",
@@ -93,10 +93,6 @@
               "null"
             ],
             "description": "What this report covers."
-          },
-          "fully_parameterized": {
-            "type": "boolean",
-            "description": "`true` = ready to download with no filters. `false` = check if any filters are required first."
           }
         }
       },
@@ -398,7 +394,7 @@
           "Collections"
         ],
         "summary": "List All Collections",
-        "description": "Lists all collections your API key has access to. Your collection ID is provided by LiveLike — if you already have it, you can skip this and go straight to listing your reports.\n\n> The root collection has `id: \"root\"`. Your collection will have an integer ID.",
+        "description": "Lists all collections your API key has access to. Use the `id` from your collection in the next step to list your reports.\n\n> The root collection has `id: \"root\"`. Your collection will have an integer ID.",
         "operationId": "get_collections",
         "responses": {
           "200": {
@@ -504,22 +500,19 @@
                           "id": 3267,
                           "name": "Daily KPIs - Unique Users & Impressions",
                           "model": "card",
-                          "description": "Daily aggregated KPIs",
-                          "fully_parameterized": true
+                          "description": "Daily aggregated KPIs"
                         },
                         {
                           "id": 3268,
                           "name": "Widget Engagement",
                           "model": "card",
-                          "description": null,
-                          "fully_parameterized": false
+                          "description": null
                         },
                         {
                           "id": 343,
                           "name": "Serie A Overview",
                           "model": "dashboard",
-                          "description": null,
-                          "fully_parameterized": false
+                          "description": null
                         }
                       ]
                     }
@@ -546,7 +539,7 @@
           "Cards"
         ],
         "summary": "Get Card Metadata",
-        "description": "Returns the details of a report — what columns it has and whether any filters are required.\n\nCheck `fully_parameterized` before downloading. If it's `true`, you can download straight away with `parameters: []`. If it's `false`, look through `parameters` for any entry where `required` is `true` — you'll need to pass a value for those.",
+        "description": "Returns the details of a report — what columns it returns and whether any filters are needed before downloading.",
         "operationId": "get_card",
         "parameters": [
           {
