@@ -7,7 +7,7 @@ metadata:
 ---
 Below is a list of analytics events triggered in Sweepstakes, along with their details.
 
-**Note:** For a practical implementation reference, explore our [demo](), where event listeners have been integrated and forwarded to Google Analytics (GA).
+**Note:** For a practical implementation reference, explore our , where event listeners have been integrated and forwarded to Google Analytics (GA).
 
 ### **Event List**
 
@@ -91,70 +91,37 @@ Below is a list of analytics events triggered in Sweepstakes, along with their d
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        **game_completed**
+        **click_join_sweepstake**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        When game is over and result screen is displayed.
+        Fires when the user taps or clicks the Join/Participate button on any screen, indicating the initiation of participation.
       </td>
 
       <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
-        `top_win_streak` (number)
-        `play_streak` (number)
-        `games_played` (number)
-        `games_won` (number)
-        `best_try` (number)
-        `guess_result` (string)
-        `attempt_number` (number)
-        `is_journey_final_step` (boolean)
+        `source` (string)
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Captures when the game is over.
+        Triggered when a user clicks on the Join or Participate button to start participation in the sweepstakes.
       </td>
     </tr>
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        **click_share**
+        **extra_entry_earned**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        When user clicks on share button after game over (if enabled)
+        Fires when a user successfully earns an extra entry after completing a qualifying action (e.g., email submission, referral, or similar)
       </td>
 
       <td style={{ textAlign: "left" }}>
-        —
+        `source` (string)
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Tracks when user shares the stats.
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        **click_stats**
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        When user clicks on play again button after game over.
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        `word_length` (number)
-        `game_mode` (string)
-        `top_win_streak` (number)
-        `play_streak` (number)
-        `games_played` (number)
-        `games_won` (number)
-        `best_try` (number)
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        Tracks when user opens stats.
+        Triggered when a user earns an additional entry through actions such as email submission, referrals, etc
       </td>
     </tr>
   </tbody>
