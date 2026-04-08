@@ -3,7 +3,7 @@
   "info": {
     "version": "1.1.0",
     "title": "LiveLike Analytics API",
-    "description": "Access the data behind your LiveLike dashboards via [metabase.livelikecdn.com](https://metabase.livelikecdn.com).\n\n## How it works\nYour content is organised in **Collections** (folders). Each Collection contains **Cards** (individual reports) and **Dashboards** (groups of Cards). Most clients have a single Collection.\n\n**Typical flow:**\n1. `GET /api/collection/` — find your Collection ID\n2. `GET /api/collection/{id}/items` — list the Cards inside it\n3. `POST /api/card/{id}/query/{format}` — download the data\n\n## Authentication\nPass your API key in every request: `x-api-key: YOUR_KEY`"
+    "description": "Access the data behind your LiveLike dashboards via [metabase.livelikecdn.com](https://metabase.livelikecdn.com).\n\nYour collection and its Cards are set up by LiveLike. Use this API to find your Card IDs and download the data.\n\n**Flow:**\n1. `GET /api/collection/{id}/items` — list your Cards\n2. `GET /api/card/{id}` — check if any filters are needed\n3. `POST /api/card/{id}/query/{format}` — download the data\n\n## Authentication\n`x-api-key: YOUR_KEY` on every request."
   },
   "servers": [
     {
@@ -40,7 +40,7 @@
     "schemas": {
       "Collection": {
         "type": "object",
-        "description": "A folder containing Cards and Dashboards.",
+        "description": "A folder containing your Cards and Dashboards.",
         "properties": {
           "id": {
             "oneOf": [
@@ -51,7 +51,7 @@
                 "type": "string"
               }
             ],
-            "description": "Collection ID. The root collection uses the string `\"root\"`; all others are integers."
+            "description": "Collection ID. The root collection uses `\"root\"`; all others are integers."
           },
           "name": {
             "type": "string",
@@ -63,63 +63,16 @@
               "null"
             ],
             "description": "Optional description."
-          },
-          "slug": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "URL-safe name. Null for the root collection."
-          },
-          "location": {
-            "type": "string",
-            "description": "Folder path from root, e.g. `\"/\"` = top level, `\"/11/74/\"` = nested inside 11 → 74."
-          },
-          "is_personal": {
-            "type": "boolean",
-            "description": "`true` for personal user folders — skip these."
-          },
-          "archived": {
-            "type": "boolean",
-            "description": "`true` if archived."
-          },
-          "entity_id": {
-            "type": "string",
-            "description": "Stable UUID — safe to store as a long-lived reference."
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Created timestamp (ISO 8601)."
           }
         }
       },
-      "CollectionTree": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Collection"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "children": {
-                "type": "array",
-                "description": "The sub-collections nested inside this one. Only present in the `/api/collection/tree` response. An empty array means there are no sub-collections.",
-                "items": {
-                  "$ref": "#/components/schemas/CollectionTree"
-                }
-              }
-            }
-          }
-        ]
-      },
       "CollectionItem": {
         "type": "object",
-        "description": "A Card, Dashboard, or Document inside a Collection.",
+        "description": "A Card or Dashboard inside a Collection.",
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Item ID. Use as `card_id` or `dashboard_id` in follow-up calls."
+            "description": "Item ID. Use as `card_id` or `dashboard_id`."
           },
           "name": {
             "type": "string",
@@ -132,14 +85,7 @@
               "dashboard",
               "document"
             ],
-            "description": "`\"card\"` = report, `\"dashboard\"` = dashboard, `\"document\"` = text page."
-          },
-          "display": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Chart type (Cards only). E.g. `scalar`, `table`, `bar`, `line`."
+            "description": "`\"card\"` = report, `\"dashboard\"` = dashboard."
           },
           "description": {
             "type": [
@@ -148,32 +94,9 @@
             ],
             "description": "Optional description."
           },
-          "collection_id": {
-            "type": "integer",
-            "description": "Parent Collection ID."
-          },
-          "database_id": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "description": "Database the Card queries. `3` = blast-prod, `2` = Redshift."
-          },
-          "entity_id": {
-            "type": "string",
-            "description": "Stable UUID."
-          },
-          "last_used_at": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date-time",
-            "description": "Last viewed or run. Null if never used."
-          },
           "fully_parameterized": {
             "type": "boolean",
-            "description": "Cards: `true` = safe to download with `parameters: []`. `false` = check required filters first. Always `false` for Dashboards."
+            "description": "Cards: `true` = download with `parameters: []`. `false` = check required filters first."
           }
         }
       },
@@ -186,7 +109,7 @@
               "integer",
               "null"
             ],
-            "description": "Total items. Can be null on empty Collections — use `data.length` instead."
+            "description": "Total item count. Can be null — use `data.length` instead."
           },
           "data": {
             "type": "array",
@@ -194,21 +117,6 @@
             "items": {
               "$ref": "#/components/schemas/CollectionItem"
             }
-          },
-          "models": {
-            "type": "array",
-            "description": "Item types included, e.g. `[\"card\", \"dashboard\"]`.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "limit": {
-            "type": "integer",
-            "description": "Page size requested."
-          },
-          "offset": {
-            "type": "integer",
-            "description": "Starting offset."
           }
         }
       },
@@ -216,25 +124,21 @@
         "type": "object",
         "description": "A filter slot on a Card.",
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "Parameter UUID."
-          },
           "name": {
             "type": "string",
-            "description": "Internal name — use this in `target` arrays when querying."
+            "description": "Internal name — use in `target` arrays."
           },
           "display_name": {
             "type": "string",
-            "description": "Label shown in the UI."
+            "description": "Label."
           },
           "type": {
             "type": "string",
-            "description": "Type: `\"text\"`, `\"number\"`, `\"date\"`, `\"dimension\"`."
+            "description": "Type: `\"text\"`, `\"number\"`, `\"date\"`."
           },
           "required": {
             "type": "boolean",
-            "description": "`true` = must be passed. Missing it returns `400` or `500`."
+            "description": "`true` = must be passed or download fails."
           },
           "default": {
             "description": "Default value. When set, the filter is optional."
@@ -251,24 +155,17 @@
           },
           "display_name": {
             "type": "string",
-            "description": "Column label — this is the key in JSON export rows."
+            "description": "Column label — the key in JSON export rows."
           },
           "base_type": {
             "type": "string",
             "description": "Data type, e.g. `\"type/Text\"`, `\"type/Integer\"`, `\"type/DateTime\"`."
-          },
-          "semantic_type": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Optional semantic label, e.g. `\"type/PK\"`. Null if not set."
           }
         }
       },
       "CardMetadata": {
         "type": "object",
-        "description": "Card metadata. Check `fully_parameterized` and `parameters` before downloading.",
+        "description": "Card metadata. Check `parameters` before downloading.",
         "properties": {
           "id": {
             "type": "integer",
@@ -283,45 +180,11 @@
               "string",
               "null"
             ],
-            "description": "What the Card measures. Null if not set."
-          },
-          "display": {
-            "type": "string",
-            "description": "Chart type."
-          },
-          "query_type": {
-            "type": "string",
-            "enum": [
-              "native",
-              "query"
-            ],
-            "description": "`\"native\"` = SQL, `\"query\"` = query builder."
-          },
-          "collection_id": {
-            "type": "integer",
-            "description": "Parent Collection ID."
-          },
-          "database_id": {
-            "type": "integer",
-            "description": "`3` = blast-prod PostgreSQL, `2` = Redshift."
-          },
-          "entity_id": {
-            "type": "string",
-            "description": "Stable UUID."
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Created timestamp."
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Last modified timestamp."
+            "description": "What the Card measures."
           },
           "parameters": {
             "type": "array",
-            "description": "Filter slots. Pass values for these when downloading. Empty = no filters.",
+            "description": "Filter slots. Empty = no filters needed.",
             "items": {
               "$ref": "#/components/schemas/TemplateTagParameter"
             }
@@ -353,7 +216,7 @@
           },
           "type": {
             "type": "string",
-            "description": "Filter type, e.g. `\"category\"`, `\"date/range\"`, `\"string/=\"`."
+            "description": "Filter type, e.g. `\"category\"`, `\"date/range\"`."
           },
           "default": {
             "description": "Default value."
@@ -388,11 +251,7 @@
           },
           "card_id": {
             "type": "integer",
-            "description": "Underlying Card ID — pass as `card_id` in the download endpoint."
-          },
-          "dashboard_id": {
-            "type": "integer",
-            "description": "Parent Dashboard ID."
+            "description": "Card ID — pass as `card_id` in the download endpoint."
           },
           "card": {
             "allOf": [
@@ -400,11 +259,11 @@
                 "$ref": "#/components/schemas/CardMetadata"
               }
             ],
-            "description": "Embedded Card metadata."
+            "description": "Card metadata."
           },
           "parameter_mappings": {
             "type": "array",
-            "description": "How dashboard filters map to this Card's template tags.",
+            "description": "How dashboard filters map to this Card.",
             "items": {
               "$ref": "#/components/schemas/ParameterMapping"
             }
@@ -422,10 +281,6 @@
           "name": {
             "type": "string",
             "description": "Tab name."
-          },
-          "position": {
-            "type": "integer",
-            "description": "Position in the tab bar (zero-indexed)."
           }
         }
       },
@@ -448,27 +303,9 @@
             ],
             "description": "Optional description."
           },
-          "collection_id": {
-            "type": "integer",
-            "description": "Parent Collection ID."
-          },
-          "entity_id": {
-            "type": "string",
-            "description": "Stable UUID."
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Created timestamp."
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Last modified timestamp."
-          },
           "parameters": {
             "type": "array",
-            "description": "Dashboard-level filters. Pass values to filter all wired Cards at once.",
+            "description": "Dashboard-level filters. Pass values to filter all Cards at once.",
             "items": {
               "$ref": "#/components/schemas/DashboardParameter"
             }
@@ -482,7 +319,7 @@
           },
           "dashcards": {
             "type": "array",
-            "description": "All Cards on this Dashboard. Each has `id` (dashcard_id) and `card_id`.",
+            "description": "Cards on this Dashboard. Each has `id` (dashcard_id) and `card_id`.",
             "items": {
               "$ref": "#/components/schemas/DashboardCard"
             }
@@ -561,7 +398,7 @@
           "Collections"
         ],
         "summary": "List All Collections",
-        "description": "Returns all Collections your API key can access. Filter out `is_personal: true` items — those are user folders, not shared analytics content.\n\n> The root Collection has `id: \"root\"`. All others use integer IDs.",
+        "description": "Lists all Collections your API key can access. If you already have your Collection ID from LiveLike, skip this and go straight to listing items.\n\n> The root Collection has `id: \"root\"`. All others use integer IDs.",
         "operationId": "get_collections",
         "responses": {
           "200": {
@@ -569,84 +406,23 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Collection"
                   }
                 },
                 "examples": {
                   "OK": {
-                    "summary": "Two collections — root and a top-level analytics collection",
+                    "summary": "Client collection",
                     "value": [
                       {
                         "id": "root",
                         "name": "Our analytics",
-                        "is_personal": false,
-                        "location": null,
-                        "archived": false
+                        "description": null
                       },
                       {
-                        "id": 11,
-                        "name": "Livelike Analytics Dashboard",
-                        "slug": "livelike_analytics_dashboard",
-                        "description": null,
-                        "is_personal": false,
-                        "archived": false,
-                        "location": "/",
-                        "created_at": "2025-01-15T08:24:54.114487Z"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized — `x-api-key` header is missing or invalid."
-          }
-        }
-      }
-    },
-    "/api/collection/tree": {
-      "get": {
-        "tags": [
-          "Collections"
-        ],
-        "summary": "Get Collection Tree",
-        "description": "Returns Collections as a nested tree. Useful when you need to see the folder hierarchy in one call rather than reconstructing it from `location` paths.",
-        "operationId": "get_collection_tree",
-        "responses": {
-          "200": {
-            "description": "An array of top-level Collections, each with a recursive `children` array.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CollectionTree"
-                  }
-                },
-                "examples": {
-                  "OK": {
-                    "summary": "Top-level collection with one nested sub-collection",
-                    "value": [
-                      {
-                        "id": 11,
-                        "name": "Livelike Analytics Dashboard",
-                        "slug": "livelike_analytics_dashboard",
-                        "description": null,
-                        "is_personal": false,
-                        "archived": false,
-                        "location": "/",
-                        "children": [
-                          {
-                            "id": 71,
-                            "name": "Dashboard - Feature wise",
-                            "slug": "dashboard___feature_wise",
-                            "location": "/11/",
-                            "children": []
-                          }
-                        ]
+                        "id": 1405,
+                        "name": "Serie A",
+                        "description": null
                       }
                     ]
                   }
@@ -673,9 +449,7 @@
             "in": "path",
             "name": "collection_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "An integer Collection ID from `GET /api/collection/` or `GET /api/collection/tree`. Don't pass the string `\"root\"` here — you need an actual integer ID."
           },
           {
@@ -683,7 +457,6 @@
             "name": "models",
             "required": false,
             "schema": {
-              "type": "string",
               "enum": [
                 "card",
                 "dashboard",
@@ -697,7 +470,6 @@
             "name": "limit",
             "required": false,
             "schema": {
-              "type": "integer",
               "minimum": 1,
               "default": 50
             },
@@ -708,7 +480,6 @@
             "name": "offset",
             "required": false,
             "schema": {
-              "type": "integer",
               "minimum": 0,
               "default": 0
             },
@@ -725,34 +496,29 @@
                 },
                 "examples": {
                   "OK": {
-                    "summary": "Mixed cards and dashboard in a collection",
+                    "summary": "Cards and a dashboard in a collection",
                     "value": {
-                      "total": 54,
-                      "models": [
-                        "card",
-                        "dashboard"
-                      ],
-                      "limit": 3,
-                      "offset": 0,
+                      "total": 3,
                       "data": [
                         {
-                          "id": 1884,
-                          "name": "Auto Opt-In for Quests enabled",
+                          "id": 3267,
+                          "name": "Daily KPIs - Unique Users & Impressions",
                           "model": "card",
-                          "display": "scalar",
-                          "description": null,
-                          "collection_id": 337,
-                          "database_id": 3,
+                          "description": "Daily aggregated KPIs",
                           "fully_parameterized": true
                         },
                         {
-                          "id": 343,
-                          "name": "Arcade Games",
-                          "model": "dashboard",
-                          "display": null,
+                          "id": 3268,
+                          "name": "Widget Engagement",
+                          "model": "card",
                           "description": null,
-                          "collection_id": 337,
-                          "database_id": null,
+                          "fully_parameterized": false
+                        },
+                        {
+                          "id": 343,
+                          "name": "Serie A Overview",
+                          "model": "dashboard",
+                          "description": null,
                           "fully_parameterized": false
                         }
                       ]
@@ -787,9 +553,7 @@
             "in": "path",
             "name": "card_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Card ID from `GET /api/collection/{id}/items` — look for items where `model` is `\"card\"`."
           }
         ],
@@ -802,41 +566,40 @@
                   "$ref": "#/components/schemas/CardMetadata"
                 },
                 "examples": {
-                  "ScalarCard": {
-                    "summary": "Scalar card with no required parameters",
+                  "NoFilters": {
+                    "summary": "Card with no required filters",
                     "value": {
-                      "id": 1884,
-                      "name": "Auto Opt-In for Quests enabled",
-                      "description": null,
-                      "display": "scalar",
-                      "query_type": "native",
-                      "collection_id": 337,
-                      "database_id": 3,
+                      "id": 3267,
+                      "name": "Daily KPIs - Unique Users & Impressions",
+                      "description": "Daily aggregated KPIs for Serie A",
                       "parameters": [],
                       "result_metadata": [
                         {
-                          "name": "count",
-                          "display_name": "Count",
+                          "name": "date",
+                          "display_name": "date",
+                          "base_type": "type/Text"
+                        },
+                        {
+                          "name": "unique_users",
+                          "display_name": "unique_users",
+                          "base_type": "type/BigInteger"
+                        },
+                        {
+                          "name": "impressions",
+                          "display_name": "impressions",
                           "base_type": "type/BigInteger"
                         }
-                      ],
-                      "created_at": "2025-11-12T13:59:40.527664Z",
-                      "updated_at": "2025-11-12T13:59:40.527664Z"
+                      ]
                     }
                   },
-                  "FilteredTableCard": {
-                    "summary": "Table card requiring a client_id filter",
+                  "WithFilters": {
+                    "summary": "Card with a required filter",
                     "value": {
-                      "id": 1596,
-                      "name": "Total Distinct Users",
-                      "description": "Counts unique user profiles that have interacted with at least one widget.",
-                      "display": "table",
-                      "query_type": "native",
-                      "collection_id": 437,
-                      "database_id": 3,
+                      "id": 3268,
+                      "name": "Widget Engagement",
+                      "description": null,
                       "parameters": [
                         {
-                          "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
                           "name": "client_id",
                           "display_name": "Client ID",
                           "type": "text",
@@ -845,18 +608,16 @@
                       ],
                       "result_metadata": [
                         {
-                          "name": "application_id",
-                          "display_name": "Application ID",
+                          "name": "widget_type",
+                          "display_name": "Widget Type",
                           "base_type": "type/Text"
                         },
                         {
-                          "name": "distinct_users",
-                          "display_name": "Distinct Users",
-                          "base_type": "type/BigInteger"
+                          "name": "engagement_pct",
+                          "display_name": "Engagement %",
+                          "base_type": "type/Float"
                         }
-                      ],
-                      "created_at": "2025-10-21T12:27:55.000000Z",
-                      "updated_at": "2026-01-07T10:17:08.000000Z"
+                      ]
                     }
                   }
                 }
@@ -888,9 +649,7 @@
             "in": "path",
             "name": "card_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Card ID from `GET /api/collection/{id}/items`."
           },
           {
@@ -898,7 +657,6 @@
             "name": "export_format",
             "required": true,
             "schema": {
-              "type": "string",
               "enum": [
                 "csv",
                 "json",
@@ -927,7 +685,6 @@
                   "value": {
                     "parameters": [
                       {
-                        "type": "category",
                         "target": [
                           "variable",
                           [
@@ -945,7 +702,6 @@
                   "value": {
                     "parameters": [
                       {
-                        "type": "category",
                         "target": [
                           "variable",
                           [
@@ -956,7 +712,6 @@
                         "value": "YOUR_CLIENT_ID"
                       },
                       {
-                        "type": "date/range",
                         "target": [
                           "variable",
                           [
@@ -979,14 +734,12 @@
             "content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
                   "format": "binary"
                 },
                 "example": "Application ID,Distinct Users\nabc123,4821\ndef456,1203\n"
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/ExportJsonRow"
                   }
@@ -1004,7 +757,6 @@
               },
               "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
                 "schema": {
-                  "type": "string",
                   "format": "binary"
                 }
               }
@@ -1041,9 +793,7 @@
             "in": "path",
             "name": "dashboard_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Dashboard ID from `GET /api/collection/{id}/items` — look for items where `model` is `\"dashboard\"`."
           }
         ],
@@ -1057,86 +807,36 @@
                 },
                 "examples": {
                   "OK": {
-                    "summary": "Arcade Games dashboard with two dashcards",
+                    "summary": "Dashboard with two cards",
                     "value": {
                       "id": 343,
-                      "name": "Arcade Games",
+                      "name": "Serie A Overview",
                       "description": null,
-                      "collection_id": 437,
-                      "entity_id": "f3c2e1d0-a9b8-7654-3210-fedcba987654",
-                      "created_at": "2025-10-21T12:27:55.14278Z",
-                      "updated_at": "2026-01-07T10:17:08.822493Z",
                       "parameters": [],
                       "tabs": [],
                       "dashcards": [
                         {
                           "id": 3535,
-                          "card_id": 1596,
-                          "dashboard_id": 343,
+                          "card_id": 3267,
                           "parameter_mappings": [],
                           "card": {
-                            "id": 1596,
-                            "name": "Total Distinct Users",
-                            "display": "scalar",
-                            "collection_id": 437
+                            "id": 3267,
+                            "name": "Daily KPIs",
+                            "description": null,
+                            "parameters": [],
+                            "result_metadata": []
                           }
                         },
                         {
                           "id": 3540,
-                          "card_id": 1601,
-                          "dashboard_id": 343,
+                          "card_id": 3268,
                           "parameter_mappings": [],
                           "card": {
-                            "id": 1601,
-                            "name": "Daily Average Users (DAU)",
-                            "display": "line",
-                            "collection_id": 437
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  "DashboardWithFilters": {
-                    "summary": "Dashboard with a client_id filter wired to all dashcards",
-                    "value": {
-                      "id": 400,
-                      "name": "Client Overview",
-                      "description": "Cross-feature KPIs scoped to a single client.",
-                      "collection_id": 11,
-                      "created_at": "2025-06-01T09:00:00.000000Z",
-                      "updated_at": "2026-02-14T15:30:00.000000Z",
-                      "parameters": [
-                        {
-                          "id": "d1e2f3a4-b5c6-7890-abcd-1234567890ef",
-                          "name": "Client ID",
-                          "slug": "client_id",
-                          "type": "category"
-                        }
-                      ],
-                      "tabs": [],
-                      "dashcards": [
-                        {
-                          "id": 4100,
-                          "card_id": 1700,
-                          "dashboard_id": 400,
-                          "parameter_mappings": [
-                            {
-                              "parameter_id": "d1e2f3a4-b5c6-7890-abcd-1234567890ef",
-                              "card_id": 1700,
-                              "target": [
-                                "variable",
-                                [
-                                  "template-tag",
-                                  "client_id"
-                                ]
-                              ]
-                            }
-                          ],
-                          "card": {
-                            "id": 1700,
-                            "name": "Widget Impressions",
-                            "display": "bar",
-                            "collection_id": 11
+                            "id": 3268,
+                            "name": "Widget Engagement",
+                            "description": null,
+                            "parameters": [],
+                            "result_metadata": []
                           }
                         }
                       ]
@@ -1171,27 +871,21 @@
             "in": "path",
             "name": "dashboard_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Dashboard ID from `GET /api/collection/{id}/items` — look for items where `model` is `\"dashboard\"`."
           },
           {
             "in": "path",
             "name": "dashcard_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Dashcard ID from `GET /api/dashboard/{id}` → `dashcards[].id`. This is the placement ID — not the same as `card_id`."
           },
           {
             "in": "path",
             "name": "card_id",
             "required": true,
-            "schema": {
-              "type": "integer"
-            },
+            "schema": {},
             "description": "Card ID from `GET /api/dashboard/{id}` → `dashcards[].card_id`. This is the underlying question ID."
           },
           {
@@ -1199,7 +893,6 @@
             "name": "export_format",
             "required": true,
             "schema": {
-              "type": "string",
               "enum": [
                 "csv",
                 "json",
@@ -1228,7 +921,6 @@
                   "value": {
                     "parameters": [
                       {
-                        "type": "category",
                         "target": [
                           "variable",
                           [
@@ -1246,7 +938,6 @@
                   "value": {
                     "parameters": [
                       {
-                        "type": "category",
                         "target": [
                           "variable",
                           [
@@ -1257,7 +948,6 @@
                         "value": "YOUR_CLIENT_ID"
                       },
                       {
-                        "type": "date/range",
                         "target": [
                           "variable",
                           [
@@ -1280,13 +970,11 @@
             "content": {
               "text/csv": {
                 "schema": {
-                  "type": "string",
                   "format": "binary"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/ExportJsonRow"
                   }
@@ -1304,7 +992,6 @@
               },
               "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
                 "schema": {
-                  "type": "string",
                   "format": "binary"
                 }
               }
