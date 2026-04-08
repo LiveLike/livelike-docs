@@ -1,19 +1,16 @@
 ---
 title: Get Collection Tree
 excerpt: >-
-  Returns the full Collection hierarchy as a nested tree. Each Collection
-  includes a `children` array with its sub-collections, all the way down. This
-  saves you from having to call `/api/collection/` and manually reconstructing
-  the tree from `location` paths.
+  Returns the full Collection hierarchy as a nested tree. Each Collection has a
+  `children` array containing its sub-collections recursively.
 
 
-  **When to use:** Reach for this endpoint when building navigation, discovering
-  nested client sub-folders, or walking the full hierarchy to find a deeply
-  nested Collection by name.
+  Useful for building navigation or finding a deeply nested Collection by name
+  without having to reconstruct the tree from `location` paths.
 
 
-  > **Tip:** The `entity_id` field stays stable across renames and moves — it's
-  safer to store than `id` or `slug`.
+  > **Tip:** `entity_id` stays stable across renames and moves — safer to store
+  than `id` or `slug`.
 api:
   file: livelike-analytics-api.json
   operationId: get_collection_tree

@@ -1,23 +1,20 @@
 ---
 title: List All Collections
 excerpt: >-
-  Returns a flat list of all Collections your API key can see. Use the `id`
-  values to dig into a specific Collection with `GET
-  /api/collection/{id}/items`.
+  Returns a flat list of all Collections your API key has access to. Use the
+  `id` values to list what's inside with `GET /api/collection/{id}/items`.
 
 
-  **Flat list vs. tree:** Use this endpoint when you just need a simple list.
-  Use `/api/collection/tree` when you need to see the parent-child nesting in
+  Use `/api/collection/tree` instead when you need the full nested hierarchy in
   one call.
 
 
-  > **Note:** The root Collection has `id: "root"` (a string). All others have
+  > **Note:** The root Collection has `id: "root"` (a string). All others use
   integer IDs.
 
 
-  > **Tip:** Filter out items where `is_personal: true` to skip individual user
-  folders — these appear in the list but are not relevant for shared analytics
-  content.
+  > **Tip:** Filter out items where `is_personal: true` — these are individual
+  user folders, not shared analytics content.
 api:
   file: livelike-analytics-api.json
   operationId: get_collections

@@ -1,29 +1,24 @@
 ---
 title: Get Card Metadata
 excerpt: >-
-  Gets the full metadata for a Card without actually running the query. Call
-  this first to understand what you're working with before hitting the download
-  endpoint.
+  Returns the full metadata for a Card without running the query. Call this
+  before downloading to check what filters are needed and what columns come
+  back.
 
 
-  **What you'll learn from this:**
+  - `parameters` — filter slots and whether they're required.
 
-  - `parameters` — what filter slots exist and whether they're required.
+  - `result_metadata` — output columns; use `display_name` as the key in JSON
+  exports.
 
-  - `result_metadata` — the exact column names (use `display_name`) and data
-  types of the output before you download.
-
-  - `query_type` and `display` — how the Card was built and what chart type it
-  uses.
-
-  - `fully_parameterized` — if `true`, you can call the download endpoint with
-  `parameters: []` and it'll work. If `false`, check `parameters[]` for entries
-  where `required: true` and `default` is absent — you must pass values for
-  those or the download will fail with a `400` or `500`.
+  - `fully_parameterized` — `true` means you can call the download endpoint with
+  `parameters: []`. If `false`, check `parameters[]` for entries where
+  `required: true` and no `default` — those must be passed or the download
+  fails.
 
 
-  > **Tip:** The `display_name` values in `result_metadata` are the exact keys
-  in JSON export rows.
+  > **Tip:** `display_name` values in `result_metadata` are the exact keys in
+  JSON export rows.
 api:
   file: livelike-analytics-api.json
   operationId: get_card

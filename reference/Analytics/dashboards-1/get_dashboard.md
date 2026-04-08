@@ -1,25 +1,21 @@
 ---
 title: Get Dashboard
 excerpt: >-
-  Gets full Dashboard metadata — all Dashcards, filter controls, and layout
-  info. **Call this before downloading data from a Dashboard Card** — you need
-  the `dashcard_id` (`dashcards[].id`) and `card_id` (`dashcards[].card_id`)
-  from this response.
+  Returns full Dashboard metadata — all Dashcards, filter controls, and layout.
+  Call this before downloading Dashboard Card data to get the `dashcard_id` and
+  `card_id` you need.
 
 
-  **What to look for in the response:**
-
-  1. `dashcards` — find the Card you want by `card.name`, then grab its `id`
+  1. Find the Card you want in `dashcards[]` by `card.name`, then note its `id`
   (dashcard_id) and `card_id`.
 
-  2. `parameters` — if the Dashboard has filters, you can pass values for them
-  in download requests to filter all wired Dashcards at once.
+  2. Check `parameters` — if filters exist, you can pass values in download
+  requests.
 
-  3. `dashcards[].parameter_mappings` — shows exactly which dashboard filter
-  connects to which template tag on each Card.
+  3. `dashcards[].parameter_mappings` shows which dashboard filter maps to which
+  template tag on each Card.
 
-  4. `tabs` — if non-empty, the Dashboard uses tabs and Dashcards are spread
-  across them.
+  4. `tabs` — non-empty means the Dashboard has a tabbed layout.
 api:
   file: livelike-analytics-api.json
   operationId: get_dashboard
