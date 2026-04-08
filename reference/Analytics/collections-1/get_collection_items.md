@@ -1,19 +1,16 @@
 ---
 title: List Collection Items
 excerpt: >-
-  Lists the Cards, Dashboards, and Documents inside a Collection. Use `models`
-  to filter by type, and `limit`/`offset` to page through large Collections.
+  Lists Cards, Dashboards, and Documents inside a Collection.
 
 
-  - Cards (`model: "card"`) → use `id` as `card_id` in `GET /api/card/{id}` and
-  the Card download endpoint.
+  - Cards (`model: "card"`) → use `id` as `card_id` to download data.
 
-  - Dashboards (`model: "dashboard"`) → use `id` as `dashboard_id` in `GET
-  /api/dashboard/{id}` and the Dashboard download endpoint.
+  - Dashboards (`model: "dashboard"`) → use `id` to get `dashcard_id` and
+  `card_id`.
 
 
-  > **Note:** `total` can be null when the Collection is empty. Check
-  `data.length` instead.
+  > `total` can be null on empty Collections. Use `data.length` instead.
 api:
   file: livelike-analytics-api.json
   operationId: get_collection_items
