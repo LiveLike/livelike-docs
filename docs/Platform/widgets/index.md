@@ -18,7 +18,7 @@ next:
       slug: custom-themes
       title: Custom Themes
 ---
-<Image border={false} src="https://files.readme.io/c74645a-banner_widgets.jpg" title="banner_widgets.jpg" />
+![](https://files.readme.io/c74645a-banner_widgets.jpg "banner_widgets.jpg")
 
 The various interactive elements that are delivered to audiences to engage with are called widgets. The library of widgets is always expanding and features things like polls, quizzes, and predictions. Widgets can be created and published manually by producers using the [Producer Suite](doc:ps-getting-started), and can also be automated through the [REST API](doc:rest-api-getting-started).
 
@@ -42,7 +42,7 @@ Click the links below learn more about how to add Popup Widgets to your applicat
 [Android](doc:widget-pop-up-view)
 [Web](https://docs.livelike.com/docs/web-widget-modes#popup-mode)
 
-## Timeline Widets
+## Timeline Widgets
 
 Timeline widgets are shown all at once. Users can browse through them and interact with past widgets. Some use cases for timeline widgets include:
 
@@ -63,7 +63,7 @@ Individual widgets can be embedded on web pages. Basic embed codes can be copied
 
 You can set the widget expiry UTC Time. Widget will no longer be interactive after the selected date and time.
 
-<Image border={false} src="https://files.readme.io/da623ec-Interactivity_Expiry.png" title="Interactivity Expiry.png" />
+![](https://files.readme.io/da623ec-Interactivity_Expiry.png "Interactivity Expiry.png")
 
 # Widget Library
 
@@ -81,7 +81,7 @@ Polls ask audiences questions that don’t necessarily have any right answers. T
 
 You can create text polls or image polls. Image polls allow you to illustrate each answer with an image such as a player photo.
 
-<Image border={false} src="https://files.readme.io/83651e6-image_poll_5.gif" title="image_poll_5.gif" />
+![](https://files.readme.io/83651e6-image_poll_5.gif "image_poll_5.gif")
 
 ## Image Slider
 
@@ -89,7 +89,7 @@ An image slider is essentially a poll to which audience respond using using a sc
 
 Add between 1 to 5 images to illustrate different steps in the scale. If have a a single image, the image will scale up as you move form left to right.
 
-<Image border={false} src="https://files.readme.io/4d2f0e3-image_poll_4.gif" title="image_poll_4.gif" />
+![](https://files.readme.io/4d2f0e3-image_poll_4.gif "image_poll_4.gif")
 
 ## Trivia / Quiz
 
@@ -101,7 +101,7 @@ Quizzes ask audiences questions that have at least one correct answer.
 
 Gamification options: Everybody who answers collects points, and correct answers can earn higher points.
 
-<Image border={false} src="https://files.readme.io/3a4e3e0-image_poll_6.gif" title="image_poll_6.gif" />
+![](https://files.readme.io/3a4e3e0-image_poll_6.gif "image_poll_6.gif")
 
 ## Predictions
 
@@ -115,7 +115,7 @@ Predictions are a two-step interaction. In the first step, the prediction, the p
   * Long term: Who will win the match?
 * Results revealed when producer is ready
 
-<Image border={false} src="https://files.readme.io/95fa43e-image_poll_7.gif" title="image_poll_7.gif" />
+![](https://files.readme.io/95fa43e-image_poll_7.gif "image_poll_7.gif")
 
 ## Cheer Meter
 
@@ -125,7 +125,7 @@ You can provide up to two options in the form of a text and image. Users can tap
 
 In the default scenario, the most popular option is deemed the winner.
 
-<Image border={false} src="https://files.readme.io/5a84146-image_poll_9.gif" title="image_poll_9.gif" />
+![](https://files.readme.io/5a84146-image_poll_9.gif "image_poll_9.gif")
 
 ## Alerts
 
@@ -139,7 +139,7 @@ Alerts are a versatile widget. Use them to broadcast text, media, or a combinati
 * Deep links
 * Content suggestion at the end of a stream
 
-<Image border={false} src="https://files.readme.io/04ad2e4-image_poll_11-min.gif" title="image_poll_11-min.gif" />
+![](https://files.readme.io/04ad2e4-image_poll_11-min.gif "image_poll_11-min.gif")
 
 ## Ask
 
@@ -147,13 +147,13 @@ Ask your audience. Collect their replies, and feature the best ones.
 
 You can gather open-ended feedback, or compile a list of questions from the crowd to ask to on-air talent. Allow everyone watching to share their input, and maybe see their content featured in the experience.
 
-<Image align="center" border={false} width="smart" src="https://files.readme.io/afc7afd-ask-widget--new.gif" />
+<Image align="center" width="smart" src="https://files.readme.io/afc7afd-ask-widget--new.gif" />
 
 ## Number Prediction
 
 Allow your audience to make predictions as numbers so that you can ask about things like sports scores, player performance, number of seconds in a national anthem, etc.
 
-<Image border={false} src="https://files.readme.io/4b3ff08-Number-Prediction.gif" title="Number-Prediction.gif" />
+![](https://files.readme.io/4b3ff08-Number-Prediction.gif "Number-Prediction.gif")
 
 ## Social Embeds
 
@@ -169,13 +169,13 @@ The Engagement SDK has bundled UI for Widgets. These are designed by LiveLike to
 
 We understand that every app is different and our designs style may not fit into yours. For these cases, you can either use the Theme system to alter the Stock UI to generally match your app design or you can design and develop your own Custom UI to work with the Engagement ecosystem.
 
-<Image align="center" alt={375} border={false} caption="The Stock UI for Poll Widget" title="50b616a-stock_ui.gif" src="https://files.readme.io/63e0d43-50b616a-stock_ui.gif" />
+<Image align="center" alt={375} caption="The Stock UI for Poll Widget" title="50b616a-stock_ui.gif" src="https://files.readme.io/63e0d43-50b616a-stock_ui.gif" />
 
 ## Themed Stock UI
 
 The Theme system allows you to alter the look of the Engagement SDK’s Stock Widget UI. This includes common UI properties such as background colors and border colors, corner radii, and text size and fonts. Those customizations are saved in a standard format and can be reused across platforms.
 
-<Image align="center" alt={375} border={false} caption="The Stock UI for Poll Widget Themed to a green app style." title="1a6f870-themed_stock_ui.gif" src="https://files.readme.io/65113ef-1a6f870-themed_stock_ui.gif" />
+<Image align="center" alt={375} caption="The Stock UI for Poll Widget Themed to a green app style." title="1a6f870-themed_stock_ui.gif" src="https://files.readme.io/65113ef-1a6f870-themed_stock_ui.gif" />
 
 Learn more about [Custom Themes](doc:custom-themes) here!
 
@@ -189,7 +189,6 @@ We can guarantee that any changes to the Stock UI will not affect any Custom UI 
 <Image
   align="center"
   alt={375}
-  border={false}
   caption="An alternative UI design which was custom built to fit into a specific app style.
 
 The placement of the percentage and option text animation are examples of design changes that aren't feasible with the Theme system."
