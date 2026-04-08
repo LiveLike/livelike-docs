@@ -34,7 +34,7 @@
         "type": "apiKey",
         "in": "header",
         "name": "x-api-key",
-        "description": "Your API key from LiveLike. It's scoped to specific Collections — requests to content outside its scope return `403 Forbidden`."
+        "description": "Your API key. Contact your LiveLike account manager to get one."
       }
     },
     "schemas": {
