@@ -3,7 +3,7 @@
   "info": {
     "version": "1.1.0",
     "title": "LiveLike Analytics API",
-    "description": "Access the data behind your LiveLike dashboards via [metabase.livelikecdn.com](https://metabase.livelikecdn.com).\n\nYour collection and its Cards are set up by LiveLike. Use this API to find your Card IDs and download the data.\n\n**Flow:**\n1. `GET /api/collection/{id}/items` — list your Cards\n2. `GET /api/card/{id}` — check if any filters are needed\n3. `POST /api/card/{id}/query/{format}` — download the data\n\n## Authentication\n`x-api-key: YOUR_KEY` on every request."
+    "description": "The LiveLike Analytics API lets you pull data from your LiveLike dashboards directly into your own systems.\n\nLiveLike sets up your collection and reports for you. All you need to do is use this API to fetch the data.\n\n## Getting started\n\nYour collection ID and API key are provided by your LiveLike account manager. If you don't have them yet, reach out to your account manager to get set up.\n\nOnce you have them, the flow is straightforward:\n\n1. Call `GET /api/collection/{id}/items` with your collection ID to see your available reports (Cards).\n2. Call `GET /api/card/{id}` to check if a report needs any filters before you download it.\n3. Call `POST /api/card/{id}/query/{format}` to download the data in CSV, JSON, or Excel.\n\n## Authentication\n\nAdd your API key to every request as a header:\n\n```\nx-api-key: YOUR_API_KEY\n```\n\nDon't have a key? Contact your LiveLike account manager."
   },
   "servers": [
     {
@@ -14,18 +14,18 @@
   "tags": [
     {
       "name": "Collections",
-      "description": "Collections are folders. Use them to find the IDs of your Cards and Dashboards.",
-      "x-readme-tag-description": "Collections are folders. Use them to find the IDs of your Cards and Dashboards."
+      "description": "Your collection is the folder LiveLike has set up for you. It contains all your reports and dashboards.",
+      "x-readme-tag-description": "Your collection is the folder LiveLike has set up for you. It contains all your reports and dashboards."
     },
     {
       "name": "Cards",
-      "description": "A Card is a single report. Call the metadata endpoint to check what filters it needs, then call the download endpoint to get the data.",
-      "x-readme-tag-description": "A Card is a single report. Call the metadata endpoint to check what filters it needs, then call the download endpoint to get the data."
+      "description": "A Card is a single report. Use the metadata endpoint to see what data it returns and whether any filters are required, then use the download endpoint to get the data.",
+      "x-readme-tag-description": "A Card is a single report. Use the metadata endpoint to see what data it returns and whether any filters are required, then use the download endpoint to get the data."
     },
     {
       "name": "Dashboards",
-      "description": "A Dashboard groups multiple Cards. Use this to find the individual Card IDs and any shared filters.",
-      "x-readme-tag-description": "A Dashboard groups multiple Cards. Use this to find the individual Card IDs and any shared filters."
+      "description": "A Dashboard groups multiple reports together. Use this if you want to download data from a specific report that lives inside a dashboard.",
+      "x-readme-tag-description": "A Dashboard groups multiple reports together. Use this if you want to download data from a specific report that lives inside a dashboard."
     }
   ],
   "components": {
@@ -40,7 +40,7 @@
     "schemas": {
       "Collection": {
         "type": "object",
-        "description": "A folder containing your Cards and Dashboards.",
+        "description": "A collection (folder) containing your reports and dashboards.",
         "properties": {
           "id": {
             "oneOf": [
@@ -51,7 +51,7 @@
                 "type": "string"
               }
             ],
-            "description": "Collection ID. The root collection uses `\"root\"`; all others are integers."
+            "description": "Your collection ID. Use this in `GET /api/collection/{id}/items`."
           },
           "name": {
             "type": "string",
@@ -68,15 +68,15 @@
       },
       "CollectionItem": {
         "type": "object",
-        "description": "A Card or Dashboard inside a Collection.",
+        "description": "A report (Card) or dashboard inside your collection.",
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Item ID. Use as `card_id` or `dashboard_id`."
+            "description": "Report or dashboard ID. Use this to download data or get more details."
           },
           "name": {
             "type": "string",
-            "description": "Item name."
+            "description": "Report or dashboard name."
           },
           "model": {
             "type": "string",
@@ -85,35 +85,35 @@
               "dashboard",
               "document"
             ],
-            "description": "`\"card\"` = report, `\"dashboard\"` = dashboard."
+            "description": "`\"card\"` = a report you can download, `\"dashboard\"` = a dashboard."
           },
           "description": {
             "type": [
               "string",
               "null"
             ],
-            "description": "Optional description."
+            "description": "What this report covers."
           },
           "fully_parameterized": {
             "type": "boolean",
-            "description": "Cards: `true` = download with `parameters: []`. `false` = check required filters first."
+            "description": "`true` = ready to download with no filters. `false` = check if any filters are required first."
           }
         }
       },
       "CollectionItemsResponse": {
         "type": "object",
-        "description": "Paginated list of items in a Collection.",
+        "description": "The list of reports and dashboards in your collection.",
         "properties": {
           "total": {
             "type": [
               "integer",
               "null"
             ],
-            "description": "Total item count. Can be null — use `data.length` instead."
+            "description": "Total number of items."
           },
           "data": {
             "type": "array",
-            "description": "Items on this page.",
+            "description": "Your reports and dashboards.",
             "items": {
               "$ref": "#/components/schemas/CollectionItem"
             }
@@ -122,40 +122,40 @@
       },
       "TemplateTagParameter": {
         "type": "object",
-        "description": "A filter slot on a Card.",
+        "description": "A filter that can be applied when downloading a report.",
         "properties": {
           "name": {
             "type": "string",
-            "description": "Internal name — use in `target` arrays."
+            "description": "Filter name — use this in the `target` field when downloading."
           },
           "display_name": {
             "type": "string",
-            "description": "Label."
+            "description": "Filter label."
           },
           "type": {
             "type": "string",
-            "description": "Type: `\"text\"`, `\"number\"`, `\"date\"`."
+            "description": "Filter type: `\"text\"`, `\"number\"`, or `\"date\"`."
           },
           "required": {
             "type": "boolean",
-            "description": "`true` = must be passed or download fails."
+            "description": "`true` means you must pass a value for this filter when downloading."
           },
           "default": {
-            "description": "Default value. When set, the filter is optional."
+            "description": "Default value. If set, the filter is optional."
           }
         }
       },
       "ResultMetadataColumn": {
         "type": "object",
-        "description": "One output column.",
+        "description": "A column in the report's output.",
         "properties": {
           "name": {
             "type": "string",
-            "description": "Raw column name."
+            "description": "Column name."
           },
           "display_name": {
             "type": "string",
-            "description": "Column label — the key in JSON export rows."
+            "description": "Column label — this is the key you'll see in JSON downloads."
           },
           "base_type": {
             "type": "string",
@@ -165,33 +165,33 @@
       },
       "CardMetadata": {
         "type": "object",
-        "description": "Card metadata. Check `parameters` before downloading.",
+        "description": "Details about a report — its columns and any filters it requires.",
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Card ID."
+            "description": "Report ID."
           },
           "name": {
             "type": "string",
-            "description": "Card name."
+            "description": "Report name."
           },
           "description": {
             "type": [
               "string",
               "null"
             ],
-            "description": "What the Card measures."
+            "description": "What this report measures."
           },
           "parameters": {
             "type": "array",
-            "description": "Filter slots. Empty = no filters needed.",
+            "description": "Filters for this report. Empty means no filters are needed.",
             "items": {
               "$ref": "#/components/schemas/TemplateTagParameter"
             }
           },
           "result_metadata": {
             "type": "array",
-            "description": "Output columns. `display_name` is the key in JSON export rows.",
+            "description": "The columns in this report's output.",
             "items": {
               "$ref": "#/components/schemas/ResultMetadataColumn"
             }
@@ -200,7 +200,7 @@
       },
       "DashboardParameter": {
         "type": "object",
-        "description": "A dashboard-level filter. Values passed here apply to all wired Cards.",
+        "description": "A filter on the dashboard that applies to all its reports at once.",
         "properties": {
           "id": {
             "type": "string",
@@ -225,7 +225,7 @@
       },
       "ParameterMapping": {
         "type": "object",
-        "description": "Links a dashboard filter to a Card's template tag.",
+        "description": "Links a dashboard filter to a specific report.",
         "properties": {
           "parameter_id": {
             "type": "string",
@@ -243,15 +243,15 @@
       },
       "DashboardCard": {
         "type": "object",
-        "description": "A Card placed on a Dashboard. Has its own `id` (dashcard_id) separate from `card_id`.",
+        "description": "A report placed inside a dashboard. Has its own `id` (dashcard_id) separate from the report's `card_id` — you need both to download its data.",
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Dashcard ID — pass as `dashcard_id` in the download endpoint."
+            "description": "Dashcard ID — pass as `dashcard_id` when downloading."
           },
           "card_id": {
             "type": "integer",
-            "description": "Card ID — pass as `card_id` in the download endpoint."
+            "description": "Report ID — pass as `card_id` when downloading."
           },
           "card": {
             "allOf": [
@@ -259,11 +259,11 @@
                 "$ref": "#/components/schemas/CardMetadata"
               }
             ],
-            "description": "Card metadata."
+            "description": "Report details."
           },
           "parameter_mappings": {
             "type": "array",
-            "description": "How dashboard filters map to this Card.",
+            "description": "How dashboard filters connect to this report.",
             "items": {
               "$ref": "#/components/schemas/ParameterMapping"
             }
@@ -272,7 +272,7 @@
       },
       "DashboardTab": {
         "type": "object",
-        "description": "A tab in a tabbed Dashboard.",
+        "description": "A tab in a tabbed dashboard.",
         "properties": {
           "id": {
             "type": "integer",
@@ -286,7 +286,7 @@
       },
       "Dashboard": {
         "type": "object",
-        "description": "Full Dashboard metadata. Call this to get `dashcard_id` and `card_id` before downloading.",
+        "description": "A dashboard containing multiple reports.",
         "properties": {
           "id": {
             "type": "integer",
@@ -305,21 +305,21 @@
           },
           "parameters": {
             "type": "array",
-            "description": "Dashboard-level filters. Pass values to filter all Cards at once.",
+            "description": "Filters that apply across all reports in this dashboard.",
             "items": {
               "$ref": "#/components/schemas/DashboardParameter"
             }
           },
           "tabs": {
             "type": "array",
-            "description": "Tabs in a tabbed Dashboard. Empty = single pane.",
+            "description": "Tabs if the dashboard is tabbed. Empty means it's a single page.",
             "items": {
               "$ref": "#/components/schemas/DashboardTab"
             }
           },
           "dashcards": {
             "type": "array",
-            "description": "Cards on this Dashboard. Each has `id` (dashcard_id) and `card_id`.",
+            "description": "The reports inside this dashboard.",
             "items": {
               "$ref": "#/components/schemas/DashboardCard"
             }
@@ -328,7 +328,7 @@
       },
       "QueryFilterParameter": {
         "type": "object",
-        "description": "A filter value to pass when running a query.",
+        "description": "A filter value to include when downloading report data.",
         "required": [
           "type",
           "target",
@@ -337,12 +337,12 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "`\"category\"` for text filters. Also `\"date/range\"`, `\"number/=\"`.",
+            "description": "Use `\"category\"` for text filters. Also `\"date/range\"` and `\"number/=\"`.",
             "example": "category"
           },
           "target": {
             "type": "array",
-            "description": "Points to the template tag: `[\"variable\", [\"template-tag\", \"tag_name\"]]`.",
+            "description": "Points to the filter: `[\"variable\", [\"template-tag\", \"filter_name\"]]` where `filter_name` matches the `name` field in the report's filters.",
             "example": [
               "variable",
               [
@@ -353,21 +353,21 @@
           },
           "value": {
             "type": "string",
-            "description": "The value to inject.",
+            "description": "The value to filter by.",
             "example": "YOUR_CLIENT_ID"
           }
         }
       },
       "QueryRequestBody": {
         "type": "object",
-        "description": "Request body for download endpoints.",
+        "description": "The request body for download endpoints.",
         "required": [
           "parameters"
         ],
         "properties": {
           "parameters": {
             "type": "array",
-            "description": "Filter values. Pass `[]` if the Card has no required filters.",
+            "description": "Filters to apply. Pass `[]` if the report has no required filters.",
             "items": {
               "$ref": "#/components/schemas/QueryFilterParameter"
             }
@@ -376,7 +376,7 @@
       },
       "ExportJsonRow": {
         "type": "object",
-        "description": "One row from a JSON export. Keys are `display_name` values from `result_metadata`.",
+        "description": "One row of data from a JSON download. Keys match the `display_name` values from the report's columns.",
         "additionalProperties": true,
         "example": {
           "Total Programs": 42,
@@ -398,7 +398,7 @@
           "Collections"
         ],
         "summary": "List All Collections",
-        "description": "Lists all Collections your API key can access. If you already have your Collection ID from LiveLike, skip this and go straight to listing items.\n\n> The root Collection has `id: \"root\"`. All others use integer IDs.",
+        "description": "Lists all collections your API key has access to. Your collection ID is provided by LiveLike — if you already have it, you can skip this and go straight to listing your reports.\n\n> The root collection has `id: \"root\"`. Your collection will have an integer ID.",
         "operationId": "get_collections",
         "responses": {
           "200": {
@@ -442,7 +442,7 @@
           "Collections"
         ],
         "summary": "List Collection Items",
-        "description": "Lists Cards, Dashboards, and Documents inside a Collection.\n\n- Cards (`model: \"card\"`) → use `id` as `card_id` to download data.\n- Dashboards (`model: \"dashboard\"`) → use `id` to get `dashcard_id` and `card_id`.\n\n> `total` can be null on empty Collections. Use `data.length` instead.",
+        "description": "Lists the reports (Cards) and dashboards inside your collection. Use the `id` from any Card to download its data.",
         "operationId": "get_collection_items",
         "parameters": [
           {
@@ -546,7 +546,7 @@
           "Cards"
         ],
         "summary": "Get Card Metadata",
-        "description": "Returns Card metadata without running the query. Check `fully_parameterized` — if `false`, look for `required: true` parameters with no `default` and include those in your download request.",
+        "description": "Returns the details of a report — what columns it has and whether any filters are required.\n\nCheck `fully_parameterized` before downloading. If it's `true`, you can download straight away with `parameters: []`. If it's `false`, look through `parameters` for any entry where `required` is `true` — you'll need to pass a value for those.",
         "operationId": "get_card",
         "parameters": [
           {
@@ -642,7 +642,7 @@
           "Cards"
         ],
         "summary": "Download Card Data",
-        "description": "Runs the Card and returns data in `csv`, `json`, or `xlsx`.\n\nPass `parameters: []` if there are no required filters. Add a `QueryFilterParameter` entry for each filter you want to set.\n\n> This is a `POST` — filters go in the request body, not the URL.",
+        "description": "Downloads the report data. Choose `csv`, `json`, or `xlsx` depending on what you need.\n\nIf the report has no required filters, pass `parameters: []`. If it does, include a `QueryFilterParameter` entry for each required filter.\n\n> This is a `POST` request — filters go in the request body, not the URL.",
         "operationId": "post_card_query_export",
         "parameters": [
           {
@@ -786,7 +786,7 @@
           "Dashboards"
         ],
         "summary": "Get Dashboard",
-        "description": "Returns Dashboard metadata including all Dashcards. Use this to get the `dashcard_id` and `card_id` you need for the Dashboard Card download endpoint.",
+        "description": "Returns the details of a dashboard, including all the reports inside it. You need the `id` (dashcard_id) and `card_id` from each report to download its data via the dashboard download endpoint.",
         "operationId": "get_dashboard",
         "parameters": [
           {
@@ -864,7 +864,7 @@
           "Dashboards"
         ],
         "summary": "Download Dashboard Card Data",
-        "description": "Downloads data for a specific Card inside a Dashboard. Use this when applying dashboard-level filters across multiple Cards.\n\nGet `dashcard_id` and `card_id` from `GET /api/dashboard/{id}` first.",
+        "description": "Downloads data for a specific report inside a dashboard. Use `GET /api/dashboard/{id}` first to get the `dashcard_id` and `card_id` values you need.",
         "operationId": "post_dashboard_card_query_export",
         "parameters": [
           {

@@ -1,16 +1,8 @@
 ---
 title: List Collection Items
 excerpt: >-
-  Lists Cards, Dashboards, and Documents inside a Collection.
-
-
-  - Cards (`model: "card"`) → use `id` as `card_id` to download data.
-
-  - Dashboards (`model: "dashboard"`) → use `id` to get `dashcard_id` and
-  `card_id`.
-
-
-  > `total` can be null on empty Collections. Use `data.length` instead.
+  Lists the reports (Cards) and dashboards inside your collection. Use the `id`
+  from any Card to download its data.
 api:
   file: livelike-analytics-api.json
   operationId: get_collection_items

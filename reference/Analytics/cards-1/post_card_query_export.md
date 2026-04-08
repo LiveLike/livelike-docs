@@ -1,14 +1,15 @@
 ---
 title: Download Card Data
 excerpt: >-
-  Runs the Card and returns data in `csv`, `json`, or `xlsx`.
+  Downloads the report data. Choose `csv`, `json`, or `xlsx` depending on what
+  you need.
 
 
-  Pass `parameters: []` if there are no required filters. Add a
-  `QueryFilterParameter` entry for each filter you want to set.
+  If the report has no required filters, pass `parameters: []`. If it does,
+  include a `QueryFilterParameter` entry for each required filter.
 
 
-  > This is a `POST` — filters go in the request body, not the URL.
+  > This is a `POST` request — filters go in the request body, not the URL.
 api:
   file: livelike-analytics-api.json
   operationId: post_card_query_export

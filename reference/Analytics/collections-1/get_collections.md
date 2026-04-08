@@ -1,11 +1,13 @@
 ---
 title: List All Collections
 excerpt: >-
-  Lists all Collections your API key can access. If you already have your
-  Collection ID from LiveLike, skip this and go straight to listing items.
+  Lists all collections your API key has access to. Your collection ID is
+  provided by LiveLike — if you already have it, you can skip this and go
+  straight to listing your reports.
 
 
-  > The root Collection has `id: "root"`. All others use integer IDs.
+  > The root collection has `id: "root"`. Your collection will have an integer
+  ID.
 api:
   file: livelike-analytics-api.json
   operationId: get_collections
