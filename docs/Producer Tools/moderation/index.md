@@ -19,7 +19,7 @@ next:
 ---
 ## Banning words
 
-Banned Words are configured centrally and apply to all chat rooms and comment boards. Comments and chat messages containing banned words are flagged as containing those words for integrations to decide how to display.
+Banned Words are configured centrally and apply to all chat rooms and comment boards. Comments and chat messages containing banned words are flagged as containing those words for integrations to decide how to display them.
 
 Manage the list of banned words from the **Moderation** section inside the **Banned Words** tab.
 
