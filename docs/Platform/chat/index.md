@@ -10,11 +10,10 @@ metadata:
     chat experience, from private chats, public group chats, and more.
   robots: index
 next:
-  description: ''
   pages:
-    - type: basic
-      slug: cms-chat-moderation
-      title: Chat Moderation Tools
+    - slug: cms-chat-moderation
+      title: Chat Moderation
+      type: basic
 ---
 <Image border={false} src="https://files.readme.io/412f672-banner_chats.jpg" title="banner_chats.jpg" />
 
