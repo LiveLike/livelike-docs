@@ -26,4 +26,4 @@ The **Comments** tab in the **Moderation** section provides tools to act on comm
 
 ## Moderating widgets
 
-The **Widgets** tab in the **Moderation** section provides tools to act on reports, review filtered widgets, delete widgets, and ban users from programs.
+The **Widgets** tab in the **Moderation** section provides tools to act on widget reports, review filtered widgets, delete widgets, and ban users from programs.
