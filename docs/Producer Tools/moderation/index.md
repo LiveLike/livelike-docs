@@ -18,12 +18,12 @@ The list of allowed Image Origins controls which origins images can be shared fr
 
 ## Moderating chat
 
-### Reported chat messages
+The **Chat Messages** tab in the **Moderation** section provides tools to act on message reports, review filtered messages, delete messages, and mute users in rooms.
 
-Fans report chat messages which are then available for review by moderators. Each report includes the original message, sender, chat room, who reported it, and when. Reported chat messages remain visible to fans until a moderator acts on them.
+## Moderating comments
 
-Manage reports across every chat room from the **Moderation** section inside the **Chat Messages** tab. Reports for individual chat rooms are managed in the Moderation tab on the chat room details page.
+The **Comments** tab in the **Moderation** section provides tools to act on comment reports, review filtered comments, delete comments, and ban users from boards.
 
-## Mutes
+## Moderating widgets
 
-Muted fans can't send messages to the rooms they're muted in. Mutes can be applied to users for individual rooms, or globally for all rooms.
+The **Widgets** tab in the **Moderation** section provides tools to act on reports, review filtered widgets, delete widgets, and ban users from programs.
