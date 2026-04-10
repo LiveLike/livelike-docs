@@ -17,15 +17,17 @@ next:
       title: Widgets Moderation
       type: basic
 ---
-## Banned Words
+## Banning words from user content
 
 Banned Words are configured centrally and apply to all chat rooms and comment boards.
 
 Manage the list of banned words from the **Moderation** section inside the **Banned Words** tab.
 
-## Image Origins
+## Controlling allowed image sources
 
 The list of allowed Image Origins controls which origins images can be shared from.
+
+Manage the list of allowed image origins from the **Moderation** section inside the **Image Origins** tab.
 
 ## Moderating chat
 
