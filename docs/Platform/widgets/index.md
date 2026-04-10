@@ -12,11 +12,13 @@ metadata:
     customization of widget UI.
   robots: index
 next:
-  description: ''
   pages:
-    - type: basic
-      slug: custom-themes
+    - slug: custom-themes
       title: Custom Themes
+      type: basic
+    - slug: widget-moderation
+      title: Widgets Moderation
+      type: basic
 ---
 ![](https://files.readme.io/c74645a-banner_widgets.jpg "banner_widgets.jpg")
 
