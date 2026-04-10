@@ -8,7 +8,10 @@ metadata:
   description: ''
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: cms-comments-moderation
+      title: Comments Moderation
+      type: basic
 ---
 Use Comments to allow your audience to add their comments and reply to others on any feature or topic in your experience.
 
