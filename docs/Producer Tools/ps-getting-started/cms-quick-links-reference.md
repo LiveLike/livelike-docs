@@ -1,5 +1,5 @@
 ---
-title: CMS Quick Links Reference
+title: Quick Links Reference
 deprecated: false
 hidden: false
 metadata:
