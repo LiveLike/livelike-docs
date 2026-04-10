@@ -20,7 +20,7 @@ Chat messages can be removed directly from chats or from reports when inside the
 
 ## User Reports
 
-Users in chat can report messages, and those reports will show in the Moderation tab for that chat in the Producer Suite. Open the report actions menu, and select _Remove_ to delete the reported message, or _Dismiss_ the report if it is invalid.
+Fans in chat can report messages, and those reports will show in the Moderation tab for that chat in the Producer Suite. Open the report actions menu, and select _Remove_ to delete the reported message, or _Dismiss_ the report if it is invalid.
 
 <Image align="center" alt="Open the report action menu, and select Dismiss Report or Remove Message." caption="Open the report action menu, and select Dismiss Report or Remove Message." src="https://files.readme.io/2781cf99d41bcc5191366bf6473c813a79b068f43efae5805a395f0f737a8dbf-image.png" />
 
