@@ -12,6 +12,10 @@ Banned Words are configured centrally and apply to all chat rooms and comment bo
 
 Manage the list of banned words from the **Moderation** section inside the **Banned Words** tab.
 
+## Image Origins
+
+The list of allowed Image Origins controls which origins images can be shared from.
+
 ## Moderating chat
 
 ### Reported chat messages
