@@ -5,6 +5,17 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - slug: cms-chat-moderation
+      title: Chat Moderation
+      type: basic
+    - slug: cms-comments-moderation
+      title: Comments Moderation
+      type: basic
+    - slug: widget-moderation
+      title: Widgets Moderation
+      type: basic
 ---
 ## Banned Words
 
