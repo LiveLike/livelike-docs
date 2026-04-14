@@ -19,6 +19,8 @@ next:
       slug: analytics-event-glossary
       title: Analytics Event Glossary
 ---
+<br />
+
 ## 1. Standard Analytics Dashboard
 
 The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform, no setup required.
@@ -89,58 +91,99 @@ All Visual Analytics-enabled accounts include the following tabs:
 
 #### Overview
 
-High-level engagement KPIs across your application - active users, session counts, total widget interactions, and trend lines over your selected date range. This is your starting point for understanding overall platform health.
+High-level engagement KPIs across your application - active users (DAU/WAU/MAU), trend lines, and an interval-level summary of profiles, impressions, interactions, and engagement percent. Your starting point for understanding overall platform health.
 
 #### Widgets
 
-Widget-specific performance broken down by type. See impression counts, interaction rates, answer accuracy, and completion rates for polls, predictions, quizzes, and other widget formats side by side.
+Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.  
+
+<Callout icon="💡" theme="default">
+  #### **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select View Program ID.
+</Callout>
 
 #### Quest
 
-Quest participation funnels, step-by-step completion rates, drop-off points, and reward redemption counts. Useful for measuring the effectiveness of your engagement programs.
+Quest participation funnels and reward claim data such as users attempting/completing quests, completion status by quest, per-quest funnel analysis, and average completion time.
 
 #### Chat
 
-Message volume over time, unique active chatters, reaction counts, and moderation event frequency. Helps identify peak activity windows and community engagement patterns.
+Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.
 
 ### Additional Tabs
 
-Accounts may have additional tabs configured based on the features they are using. Examples include:
+Accounts may have additional tabs configured based on their product:
+
+| Tab              | What it covers                                                                                                                   |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Comments**     | Comment volume, unique commenters, reply depth, and reaction trends                                                              |
+| **Leaderboard**  | Entry counts per leaderboard and detailed entry-level tables (Profile ID, Nickname, Score)                                       |
+| **Streaks**      | Streak adoption, average/max streak lengths, milestone achievement rates, drop-off analysis, freeze usage, and reward redemption |
+| **Badges**       | Badges awarded by type, user badge grants, and distribution across badge tiers                                                   |
+| **Status Tiers** | Tier distribution, upgrades/downgrades, and average time to tier (custom configuration)                                          |
+| **Reward Store** | Redemption volumes, points spent, per-SKU transaction trends, and transaction history                                            |
+
+For detailed metric definitions, see the [Analytics Dictionary](https://docs.livelike.com/docs/livelike-events-dictionary).
 
 <Callout icon="💡" theme="default">
-  #### **Custom tabs are configured per account upon request.** If you need additional tabs or custom analytics views, contact your LiveLike account manager.
+  #### **Tip:** Custom tabs are configured per account. Contact your LiveLike account manager if you need additional views or metrics not listed here.
 </Callout>
 
-#### Leaderboard
+ 
 
-Point distribution histograms, top-user rankings, and rank change velocity over time. Useful for calibrating reward structures and identifying highly engaged users.
+### Arcade Analytics Tabs
 
-#### Arcade Analytics — Skilled Games
+For clients using LiveLike Arcade, additional tabs are available covering both Skilled and Non-Skilled game types. These tabs are configured per client and organisation.
 
-| Tab                  | What it covers                                                                                                     |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Guess the Word (GTW) | Prediction participation rates, outcome distributions, accuracy per match, and user prediction volume trends       |
-| Play Predictor       | Per-play prediction volumes, accuracy trends, and comparison across game events                                    |
-| Trivia               | Question-level performance, answer option distributions, average completion rates, and difficulty calibration data |
-| Shoot the Web (STW)  | Score submission volumes, accuracy distributions                                                                   |
+#### Arcade Games (Overview)
 
-#### Arcade Analytics — Non-Skilled Games
+A cross-game summary with three sections:
 
-Non-skilled arcade game tabs follow the same structure as their skilled counterparts but exclude accuracy and prediction-correctness metrics, focusing instead on participation volume and engagement depth.
+* **User Funnel** — total game plays, total distinct users, DAU, and game plays/users across days and per game
+* **Retention** — D1 retention rates across games
+* **Score** — average score per game
+
+#### Arcade Games: Skill Based
+
+In-depth analytics for skill-based games (e.g., skate-master, ski-dash, bobsleigh-battle, curling-master). Three sections:
+
+* **User Funnel** — Total Distinct Users, MAU, Weekly Average Users, DAU
+* **Game Plays** — Total Games Played, Average Monthly/Weekly/Daily Game Plays, games plays and distinct users per game and across days, user cohorts (0–30, 31–60, 61–90, 90+ days)
+* **Game Engagement** — Max Score, Average Score, Completion Rate, average score per game, games played vs scores submitted over time
+
+#### Arcade Games: Non-Skilled
+
+Analytics for non-skilled game types. Same structure as Skill Based but without the Game Engagement section (no scores or completion rates):
+
+* **User Funnel** — Total Distinct Users, MAU, Weekly Average Users, DAU
+* **Game Plays** — Total Game Plays, Average Monthly/Weekly/Daily Games Played, average games played per user (total/monthly/weekly/daily), game plays and distinct users across days
+
+#### Per-Game Dashboards
+
+Individual game dashboards (e.g., Basketball, Charity Product) may be configured for clients with specific game types. These provide game-specific breakdowns of the same core metrics.
+
+<br />
+
+### Custom Analytics
+
+If a metric or dashboard view you need is not available in any of the dashboards, LiveLike can configure custom analytics dashboards tailored to your requirement. Custom tabs can include bespoke KPIs, audience segments, feature-specific funnels, or event groupings not covered by the default set.
+
+To request custom analytics, contact your LiveLike account manager with a description of the metrics or views you need. The LiveLike team will assess feasibility and configure the custom tab for your organisation.
 
 ***
 
-### 3. Analytics API
+## 3. Analytics API
 
-The Analytics API lets you programmatically access the same data that powers Visual Analytics. Use it to build custom reports, integrate with external BI tools, or automate exports.
+The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts/queries), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
 
-**Base URL:**
+### Base URL
 
 ```
 https://metabase.livelikecdn.com/api/
 ```
 
-**Authentication:** All requests require the `x-api-key` header. Your API key is scoped to your organisation and controls which collections and dashboards you can access. Contact your LiveLike account manager to get your API key.
+### Authentication
+
+All requests require the `x-api-key` header. Your API key is scoped to your organisation and controls which collections and dashboards you can access. You can request your LiveLike account manager to provide you with the require api key
 
 ```bash
 curl -H "x-api-key: YOUR_API_KEY" \
@@ -149,28 +192,51 @@ curl -H "x-api-key: YOUR_API_KEY" \
 
 ### Concepts
 
-| Term           | Description                                                                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Collection** | A folder containing your reports and dashboards. Your LiveLike account has its own collection.                 |
-| **Card**       | A single saved question (chart, table, or metric). Each Card has a `card_id` and can be queried independently. |
-| **Dashboard**  | A layout of multiple Cards with shared filters. Has its own `dashboard_id`.                                    |
-| **Dashcard**   | A Card placed inside a Dashboard. Has its own `dashcard_id` separate from the underlying `card_id`.            |
+| Term           | Description                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Collection** | A folder grouping related dashboards and cards. Your org will have at least one top-level collection.            |
+| **Card**       | A single chart, table, or scalar metric - the building block of a dashboard. Each card runs an underlying query. |
+| **Dashboard**  | A layout of multiple cards, optionally with shared filter controls and tabs.                                     |
+| **Dashcard**   | A Card placed inside a Dashboard. Has its own `dashcard_id` separate from the underlying `card_id`.              |
+
+### Endpoints
+
+#### GET /api/collection/
+
+Returns a flat list of all Collections your API key can see. Use this to discover your collection structure and retrieve `id` values needed for subsequent calls. 
+
+#### GET /api/card/:card_id
+
+Returns full metadata for a Card including its parameters, column schema, and query type - **without running the query**. Call this before downloading data to understand the card's structure.
+
+#### GET /api/dashboard/:dashboard_id
+
+Returns full Dashboard metadata which includes all dashcards, filter controls, tab layout, and parameter mappings. **Call this before downloading dashboard card data** - you need the `dashcard_id` and `card_id` values from this response.
 
 ### Typical API Workflow
+
+1. `GET /api/collection/` - Discover your collections, note the `id` of the relevant one
+2. `GET /api/collection/<id>/items` - List cards and dashboards inside that collection
+3. `GET /api/card/<card_id>` for a single chart, or `GET /api/dashboard/<dashboard_id>` for a full dashboard - Inspect parameters and column schema before downloading
+4. Download or query the card or dashboard card with the correct parameters
 
 ```
 1. GET /api/collection/
    → Discover your collections, note the id of the relevant one
 
-2. GET /api/collection/{id}/items
+2. GET /api/collection/<id>/items
    → List cards and dashboards inside that collection
 
-3. GET /api/card/{card_id}        ← for a single chart/metric
-   GET /api/dashboard/{dashboard_id}  ← for an entire dashboard
+3. GET /api/card/<card_id>            ← for a single chart/metric
+   GET /api/dashboard/<dashboard_id>  ← for an entire dashboard
 
-4. POST /api/card/{card_id}/query/csv   ← download card data
-   POST /api/dashboard/{dashboard_id}/dashcard/{dashcard_id}/card/{card_id}/query/csv
-   ← download a specific dashboard card's data
+4. POST /api/card/<card_id>/query/csv
+   → Download card data as CSV
+
+   POST /api/dashboard/<dashboard_id>/dashcard/<dashcard_id>/card/<card_id>/query/csv
+   → Download a specific dashboard card's data
 ```
+
+For detailed API definitions, see the [Analytics API Doc](https://docs.livelike.com/reference/get_collections).
 
 <br />
