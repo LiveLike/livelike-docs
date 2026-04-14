@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-This document details the webhook events sent by our system, including their payload structures and descriptions of each field.
+This document details the events sent by our system, including their payload structures and descriptions of each field.
 
 ## `reward-table-rewards-awarded`
 
