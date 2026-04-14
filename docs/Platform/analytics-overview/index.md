@@ -1,6 +1,12 @@
 ---
 title: Analytics
-excerpt: ''
+excerpt: >-
+  The LiveLike Producer Site includes a built-in analytics section accessible
+  from the left navigation. As soon as your integration with LiveLike is
+  launched, we start collecting data that can be used to track your success.
+  This data helps you understand your programs' engagement performance and the
+  usage behaviors of your audience, resulting in increased participation,
+  engagement, and retention.
 deprecated: false
 hidden: false
 metadata:
@@ -10,34 +16,93 @@ metadata:
     your needs. Learn more about daily reports, available metrics, and more.
   robots: index
 next:
-  description: ''
   pages:
-    - type: basic
-      slug: analytics-event-glossary
-      title: Analytics Event Glossary
+    - slug: analytics-dashboard
+      title: Analytics Dashboard
+      type: basic
 ---
-We provide you with a suite of analytics tools depending on your needs. This doc covers the following:
+## How to access your data  
 
-1. **Analytics dashboard**: reports showing the data collected by the LiveLike platform.
-2. **SDK Hooks**: events generated client-side by the SDKs that you can send to your own analytics service.
+We provides three ways to access and work with engagement data from your application:  
 
-## Analytics dashboard
+<br />
 
-The analytics dashboard shows interactive reports generated from the data collected by the LiveLike platform. For more details check out the  [Analytics Dashboard](doc:analytics-dashboard) documentation.
+| Option                 | What it is                                                   | Access                                 | Best for                                                        |
+| ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------- |
+| **Standard Analytics** | Pre-built reports in the Producer Site                       | SDK integration (available to all)     | Quick engagement metrics without any setup                      |
+| **Visual Analytics**   | Interactive Metabase-powered dashboards in the Producer Site | Add-on (contact your account manager)  | Richer charts, multiple tabs, and deeper drill-downs            |
+| **Analytics API**      | Programmatic access to Visual Analytics data                 | API key (contact your account manager) | Pulling data into a BI tool, automating exports, custom reports |
 
-## SDK Hooks
+By default the Producer Site opens the **Standard Analytics** dashboard. Accounts with Visual Analytics enabled can switch to that view from the same section.
 
-Events are generated client-side by the SDKs. These events generally aren't collected by the LiveLike platform, but they can be used to augment your own application analytics.  For example, you can register for events like chat messages sent, widget impressions, and more. Check out the [iOS](doc:ios-analytics), [Android](doc:android-analytics) and [Web](doc:web-custom-analytics) analytics docs for a list of supported events on each platform.
+***
 
-## Available data points
+## Standard Analytics
 
-The SDKs  data points related to user widgets, chat, stickers, reactions, and more. The data points provided include:
+The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform - no setup required.  
+
+### What it covers
+
+* Application-level metrics — engagement summaries across your application
+* Program-level metrics — performance comparisons program over program
+* Widget-level metrics — individual interactive widget results
+* Quest metrics — completion status and active users per quest
+* Quest Task metrics — task-level completion breakdown
+
+For full details, see the [Analytics Dashboard](https://docs.livelike.com/reference/get_collections) documentation.
+
+***
+
+## Visual Analytics
+
+Visual Analytics provides an interactive data exploration experience embedded in the Producer Site. It is available as an add-on and offers richer, drill-down reporting across multiple dashboard tabs - including custom tabs configured for your specific product.
+
+### Default dashboard tabs
+
+* **Overview** : high-level engagement KPIs across your application - active users, session counts, total widget interactions, and trend lines over your selected date range
+* **Widgets** : widget-specific performance broken down by type - impression counts, interaction rates, and completion rates for polls, predictions, quizzes, and other widget formats
+* **Quest** : participation funnels, completion rates, drop-off points
+* **Chat** : message volume over time, unique active chatters, reaction counts, and moderation event frequency
+
+### Additional tabs
+
+Accounts may have additional tabs configured based on their product — such as Leaderboard, Arcade game-specific tabs (Skilled Games, Non-Skilled Games), or custom requirement. Contact your LiveLike account manager for details.
+
+For full details, see the [Visual Analytics](https://docs.livelike.com/docs/analytics-dashboard) documentation.
+
+***
+
+## Analytics API
+
+The Analytics API lets you programmatically access the same data that powers Visual Analytics. Use it to build custom reports, integrate with external BI tools, or automate exports.
+
+### Quick reference
+
+* **Base URL:** `https://metabase.livelikecdn.com/api/`
+* **Authentication:** `x-api-key` header (scoped to your organisation)
+
+For full details, see the [Analytics API](https://docs.livelike.com/reference/get_collections) documentation.
+
+***
+
+## SDK Analytics Hooks
+
+In addition to the dashboards above, LiveLike SDKs emit client-side events that you can send to your own analytics service. These events are generated in the SDK and are not collected by the LiveLike platform, but they can augment your own application analytics.
+
+### Platform guides
+
+* [iOS Analytics](https://docs.livelike.com/docs/ios-analytics)
+* [Android Analytics](https://docs.livelike.com/docs/android-analytics)
+* [Web Analytics](https://docs.livelike.com/docs/web-custom-analytics)
+* [React Native Analytics](https://docs.livelike.com/docs/react-native-analytics)
+
+### Available data points
+
+The SDKs provide data points related to user widgets, chat, stickers, reactions, and more:
 
 * Widget impression counts and engagement rates
 * Poll, quiz, prediction, and other widget interaction counts
 * Chat message activity
 * Chat sticker and message reactions activity
 
-Please see the [Analytics Event Glossary](doc:analytics-event-glossary) for the full list of the available data points.
-
-<br />
+See the [Analytics Event Glossary](https://docs.livelike.com/docs/analytics-event-glossary) for the full list.
