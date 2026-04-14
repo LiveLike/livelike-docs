@@ -10,14 +10,10 @@ metadata:
     data that can be used to track your success. Learn more.
   robots: index
 next:
-  description: ''
   pages:
-    - type: basic
-      slug: livelike-events-dictionary
+    - slug: livelike-events-dictionary
       title: Livelike Analytics Dictionary
-    - type: basic
-      slug: analytics-event-glossary
-      title: Analytics Event Glossary
+      type: basic
 ---
 <br />
 
