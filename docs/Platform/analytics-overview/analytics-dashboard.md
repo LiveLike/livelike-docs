@@ -26,10 +26,10 @@ The Standard Analytics dashboard is available to all customers directly in the P
 ### What it covers
 
 * **Application-level metrics** : engagement summaries across your application
-* **Program-level metrics** — performance comparisons program over program
-* **Widget-level metrics** — individual interactive widget results
-* **Quest metrics** — completion status and active users per quest
-* **Quest Task metrics** — task-level completion breakdown
+* **Program-level metrics** : performance comparisons program over program
+* **Widget-level metrics** : individual interactive widget results
+* **Quest metrics** : completion status and active users per quest
+* **Quest Task metrics** : task-level completion breakdown
 
 <br />
 
@@ -105,7 +105,7 @@ Message volume over time, unique active chatters, reaction counts, and moderatio
 
 ### Additional Tabs
 
-Accounts may have additional tabs configured based on the features they are using. Examples include:  
+Accounts may have additional tabs configured based on the features they are using. Examples include:
 
 <Callout icon="💡" theme="default">
   #### **Custom tabs are configured per account upon request.** If you need additional tabs or custom analytics views, contact your LiveLike account manager.
