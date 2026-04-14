@@ -21,9 +21,9 @@ next:
       title: Analytics Dashboard
       type: basic
 ---
-## How to access your data  
+## How to access your data
 
-We provides three ways to access and work with engagement data from your application:  
+We provides three ways to access and work with engagement data from your application:
 
 <br />
 
@@ -33,13 +33,13 @@ We provides three ways to access and work with engagement data from your applica
 | **Visual Analytics**   | Interactive Metabase-powered dashboards in the Producer Site | Add-on (contact your account manager)  | Richer charts, multiple tabs, and deeper drill-downs            |
 | **Analytics API**      | Programmatic access to Visual Analytics data                 | API key (contact your account manager) | Pulling data into a BI tool, automating exports, custom reports |
 
-By default the Producer Site opens the **Standard Analytics** dashboard. Accounts with Visual Analytics enabled can switch to that view from the same section.
+By default the Producer Site opens the **Standard Analytics** dashboard. Accounts with Visual Analytics enabled will see the Visual Analytics dashboard in its place.
 
 ***
 
 ## Standard Analytics
 
-The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform - no setup required.  
+The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform - no setup required.
 
 ### What it covers
 
