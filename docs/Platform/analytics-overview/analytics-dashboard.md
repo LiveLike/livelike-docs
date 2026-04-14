@@ -230,11 +230,8 @@ Returns full Dashboard metadata which includes all dashcards, filter controls, t
 3. GET /api/card/<card_id>            ← for a single chart/metric
    GET /api/dashboard/<dashboard_id>  ← for an entire dashboard
 
-4. POST /api/card/<card_id>/query/csv
-   → Download card data as CSV
-
-   POST /api/dashboard/<dashboard_id>/dashcard/<dashcard_id>/card/<card_id>/query/csv
-   → Download a specific dashboard card's data
+4. POST /api/card/<card_id>/query/csv → Download card data as CSV
+	 POST /api/dashboard/<dashboard_id>/dashcard/<dashcard_id>/card/<card_id>/query/csv → Download a specific dashboard card's data
 ```
 
 For detailed API definitions, see the [Analytics API Doc](https://docs.livelike.com/reference/get_collections).
