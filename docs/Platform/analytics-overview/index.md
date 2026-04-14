@@ -27,11 +27,11 @@ We provides three ways to access and work with engagement data from your applica
 
 <br />
 
-| Option                 | What it is                                                   | Access                                 | Best for                                                        |
-| ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------- |
-| **Standard Analytics** | Pre-built reports in the Producer Site                       | SDK integration (available to all)     | Quick engagement metrics without any setup                      |
-| **Visual Analytics**   | Interactive Metabase-powered dashboards in the Producer Site | Add-on (contact your account manager)  | Richer charts, multiple tabs, and deeper drill-downs            |
-| **Analytics API**      | Programmatic access to Visual Analytics data                 | API key (contact your account manager) | Pulling data into a BI tool, automating exports, custom reports |
+| Option                 | What it is                                                   | Access                                 | Best for                                                              |
+| ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------- |
+| **Standard Analytics** | Pre-built reports in the Producer Site                       | SDK integration (available to all)     | Quick engagement metrics without any setup                            |
+| **Visual Analytics**   | Interactive Metabase-powered dashboards in the Producer Site | Add-on (contact your account manager)  | Richer charts, multiple tabs, and deeper drill-downs                  |
+| **Analytics API**      | Programmatic access to Visual Analytics data                 | API key (contact your account manager) | Pulling data into a BI tool, automating exports, external integration |
 
 By default the Producer Site opens the **Standard Analytics** dashboard. Accounts with Visual Analytics enabled will see the Visual Analytics dashboard in its place.
 
