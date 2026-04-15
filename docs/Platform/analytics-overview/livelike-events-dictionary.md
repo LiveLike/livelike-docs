@@ -18,8 +18,6 @@ next:
       title: Analytics Event Glossary
       type: basic
 ---
-<br />
-
 ## Standard Analytics Metrics
 
 The following KPIs appear in the Standard Analytics dashboard tabs.
@@ -102,12 +100,12 @@ This view provides an overview of the customer base — operating systems in use
 >
 > 1. **Data Download** - In this dashboard there is a download option where users can download data in CSV format in their local system and derive analysis on their own
 > 2. **Share Link** - One of the cool features of this dashboard is that you can share the link of a view with all the applied filters with your team members so that they can see the same view at their end. This saves time and effort when they are doing similar analysis or validation
-> 3. **Search Bar** - People can search their desired data using various filters like Application ID, Program ID, Chat Room ID etc which might be beneficial to those organization which has a lot of data on the dashboard
+> 3. **Search Bar** - People can search their desired data using various filters like Program ID, Chat Room ID etc which might be beneficial to those organization which has a lot of data on the dashboard
 > 4. **Navigation of inline data stored in CMS Producer Suite** - We have connected CMS links within Analytics dashboard so that people can navigate to respective Organization, Application, Programs and other different pages
 
 ## Visual Analytics Metrics
 
-The following metrics appear in the Visual Analytics (Metabase-powered) dashboards. 
+The following metrics appear in the Visual Analytics (Metabase-powered) dashboards.
 
 <Callout icon="📘" theme="info">
   #### **Note:** Metrics in the Streaks, Reward Store, and Status Tiers sections are only available in Visual Analytics dashboards where those features are enabled for your account. Contact your account manager if you need to enable additional feature analytics.
@@ -236,4 +234,56 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Weekly Order Trends Across SKUs**         | Line chart tracking weekly redemption volume per reward item (SKU). Use to spot seasonal trends, identify items that spike after promotions, and find items with declining interest.                 |
 | **Reward Transaction History**              | Row-level transaction table showing Product Name, UUID, Custom User ID, Quantity, Point Amount, and Time of Order for every redemption. Useful for audits, debugging, and user-level investigations. |
 
-<br />
+***
+
+### Arcade Games
+
+Arcade analytics are split across three dashboards: an overview, a skill-based dashboard, and a non-skilled dashboard. Filters include Date, and Game Code.
+
+#### Overview
+
+| Metric / Chart                                       | Definition & How to Use It                                                                                                                              |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Total Game Plays**                                 | Total number of game sessions played across all game types. The headline volume metric for arcade engagement.                                           |
+| **Total Distinct Users**                             | Count of unique users who played at least one game.                                                                                                     |
+| **Daily Average Users (DAU)**                        | Average number of distinct users playing games per day.                                                                                                 |
+| **Game Plays and Distinct Users Across Days**        | Combo chart showing daily game play volume and distinct user counts over time. Use to identify activity spikes and correlate with events or promotions. |
+| **Number of Game Plays and Distinct Users per Game** | Bar chart comparing play volume and unique users across different game types (by Game Code). Identifies which games are most popular.                   |
+| **D1 Retention**                                     | Percentage of users who played on day 0 and returned to play on day 1. The primary short-term retention metric for arcade games.                        |
+| **Average Score per Game**                           | Bar chart showing the mean score achieved per game type. Useful for comparing difficulty calibration across games.                                      |
+
+#### Skill Based
+
+| Metric / Chart                                        | Definition & How to Use It                                                                                                                              |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Total Distinct Users**                              | Unique users who played at least one skill-based game.                                                                                                  |
+| **Monthly Average Users (MAU)**                       | Average distinct users per month for skill-based games.                                                                                                 |
+| **Weekly Average Users**                              | Average distinct users per week.                                                                                                                        |
+| **Daily Average Users (DAU)**                         | Average distinct users per day.                                                                                                                         |
+| **Total Games Played**                                | Total skill-based game sessions.                                                                                                                        |
+| **Average Monthly Game Plays**                        | Mean game plays per month across the selected period.                                                                                                   |
+| **Average Weekly Game Plays**                         | Mean game plays per week.                                                                                                                               |
+| **Average Daily Game Plays**                          | Mean game plays per day.                                                                                                                                |
+| **Number of Games Plays and Distinct Users per Game** | Bar chart comparing play counts and unique users per game code (e.g., skate-master, ski-dash, bobsleigh-battle, curling-master).                        |
+| **Games Plays and Distinct Users Across Days**        | Combo chart of daily play volume and distinct users over time.                                                                                          |
+| **User Cohorts**                                      | Bar chart bucketing users by tenure (0–30 days, 31–60 days, 61–90 days, 90+ days). Shows how engagement distributes across new vs. established players. |
+| **Max Score**                                         | Highest score achieved by any user across all skill-based games.                                                                                        |
+| **Average Score**                                     | Mean score across all skill-based game plays.                                                                                                           |
+| **Completion Rate**                                   | Percentage of game sessions that resulted in a completed game (score submitted).                                                                        |
+| **Average Score per Game**                            | Bar chart of mean scores broken down by game type. Useful for calibrating difficulty across games.                                                      |
+| **Games Played vs Scores Submitted by Day**           | Combo chart comparing total games played against scores submitted over time. Divergence indicates games started but not completed.                      |
+
+#### Non-Skilled
+
+| Metric / Chart                                | Definition & How to Use It                                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Total Distinct Users**                      | Unique users who played at least one non-skilled game.                                      |
+| **Monthly Average Users (MAU)**               | Average distinct users per month.                                                           |
+| **Weekly Average Users**                      | Average distinct users per week.                                                            |
+| **Daily Active Users (DAU)**                  | Average distinct users per day.                                                             |
+| **Total Game Plays**                          | Total non-skilled game sessions.                                                            |
+| **Average Monthly Game Plays**                | Mean game plays per month.                                                                  |
+| **Average Weekly Games Played**               | Mean game plays per week.                                                                   |
+| **Average Daily Games Played**                | Mean game plays per day.                                                                    |
+| **Average Games Played per User**             | Mean number of games a single user plays (total/monthly/weekly/daily breakdowns available). |
+| **Game Plays and Distinct Users Across Days** | Combo chart of daily play volume and distinct users over time.                              |
