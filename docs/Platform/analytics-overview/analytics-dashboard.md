@@ -27,8 +27,6 @@ The Standard Analytics dashboard is available to all customers directly in the P
 * **Quest metrics** : completion status and active users per quest
 * **Quest Task metrics** : task-level completion breakdown
 
-<br />
-
 ### Application View
 
 In the Application View, you can view various KPIs associated with your application as a whole on a time-period basis, and its performance on various user-level metrics.
@@ -152,8 +150,6 @@ Analytics for non-skilled game types. Same structure as Skill Based but without 
 #### Per-Game Dashboards
 
 Individual game dashboards (e.g., Basketball, Charity Product) may be configured for clients with specific game types. These provide game-specific breakdowns of the same core metrics.
-
-<br />
 
 ### Custom Analytics
 
