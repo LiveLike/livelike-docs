@@ -1,11 +1,5 @@
 ---
 title: Analytics Event Glossary
-excerpt: >-
-  This glossary defines the raw events tracked by the LiveLike platform and
-  surfaced through the Analytics API and Visual Analytics dashboards. Events are
-  the atomic unit of engagement data - every metric in the [Analytics
-  Dictionary](https://docs.livelike.com/docs/livelike-events-dictionary) is
-  derived from one or more of these events.
 deprecated: false
 hidden: false
 metadata:
