@@ -15,8 +15,6 @@ next:
       title: Livelike Analytics Dictionary
       type: basic
 ---
-<br />
-
 ## 1. Standard Analytics Dashboard
 
 The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform, no setup required.
@@ -91,7 +89,7 @@ High-level engagement KPIs across your application - active users (DAU/WAU/MAU),
 
 #### Widgets
 
-Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.  
+Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.
 
 <Callout icon="💡" theme="default">
   #### **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select View Program ID.
@@ -123,8 +121,6 @@ For detailed metric definitions, see the [Analytics Dictionary](https://docs.liv
 <Callout icon="💡" theme="default">
   #### **Tip:** Custom tabs are configured per account. Contact your LiveLike account manager if you need additional views or metrics not listed here.
 </Callout>
-
- 
 
 ### Arcade Analytics Tabs
 
@@ -199,7 +195,7 @@ curl -H "x-api-key: YOUR_API_KEY" \
 
 #### GET /api/collection/
 
-Returns a flat list of all Collections your API key can see. Use this to discover your collection structure and retrieve `id` values needed for subsequent calls. 
+Returns a flat list of all Collections your API key can see. Use this to discover your collection structure and retrieve `id` values needed for subsequent calls.
 
 #### GET /api/card/:card_id
 
