@@ -25,8 +25,6 @@ next:
 
 We provides three ways to access and work with engagement data from your application:
 
-<br />
-
 | Option                 | What it is                                                   | Access                                 | Best for                                                              |
 | ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------- |
 | **Standard Analytics** | Pre-built reports in the Producer Site                       | SDK integration (available to all)     | Quick engagement metrics without any setup                            |
