@@ -72,12 +72,25 @@ For full details, see the [Visual Analytics](https://docs.livelike.com/docs/anal
 
 ## Analytics API
 
-The Analytics API lets you programmatically access the same data that powers Visual Analytics. Use it to build custom reports, integrate with external BI tools, or automate exports.
+The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts/queries), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
+
+### Authentication
+
+All requests require the `x-api-key` header. Your API key is scoped to your organisation and controls which collections and dashboards you can access. You can request your LiveLike account manager to provide you with the require api key
 
 ### Quick reference
 
 * **Base URL:** `https://metabase.livelikecdn.com/api/`
 * **Authentication:** `x-api-key` header (scoped to your organisation)
+
+### Concepts
+
+| Term           | Description                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Collection** | A folder grouping related dashboards and cards. Your org will have at least one top-level collection.            |
+| **Card**       | A single chart, table, or scalar metric - the building block of a dashboard. Each card runs an underlying query. |
+| **Dashboard**  | A layout of multiple cards, optionally with shared filter controls and tabs.                                     |
+| **Dashcard**   | A Card placed inside a Dashboard. Has its own `dashcard_id` separate from the underlying `card_id`.              |
 
 For full details, see the [Analytics API](https://docs.livelike.com/reference/get_collections) documentation.
 
