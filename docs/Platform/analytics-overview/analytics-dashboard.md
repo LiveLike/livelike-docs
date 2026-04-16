@@ -105,7 +105,7 @@ Quest participation funnels and reward claim data such as users attempting/compl
 
 #### Chat
 
-Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.  
+Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.
 
 <Image align="center" src="https://files.readme.io/9747c574b4c109dd0fc94df587945b66803116e967b4e409d47fca3cf69508f0-chat.gif" />
 
@@ -170,12 +170,6 @@ To request custom analytics, contact your LiveLike account manager with a descri
 ## 3. Analytics API
 
 The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts/queries), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
-
-### Base URL
-
-```
-https://metabase.livelikecdn.com/api/
-```
 
 ### Authentication
 
