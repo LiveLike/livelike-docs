@@ -22092,7 +22092,8 @@
                 ],
                 "properties": {
                   "reaction_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the reaction type from the reaction pack"
                   },
                   "reaction_space_id": {
                     "type": "string"
