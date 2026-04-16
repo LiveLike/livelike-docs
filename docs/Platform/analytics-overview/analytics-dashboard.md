@@ -89,7 +89,9 @@ High-level engagement KPIs across your application - active users (DAU/WAU/MAU),
 
 #### Widgets
 
-Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.
+Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.  
+
+<Image align="center" src="https://files.readme.io/e11ec02ee5b2c03b52a8a7c2e6e0d46e89eec9ac886a627cb355c40bb5f585e0-widgets.gif" />
 
 <Callout icon="💡" theme="default">
   #### **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select View Program ID.
@@ -97,11 +99,14 @@ Widget-specific performance broken down by type and program - engagement scores,
 
 #### Quest
 
-Quest participation funnels and reward claim data such as users attempting/completing quests, completion status by quest, per-quest funnel analysis, and average completion time.
+Quest participation funnels and reward claim data such as users attempting/completing quests, completion status by quest, per-quest funnel analysis, and average completion time.  
+
+<Image align="center" src="https://files.readme.io/853460e3fa1089a12b1356f4853da7347340354217ea60170fc4d122992eca4f-quest.gif" />
 
 #### Chat
 
-Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.
+Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.  
+
 
 ### Additional Tabs
 
