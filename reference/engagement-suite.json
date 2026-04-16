@@ -22099,7 +22099,7 @@
                   },
                   "target_id": {
                     "type": "string",
-                    "description": "entity for which this reaction needs to be posted, eg a chatroom message"
+                    "description": "The ID of the entity being reacted to, e.g. a chat message ID, or a custom ID from your system"
                   },
                   "custom_data": {
                     "type": "string"
