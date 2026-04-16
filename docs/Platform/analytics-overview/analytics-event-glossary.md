@@ -103,5 +103,8 @@ Fired each time user clicks on a link in a chat message.
 | Chat Message ID   | String | Unique identifier of the chat message                      |
 | Chat Message Link | String | URL of the link that was opened                            |
 
-  
-For Arcade Analytics Event : https://docs.livelike.com/docs/arcade-analytics#/versions
+***
+
+## Arcade Game Events
+
+For arcade-specific analytics events and metrics, see the [Arcade Analytics](https://docs.livelike.com/docs/arcade-analytics) documentation.
