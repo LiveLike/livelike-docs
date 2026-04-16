@@ -165,65 +165,6 @@ If a metric or dashboard view you need is not available in any of the dashboards
 
 To request custom analytics, contact your LiveLike account manager with a description of the metrics or views you need. The LiveLike team will assess feasibility and configure the custom tab for your organisation.
 
-***
-
-## 3. Analytics API
-
-The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts/queries), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
-
-### Authentication
-
-All requests require the `x-api-key` header. Your API key is scoped to your organisation and controls which collections and dashboards you can access. You can request your LiveLike account manager to provide you with the require api key
-
-```bash
-curl -H "x-api-key: YOUR_API_KEY" \
-  https://metabase.livelikecdn.com/api/collection/
-```
-
-### Concepts
-
-| Term           | Description                                                                                                      |
-| -------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Collection** | A folder grouping related dashboards and cards. Your org will have at least one top-level collection.            |
-| **Card**       | A single chart, table, or scalar metric - the building block of a dashboard. Each card runs an underlying query. |
-| **Dashboard**  | A layout of multiple cards, optionally with shared filter controls and tabs.                                     |
-| **Dashcard**   | A Card placed inside a Dashboard. Has its own `dashcard_id` separate from the underlying `card_id`.              |
-
-### Endpoints
-
-#### GET /api/collection/
-
-Returns a flat list of all Collections your API key can see. Use this to discover your collection structure and retrieve `id` values needed for subsequent calls.
-
-#### GET /api/card/:card_id
-
-Returns full metadata for a Card including its parameters, column schema, and query type - **without running the query**. Call this before downloading data to understand the card's structure.
-
-#### GET /api/dashboard/:dashboard_id
-
-Returns full Dashboard metadata which includes all dashcards, filter controls, tab layout, and parameter mappings. **Call this before downloading dashboard card data** - you need the `dashcard_id` and `card_id` values from this response.
-
-### Typical API Workflow
-
-1. `GET /api/collection/` - Discover your collections, note the `id` of the relevant one
-2. `GET /api/collection/<id>/items` - List cards and dashboards inside that collection
-3. `GET /api/card/<card_id>` for a single chart, or `GET /api/dashboard/<dashboard_id>` for a full dashboard - Inspect parameters and column schema before downloading
-4. Download or query the card or dashboard card with the correct parameters
-
-```
-1. GET /api/collection/
-   → Discover your collections, note the id of the relevant one
-
-2. GET /api/collection/<id>/items
-   → List cards and dashboards inside that collection
-
-3. GET /api/card/<card_id>            ← for a single chart/metric
-   GET /api/dashboard/<dashboard_id>  ← for an entire dashboard
-
-4. POST /api/card/<card_id>/query/csv → Download card data as CSV
-	 POST /api/dashboard/<dashboard_id>/dashcard/<dashcard_id>/card/<card_id>/query/csv → Download a specific dashboard card's data
-```
-
-For detailed API definitions, see the [Analytics API Doc](https://docs.livelike.com/reference/get_collections).
+<br />
 
 <br />
