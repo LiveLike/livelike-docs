@@ -1,5 +1,5 @@
 ---
-title: Create a user reaction
+title: Create user reaction
 excerpt: ''
 api:
   file: engagement-suite.json
