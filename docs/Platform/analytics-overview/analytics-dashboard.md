@@ -19,14 +19,6 @@ next:
 
 The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform, no setup required.
 
-### What it covers
-
-* **Application-level metrics** : engagement summaries across your application
-* **Program-level metrics** : performance comparisons program over program
-* **Widget-level metrics** : individual interactive widget results
-* **Quest metrics** : completion status and active users per quest
-* **Quest Task metrics** : task-level completion breakdown
-
 ### Application View
 
 In the Application View, you can view various KPIs associated with your application as a whole on a time-period basis, and its performance on various user-level metrics.
