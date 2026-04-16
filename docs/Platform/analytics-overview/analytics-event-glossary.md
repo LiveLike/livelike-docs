@@ -107,4 +107,4 @@ Fired each time user clicks on a link in a chat message.
 
 ## Arcade Game Events
 
-For arcade-specific analytics events and metrics, see the [Arcade Analytics](https://docs.livelike.com/docs/arcade-analytics) documentation.
+For arcade-specific analytics events, see the [Arcade Analytics](https://docs.livelike.com/docs/arcade-analytics) documentation.
