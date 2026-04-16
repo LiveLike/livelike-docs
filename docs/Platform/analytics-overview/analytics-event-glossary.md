@@ -9,7 +9,10 @@ metadata:
     more. Learn more about widget analytics.
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: arcade-analytics
+      title: Arcade Analytics
+      type: basic
 ---
 These are the analytics events that are triggered by the stock SDK UIs.
 
@@ -99,3 +102,6 @@ Fired each time user clicks on a link in a chat message.
 | Chat Room Title   | String | Title of the Chat room used                                |
 | Chat Message ID   | String | Unique identifier of the chat message                      |
 | Chat Message Link | String | URL of the link that was opened                            |
+
+  
+For Arcade Analytics Event : https://docs.livelike.com/docs/arcade-analytics#/versions
