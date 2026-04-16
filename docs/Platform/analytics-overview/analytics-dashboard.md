@@ -85,6 +85,8 @@ All Visual Analytics-enabled accounts include the following tabs:
 
 High-level engagement KPIs across your application - active users (DAU/WAU/MAU), trend lines, and an interval-level summary of profiles, impressions, interactions, and engagement percent. Your starting point for understanding overall platform health.
 
+<Image align="center" border={true} src="https://files.readme.io/ac33fde430d4b61dcac245ab0b6cb65e0ce4d5a82b4c4b5da1e62038f39565b9-overview.gif" className="border" />
+
 #### Widgets
 
 Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.
