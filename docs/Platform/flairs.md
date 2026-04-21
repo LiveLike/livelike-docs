@@ -80,7 +80,7 @@ Operations are supported in CMS and API:
 * #### Update Flair
   Updates the metadata of an existing flair. <Anchor label="Update Flair Endpoint" target="_blank" href="https://docs.livelike.com/v1/reference/update-a-flair">Update Flair Endpoint</Anchor>
 * #### Remove Flair
-  Soft-deletes a flair. <Anchor label="Delete Flair" target="_blank" href="https://docs.livelike.com/v1/reference/delete-a-flair">Delete Flair</Anchor>
+  Deletes a flair. <Anchor label="Delete Flair" target="_blank" href="https://docs.livelike.com/v1/reference/delete-a-flair">Delete Flair</Anchor>
 * #### Assign a Flair
   Assigns an existing flair to a supported resource. It must contain flair_id and one of profile_id or profile_custom_id and optionally scope_id.  If assignment contains scope_id flair will be assigned only for defined scope. Assignments are unique. Create assignment: <Anchor label="Assign Flair" target="_blank" href="https://docs.livelike.com/v1/create-a-flair-assignment">Assign Flair</Anchor>, list assignments <Anchor label="Assign Flair List" target="_blank" href="https://docs.livelike.com/v1/reference/list-flair-assignments">Assign Flair List</Anchor>
   * A flair assignment:
