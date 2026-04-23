@@ -72,7 +72,9 @@ The Analytics API gives you programmatic access to your analytics data - collect
 
 ### Authentication
 
-All requests require the `x-api-key` header to. Your API key is scoped to your organization and controls which collections and dashboards you can access. Request your an API key from your account manager to get started.
+All requests require the `x-api-key` header to. Your API key is scoped to your organization and controls which collections and dashboards you can access.     
+
+> **Note**: Analytics API keys are separate from Producer Tokens. To obtain your Analytics API key, please reach out to your LiveLike Account Manager or designated Point of Contact.
 
 ### Quick reference
 
