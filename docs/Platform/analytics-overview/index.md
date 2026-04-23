@@ -19,7 +19,7 @@ The LiveLike Producer Site includes a built-in analytics section accessible from
 
 ## How to access your data
 
-We provides three ways to access and work with engagement data from your application:
+We provide three ways to access and work with engagement data from your application:
 
 | Option                 | What it is                                                   | Access                                 | Best for                                                              |
 | ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------- |
@@ -72,7 +72,7 @@ The Analytics API gives you programmatic access to your analytics data - collect
 
 ### Authentication
 
-All requests require the `x-api-key` header to. Your API key is scoped to your organization and controls which collections and dashboards you can access.     
+All requests require the `x-api-key` header to. Your API key is scoped to your organization and controls which collections and dashboards you can access.
 
 > **Note**: Analytics API keys are separate from Producer Tokens. To obtain your Analytics API key, please reach out to your LiveLike Account Manager or designated Point of Contact.
 
