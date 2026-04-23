@@ -68,7 +68,7 @@ For full details, see the [Visual Analytics](https://docs.livelike.com/docs/anal
 
 ## Analytics API
 
-The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts/queries), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
+The Analytics API gives you programmatic access to your analytics data - collections, cards (individual charts), and dashboards. Use it to pull data into your own systems, build custom reports, or automate exports.
 
 ### Authentication
 
