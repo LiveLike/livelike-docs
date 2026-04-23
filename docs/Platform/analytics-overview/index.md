@@ -15,7 +15,7 @@ next:
       title: Analytics Dashboard
       type: basic
 ---
-The LiveLike Producer Site includes a built-in analytics section accessible from the left navigation. As soon as your integration with LiveLike is launched, we start collecting data that can be used to track your success. This data helps you understand your programs' engagement performance and the usage behaviors of your audience, resulting in increased participation, engagement, and retention.
+The LiveLike Producer Site includes a built-in analytics section accessible from the left navigation. As soon as the integration with LiveLike is launched, we start collecting data that can be used to track your success. This data helps you understand your programs' engagement performance and the usage behaviors of your audience, resulting in increased participation, engagement, and retention.
 
 ## How to access your data
 
