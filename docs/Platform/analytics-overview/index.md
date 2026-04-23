@@ -1,12 +1,6 @@
 ---
 title: Analytics
-excerpt: >-
-  The LiveLike Producer Site includes a built-in analytics section accessible
-  from the left navigation. As soon as your integration with LiveLike is
-  launched, we start collecting data that can be used to track your success.
-  This data helps you understand your programs' engagement performance and the
-  usage behaviors of your audience, resulting in increased participation,
-  engagement, and retention.
+excerpt: Understand your integration performance and user behaviors
 deprecated: false
 hidden: false
 metadata:
@@ -21,13 +15,15 @@ next:
       title: Analytics Dashboard
       type: basic
 ---
+The LiveLike Producer Site includes a built-in analytics section accessible from the left navigation. As soon as your integration with LiveLike is launched, we start collecting data that can be used to track your success. This data helps you understand your programs' engagement performance and the usage behaviors of your audience, resulting in increased participation, engagement, and retention.
+
 ## How to access your data
 
 We provides three ways to access and work with engagement data from your application:
 
 | Option                 | What it is                                                   | Access                                 | Best for                                                              |
 | ---------------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------------------------------------------------- |
-| **Standard Analytics** | Pre-built reports in the Producer Site                       | SDK integration (available to all)     | Quick engagement metrics without any setup                            |
+| **Standard Analytics** | Pre-built reports in the Producer Site                       | Standard (available to all)            | Quick engagement metrics without any setup                            |
 | **Visual Analytics**   | Interactive Metabase-powered dashboards in the Producer Site | Add-on (contact your account manager)  | Richer charts, multiple tabs, and deeper drill-downs                  |
 | **Analytics API**      | Programmatic access to Visual Analytics data                 | API key (contact your account manager) | Pulling data into a BI tool, automating exports, external integration |
 
@@ -76,12 +72,12 @@ The Analytics API gives you programmatic access to your analytics data - collect
 
 ### Authentication
 
-All requests require the `x-api-key` header. Your API key is scoped to your organisation and controls which collections and dashboards you can access. You can request your LiveLike account manager to provide you with the require api key
+All requests require the `x-api-key` header to. Your API key is scoped to your organization and controls which collections and dashboards you can access. Request your an API key from your account manager to get started.
 
 ### Quick reference
 
 * **Base URL:** `https://metabase.livelikecdn.com/api/`
-* **Authentication:** `x-api-key` header (scoped to your organisation)
+* **Authentication:** `x-api-key` header (scoped to your organization)
 
 ### Concepts
 
