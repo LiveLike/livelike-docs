@@ -60,7 +60,7 @@ Visual Analytics provides an interactive data exploration experience embedded in
 
 ### Additional tabs
 
-Accounts may have additional tabs configured based on their product — such as Leaderboard, Arcade game-specific tabs (Skilled Games, Non-Skilled Games), or custom requirement. Contact your LiveLike account manager for details.
+Accounts may have additional tabs configured based on their product - such as Leaderboard, Arcade game-specific tabs (Skilled Games, Non-Skilled Games), or custom requirements. Contact your LiveLike account manager for details.
 
 For full details, see the [Visual Analytics](https://docs.livelike.com/docs/analytics-dashboard) documentation.
 
