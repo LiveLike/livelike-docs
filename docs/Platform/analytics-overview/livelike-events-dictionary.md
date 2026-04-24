@@ -90,7 +90,7 @@ All other KPIs carry the same definitions as the Applications and Programs tabs.
 
 ### Audience Tab
 
-This view provides an overview of the customer base — operating systems in use, device types, and SDK versions.
+This view provides an overview of the customer base - operating systems in use, device types, and SDK versions.
 
 ***
 
@@ -143,14 +143,14 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Avg. Chat Messages per User**          | Average number of chat messages a user sends within the selected time range. A rising average alongside flat unique-user counts can signal growing engagement depth among existing participants.                                                                                   |
 | **Moderation Action by Number of Users** | Bar chart showing how many users received each type of moderation action (shadow ban, read-only, etc.) within the time range. Shadow-banned users can still send messages, but those messages are not visible to others. Read-only users can read messages but cannot participate. |
 | **Messages Filtered by System**          | Bar chart of messages automatically filtered by the platform based on a configured dictionary of banned words. Filtered content is replaced with `***` for other users. Track this to calibrate your content filter dictionary.                                                    |
-| **Messages Deleted**                     | Bar chart showing messages explicitly removed by a moderator or automated rule. Distinct from system filtering — these are post-publish removals.                                                                                                                                  |
+| **Messages Deleted**                     | Bar chart showing messages explicitly removed by a moderator or automated rule. Distinct from system filtering - these are post-publish removals.                                                                                                                                  |
 
 ### Comments
 
 | Metric / Chart             | Definition & How to Use It                                                                                                                                                                                  |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Comment and User Count** | Combo chart showing total comments posted and unique users commenting over time. Filtered by Client ID, Date Range, Program ID, and Program Name. The two series reveal participation breadth versus depth. |
-| **Avg. Comments per User** | Average number of comments submitted per user during the specified date range. Measures engagement depth — how much individual commenters are contributing.                                                 |
+| **Avg. Comments per User** | Average number of comments submitted per user during the specified date range. Measures engagement depth - how much individual commenters are contributing.                                                 |
 | **Avg. Replies per User**  | Average number of replies a user receives on their comments within the selected time range. A rising reply rate suggests content is driving genuine back-and-forth conversation.                            |
 | **Reactions Trend**        | Combo chart tracking the volume of user reactions on comments over time. Reactions include emoji responses and upvotes. Use this to identify content that resonates most strongly.                          |
 
@@ -158,7 +158,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 
 | Metric / Chart                    | Definition & How to Use It                                                                                                                                                                                       |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Number of Leaderboard Entries** | Table showing the count of leaderboard entries per leaderboard. Not affected by the date range filter — reflects total cumulative entries per leaderboard at the time of viewing.                                |
+| **Number of Leaderboard Entries** | Table showing the count of leaderboard entries per leaderboard. Not affected by the date range filter - reflects total cumulative entries per leaderboard at the time of viewing.                                |
 | **Games Leaderboard Entry Table** | Detailed table of leaderboard entries showing Profile ID, Custom ID, Nickname, and Score per leaderboard. Can be filtered by Leaderboard Name. Useful for reviewing top performers and validating scoring logic. |
 
 ### Badges
@@ -166,7 +166,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | Metric / Chart                    | Definition & How to Use It                                                                                                                                                                           |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Badges by Number of Users**     | Bar chart showing the number of users who received each badge type within the selected time range. Helps identify which badges are most commonly awarded and which may need threshold recalibration. |
-| **User Badge Data**               | Table listing individual user badge grants — showing which badges each user earned and when. Accessible via the Overview dashboard's Badge Data section.                                             |
+| **User Badge Data**               | Table listing individual user badge grants - showing which badges each user earned and when. Accessible via the Overview dashboard's Badge Data section.                                             |
 | **Distinct Users per Badge Tier** | Bar chart showing how many distinct users have earned badges at each tier level. Use this to understand the shape of your badge engagement pyramid.                                                  |
 
 ### Quests
@@ -194,7 +194,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Total Streak Challenges**                     | Total number of streak challenge enrollments across all users. Reflects overall adoption of the streak program.                                                                                        |
 | **Distinct Streak Challenges**                  | Number of unique streak challenges configured for the application. Contextualises total enrollments relative to the number of active streak programs.                                                  |
 | **Distinct Users (Streaks)**                    | Count of unique users who have participated in at least one streak challenge. The participation baseline for streak analytics.                                                                         |
-| **Average Streak Length**                       | Mean number of consecutive qualifying days across all user streaks. A key health indicator — declining averages may suggest users are not being pulled back consistently.                              |
+| **Average Streak Length**                       | Mean number of consecutive qualifying days across all user streaks. A key health indicator - declining averages may suggest users are not being pulled back consistently.                              |
 | **Maximum Streak Length**                       | The highest streak length achieved by any single user. Useful as a benchmark and for surfacing power-user behaviour.                                                                                   |
 | **Drop Off Rate**                               | Percentage of users who started a streak but did not maintain it to a milestone. Identifies the scale of early abandonment.                                                                            |
 | **Participation Rate**                          | Percentage of the total user base that has participated in at least one streak challenge. Low participation rates may indicate the streak mechanic needs greater discoverability or promotional push.  |
@@ -206,7 +206,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Average Freeze Hours**                        | Mean duration (in hours) for which users activated a streak freeze. Longer average freeze use may indicate your daily task window is not well-aligned with user schedules.                             |
 | **Distribution of Streaks**                     | Bar chart bucketing all streaks by their length (e.g., 1–3 days, 4–7 days, 8–14 days). Useful for identifying natural drop-off points and sizing incentive milestones appropriately.                   |
 | **Distribution of Users Across Streak Lengths** | Bar chart showing how many users are clustered at each streak length bucket. Reveals where the largest user cohorts sit and which milestone thresholds matter most.                                    |
-| **Streak Drop Off Rate by Streak Length**       | Bar chart mapping drop-off rate at each streak length increment. Spikes at specific lengths identify the hardest days to maintain a streak — and the most valuable places to add rewards or reminders. |
+| **Streak Drop Off Rate by Streak Length**       | Bar chart mapping drop-off rate at each streak length increment. Spikes at specific lengths identify the hardest days to maintain a streak - and the most valuable places to add rewards or reminders. |
 | **Streak Activity over the Days**               | Line chart showing daily streak activity (qualifying interactions) over the selected date range. Use this to correlate streak engagement with external events like match days or content drops.        |
 | **Streak Creation Distribution**                | Bar chart showing when user streaks were first created (i.e., when users first enrolled). Useful for evaluating campaign launches and promotion timing.                                                |
 | **Completed Streak Participation**              | Bar chart showing the volume of fully completed streak challenges over time. Compare against total attempts to track your overall streak completion rate trend.                                        |
@@ -219,7 +219,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Average Reward Amount**                       | Mean reward value (in points or configured currency) granted per streak milestone completion.                                                                                                          |
 | **Reward Redemption Rate (Streaks)**            | Percentage of streak-earned rewards that users actually redeemed. Useful in conjunction with Reward Store data to measure the full lifecycle of streak rewards.                                        |
 | **Percent of Streaks with User Goal Applied**   | Percentage of active streaks where a user-defined goal has been set. Indicates adoption of the goal-setting feature, where available.                                                                  |
-| **Freeze Distribution**                         | Bar chart showing how freeze usage is distributed across users — i.e., how many users used 0, 1, 2, or more freezes. High usage at 0 freezes may indicate users aren't aware of the feature.           |
+| **Freeze Distribution**                         | Bar chart showing how freeze usage is distributed across users i.e., how many users used 0, 1, 2, or more freezes. High usage at 0 freezes may indicate users aren't aware of the feature.             |
 | **Current Streak Length**                       | The current active streak length for users at time of viewing. Useful for identifying users who are close to a milestone and may benefit from a nudge.                                                 |
 | **Total Streak Activity**                       | Total count of qualifying streak activity events recorded. Serves as a raw volume measure of streak engagement.                                                                                        |
 
