@@ -21,7 +21,7 @@ The Standard Analytics dashboard is available to all customers directly in the P
 
 ### Application View
 
-In the Application View, you can review KPIs for your application over time. You can also track performance across user-level metrics.
+In the Application View, you can view various KPIs for your application over time. You can also track performance across user-level metrics.
 
 Key features include:
 
