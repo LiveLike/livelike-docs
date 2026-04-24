@@ -15,7 +15,7 @@ next:
       title: Livelike Analytics Dictionary
       type: basic
 ---
-## 1. Standard Analytics Dashboard
+## Standard Analytics Dashboard
 
 The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform, no setup required.
 
@@ -37,7 +37,7 @@ You can see data in a more granular form, such as **hour/day/week/month/year**, 
 
 ### Program View
 
-In the Program View, you can see KPIs by Program ID, allowing for performance comparisons on a program over program basis. The filters remain the same which are already available in the application-level view previously selected. In this view, you can see Unique Impressions and Unique Interactions for each of your programs. Below is a snapshot of how it looks.
+In the Program View, you can see KPIs by Program ID, allowing for performance comparisons on a program-over-program basis. The filters remain the same which are already available in the application-level view previously selected. In this view, you can see Unique Impressions and Unique Interactions for each of your programs. Below is a snapshot of how it looks.
 
 ![Program View with Unique Impressions and Interactions per program](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
 
@@ -45,7 +45,7 @@ Also, please note that in the above views, Interactions are calculated for inter
 
 ### Widgets View
 
-In the Widget View, you can see how individual interactive widgets have performed. Here, you can filter the contents, such as by Publish Date, Program ID, Widget Type. For instance, if you want to see performance individual widget level by a particular program, or on a particular date, you can filter for those use cases. We have added a new filter where you can choose from two widget categories - **Interactive widgets & Non-Interactive widgets.**
+In the Widgets View, you can see how individual interactive widgets have performed. Here, you can filter the contents, such as by Publish Date, Program ID, Widget Type. For instance, if you want to see performance at the individual widget level by a particular program, or on a particular date, you can filter for those use cases. We have added a new filter where you can choose from two widget categories - **Interactive widgets & Non-Interactive widgets.**
 
 ![Widgets View with Interactive vs Non-Interactive filter](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
 
@@ -53,19 +53,19 @@ For your convenience, you can select a particular program, and then you can see 
 
 ### Quests View
 
-In the Quest View, you can see the completion status and active users of individual quests. Here, you can filter the contents using Quest and rest of the filters remain the same which are already available in the application-level view.
+In the Quests View, you can see the completion status and active users of individual quests. Here, you can filter the contents using Quest and the rest of the filters remain the same which are already available in the application-level view.
 
 ![Quests View showing per-quest completion and active users](https://files.readme.io/adbc4b0-Screenshot_2024-02-08_at_1.22.00_PM.png)
 
 ### Quest Tasks View
 
-In the Quest Task View, you can see the task name and completion status of individual quests. Here, you can filter the contents using Quest, Quest Task and rest of the filters remain the same which are already available in the application-level view.
+In the Quest Tasks View, you can see the task name and completion status of individual quests. Here, you can filter the contents using Quest and Quest Task, the rest of the filters remain the same which are already available in the application-level view.
 
 ![Quest Tasks View showing task-level completion status](https://files.readme.io/1b2b584-Screenshot_2024-02-08_at_2.05.26_PM.png)
 
 ***
 
-## 2. Visual Analytics
+## Visual Analytics
 
 Visual Analytics provides an interactive data exploration experience embedded in the Producer Site. It is available as an add-on and offers richer, drill-down reporting across multiple dashboard tabs — including custom tabs configured for your specific product.
 
@@ -137,7 +137,7 @@ A cross-game summary with three sections:
 In-depth analytics for skill-based games (e.g., skate-master, ski-dash, bobsleigh-battle, curling-master). Three sections:
 
 * **User Funnel** — Total Distinct Users, MAU, Weekly Average Users, DAU
-* **Game Plays** — Total Games Played, Average Monthly/Weekly/Daily Game Plays, games plays and distinct users per game and across days, user cohorts (0–30, 31–60, 61–90, 90+ days)
+* **Game Plays** — Total Games Played, Average Monthly/Weekly/Daily Game Plays, game plays and distinct users per game and across days, user cohorts (0–30, 31–60, 61–90, 90+ days)
 * **Game Engagement** — Max Score, Average Score, Completion Rate, average score per game, games played vs scores submitted over time
 
 #### Arcade Games: Non-Skilled
