@@ -17,7 +17,7 @@ next:
 ---
 ## Standard Analytics Dashboard
 
-All customers can access the Standard Analytics dashboard directly in the Producer Site. LiveLike generates these reports automatically from your platform data, so you do not need to configure the dashboard before viewing them.
+All customers can access the Standard Analytics dashboard directly in the Producer Site. LiveLike generates these reports automatically from your platform data, so you do not need to configure the dashboard before viewing them.  
 
 ### Application View
 
