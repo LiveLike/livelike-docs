@@ -27,7 +27,7 @@ Key features include:
 
 * Spreadsheet download of the page contents with the current filters that have been applied.
 * Search bar in the top right corner to increase efficiency.
-* Share next to the download button for better ease of access and shareability, allowing you to share the contents between your colleagues with the same filters which you have applied at your end.
+* Share next to the download button lets you share the current view with colleagues, preserving your applied filters.
 
 <Image align="center" alt="Application View with download, search, and share controls" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
 
@@ -86,7 +86,7 @@ Widget-specific performance broken down by type and program - engagement scores,
 <Image align="center" alt="Visual Analytics Widgets tab with engagement scores and per-widget table" src="https://files.readme.io/e11ec02ee5b2c03b52a8a7c2e6e0d46e89eec9ac886a627cb355c40bb5f585e0-widgets.gif" />
 
 <Callout icon="💡" theme="default">
-  #### **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select View Program ID.
+  **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select **View Program ID**.
 </Callout>
 
 #### Quest
@@ -117,7 +117,7 @@ Accounts may have additional tabs configured based on their product:
 For detailed metric definitions, see the [Analytics Dictionary](https://docs.livelike.com/docs/livelike-events-dictionary).
 
 <Callout icon="💡" theme="default">
-  #### **Tip:** Custom tabs are configured per account. Contact your LiveLike account manager if you need additional views or metrics not listed here.
+  **Tip:** Custom tabs are configured per account. Contact your LiveLike account manager if you need additional views or metrics not listed here.
 </Callout>
 
 ### Arcade Analytics Tabs
