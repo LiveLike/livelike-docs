@@ -27,19 +27,19 @@ Key features include:
 
 * Spreadsheet download of the page contents with the current filters that have been applied.
 * Search bar in the top right corner to increase efficiency.
-* Share' next to the download button for better ease of access and shareability, allowing you to share the contents between your colleagues with the same filters which you have applied at your end.
+* Share next to the download button for better ease of access and shareability, allowing you to share the contents between your colleagues with the same filters which you have applied at your end.
 
-<Image align="center" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
+<Image align="center" alt="Application View with download, search, and share controls" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
 
 You can see data in a more granular form, such as **hour/day/week/month/year**, by using the Interval drop-down options.  Our default view option is by **Month**.
 
-![](https://files.readme.io/751ab15-ezgif.com-gif-maker_1.gif "ezgif.com-gif-maker (1).gif")
+![Interval drop-down expanded showing granularity options](https://files.readme.io/751ab15-ezgif.com-gif-maker_1.gif "ezgif.com-gif-maker (1).gif")
 
 ### Program View
 
 In the Program View, you can see KPIs by Program ID, allowing for performance comparisons on a program over program basis. The filters remain the same which are already available in the application-level view previously selected. In this view, you can see Unique Impressions and Unique Interactions for each of your programs. Below is a snapshot of how it looks.
 
-![](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
+![Program View with Unique Impressions and Interactions per program](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
 
 Also, please note that in the above views, Interactions are calculated for interactable widgets (discussed in the next view).
 
@@ -47,21 +47,21 @@ Also, please note that in the above views, Interactions are calculated for inter
 
 In the Widget View, you can see how individual interactive widgets have performed. Here, you can filter the contents, such as by Publish Date, Program ID, Widget Type. For instance, if you want to see performance individual widget level by a particular program, or on a particular date, you can filter for those use cases. We have added a new filter where you can choose from two widget categories - **Interactive widgets & Non-Interactive widgets.**
 
-![](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
+![Widgets View with Interactive vs Non-Interactive filter](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
 
 For your convenience, you can select a particular program, and then you can see the widgets which were published during that time frame. You can also download the contents of a particular program by clicking on the **Download** button provided in the upper right corner.
 
 ### Quests View
 
-In the Quest View, you can see the completion status and active users if individual quests. Here, you can filter the contents using Quest and rest of the filters remain the same which are already available in the application-level view.
+In the Quest View, you can see the completion status and active users of individual quests. Here, you can filter the contents using Quest and rest of the filters remain the same which are already available in the application-level view.
 
-![](https://files.readme.io/adbc4b0-Screenshot_2024-02-08_at_1.22.00_PM.png)
+![Quests View showing per-quest completion and active users](https://files.readme.io/adbc4b0-Screenshot_2024-02-08_at_1.22.00_PM.png)
 
 ### Quest Tasks View
 
 In the Quest Task View, you can see the task name and completion status of individual quests. Here, you can filter the contents using Quest, Quest Task and rest of the filters remain the same which are already available in the application-level view.
 
-![](https://files.readme.io/1b2b584-Screenshot_2024-02-08_at_2.05.26_PM.png)
+![Quest Tasks View showing task-level completion status](https://files.readme.io/1b2b584-Screenshot_2024-02-08_at_2.05.26_PM.png)
 
 ***
 
@@ -77,13 +77,13 @@ All Visual Analytics-enabled accounts include the following tabs:
 
 High-level engagement KPIs across your application - active users (DAU/WAU/MAU), trend lines, and an interval-level summary of profiles, impressions, interactions, and engagement percent. Your starting point for understanding overall platform health.
 
-<Image align="center" border={true} src="https://files.readme.io/ac33fde430d4b61dcac245ab0b6cb65e0ce4d5a82b4c4b5da1e62038f39565b9-overview.gif" className="border" />
+<Image align="center" alt="Visual Analytics Overview tab with DAU, WAU, MAU and trend lines" border={true} src="https://files.readme.io/ac33fde430d4b61dcac245ab0b6cb65e0ce4d5a82b4c4b5da1e62038f39565b9-overview.gif" className="border" />
 
 #### Widgets
 
 Widget-specific performance broken down by type and program - engagement scores, widgets published by type, top-performing formats, and a per-widget statistics table with engagement rates.
 
-<Image align="center" src="https://files.readme.io/e11ec02ee5b2c03b52a8a7c2e6e0d46e89eec9ac886a627cb355c40bb5f585e0-widgets.gif" />
+<Image align="center" alt="Visual Analytics Widgets tab with engagement scores and per-widget table" src="https://files.readme.io/e11ec02ee5b2c03b52a8a7c2e6e0d46e89eec9ac886a627cb355c40bb5f585e0-widgets.gif" />
 
 <Callout icon="💡" theme="default">
   #### **Tip:** To find a Program ID: open the CMS, navigate to the program, click the three-dot menu (⋮), and select View Program ID.
@@ -93,13 +93,13 @@ Widget-specific performance broken down by type and program - engagement scores,
 
 Quest participation funnels and reward claim data such as users attempting/completing quests, completion status by quest, per-quest funnel analysis, and average completion time.
 
-<Image align="center" src="https://files.readme.io/853460e3fa1089a12b1356f4853da7347340354217ea60170fc4d122992eca4f-quest.gif" />
+<Image align="center" alt="Visual Analytics Quest tab showing funnel and completion time" src="https://files.readme.io/853460e3fa1089a12b1356f4853da7347340354217ea60170fc4d122992eca4f-quest.gif" />
 
 #### Chat
 
 Message volume, user participation, and moderation activity - chat message trends, unique senders, average messages per user, moderation actions (shadow ban, read-only), system-filtered messages, and deleted messages.
 
-<Image align="center" src="https://files.readme.io/9747c574b4c109dd0fc94df587945b66803116e967b4e409d47fca3cf69508f0-chat.gif" />
+<Image align="center" alt="Visual Analytics Chat tab with message volume and moderation metrics" src="https://files.readme.io/9747c574b4c109dd0fc94df587945b66803116e967b4e409d47fca3cf69508f0-chat.gif" />
 
 ### Additional Tabs
 
