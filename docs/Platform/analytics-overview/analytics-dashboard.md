@@ -17,21 +17,21 @@ next:
 ---
 ## Standard Analytics Dashboard
 
-The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data, no setup required.
+The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data, so you do not need to configure the dashboard before viewing them.
 
 ### Application View
 
-In the Application View, you can view various KPIs associated with your application as a whole on a time-period basis, and its performance on various user-level metrics.
+In the Application View, you can review KPIs for your application over time. You can also track performance across user-level metrics.
 
 Key features include:
 
-* Download the page contents as a spreadsheet, preserving the filters you've applied.
-* Search bar in the top right corner to increase efficiency.
-* Share next to the download button lets you share the current view with colleagues, preserving your applied filters.
+* Use **Download** to export the page contents as a spreadsheet with your current filters applied.
+* Use the search bar in the top right corner to find results faster.
+* Use **Share** next to **Download** to share the current view with colleagues while keeping your applied filters.
 
 <Image align="center" alt="Application View with download, search, and share controls" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
 
-You can see data in a more granular form, such as **hour/day/week/month/year**, by using the **Interval** drop-down options.  Our default view option is by **Month**.
+Use the **Interval** drop-down to switch between **hour/day/week/month/year** views so you can compare short-term spikes with longer-term trends. The default view is **Month**.
 
 ![Interval drop-down expanded showing granularity options](https://files.readme.io/751ab15-ezgif.com-gif-maker_1.gif "ezgif.com-gif-maker (1).gif")
 
@@ -60,13 +60,13 @@ Select a program to see the widgets that were published during that time frame. 
 
 ### Quests View
 
-The Quests View shows completion status and active-user counts per quest. Filter by Quest; all other filters carry over from the Application View.
+The Quests View shows completion status and active-user counts per quest. Filter by **Quest**; all other filters carry over from the Application View.
 
 ![Quests View showing per-quest completion and active users](https://files.readme.io/adbc4b0-Screenshot_2024-02-08_at_1.22.00_PM.png)
 
 ### Quest Tasks View
 
-The Quest Tasks View shows the task name and completion status for each quest. Filter by Quest and Quest Task; all other filters carry over from the Application View..
+The Quest Tasks View shows the task name and completion status for each quest. Filter by **Quest** and **Quest Task**; all other filters carry over from the Application View.
 
 ![Quest Tasks View showing task-level completion status](https://files.readme.io/1b2b584-Screenshot_2024-02-08_at_2.05.26_PM.png)
 
