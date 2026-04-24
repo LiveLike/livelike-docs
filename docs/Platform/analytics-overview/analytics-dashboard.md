@@ -17,7 +17,7 @@ next:
 ---
 ## Standard Analytics Dashboard
 
-The Standard Analytics dashboard is available to all customers directly in the Producer Site. It provides pre-built reports generated from data collected by the LiveLike platform, no setup required.
+The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data - no setup required.  
 
 ### Application View
 
@@ -37,7 +37,7 @@ You can see data in a more granular form, such as **hour/day/week/month/year**, 
 
 ### Program View
 
-In the Program View, you can see KPIs by Program ID, allowing for performance comparisons on a program-over-program basis. The filters remain the same which are already available in the application-level view previously selected. In this view, you can see Unique Impressions and Unique Interactions for each of your programs. Below is a snapshot of how it looks.
+The Program View shows KPIs per Program ID for side-by-side program comparisons. Each row lists Unique Impressions and Unique Interactions for one program. Filters carry over from the Application View.  
 
 ![Program View with Unique Impressions and Interactions per program](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
 
@@ -45,9 +45,14 @@ Note: these views count interactions only for interactive widgets - covered in t
 
 ### Widgets View
 
-The Widgets View shows how individual widgets have performed. Filter the results by **Publish Date, Program ID, Widget Type, or Widget Category** to narrow the view.
-The Widget Category filter separates Interactive widgets (polls, predictions, quizzes - widgets that produce interaction data) from Non-Interactive widgets (images, cheer meters, alerts - display-only widgets). Use it to analyze engagement without display-only content skewing the numbers.
-For example, filter by a single program to see only the widgets published during that program's run.
+The Widgets View shows how individual widgets have performed. Filter by **Publish Date, Program ID, Widget Type, or Widget Category** to narrow the results.
+
+The Widget Category filter has two options:  
+
+* Interactive : polls, predictions, quizzes, and other widgets that produce interaction data.  
+* Non-Interactive : images, cheer meters, alerts, and other display-only widgets.
+
+Use it to exclude display-only content from your engagement numbers. To see only the widgets from one program, filter by that Program ID.
 
 ![Widgets View with Interactive vs Non-Interactive filter](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
 
@@ -55,13 +60,13 @@ Select a program to see the widgets that were published during that time frame. 
 
 ### Quests View
 
-In the Quests View, you can see the completion status and active users of individual quests. Here, you can filter the contents using Quest and the rest of the filters remain the same which are already available in the application-level view.
+The Quests View shows completion status and active-user counts per quest. Filter by Quest; all other filters carry over from the Application View.
 
 ![Quests View showing per-quest completion and active users](https://files.readme.io/adbc4b0-Screenshot_2024-02-08_at_1.22.00_PM.png)
 
 ### Quest Tasks View
 
-In the Quest Tasks View, you can see the task name and completion status of individual quests. Here, you can filter the contents using Quest and Quest Task, the rest of the filters remain the same which are already available in the application-level view.
+The Quest Tasks View shows the task name and completion status for each quest. Filter by Quest and Quest Task; all other filters carry over from the Application View..
 
 ![Quest Tasks View showing task-level completion status](https://files.readme.io/1b2b584-Screenshot_2024-02-08_at_2.05.26_PM.png)
 
