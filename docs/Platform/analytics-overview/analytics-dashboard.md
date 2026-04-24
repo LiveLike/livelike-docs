@@ -74,7 +74,7 @@ The Quest Tasks View shows the task name and completion status for each quest. F
 
 ## Visual Analytics
 
-Visual Analytics provides an interactive data exploration experience embedded in the Producer Site. It is available as an add-on and offers richer, drill-down reporting across multiple dashboard tabs — including custom tabs configured for your specific product.
+Visual Analytics provides an interactive data exploration experience embedded in the Producer Site. It is available as an add-on and offers richer, drill-down reporting across multiple dashboard tabs, including custom tabs configured for your specific product.
 
 ### Default Dashboard Tabs
 
@@ -135,24 +135,24 @@ For clients using LiveLike Arcade, additional tabs are available covering both S
 
 A cross-game summary with three sections:
 
-* **User Funnel** — total game plays, total distinct users, DAU, and game plays/users across days and per game
-* **Retention** — D1 retention rates across games
-* **Score** — average score per game
+* **User Funnel** - total game plays, total distinct users, DAU, and game plays/users across days and per game
+* **Retention** - D1 retention rates across games
+* **Score** - average score per game
 
 #### Arcade Games: Skill Based
 
 In-depth analytics for skill-based games (e.g., skate-master, ski-dash, bobsleigh-battle, curling-master). Three sections:
 
-* **User Funnel** — Total Distinct Users, MAU, Weekly Average Users, DAU
-* **Game Plays** — Total Games Played, Average Monthly/Weekly/Daily Game Plays, game plays and distinct users per game and across days, user cohorts (0–30, 31–60, 61–90, 90+ days)
-* **Game Engagement** — Max Score, Average Score, Completion Rate, average score per game, games played vs scores submitted over time
+* **User Funnel** - Total Distinct Users, MAU, Weekly Average Users, DAU
+* **Game Plays** - Total Games Played, Average Monthly/Weekly/Daily Game Plays, game plays and distinct users per game and across days, user cohorts (0–30, 31–60, 61–90, 90+ days)
+* **Game Engagement** - Max Score, Average Score, Completion Rate, average score per game, games played vs scores submitted over time
 
 #### Arcade Games: Non-Skilled
 
 Analytics for non-skilled game types. Same structure as Skill Based but without the Game Engagement section (no scores or completion rates):
 
-* **User Funnel** — Total Distinct Users, MAU, Weekly Average Users, DAU
-* **Game Plays** — Total Game Plays, Average Monthly/Weekly/Daily Games Played, average games played per user (total/monthly/weekly/daily), game plays and distinct users across days
+* **User Funnel** - Total Distinct Users, MAU, Weekly Average Users, DAU
+* **Game Plays** - Total Game Plays, Average Monthly/Weekly/Daily Games Played, average games played per user (total/monthly/weekly/daily), game plays and distinct users across days
 
 #### Per-Game Dashboards
 
