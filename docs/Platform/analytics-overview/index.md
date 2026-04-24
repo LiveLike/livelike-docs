@@ -37,11 +37,11 @@ The Standard Analytics dashboard is available to all customers directly in the P
 
 ### What it covers
 
-* Application-level metrics — engagement summaries across your application
-* Program-level metrics — performance comparisons program over program
-* Widget-level metrics — individual interactive widget results
-* Quest metrics — completion status and active users per quest
-* Quest Task metrics — task-level completion breakdown
+* Application-level metrics : engagement summaries across your application
+* Program-level metrics : performance comparisons program over program
+* Widget-level metrics : individual interactive widget results
+* Quest metrics : completion status and active users per quest
+* Quest Task metrics : task-level completion breakdown
 
 For full details, see the [Analytics Dashboard](https://docs.livelike.com/reference/get_collections) documentation.
 
