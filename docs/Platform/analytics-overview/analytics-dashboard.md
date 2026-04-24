@@ -25,13 +25,13 @@ In the Application View, you can view various KPIs associated with your applicat
 
 Key features include:
 
-* Spreadsheet download of the page contents with the current filters that have been applied.
+* Download the page contents as a spreadsheet, preserving the filters you've applied.
 * Search bar in the top right corner to increase efficiency.
 * Share next to the download button lets you share the current view with colleagues, preserving your applied filters.
 
 <Image align="center" alt="Application View with download, search, and share controls" width="smart" src="https://files.readme.io/91f3c7e-ezgif.com-gif-maker.gif" />
 
-You can see data in a more granular form, such as **hour/day/week/month/year**, by using the Interval drop-down options.  Our default view option is by **Month**.
+You can see data in a more granular form, such as **hour/day/week/month/year**, by using the **Interval** drop-down options.  Our default view option is by **Month**.
 
 ![Interval drop-down expanded showing granularity options](https://files.readme.io/751ab15-ezgif.com-gif-maker_1.gif "ezgif.com-gif-maker (1).gif")
 
@@ -41,15 +41,17 @@ In the Program View, you can see KPIs by Program ID, allowing for performance co
 
 ![Program View with Unique Impressions and Interactions per program](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
 
-Also, please note that in the above views, Interactions are calculated for interactable widgets (discussed in the next view).
+Note: these views count interactions only for interactive widgets - covered in the next section.
 
 ### Widgets View
 
-In the Widgets View, you can see how individual interactive widgets have performed. Here, you can filter the contents, such as by Publish Date, Program ID, Widget Type. For instance, if you want to see performance at the individual widget level by a particular program, or on a particular date, you can filter for those use cases. We have added a new filter where you can choose from two widget categories - **Interactive widgets & Non-Interactive widgets.**
+The Widgets View shows how individual widgets have performed. Filter the results by **Publish Date, Program ID, Widget Type, or Widget Category** to narrow the view.
+The Widget Category filter separates Interactive widgets (polls, predictions, quizzes - widgets that produce interaction data) from Non-Interactive widgets (images, cheer meters, alerts - display-only widgets). Use it to analyze engagement without display-only content skewing the numbers.
+For example, filter by a single program to see only the widgets published during that program's run.
 
 ![Widgets View with Interactive vs Non-Interactive filter](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
 
-For your convenience, you can select a particular program, and then you can see the widgets which were published during that time frame. You can also download the contents of a particular program by clicking on the **Download** button provided in the upper right corner.
+Select a program to see the widgets that were published during that time frame. You can also download the contents of a particular program by clicking on the **Download** button provided in the upper right corner.
 
 ### Quests View
 
