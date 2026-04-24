@@ -17,7 +17,7 @@ next:
 ---
 ## Standard Analytics Dashboard
 
-The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data - no setup required.  
+The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data, no setup required.
 
 ### Application View
 
@@ -37,7 +37,7 @@ You can see data in a more granular form, such as **hour/day/week/month/year**, 
 
 ### Program View
 
-The Program View shows KPIs per Program ID for side-by-side program comparisons. Each row lists Unique Impressions and Unique Interactions for one program. Filters carry over from the Application View.  
+The Program View shows KPIs per Program ID for side-by-side program comparisons. Each row lists Unique Impressions and Unique Interactions for one program. Filters carry over from the Application View.
 
 ![Program View with Unique Impressions and Interactions per program](https://files.readme.io/704cc4d-Screenshot_2022-01-24_at_3.57.02_PM.png "Screenshot 2022-01-24 at 3.57.02 PM.png")
 
@@ -47,9 +47,9 @@ Note: these views count interactions only for interactive widgets - covered in t
 
 The Widgets View shows how individual widgets have performed. Filter by **Publish Date, Program ID, Widget Type, or Widget Category** to narrow the results.
 
-The Widget Category filter has two options:  
+The Widget Category filter has two options:
 
-* Interactive : polls, predictions, quizzes, and other widgets that produce interaction data.  
+* Interactive : polls, predictions, quizzes, and other widgets that produce interaction data.
 * Non-Interactive : images, cheer meters, alerts, and other display-only widgets.
 
 Use it to exclude display-only content from your engagement numbers. To see only the widgets from one program, filter by that Program ID.
