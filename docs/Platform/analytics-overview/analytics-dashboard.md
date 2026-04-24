@@ -17,7 +17,7 @@ next:
 ---
 ## Standard Analytics Dashboard
 
-The Standard Analytics dashboard is available to all customers directly in the Producer Site. LiveLike generates these reports automatically from your platform data, so you do not need to configure the dashboard before viewing them.
+All customers can access the Standard Analytics dashboard directly in the Producer Site. LiveLike generates these reports automatically from your platform data, so you do not need to configure the dashboard before viewing them.
 
 ### Application View
 
@@ -56,7 +56,7 @@ Use it to exclude display-only content from your engagement numbers. To see only
 
 ![Widgets View with Interactive vs Non-Interactive filter](https://files.readme.io/6c10a0e-Screenshot_2022-01-24_at_11.37.31_PM.png "Screenshot 2022-01-24 at 11.37.31 PM.png")
 
-Select a program to see the widgets that were published during that time frame. You can also download the contents of a particular program by clicking on the **Download** button provided in the upper right corner.
+Select a program to see the widgets published during that time frame. Download that program's contents from the **Download** button in the upper-right corner.
 
 ### Quests View
 
