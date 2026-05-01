@@ -1,6 +1,5 @@
 ---
 title: Analytics Event Glossary
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
@@ -10,7 +9,10 @@ metadata:
     more. Learn more about widget analytics.
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: arcade-analytics
+      title: Arcade Analytics
+      type: basic
 ---
 These are the analytics events that are triggered by the stock SDK UIs.
 
@@ -24,37 +26,15 @@ Each widget analytics event has some common properties, found in the table below
 | Widget Type | String | Kind of widget, e.g. "alert", "cheer-meter", "image-poll", etc. |
 | Program ID  | String | Unique identifier of the program the widget was received on     |
 
-### Widget Displayed
+### Widget Events
 
-Fired when a user receives a widget.
+| Event Name          | Description                                                                                                                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `widget_displayed`  | Fired when a widget becomes visible in a user's viewport. Maps to the **Impressions** metric. Widgets may be displayed without any interaction, this event counts exposure.                  |
+| `widget_interacted` | Fired when a user submits a response on any widget type (poll vote, prediction answer, quiz answer, cheer tap, etc.). Maps to the **Interactions** metric and drives **Engagement Percent**. |
+| `widget_dismissed`  | Fired when a user explicitly closes or dismisses a widget without submitting a response. Useful for diagnosing widgets that are visible but not compelling enough to drive interaction.      |
 
-> 🚧 This is a misnomer because the SDK doesn't have control over whether a widget is actually displayed to users, that is up to your application.
-
-### Widget Became Interactive
-
-Fired when a widget is enabled for interaction.
-
-### Widget Interacted
-
-Fired at every widget interaction. Includes a _Number Of Taps_ property that counts the number of times a user taps on interactive elements in the widget.
-
-| Property       | Type   | Description                                                                                    |
-| :------------- | :----- | :--------------------------------------------------------------------------------------------- |
-| Number of Taps | Number | Count of the number of taps on the widget since the previous Widget Interacted event was fired |
-
-> 🚧 The Widget Interacted event is not fired by default when using widgets with custom user interfaces.
-
-### Widget Dismissed
-
-Fired when a user takes an action to dismiss the widget, such as when pressing the dismiss button or swiping it away. This is event is not fired when a widget expires on its own.
-
-### Alert Link Opened
-
-Fired when a link on an Alert Widget is opened.
-
-| Property | Type   | Description                     |
-| :------- | :----- | :------------------------------ |
-| Link URL | String | URL of the link that was opened |
+<br />
 
 ## Chat Rooms
 
@@ -122,3 +102,9 @@ Fired each time user clicks on a link in a chat message.
 | Chat Room Title   | String | Title of the Chat room used                                |
 | Chat Message ID   | String | Unique identifier of the chat message                      |
 | Chat Message Link | String | URL of the link that was opened                            |
+
+***
+
+## Arcade Game Events
+
+For arcade-specific analytics events, see the [Arcade Analytics](https://docs.livelike.com/docs/arcade-analytics) documentation.

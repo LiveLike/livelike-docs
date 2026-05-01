@@ -3,7 +3,7 @@ title: Analytics Dictionary
 excerpt: >-
   This dictionary defines the key metrics used across both the Standard
   Analytics and Visual Analytics dashboards. Entries are grouped by feature area
-  and include guidance on how to interpret each metric in context
+  and include guidance on how to interpret each metric in context.
 deprecated: false
 hidden: false
 metadata:
@@ -38,8 +38,6 @@ The following KPIs appear in the Standard Analytics dashboard tabs.
 | **Impressions**            | Devices/users where a widget has been published. **Unique Impression**: unique devices/users who received widgets (counted once regardless of disconnects). **Total Impression**: total count including repeat deliveries.                                  |
 | **Interactions**           | Devices/users where a widget has been interacted with. **Unique Interaction**: unique devices/users who interacted (counted once). **Total Interaction**: total count including repeat interactions.                                                        |
 | **Engagement**             | Calculated as: Interaction / Impression.                                                                                                                                                                                                                    |
-
-<br />
 
 ### Programs Tab
 
@@ -92,7 +90,9 @@ All other KPIs carry the same definitions as the Applications and Programs tabs.
 
 ### Audience Tab
 
-This view provides an overview of the customer base — operating systems in use, device types, and SDK versions.
+This view provides an overview of the customer base - operating systems in use, device types, and SDK versions.
+
+***
 
 > 👍 Cool Features of Livelike Analytics Dashboard
 >
@@ -100,14 +100,12 @@ This view provides an overview of the customer base — operating systems in use
 >
 > 1. **Data Download** - In this dashboard there is a download option where users can download data in CSV format in their local system and derive analysis on their own
 > 2. **Share Link** - One of the cool features of this dashboard is that you can share the link of a view with all the applied filters with your team members so that they can see the same view at their end. This saves time and effort when they are doing similar analysis or validation
-> 3. **Search Bar** - People can search their desired data using various filters like Application ID, Program ID, Chat Room ID etc which might be beneficial to those organization which has a lot of data on the dashboard
+> 3. **Search Bar** - People can search their desired data using various filters like Program ID, Chat Room ID etc which might be beneficial to those organization which has a lot of data on the dashboard
 > 4. **Navigation of inline data stored in CMS Producer Suite** - We have connected CMS links within Analytics dashboard so that people can navigate to respective Organization, Application, Programs and other different pages
-
-***
 
 ## Visual Analytics Metrics
 
-The following metrics appear in the Visual Analytics (Metabase-powered) dashboards. 
+The following metrics appear in the Visual Analytics (Metabase-powered) dashboards.
 
 <Callout icon="📘" theme="info">
   #### **Note:** Metrics in the Streaks, Reward Store, and Status Tiers sections are only available in Visual Analytics dashboards where those features are enabled for your account. Contact your account manager if you need to enable additional feature analytics.
@@ -125,8 +123,6 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Active Users by Hour of Day**    | Counts of distinct active users grouped by hour of the day (UTC). Useful for identifying peak engagement windows and scheduling widget or content drops.                                  |
 | **Analytics Overview Table**       | A row-per-interval summary table covering: total profiles created, total and unique active profiles, total and unique impressions, total and unique interactions, and engagement percent. |
 
-***
-
 ### Widgets
 
 | Metric / Chart                       | Definition & How to Use It                                                                                                                                                                            |
@@ -138,8 +134,6 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Widget Statistics Table**          | Row-per-widget table showing widget type, title, publish date, unique impressions, unique interactions, and engagement percent. Color-coded with a red-to-green scale for quick performance scanning. |
 | **Engagement Percent (Widget)**      | Percentage of users who interacted with a widget out of those who were shown it. Calculated as: (Unique Interactions / Unique Impressions) × 100.                                                     |
 
-***
-
 ### Chat
 
 | Metric / Chart                           | Definition & How to Use It                                                                                                                                                                                                                                                         |
@@ -149,39 +143,31 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Avg. Chat Messages per User**          | Average number of chat messages a user sends within the selected time range. A rising average alongside flat unique-user counts can signal growing engagement depth among existing participants.                                                                                   |
 | **Moderation Action by Number of Users** | Bar chart showing how many users received each type of moderation action (shadow ban, read-only, etc.) within the time range. Shadow-banned users can still send messages, but those messages are not visible to others. Read-only users can read messages but cannot participate. |
 | **Messages Filtered by System**          | Bar chart of messages automatically filtered by the platform based on a configured dictionary of banned words. Filtered content is replaced with `***` for other users. Track this to calibrate your content filter dictionary.                                                    |
-| **Messages Deleted**                     | Bar chart showing messages explicitly removed by a moderator or automated rule. Distinct from system filtering — these are post-publish removals.                                                                                                                                  |
-
-***
+| **Messages Deleted**                     | Bar chart showing messages explicitly removed by a moderator or automated rule. Distinct from system filtering - these are post-publish removals.                                                                                                                                  |
 
 ### Comments
 
 | Metric / Chart             | Definition & How to Use It                                                                                                                                                                                  |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Comment and User Count** | Combo chart showing total comments posted and unique users commenting over time. Filtered by Client ID, Date Range, Program ID, and Program Name. The two series reveal participation breadth versus depth. |
-| **Avg. Comments per User** | Average number of comments submitted per user during the specified date range. Measures engagement depth — how much individual commenters are contributing.                                                 |
+| **Avg. Comments per User** | Average number of comments submitted per user during the specified date range. Measures engagement depth - how much individual commenters are contributing.                                                 |
 | **Avg. Replies per User**  | Average number of replies a user receives on their comments within the selected time range. A rising reply rate suggests content is driving genuine back-and-forth conversation.                            |
 | **Reactions Trend**        | Combo chart tracking the volume of user reactions on comments over time. Reactions include emoji responses and upvotes. Use this to identify content that resonates most strongly.                          |
-
-***
 
 ### Leaderboard
 
 | Metric / Chart                    | Definition & How to Use It                                                                                                                                                                                       |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Number of Leaderboard Entries** | Table showing the count of leaderboard entries per leaderboard. Not affected by the date range filter — reflects total cumulative entries per leaderboard at the time of viewing.                                |
+| **Number of Leaderboard Entries** | Table showing the count of leaderboard entries per leaderboard. Not affected by the date range filter - reflects total cumulative entries per leaderboard at the time of viewing.                                |
 | **Games Leaderboard Entry Table** | Detailed table of leaderboard entries showing Profile ID, Custom ID, Nickname, and Score per leaderboard. Can be filtered by Leaderboard Name. Useful for reviewing top performers and validating scoring logic. |
-
-***
 
 ### Badges
 
 | Metric / Chart                    | Definition & How to Use It                                                                                                                                                                           |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Badges by Number of Users**     | Bar chart showing the number of users who received each badge type within the selected time range. Helps identify which badges are most commonly awarded and which may need threshold recalibration. |
-| **User Badge Data**               | Table listing individual user badge grants — showing which badges each user earned and when. Accessible via the Overview dashboard's Badge Data section.                                             |
+| **User Badge Data**               | Table listing individual user badge grants - showing which badges each user earned and when. Accessible via the Overview dashboard's Badge Data section.                                             |
 | **Distinct Users per Badge Tier** | Bar chart showing how many distinct users have earned badges at each tier level. Use this to understand the shape of your badge engagement pyramid.                                                  |
-
-***
 
 ### Quests
 
@@ -201,8 +187,6 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Average Completion Time**        | Median time (in hours) from a user starting a quest to completing it. Useful for calibrating quest duration and ensuring the time commitment is appropriate for your audience.                                                      |
 | **User Aggregated Table**          | Per-user table showing Profile ID, Custom ID, Nickname, whether they Viewed the Quest, whether they Completed it, whether they Claimed Rewards, and their Completion Time (hours).                                                  |
 
-***
-
 ### Streaks
 
 | Metric / Chart                                  | Definition & How to Use It                                                                                                                                                                             |
@@ -210,7 +194,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Total Streak Challenges**                     | Total number of streak challenge enrollments across all users. Reflects overall adoption of the streak program.                                                                                        |
 | **Distinct Streak Challenges**                  | Number of unique streak challenges configured for the application. Contextualises total enrollments relative to the number of active streak programs.                                                  |
 | **Distinct Users (Streaks)**                    | Count of unique users who have participated in at least one streak challenge. The participation baseline for streak analytics.                                                                         |
-| **Average Streak Length**                       | Mean number of consecutive qualifying days across all user streaks. A key health indicator — declining averages may suggest users are not being pulled back consistently.                              |
+| **Average Streak Length**                       | Mean number of consecutive qualifying days across all user streaks. A key health indicator - declining averages may suggest users are not being pulled back consistently.                              |
 | **Maximum Streak Length**                       | The highest streak length achieved by any single user. Useful as a benchmark and for surfacing power-user behaviour.                                                                                   |
 | **Drop Off Rate**                               | Percentage of users who started a streak but did not maintain it to a milestone. Identifies the scale of early abandonment.                                                                            |
 | **Participation Rate**                          | Percentage of the total user base that has participated in at least one streak challenge. Low participation rates may indicate the streak mechanic needs greater discoverability or promotional push.  |
@@ -222,7 +206,7 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Average Freeze Hours**                        | Mean duration (in hours) for which users activated a streak freeze. Longer average freeze use may indicate your daily task window is not well-aligned with user schedules.                             |
 | **Distribution of Streaks**                     | Bar chart bucketing all streaks by their length (e.g., 1–3 days, 4–7 days, 8–14 days). Useful for identifying natural drop-off points and sizing incentive milestones appropriately.                   |
 | **Distribution of Users Across Streak Lengths** | Bar chart showing how many users are clustered at each streak length bucket. Reveals where the largest user cohorts sit and which milestone thresholds matter most.                                    |
-| **Streak Drop Off Rate by Streak Length**       | Bar chart mapping drop-off rate at each streak length increment. Spikes at specific lengths identify the hardest days to maintain a streak — and the most valuable places to add rewards or reminders. |
+| **Streak Drop Off Rate by Streak Length**       | Bar chart mapping drop-off rate at each streak length increment. Spikes at specific lengths identify the hardest days to maintain a streak - and the most valuable places to add rewards or reminders. |
 | **Streak Activity over the Days**               | Line chart showing daily streak activity (qualifying interactions) over the selected date range. Use this to correlate streak engagement with external events like match days or content drops.        |
 | **Streak Creation Distribution**                | Bar chart showing when user streaks were first created (i.e., when users first enrolled). Useful for evaluating campaign launches and promotion timing.                                                |
 | **Completed Streak Participation**              | Bar chart showing the volume of fully completed streak challenges over time. Compare against total attempts to track your overall streak completion rate trend.                                        |
@@ -235,11 +219,9 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Average Reward Amount**                       | Mean reward value (in points or configured currency) granted per streak milestone completion.                                                                                                          |
 | **Reward Redemption Rate (Streaks)**            | Percentage of streak-earned rewards that users actually redeemed. Useful in conjunction with Reward Store data to measure the full lifecycle of streak rewards.                                        |
 | **Percent of Streaks with User Goal Applied**   | Percentage of active streaks where a user-defined goal has been set. Indicates adoption of the goal-setting feature, where available.                                                                  |
-| **Freeze Distribution**                         | Bar chart showing how freeze usage is distributed across users — i.e., how many users used 0, 1, 2, or more freezes. High usage at 0 freezes may indicate users aren't aware of the feature.           |
+| **Freeze Distribution**                         | Bar chart showing how freeze usage is distributed across users i.e., how many users used 0, 1, 2, or more freezes. High usage at 0 freezes may indicate users aren't aware of the feature.             |
 | **Current Streak Length**                       | The current active streak length for users at time of viewing. Useful for identifying users who are close to a milestone and may benefit from a nudge.                                                 |
 | **Total Streak Activity**                       | Total count of qualifying streak activity events recorded. Serves as a raw volume measure of streak engagement.                                                                                        |
-
-***
 
 ### Reward Store
 
@@ -251,3 +233,57 @@ The following metrics appear in the Visual Analytics (Metabase-powered) dashboar
 | **Total Orders by Reward Amount**           | Pie chart showing the breakdown of redemption orders by their point cost. Reveals whether users are predominantly redeeming low-cost or high-cost items.                                             |
 | **Weekly Order Trends Across SKUs**         | Line chart tracking weekly redemption volume per reward item (SKU). Use to spot seasonal trends, identify items that spike after promotions, and find items with declining interest.                 |
 | **Reward Transaction History**              | Row-level transaction table showing Product Name, UUID, Custom User ID, Quantity, Point Amount, and Time of Order for every redemption. Useful for audits, debugging, and user-level investigations. |
+
+***
+
+### Arcade Games
+
+Arcade analytics are split across three dashboards: an overview, a skill-based dashboard, and a non-skilled dashboard. Filters include Date, and Game Code.
+
+#### Overview
+
+| Metric / Chart                                       | Definition & How to Use It                                                                                                                              |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Total Game Plays**                                 | Total number of game sessions played across all game types. The headline volume metric for arcade engagement.                                           |
+| **Total Distinct Users**                             | Count of unique users who played at least one game.                                                                                                     |
+| **Daily Average Users (DAU)**                        | Average number of distinct users playing games per day.                                                                                                 |
+| **Game Plays and Distinct Users Across Days**        | Combo chart showing daily game play volume and distinct user counts over time. Use to identify activity spikes and correlate with events or promotions. |
+| **Number of Game Plays and Distinct Users per Game** | Bar chart comparing play volume and unique users across different game types (by Game Code). Identifies which games are most popular.                   |
+| **D1 Retention**                                     | Percentage of users who played on day 0 and returned to play on day 1. The primary short-term retention metric for arcade games.                        |
+| **Average Score per Game**                           | Bar chart showing the mean score achieved per game type. Useful for comparing difficulty calibration across games.                                      |
+
+#### Skill Based
+
+| Metric / Chart                                        | Definition & How to Use It                                                                                                                              |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Total Distinct Users**                              | Unique users who played at least one skill-based game.                                                                                                  |
+| **Monthly Average Users (MAU)**                       | Average distinct users per month for skill-based games.                                                                                                 |
+| **Weekly Average Users**                              | Average distinct users per week.                                                                                                                        |
+| **Daily Average Users (DAU)**                         | Average distinct users per day.                                                                                                                         |
+| **Total Games Played**                                | Total skill-based game sessions.                                                                                                                        |
+| **Average Monthly Game Plays**                        | Mean game plays per month across the selected period.                                                                                                   |
+| **Average Weekly Game Plays**                         | Mean game plays per week.                                                                                                                               |
+| **Average Daily Game Plays**                          | Mean game plays per day.                                                                                                                                |
+| **Number of Games Plays and Distinct Users per Game** | Bar chart comparing play counts and unique users per game code (e.g., skate-master, ski-dash, bobsleigh-battle, curling-master).                        |
+| **Games Plays and Distinct Users Across Days**        | Combo chart of daily play volume and distinct users over time.                                                                                          |
+| **User Cohorts**                                      | Bar chart bucketing users by tenure (0–30 days, 31–60 days, 61–90 days, 90+ days). Shows how engagement distributes across new vs. established players. |
+| **Max Score**                                         | Highest score achieved by any user across all skill-based games.                                                                                        |
+| **Average Score**                                     | Mean score across all skill-based game plays.                                                                                                           |
+| **Completion Rate**                                   | Percentage of game sessions that resulted in a completed game (score submitted).                                                                        |
+| **Average Score per Game**                            | Bar chart of mean scores broken down by game type. Useful for calibrating difficulty across games.                                                      |
+| **Games Played vs Scores Submitted by Day**           | Combo chart comparing total games played against scores submitted over time. Divergence indicates games started but not completed.                      |
+
+#### Non-Skilled
+
+| Metric / Chart                                | Definition & How to Use It                                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Total Distinct Users**                      | Unique users who played at least one non-skilled game.                                      |
+| **Monthly Average Users (MAU)**               | Average distinct users per month.                                                           |
+| **Weekly Average Users**                      | Average distinct users per week.                                                            |
+| **Daily Active Users (DAU)**                  | Average distinct users per day.                                                             |
+| **Total Game Plays**                          | Total non-skilled game sessions.                                                            |
+| **Average Monthly Game Plays**                | Mean game plays per month.                                                                  |
+| **Average Weekly Games Played**               | Mean game plays per week.                                                                   |
+| **Average Daily Games Played**                | Mean game plays per day.                                                                    |
+| **Average Games Played per User**             | Mean number of games a single user plays (total/monthly/weekly/daily breakdowns available). |
+| **Game Plays and Distinct Users Across Days** | Combo chart of daily play volume and distinct users over time.                              |
