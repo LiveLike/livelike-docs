@@ -22391,6 +22391,14 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "is_excluded_from_trending": {
+                    "type": "boolean",
+                    "default": "false"
+                  },
+                  "is_excluded_from_quality": {
+                    "type": "boolean",
+                    "default": "false"
                   }
                 }
               }
@@ -22470,6 +22478,12 @@
                           }
                         }
                       }
+                    },
+                    "is_excluded_from_quality": {
+                      "type": "boolean"
+                    },
+                    "is_excluded_from_trending": {
+                      "type": "boolean"
                     }
                   }
                 }
