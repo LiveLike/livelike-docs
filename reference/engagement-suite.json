@@ -22996,6 +22996,12 @@
                 "properties": {
                   "text": {
                     "type": "string"
+                  },
+                  "is_excluded_from_trending": {
+                    "type": "boolean"
+                  },
+                  "is_excluded_from_quality": {
+                    "type": "boolean"
                   }
                 }
               }
@@ -23061,6 +23067,12 @@
                     "replies_url": {
                       "type": "string",
                       "example": "https://cf-blast.livelikecdn.com/api/v1/comments/?comment_board_id=d849e096-d36d-406e-bff0-0627f13b19d4&parent_comment_id=3437f488-5c45-468b-8a14-c9b67ee77337"
+                    },
+                    "is_excluded_from_quality": {
+                      "type": "boolean"
+                    },
+                    "is_excluded_from_trending": {
+                      "type": "string"
                     }
                   }
                 }
