@@ -22701,6 +22701,14 @@
               "type": "number"
             },
             "description": "Limit the number of comments for each passed comment board ID by a certain number"
+          },
+          {
+            "in": "query",
+            "name": "ordering_relationship_type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Returns a list of comments along with specified relationship between integrator and author at the top or bottom depends of ordering param. If this param is used ordering must have relationship or -relationship value."
           }
         ],
         "responses": {
