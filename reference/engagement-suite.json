@@ -22391,6 +22391,14 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "is_excluded_from_trending": {
+                    "type": "boolean",
+                    "default": "false"
+                  },
+                  "is_excluded_from_quality": {
+                    "type": "boolean",
+                    "default": "false"
                   }
                 }
               }
@@ -22470,6 +22478,12 @@
                           }
                         }
                       }
+                    },
+                    "is_excluded_from_quality": {
+                      "type": "boolean"
+                    },
+                    "is_excluded_from_trending": {
+                      "type": "boolean"
                     }
                   }
                 }
@@ -22541,7 +22555,7 @@
           {
             "name": "ordering",
             "in": "query",
-            "description": "1. created_at → default ordering, returns comments in ascending order of created_at 2. -created_at. → opposite of created at, returns comments in descending order of created_at, 3. reaction_count -> order by reaction_count , in desc order 4. -reaction_count -> opposite of reaction_count. 5. reply_count -> order by reply_count of a comments , in desc order 6. -reply_count -> opposite of reply_count 7. trending_score -> Order by trending score, most trending comment first",
+            "description": "1. created_at → default ordering, returns comments in ascending order of created_at 2. -created_at. → opposite of created at, returns comments in descending order of created_at, 3. reaction_count -> order by reaction_count , in desc order 4. -reaction_count -> opposite of reaction_count. 5. reply_count -> order by reply_count of a comments , in desc order 6. -reply_count -> opposite of reply_count 7. trending_score -> Order by trending score, most trending comment first 8. relationship -> at the top comments from author with specified relationship in order_relationship_type 9. -relationship -> opposite of relationship",
             "schema": {
               "type": "string",
               "enum": [
@@ -22551,7 +22565,9 @@
                 "-reaction_count",
                 "reply_count",
                 "-reply_count",
-                "trending_score"
+                "trending_score",
+                "relationship",
+                "-relationship"
               ],
               "default": "created_at"
             }
@@ -22982,6 +22998,12 @@
                 "properties": {
                   "text": {
                     "type": "string"
+                  },
+                  "is_excluded_from_trending": {
+                    "type": "boolean"
+                  },
+                  "is_excluded_from_quality": {
+                    "type": "boolean"
                   }
                 }
               }
@@ -23047,6 +23069,12 @@
                     "replies_url": {
                       "type": "string",
                       "example": "https://cf-blast.livelikecdn.com/api/v1/comments/?comment_board_id=d849e096-d36d-406e-bff0-0627f13b19d4&parent_comment_id=3437f488-5c45-468b-8a14-c9b67ee77337"
+                    },
+                    "is_excluded_from_quality": {
+                      "type": "boolean"
+                    },
+                    "is_excluded_from_trending": {
+                      "type": "string"
                     }
                   }
                 }

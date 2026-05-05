@@ -1,5 +1,4 @@
 ---
-title: Create a Comment
 excerpt: ''
 api:
   file: engagement-suite.json
