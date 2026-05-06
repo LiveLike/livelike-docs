@@ -1307,7 +1307,8 @@
             "description": "streak_expired: Returns user streaks whose streak has expired\npending_reset: Returns user streaks which are about to get reset, next action made by user will reset the user streak \npaused: Returns user streaks which are paused/freezed by user or the streak itself is freezed\nbroken: returns user streaks that are broken\nlive: returns user streaks that currently progressing"
           }
         ],
-        "operationId": "get_profile-id-user-streaks"
+        "operationId": "get_profile-id-user-streaks",
+        "summary": "List User Streaks"
       }
     },
     "/{profile-id}/user-streak-milestones/": {
