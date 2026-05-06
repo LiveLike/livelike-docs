@@ -1242,27 +1242,30 @@
                       "previous": null,
                       "results": [
                         {
-                          "id": "8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d",
-                          "url": "https://cf-blast.livelikecdn.com/api/v1/user-streaks/8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d/",
-                          "profile_id": "18b0a97d-dbe6-4d96-a891-e0e5a77d61e8",
-                          "streak_id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
+                          "id": "77c8115f-66af-4255-a3e1-f6224e76c46c",
+                          "url": "http://localhost:8888/api/v1/user-streaks/77c8115f-66af-4255-a3e1-f6224e76c46c/",
+                          "profile_id": "405f4a9f-4612-4eea-a7d2-80dbc624f9e2",
+                          "streak_id": "49426b34-5c3f-4517-b50f-2be290be472f",
                           "streak": {
-                            "id": "bdca27a0-2e94-4a69-8c51-6b4e7df60215",
-                            "name": "test streak",
-                            "period": null,
-                            "streak_type": "consecutive_action"
+                            "id": "49426b34-5c3f-4517-b50f-2be290be472f",
+                            "name": "Daily Test - 11 JAN",
+                            "period": "daily",
+                            "streak_type": "periodic",
+                            "threshold": 1
                           },
-                          "first_activity": "2026-01-12T07:07:00Z",
-                          "last_activity": "2026-01-13T07:07:00Z",
-                          "current_streak_length": 1,
-                          "maximum_streak_length": 1,
+                          "first_activity": "2026-01-01T07:07:00Z",
+                          "last_activity": "2026-01-06T07:07:00Z",
+                          "reset_at": null,
+                          "current_streak_length": 6,
+                          "maximum_streak_length": 6,
                           "freeze_start": null,
                           "freeze_until": null,
                           "freeze_reason": null,
-                          "milestone_count": 1,
-                          "milestones_url": "https://cf-blast.livelikecdn.com/api/v1/user-streaks/8077ee6c-55d4-4c13-bc6f-0d5cb2ee4c3d/milestones/",
-                          "status": "broken",
-                          "reason": "Reset user streak break "
+                          "milestone_count": 7,
+                          "milestones_url": "http://localhost:8888/api/v1/user-streaks/77c8115f-66af-4255-a3e1-f6224e76c46c/milestones/",
+                          "status": "streak_expired",
+                          "reason": "Manual correction for missed event",
+                          "threshold_progress": 0
                         }
                       ]
                     }
