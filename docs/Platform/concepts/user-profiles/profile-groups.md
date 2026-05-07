@@ -1,6 +1,6 @@
 ---
 title: Profile Groups
-excerpt: Organize profiles intro addressable groups
+excerpt: Organize profiles into addressable groups
 deprecated: false
 hidden: false
 metadata:
