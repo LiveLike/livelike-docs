@@ -89,7 +89,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 3. **Result screen**
    1. The Result Screen setup lets you configure how players see their trivia game outcomes, with options for Single or Score based display.
    2. For Score based results, you can customize messages for different performance levels (90%+, 50-90%, and below 50%), each with encouraging feedback.
-   3. Additional toggles allow for showing points, enabling result sharing, and letting players review their questions after completion. *(sharing is currently in beta and dependent on browser support)*
+   3. Additional toggles allow for showing points, enabling result sharing, and letting players review their questions after completion. _(sharing is currently in beta and dependent on browser support)_
 
 <Image align="center" width="600px" src="https://files.readme.io/d313034706fea03afd9f00831a6c9e737b01506ea38af7459c78d2576056255f-Screenshot_2024-12-18_at_15.28.16.png" />
 
@@ -117,6 +117,7 @@ To begin, either select an existing game or click "Create New" to start fresh. T
    1. The Schedule configuration page offers two timing options for your trivia game: "Publish now" for immediate release or "Schedule" for setting a future publication date and time.
    2. When scheduling, you can specify the exact date and time (shown in the format DD/MM/YYYY, HH:MM:SS am/pm) for when the game should become available to players.
    3. This timing control helps coordinate game releases with specific events or optimal player engagement periods.
-   4. If multiple Trivia are created, the schedule of the upcoming Trivia will be visible on result screen of the Trivia which is currently Live.
+   4. If multiple Trivia instances are created, the schedule of the upcoming Trivia will be visible on the result screen of the Trivia which is currently Live. This auto-scheduling flow only applies when `instanceId` is **not** passed to `<ll-trivia>`.
+   5. When `instanceId` is omitted, `<ll-trivia>` automatically loads the active Trivia instance based on the current time and the schedule of available Trivia instances for the given `gameId`.
 
 <Image align="center" width="600px" src="https://files.readme.io/7ec59110d0ad452867cc2b901a67479400f1773ed15060bebbf190c8dc016a3f-Screenshot_2024-12-18_at_15.38.17.png" />

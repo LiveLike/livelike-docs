@@ -132,6 +132,10 @@ next:
 
 ```
 
+<Callout icon="📘" theme="info">
+  **Note:** `instanceId` is optional. If you don't pass it, `<ll-trivia>` will automatically pick the right trivia to show based on the current time and the schedule of available trivia instances for the given `gameId`.
+</Callout>
+
 * #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nez9f9nx?file=package.json))
 
 ```html
@@ -178,8 +182,12 @@ next:
 
 ### Required Parameters:
 
-* **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
-* **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
+* **profileId** and **accessToken**: These values are obtained through the LiveLike platform for user authentication.
+* **clientId**, **gameId** and **instanceId**: These are unique identifiers for a specific game instance within an application and can be retrieved from the Arcade CMS.
+
+<Callout icon="📘" theme="info">
+  **instanceId** not required in Trivia game
+</Callout>
 
 ## Please Note
 
