@@ -182,8 +182,12 @@ next:
 
 ### Required Parameters:
 
-* **profileId** and **authToken**: These values are obtained through the LiveLike platform for user authentication.
-* **gameId** and **instanceId**: These are unique identifiers for the specific game instance and can be retrieved from Arcade CMS.
+* **profileId** and **accessToken**: These values are obtained through the LiveLike platform for user authentication.
+* **clientId**, **gameId** and **instanceId**: These are unique identifiers for a specific game instance within an application and can be retrieved from the Arcade CMS.
+
+<Callout icon="📘" theme="info">
+  **instanceId** not required in Trivia game
+</Callout>
 
 ## Please Note
 
