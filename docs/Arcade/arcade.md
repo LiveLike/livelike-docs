@@ -133,7 +133,7 @@ next:
 ```
 
 <Callout icon="📘" theme="info">
-  **Note:** `instanceId` is optional. If you don't pass it, `<ll-trivia>` will automatically pick the right trivia to show based on the current time and the schedule of available trivias for the given `gameId`.
+  **Note:** `instanceId` is optional. If you don't pass it, `<ll-trivia>` will automatically pick the right trivia to show based on the current time and the schedule of available trivia instances for the given `gameId`.
 </Callout>
 
 * #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nez9f9nx?file=package.json))
