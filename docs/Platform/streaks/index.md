@@ -57,7 +57,7 @@ A streak where users must perform an action within a recurring time window (dail
 * Play 2 trivia games every week
 * Referring 5 friends every month
 
-## Consecutive Action Streaks (Action-Dependent):
+## Consecutive Action Streaks
 
 A streak based on successful consecutive actions, independent of time / when those actions are performed.
 
