@@ -33,7 +33,7 @@ From a business perspective, streaks are especially useful for:
 * Content consumption (episodes, videos, quizzes)
 * Loyalty and reward programs
 
-## How Streaks Work (High Level)
+## How streaks work
 
 * A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time and action based) or Consecutive Action (only action based, no time dependency).
 * The streak listens to eligible user actions such as voting, watching content, login, making predictions, playing mini game, etc.).
@@ -41,7 +41,7 @@ From a business perspective, streaks are especially useful for:
 * Streaks can be frozen (user-level or global), targeted to specific User Groups, and timezone-aware.
 * All activity is logged for analytics and reporting.
 
-## Periodic Streaks
+## Periodic streaks
 
 A periodic streak is extended by performing an action within a recurring time window such as daily, weekly, or monthly. Examples:
 
@@ -53,7 +53,7 @@ Periodic streaks are timezone-aware.
 
 Missing a period breaks the streak.
 
-## Consecutive Action Streaks
+## Consecutive Action streaks
 
 A consecutive action streak is extended by performing an action in a defined order. Examples:
 
@@ -63,7 +63,7 @@ A consecutive action streak is extended by performing an action in a defined ord
 
 Progress depends on uninterrupted success, so a failure resets the streak, but time gaps don’t matter.
 
-## Streak Milestones
+## Streak milestones
 
 Streak Milestones are reward checkpoints within a streak. Instead of rewarding only at the end, milestones allow rewards at incremental progress points (streak lengths). Examples:
 
@@ -77,7 +77,7 @@ Streak Milestones can be of two types:
 
 Rewards for reaching Streak Milestones can be configured to trigger only once or every time the milestone is reached.
 
-## How Streaks Are Configured in CMS (High Level)
+## Configuring streaks
 
 Streaks are created and managed via the CMS → Streaks section. At a high level, configuration includes:
 
