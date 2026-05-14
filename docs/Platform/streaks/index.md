@@ -43,17 +43,15 @@ From a business perspective, streaks are especially useful for:
 
 ## Periodic Streaks
 
-A periodic streak is extended by performing an action within a recurring time window (daily, weekly, monthly). Examples:
+A periodic streak is extended by performing an action within a recurring time window such as daily, weekly, or monthly. Examples:
 
 * Make a prediction every day
 * Play 2 trivia games every week
 * Referr 5 friends every month
 
-### How it works:
+Periodic streaks are timezone-aware.
 
-* Each period is evaluated independently
-* Missing a period breaks the streak
-* Timezone-aware
+Missing a period breaks the streak.
 
 ## Consecutive Action Streaks
 
@@ -63,38 +61,25 @@ A consecutive action streak is extended by performing an action in a defined ord
 * Win 3 games consecutively
 * Send a chat message on every match day in a tournament
 
-### How it works:
-
-* Progress depends on uninterrupted success
-* Time gaps don’t matter
-* One failure resets the streak
+Progress depends on uninterrupted success, so a failure resets the streak, but time gaps don’t matter.
 
 ## Streak Milestones
 
-Streak Milestones are reward checkpoints within a streak. Instead of rewarding only at the end, milestones allow rewards at incremental progress points (streak lengths).
+Streak Milestones are reward checkpoints within a streak. Instead of rewarding only at the end, milestones allow rewards at incremental progress points (streak lengths). Examples:
 
-### How it works:
-
-* Focuses on participation rather than perfection
-* Evaluated within a defined scope or window (as long as streak is active)
-
-**Examples**:
-
-* Get bonus points for 3/5/7 consecutive correct predictions
+* Get bonus points for 3, 5, and 7 consecutive correct predictions
 * Earn points on every streak length increment
 
 Streak Milestones can be of two types:
 
-* Recurring - Set a periodic length interval for users to get rewards
-* Custom - Define a custom streak length to be rewardable
+* Recurring: Set a periodic length interval for users to get rewards
+* Custom: Define a custom streak length to be rewardable
 
-Streak Milestones inherently can be configured to allow or stop each achieved milestone to be rewardable after user streak resets.
+Rewards for reaching Streak Milestones can be configured to trigger only once or every time the milestone is reached.
 
 ## How Streaks Are Configured in CMS (High Level)
 
-Streaks are created and managed via the CMS → Streaks section.
-
-At a high level, configuration includes:
+Streaks are created and managed via the CMS → Streaks section. At a high level, configuration includes:
 
 * Selecting the streak type (Periodic / Consecutive Action)
 
