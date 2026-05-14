@@ -1,6 +1,6 @@
 ---
 title: Streaks
-excerpt: Streaks turn repeat behavior into a visible, rewarding habit.
+excerpt: Reward users for regular participation
 deprecated: false
 hidden: false
 metadata:
