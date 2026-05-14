@@ -13,8 +13,7 @@ next:
 ---
 # What are streaks?
 
-Streaks are an engagement mechanic that reward users for performing an action consistently over time or across repeated opportunities.
-A streak tracks a user’s progress as they repeat a defined behavior—such as watching content, making predictions, checking in, or completing challenges—and rewards them for maintaining that consistency.  
+Streaks are an engagement mechanic that reward users for performing an action consistently over time or across repeated opportunities. A streak tracks a user’s progress as they repeat a defined behavior—such as watching content, making predictions, checking in, or completing challenges—and rewards them for maintaining that consistency.
 A streak starts when a user performs a defined action and continues as long as the user meets the streak rules. If the rules are broken, the streak resets
 
 # Why use streaks?
@@ -39,14 +38,13 @@ From a business perspective, streaks are especially useful for:
 
 * A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time and action based) or Consecutive Action (only action based, no time dependency).
 * The streak listens to eligible user actions such as voting, watching content, login, making predictions, playing mini game, etc.).
-* Each time the user performs the action:  
-  Progress is evaluated against streak rules
-  Streak milestones are checked
-  Rewards are granted if streak milestones are reached
-* Streaks can be:
-  Frozen (user-level or global)
-  Targeted to specific User Groups
-  Timezone-aware
+* Each time the user performs the action:
+  * Progress is evaluated against streak rules
+  * Rewards are granted if streak milestones are reached
+* Streaks can be
+  * Frozen (user-level or global)
+  * Targeted to specific User Groups
+  * Timezone-aware
 * All activity is logged for analytics and reporting.
 
 # Types of Streaks
