@@ -11,12 +11,11 @@ next:
       title: Periodic Streak CMS Guide
       type: basic
 ---
-# What are streaks?
+Streaks reward users for performing an action consistently over time or across repeated opportunities. A streak tracks a user’s progress as they repeat a defined behavior, such as watching content, making predictions, checking in, or completing challenges, and then rewards them for maintaining that consistency. A streak starts when a user performs an action associated with the streak and continues as long as the user meets the streak rules. If the rules are broken, the streak resets.
 
-Streaks are an engagement mechanic that reward users for performing an action consistently over time or across repeated opportunities. A streak tracks a user’s progress as they repeat a defined behavior—such as watching content, making predictions, checking in, or completing challenges—and rewards them for maintaining that consistency.
-A streak starts when a user performs a defined action and continues as long as the user meets the streak rules. If the rules are broken, the streak resets
+Streaks are classified into **Periodic Streaks** and **Consecutive Action Streaks**. Milestones within streaks act as reward checkpoints.
 
-# Why use streaks?
+## Why use streaks?
 
 Streaks help drive meaningful product outcomes by:
 
@@ -34,24 +33,15 @@ From a business perspective, streaks are especially useful for:
 * Content consumption (episodes, videos, quizzes)
 * Loyalty and reward programs
 
-# How Streaks Work (High Level)
+## How Streaks Work (High Level)
 
 * A client configures a streak in CMS using a preset such as Periodic (Daily, Weekly, Monthly - time and action based) or Consecutive Action (only action based, no time dependency).
 * The streak listens to eligible user actions such as voting, watching content, login, making predictions, playing mini game, etc.).
-* Each time the user performs the action:
-  * Progress is evaluated against streak rules
-  * Rewards are granted if streak milestones are reached
-* Streaks can be
-  * Frozen (user-level or global)
-  * Targeted to specific User Groups
-  * Timezone-aware
+* Each time the user performs the action, progress is evaluated against streak rules and rewards are granted if streak milestones are reached.
+* Streaks can be frozen (user-level or global), targeted to specific User Groups, and timezone-aware.
 * All activity is logged for analytics and reporting.
 
-# Types of Streaks
-
-Streaks can be broadly classified into **Periodic Streaks** and **Consecutive Action Streaks**, with Streak Milestones acting as reward checkpoints.
-
-## Periodic Streaks (Time-Dependent):
+## Periodic Streaks
 
 A streak where users must perform an action within a recurring time window (daily, weekly, monthly).
 
@@ -66,8 +56,6 @@ A streak where users must perform an action within a recurring time window (dail
 * Make a prediction every day
 * Play 2 trivia games every week
 * Referring 5 friends every month
-
-<br />
 
 ## Consecutive Action Streaks (Action-Dependent):
 
