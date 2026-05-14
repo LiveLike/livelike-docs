@@ -43,7 +43,11 @@ From a business perspective, streaks are especially useful for:
 
 ## Periodic Streaks
 
-A streak where users must perform an action within a recurring time window (daily, weekly, monthly).
+A periodic streak is extended by performing an action within a recurring time window (daily, weekly, monthly). Examples:
+
+* Make a prediction every day
+* Play 2 trivia games every week
+* Referr 5 friends every month
 
 ### How it works:
 
@@ -51,29 +55,19 @@ A streak where users must perform an action within a recurring time window (dail
 * Missing a period breaks the streak
 * Timezone-aware
 
-**Examples**:
-
-* Make a prediction every day
-* Play 2 trivia games every week
-* Referring 5 friends every month
-
 ## Consecutive Action Streaks
 
-A streak based on successful consecutive actions, independent of time / when those actions are performed.
+A consecutive action streak is extended by performing an action in a defined order. Examples:
+
+* Correctly predict 3 match outcomes in a row
+* Win 3 games consecutively
+* Send a chat message on every match day in a tournament
 
 ### How it works:
 
 * Progress depends on uninterrupted success
 * Time gaps don’t matter
 * One failure resets the streak
-
-**Examples**:
-
-* Correctly predict 3 match outcomes in a row
-* Win 3 games consecutively
-* Send a chat message on every match day in a tournament
-
-<br />
 
 ## Streak Milestones
 
