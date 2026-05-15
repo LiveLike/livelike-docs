@@ -12,46 +12,17 @@ metadata:
 next:
   description: ''
 ---
-## User Profile Badges
+A user profile badge is a badge that is linked to a user profile. A user profile can have multiple badges that can be earned or awarded. Once a badge is earned or awarded it stays linked to the user profile regardless of any changes done to the badge. Badges can be earned by reaching a reward item thresholds or by completing [Quests](doc:quests). They can also be directly awarded via API.
 
-A user profile badge is a badge that is linked to a user profile. A user profile can have multiple badges that can be earned or awarded. Once a badge is earned or awarded it stays linked to the user profile regardless of any changes done to the badge.
+## Earn badge at reward item threshold
 
-## Utilizing Badges
+Badges can be awarded automatically to users who reach a defined Reward Item Threshold set on the badge. For example, a badge could be set up to be awarded automatically when a user reaches 1,000 points by creating a [Reward Item](doc:rewards)  called Points, and then setting the Reward Item Threshold on the badge to 1,000 Points.
 
-A badge can be awarded or earned. To award a badge please use the award badge rest API.\
-To set up a way to earn a badge, please follow the instructions below.
+Reward item thresholds are optional and can be set when creating a new badge or modifying an existing one.
 
-The following items are required to be completed for a user to be able to earn a badge.
+All users are eligible to earn the badge when they meet the threshold, but the badge will only be earned once per user. If a user reaches the threshold, earns the badge, and then goes below the threshold to meet it again, they will not earn the badge again.
 
-1. Create a **Reward Item**
-   1. In the Producer Suite, on the left hand side click on **Rewards**.
-   2. There are three tabs, make sure you are on the tab called **Items**
-   3. On the top right hand side click on the button **New Reward Item**
-   4. Fill in the name and click **Create**
-2. Create a **Reward Action**
-   1. In the Producer Suite, on the left hand side click on **Rewards**.
-   2. There are three tabs, make sure you are on the tab called **Actions**
-   3. On the top right hand side click on the button **New Reward Action**
-   4. Fill in the details and click **Create**
-3. Create a **Reward Table**
-   1. In the Producer Suite, on the left hand side click on **Rewards**
-   2. There are three tabs, make sure you are on the tab called **Tables**
-   3. On the top right hand side click on the button **New Reward Table**
-   4. Fill in the name, pick a program for it to be linked to and click **Create**
-   5. Once a table is created, click on it's name in the list of all Reward Tables.
-   6. You will see a screen showing all table entries. To add a new one, click on the **New Entry** button
-   7. In the New Entry modal, you will be able to pick and connect a **Reward Action** with a **Reward Item** in addition you will be able to set up a **Reward Item Amount**, which is the amount that will be awarded to a user when this entry is earned. 
-   8. Click **Create** to create a reward table entry
-4. Create a **Badge**
-   1. In the Producer Suite, on the left hand side click on **Badges**.
-   2. On the top right hand side, click on the button **New Badge**
-   3. Fill in all the information and click **Create**
-5. Connect the **Badge** with a **Reward Item**
-   1. Find the **Badge** you created in the Badges list
-   2. Click on the three vertical dots on the right hand side and click **Edit Badge**
-   3. In this modal you will be able to create a connection between a Reward Item and a Badge. In addition you will be able to set the **Reward Item Threshold**, which is the amount of points a user is required to earn this badge.
-
-## Retrieve badges earned or awarded to a user
+## List badges belonging to a user
 
 All the badges that have been earned or awarded to a user profile can be retrieved using the code samples below
 
@@ -141,7 +112,7 @@ badgesClient.getProfileBadgeProgress(
 
 ## Retrieving all badges linked to an application
 
-As an integrator you have the ability to retrieve all of the badges linked to an application. The results of this call can be used at a later time to query badge progress by passing badge ID's of interest. 
+As an integrator you have the ability to retrieve all of the badges linked to an application. The results of this call can be used at a later time to query badge progress by passing badge ID's of interest.
 
 ```swift
 let sdk: EngagementSDK
