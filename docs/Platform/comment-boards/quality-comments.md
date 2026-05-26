@@ -27,6 +27,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
       1. Minimum character count - Whitespaces excluded from this count
       2. Allowed or disallowed characters
       3. Emoji to text ratio
+      4. GIF Exclusion
 4. These signals help distinguish meaningful fan participation from spam, noise or low-effort messages.
 
 <br />
