@@ -33,14 +33,14 @@ A Profile Group can be thought of as a named set of profiles. When a profile gro
 A Profile group supports two types of user group creation:
 
 1. Static Profile Groups: Static groups are manually managed groups where profiles are explicitly added or removed through APIs or CMS actions. These are useful for curated audiences such as:
-   1. VIP users 
-   2. Beta testers 
-   3. Premium subscribers 
+   1. VIP users
+   2. Beta testers
+   3. Premium subscribers
    4. Moderation watchlists
-2. Dynamic Profile Groups: Dynamic groups automatically maintain membership based on predefined rules which can be created as per user attributes & events. Profiles are automatically added or removed at a batch interval as they match the configured criteria. These are useful for Highly engaged users, Users active during a specific event, Fans of a specific team or topic. 
-   1. Dynamic User Groups provide a curated list of platform controlled attributes, categories including major LiveLike features like Quests, Comments, Reactions, Streaks, Tiers, etc. 
-   2. Clients can also configure certain metrics from their end and update those as custom attributes on profiles and have them added to the list of attributes to make use of our user segmentation engine. 
-   3. Each attribute also exposes a list of supported operators for it, maintaining valid combinations and keeping rule creation as intuitive as possible. 
+2. Dynamic Profile Groups: Dynamic groups automatically maintain membership based on predefined rules which can be created as per user attributes & events. Profiles are automatically added or removed at a batch interval as they match the configured criteria. These are useful for Highly engaged users, Users active during a specific event, Fans of a specific team or topic.
+   1. Dynamic User Groups provide a curated list of platform controlled attributes, categories including major LiveLike features like Quests, Comments, Reactions, Streaks, Tiers, etc.
+   2. Clients can also configure certain metrics from their end and update those as custom attributes on profiles and have them added to the list of attributes to make use of our user segmentation engine.
+   3. Each attribute also exposes a list of supported operators for it, maintaining valid combinations and keeping rule creation as intuitive as possible.
    4. Within a single bucket of rules, rules are combined with OR logic and every new bucket that is introduced acts like an AND connection between the OR buckets.
    5. Example: Users with >10 comments in 7 days or Users who reacted to a poll or Users with toxicity score > threshold Users inactive for 30 days, “Users who have completed 5+ quests AND haven’t commented in 30 days”: re-engage active users who aren’t socializing
       <br />
@@ -91,6 +91,48 @@ Content-Type: application/json
         }
     ]
 }
+```
+
+## Creating a new dynamic profile group
+
+```http
+POST /api/v1/applications/{client_id}/profile-groups/ HTTP/1.1
+
+Authorization: Bearer {access-token}
+Content-Type: application/json
+
+{
+    "name": "Group1",,
+    "description": "Sample Profile Group",
+    "attributes": [
+        {
+            "key": "key1",
+            "value": "val1"
+        }
+    ],
+    "membership_type": "dynamic",
+    "rule_tree": {
+                  "children": [
+                     {
+                      "children": [
+                         {
+                          "value": 32,
+                          "attribute": "total_comments_posted",
+                          "condition": "greater_than"
+                         },
+                         {
+                          "value": true,
+                          "attribute": "has_ever_commented",
+                          "condition": "is"
+                         }
+                      ],
+                      "operator": "OR"
+                    }
+                   ],
+                  "operator": "AND"
+                 },
+}
+
 ```
 
 <br />
