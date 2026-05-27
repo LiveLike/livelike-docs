@@ -4,7 +4,7 @@ excerpt: >-
   This page provides an overview of the rule creation flow for Dynamic Profile
   Groups via APIs.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
