@@ -20,6 +20,7 @@ The rule trees to be passed in the JSON payload for profile group creation API f
       "operator": "OR",
       "children": [
         {
+
 					"attribute": "attribute_1", "condtion": "condition_1", "value": "value_1"
         },
         {
