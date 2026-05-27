@@ -163,6 +163,60 @@ Authorization: Bearer {access-token}
 }
 ```
 
+## Listing dynamic profile groups in an app
+
+```http
+GET /api/v1/applications/{client-id}/profile-groups/?membership_type=dynamic HTTP/1.1
+```
+
+```json Response
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "13a1fd98-24ca-4935-8791-5556586c0005",
+            "name": "Group1",
+            "is_active": true,
+            "description": "Sample Profile Group",
+            "profile_count": 200,
+            "custom_id": null,
+            "created_at": "2025-04-28T12:16:49.670053Z",
+            "attributes": [ 
+                {
+                    "key": "key1",
+                    "value": "val1"
+                }
+            ],
+          	"membership_type": "dynamic",
+						"ruleset": {
+                "id": "59019dcd-32c9-48d6-acdd-a304a974f886",
+                "rule_tree": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "value": 32,
+                                    "attribute": "total_comments_posted",
+                                    "condition": "greater_than"
+                                },
+                                {
+                                    "value": true,
+                                    "attribute": "has_ever_commented",
+                                    "condition": "is"
+                                }
+                            ],
+                            "operator": "OR"
+                        }
+                    ],
+                    "operator": "AND"
+             },
+        }
+    ]
+}
+```
+
 <br />
 
 ## Updating a profile group's details
