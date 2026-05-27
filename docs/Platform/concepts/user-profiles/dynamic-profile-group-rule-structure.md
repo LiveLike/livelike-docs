@@ -1,8 +1,6 @@
 ---
 title: Dynamic Profile Group Rule Structure
-excerpt: >-
-  This page provides an overview of the rule creation flow for Dynamic Profile
-  Groups via APIs.
+excerpt: An overview of the rule creation flow for Dynamic Profile Groups via APIs.
 deprecated: false
 hidden: false
 metadata:
