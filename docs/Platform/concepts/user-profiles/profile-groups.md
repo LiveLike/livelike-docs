@@ -117,7 +117,7 @@ Content-Type: application/json
         	{
           "attribute": "total_comments_posted",
           "condition": "greater_than_or_equal",
-          "value": 20,
+          "value": 20
           }
 				]
 		}
