@@ -69,26 +69,26 @@ with certain guardrails:
 
 <br />
 
-| Operator                 | Key                   | Accepted Values                               |
-| :----------------------- | :-------------------- | :-------------------------------------------- |
-| Equals                   | equals                | String, number, datetime                      |
-| Not Equals               | not_equals            | String, number, datetime                      |
-| Greater Than or Equal to | greater_than_or_equal | String, number, datetime                      |
-| Less Than or Equal to    | less_than_or_equal    | String, number, datetime                      |
-| Greater Than             | greater_than          | String, number, datetime                      |
-| Less Than                | less_than             | String, number, datetime                      |
-| Contains                 | contains              | String                                        |
-| Not Contains             | not_contains          | String                                        |
-| Ends With                | ends_with             | String                                        |
-| In                       | in                    | List of String, number, datetime              |
-| Not In                   | not_in                | List of String, number, datetime              |
-| Between                  | between               | List of two values (String, number, datetime) |
-| Before                   | before                | Datetime                                      |
-| After                    | after                 | Datetime                                      |
-| Within Last X Days       | within_last_x_days    | Integer                                       |
-| Is                       | is                    | True, False                                   |
-| Is Empty                 | is_empty              | True, False                                   |
-| Is Not Empty             | is_not_empty          | True, False                                   |
+| Operator                 | Key                       | Accepted Values                               |
+| :----------------------- | :------------------------ | :-------------------------------------------- |
+| Equals                   | **equals**                | String, number, datetime                      |
+| Not Equals               | **not_equals**            | String, number, datetime                      |
+| Greater Than or Equal to | **greater_than_or_equal** | String, number, datetime                      |
+| Less Than or Equal to    | **less_than_or_equal**    | String, number, datetime                      |
+| Greater Than             | **greater_than**          | String, number, datetime                      |
+| Less Than                | **less_than**             | String, number, datetime                      |
+| Contains                 | **contains**              | String                                        |
+| Not Contains             | **not_contains**          | String                                        |
+| Ends With                | **ends_with**             | String                                        |
+| In                       | **in**                    | List of String, number, datetime              |
+| Not In                   | **not_in**                | List of String, number, datetime              |
+| Between                  | **between**               | List of two values (String, number, datetime) |
+| Before                   | **before**                | Datetime                                      |
+| After                    | **after**                 | Datetime                                      |
+| Within Last X Days       | **within_last_x_days**    | Integer                                       |
+| Is                       | **is**                    | True, False                                   |
+| Is Empty                 | **is_empty**              | True, False                                   |
+| Is Not Empty             | **is_not_empty**          | True, False                                   |
 
 ## List of Available Attributes
 
