@@ -41,7 +41,7 @@ A Profile group supports two types of user group creation:
    3. Premium subscribers
    4. Moderation watchlists
 2. Dynamic Profile Groups: Dynamic groups automatically maintain membership based on predefined rules which can be created as per user attributes & events. Profiles are automatically added or removed at a batch interval as they match the configured criteria. These are useful for Highly engaged users, Users active during a specific event, Fans of a specific team or topic.
-   1. Dynamic User Groups provide a curated list of platform controlled attributes, categories including major LiveLike features like Quests, Comments, Reactions, Streaks, Tiers, etc.
+   1. Dynamic User Groups provide a curated list of [platform controlled attributes](https://docs.livelike.com/docs/dynamic-profile-group-rule-structure#list-of-available-attributes), categories including major LiveLike features like Quests, Comments, Reactions, Streaks, Tiers, etc.
    2. Clients can also configure certain metrics from their end and update those as custom attributes on profiles and have them added to the list of attributes to make use of our user segmentation engine.
    3. Each attribute also exposes a list of supported operators for it, maintaining valid combinations and keeping rule creation as intuitive as possible.
    4. Within a single bucket of rules, rules are combined with OR logic and every new bucket that is introduced acts like an AND connection between the OR buckets.
