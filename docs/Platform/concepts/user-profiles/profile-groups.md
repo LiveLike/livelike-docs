@@ -102,25 +102,25 @@ Authorization: Bearer {access-token}
 Content-Type: application/json
 
 {
-    "name": "Group1",,
-    "description": "Sample Profile Group",
-    "attributes": [
-        {
-            "key": "key1",
-            "value": "val1"
-        }
-    ],
-    "membership_type": "dynamic",
-    "rule_tree": {
-    		"operator": "OR",
-        "children": [
-        	{
-          "attribute": "total_comments_posted",
-          "condition": "greater_than_or_equal",
-          "value": 20
-          }
-				]
-		}
+  "name": "Group1",
+  "description": "Sample Profile Group",
+  "attributes": [
+    {
+      "key": "key1",
+      "value": "val1"
+    }
+  ],
+  "membership_type": "dynamic",
+  "rule_tree": {
+    "operator": "OR",
+    "children": [
+      {
+        "attribute": "total_comments_posted",
+        "condition": "greater_than_or_equal",
+        "value": 20
+      }
+    ]
+  }
 }
 
 ```
@@ -171,49 +171,50 @@ GET /api/v1/applications/{client-id}/profile-groups/?membership_type=dynamic HTT
 
 ```json Response
 {
-    "count": 1,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "id": "13a1fd98-24ca-4935-8791-5556586c0005",
-            "name": "Group1",
-            "is_active": true,
-            "description": "Sample Profile Group",
-            "profile_count": 200,
-            "custom_id": null,
-            "created_at": "2025-04-28T12:16:49.670053Z",
-            "attributes": [ 
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": "13a1fd98-24ca-4935-8791-5556586c0005",
+      "name": "Group1",
+      "is_active": true,
+      "description": "Sample Profile Group",
+      "profile_count": 200,
+      "custom_id": null,
+      "created_at": "2025-04-28T12:16:49.670053Z",
+      "attributes": [
+        {
+          "key": "key1",
+          "value": "val1"
+        }
+      ],
+      "membership_type": "dynamic",
+      "ruleset": {
+        "id": "59019dcd-32c9-48d6-acdd-a304a974f886",
+        "rule_tree": {
+          "children": [
+            {
+              "children": [
                 {
-                    "key": "key1",
-                    "value": "val1"
+                  "value": 32,
+                  "attribute": "total_comments_posted",
+                  "condition": "greater_than"
+                },
+                {
+                  "value": true,
+                  "attribute": "has_ever_commented",
+                  "condition": "is"
                 }
-            ],
-          	"membership_type": "dynamic",
-						"ruleset": {
-                "id": "59019dcd-32c9-48d6-acdd-a304a974f886",
-                "rule_tree": {
-                    "children": [
-                        {
-                            "children": [
-                                {
-                                    "value": 32,
-                                    "attribute": "total_comments_posted",
-                                    "condition": "greater_than"
-                                },
-                                {
-                                    "value": true,
-                                    "attribute": "has_ever_commented",
-                                    "condition": "is"
-                                }
-                            ],
-                            "operator": "OR"
-                        }
-                    ],
-                    "operator": "AND"
-             },
-        }
-    ]
+              ],
+              "operator": "OR"
+            }
+          ],
+          "operator": "AND"
+        }
+      }
+    }
+  ]
 }
 ```
 
