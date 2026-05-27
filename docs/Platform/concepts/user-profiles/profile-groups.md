@@ -8,7 +8,10 @@ metadata:
   description: ''
   robots: index
 next:
-  description: ''
+  pages:
+    - slug: dynamic-profile-group-rule-structure
+      title: Dynamic Profile Group Rule Structure
+      type: basic
 ---
 Profile Groups is an API-first service that enables products to group profiles into named sets, allowing you to easily address groups of profiles inside of an integration. As a product developer using the Profile Groups API, you will be able to:
 
