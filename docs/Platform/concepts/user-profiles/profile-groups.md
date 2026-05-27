@@ -16,16 +16,34 @@ Profile Groups is an API-first service that enables products to group profiles i
 * Manage and query the groups a profile belongs to
 * Access and list all available profile groups
 * Retrieve and manage group members efficiently
+* Automatically segment users based on profile attributes or activity
 
 # Profile Groups Basics
 
-A Profile Group can be thought of as a named set of profiles. When a profile group is first created it has no member profiles. 
+A Profile Group can be thought of as a named set of profiles. When a profile group is first created it has no member profiles.
 
-* The **Name** and **Description** help you organize your groups inside of the CMS, and can be used as labels inside of your integration. 
+* The **Name** and **Description** help you organize your groups inside of the CMS, and can be used as labels inside of your integration.
 * The **Members** field is the set of profiles that are part of this group.
 * The **ID** is the LiveLike-assigned unique identifier of the group. It's one of the main ways to reference the group in your integration code.
 * The **Custom ID** is optional but can also be used to reference the group in your integration code. A group's custom ID must be unique in your application.
 * The **Attributes** are an array of key-value pairs that can be used to organize and query groups inside of  the integration. Groups are indexed by their attributes, and groups can be looked up by their attribute values.
+
+# Types of User Groups
+
+A Profile group supports two types of user group creation:
+
+1. Static Profile Groups: Static groups are manually managed groups where profiles are explicitly added or removed through APIs or CMS actions. These are useful for curated audiences such as:
+   1. VIP users 
+   2. Beta testers 
+   3. Premium subscribers 
+   4. Moderation watchlists
+2. Dynamic Profile Groups: Dynamic groups automatically maintain membership based on predefined rules which can be created as per user attributes & events. Profiles are automatically added or removed at a batch interval as they match the configured criteria. These are useful for Highly engaged users, Users active during a specific event, Fans of a specific team or topic. 
+   1. Dynamic User Groups provide a curated list of platform controlled attributes, categories including major LiveLike features like Quests, Comments, Reactions, Streaks, Tiers, etc. 
+   2. Clients can also configure certain metrics from their end and update those as custom attributes on profiles and have them added to the list of attributes to make use of our user segmentation engine. 
+   3. Each attribute also exposes a list of supported operators for it, maintaining valid combinations and keeping rule creation as intuitive as possible. 
+   4. Within a single bucket of rules, rules are combined with OR logic and every new bucket that is introduced acts like an AND connection between the OR buckets.
+   5. Example: Users with >10 comments in 7 days or Users who reacted to a poll or Users with toxicity score > threshold Users inactive for 30 days, “Users who have completed 5+ quests AND haven’t commented in 30 days”: re-engage active users who aren’t socializing
+      <br />
 
 > 📘 Custom IDs and attributes make data-level integrations easier
 >
@@ -130,7 +148,7 @@ Content-Type: application/json
 
 ```
 
-**Note**: Changing **is\_active** to false will make the group unavailable through the API and cause 404 on consecutive calls. 
+**Note**: Changing **is_active** to false will make the group unavailable through the API and cause 404 on consecutive calls.
 
 ```http Response
 {
@@ -168,7 +186,7 @@ On successful deletion of a resource, a REST API typically returns an **HTTP 204
 
 ## Adding members to a profile group
 
-Adding a member to a group is done via the REST API interface 
+Adding a member to a group is done via the REST API interface
 
 ```http
 POST /api/v1/applications/{client-id}/profile-groups/{group-id}/members/ HTTP/1.1
@@ -193,7 +211,7 @@ Authorization: Bearer {access-token}
 }
 ```
 
-**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
 
 ```http
 POST /api/v1/applications/{client-id}/profile-groups/{group-id}/members/ HTTP/1.1
@@ -224,7 +242,7 @@ Authorization: Bearer {access-token}
 
 ```
 
-**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
 
 <br />
 
@@ -245,7 +263,7 @@ Authorization: Bearer {access-token}
 }
 ```
 
-**Note**: Or alternatively, we can use custom\_id list, but not both on the same time.
+**Note**: Or alternatively, we can use custom_id list, but not both on the same time.
 
 ```http
 DELETE /api/v1/applications/{client-id}/profile-groups/{group-id}/members/ HTTP/1.1
