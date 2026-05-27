@@ -58,7 +58,7 @@ with certain guardrails:
 
 * Only allowed attributes, conditions and operators must be used.
 * Leaf nodes must always have (attribute, condition, value) combination
-* At max,  rules should be added.
+* At max, 5 rules should be added.
 * Root operator should be AND, even though it's always internally normalized to set it to AND.
 
 <br />
