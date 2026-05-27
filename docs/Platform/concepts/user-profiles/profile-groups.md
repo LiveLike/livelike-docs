@@ -112,25 +112,15 @@ Content-Type: application/json
     ],
     "membership_type": "dynamic",
     "rule_tree": {
-                  "children": [
-                     {
-                      "children": [
-                         {
-                          "value": 32,
-                          "attribute": "total_comments_posted",
-                          "condition": "greater_than"
-                         },
-                         {
-                          "value": true,
-                          "attribute": "has_ever_commented",
-                          "condition": "is"
-                         }
-                      ],
-                      "operator": "OR"
-                    }
-                   ],
-                  "operator": "AND"
-                 },
+    		"operator": "OR",
+        "children": [
+        	{
+          "attribute": "total_comments_posted",
+          "condition": "greater_than_or_equal",
+          "value": 20,
+          }
+				]
+		}
 }
 
 ```
