@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ```
 
-<br />
+Please refer this [documentation](https://docs.livelike.com/docs/dynamic-profile-group-rule-structure#/) for getting a basic structure and list of allowed attributes and conditions for the rule tree.
 
 ## Listing profile groups in an app
 
