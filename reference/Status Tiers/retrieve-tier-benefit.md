@@ -1,10 +1,8 @@
 ---
-title: Retrieve Tier Benefit
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: retrive-tier-benefit
-deprecated: false
 hidden: false
 metadata:
   title: ''
