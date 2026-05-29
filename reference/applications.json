@@ -3040,7 +3040,8 @@
                     "type": "array",
                     "items": {
                       "type": "string"
-                    }
+                    },
+                    "description": "List of reward item IDs that the multiplier applies to."
                   },
                   "profile_group_ids": {
                     "type": "array",
