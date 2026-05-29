@@ -8,4 +8,4 @@ link:
 metadata:
   robots: noindex
 ---
-Only draft reward multiplier can be deleted
+<br />
