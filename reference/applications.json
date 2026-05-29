@@ -3657,7 +3657,7 @@
         "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-publish"
       }
     },
-    "/{client_id}/reward-multipliers/{reward_multiplier_id}/publish/-1": {
+    "/{client_id}/reward-multipliers/{reward_multiplier_id}/archive/": {
       "post": {
         "responses": {
           "200": {
@@ -3745,7 +3745,7 @@
           }
         ],
         "summary": "Copy of Publish Reward Multiplier",
-        "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-publish-1"
+        "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-archive"
       }
     }
   },
