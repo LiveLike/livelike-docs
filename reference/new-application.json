@@ -2283,7 +2283,11 @@
                   },
                   "reward_multiplier_ids": {
                     "type": "string",
-                    "description": "list of reward multiplier UUIDs to link to reward multiplier"
+                    "description": "list of reward multiplier UUIDs to link to milestone"
+                  },
+                  "badge_ids": {
+                    "type": "string",
+                    "description": "list of badge UUIDs to link to milestone"
                   }
                 },
                 "required": [
