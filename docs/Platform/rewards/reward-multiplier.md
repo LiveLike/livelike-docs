@@ -160,7 +160,7 @@ Steps to <Anchor target="_blank" href="https://docs.livelike.com/reference/creat
 
 Steps to **Link Reward Multiplier** with:
 
-- [**Streak Milestones**]()
+- <Anchor target="_blank" href="https://docs.livelike.com/reference/create-streak-milestone">**Streak Milestones**</Anchor>
 - [**Tier Benefits**]()
 
 **Granting the multiplier to a user (on trigger event)**
