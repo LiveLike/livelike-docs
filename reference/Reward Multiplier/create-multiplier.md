@@ -14,7 +14,7 @@ There are two types of reward multipliers, based on their activation method:
 
 ## User-earned / User-activated
 
-Earned through a rewardable sources such as streak milestone, tier benefit, etc. and then manually activated by a user after earning. For this type, it is mandatory to set an `active_duration` which determines how long the multiplier remains effective, once activated. The multiplier, when active, is applicable to all rewardable interactions tied to that reward item for which the multiplier was earned.
+Earned through a rewardable sources such as streak milestone, tier benefit, etc. and then manually activated by a user after earning. For this type, it is mandatory to set an `active_duration` which determines how long the multiplier remains effective, once activated. The multiplier, when active, is applicable to all rewardable interactions tied to that reward item linked to the multiplier.
 
 ## Automatic
 
