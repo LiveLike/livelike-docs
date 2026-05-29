@@ -3058,6 +3058,64 @@
           }
         },
         "description": ""
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "activation_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "user-activated",
+                "automatic"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "profile_groups",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "reward_item",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "live",
+                "draft",
+                "archived",
+                "upcoming",
+                "expired"
+              ]
+            }
+          }
+        ],
+        "operationId": "get_client-id-reward-multipliers",
+        "summary": "List Reward Multipliers"
       }
     }
   },
