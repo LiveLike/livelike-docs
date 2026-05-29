@@ -3486,7 +3486,7 @@
             "required": true
           }
         ],
-        "summary": "Copy of Create Multiplier",
+        "summary": "Update Reward Multiplier",
         "requestBody": {
           "content": {
             "application/json": {
