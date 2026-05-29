@@ -18,4 +18,4 @@ Once a streak is **published**, only a limited set of fields can be updated to p
 - `expires_at`
 - `attributes`
 
-All other fields become immutable after the streak is published.
+All other fields become immutable after the multiplier is published.
