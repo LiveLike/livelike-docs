@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: post_client-id-reward-multipliers-reward-multiplier-id-archive-1
+  operationId: post_client-id-reward-multipliers-reward-multiplier-id-unarchive
 hidden: true
 link:
   new_tab: false
