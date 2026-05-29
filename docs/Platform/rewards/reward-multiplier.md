@@ -255,7 +255,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **I want different multiplier values for different user segments during the same time window. Is that supported?**<br />Yes for automatic multipliers - configure one multiplier per segment, each scoped to its own user group, but ensure the groups are mutually exclusive. However, two automatic multipliers on the same reward item cannot have same multiplier factor during the same time window; the platform will reject the configuration during setup.
 
-**What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**<br />A multiplier is scoped to a specific reward item (e.g., tier points, event points). It applies to all earn actions that credit that reward item. If a user completes an action that credits a different reward item, the multiplier does not apply.
+**What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**<br />A multiplier is scoped to specific reward item(s) (e.g., tier points, event points). It applies to all earn actions that credit that reward item(s). If a user completes an action that credits a different reward item, the multiplier does not apply.
 
 **Can I scope a multiplier to a specific earn action rather than a reward item?**<br />Not directly - multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item, or contact your LiveLike account team to discuss your use case.
 
