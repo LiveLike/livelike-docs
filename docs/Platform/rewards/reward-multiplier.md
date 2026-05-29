@@ -104,6 +104,8 @@ This type introduces a strategic dimension to loyalty: the multiplier is a _priz
 | `source_type`                    | Source from where a user earned this multiplier (e.g., streak\_milestone, tier\_benefit, etc.) |
 | `profile_group_ids` _(optional)_ | Restrict eligibility to earn a multiplier to specific user segments                            |
 
+**Note:** Expiry date only impacts users' ability to earn a multiplier. Once earned, users can activate the multiplier at any point, even past the expiry date.&#x20;
+
 ### Use Cases
 
 #### Use Case 1: Streak Completion Reward
