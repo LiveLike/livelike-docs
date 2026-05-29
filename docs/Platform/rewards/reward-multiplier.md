@@ -135,7 +135,7 @@ A platform identifies users returning after a long absence and wants to greet th
 
 Because users must activate it, the interaction creates a moment of delight and intent - far more memorable than a silent automatic activation.
 
-### Setting Up (CMS — Producers)
+### Setting Up (CMS)
 
 1. Navigate to **Reward Multipliers → Create New**
 2. Set a **Name** and **Description** (optional)
@@ -154,7 +154,7 @@ Because users must activate it, the interaction creates a moment of delight and 
 1. Navigate to **Streak Milestone&#x20;**&#x70;age and select one or more multipliers available in the drop-down list. Only published, user-activated multipliers can be linked to a streak milestone.&#x20;
 2. Navigate to **Tier Benefits** page and select a multiplier available in the drop-down list. Only published, user-activated multipliers can be linked to a tier benefit. Each Tier Benefit can only have one multiplier linked. To add more multipliers, create new Tier Benefits within a Tier.
 
-### Setting Up, Linking & Activating (API — Integrators)
+### Setting Up, Linking & Activating (API)
 
 Steps to [**Create Reward multiplier**]()**&#x20;**
 
