@@ -3143,11 +3143,11 @@
                   },
                   "started_at": {
                     "type": "string",
-                    "description": "UTC timestamp when the multiplier becomes available. The timestamp should be in future."
+                    "description": "UTC timestamp when the multiplier becomes available. The timestamp should not be in the past."
                   },
                   "stopped_at": {
                     "type": "string",
-                    "description": "UTC timestamp when the multiplier expires and stops being available. The timestamp should be in future."
+                    "description": "UTC timestamp when the multiplier expires and stops being available. The timestamp should not be in the past."
                   },
                   "reward_item_ids": {
                     "type": "array",
