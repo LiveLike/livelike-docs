@@ -82,7 +82,7 @@ Lapsed users who return earn at 4x without knowing it's a targeted campaign. Act
 
 ### Setting Up (API)
 
-Steps to [**Create Reward Multiplier**]().
+Steps to [**Create Reward Multiplier**](https://docs.livelike.com/reference/create-multiplier).
 
 ***
 
