@@ -259,7 +259,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **Can I scope a multiplier to a specific earn action rather than a reward item?**<br />Not directly - multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item, or contact your LiveLike account team to discuss your use case.
 
-**Can I set a multiplier with no end date?**<br />Yes - it serves as an open-ended boost. To end it, you will need to archive it or manually add an end date in future.
+**Can I set a multiplier with no end date?**<br />Start/End date is optional for User-Activated multiplier. However, it is required for automatic multipliers.
 
 ***
 
