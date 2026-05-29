@@ -273,7 +273,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **What is the difference between deleting and archiving a multiplier?**<br />Deleting removes the configuration entirely. This is irreversible. Only multiplier is "Draft" status can be deleted.
 
-Archiving deactivates the multiplier but preserves the configuration in LiveLike backend. For automatic multiplier, it stops new earn events from being boosted. For user-activated multipliers, it stops users from earning or activating and already earned multiplier. Any live multipliers will cease to boost earnings.&#x20;
+Archiving deactivates the multiplier but preserves the configuration in LiveLike backend. For automatic multiplier, it stops new earn events from being boosted. For user-activated multipliers, it stops users from earning or activating and already earned multiplier. Any live user-activated multipliers will cease to boost earnings.&#x20;
 
 ***
 
