@@ -3029,10 +3029,12 @@
                     "description": "Duration for which the user activated multiplier remains active after activation, in ISO 8601 format."
                   },
                   "started_at": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UTC timestamp when the multiplier becomes available."
                   },
                   "stopped_at": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UTC timestamp when the multiplier expires and stops being available."
                   },
                   "reward_item_ids": {
                     "type": "array",
