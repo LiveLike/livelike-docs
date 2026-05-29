@@ -3559,7 +3559,7 @@
       }
     },
     "/{client_id}/reward-multipliers/{reward_multiplier_id}-1-1": {
-      "delete": {
+      "post": {
         "responses": {
           "204": {
             "description": "",
@@ -3586,8 +3586,8 @@
             "required": true
           }
         ],
-        "summary": "Copy of Delete Reward Multiplier",
-        "operationId": "delete_client-id-reward-multipliers-reward-multiplier-id-1-1"
+        "summary": "Publish Reward Multiplier",
+        "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-1-1"
       }
     }
   },
