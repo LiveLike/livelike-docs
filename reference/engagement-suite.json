@@ -30674,7 +30674,33 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"df575de2-4251-4ab7-aa99-c9edf9d7ace9\",\n            \"tier_id\": \"03d32043-a73a-4ac5-ab95-f797baabaa8d\",\n            \"tier_title\": \"Bronze\",\n            \"reward_item_id\": \"729eed16-250a-49f3-9223-621adf72519d\",\n            \"reward_item_name\": \"Upend Coins\",\n            \"attributes\": [],\n            \"order\": 1,\n            \"status\": \"active\",\n            \"title\": \"Get Exclusive access to events\",\n            \"image\": null,\n            \"reward_item_amount\": 1,\n            \"created_at\": \"2025-04-10T06:55:57.398268Z\"\n        }\n    ]\n}"
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "ba716a31-590d-4e84-a889-2d78ea6f978d",
+                          "tier_id": "a0d2340f-0ea4-4690-b5fc-ffd4fe504a3a",
+                          "url": "http://localhost:8888/api/v1/tier-benefits/ba716a31-590d-4e84-a889-2d78ea6f978d/",
+                          "tier_title": "Novice",
+                          "reward_item_id": "bc41656b-fc83-4da4-b9fa-39a2049f4efe",
+                          "reward_item_name": "Upends Coin2",
+                          "reward_multiplier_id": null,
+                          "attributes": [],
+                          "badge_id": null,
+                          "badge": null,
+                          "order": 1,
+                          "reward_multiplier": null,
+                          "status": "active",
+                          "title": "Get 5 extraa upend points",
+                          "image": null,
+                          "description": "",
+                          "reward_item_amount": 5,
+                          "created_at": "2026-04-16T10:55:08.889262Z"
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
@@ -30762,8 +30788,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/tier-benefits/{tier_benefit_id}/": {
