@@ -3257,7 +3257,7 @@
     "/{client_id}/reward-multipliers/{reward_multiplier_id}-1": {
       "delete": {
         "responses": {
-          "200": {
+          "204": {
             "description": "",
             "content": {
               "application/json": {}
