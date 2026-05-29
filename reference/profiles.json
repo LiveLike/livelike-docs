@@ -1432,7 +1432,7 @@
         "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate"
       }
     },
-    "/{profile-id}/user-reward-multiplier/{user-reward-multiplier-id}/activate/-1": {
+    "/{profile-id}/user-reward-multipliers/": {
       "post": {
         "description": "",
         "responses": {
@@ -1448,18 +1448,10 @@
               "type": "string"
             },
             "required": true
-          },
-          {
-            "in": "path",
-            "name": "user-reward-multiplier-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
           }
         ],
         "summary": "List User Reward Multipliers",
-        "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate-1"
+        "operationId": "post_profile-id-user-reward-multipliers"
       }
     }
   },
