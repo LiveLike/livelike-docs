@@ -281,7 +281,7 @@ Archiving deactivates the multiplier but preserves the configuration in LiveLike
 
 ### Linking and Activation
 
-**A user earned a multiplier but hasn't activated it. How long do they have?**<br />Activation is not time-bound once a multiplier is earned by the user.
+**A user earned a multiplier but hasn't activated it. How long do they have?**<br />Activation is not time-bound once a multiplier is earned by the user. They can activate it at any point in time, even if the expiry date for that multiplier has passed. Expiry date only impacts users' ability to earn a multiplier.
 
 **Can a user see all multipliers they have earned?**<br />Yes - all user multipliers (with status as active, earned & expired) can queried via the [**List User Reward Multiplier API**]().
 
