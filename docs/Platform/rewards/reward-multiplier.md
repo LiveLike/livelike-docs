@@ -275,6 +275,8 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 Archiving deactivates the multiplier but preserves the configuration in LiveLike backend. For automatic multiplier, it stops new earn events from being boosted. For user-activated multipliers, it stops users from earning or activating and already earned multiplier. Any live user-activated multipliers will cease to boost earnings.&#x20;
 
+**Can unarchiving a multiplier resume status quo?**<br />Duration of multipliers run independently from archiving/unarchiving. If a multiplier was archived for a specific duration, it will count towards the actual duration of the multipliers. So if a multiplier expires while it was archived, it would continue to stay expired after being unarchived.&#x20;
+
 ***
 
 ### Linking and Activation
