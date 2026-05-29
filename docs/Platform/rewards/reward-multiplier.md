@@ -261,11 +261,11 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **Can I extend the end date of an active automatic multiplier?**<br />Yes - update the `End Date`. The multiplier will continue to apply through the new end date without any interruption.
 
-**Can I change the user group linked to a multiplier after it has been activated?**
-Yes, but do so with care. Changing the user group mid-window means some users who were previously eligible may stop receiving the multiplier, and new users may become eligible — with no communication sent automatically. Plan user group changes outside active windows where possible.
+**Can I change the user group linked to a multiplier after it has been activated?**<br />No. Only multiplier name, description, start/end date and attributes can be edited once the multiplier is published.
 
-**What is the difference between deactivating and deleting a multiplier?**
-Deactivating stops new earn events from being multiplied but preserves the configuration and any in-wallet manual multipliers already granted to users (they will expire naturally). Deleting removes the configuration entirely and immediately forfeits any in-wallet instances. Prefer deactivation unless you are certain the multiplier is no longer needed.
+**What is the difference between deleting and archiving  a multiplier?**<br />Deleting removes the configuration entirely. This is irreversible. Only multiplier is "Draft" status can be deleted.
+
+Archiving deactivates the multiplier but preserves the configuration in LiveLike backend. For automatic multiplier, it stops new earn events from being boosted. For user-activated multipliers, it stops users from earning or activating and already earned multiplier. Any live multipliers will cease to boost earnings. Prefer deactivation unless you are certain the multiplier is no longer needed.
 
 **Can I archive a multiplier to keep a record without it being active?**
 Deactivating serves this purpose — the multiplier remains visible in the CMS in an inactive state. There is no separate archive state.
