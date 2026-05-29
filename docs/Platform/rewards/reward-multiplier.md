@@ -192,6 +192,127 @@ Steps to [**create & manage rewards multiplier**]()
 
 ***
 
-##
+# Stacking & Override
+
+## Concurrency Rules
+
+Each multiplier type has its own concurrency constraint, enforced at different levels:
+
+| Scenario                                                                               | Rule                                                                                | Enforced at                              |
+| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------- |
+| Two user-activated multipliers on the same reward item                                 | Not allowed simultaneously - only one can be active at a time                       | Runtime (activation blocked / overriden) |
+| Two automatic multipliers on the same reward item + same multiplier factor + same date | Not allowed - configuration will be rejected                                        | Setup (CMS / API validation)             |
+| Two automatic multipliers on the same reward item + different multiplier factor / date | Allowed - combination of multiplier value + reward item + date is treated as unique | -                                        |
+| One user-activated + one automatic multiplier on the same reward item                  | Allowed - this is the stacking scenario (see below)                                 | -                                        |
+
+**In short:** a user can hold at most one live user-activated multiplier and one live automatic multiplier per reward item at any point in time.
+
+***
+
+## Stacking: User-Activated + Automatic Together
+
+A user can have one user-activated and one automatic multiplier active simultaneously on the same reward item. When both are active, the platform combines them - but **how they combine is a global application-level configuration**. Contact your LiveLike account team to confirm which stacking mode is enabled for your application.
+
+| Stack Mode         | Behaviour             | Example (2x manual + 3x auto)       |
+| ------------------ | --------------------- | ----------------------------------- |
+| **Additive**       | Values are summed     | 2 + 3 = **5x** effective multiplier |
+| **Multiplicative** | Values are multiplied | 2 × 3 = **6x** effective multiplier |
+
+> **Note:** Stacking mode is not configurable from the CMS. If you need to change the stacking behaviour for your application, raise it with your LiveLike account team.
+
+***
+
+## Override: Replacing a Live User-Activated Multiplier
+
+By default, a user cannot activate a new user-earned multiplier on a reward item when one is already active. However, **override can be enabled at the global application-level configuration**, allowing a new user-activated multiplier to replace the currently active one.
+
+**Important:** Override does not evaluate which multiplier is "better." It simply replaces the currently active multiplier with the newly activated one - regardless of value or remaining duration. The replaced multiplier is forfeited.
+
+| Override Setting  | Behaviour                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Off** (default) | User cannot activate a new user-earned multiplier while one is already active on that reward item                           |
+| **On**            | User can activate a new user-earned multiplier for the same reward item at any time; it immediately replaces the active one |
+
+> **Note:** Override is not configurable from the CMS/API. It is enabled or disabled at the application level. If your use case requires override to be on or off, communicate this to your LiveLike account team. When override is off, users who attempt to activate a second manual multiplier will see an error; ensure your UI handles this gracefully by surfacing their currently active multiplier.
+
+***
+
+## Frequently Asked Questions
+
+### Setup
+
+**Can I link a multiplier to more than one reward item?**<br />Yes - multipliers can be linked to a multiple reward items. If it impacts all linked reward items when active.
+
+**Can I reuse the same multiplier configuration for a recurring event (e.g., every game day)?**<br />Yes, you can. However, it is advisable to set up one configuration per event with specific start and end dates for ease of audit. For quick setup, clone an existing multiplier and update the dates. To avoid setup errors on repeating campaigns, consider creating all instances in advance.
+
+**I want different multiplier values for different user segments during the same time window. Is that supported?**<br />Yes for automatic multipliers - configure one multiplier per segment, each scoped to its own user group, but ensure the groups are mutually exclusive. However, two automatic multipliers on the same reward item cannot have same multiplier factor during the same time window; the platform will reject the configuration at save time.
+
+**What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**<br />A multiplier is scoped to a specific reward item (e.g., tier points, event points). It applies to all earn actions that credit that reward item. If a user completes an action that credits a different reward item, the multiplier does not apply.
+
+**Can I scope a multiplier to a specific earn action rather than a reward item?**
+Not directly — multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item, or contact your LiveLike account team to discuss your use case.
+
+**Can I set a multiplier with no end date for an auto-activation type?**
+No — auto-activation multipliers require both a start and end date. For an open-ended boost, set a far-future end date and deactivate manually when the campaign ends.
+
+***
+
+### Updating and Managing
+
+**Can I edit a multiplier that is currently active?**
+Yes. Changes to value, dates, or user group take effect immediately on future earn events. There is no retroactive recalculation — users who already earned points during the current window are unaffected by the change.
+
+**Can I extend the end date of an active auto-activation multiplier?**
+Yes — update the `end_date` field. The multiplier will continue to apply through the new end date without any interruption.
+
+**Can I change the user group linked to a multiplier after it has been activated?**
+Yes, but do so with care. Changing the user group mid-window means some users who were previously eligible may stop receiving the multiplier, and new users may become eligible — with no communication sent automatically. Plan user group changes outside active windows where possible.
+
+**What is the difference between deactivating and deleting a multiplier?**
+Deactivating stops new earn events from being multiplied but preserves the configuration and any in-wallet manual multipliers already granted to users (they will expire naturally). Deleting removes the configuration entirely and immediately forfeits any in-wallet instances. Prefer deactivation unless you are certain the multiplier is no longer needed.
+
+**Can I archive a multiplier to keep a record without it being active?**
+Deactivating serves this purpose — the multiplier remains visible in the CMS in an inactive state. There is no separate archive state.
+
+***
+
+### Linking and Activation
+
+**A user earned a manual-activation multiplier but hasn't activated it. How long do they have?**
+This is determined by the `activation_window_hours` set on the multiplier. Once this window lapses from the time of granting, the multiplier expires from the user's wallet unused. No points are awarded.
+
+**Can a user see unactivated multipliers they have earned?**
+Yes — unactivated multipliers appear in the user's reward wallet and can be surfaced via the SDK widget or queried via API (`GET /v1/users/{user_id}/reward-multipliers`).
+
+**Once a user activates a manual multiplier, when does it expire?**
+It remains active for the duration set in `active_duration_hours`, counted from the moment of activation.
+
+**Can I grant a manual-activation multiplier to a user directly, without them completing a trigger event?**
+Yes — use the manual grant endpoint (`POST /v1/users/{user_id}/reward-multipliers/grant`). This is useful for customer support resolutions, one-off promotional grants, or campaign-specific overrides.
+
+**What happens if the earn trigger for a manual multiplier fires but the user already has an unactivated instance of the same multiplier in their wallet?**
+A second instance is granted. Users can hold multiple unactivated multipliers of the same type in their wallet; they activate and expire independently.
+
+***
+
+### Stacking and Override
+
+**Can a user have two auto-activation multipliers active at the same time?**
+No — only one auto-activation multiplier per reward item can be active for any given user at a time. This is enforced at the configuration level: the platform will not allow two auto-activation multipliers on the same reward item with overlapping user groups and time windows. Since a user can only belong to one eligible group at a time (groups must be mutually exclusive), they will only ever receive one auto-activation multiplier per reward item.
+
+**Can a user have two manual-activation multipliers active at the same time?**
+No — only one manual-activation multiplier per reward item can be active at a time. If override is off (the default), a user cannot activate a second manual multiplier while one is already active. If override is on, activating a new one immediately replaces the existing one — it is not additive.
+
+**What is the difference between stacking and override?**
+Stacking refers to a user having one manual-activation and one auto-activation multiplier active simultaneously — this is allowed and the two values are combined. Override refers to a user replacing an active manual-activation multiplier with a new manual-activation multiplier — this is only permitted if enabled at the application level.
+
+**Does override pick the better multiplier (higher value or longer duration)?**
+No. Override is not intelligent — it simply replaces the currently active multiplier with the newly activated one, regardless of which is more favourable. The replaced multiplier is forfeited entirely. This behaviour is intentional and consistent.
+
+**Who controls whether override and stacking mode are enabled?**
+Both are application-level configurations managed by LiveLike, not exposed in the CMS. If you want to change the override setting or the stacking mode (additive vs. multiplicative) for your application, contact your LiveLike account team.
+
+**If a user has both a manual and auto multiplier active (stacking), how is the combined value calculated?**
+Depending on your application's stacking mode: additive sums the values (2x + 3x = 5x), multiplicative multiplies them (2x × 3x = 6x). To confirm which mode is active for your application, check with your LiveLike account team.
 
 <br />
