@@ -2305,7 +2305,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "Create Streak Milestone"
       }
     },
     "/{client-id}/streak-milestones/{milestone-id}/": {
