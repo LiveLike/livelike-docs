@@ -257,7 +257,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 ### Updating and Managing
 
-**Can I edit a multiplier that is published / currently active?**<br />Ye, but it's limited. Only multiplier name, description, start/end date and attributes can be edited once the multiplier is published. Note that there is no retroactive recalculation - users who already earned points during the current window are unaffected by the change.
+**Can I edit a multiplier that is published / currently active?**<br />Ye, but it's limited. Only multiplier name, description, start/end date and attributes can be edited once the multiplier is published. Change is near-real-time. Note that there is no retroactive recalculation - users who already earned points during the current window are unaffected by the change.
 
 **Can I extend the end date of an active auto-activation multiplier?**
 Yes — update the `end_date` field. The multiplier will continue to apply through the new end date without any interruption.
