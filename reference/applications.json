@@ -3417,7 +3417,39 @@
         "description": ""
       }
     },
-    "/{client_id}/reward-multipliers/-2": {
+    "/{client_id}/reward-multipliers/{reward_multiplier_id}-1-1": {
+      "post": {
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "reward_multiplier_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Publish Reward Multiplier",
+        "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-1-1"
+      }
+    },
+    "/{client_id}/reward-multipliers/{reward-multiplier-id}": {
       "patch": {
         "responses": {
           "200": {
@@ -3494,6 +3526,14 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "path",
+            "name": "reward-multiplier-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
         "summary": "Update Reward Multiplier",
@@ -3555,39 +3595,7 @@
           }
         },
         "description": "",
-        "operationId": "patch_client-id-reward-multipliers-2"
-      }
-    },
-    "/{client_id}/reward-multipliers/{reward_multiplier_id}-1-1": {
-      "post": {
-        "responses": {
-          "204": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "reward_multiplier_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Publish Reward Multiplier",
-        "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-1-1"
+        "operationId": "patch_client-id-reward-multipliers-reward-multiplier-id"
       }
     }
   },
