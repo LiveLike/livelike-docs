@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: delete_client-id-reward-multipliers-reward-multiplier-id-1
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
