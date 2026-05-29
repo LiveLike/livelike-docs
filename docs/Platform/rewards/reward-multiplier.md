@@ -286,7 +286,7 @@ Archiving deactivates the multiplier but preserves the configuration in LiveLike
 **Can a user see all multipliers they have earned?**<br />Yes - all user multipliers (with status as active, earned & expired) can queried via the [**List User Reward Multiplier API**]().
 
 **Once a user activates a manual multiplier, when does it expire?**
-It remains active for the duration set in `active_duration_hours`, counted from the moment of activation.
+It remains active for the duration set in `active_duration`, counted from the moment of activation.
 
 **Can I grant a user-activated multiplier to a user directly, without them completing a trigger event?**<br />No - at present, users can only earn user-activated multiplier from specific trigger events (such as reaching a streak milestone, unlocking a tier, etc.)
 
