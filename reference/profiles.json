@@ -1431,6 +1431,36 @@
         "summary": "Activate User Reward Multiplier",
         "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate"
       }
+    },
+    "/{profile-id}/user-reward-multiplier/{user-reward-multiplier-id}/activate/-1": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profile-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "user-reward-multiplier-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Copy of Activate User Reward Multiplier",
+        "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate-1"
+      }
     }
   },
   "x-readme": {
