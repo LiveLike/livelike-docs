@@ -249,7 +249,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 ### Setup
 
-**Can I link a multiplier to more than one reward item?**<br />Yes - multipliers can be linked to a multiple reward items. If it impacts all linked reward items when active.
+**Can I link a multiplier to more than one reward item?**<br />Yes - multipliers can be linked to a multiple reward items. It impacts all linked reward items when active.
 
 **Can I reuse the same multiplier configuration for a recurring event (e.g., every game day)?**<br />Yes, you can. However, it is advisable to set up one configuration per event with specific start and end dates for ease of audit. For quick setup, clone an existing multiplier and update the dates. To avoid setup errors on repeating campaigns, consider creating all instances in advance.
 
