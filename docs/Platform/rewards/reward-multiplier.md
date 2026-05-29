@@ -156,7 +156,7 @@ Because users must activate it, the interaction creates a moment of delight and 
 
 ### Setting Up, Linking & Activating (API)
 
-Steps to [**Create Reward multiplier**]()**&#x20;**
+Steps to [**Create Reward multiplier**](https://docs.livelike.com/reference/create-multiplier)**&#x20;**
 
 Steps to **Link Reward Multiplier** with:
 
