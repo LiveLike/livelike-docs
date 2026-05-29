@@ -3418,15 +3418,18 @@
       }
     },
     "/{client_id}/reward-multipliers/-2": {
-      "post": {
+      "patch": {
         "responses": {
-          "201": {
-            "description": "",
+          "200": {
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
                 "examples": {
-                  "Created": {
-                    "summary": "Created",
+                  "OK": {
+                    "summary": "OK",
                     "value": {
                       "id": "2a2d8630-94a7-42c2-a043-7c728571d361",
                       "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/2a2d8630-94a7-42c2-a043-7c728571d361/",
@@ -3473,6 +3476,13 @@
                   }
                 }
               }
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {}
             }
           }
         },
@@ -3486,8 +3496,7 @@
             "required": true
           }
         ],
-        "operationId": "post_client-id-reward-multipliers-2",
-        "summary": "Copy of Create Multiplier",
+        "summary": "Update Reward Multiplier",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3545,7 +3554,8 @@
             }
           }
         },
-        "description": ""
+        "description": "",
+        "operationId": "patch_client-id-reward-multipliers-2"
       }
     }
   },
