@@ -300,7 +300,7 @@ It remains active for the duration set in `active_duration`, counted from the mo
 
 **Can a user have two user-activated multipliers active at the same time?**<br />No - only one user-activated multiplier per reward item can be active at a time. If override is off (the default), a user cannot activate a second user-earned multiplier while one is already active. If override is on, activating a new one immediately replaces the existing one - it is not stacked.
 
-**What is the difference between stacking and override?**<br />Stacking refers to a user having more than one multiplier active simultaneously - this is allowed in come cases discussed above and the two values are combined based on configured global rules (additive / multiplicative). Override refers to a user replacing a live user-activated multiplier with a new user-activated multiplier - this is only permitted if enabled globally at the application level.
+**What is the difference between stacking and override?**<br />Stacking refers to a user having more than one multiplier active simultaneously - this is allowed in some cases discussed above and the two values are combined based on globally configured rules (additive / multiplicative). Override refers to a user replacing a live user-activated multiplier with a new user-activated multiplier - this is only permitted if enabled globally at the application level.
 
 **Does override pick the better multiplier (higher value or longer duration)?**<br />No. Override is not intelligent - it simply replaces the currently active multiplier with the newly activated one, regardless of which is more favourable. The replaced multiplier is forfeited entirely. This behaviour is intentional and consistent.
 
