@@ -3569,6 +3569,65 @@
     "/{client_id}/reward-multipliers/{reward_multiplier_id}/publish/": {
       "post": {
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "1702ddd8-1ce6-49c3-82ab-ecc9ca65537a",
+                      "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/1702ddd8-1ce6-49c3-82ab-ecc9ca65537a/",
+                      "name": "Rewar",
+                      "description": "new desc up",
+                      "multiplier_factor": 2,
+                      "activation_type": "user_activated",
+                      "status": "upcoming",
+                      "active_duration": "P2DT00H00M00S",
+                      "started_at": "2026-09-01T12:00:00Z",
+                      "stopped_at": "2026-11-30T12:00:01Z",
+                      "profile_groups": [],
+                      "profile_group_ids": [],
+                      "reward_items": [
+                        {
+                          "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                          "name": "Dummy Points"
+                        }
+                      ],
+                      "reward_item_ids": [
+                        "67c1d6f2-262c-40db-bc9e-6b6731d60297"
+                      ],
+                      "attributes": [
+                        {
+                          "key": "category1",
+                          "value": "bonus1"
+                        },
+                        {
+                          "key": "category2",
+                          "value": "bonus2"
+                        }
+                      ],
+                      "created_at": "2026-05-29T01:54:29.237780Z",
+                      "updated_at": "2026-05-29T02:19:46.313597Z",
+                      "created_by": {
+                        "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                        "nickname": "Atomic Swan"
+                      },
+                      "updated_by": {
+                        "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                        "nickname": "Atomic Swan"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          },
           "204": {
             "description": "",
             "content": {
