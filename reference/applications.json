@@ -3160,7 +3160,8 @@
                     "type": "array",
                     "items": {
                       "type": "string"
-                    }
+                    },
+                    "description": "List of reward item UUIDs that the multiplier applies to."
                   }
                 },
                 "required": [
