@@ -30504,10 +30504,12 @@
                     "format": "int32"
                   },
                   "reward_multiplier_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UUID of reward multiplier to link"
                   },
                   "badge_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UUID of badge to link"
                   }
                 }
               }
