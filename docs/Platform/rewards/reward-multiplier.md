@@ -259,8 +259,7 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **Can I edit a multiplier that is published / currently active?**<br />Ye, but it's limited. Only multiplier name, description, start/end date and attributes can be edited once the multiplier is published. Change is near-real-time. Note that there is no retroactive recalculation - users who already earned points during the current window are unaffected by the change.
 
-**Can I extend the end date of an active auto-activation multiplier?**
-Yes — update the `end_date` field. The multiplier will continue to apply through the new end date without any interruption.
+**Can I extend the end date of an active automatic multiplier?**<br />Yes - update the `End Date`. The multiplier will continue to apply through the new end date without any interruption.
 
 **Can I change the user group linked to a multiplier after it has been activated?**
 Yes, but do so with care. Changing the user group mid-window means some users who were previously eligible may stop receiving the multiplier, and new users may become eligible — with no communication sent automatically. Plan user group changes outside active windows where possible.
