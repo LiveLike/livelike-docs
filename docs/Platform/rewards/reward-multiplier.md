@@ -281,8 +281,7 @@ Archiving deactivates the multiplier but preserves the configuration in LiveLike
 **Once a user activates a manual multiplier, when does it expire?**
 It remains active for the duration set in `active_duration_hours`, counted from the moment of activation.
 
-**Can I grant a manual-activation multiplier to a user directly, without them completing a trigger event?**
-Yes — use the manual grant endpoint (`POST /v1/users/{user_id}/reward-multipliers/grant`). This is useful for customer support resolutions, one-off promotional grants, or campaign-specific overrides.
+**Can I grant a user-activated multiplier to a user directly, without them completing a trigger event?**<br />No - at present, users can only earn user-activated multiplier from specific trigger events (such as reaching a streak milestone, unlocking a tier, etc.)
 
 <br />
 
