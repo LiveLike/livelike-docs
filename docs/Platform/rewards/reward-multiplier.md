@@ -297,22 +297,14 @@ A second instance is granted. Users can hold multiple unactivated multipliers of
 
 ### Stacking and Override
 
-**Can a user have two auto-activation multipliers active at the same time?**
-No — only one auto-activation multiplier per reward item can be active for any given user at a time. This is enforced at the configuration level: the platform will not allow two auto-activation multipliers on the same reward item with overlapping user groups and time windows. Since a user can only belong to one eligible group at a time (groups must be mutually exclusive), they will only ever receive one auto-activation multiplier per reward item.
+**Can a user have two automatic multipliers active at the same time?**<br />The only restriction enforced at the configuration level is that the platform will not allow two automatic multipliers on the same reward item having same multiplier factor, with overlapping time windows. If a user belong to more than one group linked to different multipliers and overlapping time window, preferred rules of stacking will apply. However, it is advisable that groups be mutually exclusive to keep implementation clean and predictable.
 
-**Can a user have two manual-activation multipliers active at the same time?**
-No — only one manual-activation multiplier per reward item can be active at a time. If override is off (the default), a user cannot activate a second manual multiplier while one is already active. If override is on, activating a new one immediately replaces the existing one — it is not additive.
+**Can a user have two user-activated multipliers active at the same time?**<br />No - only one user-activated multiplier per reward item can be active at a time. If override is off (the default), a user cannot activate a second manual multiplier while one is already active. If override is on, activating a new one immediately replaces the existing one - it is not additive.
 
-**What is the difference between stacking and override?**
-Stacking refers to a user having one manual-activation and one auto-activation multiplier active simultaneously — this is allowed and the two values are combined. Override refers to a user replacing an active manual-activation multiplier with a new manual-activation multiplier — this is only permitted if enabled at the application level.
+**What is the difference between stacking and override?**<br />Stacking refers to a user having more than one multiplier active simultaneously - this is allowed in come cases discussed above and the two values are combined based on configured global rules (additive / multiplicative). Override refers to a user replacing a live user-activated multiplier with a new user-activated multiplier - this is only permitted if enabled globally at the application level.
 
-**Does override pick the better multiplier (higher value or longer duration)?**
-No. Override is not intelligent — it simply replaces the currently active multiplier with the newly activated one, regardless of which is more favourable. The replaced multiplier is forfeited entirely. This behaviour is intentional and consistent.
+**Does override pick the better multiplier (higher value or longer duration)?**<br />No. Override is not intelligent - it simply replaces the currently active multiplier with the newly activated one, regardless of which is more favourable. The replaced multiplier is forfeited entirely. This behaviour is intentional and consistent.
 
-**Who controls whether override and stacking mode are enabled?**
-Both are application-level configurations managed by LiveLike, not exposed in the CMS. If you want to change the override setting or the stacking mode (additive vs. multiplicative) for your application, contact your LiveLike account team.
+**Who controls whether override and stacking mode are enabled?**<br />Both are global application-level configurations managed by LiveLike, not exposed in the CMS/API. If you want to change the override setting or the stacking mode (additive vs. multiplicative) for your application, contact your LiveLike account team.
 
-**If a user has both a manual and auto multiplier active (stacking), how is the combined value calculated?**
-Depending on your application's stacking mode: additive sums the values (2x + 3x = 5x), multiplicative multiplies them (2x × 3x = 6x). To confirm which mode is active for your application, check with your LiveLike account team.
-
-<br />
+**If a user has both a manual and auto multiplier active (stacking), how is the combined value calculated?**<br />Depending on your application's stacking mode: additive sums the values (2x + 3x = 5x), multiplicative multiplies them (2x × 3x = 6x). To confirm which mode is active for your application, check with your LiveLike account team.
