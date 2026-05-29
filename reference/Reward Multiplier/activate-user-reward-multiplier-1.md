@@ -2,7 +2,7 @@
 api:
   file: profiles.json
   operationId: get_profile-id-user-reward-multipliers
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
