@@ -8,8 +8,6 @@ link:
 metadata:
   robots: index
 ---
-# Create Reward Multiplier API
-
 The Create Reward Multiplier API allows creation of reward multipliers that increase user-earned rewards from eligible sources such as streaks, tiers, and other rewardable systems.
 
 Reward multipliers support two activation types:
