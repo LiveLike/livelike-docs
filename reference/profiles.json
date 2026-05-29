@@ -1581,6 +1581,18 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "expired",
+                "earned",
+                "active"
+              ]
+            }
           }
         ],
         "summary": "List User Reward Multipliers",
