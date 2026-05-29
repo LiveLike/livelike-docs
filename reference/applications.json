@@ -3062,7 +3062,62 @@
       "get": {
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "9664ba88-6fe2-42a4-8d6a-cb39ef3b3b3d",
+                          "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/9664ba88-6fe2-42a4-8d6a-cb39ef3b3b3d/",
+                          "name": "3x Your Earnings on weekend",
+                          "description": "Earn 3x rewards during the today's match.",
+                          "multiplier_factor": 3,
+                          "activation_type": "user_activated",
+                          "status": "live",
+                          "active_duration": "P2DT00H00M00S",
+                          "started_at": null,
+                          "stopped_at": null,
+                          "profile_groups": [],
+                          "profile_group_ids": [],
+                          "reward_items": [
+                            {
+                              "id": "2ab53eda-a387-4b0a-bce6-a7972fda1372",
+                              "name": "AUG Reward"
+                            },
+                            {
+                              "id": "5fafa961-0287-43e6-ba0f-36dd107091c8",
+                              "name": "Correct answer bonus points"
+                            }
+                          ],
+                          "reward_item_ids": [
+                            "2ab53eda-a387-4b0a-bce6-a7972fda1372",
+                            "5fafa961-0287-43e6-ba0f-36dd107091c8"
+                          ],
+                          "attributes": [],
+                          "created_at": "2026-04-16T11:25:49.570792Z",
+                          "updated_at": "2026-04-23T05:01:19.704615Z",
+                          "created_by": {
+                            "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                            "nickname": "Atomic Swan"
+                          },
+                          "updated_by": {
+                            "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                            "nickname": "Atomic Swan"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
