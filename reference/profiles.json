@@ -1458,7 +1458,7 @@
             "required": true
           }
         ],
-        "summary": "Copy of Activate User Reward Multiplier",
+        "summary": "List User Reward Multipliers",
         "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate-1"
       }
     }
