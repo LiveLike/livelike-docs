@@ -1403,7 +1403,7 @@
       }
     },
     "/{profile-id}/user-reward-multiplier/{user-reward-multiplier-id}/activate/": {
-      "get": {
+      "post": {
         "description": "",
         "responses": {
           "200": {
@@ -1428,8 +1428,8 @@
             "required": true
           }
         ],
-        "operationId": "get_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate",
-        "summary": "Activate User Reward Multiplier"
+        "summary": "Activate User Reward Multiplier",
+        "operationId": "post_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate"
       }
     }
   },
