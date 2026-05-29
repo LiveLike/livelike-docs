@@ -82,7 +82,7 @@ Lapsed users who return earn at 4x without knowing it's a targeted campaign. Act
 
 ### Setting Up (API)
 
-Steps to [**Create Reward Multiplier**](https://docs.livelike.com/reference/create-multiplier).
+Steps to <Anchor target="_blank" href="https://docs.livelike.com/reference/create-multiplier">**Create Reward Multiplier**</Anchor>.
 
 ***
 
@@ -156,7 +156,7 @@ Because users must activate it, the interaction creates a moment of delight and 
 
 ### Setting Up, Linking & Activating (API)
 
-Steps to [**Create Reward multiplier**](https://docs.livelike.com/reference/create-multiplier)**&#x20;**
+Steps to <Anchor target="_blank" href="https://docs.livelike.com/reference/create-multiplier">**Create Reward multiplier**</Anchor>**&#x20;**
 
 Steps to **Link Reward Multiplier** with:
 
@@ -167,7 +167,7 @@ Steps to **Link Reward Multiplier** with:
 
 When the qualifying event fires, the platform automatically issues the multiplier to the user. **_Note:_**_&#x20;At present, users&#x20;_**_cannot be manually awarded_**_&#x20;a reward multiplier. Only qualifying events issues it._
 
-Step t&#x6F;**&#x20;**[**Manually Activate User-Earned Multiplier**](https://docs.livelike.com/reference/activate-user-reward-multiplier)
+Step t&#x6F;**&#x20;**<Anchor target="_blank" href="https://docs.livelike.com/reference/activate-user-reward-multiplier">**Manually Activate User-Earned Multiplier**</Anchor>
 
 ***
 
