@@ -30502,6 +30502,12 @@
                   "reward_item_amount": {
                     "type": "integer",
                     "format": "int32"
+                  },
+                  "reward_multiplier_id": {
+                    "type": "string"
+                  },
+                  "badge_id": {
+                    "type": "string"
                   }
                 }
               }
@@ -30588,8 +30594,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/tiers/{tier_id}/tier-benefits/": {
