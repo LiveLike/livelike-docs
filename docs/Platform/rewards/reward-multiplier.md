@@ -196,7 +196,7 @@ Step t&#x6F;**&#x20;**<Anchor target="_blank" href="https://docs.livelike.com/re
 
 ### Managing a Multiplier (API)
 
-Steps to [**create & manage rewards multiplier**]()
+Steps to <Anchor target="_blank" href="https://docs.livelike.com/reference/create-multiplier-1">**create & manage rewards multiplier**</Anchor>
 
 ***
 
