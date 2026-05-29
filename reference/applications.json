@@ -3418,7 +3418,7 @@
       }
     },
     "/{client_id}/reward-multipliers/-2": {
-      "post": {
+      "patch": {
         "responses": {
           "201": {
             "description": "",
@@ -3486,7 +3486,6 @@
             "required": true
           }
         ],
-        "operationId": "post_client-id-reward-multipliers-2",
         "summary": "Copy of Create Multiplier",
         "requestBody": {
           "content": {
@@ -3545,7 +3544,8 @@
             }
           }
         },
-        "description": ""
+        "description": "",
+        "operationId": "patch_client-id-reward-multipliers-2"
       }
     }
   },
