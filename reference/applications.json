@@ -3172,6 +3172,35 @@
         "operationId": "get_client-id-reward-multipliers",
         "summary": "List Reward Multipliers"
       }
+    },
+    "/{client_id}/reward-multipliers/{reward_multiplier_id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "reward_multiplier_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Retrieve Reward Multiplier",
+        "operationId": "get_client-id-reward-multipliers-reward-multiplier-id"
+      }
     }
   },
   "x-readme": {
