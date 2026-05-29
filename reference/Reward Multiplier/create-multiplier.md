@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: post_client-id-reward-multipliers
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
