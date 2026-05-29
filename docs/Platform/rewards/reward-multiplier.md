@@ -265,11 +265,11 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 ### Updating and Managing
 
-**Can I edit a multiplier that is published / currently active?**<br />Yes, but it's limited. Only multiplier name, description, start/end date (if not already in past) and attributes can be edited once the multiplier is published. Change is near-real-time. Note that there is no retroactive recalculation - users who already earned points during the current window are unaffected by the change.
+**Can I edit a multiplier that is published / currently active?**<br />Yes, but it's limited. Only multiplier name, description, start/end date (if not already in the past) and attributes can be edited once the multiplier is published. Change is near-real-time. Note that there is no retroactive recalculation - users who already earned points during the current window are unaffected by the change.
 
 **Can I extend the end date of an active automatic multiplier?**<br />Yes - update the `End Date`. The multiplier will continue to apply through the new end date without any interruption.
 
-**Can I change the user group linked to a multiplier after it has been activated?**<br />No. Only multiplier name, description, start/end date and attributes can be edited once the multiplier is published.
+**Can I change the user group linked to a multiplier after it has been activated?**<br />No. Only multiplier name, description, start/end date (if not already in the past) and attributes can be edited once the multiplier is published.
 
 **What is the difference between deleting and archiving  a multiplier?**<br />Deleting removes the configuration entirely. This is irreversible. Only multiplier is "Draft" status can be deleted.
 
