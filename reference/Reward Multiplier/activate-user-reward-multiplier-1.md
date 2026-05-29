@@ -8,3 +8,6 @@ link:
 metadata:
   robots: noindex
 ---
+This API retrieves all user-earned reward multipliers earned by users across all supported reward sources such as streaks and tiers.
+
+The response includes multiplier details, earning source information, activation status, and validity period where applicable.
