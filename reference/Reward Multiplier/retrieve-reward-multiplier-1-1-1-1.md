@@ -8,4 +8,4 @@ link:
 metadata:
   robots: noindex
 ---
-Only archived reward multipliers can be archived
+Only reward multipliers in **archived** status can be un-archived
