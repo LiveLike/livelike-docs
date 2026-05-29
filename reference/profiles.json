@@ -1401,6 +1401,36 @@
         ],
         "operationId": "get_profile-id-user-streak-milestones"
       }
+    },
+    "/{profile-id}/user-reward-multiplier/{user-reward-multiplier-id}/activate/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profile-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "user-reward-multiplier-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_profile-id-user-reward-multiplier-user-reward-multiplier-id-activate",
+        "summary": "Activate User Reward Multiplier"
+      }
     }
   },
   "x-readme": {
