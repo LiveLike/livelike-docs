@@ -100,6 +100,7 @@ This type introduces a strategic dimension to loyalty: the multiplier is a _priz
 | -------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `multiplier_factor`              | The factor applied when activated (e.g., `2` for 2x)                                           |
 | `active_duration`                | Once activated, how long the multiplier remains active                                         |
+| `start_at` / `stopped_at`        | The date or date range during which the user-activated multiplier can be earned                |
 | `source_type`                    | Source from where a user earned this multiplier (e.g., streak\_milestone, tier\_benefit, etc.) |
 | `profile_group_ids` _(optional)_ | Restrict eligibility to earn a multiplier to specific user segments                            |
 
