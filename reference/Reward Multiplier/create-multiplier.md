@@ -20,6 +20,6 @@ Earned through a rewardable sources such as streak milestone, tier benefit, etc.
 
 Automatically activated for all users (or selected user groups) during a pre-configured time window. For this type, users do not need to separately earn a the reward multiplier or manually activate it. Multiplier remains effective only between the `started_at` and `stopped_at` timestamps set at the time of configuring.
 
-Reward multipliers can be configured to effect specific reward items or user groups using `reward_item_ids` and `profile_groups_ids`, and can include custom metadata through `attributes`.
+Reward multipliers can be configured for specific reward items or user groups using `reward_item_ids` and `profile_groups_ids`, and can include custom metadata through `attributes`.
 
-When created, a reward multiplier is saved, by default, in a **draft** state, allowing its configuration and attributes to be updated, if required. The multiplier must be **explicitly published** before it becomes usable and starts affecting reward transactions.
+When created, a reward multiplier is saved, by default, in a **draft** state, allowing its configuration and attributes to be updated, if required. The multiplier must be **published** before it becomes usable and starts affecting reward transactions. A published multiplier allows only select fields to be updated.
