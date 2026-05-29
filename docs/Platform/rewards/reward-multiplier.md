@@ -67,7 +67,7 @@ An app identifies users who haven't engaged in 30 days. To bring them back, they
 
 Lapsed users who return earn at 4x without knowing it's a targeted campaign. Active users are unaffected.
 
-### Setting Up (CMS - Producers)
+### Setting Up (CMS)
 
 1. Navigate to **Reward Multipliers → Create New**
 2. Set a **Name** and **Description** (optional)
