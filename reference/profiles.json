@@ -1433,7 +1433,7 @@
       }
     },
     "/{profile-id}/user-reward-multipliers/": {
-      "post": {
+      "get": {
         "description": "",
         "responses": {
           "200": {
@@ -1451,7 +1451,7 @@
           }
         ],
         "summary": "List User Reward Multipliers",
-        "operationId": "post_profile-id-user-reward-multipliers"
+        "operationId": "get_profile-id-user-reward-multipliers"
       }
     }
   },
