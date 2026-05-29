@@ -3740,7 +3740,7 @@
             "required": true
           }
         ],
-        "summary": "Archive Published Reward Multiplier",
+        "summary": "Archive Reward Multiplier",
         "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-archive"
       }
     },
