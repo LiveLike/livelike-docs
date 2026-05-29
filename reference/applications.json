@@ -3557,6 +3557,38 @@
         "description": "",
         "operationId": "patch_client-id-reward-multipliers-2"
       }
+    },
+    "/{client_id}/reward-multipliers/{reward_multiplier_id}-1-1": {
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "reward_multiplier_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Copy of Delete Reward Multiplier",
+        "operationId": "delete_client-id-reward-multipliers-reward-multiplier-id-1-1"
+      }
     }
   },
   "x-readme": {
