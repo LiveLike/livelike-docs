@@ -167,7 +167,7 @@ Steps to **Link Reward Multiplier** with:
 
 When the qualifying event fires, the platform automatically issues the multiplier to the user. **_Note:_**_&#x20;At present, users&#x20;_**_cannot be manually awarded_**_&#x20;a reward multiplier. Only qualifying events issues it._
 
-Step t&#x6F;**&#x20;**[**Manually Activate User-Earned Multiplier**]()
+Step t&#x6F;**&#x20;**[**Manually Activate User-Earned Multiplier**](https://docs.livelike.com/reference/activate-user-reward-multiplier)
 
 ***
 
