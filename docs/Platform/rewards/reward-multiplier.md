@@ -80,7 +80,7 @@ Lapsed users who return earn at 4x without knowing it's a targeted campaign. Act
 
 > **Note:** If no user group is selected, the multiplier applies to all users during the active window.
 
-### Setting Up (API - Integrators)
+### Setting Up (API)
 
 Steps to [**Create Reward Multiplier**]().
 
