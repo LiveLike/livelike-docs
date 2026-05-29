@@ -30793,7 +30793,7 @@
     },
     "/tier-benefits/{tier_benefit_id}/": {
       "get": {
-        "summary": "Retrive Tier Benefit",
+        "summary": "Retrieve Tier Benefit",
         "description": "",
         "operationId": "retrive-tier-benefit",
         "parameters": [
@@ -30815,7 +30815,59 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"id\": \"df575de2-4251-4ab7-aa99-c9edf9d7ace9\",\n    \"tier_id\": \"03d32043-a73a-4ac5-ab95-f797baabaa8d\",\n    \"tier_title\": \"Bronze\",\n    \"reward_item_id\": \"729eed16-250a-49f3-9223-621adf72519d\",\n    \"reward_item_name\": \"Upend Coins\",\n    \"attributes\": [],\n    \"order\": 1,\n    \"status\": \"active\",\n    \"title\": \"Get Exclusive access to events\",\n    \"image\": null,\n    \"reward_item_amount\": 1,\n    \"created_at\": \"2025-04-10T06:55:57.398268Z\"\n}"
+                    "value": {
+                      "id": "adbdac93-8bf8-4088-b9ce-d9a3c704ddcc",
+                      "tier_id": "a0d2340f-0ea4-4690-b5fc-ffd4fe504a3a",
+                      "url": "http://localhost:8888/api/v1/tier-benefits/adbdac93-8bf8-4088-b9ce-d9a3c704ddcc/",
+                      "tier_title": "Novice",
+                      "reward_item_id": null,
+                      "reward_item_name": null,
+                      "reward_multiplier_id": "c3a3f51f-5cc5-4583-acff-eb19dcdc57e6",
+                      "attributes": [],
+                      "badge_id": null,
+                      "badge": null,
+                      "order": 6,
+                      "reward_multiplier": {
+                        "id": "c3a3f51f-5cc5-4583-acff-eb19dcdc57e6",
+                        "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/c3a3f51f-5cc5-4583-acff-eb19dcdc57e6/",
+                        "name": "Dummy Points 3x",
+                        "description": "",
+                        "multiplier_factor": 3,
+                        "activation_type": "user_activated",
+                        "status": "live",
+                        "active_duration": "P10DT00H00M00S",
+                        "started_at": null,
+                        "stopped_at": null,
+                        "profile_groups": [],
+                        "profile_group_ids": [],
+                        "reward_items": [
+                          {
+                            "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                            "name": "Dummy Points"
+                          }
+                        ],
+                        "reward_item_ids": [
+                          "67c1d6f2-262c-40db-bc9e-6b6731d60297"
+                        ],
+                        "attributes": [],
+                        "created_at": "2026-04-28T02:51:02.249077Z",
+                        "updated_at": "2026-04-28T02:51:02.258467Z",
+                        "created_by": {
+                          "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                          "nickname": "Atomic Swan"
+                        },
+                        "updated_by": {
+                          "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                          "nickname": "Atomic Swan"
+                        }
+                      },
+                      "status": "active",
+                      "title": "Reward Booster 2x",
+                      "image": null,
+                      "description": null,
+                      "reward_item_amount": null,
+                      "created_at": "2026-05-29T06:03:35.703476Z"
+                    }
                   }
                 },
                 "schema": {
@@ -30888,8 +30940,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "patch": {
         "summary": "Update Tier Benefit",
