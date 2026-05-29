@@ -276,8 +276,7 @@ Archiving deactivates the multiplier but preserves the configuration in LiveLike
 
 **A user earned a multiplier but hasn't activated it. How long do they have?**<br />Activation is not time-bound once a multiplier is earned by the user. In future, we would introduce a time-bound window to activate an earned multiplier, calculated from the time of earning. Once it lapses, users won't be able to activate.
 
-**Can a user see unactivated multipliers they have earned?**
-Yes — unactivated multipliers appear in the user's reward wallet and can be surfaced via the SDK widget or queried via API (`GET /v1/users/{user_id}/reward-multipliers`).
+**Can a user see all multipliers they have earned?**<br />Yes - all user multipliers (with status as active, earned & expired) can queried via the [**List User Reward Multiplier API**]().
 
 **Once a user activates a manual multiplier, when does it expire?**
 It remains active for the duration set in `active_duration_hours`, counted from the moment of activation.
