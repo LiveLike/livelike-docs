@@ -3285,6 +3285,137 @@
         "summary": "Delete Reward Multiplier",
         "operationId": "delete_client-id-reward-multipliers-reward-multiplier-id-1"
       }
+    },
+    "/{client_id}/reward-multipliers/-1": {
+      "post": {
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "2a2d8630-94a7-42c2-a043-7c728571d361",
+                      "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/2a2d8630-94a7-42c2-a043-7c728571d361/",
+                      "name": "Double Earnings",
+                      "description": "Double your earning of Dummy Points.",
+                      "multiplier_factor": 2,
+                      "activation_type": "user_activated",
+                      "status": "draft",
+                      "active_duration": "P2DT00H00M00S",
+                      "started_at": "2026-07-01T12:00:00Z",
+                      "stopped_at": "2026-08-30T12:00:01Z",
+                      "profile_groups": [],
+                      "profile_group_ids": [],
+                      "reward_items": [
+                        {
+                          "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                          "name": "Dummy Points"
+                        }
+                      ],
+                      "reward_item_ids": [
+                        "67c1d6f2-262c-40db-bc9e-6b6731d60297"
+                      ],
+                      "attributes": [
+                        {
+                          "key": "category",
+                          "value": "bonus"
+                        },
+                        {
+                          "key": "tier",
+                          "value": "premium"
+                        }
+                      ],
+                      "created_at": "2026-05-29T01:31:06.882627Z",
+                      "updated_at": "2026-05-29T01:31:06.882647Z",
+                      "created_by": {
+                        "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                        "nickname": "Atomic Swan"
+                      },
+                      "updated_by": {
+                        "id": "246b30d0-4596-4484-a89e-35fc8849c22e",
+                        "nickname": "Atomic Swan"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-reward-multipliers-1",
+        "summary": "Copy of Create Multiplier",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "multiplier_factor": {
+                    "type": "integer",
+                    "description": "Multiplier value applied to reward earnings (e.g. 2 = double rewards)"
+                  },
+                  "activation_type": {
+                    "type": "string",
+                    "enum": [
+                      "user_activated",
+                      "automatic"
+                    ],
+                    "description": "Defines how the multiplier is activated (e.g. user activated or automatic)."
+                  },
+                  "active_duration": {
+                    "type": "string",
+                    "description": "Duration for which the user activated multiplier remains active after activation, in ISO 8601 format."
+                  },
+                  "started_at": {
+                    "type": "string"
+                  },
+                  "stopped_at": {
+                    "type": "string"
+                  },
+                  "reward_item_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "profile_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "name",
+                  "multiplier_factor",
+                  "activation_type",
+                  "reward_item_ids"
+                ]
+              }
+            }
+          }
+        },
+        "description": ""
+      }
     }
   },
   "x-readme": {
