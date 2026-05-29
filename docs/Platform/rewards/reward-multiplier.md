@@ -160,8 +160,8 @@ Steps to [**Create Reward multiplier**]()**&#x20;**
 
 Steps to **Link Reward Multiplier** with:
 
-- **Streaks**
-- **Tiers**
+- [**Streak Milestones**]()
+- [**Tier Benefits**]()
 
 **Granting the multiplier to a user (on trigger event)**
 
