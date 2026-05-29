@@ -221,10 +221,10 @@ Each multiplier type has its own concurrency constraint, enforced at different l
 
 A user can have one user-activated and one automatic multiplier active simultaneously on the same reward item. When both are active, the platform combines them - but **how they combine is a global application-level configuration**. Contact your LiveLike account team to confirm which stacking mode is enabled for your application.
 
-| Stack Mode         | Behaviour             | Example (2x manual + 3x auto)       |
-| ------------------ | --------------------- | ----------------------------------- |
-| **Additive**       | Values are summed     | 2 + 3 = **5x** effective multiplier |
-| **Multiplicative** | Values are multiplied | 2 × 3 = **6x** effective multiplier |
+| Stack Mode                  | Behaviour             | Example (2x manual + 3x auto)       |
+| --------------------------- | --------------------- | ----------------------------------- |
+| **Additive&#x20;**(default) | Values are summed     | 2 + 3 = **5x** effective multiplier |
+| **Multiplicative**          | Values are multiplied | 2 × 3 = **6x** effective multiplier |
 
 > **Note:** Stacking mode is not configurable from the CMS/API. If you need to change the stacking behaviour for your application, raise it with your LiveLike account team.
 
