@@ -249,11 +249,9 @@ By default, a user cannot activate a new user-earned multiplier on a reward item
 
 **What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**<br />A multiplier is scoped to a specific reward item (e.g., tier points, event points). It applies to all earn actions that credit that reward item. If a user completes an action that credits a different reward item, the multiplier does not apply.
 
-**Can I scope a multiplier to a specific earn action rather than a reward item?**
-Not directly — multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item, or contact your LiveLike account team to discuss your use case.
+**Can I scope a multiplier to a specific earn action rather than a reward item?**<br />Not directly - multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item, or contact your LiveLike account team to discuss your use case.
 
-**Can I set a multiplier with no end date for an auto-activation type?**
-No — auto-activation multipliers require both a start and end date. For an open-ended boost, set a far-future end date and deactivate manually when the campaign ends.
+**Can I set a multiplier with no end date for an auto-activation type?**<br />Yes - it serves as an open-ended boost. To end it, you will need to archive it or manually add an end date in future.
 
 ***
 
