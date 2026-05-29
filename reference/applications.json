@@ -3112,7 +3112,7 @@
           }
         ],
         "operationId": "post_client-id-reward-multipliers",
-        "summary": "Create Multiplier",
+        "summary": "Create Reward Multiplier",
         "requestBody": {
           "content": {
             "application/json": {
