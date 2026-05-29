@@ -1438,6 +1438,113 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "count": 3,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "ef33abbe-c2ac-493b-9d1a-b4c820b6c2d6",
+                          "reward_multiplier": {
+                            "id": "d7f4a0be-d188-4f6a-9d29-57db08dcf8d8",
+                            "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/d7f4a0be-d188-4f6a-9d29-57db08dcf8d8/",
+                            "name": "Dummy Points 2x",
+                            "description": "test",
+                            "multiplier_factor": 2,
+                            "activation_type": "user_activated",
+                            "status": "live",
+                            "active_duration": "P20DT00H00M00S",
+                            "started_at": null,
+                            "stopped_at": null,
+                            "reward_items": [
+                              {
+                                "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                                "name": "Dummy Points"
+                              }
+                            ]
+                          },
+                          "source_type": "tier_benefit",
+                          "source_id": "178eb4cc-cea0-42a9-a333-22d21d525a30",
+                          "activated_at": null,
+                          "expires_at": null,
+                          "status": "earned",
+                          "created_at": "2026-05-29T06:40:06.599253Z",
+                          "updated_at": "2026-05-29T06:40:06.599259Z"
+                        },
+                        {
+                          "id": "2e426acb-9895-41e2-999a-f322a4c2347a",
+                          "reward_multiplier": {
+                            "id": "c3a3f51f-5cc5-4583-acff-eb19dcdc57e6",
+                            "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/c3a3f51f-5cc5-4583-acff-eb19dcdc57e6/",
+                            "name": "Dummy Points 3x",
+                            "description": "",
+                            "multiplier_factor": 3,
+                            "activation_type": "user_activated",
+                            "status": "live",
+                            "active_duration": "P10DT00H00M00S",
+                            "started_at": null,
+                            "stopped_at": null,
+                            "reward_items": [
+                              {
+                                "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                                "name": "Dummy Points"
+                              }
+                            ]
+                          },
+                          "source_type": "tier_benefit",
+                          "source_id": "adbdac93-8bf8-4088-b9ce-d9a3c704ddcc",
+                          "activated_at": null,
+                          "expires_at": null,
+                          "status": "earned",
+                          "created_at": "2026-05-29T06:40:06.599273Z",
+                          "updated_at": "2026-05-29T06:40:06.599276Z"
+                        },
+                        {
+                          "id": "4c750c9c-6067-4c03-a416-b994f3be1366",
+                          "reward_multiplier": {
+                            "id": "c3a3f51f-5cc5-4583-acff-eb19dcdc57e6",
+                            "url": "http://localhost:8888/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/reward-multipliers/c3a3f51f-5cc5-4583-acff-eb19dcdc57e6/",
+                            "name": "Dummy Points 3x",
+                            "description": "",
+                            "multiplier_factor": 3,
+                            "activation_type": "user_activated",
+                            "status": "live",
+                            "active_duration": "P10DT00H00M00S",
+                            "started_at": null,
+                            "stopped_at": null,
+                            "reward_items": [
+                              {
+                                "id": "67c1d6f2-262c-40db-bc9e-6b6731d60297",
+                                "name": "Dummy Points"
+                              }
+                            ]
+                          },
+                          "source_type": "tier_benefit",
+                          "source_id": "d785cd8c-a8b2-4087-b0a0-e3cfdfc2c1b9",
+                          "activated_at": null,
+                          "expires_at": null,
+                          "status": "earned",
+                          "created_at": "2026-05-29T06:40:06.599289Z",
+                          "updated_at": "2026-05-29T06:40:06.599292Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
           }
         },
         "parameters": [
