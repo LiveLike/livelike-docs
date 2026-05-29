@@ -290,8 +290,7 @@ It remains active for the duration set in `active_duration_hours`, counted from 
 **Can I grant a manual-activation multiplier to a user directly, without them completing a trigger event?**
 Yes — use the manual grant endpoint (`POST /v1/users/{user_id}/reward-multipliers/grant`). This is useful for customer support resolutions, one-off promotional grants, or campaign-specific overrides.
 
-**What happens if the earn trigger for a manual multiplier fires but the user already has an unactivated instance of the same multiplier in their wallet?**
-A second instance is granted. Users can hold multiple unactivated multipliers of the same type in their wallet; they activate and expire independently.
+<br />
 
 ***
 
