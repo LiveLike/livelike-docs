@@ -2280,6 +2280,10 @@
                   "repeat_on_reset": {
                     "type": "boolean",
                     "default": "true"
+                  },
+                  "reward_multiplier_ids": {
+                    "type": "string",
+                    "description": "list of reward multiplier UUIDs to link to reward multiplier"
                   }
                 },
                 "required": [
