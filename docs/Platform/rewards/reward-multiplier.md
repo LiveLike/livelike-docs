@@ -152,7 +152,7 @@ Because users must activate it, the interaction creates a moment of delight and 
 ### Linking (CMS — Producers)
 
 1. Navigate to **Streak Milestone&#x20;**&#x70;age and select one or more multipliers available in the drop-down list. Only published, user-activated multipliers can be linked to a streak milestone.&#x20;
-2. Navigate to **Tier Benefits** page and select a multiplier available in the drop-down list. Only published, user-activated multipliers can be linked to a tier benefit.&#x20;
+2. Navigate to **Tier Benefits** page and select a multiplier available in the drop-down list. Only published, user-activated multipliers can be linked to a tier benefit. One Tier Benefit can only have one multiplier linked. To add more multipliers, create new Tier Benefits within a Tier.
 
 ### Setting Up, Linking & Activating (API — Integrators)
 
