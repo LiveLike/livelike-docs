@@ -31004,6 +31004,10 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "badge_id": {
+                    "type": "string",
+                    "description": "UUID of badge to link"
                   }
                 }
               }
