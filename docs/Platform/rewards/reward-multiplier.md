@@ -226,7 +226,7 @@ A user can have one user-activated and one automatic multiplier active simultane
 | **Additive**       | Values are summed     | 2 + 3 = **5x** effective multiplier |
 | **Multiplicative** | Values are multiplied | 2 × 3 = **6x** effective multiplier |
 
-> **Note:** Stacking mode is not configurable from the CMS. If you need to change the stacking behaviour for your application, raise it with your LiveLike account team.
+> **Note:** Stacking mode is not configurable from the CMS/API. If you need to change the stacking behaviour for your application, raise it with your LiveLike account team.
 
 ***
 
