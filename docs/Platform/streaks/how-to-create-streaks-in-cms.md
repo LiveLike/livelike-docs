@@ -2,7 +2,7 @@
 title: Periodic Streak CMS Guide
 excerpt: Follow these steps to create and configure a new Periodic Streak in the CMS.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 next:
