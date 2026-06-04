@@ -232,7 +232,7 @@ It depends on the sub-type. For **None** and **Set**, the configured streak rese
 **Is the streak reset action mandatory for Consecutive Action streaks?**
 No, it is optional - except for correct prediction and correct quiz answer, where it is automatically assigned. For all other actions, configuring a streak reset action is strongly recommended for **None** and **Set** sub-types to ensure the system can programmatically break the streak when needed.
 
-**If a streak resets, are milestone rewards lost?**<br />Rewards already granted at prior milestones are not revoked. Whether a milestone reward is granted again after reset depends on whether **Reward on Reset** is enabled on that milestone. Future milestone rewards are only available if the user rebuilds their streak back to those lengths.
+**If a streak resets, can I re-earn milestone rewards?**<br />Whether a milestone reward is granted again after reset depends on whether **Reward on Reset** is enabled on that milestone. Future milestone rewards are only available if the user rebuilds their streak back to those lengths.
 
 **I set up a Consecutive Action streak with targets but progress is not tracking. What should I check?**
 The most common cause is a mismatch between the target key-value pairs configured in CMS and the attributes being passed when the streak progress action is invoked. Confirm that the key (e.g., `match_id`) and value (e.g., the specific match ID) passed in the action attributes exactly match what was configured - via dropdown or CSV - in the streak setup.
@@ -241,8 +241,7 @@ The most common cause is a mismatch between the target key-value pairs configure
 
 ### Milestones and Rewards
 
-**Can milestone rewards recur every time a milestone is hit?**
-Yes, for Reward Items and User-Activated Multipliers - enable the **Recurring** setting. Badges are excluded and can only be earned once per user across all experiences.
+**Can milestone rewards be set at one length recur every time a milestone is hit?**<br />Yes, for Reward Items and User-Activated Reward Multipliers - enable the **Recurring** setting. Badges are excluded and can only be earned once per user across all experiences.
 
 **A user already has a badge from a quest. Will they receive it again from a streak milestone?**
 No. A user can earn a badge only once. If they already hold it, the badge award at that milestone is silently skipped - all other rewards on the same milestone are still granted.
