@@ -246,8 +246,7 @@ The most common cause is a mismatch between the target key-value pairs configure
 **A user already has a badge from a quest. Will they receive it again from a streak milestone?**
 No. A user can earn a badge only once. If they already hold it, the badge award at that milestone is silently skipped - all other rewards on the same milestone are still granted.
 
-**When does a user-activated multiplier granted at a milestone expire for earning purposes?**
-Expiry for earning is governed by the multiplier's configured `start_at` / `stopped_at` window, if set. Once earned, the user can activate it at any time - there is no activation deadline based on when it was earned. Once activated, it remains live for the configured `active_duration`.
+**When does a user-activated reward multiplier granted at a milestone expire for earning purposes?**<br />Expiry for earning is governed by the multiplier's configured `start_at` / `stopped_at` window, if set. Once earned, the user can activate it at any time - there is no activation deadline based on when it was earned. Once activated, it remains live for the configured `active_duration`. If the multiplier expired before user earned it, that reward will be silently skipped without impacting other rewards configured for that streak milestone.
 
 ***
 
