@@ -195,23 +195,6 @@ Milestones can be added or removed after publishing, but the configuration of ex
 
 ***
 
-## Interaction With Other Features
-
-### Streaks and Reward Multipliers
-
-A user-activated multiplier earned via a streak milestone behaves exactly like any other user-activated multiplier. Once granted, the user can activate it at a time of their choosing. Standard multiplier concurrency and stacking rules apply:
-
-- A user can hold at most one active user-activated multiplier per reward item at a time.
-- If an automatic multiplier is also active on the same reward item, the two can stack. Stacking mode (additive or multiplicative) is a global application-level configuration - contact your LiveLike account team to confirm which mode is enabled for your application.
-
-Refer to the **Reward Multipliers** guide for full details on stacking and override behavior.
-
-### Streaks and Badges
-
-Badges awarded at streak milestones follow the same uniqueness rules as badges from any other source. A user can earn a badge only once - if they already hold it from a quest, tier, or another streak, it will not be re-awarded at the milestone.
-
-***
-
 ## Frequently Asked Questions
 
 ### Setup
