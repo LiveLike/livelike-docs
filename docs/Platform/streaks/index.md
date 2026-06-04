@@ -58,7 +58,7 @@ Threshold is specific to Periodic streaks.
 
 A Consecutive Action streak tracks whether a user successfully completes a qualifying action repeatedly without a failure or invalid interaction breaking the chain. Unlike Periodic streaks, time gaps between actions do not matter - only the continuity of successful actions does.
 
-Every time a user performs the streak progress action - on the correct target if a target mode is configured - streak length increments by 1. There is no threshold or batching; it is a direct 1:1 relationship between each qualifying action and streak length.
+Every time a user performs the streak progress action - on the correct target if a target mode is configured - streak length increments by 1.
 
 **Examples:**
 
