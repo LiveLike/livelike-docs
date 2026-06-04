@@ -161,7 +161,7 @@ Reward Items and Reward Multipliers support two additional behaviors:
 
 ## Configuring Streaks
 
-Streaks are created and managed via **CMS - Streaks**. The setup flow is shared across both streak types, with a few fields specific to each.
+Streaks are created and managed via **CMS - Streaks&#x20;**&#x6F;&#x72;**&#x20;APIs**. The CMS setup flow is shared below across both streak types, with a few fields specific to each. For API setup, please look at [Periodic Streak](https://docs.livelike.com/reference/create-a-periodic-streak) and [Consecutive Action Streak](https://docs.livelike.com/reference/create-a-periodic-streak-1) API guides.
 
 ### Setup Steps
 
