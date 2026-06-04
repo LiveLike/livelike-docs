@@ -241,7 +241,7 @@ The most common cause is a mismatch between the target key-value pairs configure
 
 ### Milestones and Rewards
 
-**Can milestone rewards be set at one length recur every time a milestone is hit?**<br />Yes, for Reward Items and User-Activated Reward Multipliers - enable the **Recurring** setting. Badges are excluded and can only be earned once per user across all experiences.
+**If I have a recurring milestone at length 3 and a custom milestone at length 15, does the user get both rewards when they reach length 15?**<br />Yes. Since 15 is a multiple of 3, the recurring milestone at length 3 fires at that point in addition to the custom milestone at length 15. The user receives rewards from both milestones simultaneously. This applies any time a streak length coincides with a recurring and a non-recurring milestone.
 
 **A user already has a badge from a quest. Will they receive it again from a streak milestone?**
 No. A user can earn a badge only once. If they already hold it, the badge award at that milestone is silently skipped - all other rewards on the same milestone are still granted.
