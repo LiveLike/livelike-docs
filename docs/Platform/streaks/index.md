@@ -123,7 +123,7 @@ A streak reset action is an action that, when performed, programmatically breaks
 
 Streak Milestones are the only mechanism through which rewards are granted within a streak. They act as checkpoints at defined streak lengths - when a user reaches a milestone, the configured rewards are automatically issued. Milestones apply to both Periodic and Consecutive Action streaks.
 
-**Note:** Setting milestone is optional, needed only when user needs to be rewarded for reaching specific streak lengths.&#x20;
+**Note:** Setting milestone is **_optional_**, needed only when user needs to be rewarded for reaching specific streak lengths.&#x20;
 
 **Examples:**
 
