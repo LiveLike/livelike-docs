@@ -78,7 +78,7 @@ Consecutive Action streaks have three sub-types, determined by how targets are c
 
 ### What Are Targets?
 
-A target is the specific object against which a streak progress action is evaluated. Targets are only applicable to Consecutive Action streaks - Periodic streaks do not use targets.
+A target is the specific object against which a streak progress action is evaluated. Targets are only applicable to Consecutive Action streaks.
 
 Targets can be:
 
