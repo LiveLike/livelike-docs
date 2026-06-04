@@ -102,7 +102,7 @@ Passing key-value pair as custom attribute in streak progress action applies to 
 
 ### Streak Reset Action
 
-A streak reset action is an action that, when performed, programmatically breaks a Consecutive Action streak. It is only applicable to Consecutive Action streaks.
+A streak reset action is an action that, when performed, programmatically breaks a streak. It is only applicable to Consecutive Action streaks.
 
 - For **make a correct prediction** and **answer a quiz correctly**, the system automatically assigns the incorrect counterpart (make an incorrect prediction / answer a quiz incorrectly) as the reset action.
 - For all other actions - including other built-in widget actions like vote on a poll, as well as custom and CDP-driven actions - a streak reset action can optionally be configured. It is not auto-assigned.
