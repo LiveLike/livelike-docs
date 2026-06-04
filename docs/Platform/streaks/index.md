@@ -1,6 +1,6 @@
 ---
 title: Streaks
-excerpt: Reward users for regular participation
+excerpt: Reward users for consistent participation
 deprecated: false
 hidden: true
 metadata:
