@@ -413,7 +413,7 @@ This document details the webhook events sent by our system, including their pay
 | `data.profile_id`                      | `string`   | Unique identifier for the mentioned profile                       |
 | `data.profile_custom_id`               | `string`   | Custom id of mentioned profile                                    |
 | `data.profile_nickname`                | `string`   | Nickname of mentioned profile                                     |
-| `data.mentioned_by_id`                 | `string`   | Unique identifier for the mentioned_by profile                    |
+| `data.mentioned_by_id`                 | `string`   | Unique identifier for the mentioned\_by profile                   |
 | `data.mentioned_by_custom_id`          | `string`   | Mentioned by custom id                                            |
 | `data.mentioned_by_nickname`           | `string`   | Mentioned by nickname                                             |
 | `data.comment_id`                      | `string`   | Unique identifier for the comment                                 |
@@ -499,7 +499,7 @@ This document details the webhook events sent by our system, including their pay
 | `id`                   | `string`   | Unique identifier for the event                                 |
 | `event`                | `string`   | Event type {`chat-mention-created`}                             |
 | `data.profile_id`      | `string`   | Unique identifier for the mentioned profile                     |
-| `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned_by profile                  |
+| `data.mentioned_by_id` | `string`   | Unique identifier for the mentioned\_by profile                 |
 | `data.message_id`      | `string`   | Unique identifier for the chat                                  |
 | `data.message`         | `string`   | Text content of the chat message in which mentions were created |
 | `data.start_index`     | `string`   | Starting index of the mention placeholder in the message text   |
@@ -891,7 +891,8 @@ This document details the webhook events sent by our system, including their pay
     "reaction_space_target_group_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "reaction_created_by_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "reaction_created_by_custom_id": "thisisid",
-    "reaction_created_by_nickname": "Charming Throut"
+    "reaction_created_by_nickname": "Charming Throut",
+    "created_at": "2025-06-03T08:00:20.766704+00:00"
   },
   "created_at": "2025-06-03T08:00:20.766704+00:00"
 }
@@ -951,3 +952,5 @@ This document details the webhook events sent by our system, including their pay
 1. All id fields are UUIDs (Universally Unique Identifiers).
 2. Timestamps follow the ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ).
 3. Additional events will follow a similar structure and will be documented as they are added.
+
+<br />
