@@ -150,10 +150,10 @@ Each milestone can be configured to award one or more of the following:
 
 ### Reward Behavior: Recurring and Reward on Reset
 
-Reward Items and User-Activated Multipliers support two additional behaviors:
+Reward Items and Reward Multipliers support two additional behaviors:
 
-- **Recurring** - The reward is granted every time the milestone is reached, not just the first time.
-- **Reward on Reset** - The reward is granted at the point of reset if the streak resets at that milestone length.
+- **Recurring** - The reward triggers at a fixed streak length interval (e.g., every 5 lengths).
+- **Reward on Reset** - The reward triggers every time a user reaches that milestone, even after initial reset.
 
 **Badges are excluded from both behaviors.** A user can earn a badge only once - regardless of how many times a milestone is reached or how many times the streak resets. If the user has already earned the same badge from another experience (a quest, a tier benefit, another streak), the badge award at that milestone is silently skipped while all other rewards on the same milestone are still granted.
 
