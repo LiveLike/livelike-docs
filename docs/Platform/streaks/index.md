@@ -98,7 +98,7 @@ How targets are selected depends on the streak progress action chosen:
 | **Built-in widget action** (e.g., make a correct prediction, answer a quiz correctly, vote on a poll) | Dropdown in CMS listing all available widgets of the relevant type. Selecting "make a correct prediction" shows all prediction widgets; selecting "answer a quiz correctly" shows all quiz widgets; selecting "vote on a poll" shows all poll widgets. |
 | **All other actions** (custom actions, CDP-driven actions via Segment, etc.)                          | CSV upload. Column header is the key; rows below are the values (target identifiers).                                                                                                                                                                  |
 
-The key-value attribute passing requirement applies to all target-based streaks regardless of whether targets were configured via dropdown or CSV.
+The key-value attribute passing requirement applies to all target-based streaks.
 
 ### Streak Reset Action
 
