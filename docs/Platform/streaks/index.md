@@ -133,10 +133,10 @@ Streak Milestones are the only mechanism through which rewards are granted withi
 
 ### Milestone Types
 
-| Type          | How It Works                                                              |
-| ------------- | ------------------------------------------------------------------------- |
-| **Recurring** | Rewards trigger at a fixed streak length interval (e.g., every 5 lengths) |
-| **Custom**    | Rewards trigger at a specific streak length you define                    |
+| Type                | How It Works                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| **Recurring**       | Rewards trigger at a fixed streak length interval (e.g., every 5 lengths)                  |
+| **Repeat on Reset** | Rewards trigger every time a user reaches that milestone, even after initial streak reset  |
 
 ### Milestone Rewards
 
