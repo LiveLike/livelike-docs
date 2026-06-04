@@ -217,8 +217,7 @@ Yes. A single milestone can combine Reward Items, a User-Activated Multiplier, a
 **Can the same badge be attached to more than one milestone within a streak?**
 No. A badge can only be attached to one milestone within a streak. The same badge can be referenced across different streaks or experiences, but a user can earn it only once across all of them.
 
-**Can I attach an automatic multiplier to a streak milestone?**
-No. Only user-activated multipliers can be linked to streak milestones.
+**Can I attach an automatic reward multiplier to a streak milestone?**<br />No. Only user-activated multipliers can be linked to streak milestones.
 
 ***
 
