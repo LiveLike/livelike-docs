@@ -142,11 +142,11 @@ Streak Milestones are the only mechanism through which rewards are granted withi
 
 Each milestone can be configured to award one or more of the following:
 
-| Reward Type                            | Details                                                                                                                                                                                 |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Reward Items**                       | Standard point grants on reaching the milestone                                                                                                                                         |
-| **Reward Multiplier (User-Activated)** | A user-activated multiplier is granted to the user. Only user-activated multipliers can be linked - one per milestone. Once granted, the user activates it at a time of their choosing. |
-| **Badges**                             | One or more badges can be awarded at a milestone. A single badge can only be attached to one milestone within a streak.                                                                 |
+| Reward Type                            | Details                                                                                                                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Reward Items**                       | Standard point grants on reaching the milestone                                                                                                                                 |
+| **Reward Multiplier (User-Activated)** | One or more user-activated multiplier is granted to the user. Only user-activated multipliers can be linked. Once granted, the user can activate it at a time of their choosing |
+| **Badges**                             | One or more badges can be awarded at a milestone. A single badge can only be attached to one milestone within a streak.                                                         |
 
 ### Reward Behavior: Recurring and Reward on Reset
 
