@@ -170,10 +170,10 @@ Streaks are created and managed via **CMS - Streaks&#x20;**&#x6F;&#x72;**&#x20;A
 3. **Streak Progress Action** - Select the user action that drives streak progress (e.g., make a correct prediction, answer a quiz correctly, vote on a poll, custom action, CDP-driven action).
 4. **Period and Timezone** _(Periodic only)_ - Select the recurring window - Daily, Weekly, or Monthly - and set the timezone.
 5. **Threshold** _(Periodic only)_ - Optionally set the number of times the progress action must be completed within the window before streak length increments by 1.
-6. **Targets** _(Consecutive Action only)_ - In the dedicated Targets tab, select the sub-type (None, Set, or Sequence). For Set and Sequence, configure targets either via the built-in widget dropdown (for widget-based built-in actions) or via CSV upload (for all other actions).
-7. **Streak Reset Action** _(Consecutive Action only)_ - Optionally configure the action that breaks the streak. Auto-assigned for correct prediction and correct quiz answer; optional for all others.
+6. **Streak Reset Action** _(Consecutive Action only)_ - Optionally configure the action that breaks the streak. Auto-assigned for correct prediction and correct quiz answer; optional for all others.
+7. **Targets** _(Consecutive Action only)_ - In the Targets tab, select the sub-type (None, Set, or Sequence). For Set and Sequence, configure targets either via the built-in widget dropdown (for widget-based built-in actions) or via CSV upload (for all other actions).
 8. **Start / End Time** - Optionally set a campaign window for the streak.
-9. **Streak Milestones** - Optionally add milestones. For each milestone, set the streak length, milestone type (Recurring or Custom), and configure rewards (Reward Items, User-Activated Multiplier, Badges). Set Recurring and Reward on Reset behavior for Reward Items and Multipliers as needed.
+9. **Streak Milestones** - Optionally add milestones. For each milestone, set the streak length and configure rewards (Reward Items, Rewards Multiplier, Badges). Set Recurring and Reward on Reset behavior for Reward Items and Multipliers as needed.
 10. **User Groups** - Optionally scope the streak to specific user segments.
 11. **Save or Publish** - The streak can be saved at any point before publishing, with all fields remaining editable. Once published, the rules below apply.
 
