@@ -133,20 +133,20 @@ Streak Milestones are the only mechanism through which rewards are granted withi
 
 ### Milestone Types
 
-| Type                | How It Works                                                                               |
-| ------------------- | ------------------------------------------------------------------------------------------ |
-| **Recurring**       | Rewards trigger at a fixed streak length interval (e.g., every 5 lengths)                  |
-| **Repeat on Reset** | Rewards trigger every time a user reaches that milestone, even after initial streak reset  |
+| Type                | How It Works                                                                              |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| **Recurring**       | Rewards trigger at a fixed streak length interval (e.g., every 5 lengths)                 |
+| **Repeat on Reset** | Rewards trigger every time a user reaches that milestone, even after initial streak reset |
 
 ### Milestone Rewards
 
 Each milestone can be configured to award one or more of the following:
 
-| Reward Type                   | Details                                                                                                                                                                                 |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Reward Items (Points)**     | Standard point grants on reaching the milestone                                                                                                                                         |
-| **User-Activated Multiplier** | A user-activated multiplier is granted to the user. Only user-activated multipliers can be linked - one per milestone. Once granted, the user activates it at a time of their choosing. |
-| **Badges**                    | One or more badges can be awarded at a milestone. A single badge can only be attached to one milestone within a streak.                                                                 |
+| Reward Type                            | Details                                                                                                                                                                                 |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Reward Items**                       | Standard point grants on reaching the milestone                                                                                                                                         |
+| **Reward Multiplier (User-Activated)** | A user-activated multiplier is granted to the user. Only user-activated multipliers can be linked - one per milestone. Once granted, the user activates it at a time of their choosing. |
+| **Badges**                             | One or more badges can be awarded at a milestone. A single badge can only be attached to one milestone within a streak.                                                                 |
 
 ### Reward Behavior: Recurring and Reward on Reset
 
