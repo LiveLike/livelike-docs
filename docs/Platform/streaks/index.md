@@ -230,7 +230,7 @@ Missing the required action - or failing to meet the threshold - within the defi
 It depends on the sub-type. For **None** and **Set**, the configured streak reset action triggers the reset. For **Sequence**, interacting with targets out of order resets the streak; a streak reset action can additionally be configured. For correct prediction and correct quiz answer, the incorrect counterpart is auto-assigned as the reset action.
 
 **Is the streak reset action mandatory for Consecutive Action streaks?**
-No, it is optional - except for correct prediction and correct quiz answer, where it is automatically assigned. For all other actions, configuring a streak reset action is strongly recommended for None and Set sub-types to ensure the system can programmatically break the streak when needed.
+No, it is optional - except for correct prediction and correct quiz answer, where it is automatically assigned. For all other actions, configuring a streak reset action is strongly recommended for **None** and **Set** sub-types to ensure the system can programmatically break the streak when needed.
 
 **If a streak resets, are milestone rewards lost?**
 Rewards already granted at prior milestones are not revoked. Whether a reward is granted at the point of reset depends on whether **Reward on Reset** is enabled on that milestone. Future milestone rewards are only available if the user rebuilds their streak back to those lengths.
