@@ -85,7 +85,7 @@ Targets can be:
 - **LiveLike objects** - widget IDs, game IDs, or other LiveLike-native identifiers
 - **External references** - match IDs, tournament IDs, episode IDs, or any identifier from outside LiveLike
 
-Targets are defined as key-value pairs. The key is the identifier type (e.g., `match_id`, `widget_id`) and the value is the actual identifier. When a user performs the streak progress action, the same key-value pair must be passed as an attribute in the action call for the system to evaluate it against the configured targets.
+Targets are defined as key-value pairs. The key is the identifier type (e.g., `match_id`, `widget_id`) and the value is the actual identifier. When a user performs the streak progress action, the same **key-value pair must be passed as an attribute in the action call** for the system to evaluate it against the configured targets.
 
 **Example:** If an admin uploads a CSV with the column header `match_id` and rows containing actual match IDs, then `match_id` is the key and each match ID is the value. The integration must pass `match_id: <value>` as an attribute when invoking the streak progress action.
 
