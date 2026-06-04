@@ -109,16 +109,13 @@ A streak reset action is an action that, when performed, programmatically breaks
 - The streak reset action is particularly important in **None** and **Set** sub-types, where there is no inherent ordering or out-of-order logic to trigger an automatic reset. Configuring a reset action gives the system a programmatic way to break the streak when the user performs an action that should invalidate progress.
 - In **Sequence** sub-type, interacting with targets out of order already resets the streak. A streak reset action can additionally be configured as a separate reset trigger.
 
-### How Streak Progress and Reset Work
+### How Streak Progress and Reset Work On Consecutive Action Streak
 
-**None - Win 5 games in a row**
-The streak progress action is "win a game," sub-type is None. No targets are configured. Each time the user wins a game, streak length increments by 1. If a streak reset action (e.g., "lose a game") is configured and fires, the streak resets to 0. Time gaps between games do not matter.
+**Target Mode: None - Win 5 games in a row**<br />The streak progress action is "win a game," sub-type is None. No targets are configured. Each time the user wins a game, streak length increments by 1. If a streak reset action (e.g., "lose a game") is configured and fires, the streak resets to 0. Time gaps between games do not matter.
 
-**Set - Predict outcomes across 3 specific matches**
-The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a streak reset action fires at any point, the streak resets. Actions on matches not in the set are ignored.
+**Target Mode: Set - Predict outcomes across 3 specific matches**<br />The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a streak reset action fires at any point, the streak resets. Actions on matches not in the set are ignored.
 
-**Sequence - Complete a tournament bracket in order**
-The admin configures 4 match IDs in sequence via CSV. The user must make a correct prediction on Match 1 first, then Match 2, then Match 3, then Match 4 - each correct prediction on the next valid target increments streak length by 1. Predicting on Match 2 before completing Match 1 resets the streak. A streak reset action can also be configured as an additional reset trigger.
+**Target Mode: Sequence - Complete a tournament bracket in order**<br />The admin configures 4 match IDs in sequence via CSV. The user must make a correct prediction on Match 1 first, then Match 2, then Match 3, then Match 4 - each correct prediction on the next valid target increments streak length by 1. Predicting on Match 2 before completing Match 1 resets the streak. A streak reset action can also be configured as an additional reset trigger.
 
 ***
 
