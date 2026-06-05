@@ -327,20 +327,20 @@ The table below outlines the properties included in the A/B Test Variant Assignm
 
 The table below outlines the properties included in the Streak Published event.
 
-| PROPERTY NAME     | DESCRIPTION                                                                                                             |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| streak\_id        | The unique ID of the streak.                                                                                            |
-| streak\_name      | The name of the streak.                                                                                                 |
-| streak\_type      | The type of streak (periodic, consecutive\_action).                                                                     |
-| user\_action\_id  | The ID of the action that counted toward progress.                                                                      |
-| user\_action\_key | The unique key of the user action.                                                                                      |
-| user\_groups      | Array of User Group IDs that can participate (null = all users).                                                        |
-| milestones        | Object of milestone IDs, threshold streak length, reward\_id, reward\_name and reward\_amount attached with the streak. |
-| start\_date       | Start date if configured (null if starts immediately).                                                                  |
-| end\_date         | End date if configured (null if ongoing).                                                                               |
-| timezone          | The timezone configuration for the streak.                                                                              |
-| published\_by     | The ID of the admin who published the streak.                                                                           |
-| published\_at     | Timestamp when the streak was published.                                                                                |
+| PROPERTY NAME     | DESCRIPTION                                                                                                                                                                |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| streak\_id        | The unique ID of the streak.                                                                                                                                               |
+| streak\_name      | The name of the streak.                                                                                                                                                    |
+| streak\_type      | The type of streak (periodic, consecutive\_action).                                                                                                                        |
+| user\_action\_id  | The ID of the action that counted toward progress.                                                                                                                         |
+| user\_action\_key | The unique key of the user action.                                                                                                                                         |
+| user\_groups      | Array of User Group IDs that can participate (null = all users).                                                                                                           |
+| milestones        | Object of milestone IDs, threshold streak length, reward\_id, reward\_name, reward\_amount, multiplier\_id, multiplier\_name, multiplier\_factor attached with the streak. |
+| start\_date       | Start date if configured (null if starts immediately).                                                                                                                     |
+| end\_date         | End date if configured (null if ongoing).                                                                                                                                  |
+| timezone          | The timezone configuration for the streak.                                                                                                                                 |
+| published\_by     | The ID of the admin who published the streak.                                                                                                                              |
+| published\_at     | Timestamp when the streak was published.                                                                                                                                   |
 
 ## Event Properties for Streak Progressed
 
