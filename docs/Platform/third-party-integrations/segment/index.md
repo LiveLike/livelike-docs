@@ -325,6 +325,81 @@ The table below outlines the properties included in the A/B Test Variant Assignm
 | variant\_id           | The ID of the A/B Test variant that was assigned to the user in Quest.   |
 | variant\_name         | The name of the A/B Test variant that was assigned to the user in Quest. |
 
+## Event Properties for Streak Published
+
+The table below outlines the properties included in the Streak Published event.
+
+| PROPERTY NAME     | DESCRIPTION                                                                                                             |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| streak\_id        | The unique ID of the streak.                                                                                            |
+| streak\_name      | The name of the streak.                                                                                                 |
+| streak\_type      | The type of streak (periodic, consecutive\_action).                                                                     |
+| user\_action\_id  | The ID of the action that counted toward progress.                                                                      |
+| user\_action\_key | The unique key of the user action.                                                                                      |
+| user\_groups      | Array of User Group IDs that can participate (null = all users).                                                        |
+| milestones        | Object of milestone IDs, threshold streak length, reward\_id, reward\_name and reward\_amount attached with the streak. |
+| start\_date       | Start date if configured (null if starts immediately).                                                                  |
+| end\_date         | End date if configured (null if ongoing).                                                                               |
+| timezone          | The timezone configuration for the streak.                                                                              |
+| published\_by     | The ID of the admin who published the streak.                                                                           |
+| published\_at     | Timestamp when the streak was published.                                                                                |
+
+## Event Properties for Streak Progressed
+
+The table below outlines the properties included in the Streak Progressed event.
+
+| PROPERTY NAME              | DESCRIPTION                                                                 |
+| :------------------------- | :-------------------------------------------------------------------------- |
+| livelike\_profile\_id      | The profile ID of the LiveLike user.                                        |
+| user\_streak\_id           | The unique ID of the user's streak instance.                                |
+| streak\_id                 | The unique ID of the streak.                                                |
+| streak\_name               | The name of the streak.                                                     |
+| streak\_type               | The type of streak (consecutive\_action, periodic).                         |
+| target\_id                 | The object on which streak progress happened (widget\_id, video\_id, etc.)  |
+| current\_streak\_length    | The current length/count of the user's streak.                              |
+| max\_streak\_length        | The maximum length a user achieved for this streak.                         |
+| user\_action\_id           | The ID of the action that counted toward progress.                          |
+| user\_action\_key          | The unique key of the user action.                                          |
+| next\_milestone\_threshold | The next milestone threshold (null if no more milestones).                  |
+| progressed\_at             | Timestamp when the progress occurred.                                       |
+
+## Event Properties for Streak Milestone Achieved
+
+The table below outlines the properties included in the Streak Milestone Achieved event.
+
+| PROPERTY NAME             | DESCRIPTION                                                       |
+| :------------------------ | :---------------------------------------------------------------- |
+| livelike\_profile\_id     | The profile ID of the LiveLike user.                              |
+| user\_streak\_id          | The unique ID of the user's streak instance.                      |
+| streak\_id                | The unique ID of the streak.                                      |
+| streak\_name              | The name of the streak.                                           |
+| streak\_type              | The type of streak.                                               |
+| milestone\_id             | The unique ID of the milestone.                                   |
+| milestone\_streak\_length | The threshold streak length for this milestone (e.g., 7, 14, 30). |
+| reward\_item\_ids         | Array of Reward Item IDs associated with this milestone.          |
+| reward\_item\_names       | Array of Reward Item names.                                       |
+| reward\_amounts           | Array of reward amounts.                                          |
+| achieved\_at              | Timestamp when the milestone was achieved.                        |
+
+## Event Properties for Streak Reset
+
+The table below outlines the properties included in the Streak Reset event.
+
+| PROPERTY NAME             | DESCRIPTION                                                        |
+| :------------------------ | :----------------------------------------------------------------- |
+| livelike\_profile\_id     | The profile ID of the LiveLike user.                               |
+| user\_streak\_id          | The unique ID of the user's streak instance.                       |
+| streak\_id                | The unique ID of the streak.                                       |
+| streak\_name              | The name of the streak.                                            |
+| streak\_type              | The type of streak.                                                |
+| current\_streak\_length   | The current length/count of the user's streak when it was broken.  |
+| last\_activity            | Timestamp of last activity before break.                           |
+| milestones\_achieved      | Number of milestones achieved before break.                        |
+| last\_milestone\_achieved | The last milestone threshold achieved before break (null if none). |
+| reset\_at                 | Timestamp when broken.                                             |
+
+<br />
+
 ## Client Side Integration
 
 Before sending evens to Segment and make Livelike compatible to accept the data, you will need to send additional properties in the payload
