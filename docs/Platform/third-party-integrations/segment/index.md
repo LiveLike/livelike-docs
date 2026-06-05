@@ -194,8 +194,6 @@ The table below lists events that LiveLike sends to Segment. These events appear
 | Streak Progressed          | When a user completes an eligible action that advances their streak.   |
 | Streak Milestone Achieved  | When a user reaches a milestone threshold (streak length) in a streak. |
 | Streak Reset               | When a user's streak is broken due to inactivity or failure.           |
-| Streak Frozen              | When a user freezes their streak.                                      |
-| Streak Unfrozen            | When a user's frozen streak resumes.                                   |
 
 ## Event Properties for Badge Rewarded
 
