@@ -379,9 +379,9 @@ The table below outlines the properties included in the Streak Milestone Achieve
 | reward\_amounts           | Array of reward amounts.                                          |
 | multiplier\_id            | Array of Reward Multiplier IDs associated with this milestone.    |
 | multiplier\_name          | Array of Reward Multiplier names.                                 |
-| multiplier\_factor        |                                                                   |
-| badge\_id                 |                                                                   |
-| badge\_name               |                                                                   |
+| multiplier\_factor        | Array of Reward Multiplier factors.                               |
+| badge\_id                 | Array of Badge IDs associated with this milestone.                |
+| badge\_name               | Array of Badge names.                                             |
 | achieved\_at              | Timestamp when the milestone was achieved.                        |
 
 ## Event Properties for Streak Reset
