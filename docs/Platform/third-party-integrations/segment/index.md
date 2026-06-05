@@ -346,22 +346,22 @@ The table below outlines the properties included in the Streak Published event.
 
 The table below outlines the properties included in the Streak Progressed event.
 
-| PROPERTY NAME              | DESCRIPTION                                                                 |
-| :------------------------- | :-------------------------------------------------------------------------- |
-| livelike\_profile\_id      | The profile ID of the LiveLike user.                                        |
-| user\_streak\_id           | The unique ID of the user's streak instance.                                |
-| streak\_id                 | The unique ID of the streak.                                                |
-| streak\_name               | The name of the streak.                                                     |
-| streak\_type               | The type of streak (consecutive\_action, periodic).                         |
-| target\_id                 | The object on which streak progress happened (widget\_id, video\_id, etc.)  |
-| current\_streak\_length    | The current length/count of the user's streak.                              |
-| max\_streak\_length        | The maximum length a user achieved for this streak.                         |
-| user\_action\_id           | The ID of the action that counted toward progress.                          |
-| threshold                  |                                                                             |
-| threshold\_progress        |                                                                             |
-| user\_action\_key          | The unique key of the user action.                                          |
-| next\_milestone\_threshold | The next milestone threshold (null if no more milestones).                  |
-| progressed\_at             | Timestamp when the progress occurred.                                       |
+| PROPERTY NAME              | DESCRIPTION                                                                                                                |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| livelike\_profile\_id      | The profile ID of the LiveLike user.                                                                                       |
+| user\_streak\_id           | The unique ID of the user's streak instance.                                                                               |
+| streak\_id                 | The unique ID of the streak.                                                                                               |
+| streak\_name               | The name of the streak.                                                                                                    |
+| streak\_type               | The type of streak (consecutive\_action, periodic).                                                                        |
+| target\_id                 | The object on which streak progress happened (widget\_id, video\_id, etc.)                                                 |
+| current\_streak\_length    | The current length/count of the user's streak.                                                                             |
+| max\_streak\_length        | The maximum length a user achieved for this streak.                                                                        |
+| user\_action\_id           | The ID of the action that counted toward progress.                                                                         |
+| threshold                  | The minimum count of streak progress action required to increment streak length by 1 (applicable only for Periodic Streak) |
+| threshold\_progress        | The count of streak progress action user performed against the threshold (applicable only for Periodic Streak)             |
+| user\_action\_key          | The unique key of the user action.                                                                                         |
+| next\_milestone\_threshold | The next milestone threshold (null if no more milestones).                                                                 |
+| progressed\_at             | Timestamp when the progress occurred.                                                                                      |
 
 ## Event Properties for Streak Milestone Achieved
 
