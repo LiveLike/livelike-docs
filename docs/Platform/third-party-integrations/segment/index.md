@@ -396,8 +396,6 @@ The table below outlines the properties included in the Streak Reset event.
 | last\_milestone\_achieved | The last milestone threshold achieved before break (null if none). |
 | reset\_at                 | Timestamp when broken.                                             |
 
-<br />
-
 ## Client Side Integration
 
 Before sending evens to Segment and make Livelike compatible to accept the data, you will need to send additional properties in the payload
