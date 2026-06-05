@@ -358,7 +358,7 @@ The table below outlines the properties included in the Streak Progressed event.
 | max\_streak\_length        | The maximum length a user achieved for this streak.                                                                        |
 | user\_action\_id           | The ID of the action that counted toward progress.                                                                         |
 | threshold                  | The minimum count of streak progress action required to increment streak length by 1 (applicable only for Periodic Streak) |
-| threshold\_progress        | The count of streak progress action user performed against the threshold (applicable only for Periodic Streak)             |
+| threshold\_progress        | The count of streak progress action user performed measured against the threshold (applicable only for Periodic Streak)    |
 | user\_action\_key          | The unique key of the user action.                                                                                         |
 | next\_milestone\_threshold | The next milestone threshold (null if no more milestones).                                                                 |
 | progressed\_at             | Timestamp when the progress occurred.                                                                                      |
