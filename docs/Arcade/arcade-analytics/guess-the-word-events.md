@@ -14,21 +14,19 @@ Below is a list of analytics events triggered in Guess The Word, along with thei
 <Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         **Event Name**
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         **Event Trigger Condition**
       </th>
 
-      <th style={{ textAlign: "left" }}>
-        **Event Properties**
-
-        _(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
+      <th>
+        **Event Properties**_(not included default event properties as outlined[here](https://dash.readme.com/project/livelike/v1/docs/arcade-analytics) )_
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         **Event Description**
       </th>
     </tr>
@@ -36,52 +34,52 @@ Below is a list of analytics events triggered in Guess The Word, along with thei
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **session_start**
+      <td>
+        **session\_start**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When the user starts a web session.
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         `word_length` (number)
         `game_mode` (string)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Marks the beginning of a session.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **session_stop**
+      <td>
+        **session\_stop**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When the user exits the web session.
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         `duration` (in seconds)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Tracks the total session length.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **click_play**
+      <td>
+        **click\_play**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When users starts the game by clicking on play button.
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         `word_length` (number)
         `game_mode` (string)
         `top_win_streak` (number)
@@ -91,21 +89,21 @@ Below is a list of analytics events triggered in Guess The Word, along with thei
         `best_try` (number)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Tracks when started playing.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **game_completed**
+      <td>
+        **game\_completed**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When game is over and result screen is displayed.
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         `word_length` (number)
         `game_mode` (string)
         `top_win_streak` (number)
@@ -118,39 +116,39 @@ Below is a list of analytics events triggered in Guess The Word, along with thei
         `is_journey_final_step` (boolean)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Captures when the game is over.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **click_share**
+      <td>
+        **click\_share**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When user clicks on share button after game over (if enabled)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         —
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Tracks when user shares the stats.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
-        **click_stats**
+      <td>
+        **click\_stats**
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When user clicks on play again button after game over.
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         `word_length` (number)
         `game_mode` (string)
         `top_win_streak` (number)
@@ -160,9 +158,29 @@ Below is a list of analytics events triggered in Guess The Word, along with thei
         `best_try` (number)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Tracks when user opens stats.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **language\_switched**
+      </td>
+
+      <td>
+        When the user changes the language through the settings icon
+      </td>
+
+      <td>
+        —
+      </td>
+
+      <td>
+        Tracks the user's currently selected language.
       </td>
     </tr>
   </tbody>
 </Table>
+
+<br />
