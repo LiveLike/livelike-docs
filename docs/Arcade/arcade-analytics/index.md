@@ -24,7 +24,7 @@ This document outlines the analytics event system implemented in the arcade appl
 
 ## **Implementation**
 
-Once integrated with any arcade game, you can listen for analytics events emitted by the application. These events are dispatched with the event name **`analytics-event`**.
+Once integrated with any arcade game, you can listen for analytics events emitted by the application. These events are dispatched with the event name `analytics-event`.
 
 ### **How to Listen for Analytics Events**
 
@@ -46,10 +46,10 @@ Each event contains structured data, including metadata, user details, and event
 
 Each emitted event contains the following key components:
 
-* **`event_name`** – Name of the triggered event.
-* **`event_properties`** – Custom properties specific to the event.
-  * **`default_user_properties`** – Details about the user.  (_Sent as default in each event._)
-  * **`default_event_properties`** – Application level metadata.  (_Sent as default in each event._)
+- `event_name` – Name of the triggered event.
+- `event_properties` – Custom properties specific to the event.
+  - `default_user_properties` – Details about the user.  (_Sent as default in each event._)
+  - `default_event_properties` – Application level metadata.  (_Sent as default in each event._)
 
 ## **More about Default Properties**
 
@@ -57,22 +57,26 @@ Each emitted event contains the following key components:
 
 The `user_properties` object contains user-specific details:
 
-* **`ll_username`** – The username.
-* **`ll_user_id`** – Unique user identifier.
-* **`is_new_user`** – Indicates if the user is new (`true/false/null`).
-* **`device_type`** – The user’s device type.
-* **`browser`** – The browser used.
-* **`platform`** – The user’s operating system or platform.
+- `ll_username` – The username.
+- `ll_user_id` – Unique user identifier.
+- `is_new_user` – Indicates if the user is new (`true/false/null`).
+- `device_type` – The user's device type.
+- `browser` – The browser used.
+- `platform` – The user's operating system or platform.
+- `country` – The user's country.
 
 ### **Application Metadata**
 
 The `defaultEventProperties` object contains general metadata about the application:
 
-* **`ll_org_name`** – Organization name.
-* **`ll_org_id`** – Unique organization identifier.
-* **`ll_app_name`** – Application name.
-* **`ll_app_id`** – Unique application identifier.
-* **`ll_instance_id`** – Unique instance identifier.
+- `ll_org_name` – Organization name.
+- `ll_org_id` – Unique organization identifier.
+- `ll_app_name` – Application name.
+- `ll_app_id` – Unique application identifier.
+- `ll_instance_id` – Unique instance identifier.
+- `session_id` – Unique session identifier.
+- `source_system` – System from which the request originated.
+- `language` – Language preference or locale setting.
 
 ***
 
