@@ -35,69 +35,69 @@ next:
 
 ### Step 2: Add the Arcade Game JavaScript SDKs
 
-* **Guess The Word**: Add the following script tag to your HTML page:
+- **Guess The Word**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.9.0.js"></script>
 
 ```
 
-* **Guess The Image**: Add the following script tag to your HTML page:
+- **Guess The Image**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/guess-the-image-1.3.1.js"></script>
 
 ```
 
-* **Trivia**: Add the following script tag to your HTML page:
+- **Trivia**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.7.1.js"></script>
 
 ```
 
-* **Pick Your Team**: Add the following script tag to your HTML page:
+- **Pick Your Team**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.15.1.js"></script>
 ```
 
-* **Play Predictor**: Add the following script tag to your HTML page:
+- **Play Predictor**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.10.0.js"></script>
 
 ```
 
-* **Guess What**: Add the following script tag to your HTML page:
+- **Guess What**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/guess-what-1.2.0.js"></script>
 
 ```
 
-* **Spin The Wheel**: Add the following script tag to your HTML page:
+- **Spin The Wheel**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.2.0.js"></script>
 
 ```
 
-* **Skill Game**: Add the following script tag to your HTML page:
+- **Skill Game**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.1.3.js"></script>
 
 ```
 
-* **Sweepstakes**: Add the following script tag to your HTML page:
+- **Sweepstakes**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.2.0.js"></script>
 
 ```
 
-* **Scratch Card**: Add the following script tag to your HTML page:
+- **Scratch Card**: Add the following script tag to your HTML page:
 
 ```html
 <script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.2.0.js"></script>
@@ -105,90 +105,106 @@ next:
 
 <br />
 
-### Step 3: Embed Game Component
+- **Play Predictor +**: Add the following script tag to your HTML page:
 
-* In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/predictor-plus-1.0.0.js"></script>
+```
 
 <br />
 
-* #### **Guess The Word** ([Demo](https://stackblitz.com/edit/livelike-gtw-bzlbxnum?file=package.json))
+### Step 3: Embed Game Component
+
+- In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
+
+<br />
+
+- #### **Guess The Word** (<Anchor target="_blank" href="https://stackblitz.com/edit/livelike-gtw-bzlbxnum?file=package.json">Demo</Anchor>)
 
 ```html
 <ll-guess-the-word accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-word>
 
 ```
 
-* #### **Guess The Image** ([Demo](https://stackblitz.com/edit/vitejs-vite-7wiwh6jm?file=index.html))
+- #### **Guess The Image** (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-7wiwh6jm?file=index.html">Demo</Anchor>)
 
 ```html
 <ll-guess-the-image accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-the-image>
 
 ```
 
-* #### **Trivia**: ([Demo](https://stackblitz.com/edit/vitejs-vite-utaxefne?file=package.json))
+- #### **Trivia**: (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-utaxefne?file=package.json">Demo</Anchor>)
 
 ```html
 <ll-trivia accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-trivia>
 
 ```
 
-<Callout icon="📘" theme="info">
-  **Note:** `instanceId` is optional. If you don't pass it, `<ll-trivia>` will automatically pick the right trivia to show based on the current time and the schedule of available trivia instances for the given `gameId`.
-</Callout>
+> 📘
+>
+> **Note:** `instanceId` is optional. If you don't pass it, `<ll-trivia>` will automatically pick the right trivia to show based on the current time and the schedule of available trivia instances for the given `gameId`.
 
-* #### **Pick Your Team**: ([Demo](https://stackblitz.com/edit/vitejs-vite-nez9f9nx?file=package.json))
+- #### **Pick Your Team**: (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-nez9f9nx?file=package.json">Demo</Anchor>)
 
 ```html
 <ll-pick-your-team accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-pick-your-team>
 ```
 
-* #### **Play Predictor**: ([Demo](https://stackblitz.com/edit/vitejs-vite-bnf79vqn?file=package.json))
+- #### **Play Predictor**: (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-bnf79vqn?file=package.json">Demo</Anchor>)
 
 ```html html
 <ll-predictor accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor>
 ```
 
-* #### **Guess What**: ([Demo](https://stackblitz.com/edit/vitejs-vite-atjqhe2q?file=package.json))
+- #### **Guess What**: (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-atjqhe2q?file=package.json">Demo</Anchor>)
 
 ```html html
 <ll-guess-what accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-guess-what>
 ```
 
-* #### **Spin The Wheel**: ([Demo](https://stackblitz.com/edit/vitejs-vite-lu5379v7?file=index.html))
+- #### **Spin The Wheel**: (<Anchor target="_blank" href="https://stackblitz.com/edit/vitejs-vite-lu5379v7?file=index.html">Demo</Anchor>)
 
 ```html html
 <ll-spin-the-wheel accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-spin-the-wheel>
 ```
 
-* #### **Skill Games**: ([Demo](https://stackblitz.com/edit/livelike-skill-game))
+- #### **Skill Games**: (<Anchor target="_blank" href="https://stackblitz.com/edit/livelike-skill-game">Demo</Anchor>)
 
 ```html html
 <ll-skill-game accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-skill-game>
 ```
 
-* #### **Sweepstakes**
+- #### **Sweepstakes**
 
 ```html html
 <ll-sweepstakes accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-sweepstakes>
 ```
 
-* #### **Scratch Card**
+- #### **Scratch Card**
 
 ```html html
 <ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
 ```
 
-<br />
+- #### **Play Predictor +**: (<Anchor target="_blank" href="https://stackblitz.com/edit/predictor-plus">Demo</Anchor>)
+
+```html html
+<ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId} lang="en"></ll-predictor-plus>
+```
+
+- \####
 
 ### Required Parameters:
 
-* **profileId** and **accessToken**: These values are obtained through the LiveLike platform for user authentication.
-* **clientId**, **gameId** and **instanceId**: These are unique identifiers for a specific game instance within an application and can be retrieved from the Arcade CMS.
+- **profileId** and **accessToken**: These values are obtained through the LiveLike platform for user authentication.
+- **clientId**, **gameId** and **instanceId**: These are unique identifiers for a specific game instance within an application and can be retrieved from the Arcade CMS.
 
-<Callout icon="📘" theme="info">
-  **instanceId** not required in Trivia game
-</Callout>
+> 📘
+>
+> **instanceId** not required in Trivia game
 
 ## Please Note
 
-* Games that require **social sharing or download image enablement** (_for games that supports it_) from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
+- Games that require **social sharing or download image enablement** (_for games that supports it_) from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
+
+<br />
