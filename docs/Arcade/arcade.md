@@ -186,7 +186,7 @@ next:
 <ll-scratch-card accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-scratch-card>
 ```
 
-- #### **Play Predictor +&#x20;**: (<Anchor target="_blank" href="">Demo</Anchor>)
+- #### **Play Predictor +**: (<Anchor target="_blank" href="https://stackblitz.com/edit/predictor-plus">Demo</Anchor>)
 
 ```html html
 <ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor-plus>
