@@ -189,7 +189,9 @@ next:
 <ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId} lang="en"></ll-predictor-plus>
 ```
 
-<br />
+> 📘
+>
+> **Note:** `lang` is optional. If you don't pass it, `<ll-predictor-plus>` will automatically pick configured default language.
 
 ### Required Parameters:
 
