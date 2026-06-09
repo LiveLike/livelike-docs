@@ -892,7 +892,8 @@ This document details the webhook events sent by our system, including their pay
     "reaction_created_by_id": "ddacd28b-93da-4d05-9ea6-eeed35e74d90",
     "reaction_created_by_custom_id": "thisisid",
     "reaction_created_by_nickname": "Charming Throut",
-    "created_at": "2025-06-03T08:00:20.766704+00:00"
+    "created_at": "2025-06-03T08:00:20.766704+00:00",
+    "deleted_at": "2025-06-03T08:00:21.766704+00:00"  //available only in user-reaction-deleted event
   },
   "created_at": "2025-06-03T08:00:20.766704+00:00"
 }
