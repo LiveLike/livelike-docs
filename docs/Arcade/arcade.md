@@ -189,7 +189,7 @@ next:
 - #### **Play Predictor +**: (<Anchor target="_blank" href="https://stackblitz.com/edit/predictor-plus">Demo</Anchor>)
 
 ```html html
-<ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-predictor-plus>
+<ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId} lang="en"></ll-predictor-plus>
 ```
 
 - \####
