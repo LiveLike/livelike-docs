@@ -116,9 +116,6 @@ next:
 ### Step 3: Embed Game Component
 
 - In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
-
-<br />
-
 - #### **Guess The Word** (<Anchor target="_blank" href="https://stackblitz.com/edit/livelike-gtw-bzlbxnum?file=package.json">Demo</Anchor>)
 
 ```html
@@ -192,7 +189,7 @@ next:
 <ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId} lang="en"></ll-predictor-plus>
 ```
 
-- \####
+<br />
 
 ### Required Parameters:
 
