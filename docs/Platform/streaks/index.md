@@ -49,7 +49,7 @@ Threshold lets you require more than one instance of the streak progress action 
 
 For example, if threshold is set to 4 for a weekly streak, the user must complete the action 4 times within that week for the streak to advance by 1. Completing fewer than 4 breaks the streak.
 
-> **Threshold and milestones:** Milestones are based on streak length, not raw action count. If threshold is 3 and a milestone is set at streak length 5, the user must satisfy the threshold 5 times — meaning 15 total qualifying actions - to reach that milestone.
+> **Threshold and milestones:** Milestones are based on streak length, not raw action count. If threshold is 3 and a milestone is set at streak length 5, the user must satisfy the threshold 5 times - meaning 15 total qualifying actions - to reach that milestone.
 
 Threshold is specific to Periodic streaks. Consecutive Action streaks do not have a threshold - every qualifying action increments streak length by 1 directly.
 
