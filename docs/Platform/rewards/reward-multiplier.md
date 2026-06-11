@@ -258,7 +258,7 @@ Once **published**, only the following fields remain editable:
 
 ### Managing via API
 
-- [Steps to Create and Manage a Reward Multiplier](https://docs.livelike.com/reference/create-multiplier-1)
+- [Create and Manage a Reward Multiplier](https://docs.livelike.com/reference/create-multiplier-1)
 
 ***
 
