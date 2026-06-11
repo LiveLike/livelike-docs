@@ -172,7 +172,7 @@ No activation step is required. Once the configured `start_at` time is reached, 
 
 ### User-Activated Multipliers
 
-Once a user earns a multiplier, they must explicitly activate it. There is no deadline for activation — a user can activate an earned multiplier at any time, even after the earning window (`stopped_at`) has passed.
+Once a user earns a multiplier, they must explicitly activate it. There is no deadline for activation - a user can activate an earned multiplier at any time, even after the earning window (`stopped_at`) has passed.
 
 Once activated, the multiplier remains live for the configured `active_duration`, counted from the moment of activation.
 
