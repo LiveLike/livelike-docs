@@ -333,4 +333,4 @@ Yes — you can update the end date provided it has not yet passed. The multipli
 No. User group configuration is locked after publication. Only `name`, `description`, `starts_at` / `expires_at`, and `attributes` can be edited post-publish.
 
 **What is the difference between deleting and archiving a multiplier?**
-Deleting permanently removes the configuration and is irreversible — only Draft multipliers can be deleted. Archiving deactivates the multiplier while preserving its configuration. See [Managing Multipliers](#managing-multipliers) for full archiving behavior.
+Deleting permanently removes the configuration and is irreversible — only Draft multipliers can be deleted. Archiving deactivates the multiplier while preserving its configuration. See **Managing Multipliers** for full archiving behavior.
