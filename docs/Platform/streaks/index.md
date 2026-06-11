@@ -205,7 +205,7 @@ If a recurring milestone and a non-recurring milestone coincide at the same stre
 
 Streaks are created and managed via CMS or API. The CMS setup flow is described below.
 
-For API setup, refer to the [Periodic Streak API Guide](#) and [Consecutive Action Streak API Guide](#).
+For API setup, refer to the [Periodic Streak API Guide](https://docs.livelike.com/reference/create-a-periodic-streak) and [Consecutive Action Streak API Guide](https://docs.livelike.com/reference/create-a-periodic-streak-1).
 
 ### CMS Setup Steps
 
