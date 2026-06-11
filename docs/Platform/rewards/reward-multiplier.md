@@ -129,7 +129,7 @@ The supported trigger events are:
 | **Tier attainment**           | The multiplier is linked to a tier benefit. When a user is assigned to that tier, the multiplier is issued                                                              |
 | **Custom / CDP-driven event** | A custom event (or a CDP event via Segment) fires and issues the multiplier based on configured conditions (e.g., first login after 60-day gap, match completion, etc.) |
 
-> Automatic Multipliers are not "earned" — they apply passively to all eligible users during the active window, with no issuance step.
+> Automatic Multipliers are not "earned" - they apply passively to all eligible users during the active window, with no issuance step.
 
 ### Linking to Streaks and Tiers (CMS)
 
