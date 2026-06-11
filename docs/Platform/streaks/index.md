@@ -140,7 +140,7 @@ A Periodic streak resets when the user fails to complete the required action - o
 
 ### Consecutive Action Streaks
 
-A streak reset action is an action that, when performed, programmatically breaks a Consecutive Action streak.
+A streak reset action is an action that, when performed, programmatically breaks a Consecutive Action streak. Streak can also automatically reset if targets were skipped (only in case the Target Mode was set to Sequence)&#x20;
 
 **If no reset action is configured**, the streak has no programmatic way to break - it will only stop advancing, not reset. For None and Set sub-types especially, configuring a reset action is strongly recommended so the system can correctly invalidate progress when the user performs a failing action.
 
