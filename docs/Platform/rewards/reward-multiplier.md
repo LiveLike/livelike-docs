@@ -197,7 +197,7 @@ In short: a user can hold at most one live user-activated multiplier and one liv
 
 ### Stacking: User-Activated + Automatic Together
 
-When both a user-activated and an automatic multiplier are active simultaneously on the same reward item, the platform combines them. How they combine is a global application-level setting — contact your LiveLike account team to confirm which stacking mode is enabled for your application.
+When both a user-activated and an automatic multiplier are active simultaneously on the same reward item, the platform combines them. How they combine is a global application-level setting - contact your LiveLike account team to confirm which stacking mode is enabled for your application.
 
 | Stack Mode           | Behavior              | Example (2x user-activated + 3x automatic) |
 | -------------------- | --------------------- | ------------------------------------------ |
