@@ -47,7 +47,7 @@ A sports franchise wants to reward fans based on how many home games they have a
 
 On game day, users in each group automatically earn at the elevated rate. Users outside both groups earn at the base rate. No manual action is needed from the user or operator.
 
-> Note: Two automatic multipliers on the same reward item cannot share the same multiplier factor during an overlapping time window — the platform will reject this configuration. Ensure user groups are mutually exclusive to keep behavior predictable.
+> Note: Two automatic multipliers on the same reward item cannot share the same multiplier factor during an overlapping time window - the platform will reject this configuration. Ensure user groups are mutually exclusive to keep behavior predictable.
 
 **Seasonal Campaign Windows**
 
