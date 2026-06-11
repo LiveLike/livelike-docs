@@ -298,13 +298,12 @@ Possibly, if they belong to two different user groups each linked to a different
 
 **Can a user have two user-activated multipliers active at the same time?**<br />No - only one user-activated multiplier per reward item can be active at a time. If override is off (the default), the user cannot activate a second one while one is live. If override is on, activating a new one immediately replaces the existing one - it is not stacked.
 
-**What is the difference between stacking and override?**<br />Stacking refers to having both a user-activated and an automatic multiplier active simultaneously — this is allowed and the values are combined using the application's configured mode (additive or multiplicative). Override refers to replacing a live user-activated multiplier with a new one - only permitted if enabled globally at the application level.
+**What is the difference between stacking and override?**<br />Stacking refers to having both a user-activated and an automatic multiplier active simultaneously - this is allowed and the values are combined using the application's configured mode (additive or multiplicative). Override refers to replacing a live user-activated multiplier with a new one - only permitted if enabled globally at the application level.
 
 **Does override pick the better multiplier?**
 No. Override simply replaces the currently active multiplier with the newly activated one, regardless of which has a higher value or longer remaining duration. The replaced multiplier is forfeited entirely.
 
-**Who controls override and stacking mode settings?**
-Both are global application-level configurations managed by LiveLike — they are not exposed in the CMS or API. Contact your LiveLike account team to change either setting.
+**Who controls override and stacking mode settings?**<br />Both are global application-level configurations managed by LiveLike - they are not exposed in the CMS or API. Contact your LiveLike account team to change either setting.
 
 **If a user has both a user-activated and an automatic multiplier active, how is the combined value calculated?**
 Depending on your application's stacking mode: additive sums the values (2x + 3x = 5x), multiplicative multiplies them (2x × 3x = 6x). Contact your LiveLike account team to confirm which mode is active for your application.
