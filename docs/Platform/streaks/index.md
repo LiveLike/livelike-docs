@@ -157,7 +157,7 @@ Reset action behavior varies by sub-type and action:
 
 ## Configuring Milestones
 
-Streak Milestones are the only mechanism through which rewards are granted within a streak. They act as checkpoints at defined streak lengths — when a user reaches a milestone, the configured rewards are automatically issued. Milestones apply to both Periodic and Consecutive Action streaks.
+Streak Milestones are the only mechanism through which rewards are granted within a streak. They act as checkpoints at defined streak lengths - when a user reaches a milestone, the configured rewards are automatically issued. Milestones apply to both Periodic and Consecutive Action streaks.
 
 Configuring milestones is optional - only needed when users should be rewarded for reaching specific streak lengths.
 
