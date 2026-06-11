@@ -140,7 +140,6 @@ The supported trigger events are:
 
 - [Steps to Link Reward Multiplier with Streak Milestones](https://docs.livelike.com/reference/create-streak-milestone)
 - [Steps to Link Reward Multiplier with Tier Benefits](https://docs.livelike.com/reference/create-tier-benefit)
-- [Steps to Grant a Multiplier to a User via trigger event](#)
 
 ***
 
