@@ -188,10 +188,10 @@ Once activated, the multiplier remains live for the configured `active_duration`
 
 | Scenario                                                                                       | Rule                                                                                 | Enforced At                                |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------ |
-| Two user-activated multipliers on the same reward item                                         | Not allowed simultaneously — only one can be active at a time                        | Runtime (activation blocked or overridden) |
-| Two automatic multipliers on the same reward item + same multiplier factor + overlapping dates | Not allowed — configuration will be rejected                                         | Setup (CMS / API validation)               |
-| Two automatic multipliers on the same reward item + different multiplier factor or dates       | Allowed — treated as unique based on the combination of value, reward item, and date | —                                          |
-| One user-activated + one automatic multiplier on the same reward item                          | Allowed — this is the stacking scenario                                              | —                                          |
+| Two user-activated multipliers on the same reward item                                         | Not allowed simultaneously - only one can be active at a time                        | Runtime (activation blocked or overridden) |
+| Two automatic multipliers on the same reward item + same multiplier factor + overlapping dates | Not allowed - configuration will be rejected                                         | Setup (CMS / API validation)               |
+| Two automatic multipliers on the same reward item + different multiplier factor or dates       | Allowed - treated as unique based on the combination of value, reward item, and date | —                                          |
+| One user-activated + one automatic multiplier on the same reward item                          | Allowed - this is the stacking scenario                                              | —                                          |
 
 In short: a user can hold at most one live user-activated multiplier and one live automatic multiplier per reward item at any point in time.
 
