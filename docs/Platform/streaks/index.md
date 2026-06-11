@@ -245,14 +245,11 @@ Once a streak is published, most configuration is locked to preserve streak inte
 
 ### Streak Types and Setup
 
-**What is the difference between Periodic and Consecutive Action streaks?**
-Periodic streaks are time-based — the user must act within a recurring window to maintain the streak. Consecutive Action streaks are action-based with no time dependency — what matters is the uninterrupted success of the action, regardless of when it happens.
+**What is the difference between Periodic and Consecutive Action streaks?**<br />Periodic streaks are time-based - the user must act within a recurring window to maintain the streak. Consecutive Action streaks are action-based with no time dependency - what matters is the uninterrupted success of the action, regardless of when it happens.
 
-**When should I use None, Set, or Sequence as the Consecutive Action sub-type?**
-Use None when you only care that the user performed the action, not what they performed it on. Use Set when the action must be performed against a defined list of targets but order does not matter. Use Sequence when the user must interact with targets in a specific order — for example, completing matches in a tournament bracket in sequence.
+**When should I use None, Set, or Sequence as the Consecutive Action sub-type?**<br />Use None when you only care that the user performed the action, not what they performed it on. Use Set when the action must be performed against a defined list of targets but order does not matter. Use Sequence when the user must interact with targets in a specific order - for example, completing matches in a tournament bracket in sequence.
 
-**What is threshold and how is it different from milestones?**
-Threshold controls how streak length accrues — it defines how many times the action must be completed within a window before streak length increments. Milestones control what happens when it does — they define rewards at specific streak lengths. They operate at different levels and are independent of each other.
+**What is threshold and how is it different from milestones?**<br />Threshold controls how streak length accrues - it defines how many times the action must be completed within a window before streak length increments. Milestones control what happens when it does - they define rewards at specific streak lengths. They operate at different levels and are independent of each other.
 
 **Does Consecutive Action streak have a threshold?**
 No. Every qualifying action in a Consecutive Action streak increments streak length by 1 directly. There is no batching or threshold concept.
