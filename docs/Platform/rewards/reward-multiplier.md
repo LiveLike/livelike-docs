@@ -71,7 +71,7 @@ Lapsed users who return earn at 4x. Active users are unaffected.
 
 ### User-Activated Multiplier
 
-A User-Activated Multiplier is earned by a user but does not activate until they explicitly choose to use it. This gives users agency — they can time their activation to coincide with a high-value activity to maximize the benefit.
+A User-Activated Multiplier is earned by a user but does not activate until they explicitly choose to use it. This gives users agency - they can time their activation to coincide with a high-value activity to maximize the benefit.
 
 **Who it applies to:** Any user who earns the multiplier through a qualifying trigger event. If `profile_group_ids` is configured, only users in those groups are eligible to earn it.
 
