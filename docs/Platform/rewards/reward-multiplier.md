@@ -84,7 +84,7 @@ A User-Activated Multiplier is earned by a user but does not activate until they
 | `start_at` / `stopped_at` _(optional)_ | The window during which the multiplier can be earned. Optional for user-activated multipliers |
 | `profile_group_ids` _(optional)_       | Restricts eligibility to earn the multiplier to specific user segments                        |
 
-> **Expiry note:** The `start_at` / `stopped_at` window only affects a user's ability to _earn_ the multiplier. Once earned, a user can activate it at any time — even after the expiry date has passed.
+> **Expiry note:** The `start_at` / `stopped_at` window only affects a user's ability to _earn_ the multiplier. Once earned, a user can activate it at any time - even after the expiry date has passed.
 
 **Use Cases**
 
