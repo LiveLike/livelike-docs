@@ -284,8 +284,7 @@ Start and end date are optional for user-activated multipliers. They are require
 **Can I manually grant a user-activated multiplier to a specific user?**
 No. Users can only earn user-activated multipliers through qualifying trigger events (streak milestone, tier attainment, or a custom/CDP-driven event). Manual issuance is not supported.
 
-**Can a user see all multipliers they have earned?**
-Yes — all user multipliers (with status: active, earned, or expired) can be queried via the [List User Reward Multiplier API](https://docs.livelike.com/reference/activate-user-reward-multiplier-1).
+**Can a user see all multipliers they have earned?**<br />Yes - all user multipliers (with status: active, earned, or expired) can be queried via the [List User Reward Multiplier API](https://docs.livelike.com/reference/activate-user-reward-multiplier-1).
 
 **A user earned a multiplier but hasn't activated it. How long do they have?**
 There is no activation deadline. Once earned, a user can activate the multiplier at any time — even after the multiplier's `stopped_at` date has passed. The expiry date only controls when new users can earn it.
