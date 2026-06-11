@@ -176,7 +176,7 @@ Once a user earns a multiplier, they must explicitly activate it. There is no de
 
 Once activated, the multiplier remains live for the configured `active_duration`, counted from the moment of activation.
 
-- [Step to Manually Activate a User-Earned Multiplier (API)](https://docs.livelike.com/reference/activate-user-reward-multiplier)
+- [Manually Activate a User-Earned Multiplier (API)](https://docs.livelike.com/reference/activate-user-reward-multiplier)
 
 > **UI guidance:** If override is disabled (the default), users who already have an active multiplier on a reward item cannot activate a second one. Ensure your UI surfaces the user's currently active multiplier in this state rather than showing a generic error.
 
