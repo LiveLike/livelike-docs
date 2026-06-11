@@ -100,7 +100,7 @@ A streak progress action can be **any action a user performs** - whether a LiveL
 | LiveLike built-in   | Make a correct prediction, answer a quiz correctly, vote on a poll                                                | Dropdown in CMS, listing all available widgets of the relevant type |
 | Custom / CDP-driven | Any event from outside LiveLike — match completion, login, purchase, content view, or any custom-defined behavior | CSV upload                                                          |
 
-How the action type affects target selection is covered in [Configuring Targets](#configuring-targets) below.
+How the action type affects target selection is covered in **Configuring Targets** below.
 
 ***
 
