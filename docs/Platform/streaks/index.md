@@ -263,7 +263,7 @@ Yes. Configure separate streak instances, each scoped to its own user group, to 
 ### Targets
 
 **I set up a Consecutive Action streak with targets but progress is not tracking. What should I check?**
-The most common cause is a mismatch between the target key-value pairs configured in CMS and the attributes being passed when the streak progress action is invoked. Confirm that the key (e.g., `match_id`) and value (e.g., the specific match ID) passed in the action attributes exactly match what was configured — via dropdown or CSV.
+The most common cause is a mismatch between the target key-value pairs configured in CMS and the attributes being passed when the streak progress action is invoked. Confirm that the key (e.g., `match_id`) and value (e.g., the specific match ID) passed in the action attributes exactly match what was configured - via dropdown or CSV.
 
 ### Streak Reset
 
