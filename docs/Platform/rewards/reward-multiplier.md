@@ -1,6 +1,6 @@
 ---
 title: Reward Multiplier
-excerpt: Boosted rewards for users
+excerpt: Reward boost for users
 deprecated: false
 hidden: true
 metadata:
