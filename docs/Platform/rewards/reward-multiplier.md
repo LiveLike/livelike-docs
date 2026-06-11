@@ -138,7 +138,7 @@ The supported trigger events are:
 
 ### Linking and Granting (API)
 
-- [Steps to Link Reward Multiplier with Streak Milestones](#)
+- [Steps to Link Reward Multiplier with Streak Milestones](https://docs.livelike.com/reference/create-streak-milestone)
 - [Steps to Link Reward Multiplier with Tier Benefits](#)
 - [Steps to Grant a Multiplier to a User via trigger event](#)
 
