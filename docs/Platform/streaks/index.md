@@ -267,14 +267,12 @@ The most common cause is a mismatch between the target key-value pairs configure
 
 ### Streak Reset
 
-**What triggers a streak reset in a Periodic streak?**
-Missing the required action — or failing to meet the threshold — within the defined time window.
+**What triggers a streak reset in a Periodic streak?**<br />Missing the required action - or failing to meet the threshold - within the defined time window.
 
 **What triggers a streak reset in a Consecutive Action streak?**
 It depends on the sub-type. For None and Set, the configured reset action triggers the reset — if no reset action is configured, the streak has no programmatic way to break. For Sequence, interacting with targets out of order resets the streak; a reset action can additionally be configured. For correct prediction and correct quiz answer, the incorrect counterpart is auto-assigned as the reset action.
 
-**Is the streak reset action mandatory for Consecutive Action streaks?**
-No, it is optional — except for correct prediction and correct quiz answer, where it is automatically assigned. For None and Set sub-types, configuring a reset action is strongly recommended. Without one, the streak has no programmatic way to break when the user performs a failing action.
+**Is the streak reset action mandatory for Consecutive Action streaks?**<br />No, it is optional - except for correct prediction and correct quiz answer, where it is automatically assigned. For None and Set sub-types, configuring a reset action is strongly recommended. Without one, the streak has no programmatic way to break when the user performs a failing action.
 
 ### Milestones and Rewards
 
