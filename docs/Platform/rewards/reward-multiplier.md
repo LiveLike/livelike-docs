@@ -2,7 +2,7 @@
 title: Reward Multiplier
 excerpt: Reward boost for users
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
