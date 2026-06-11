@@ -160,7 +160,7 @@ The supported trigger events are:
 
 ### Setting Up via API
 
-- [Steps to Create a Reward Multiplier](https://docs.livelike.com/reference/create-multiplier)
+- [Create a Reward Multiplier](https://docs.livelike.com/reference/create-multiplier)
 
 ***
 
