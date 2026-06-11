@@ -209,7 +209,7 @@ For API setup, refer to the [Periodic Streak API Guide](https://docs.livelike.co
 
 ### CMS Setup Steps
 
-1. **Name and Description** — Set a name and optional description
+1. **Name and Description** - Set a name and optional description
 2. **Streak Type** - Select Periodic or Consecutive Action
 3. **Streak Progress Action** - Select the action that drives streak progress. This can be any LiveLike built-in action or any custom / CDP-driven event
 4. **Period and Timezone** _(Periodic only)_ - Select the recurring window (Daily, Weekly, or Monthly) and set the timezone
