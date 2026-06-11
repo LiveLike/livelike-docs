@@ -6,9 +6,9 @@ hidden: true
 metadata:
   robots: index
 ---
-Reward Multipliers amplify the points a user earns from any activity by a defined factor. Instead of earning the base point value for an action, the multiplier scales that reward — a 3x multiplier on a 100-point action yields 300 points.
+Reward Multipliers amplify the points a user earns from any activity by a defined factor. Instead of earning the base point value for an action, the multiplier scales that reward - a 3x multiplier on a 100-point action yields 300 points.
 
-Multipliers are a powerful lever for driving specific behaviors: rewarding loyalty milestones, boosting engagement during high-value windows (events, campaigns, seasons), or incentivizing users who have earned a special status. They are always scoped — by time, by user segment, or by activation — so you remain in precise control of who benefits and when.
+Multipliers are a powerful lever for driving specific behaviors: rewarding loyalty milestones, boosting engagement during high-value windows (events, campaigns, seasons), or incentivizing users who have earned a special status. They are always scoped - by time, by user segment, or by activation - so you remain in precise control of who benefits and when.
 
 LiveLike supports two types of Reward Multipliers, based on how they activate:
 
