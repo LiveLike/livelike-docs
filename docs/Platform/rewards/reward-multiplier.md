@@ -135,7 +135,7 @@ The supported trigger events are:
 - **Streak Milestones:** Navigate to the Streak Milestone page and select one or more multipliers from the dropdown. Only published, user-activated multipliers can be linked to a streak milestone.
 - **Tier Benefits:** Navigate to the Tier Benefits page and select a multiplier from the dropdown. Only published, user-activated multipliers can be linked to a tier benefit. Each Tier Benefit can have only one multiplier linked. To add more multipliers, create additional Tier Benefits within the same Tier.
 
-### Linking and Granting (API)
+### Linking Multipliers to Streaks and Tiers (API)
 
 - [Steps to Link Reward Multiplier with Streak Milestones](https://docs.livelike.com/reference/create-streak-milestone)
 - [Steps to Link Reward Multiplier with Tier Benefits](https://docs.livelike.com/reference/create-tier-benefit)
