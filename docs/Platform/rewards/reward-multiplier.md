@@ -313,11 +313,9 @@ Depending on your application's stacking mode: additive sums the values (2x + 3x
 **Can I edit a multiplier that is currently active?**
 Yes, but only limited fields. Once published, only `name`, `description`, `starts_at` / `expires_at` (if not already in the past), and `attributes` can be edited. Changes are near real-time.
 
-**Can I extend the end date of an active automatic multiplier?**
-Yes — you can update the end date provided it has not yet passed. The multiplier will continue to apply through the new end date without interruption.
+**Can I extend the end date of an active automatic multiplier?**<br />Yes - you can update the end date provided it has not yet passed. The multiplier will continue to apply through the new end date without interruption.
 
 **Can I change the user group linked to a multiplier after it has been published?**
 No. User group configuration is locked after publication. Only `name`, `description`, `starts_at` / `expires_at`, and `attributes` can be edited post-publish.
 
-**What is the difference between deleting and archiving a multiplier?**
-Deleting permanently removes the configuration and is irreversible — only Draft multipliers can be deleted. Archiving deactivates the multiplier while preserving its configuration. See **Managing Multipliers** for full archiving behavior.
+**What is the difference between deleting and archiving a multiplier?**<br />Deleting permanently removes the configuration and is irreversible - only Draft multipliers can be deleted. Archiving deactivates the multiplier while preserving its configuration. See **Managing Multipliers** for full archiving behavior.
