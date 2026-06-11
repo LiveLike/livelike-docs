@@ -2,7 +2,7 @@
 title: Streaks
 excerpt: Reward users for consistent participation
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 next:
