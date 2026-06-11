@@ -210,7 +210,7 @@ When both a user-activated and an automatic multiplier are active simultaneously
 
 By default, a user cannot activate a new user-earned multiplier on a reward item when one is already active. If override is enabled at the application level, a new user-activated multiplier immediately replaces the currently active one.
 
-> **Important:** Override does not evaluate which multiplier is "better." It simply replaces the currently active multiplier with the newly activated one — regardless of value or remaining duration. The replaced multiplier is forfeited entirely.
+> **Important:** Override does not evaluate which multiplier is "better." It simply replaces the currently active multiplier with the newly activated one - regardless of value or remaining duration. The replaced multiplier is forfeited entirely.
 
 | Override Setting | Behavior                                                                              |
 | ---------------- | ------------------------------------------------------------------------------------- |
