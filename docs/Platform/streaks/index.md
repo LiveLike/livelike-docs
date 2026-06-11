@@ -79,11 +79,11 @@ Consecutive Action streaks have three sub-types, determined by how targets are c
 
 **None - Win 5 games in a row**
 
-The streak progress action is "win a game," sub-type is None. No targets are configured. Each time the user wins a game, streak length increments by 1. If a reset action (e.g., "lose a game") is configured and fires, the streak resets to 0. Time gaps between games do not matter.
+The streak progress action is "win a game," sub-type is None. No targets are configured. Each time the user wins a game, streak length increments by 1. If a reset action (e.g., "lose a game") is configured and fires, the streak resets to 0. Streak does not automatically reset unless a streak reset action is passed. Time gaps between games do not matter.
 
 **Set - Predict outcomes across 3 specific matches**
 
-The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a reset action fires, the streak resets. Actions on matches not in the set are ignored.
+The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a reset action fires, the streak resets. Actions on matches not in the set are ignored. Streak does not automatically reset unless a streak reset action is passed.
 
 **Sequence - Complete a tournament bracket in order**
 
