@@ -291,8 +291,7 @@ Yes. Since 15 is a multiple of 3, the recurring milestone fires at that point in
 **If my streak resets after reaching a milestone, can I re-earn the same milestone rewards?**
 Whether a milestone reward is granted again after reset depends on whether Reward on Reset is enabled on that milestone. Future milestone rewards are only available if the user rebuilds their streak back to those lengths.
 
-**A user already has a badge from a quest. Will they receive it again from a streak milestone?**
-No. A user can earn a badge only once. If they already hold it, the badge award at that milestone is silently skipped — all other rewards on the same milestone are still granted.
+**A user already has a badge from a quest. Will they receive it again from a streak milestone?**<br />No. A user can earn a badge only once. If they already hold it, the badge award at that milestone is silently skipped - all other rewards on the same milestone are still granted.
 
 **When does a user-activated reward multiplier granted at a milestone expire for earning purposes?**
-Expiry for earning is governed by the multiplier's configured `start_at` / `stopped_at` window, if set. Once earned, the user can activate it at any time — there is no activation deadline based on when it was earned. Once activated, it remains live for the configured `active_duration`. If the multiplier expired before the user earned it, that reward is silently skipped without impacting other rewards configured for that milestone.
+Expiry for earning is governed by the multiplier's configured `start_at` / `stopped_at` window, if set. Once earned, the user can activate it at any time - there is no activation deadline based on when it was earned. Once activated, it remains live for the configured `active_duration`. If the multiplier expired before the user earned it, that reward is silently skipped without impacting other rewards configured for that milestone.
