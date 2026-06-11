@@ -87,7 +87,7 @@ The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time 
 
 **Sequence - Complete a tournament bracket in order**
 
-The admin configures 4 match IDs in sequence via CSV. The user must make a correct prediction on Match 1 first, then Match 2, then Match 3, then Match 4 - each correct prediction on the next valid target increments streak length by 1. Predicting on Match 2 before completing Match 1 resets the streak. A reset action can also be configured as an additional reset trigger. Time gaps between games do not matter.
+The admin configures 4 match IDs in sequence via CSV. The user must make a correct prediction on Match 1 first, then Match 2, then Match 3, then Match 4 - each correct prediction on the next valid target increments streak length by 1. Predicting on Match 2 before completing Match 1 automatically resets the streak. A reset action can also be configured as an additional reset trigger. Time gaps between games do not matter.
 
 ***
 
