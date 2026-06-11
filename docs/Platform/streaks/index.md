@@ -83,7 +83,7 @@ The streak progress action is "win a game," sub-type is None. No targets are con
 
 **Set - Predict outcomes across 3 specific matches**
 
-The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a reset action fires, the streak resets. Actions on matches not in the set are ignored. Streak does not automatically reset unless a streak reset action is passed.
+The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a reset action fires, the streak resets. Streak does not automatically reset unless a streak reset action is passed. Actions on matches not in the set are ignored. Time gaps between games do not matter.
 
 **Sequence - Complete a tournament bracket in order**
 
