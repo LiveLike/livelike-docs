@@ -11,9 +11,9 @@ next:
       title: Periodic Streak CMS Guide
       type: basic
 ---
-Streaks reward users for performing an action consistently over time or across repeated opportunities. A streak tracks a user's progress as they repeat a defined behavior — watching content, making predictions, checking in, completing challenges — and rewards them at incremental milestones as they maintain that consistency.
+Streaks reward users for performing an action consistently over time or across repeated opportunities. A streak tracks a user's progress as they repeat a defined behavior - watching content, making predictions, checking in, completing challenges - and rewards them at incremental milestones as they maintain that consistency.
 
-A streak starts when a user performs the qualifying action and continues as long as the streak rules are met. If the rules are broken, the streak resets. Rewards are granted exclusively through Streak Milestones — there is no separate streak completion reward outside of milestones.
+A streak starts when a user performs the qualifying action and continues as long as the streak rules are met. If the rules are broken, the streak resets. Rewards are granted exclusively through Streak Milestones - there is no separate streak completion reward outside of milestones.
 
 ***
 
