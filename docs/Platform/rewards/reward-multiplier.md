@@ -266,23 +266,18 @@ Once **published**, only the following fields remain editable:
 
 ### Setup
 
-**Can I link more than one reward item to a multiplier?**
-Yes — a multiplier can be linked to multiple reward items. All linked reward items are impacted when the multiplier is active.
+**Can I link more than one reward item to a multiplier?**<br />Yes - a multiplier can be linked to multiple reward items. All linked reward items are impacted when the multiplier is active.
 
-**What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**
-A multiplier is scoped to specific reward item(s) — for example, tier points or event points. It applies to all earn actions that credit those reward items. If a user completes an action that credits a different reward item, the multiplier does not apply.
+**What does "linked to a reward item" mean? Does the multiplier apply to all earn actions?**<br />A multiplier is scoped to specific reward item(s) - for example, tier points or event points. It applies to all earn actions that credit those reward items. If a user completes an action that credits a different reward item, the multiplier does not apply.
 
-**Can I scope a multiplier to a specific earn action rather than a reward item?**
-Not directly — multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item. Contact your LiveLike account team to discuss more complex use cases.
+**Can I scope a multiplier to a specific earn action rather than a reward item?**<br />Not directly - multipliers are tied to reward items, not individual actions. If you need action-level targeting, structure it by ensuring the relevant earn action is the only one crediting the targeted reward item. Contact your LiveLike account team to discuss more complex use cases.
 
 **Can I set a multiplier with no start/end date?**
 Start and end date are optional for user-activated multipliers. They are required for automatic multipliers.
 
-**I want different multiplier values for different user segments during the same time window. Is that supported?**
-Yes for automatic multipliers — configure one multiplier per segment, each scoped to its own user group, ensuring the groups are mutually exclusive. Note that two automatic multipliers on the same reward item cannot share the same multiplier factor during an overlapping time window; the platform will reject this configuration.
+**I want different multiplier values for different user segments during the same time window. Is that supported?**<br />Yes for automatic multipliers - configure one multiplier per segment, each scoped to its own user group, ensuring the groups are mutually exclusive. Note that two automatic multipliers on the same reward item cannot share the same multiplier factor during an overlapping time window; the platform will reject this configuration.
 
-**Can I reuse the same automatic multiplier configuration for a recurring event (e.g., every game day)?**
-No — start/end dates cannot be changed once they have passed. Clone an existing multiplier and update the dates for each recurrence. To avoid last-minute setup errors on repeating campaigns, consider creating all instances in advance.
+**Can I reuse the same automatic multiplier configuration for a recurring event (e.g., every game day)?**<br />No - start/end dates cannot be changed once they have passed. Clone an existing multiplier and update the dates for each recurrence. To avoid last-minute setup errors on repeating campaigns, consider creating all instances in advance.
 
 ### Earning and Awarding
 
