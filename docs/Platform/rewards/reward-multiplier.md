@@ -23,7 +23,7 @@ LiveLike supports two types of Reward Multipliers, based on how they activate:
 
 ### Automatic Multiplier
 
-An Automatic Multiplier activates on its own during a defined time window — no user action required. Any earn activity a user completes during the active window is automatically credited at the multiplied rate.
+An Automatic Multiplier activates on its own during a defined time window - no user action required. Any earn activity a user completes during the active window is automatically credited at the multiplied rate.
 
 **Who it applies to:** By default, all users. If one or more User Groups are configured on the multiplier, only users belonging to those groups are eligible. Users outside the group earn at the base rate.
 
