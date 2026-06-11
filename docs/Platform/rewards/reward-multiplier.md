@@ -123,11 +123,10 @@ User-Activated Multipliers are issued to users automatically when a qualifying t
 
 The supported trigger events are:
 
-| Trigger                       | How It Works                                                                                                                                                            |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Streak milestone**          | The multiplier is linked to a specific milestone within a streak. When a user reaches that milestone length, the multiplier is automatically issued                     |
-| **Tier attainment**           | The multiplier is linked to a tier benefit. When a user is assigned to that tier, the multiplier is issued                                                              |
-| **Custom / CDP-driven event** | A custom event (or a CDP event via Segment) fires and issues the multiplier based on configured conditions (e.g., first login after 60-day gap, match completion, etc.) |
+| Trigger              | How It Works                                                                                                                                        |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Streak milestone** | The multiplier is linked to a specific milestone within a streak. When a user reaches that milestone length, the multiplier is automatically issued |
+| **Tier attainment**  | The multiplier is linked to a tier benefit. When a user is assigned to that tier, the multiplier is issued                                          |
 
 > Automatic Multipliers are not "earned" - they apply passively to all eligible users during the active window, with no issuance step.
 
