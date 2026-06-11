@@ -119,7 +119,7 @@ Because users must activate it, the interaction creates a deliberate moment of e
 
 ## Earning and Awarding Multipliers
 
-User-Activated Multipliers are issued to users automatically when a qualifying trigger event fires. **Multipliers cannot be manually awarded to a user** — issuance is always driven by an event.
+User-Activated Multipliers are issued to users automatically when a qualifying trigger event fires. **Multipliers cannot be manually awarded to a user** - issuance is always driven by an event.
 
 The supported trigger events are:
 
