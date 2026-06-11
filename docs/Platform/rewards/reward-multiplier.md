@@ -296,11 +296,9 @@ The multiplier reward is silently skipped for that user. Other rewards configure
 **Can a user have two automatic multipliers active at the same time?**
 Possibly, if they belong to two different user groups each linked to a different automatic multiplier with an overlapping time window. The platform only rejects automatic multipliers that share the same reward item, same multiplier factor, and overlapping dates. If a user belongs to multiple groups in this scenario, the configured stacking rules apply. Keeping user groups mutually exclusive is strongly recommended to avoid unpredictable outcomes.
 
-**Can a user have two user-activated multipliers active at the same time?**
-No — only one user-activated multiplier per reward item can be active at a time. If override is off (the default), the user cannot activate a second one while one is live. If override is on, activating a new one immediately replaces the existing one — it is not stacked.
+**Can a user have two user-activated multipliers active at the same time?**<br />No - only one user-activated multiplier per reward item can be active at a time. If override is off (the default), the user cannot activate a second one while one is live. If override is on, activating a new one immediately replaces the existing one - it is not stacked.
 
-**What is the difference between stacking and override?**
-Stacking refers to having both a user-activated and an automatic multiplier active simultaneously — this is allowed and the values are combined using the application's configured mode (additive or multiplicative). Override refers to replacing a live user-activated multiplier with a new one — only permitted if enabled globally at the application level.
+**What is the difference between stacking and override?**<br />Stacking refers to having both a user-activated and an automatic multiplier active simultaneously — this is allowed and the values are combined using the application's configured mode (additive or multiplicative). Override refers to replacing a live user-activated multiplier with a new one - only permitted if enabled globally at the application level.
 
 **Does override pick the better multiplier?**
 No. Override simply replaces the currently active multiplier with the newly activated one, regardless of which has a higher value or longer remaining duration. The replaced multiplier is forfeited entirely.
