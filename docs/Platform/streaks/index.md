@@ -73,19 +73,19 @@ Consecutive Action streaks have three sub-types, determined by how targets are c
 
 | Sub-type | How It Works                                                                                                                                                     |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| None     | Only the action is tracked — no specific target is required. Every qualifying action increments streak length by 1, regardless of what it is performed on        |
+| None     | Only the action is tracked - no specific target is required. Every qualifying action increments streak length by 1, regardless of what it is performed on        |
 | Set      | The action must be performed against targets from a defined list. Order does not matter. Every qualifying action on a valid target increments streak length by 1 |
 | Sequence | The action must be performed against a defined list of targets in a specific order. Interacting with targets out of order resets the streak                      |
 
-**None — Win 5 games in a row**
+**None - Win 5 games in a row**
 
 The streak progress action is "win a game," sub-type is None. No targets are configured. Each time the user wins a game, streak length increments by 1. If a reset action (e.g., "lose a game") is configured and fires, the streak resets to 0. Time gaps between games do not matter.
 
-**Set — Predict outcomes across 3 specific matches**
+**Set - Predict outcomes across 3 specific matches**
 
 The admin configures 3 match IDs as targets via CSV, sub-type is Set. Each time the user makes a correct prediction on any of the 3 matches, streak length increments by 1. Order does not matter. If a reset action fires, the streak resets. Actions on matches not in the set are ignored.
 
-**Sequence — Complete a tournament bracket in order**
+**Sequence - Complete a tournament bracket in order**
 
 The admin configures 4 match IDs in sequence via CSV. The user must make a correct prediction on Match 1 first, then Match 2, then Match 3, then Match 4 — each correct prediction on the next valid target increments streak length by 1. Predicting on Match 2 before completing Match 1 resets the streak. A reset action can also be configured as an additional reset trigger.
 
