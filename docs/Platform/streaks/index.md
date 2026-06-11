@@ -128,7 +128,7 @@ How targets are selected depends on the streak progress action chosen:
 | Built-in widget action (e.g., make a correct prediction, answer a quiz correctly, vote on a poll) | Dropdown in CMS listing all available widgets of the relevant type |
 | All other actions (custom, CDP-driven, or any non-widget built-in)                                | CSV upload. Column header is the key; rows below are the values    |
 
-> **Common setup issue:** Progress not tracking on a Consecutive Action streak with targets is almost always caused by a mismatch between the key-value pairs configured in CMS and the attributes being passed when the action is invoked. Confirm that the key (e.g., `match_id`) and value (e.g., the specific match ID) passed in the action attributes exactly match what was configured - via dropdown or CSV.
+> **Common setup issue:** Progress not tracking on a Consecutive Action streak with targets is almost always caused by a mismatch between the key-value pairs configured in CMS and the attributes being passed when the action is invoked. Confirm that the key (e.g., `match_id`) and value (e.g., the specific match ID) passed in the action attributes exactly match what was configured.
 
 ***
 
