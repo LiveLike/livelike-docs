@@ -136,13 +136,13 @@ How targets are selected depends on the streak progress action chosen:
 
 ### Periodic Streaks
 
-A Periodic streak resets when the user fails to complete the required action — or fails to meet the threshold — within the defined time window.
+A Periodic streak resets when the user fails to complete the required action - or fails to meet the threshold - within the defined time window.
 
 ### Consecutive Action Streaks
 
 A streak reset action is an action that, when performed, programmatically breaks a Consecutive Action streak.
 
-**If no reset action is configured**, the streak has no programmatic way to break — it will only stop advancing, not reset. For None and Set sub-types especially, configuring a reset action is strongly recommended so the system can correctly invalidate progress when the user performs a failing action.
+**If no reset action is configured**, the streak has no programmatic way to break - it will only stop advancing, not reset. For None and Set sub-types especially, configuring a reset action is strongly recommended so the system can correctly invalidate progress when the user performs a failing action.
 
 Reset action behavior varies by sub-type and action:
 
