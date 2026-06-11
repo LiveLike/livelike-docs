@@ -150,7 +150,7 @@ The supported trigger events are:
 2. Set a **Name** and optional **Description**
 3. Enter the **Multiplier Factor** (e.g., 3 for 3x). Decimal values are not supported
 4. Select **Activation Type**: Automatic or User-Activated
-5. _(User-Activated only)_ Select **Duration** — how long the multiplier stays active once triggered (e.g., 24 hours, 30 mins)
+5. _(User-Activated only)_ Select **Duration** - how long the multiplier stays active once triggered (e.g., 24 hours, 30 mins)
 6. _(Optional)_ Set **Start Time** and **End Time**. For automatic multipliers, both are required. Time must not be in the past
 7. Select the **Reward Items** to link. A multiplier can have one or more reward items linked. All linked reward items are impacted on activation
 8. _(Optional)_ Under **User Group**, select one or more user groups to scope the multiplier
