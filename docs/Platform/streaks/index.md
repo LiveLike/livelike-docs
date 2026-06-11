@@ -93,7 +93,7 @@ The admin configures 4 match IDs in sequence via CSV. The user must make a corre
 
 ## Streak Progress Actions
 
-A streak progress action can be **any action a user performs** — whether a LiveLike built-in action or any custom or CDP-driven event from outside LiveLike. There is no fixed list of supported actions.
+A streak progress action can be **any action a user performs** - whether a LiveLike built-in action or any custom or CDP-driven event from outside LiveLike. There is no fixed list of supported actions.
 
 | Action Type         | Examples                                                                                                          | Target Selection Method                                             |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
