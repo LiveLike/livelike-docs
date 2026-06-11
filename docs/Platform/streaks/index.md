@@ -210,14 +210,14 @@ For API setup, refer to the [Periodic Streak API Guide](https://docs.livelike.co
 ### CMS Setup Steps
 
 1. **Name and Description** — Set a name and optional description
-2. **Streak Type** — Select Periodic or Consecutive Action
-3. **Streak Progress Action** — Select the action that drives streak progress. This can be any LiveLike built-in action or any custom / CDP-driven event
-4. **Period and Timezone** _(Periodic only)_ — Select the recurring window (Daily, Weekly, or Monthly) and set the timezone
-5. **Threshold** _(Periodic only)_ — Optionally set the number of times the progress action must be completed within the window before streak length increments by 1
-6. **Streak Reset Action** _(Consecutive Action only)_ — Optionally configure the action that breaks the streak. Auto-assigned for correct prediction and correct quiz answer; optional for all others
-7. **Targets** _(Consecutive Action only)_ — In the Targets tab, select the sub-type (None, Set, or Sequence). For Set and Sequence, configure targets via the built-in widget dropdown (for widget-based built-in actions) or via CSV upload (for all other actions)
-8. **Start / End Time** — Optionally set a campaign window for the streak
-9. **Milestones** — Optionally add milestones. For each milestone, set the streak length and configure rewards (Reward Items, Reward Multiplier, Badges). Enable Recurring and Reward on Reset behaviors as needed
+2. **Streak Type** - Select Periodic or Consecutive Action
+3. **Streak Progress Action** - Select the action that drives streak progress. This can be any LiveLike built-in action or any custom / CDP-driven event
+4. **Period and Timezone** _(Periodic only)_ - Select the recurring window (Daily, Weekly, or Monthly) and set the timezone
+5. **Threshold** _(Periodic only)_ - Optionally set the number of times the progress action must be completed within the window before streak length increments by 1
+6. **Streak Reset Action** _(Consecutive Action only)_ - Optionally configure the action that breaks the streak. Auto-assigned for correct prediction and correct quiz answer; optional for all others
+7. **Targets** _(Consecutive Action only)_ - In the Targets tab, select the sub-type (None, Set, or Sequence). For Set and Sequence, configure targets via the built-in widget dropdown (for widget-based built-in actions) or via CSV upload (for all other actions)
+8. **Start / End Time** - Optionally set a campaign window for the streak
+9. **Milestones** - Optionally add milestones. For each milestone, set the streak length and configure rewards (Reward Items, Reward Multiplier, Badges). Enable Recurring and Reward on Reset behaviors as needed
 10. **User Groups** — Optionally scope the streak to specific user segments. Users outside the assigned groups will not participate
 11. **Save or Publish** — The streak can be saved at any point before publishing, with all fields remaining editable. Once published, the rules below apply
 
