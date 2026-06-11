@@ -218,8 +218,8 @@ For API setup, refer to the [Periodic Streak API Guide](https://docs.livelike.co
 7. **Targets** _(Consecutive Action only)_ - In the Targets tab, select the sub-type (None, Set, or Sequence). For Set and Sequence, configure targets via the built-in widget dropdown (for widget-based built-in actions) or via CSV upload (for all other actions)
 8. **Start / End Time** - Optionally set a campaign window for the streak
 9. **Milestones** - Optionally add milestones. For each milestone, set the streak length and configure rewards (Reward Items, Reward Multiplier, Badges). Enable Recurring and Reward on Reset behaviors as needed
-10. **User Groups** — Optionally scope the streak to specific user segments. Users outside the assigned groups will not participate
-11. **Save or Publish** — The streak can be saved at any point before publishing, with all fields remaining editable. Once published, the rules below apply
+10. **User Groups** - Optionally scope the streak to specific user segments. Users outside the assigned groups will not participate
+11. **Save or Publish** - The streak can be saved at any point before publishing, with all fields remaining editable. Once published, the rules below apply
 
 ***
 
