@@ -25,7 +25,7 @@ Live-action automation partners connect a sports event (identified by `event_id`
 
 # Authentication
 
-All endpoints require a **Bearer token**. Please refer the [authentication]() documentation.
+All endpoints require a **Bearer token**. Please refer the [authentication](reference:authentication) documentation.
 
 ```
 Authorization: Bearer <access_token>
