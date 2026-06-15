@@ -1,15 +1,14 @@
 ---
-title: Wdiget Automations
+title: Widget Automations
 excerpt: >-
-  This API will let you create the automations by integrating with the partners
-  like Statsperform, OPTA etc, so that you can configure the actions to publish
-  the widgets automatically. 
+  Create automation partners that publish widgets automatically from live sports
+  event data.
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-Live-action automation partners connect a sports event (identified by `event_id`) to a set of automated widget-publishing rules. When a tracked event occurs — a goal, a try, match start — the configured widget is automatically published to the linked programme.
+Use live-action automation partners to connect a sports event, identified by `event_id`, to automated widget-publishing rules. When the partner reports a tracked event, such as a goal, try, or match start, the automation publishes the configured widget to the linked programme.
 
 ***
 
@@ -25,7 +24,7 @@ Live-action automation partners connect a sports event (identified by `event_id`
 
 # Authentication
 
-All endpoints require a **Bearer token**. Please refer the [authentication](doc:authentication) documentation.
+All endpoints require a **Bearer token**. Refer to the [authentication](doc:authentication) documentation to generate and send access tokens.
 
 ```
 Authorization: Bearer <access_token>
@@ -43,7 +42,9 @@ Authorization: Bearer <access_token>
 | `PUT`    | `/v1/automation-partners/{id}/` | Full update (replaces automated actions) |
 | `DELETE` | `/v1/automation-partners/{id}/` | Delete an automation partner             |
 
-**Warning:** PATCH not supported<br />Use `PUT` for all updates. `PATCH` is not supported.
+<Callout icon="triangle-exclamation" theme="warning">
+Use `PUT` for all updates. `PATCH` is not supported.
+</Callout>
 
 ***
 
@@ -59,9 +60,9 @@ Authorization: Bearer <access_token>
 
 # Event Category, Subcategory and Partner Type
 
-The `event_category` + `event_subcategory` pair identifies the type of event and determines the supported `partner_type` values for that combination. The `partner_type` field is optional — when omitted, the default partner for the combination is used. If provided explicitly, `partner_type` must be one of the supported values for that combination.
+The `event_category` + `event_subcategory` pair identifies the event type and determines which `partner_type` values you can use. Omit `partner_type` to use the default partner for the combination. If you provide `partner_type`, use one of the supported values for that combination.
 
-Each category/subcategory combination has a set of supported partners. As new integrations are added, a combination may support more than one `partner_type`.
+Each category/subcategory combination supports one or more partners. New integrations may add more `partner_type` values to an existing combination.
 
 | `event_category` | `event_subcategory` | Supported `partner_type` values | Description                                   |
 | ---------------- | ------------------- | ------------------------------- | --------------------------------------------- |
@@ -86,25 +87,25 @@ Each category/subcategory combination has a set of supported partners. As new in
 | `event_id`           | string            | **Yes**  | Partner-specific event/match identifier (e.g. `"srm:match:football-test-001"`)                                         |
 | `event_category`     | string            | **Yes**  | Event category — currently always `"sports"`                                                                           |
 | `event_subcategory`  | string            | **Yes**  | Event subcategory — see table above                                                                                    |
-| `program_id`         | UUID              | **Yes**  | UUID of the programme this partner belongs to                                                                          |
-| `automated_actions`  | array             | **Yes**  | List of action configurations — at least 1 required                                                                    |
+| `program_id`         | UUID              | **Yes**  | UUID of the programme that owns this partner                                                                           |
+| `automated_actions`  | array             | **Yes**  | Action configurations. Provide at least 1 item                                                                         |
 | `partner_type`       | string            | No       | Override the partner type — must be a supported value for the given `event_category` / `event_subcategory` combination |
-| `match_scheduled_at` | ISO 8601 datetime | No       | When the match/event is scheduled                                                                                      |
+| `match_scheduled_at` | ISO 8601 datetime | No       | Scheduled match or event start time                                                                                    |
 | `widget_timeout`     | ISO 8601 duration | No       | How long automated widgets stay active (default: `"PT15S"`)                                                            |
 | `widget_title`       | string            | No       | Default title for automated widgets                                                                                    |
-| `status`             | boolean           | No       | Enable/disable the automation partner (default: `false`)                                                               |
+| `status`             | boolean           | No       | Enables or disables the automation partner (default: `false`)                                                          |
 | `sponsor_ids`        | array of UUIDs    | No       | Sponsors to attach to published widgets                                                                                |
 
 ***
 
 # `automated_actions` array
 
-Each element configures one action trigger. All widgets within an action must be the **same&#x20;**`widget_kind`.
+Use each element to configure one action trigger. All widgets within an action must use the same `widget_kind`.
 
 | Field              | Type              | Required | Description                                                                                                            |
 | ------------------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `action_type`      | string            | **Yes**  | Action type constant — see [Football Action Types](#football-action-types) / [Rugby Action Types](#rugby-action-types) |
-| `enabled`          | boolean           | No       | Whether the action is active (default: `true`)                                                                         |
+| `enabled`          | boolean           | No       | Enables or disables the action (default: `true`)                                                                       |
 | `widgets`          | array             | **Yes**  | Widget variants for this action — minimum 1, maximum 5                                                                 |
 | `publish_delay`    | ISO 8601 duration | No       | Delay before publishing after the event fires (default: `"PT0S"`)                                                      |
 | `max_widgets`      | integer           | No       | Maximum number of widgets published per match for this action                                                          |
@@ -114,13 +115,15 @@ Each element configures one action trigger. All widgets within an action must be
 
 # `widgets` array
 
-Each element is a widget variant. **A maximum of 5 widgets is allowed per action.** One variant is randomly selected at publish time.
+Use each element to define one widget variant. Each action can include up to 5 widgets. The automation randomly selects one variant when it publishes the action.
 
-:information_source: Create vs. Update
+<Callout icon="circle-info" theme="info">
+Create vs. update:
 
 **Create** — omit `widget_id` to create a new template.
 
 **Update** — provide `widget_id` to update an existing template in-place. Templates whose `widget_id` is absent from the `PUT` body are deleted.
+</Callout>
 
 | Field         | Type   | Required | Description                                        |
 | ------------- | ------ | -------- | -------------------------------------------------- |
@@ -134,7 +137,7 @@ Each element is a widget variant. **A maximum of 5 widgets is allowed per action
 
 ## text-poll
 
-Presents a multiple-choice question to viewers.
+Use `text-poll` to present a multiple-choice question to viewers.
 
 ```json
 {
@@ -179,7 +182,7 @@ Presents a multiple-choice question to viewers.
 
 ## alert
 
-Publishes a notification card to viewers.
+Use `alert` to publish a notification card to viewers.
 
 ```json
 {
@@ -218,7 +221,7 @@ Publishes a notification card to viewers.
 
 ## emoji-slider
 
-Presents an emoji reaction slider to viewers.
+Use `emoji-slider` to present an emoji reaction slider to viewers.
 
 ```json
 {
@@ -252,9 +255,21 @@ Presents an emoji reaction slider to viewers.
 
 ***
 
+# Optional: Localization and accessibility
+
+Use localized and accessible widget content so more viewers can understand and respond to automated widgets.
+
+- Add `localized_data` for each language you support, and keep template variables such as `{{goalScorer}}` unchanged in translated strings.
+- Write clear `question`, `text`, and `title` values that make sense without relying only on emoji, color, or images.
+- Use descriptive `link_label` values for alerts, such as `View match centre`, instead of generic labels like `Click here`.
+- Choose emoji-slider images that viewers can distinguish visually, and avoid using color as the only difference between options.
+- Set `timeout` values long enough for viewers to read the content and respond during live events.
+
+***
+
 # Template Variables
 
-Widget text fields support `{{variableName}}` placeholders that are substituted with live event data at publish time. Available variables depend on the action type.
+Widget text fields support `{{variableName}}` placeholders. The automation replaces each placeholder with live event data at publish time. Available variables depend on the action type.
 
 ## Football template variables
 
@@ -291,7 +306,7 @@ Widget text fields support `{{variableName}}` placeholders that are substituted 
 
 # Football Action Types
 
-Used with `event_category: "sports"`, `event_subcategory: "football"`.
+Use these action types with `event_category: "sports"` and `event_subcategory: "football"`.
 
 | `action_type`    | Display name   | Supported widget kinds |
 | ---------------- | -------------- | ---------------------- |
@@ -312,7 +327,7 @@ Used with `event_category: "sports"`, `event_subcategory: "football"`.
 
 # Rugby Action Types
 
-Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
+Use these action types with `event_category: "sports"` and `event_subcategory: "rugby"`.
 
 | `action_type`        | Display name | Supported widget kinds |
 | -------------------- | ------------ | ---------------------- |
@@ -382,8 +397,8 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 | Value       | Description                                                 |
 | ----------- | ----------------------------------------------------------- |
 | `scheduled` | Automation is configured and waiting for the event to start |
-| `inflight`  | Automation is actively processing live events               |
-| `published` | Event has ended; automation is complete                     |
+| `inflight`  | Automation is processing live events                        |
+| `published` | Event has ended and automation is complete                  |
 
 ***
 
@@ -521,7 +536,9 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ## Update — Full replace (PUT)
 
-:warning: PUT replaces all automated actions. Actions present in the database but absent from the `PUT` body are **deleted**. Widgets not referenced by `widget_id` are deleted and recreated.
+<Callout icon="triangle-exclamation" theme="warning">
+`PUT` replaces all automated actions. The API deletes actions that exist in the database but are absent from the `PUT` body. The API also deletes and recreates widgets that are not referenced by `widget_id`.
+</Callout>
 
 ```json
 {
@@ -555,7 +572,7 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 # Error Responses
 
-All errors follow this shape:
+Errors use this shape:
 
 ```json
 {
@@ -563,7 +580,7 @@ All errors follow this shape:
 }
 ```
 
-Or for non-field errors:
+For non-field errors, the API returns this shape:
 
 ```json
 {
@@ -575,9 +592,9 @@ Or for non-field errors:
 
 | Error field         | Cause                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------ |
-| `event_category`    | Missing when `event_subcategory` is provided                                                     |
+| `event_category`    | Missing while `event_subcategory` is provided                                                     |
 | `event_subcategory` | Unknown subcategory for the given `event_category`                                               |
-| `partner_type`      | Provided value is not supported for the given `event_category` / `event_subcategory` combination |
+| `partner_type`      | Value is not supported for the given `event_category` / `event_subcategory` combination          |
 | `event_id`          | Invalid or unrecognised match ID for the partner and programme                                   |
 | `program_id`        | Programme not found under the authenticated application                                          |
 | `automated_actions` | Missing, empty, or contains an invalid action type or widget kind                                |
