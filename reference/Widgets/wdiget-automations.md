@@ -9,13 +9,11 @@ hidden: false
 metadata:
   robots: index
 ---
-# Automation Partners
-
 Live-action automation partners connect a sports event (identified by `event_id`) to a set of automated widget-publishing rules. When a tracked event occurs — a goal, a try, match start — the configured widget is automatically published to the linked programme.
 
 ---
 
-## Base URL
+# Base URL
 
 ```
 /{version}/automation-partners/
@@ -25,7 +23,7 @@ Live-action automation partners connect a sports event (identified by `event_id`
 
 ---
 
-## Authentication
+# Authentication
 
 All endpoints require a **Bearer token** from an OAuth2 producer credential.
 
@@ -35,7 +33,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-## Endpoints
+# Endpoints
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -51,7 +49,7 @@ Use `PUT` for all updates. `PATCH` is not supported.
 
 ---
 
-## Query Parameters (GET list)
+# Query Parameters (GET list)
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
@@ -61,7 +59,7 @@ Use `PUT` for all updates. `PATCH` is not supported.
 
 ---
 
-## Event Category, Subcategory and Partner Type
+# Event Category, Subcategory and Partner Type
 
 The `event_category` + `event_subcategory` pair identifies the type of event and determines the supported `partner_type` values for that combination. The `partner_type` field is optional — when omitted, the default partner for the combination is used. If provided explicitly, `partner_type` must be one of the supported values for that combination.
 
@@ -81,9 +79,9 @@ Each category/subcategory combination has a set of supported partners. As new in
 
 ---
 
-## Request Payload
+# Request Payload
 
-### Top-level fields
+## Top-level fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -101,7 +99,7 @@ Each category/subcategory combination has a set of supported partners. As new in
 
 ---
 
-## `automated_actions` array
+# `automated_actions` array
 
 Each element configures one action trigger. All widgets within an action must be the **same `widget_kind`**.
 
@@ -116,7 +114,7 @@ Each element configures one action trigger. All widgets within an action must be
 
 ---
 
-## `widgets` array
+# `widgets` array
 
 Each element is a widget variant. **A maximum of 5 widgets is allowed per action.** One variant is randomly selected at publish time.
 
@@ -134,9 +132,9 @@ Each element is a widget variant. **A maximum of 5 widgets is allowed per action
 
 ---
 
-## Widget Payload Structures
+# Widget Payload Structures
 
-### text-poll
+## text-poll
 
 Presents a multiple-choice question to viewers.
 
@@ -181,7 +179,7 @@ Presents a multiple-choice question to viewers.
 
 ---
 
-### alert
+## alert
 
 Publishes a notification card to viewers.
 
@@ -220,7 +218,7 @@ Publishes a notification card to viewers.
 
 ---
 
-### emoji-slider
+## emoji-slider
 
 Presents an emoji reaction slider to viewers.
 
@@ -256,11 +254,11 @@ Presents an emoji reaction slider to viewers.
 
 ---
 
-## Template Variables
+# Template Variables
 
 Widget text fields support `{{variableName}}` placeholders that are substituted with live event data at publish time. Available variables depend on the action type.
 
-### Football template variables
+## Football template variables
 
 | Action type | Available variables |
 |-------------|---------------------|
@@ -277,7 +275,7 @@ Widget text fields support `{{variableName}}` placeholders that are substituted 
 | `penalty` | *(none)* |
 | `match_end` | *(none)* |
 
-### Rugby template variables
+## Rugby template variables
 
 | Action type | Available variables |
 |-------------|---------------------|
@@ -293,7 +291,7 @@ Widget text fields support `{{variableName}}` placeholders that are substituted 
 
 ---
 
-## Football Action Types
+# Football Action Types
 
 Used with `event_category: "sports"`, `event_subcategory: "football"`.
 
@@ -314,7 +312,7 @@ Used with `event_category: "sports"`, `event_subcategory: "football"`.
 
 ---
 
-## Rugby Action Types
+# Rugby Action Types
 
 Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
@@ -332,9 +330,9 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ---
 
-## Response Format
+# Response Format
 
-### Success response (single resource)
+## Success response (single resource)
 
 ```json
 {
@@ -381,7 +379,7 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 }
 ```
 
-### `automation_status` values
+## `automation_status` values
 
 | Value | Description |
 |-------|-------------|
@@ -391,9 +389,9 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ---
 
-## Full Request Examples
+# Full Request Examples
 
-### Create — Football automation
+## Create — Football automation
 
 ```json
 {
@@ -475,7 +473,7 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ---
 
-### Create — Rugby automation
+## Create — Rugby automation
 
 ```json
 {
@@ -523,7 +521,7 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ---
 
-### Update — Full replace (PUT)
+## Update — Full replace (PUT)
 
 :::warning PUT replaces all automated actions
 Actions present in the database but absent from the `PUT` body are **deleted**. Widgets not referenced by `widget_id` are deleted and recreated.
@@ -559,7 +557,7 @@ Actions present in the database but absent from the `PUT` body are **deleted**. 
 
 ---
 
-## Error Responses
+# Error Responses
 
 All errors follow this shape:
 
@@ -577,7 +575,7 @@ Or for non-field errors:
 }
 ```
 
-### Common validation errors
+## Common validation errors
 
 | Error field | Cause |
 |-------------|-------|
