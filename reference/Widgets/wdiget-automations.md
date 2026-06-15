@@ -42,7 +42,9 @@ Authorization: Bearer <access_token>
 | `PUT`    | `/v1/automation-partners/{id}/` | Full update (replaces automated actions) |
 | `DELETE` | `/v1/automation-partners/{id}/` | Delete an automation partner             |
 
-> ⚠️ Use `PUT` for all updates. `PATCH` is not supported.
+> ⚠️
+>
+> Use `PUT` for all updates. `PATCH` is not supported.
 
 ***
 
