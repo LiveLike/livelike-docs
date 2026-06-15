@@ -42,9 +42,7 @@ Authorization: Bearer <access_token>
 | `PUT`    | `/v1/automation-partners/{id}/` | Full update (replaces automated actions) |
 | `DELETE` | `/v1/automation-partners/{id}/` | Delete an automation partner             |
 
-<Callout icon="triangle-exclamation" theme="warning">
-Use `PUT` for all updates. `PATCH` is not supported.
-</Callout>
+> ⚠️ Use `PUT` for all updates. `PATCH` is not supported.
 
 ***
 
@@ -117,13 +115,11 @@ Use each element to configure one action trigger. All widgets within an action m
 
 Use each element to define one widget variant. Each action can include up to 5 widgets. The automation randomly selects one variant when it publishes the action.
 
-<Callout icon="circle-info" theme="info">
-Create vs. update:
-
-**Create** — omit `widget_id` to create a new template.
-
-**Update** — provide `widget_id` to update an existing template in-place. Templates whose `widget_id` is absent from the `PUT` body are deleted.
-</Callout>
+> 📘 Create v/s Update
+>
+> **Create** — omit `widget_id` to create a new template.
+>
+> **Update** — provide `widget_id` to update an existing template in-place. Templates whose `widget_id` is absent from the `PUT` body are deleted.
 
 | Field         | Type   | Required | Description                                        |
 | ------------- | ------ | -------- | -------------------------------------------------- |
@@ -252,18 +248,6 @@ Use `emoji-slider` to present an emoji reaction slider to viewers.
 | `timeout`           | ISO 8601 duration | No       | How long the slider accepts responses                               |
 | `custom_data`       | string (JSON)     | No       | Arbitrary JSON string attached to the widget                        |
 | `localized_data`    | object            | No       | BCP-47 locale keys mapping to translated `question`                 |
-
-***
-
-# Optional: Localization and accessibility
-
-Use localized and accessible widget content so more viewers can understand and respond to automated widgets.
-
-- Add `localized_data` for each language you support, and keep template variables such as `{{goalScorer}}` unchanged in translated strings.
-- Write clear `question`, `text`, and `title` values that make sense without relying only on emoji, color, or images.
-- Use descriptive `link_label` values for alerts, such as `View match centre`, instead of generic labels like `Click here`.
-- Choose emoji-slider images that viewers can distinguish visually, and avoid using color as the only difference between options.
-- Set `timeout` values long enough for viewers to read the content and respond during live events.
 
 ***
 
@@ -536,9 +520,9 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
 
 ## Update — Full replace (PUT)
 
-<Callout icon="triangle-exclamation" theme="warning">
-`PUT` replaces all automated actions. The API deletes actions that exist in the database but are absent from the `PUT` body. The API also deletes and recreates widgets that are not referenced by `widget_id`.
-</Callout>
+> ⚠️
+>
+> `PUT` replaces all automated actions. The API deletes actions that exist in the database but are absent from the `PUT` body. The API also deletes and recreates widgets that are not referenced by `widget_id`.
 
 ```json
 {
@@ -590,15 +574,15 @@ For non-field errors, the API returns this shape:
 
 ## Common validation errors
 
-| Error field         | Cause                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------ |
-| `event_category`    | Missing while `event_subcategory` is provided                                                     |
-| `event_subcategory` | Unknown subcategory for the given `event_category`                                               |
-| `partner_type`      | Value is not supported for the given `event_category` / `event_subcategory` combination          |
-| `event_id`          | Invalid or unrecognised match ID for the partner and programme                                   |
-| `program_id`        | Programme not found under the authenticated application                                          |
-| `automated_actions` | Missing, empty, or contains an invalid action type or widget kind                                |
-| `error`             | More than 5 widgets provided for a single action                                                 |
-| `error`             | Duplicate automation partner already configured for this programme                               |
+| Error field         | Cause                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------- |
+| `event_category`    | Missing while `event_subcategory` is provided                                           |
+| `event_subcategory` | Unknown subcategory for the given `event_category`                                      |
+| `partner_type`      | Value is not supported for the given `event_category` / `event_subcategory` combination |
+| `event_id`          | Invalid or unrecognised match ID for the partner and programme                          |
+| `program_id`        | Programme not found under the authenticated application                                 |
+| `automated_actions` | Missing, empty, or contains an invalid action type or widget kind                       |
+| `error`             | More than 5 widgets provided for a single action                                        |
+| `error`             | Duplicate automation partner already configured for this programme                      |
 
 <br />
