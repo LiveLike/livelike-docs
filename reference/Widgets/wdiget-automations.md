@@ -11,7 +11,7 @@ metadata:
 ---
 Live-action automation partners connect a sports event (identified by `event_id`) to a set of automated widget-publishing rules. When a tracked event occurs — a goal, a try, match start — the configured widget is automatically published to the linked programme.
 
----
+***
 
 # Base URL
 
@@ -21,7 +21,7 @@ Live-action automation partners connect a sports event (identified by `event_id`
 
 `version` is currently `v1`.
 
----
+***
 
 # Authentication
 
@@ -31,33 +31,31 @@ All endpoints require a **Bearer token** from an OAuth2 producer credential.
 Authorization: Bearer <access_token>
 ```
 
----
+***
 
 # Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/v1/automation-partners/` | List automation partners |
-| `POST` | `/v1/automation-partners/` | Create an automation partner |
-| `GET` | `/v1/automation-partners/{id}/` | Retrieve an automation partner |
-| `PUT` | `/v1/automation-partners/{id}/` | Full update (replaces automated actions) |
-| `DELETE` | `/v1/automation-partners/{id}/` | Delete an automation partner |
+| Method   | Path                            | Description                              |
+| -------- | ------------------------------- | ---------------------------------------- |
+| `GET`    | `/v1/automation-partners/`      | List automation partners                 |
+| `POST`   | `/v1/automation-partners/`      | Create an automation partner             |
+| `GET`    | `/v1/automation-partners/{id}/` | Retrieve an automation partner           |
+| `PUT`    | `/v1/automation-partners/{id}/` | Full update (replaces automated actions) |
+| `DELETE` | `/v1/automation-partners/{id}/` | Delete an automation partner             |
 
-:::warning PATCH not supported
-Use `PUT` for all updates. `PATCH` is not supported.
-:::
+**Warning:** PATCH not supported<br />Use `PUT` for all updates. `PATCH` is not supported.
 
----
+***
 
 # Query Parameters (GET list)
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `client_id` | string | **Yes** | Filter by application `client_id` |
-| `program_id` | UUID | No | Filter by programme UUID |
-| `ordering` | string | No | One of `match_scheduled_at`, `status`, `automation_status`, `created_at`. Prefix with `-` for descending. |
+| Parameter    | Type   | Required | Description                                                                                               |
+| ------------ | ------ | -------- | --------------------------------------------------------------------------------------------------------- |
+| `client_id`  | string | **Yes**  | Filter by application `client_id`                                                                         |
+| `program_id` | UUID   | No       | Filter by programme UUID                                                                                  |
+| `ordering`   | string | No       | One of `match_scheduled_at`, `status`, `automation_status`, `created_at`. Prefix with `-` for descending. |
 
----
+***
 
 # Event Category, Subcategory and Partner Type
 
@@ -65,10 +63,10 @@ The `event_category` + `event_subcategory` pair identifies the type of event and
 
 Each category/subcategory combination has a set of supported partners. As new integrations are added, a combination may support more than one `partner_type`.
 
-| `event_category` | `event_subcategory` | Supported `partner_type` values | Description |
-|------------------|---------------------|---------------------------------|-------------|
-| `sports` | `football` | `statsperform` | Football (association football) match actions |
-| `sports` | `rugby` | `opta` | Rugby union match actions |
+| `event_category` | `event_subcategory` | Supported `partner_type` values | Description                                   |
+| ---------------- | ------------------- | ------------------------------- | --------------------------------------------- |
+| `sports`         | `football`          | `statsperform`                  | Football (association football) match actions |
+| `sports`         | `rugby`             | `opta`                          | Rugby union match actions                     |
 
 **Validation rules:**
 
@@ -77,60 +75,60 @@ Each category/subcategory combination has a set of supported partners. As new in
 - The combination must be one of the recognised pairs in the table above.
 - If `partner_type` is provided, it must be one of the supported values for the given combination.
 
----
+***
 
 # Request Payload
 
 ## Top-level fields
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `event_id` | string | **Yes** | Partner-specific event/match identifier (e.g. `"srm:match:football-test-001"`) |
-| `event_category` | string | **Yes** | Event category — currently always `"sports"` |
-| `event_subcategory` | string | **Yes** | Event subcategory — see table above |
-| `program_id` | UUID | **Yes** | UUID of the programme this partner belongs to |
-| `automated_actions` | array | **Yes** | List of action configurations — at least 1 required |
-| `partner_type` | string | No | Override the partner type — must be a supported value for the given `event_category` / `event_subcategory` combination |
-| `match_scheduled_at` | ISO 8601 datetime | No | When the match/event is scheduled |
-| `widget_timeout` | ISO 8601 duration | No | How long automated widgets stay active (default: `"PT15S"`) |
-| `widget_title` | string | No | Default title for automated widgets |
-| `status` | boolean | No | Enable/disable the automation partner (default: `false`) |
-| `sponsor_ids` | array of UUIDs | No | Sponsors to attach to published widgets |
+| Field                | Type              | Required | Description                                                                                                            |
+| -------------------- | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `event_id`           | string            | **Yes**  | Partner-specific event/match identifier (e.g. `"srm:match:football-test-001"`)                                         |
+| `event_category`     | string            | **Yes**  | Event category — currently always `"sports"`                                                                           |
+| `event_subcategory`  | string            | **Yes**  | Event subcategory — see table above                                                                                    |
+| `program_id`         | UUID              | **Yes**  | UUID of the programme this partner belongs to                                                                          |
+| `automated_actions`  | array             | **Yes**  | List of action configurations — at least 1 required                                                                    |
+| `partner_type`       | string            | No       | Override the partner type — must be a supported value for the given `event_category` / `event_subcategory` combination |
+| `match_scheduled_at` | ISO 8601 datetime | No       | When the match/event is scheduled                                                                                      |
+| `widget_timeout`     | ISO 8601 duration | No       | How long automated widgets stay active (default: `"PT15S"`)                                                            |
+| `widget_title`       | string            | No       | Default title for automated widgets                                                                                    |
+| `status`             | boolean           | No       | Enable/disable the automation partner (default: `false`)                                                               |
+| `sponsor_ids`        | array of UUIDs    | No       | Sponsors to attach to published widgets                                                                                |
 
----
+***
 
 # `automated_actions` array
 
-Each element configures one action trigger. All widgets within an action must be the **same `widget_kind`**.
+Each element configures one action trigger. All widgets within an action must be the **same&#x20;**`widget_kind`.
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `action_type` | string | **Yes** | Action type constant — see [Football Action Types](#football-action-types) / [Rugby Action Types](#rugby-action-types) |
-| `enabled` | boolean | No | Whether the action is active (default: `true`) |
-| `widgets` | array | **Yes** | Widget variants for this action — minimum 1, maximum 5 |
-| `publish_delay` | ISO 8601 duration | No | Delay before publishing after the event fires (default: `"PT0S"`) |
-| `max_widgets` | integer | No | Maximum number of widgets published per match for this action |
-| `cooldown_minutes` | integer | No | Minimum minutes between consecutive publishes of this action |
+| Field              | Type              | Required | Description                                                                                                            |
+| ------------------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `action_type`      | string            | **Yes**  | Action type constant — see [Football Action Types](#football-action-types) / [Rugby Action Types](#rugby-action-types) |
+| `enabled`          | boolean           | No       | Whether the action is active (default: `true`)                                                                         |
+| `widgets`          | array             | **Yes**  | Widget variants for this action — minimum 1, maximum 5                                                                 |
+| `publish_delay`    | ISO 8601 duration | No       | Delay before publishing after the event fires (default: `"PT0S"`)                                                      |
+| `max_widgets`      | integer           | No       | Maximum number of widgets published per match for this action                                                          |
+| `cooldown_minutes` | integer           | No       | Minimum minutes between consecutive publishes of this action                                                           |
 
----
+***
 
 # `widgets` array
 
 Each element is a widget variant. **A maximum of 5 widgets is allowed per action.** One variant is randomly selected at publish time.
 
-:::info Create vs. Update
+:information_source: Create vs. Update
+
 **Create** — omit `widget_id` to create a new template.
 
 **Update** — provide `widget_id` to update an existing template in-place. Templates whose `widget_id` is absent from the `PUT` body are deleted.
-:::
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `widget_kind` | string | **Yes** | One of `"text-poll"`, `"alert"`, `"emoji-slider"` |
-| `widget_id` | UUID | No | ID of an existing template to update (update only) |
-| `payload` | object | **Yes** | Widget-specific content — see below |
+| Field         | Type   | Required | Description                                        |
+| ------------- | ------ | -------- | -------------------------------------------------- |
+| `widget_kind` | string | **Yes**  | One of `"text-poll"`, `"alert"`, `"emoji-slider"`  |
+| `widget_id`   | UUID   | No       | ID of an existing template to update (update only) |
+| `payload`     | object | **Yes**  | Widget-specific content — see below                |
 
----
+***
 
 # Widget Payload Structures
 
@@ -169,15 +167,15 @@ Presents a multiple-choice question to viewers.
 }
 ```
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `question` | string | **Yes** | The poll question text. Supports `{{variableName}}` placeholders — see [Template Variables](#template-variables) |
-| `options` | array | **Yes** | Answer options — each with a `"description"` string |
-| `timeout` | ISO 8601 duration | No | How long the poll accepts votes |
-| `custom_data` | string (JSON) | No | Arbitrary JSON string attached to the widget |
-| `localized_data` | object | No | BCP-47 locale keys mapping to translated `question` and `options` |
+| Field            | Type              | Required | Description                                                                                                      |
+| ---------------- | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `question`       | string            | **Yes**  | The poll question text. Supports `{{variableName}}` placeholders — see [Template Variables](#template-variables) |
+| `options`        | array             | **Yes**  | Answer options — each with a `"description"` string                                                              |
+| `timeout`        | ISO 8601 duration | No       | How long the poll accepts votes                                                                                  |
+| `custom_data`    | string (JSON)     | No       | Arbitrary JSON string attached to the widget                                                                     |
+| `localized_data` | object            | No       | BCP-47 locale keys mapping to translated `question` and `options`                                                |
 
----
+***
 
 ## alert
 
@@ -205,18 +203,18 @@ Publishes a notification card to viewers.
 }
 ```
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `text` | string | **Yes** | Alert body text. Supports `{{variableName}}` placeholders |
-| `title` | string | No | Alert heading (max 500 characters) |
-| `image_url` | URL | No | Image shown on the alert card |
-| `link_url` | URL | No | Call-to-action URL |
-| `link_label` | string | No | Label for the call-to-action link |
-| `timeout` | ISO 8601 duration | No | How long the alert is visible |
-| `custom_data` | string (JSON) | No | Arbitrary JSON string attached to the widget |
-| `localized_data` | object | No | BCP-47 locale keys mapping to translated `title`, `text`, `link_label` |
+| Field            | Type              | Required | Description                                                            |
+| ---------------- | ----------------- | -------- | ---------------------------------------------------------------------- |
+| `text`           | string            | **Yes**  | Alert body text. Supports `{{variableName}}` placeholders              |
+| `title`          | string            | No       | Alert heading (max 500 characters)                                     |
+| `image_url`      | URL               | No       | Image shown on the alert card                                          |
+| `link_url`       | URL               | No       | Call-to-action URL                                                     |
+| `link_label`     | string            | No       | Label for the call-to-action link                                      |
+| `timeout`        | ISO 8601 duration | No       | How long the alert is visible                                          |
+| `custom_data`    | string (JSON)     | No       | Arbitrary JSON string attached to the widget                           |
+| `localized_data` | object            | No       | BCP-47 locale keys mapping to translated `title`, `text`, `link_label` |
 
----
+***
 
 ## emoji-slider
 
@@ -243,16 +241,16 @@ Presents an emoji reaction slider to viewers.
 }
 ```
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `question` | string | **Yes** | The slider question/label. Supports `{{variableName}}` placeholders |
-| `options` | array | **Yes** | Emoji options — each with an `"image_url"` string |
-| `initial_magnitude` | decimal (0.0–1.0) | No | Starting position of the slider (default: `0.5`) |
-| `timeout` | ISO 8601 duration | No | How long the slider accepts responses |
-| `custom_data` | string (JSON) | No | Arbitrary JSON string attached to the widget |
-| `localized_data` | object | No | BCP-47 locale keys mapping to translated `question` |
+| Field               | Type              | Required | Description                                                         |
+| ------------------- | ----------------- | -------- | ------------------------------------------------------------------- |
+| `question`          | string            | **Yes**  | The slider question/label. Supports `{{variableName}}` placeholders |
+| `options`           | array             | **Yes**  | Emoji options — each with an `"image_url"` string                   |
+| `initial_magnitude` | decimal (0.0–1.0) | No       | Starting position of the slider (default: `0.5`)                    |
+| `timeout`           | ISO 8601 duration | No       | How long the slider accepts responses                               |
+| `custom_data`       | string (JSON)     | No       | Arbitrary JSON string attached to the widget                        |
+| `localized_data`    | object            | No       | BCP-47 locale keys mapping to translated `question`                 |
 
----
+***
 
 # Template Variables
 
@@ -260,75 +258,75 @@ Widget text fields support `{{variableName}}` placeholders that are substituted 
 
 ## Football template variables
 
-| Action type | Available variables |
-|-------------|---------------------|
-| `match_start` | `{{teamDescription}}` |
-| `goal` | `{{goalScorer}}` |
-| `shot` | `{{playerShot}}` |
-| `yellow_card` | `{{cardType}}`, `{{playerName}}`, `{{cardReason}}` |
-| `red_card` | `{{cardType}}`, `{{playerName}}`, `{{cardReason}}` |
-| `substitution` | `{{playerOffName}}`, `{{playerOnName}}` |
-| `missed_penalty` | `{{playerMissedPenalty}}` |
-| `var_event` | `{{varType}}`, `{{varDecision}}`, `{{varOutcome}}`, `{{playerName}}` |
-| `foul` | `{{playerName}}` |
-| `match_half` | *(none)* |
-| `penalty` | *(none)* |
-| `match_end` | *(none)* |
+| Action type      | Available variables                                                  |
+| ---------------- | -------------------------------------------------------------------- |
+| `match_start`    | `{{teamDescription}}`                                                |
+| `goal`           | `{{goalScorer}}`                                                     |
+| `shot`           | `{{playerShot}}`                                                     |
+| `yellow_card`    | `{{cardType}}`, `{{playerName}}`, `{{cardReason}}`                   |
+| `red_card`       | `{{cardType}}`, `{{playerName}}`, `{{cardReason}}`                   |
+| `substitution`   | `{{playerOffName}}`, `{{playerOnName}}`                              |
+| `missed_penalty` | `{{playerMissedPenalty}}`                                            |
+| `var_event`      | `{{varType}}`, `{{varDecision}}`, `{{varOutcome}}`, `{{playerName}}` |
+| `foul`           | `{{playerName}}`                                                     |
+| `match_half`     | _(none)_                                                             |
+| `penalty`        | _(none)_                                                             |
+| `match_end`      | _(none)_                                                             |
 
 ## Rugby template variables
 
-| Action type | Available variables |
-|-------------|---------------------|
-| `rugby_match_start` | `{{teamDescription}}` |
-| `rugby_match_end` | `{{teamDescription}}` |
-| `rugby_try` | `{{playerName}}` |
-| `rugby_conversion` | `{{playerName}}` |
-| `rugby_penalty_goal` | `{{playerName}}` |
-| `rugby_drop_goal` | `{{playerName}}` |
-| `rugby_yellow_card` | `{{playerName}}` |
-| `rugby_red_card` | `{{playerName}}` |
-| `rugby_match_half` | *(none)* |
+| Action type          | Available variables   |
+| -------------------- | --------------------- |
+| `rugby_match_start`  | `{{teamDescription}}` |
+| `rugby_match_end`    | `{{teamDescription}}` |
+| `rugby_try`          | `{{playerName}}`      |
+| `rugby_conversion`   | `{{playerName}}`      |
+| `rugby_penalty_goal` | `{{playerName}}`      |
+| `rugby_drop_goal`    | `{{playerName}}`      |
+| `rugby_yellow_card`  | `{{playerName}}`      |
+| `rugby_red_card`     | `{{playerName}}`      |
+| `rugby_match_half`   | _(none)_              |
 
----
+***
 
 # Football Action Types
 
 Used with `event_category: "sports"`, `event_subcategory: "football"`.
 
-| `action_type` | Display name | Supported widget kinds |
-|---------------|--------------|------------------------|
-| `match_start` | Match Start | `alert` |
-| `match_half` | Match Half | `text-poll` |
-| `match_end` | Match End | `text-poll` |
-| `goal` | Goal | `emoji-slider` |
-| `shot` | Shot | `emoji-slider` |
-| `penalty` | Penalty | `text-poll` |
-| `missed_penalty` | Missed Penalty | `text-poll` |
-| `yellow_card` | Yellow Card | `text-poll` |
-| `red_card` | Red Card | `text-poll` |
-| `substitution` | Substitution | `text-poll` |
-| `foul` | Foul | `text-poll` |
-| `var_event` | VAR Event | `alert` |
+| `action_type`    | Display name   | Supported widget kinds |
+| ---------------- | -------------- | ---------------------- |
+| `match_start`    | Match Start    | `alert`                |
+| `match_half`     | Match Half     | `text-poll`            |
+| `match_end`      | Match End      | `text-poll`            |
+| `goal`           | Goal           | `emoji-slider`         |
+| `shot`           | Shot           | `emoji-slider`         |
+| `penalty`        | Penalty        | `text-poll`            |
+| `missed_penalty` | Missed Penalty | `text-poll`            |
+| `yellow_card`    | Yellow Card    | `text-poll`            |
+| `red_card`       | Red Card       | `text-poll`            |
+| `substitution`   | Substitution   | `text-poll`            |
+| `foul`           | Foul           | `text-poll`            |
+| `var_event`      | VAR Event      | `alert`                |
 
----
+***
 
 # Rugby Action Types
 
 Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
-| `action_type` | Display name | Supported widget kinds |
-|---------------|--------------|------------------------|
-| `rugby_match_start` | Match Start | `alert` |
-| `rugby_match_half` | Match Half | `text-poll` |
-| `rugby_match_end` | Match End | `text-poll` |
-| `rugby_try` | Try | `emoji-slider` |
-| `rugby_conversion` | Conversion | `emoji-slider` |
-| `rugby_penalty_goal` | Penalty Goal | `emoji-slider` |
-| `rugby_drop_goal` | Drop Goal | `emoji-slider` |
-| `rugby_yellow_card` | Yellow Card | `text-poll` |
-| `rugby_red_card` | Red Card | `text-poll` |
+| `action_type`        | Display name | Supported widget kinds |
+| -------------------- | ------------ | ---------------------- |
+| `rugby_match_start`  | Match Start  | `alert`                |
+| `rugby_match_half`   | Match Half   | `text-poll`            |
+| `rugby_match_end`    | Match End    | `text-poll`            |
+| `rugby_try`          | Try          | `emoji-slider`         |
+| `rugby_conversion`   | Conversion   | `emoji-slider`         |
+| `rugby_penalty_goal` | Penalty Goal | `emoji-slider`         |
+| `rugby_drop_goal`    | Drop Goal    | `emoji-slider`         |
+| `rugby_yellow_card`  | Yellow Card  | `text-poll`            |
+| `rugby_red_card`     | Red Card     | `text-poll`            |
 
----
+***
 
 # Response Format
 
@@ -381,13 +379,13 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 
 ## `automation_status` values
 
-| Value | Description |
-|-------|-------------|
+| Value       | Description                                                 |
+| ----------- | ----------------------------------------------------------- |
 | `scheduled` | Automation is configured and waiting for the event to start |
-| `inflight` | Automation is actively processing live events |
-| `published` | Event has ended; automation is complete |
+| `inflight`  | Automation is actively processing live events               |
+| `published` | Event has ended; automation is complete                     |
 
----
+***
 
 # Full Request Examples
 
@@ -471,7 +469,7 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 }
 ```
 
----
+***
 
 ## Create — Rugby automation
 
@@ -519,13 +517,11 @@ Used with `event_category: "sports"`, `event_subcategory: "rugby"`.
 }
 ```
 
----
+***
 
 ## Update — Full replace (PUT)
 
-:::warning PUT replaces all automated actions
-Actions present in the database but absent from the `PUT` body are **deleted**. Widgets not referenced by `widget_id` are deleted and recreated.
-:::
+:warning: PUT replaces all automated actions. Actions present in the database but absent from the `PUT` body are **deleted**. Widgets not referenced by `widget_id` are deleted and recreated.
 
 ```json
 {
@@ -555,7 +551,7 @@ Actions present in the database but absent from the `PUT` body are **deleted**. 
 }
 ```
 
----
+***
 
 # Error Responses
 
@@ -577,13 +573,15 @@ Or for non-field errors:
 
 ## Common validation errors
 
-| Error field | Cause |
-|-------------|-------|
-| `event_category` | Missing when `event_subcategory` is provided |
-| `event_subcategory` | Unknown subcategory for the given `event_category` |
-| `partner_type` | Provided value is not supported for the given `event_category` / `event_subcategory` combination |
-| `event_id` | Invalid or unrecognised match ID for the partner and programme |
-| `program_id` | Programme not found under the authenticated application |
-| `automated_actions` | Missing, empty, or contains an invalid action type or widget kind |
-| `error` | More than 5 widgets provided for a single action |
-| `error` | Duplicate automation partner already configured for this programme |
+| Error field         | Cause                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------ |
+| `event_category`    | Missing when `event_subcategory` is provided                                                     |
+| `event_subcategory` | Unknown subcategory for the given `event_category`                                               |
+| `partner_type`      | Provided value is not supported for the given `event_category` / `event_subcategory` combination |
+| `event_id`          | Invalid or unrecognised match ID for the partner and programme                                   |
+| `program_id`        | Programme not found under the authenticated application                                          |
+| `automated_actions` | Missing, empty, or contains an invalid action type or widget kind                                |
+| `error`             | More than 5 widgets provided for a single action                                                 |
+| `error`             | Duplicate automation partner already configured for this programme                               |
+
+<br />
