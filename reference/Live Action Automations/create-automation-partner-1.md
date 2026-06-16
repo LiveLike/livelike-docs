@@ -2,7 +2,7 @@
 api:
   file: base-url.json
   operationId: put_automation-partners-id
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
