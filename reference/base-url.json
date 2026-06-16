@@ -333,7 +333,28 @@
         },
         "parameters": [],
         "summary": "Create Automation Partner",
-        "operationId": "post_automation-partners"
+        "operationId": "post_automation-partners",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "event_category": {
+                    "type": "string",
+                    "default": "sports"
+                  },
+                  "event_subcategory": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "event_category"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
