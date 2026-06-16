@@ -570,7 +570,7 @@
                       "properties": {
                         "action_type": {
                           "type": "string",
-                          "description": "Refer the guide for full list of action types supported as per the event_subcategory"
+                          "description": "Refer the guide mentioned above for full list of action types supported as per the event_subcategory"
                         },
                         "enabled": {
                           "type": "boolean",
@@ -589,9 +589,9 @@
                                 ]
                               },
                               "payload": {
-                                "type": "object",
-                                "properties": {},
-                                "description": "The payload will contain the object of individual widget kind as referenced in guide."
+                                "type": "string",
+                                "description": "The payload will contain the object of individual widget kind as referenced in the guide mentioned above.",
+                                "format": "json"
                               }
                             },
                             "type": "object"
