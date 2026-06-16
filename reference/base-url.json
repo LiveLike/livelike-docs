@@ -350,10 +350,63 @@
                       "football",
                       "rugby"
                     ]
+                  },
+                  "event_id": {
+                    "type": "string"
+                  },
+                  "program_id": {
+                    "type": "string"
+                  },
+                  "match_scheduled_at": {
+                    "type": "string"
+                  },
+                  "automated_actions": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "action_type": {
+                          "type": "string",
+                          "description": "Refer the guide for full list of action types supported as per the event_subcategory"
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "default": "false"
+                        },
+                        "widgets": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "widget_kind": {
+                                "type": "string",
+                                "enum": [
+                                  "alert",
+                                  "text-poll",
+                                  "emoji-slider"
+                                ]
+                              },
+                              "payload": {
+                                "type": "object",
+                                "properties": {},
+                                "description": "The payload will contain the object of individual widget kind as referenced in guide."
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "widgets"
+                      ]
+                    }
                   }
                 },
                 "required": [
-                  "event_category"
+                  "event_category",
+                  "event_subcategory",
+                  "event_id",
+                  "program_id",
+                  "automated_actions"
                 ]
               }
             }
