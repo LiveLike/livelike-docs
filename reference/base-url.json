@@ -324,16 +324,16 @@
         }
       }
     },
-    "/new-endpoint-1": {
-      "get": {
-        "operationId": "",
+    "/automation-partners/": {
+      "post": {
         "responses": {
           "200": {
             "description": ""
           }
         },
         "parameters": [],
-        "summary": "Create Automation Partner"
+        "summary": "Create Automation Partner",
+        "operationId": "post_automation-partners"
       }
     }
   },
