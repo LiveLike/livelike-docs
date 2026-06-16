@@ -345,7 +345,11 @@
                     "default": "sports"
                   },
                   "event_subcategory": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                      "football",
+                      "rugby"
+                    ]
                   }
                 },
                 "required": [
