@@ -714,6 +714,354 @@
         "operationId": "get_automation-partners",
         "summary": "List Automation Partners"
       }
+    },
+    "/automation-partners/-1": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "6e842ffb-2315-4799-acbd-d6e621c41a95",
+                      "event_id": "4tcpns1nwyc0jtpucgzj9dp90",
+                      "event_category": "sports",
+                      "event_subcategory": "football",
+                      "widget_timeout": "P0DT00H00M30S",
+                      "status": false,
+                      "widget_title": "MatchInsights",
+                      "enabled_by": {
+                        "id": "117512ea-6aa6-4cb3-b9ff-947729aa7ad4",
+                        "name": null,
+                        "image_url": null
+                      },
+                      "match_scheduled_at": "2026-06-11T18:00:00Z",
+                      "automation_status": "scheduled",
+                      "automated_actions": [
+                        {
+                          "id": "930e702e-25f7-4f49-9c37-62fd047542c3",
+                          "action": "yellow_card",
+                          "status": "pending",
+                          "widget_kind": "text-poll",
+                          "publish_delay": "00:00:00",
+                          "max_widgets": null,
+                          "cooldown_minutes": null,
+                          "is_active": true,
+                          "created_at": "2026-06-15T12:01:09.519456Z",
+                          "updated_at": "2026-06-15T12:03:55.537314Z",
+                          "widgets": [
+                            {
+                              "widget_kind": "text-poll",
+                              "widget_id": "e525bbae-0646-40b8-a8a3-e431402f9904",
+                              "payload": {
+                                "pubnub_enabled": true,
+                                "url": "https://cf-blast-iconic.livelikecdn.com/api/v1/text-polls/e525bbae-0646-40b8-a8a3-e431402f9904/",
+                                "kind": "text-poll",
+                                "program_id": "89edc0ea-71c7-44eb-b687-c8e667e610b9",
+                                "program_name": "PWP 10.15",
+                                "client_id": "2IB4L67LlSs3pdbzraIFwdIkyTfAPaoq9ANBgZ8Z",
+                                "created_at": "2026-06-15T12:03:55.559390Z",
+                                "updated_at": "2026-06-15T12:03:55.619129Z",
+                                "published_at": null,
+                                "scheduled_at": null,
+                                "interactive_until": null,
+                                "question": "Was the {{cardType}} for {{playerName}} deserved? Reason: {{cardReason}}",
+                                "timeout": "P0DT00H00M30S",
+                                "options": [
+                                  {
+                                    "id": "68368c47-338f-4343-807c-28be148ce4a0",
+                                    "description": "Yes",
+                                    "vote_count": 0,
+                                    "vote_url": "https://blast-iconic-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/e525bbae-0646-40b8-a8a3-e431402f9904/options/68368c47-338f-4343-807c-28be148ce4a0/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcUwtb3JlOWY3U0pTUWstTXJ3NUZsMGk2T0ZlR0J1X29JbDZ1SFZ4Yno0bS1sTk1qMTQtU2M1cEI5T1NkN0tWb3czeXZoeFJrd3NMR2J3LXM1TGpJUi15Sk5Tdz09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3ODE1MjUwMzV9.Xy8quF9Akywm2_Qq7n8uK5NkIqFwyAQgyOIYwzfE0R4/",
+                                    "translations": {},
+                                    "translatable_fields": [
+                                      "description"
+                                    ],
+                                    "filtered_description": null,
+                                    "content_filter": []
+                                  },
+                                  {
+                                    "id": "04047dc5-e870-45bc-9d16-8f988912d8fa",
+                                    "description": "No",
+                                    "vote_count": 0,
+                                    "vote_url": "https://blast-iconic-us-east-1.livelikeblast.com/api/v1/widget-interactions/text-poll/e525bbae-0646-40b8-a8a3-e431402f9904/options/04047dc5-e870-45bc-9d16-8f988912d8fa/votes/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiJnQUFBQUFCcUwtb3Jqb2FidUhEd2FoMGpyMmJkUWFjN0xvM2x2cS11azk3aWJxQXNDZnRTb3dlb0owTk1fQm8tSmVkS2t0LTRpOXVTc01xSDVmRlQwci1INzdsTUJLTENuUT09IiwiaXNzIjoiYmxhc3QiLCJpYXQiOjE3ODE1MjUwMzV9.ymttXjkJqW-fvdPdkKpQSpM5rFHl2VcAoaesMVM-0Q0/",
+                                    "translations": {},
+                                    "translatable_fields": [
+                                      "description"
+                                    ],
+                                    "filtered_description": null,
+                                    "content_filter": []
+                                  }
+                                ],
+                                "subscribe_channel": "program.widget.89edc0ea-71c7-44eb-b687-c8e667e610b9",
+                                "program_date_time": null,
+                                "publish_delay": "P0DT00H00M00S",
+                                "interaction_url": "https://cf-blast-iconic.livelikecdn.com/api/v1/text-polls/e525bbae-0646-40b8-a8a3-e431402f9904/interactions/",
+                                "impression_url": "https://blast-iconic-us-east-1.livelikeblast.com/api/v1/widget-impressions/text-poll/e525bbae-0646-40b8-a8a3-e431402f9904/",
+                                "impression_count": 0,
+                                "unique_impression_count": 0,
+                                "engagement_count": 0,
+                                "engagement_percent": "0.000",
+                                "status": "pending",
+                                "created_by": {
+                                  "id": "58afd111-9bf1-47fa-994f-cc7deed0ebac",
+                                  "name": "Amol",
+                                  "image_url": null,
+                                  "custom_id": null
+                                },
+                                "schedule_url": "https://cf-blast-iconic.livelikecdn.com/api/v1/text-polls/e525bbae-0646-40b8-a8a3-e431402f9904/schedule/",
+                                "rewards_url": null,
+                                "translations": {},
+                                "translatable_fields": [
+                                  "question"
+                                ],
+                                "reactions": [],
+                                "custom_data": null,
+                                "widget_interactions_url_template": "https://cf-blast-iconic.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=e525bbae-0646-40b8-a8a3-e431402f9904",
+                                "sponsors": [],
+                                "earnable_rewards": [],
+                                "widget_attributes": [],
+                                "playback_time_ms": null,
+                                "report_counts": {
+                                  "total": 0,
+                                  "pending": 0,
+                                  "accepted": 0,
+                                  "dismissed": 0
+                                },
+                                "filtered_question": null,
+                                "content_filter": []
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2641e54f-c6c1-49cd-a5ff-c30170dfdfe8",
+                          "action": "match_start",
+                          "status": "pending",
+                          "widget_kind": "alert",
+                          "publish_delay": "00:00:00",
+                          "max_widgets": null,
+                          "cooldown_minutes": null,
+                          "is_active": true,
+                          "created_at": "2026-06-15T08:11:23.934567Z",
+                          "updated_at": "2026-06-15T12:03:55.433123Z",
+                          "widgets": [
+                            {
+                              "widget_kind": "alert",
+                              "widget_id": "985956c2-bef7-4716-a2fe-42b3d2655048",
+                              "payload": {
+                                "pubnub_enabled": true,
+                                "url": "https://cf-blast-iconic.livelikecdn.com/api/v1/alerts/985956c2-bef7-4716-a2fe-42b3d2655048/",
+                                "program_id": "89edc0ea-71c7-44eb-b687-c8e667e610b9",
+                                "client_id": "2IB4L67LlSs3pdbzraIFwdIkyTfAPaoq9ANBgZ8Z",
+                                "published_at": null,
+                                "scheduled_at": null,
+                                "interactive_until": null,
+                                "timeout": "P0DT00H00M15S",
+                                "title": "Match Start",
+                                "text": "🏁 Kick off! {{teamDescription}}",
+                                "image_url": "https://example.com/kickoff.png",
+                                "link_url": "https://example.com/match-centre",
+                                "link_label": "View match centre",
+                                "created_at": "2026-06-15T12:03:55.448213Z",
+                                "kind": "alert",
+                                "subscribe_channel": "program.widget.89edc0ea-71c7-44eb-b687-c8e667e610b9",
+                                "program_date_time": null,
+                                "publish_delay": "P0DT00H00M00S",
+                                "interaction_url": "https://cf-blast-iconic.livelikecdn.com/api/v1/alerts/985956c2-bef7-4716-a2fe-42b3d2655048/interactions/",
+                                "impression_url": "https://blast-iconic-us-east-1.livelikeblast.com/api/v1/widget-impressions/alert/985956c2-bef7-4716-a2fe-42b3d2655048/",
+                                "impression_count": 0,
+                                "unique_impression_count": 0,
+                                "engagement_count": null,
+                                "engagement_percent": null,
+                                "status": "pending",
+                                "created_by": {
+                                  "id": "58afd111-9bf1-47fa-994f-cc7deed0ebac",
+                                  "name": "Amol",
+                                  "image_url": null,
+                                  "custom_id": null
+                                },
+                                "schedule_url": "https://cf-blast-iconic.livelikecdn.com/api/v1/alerts/985956c2-bef7-4716-a2fe-42b3d2655048/schedule/",
+                                "rewards_url": null,
+                                "translations": {},
+                                "translatable_fields": [
+                                  "title",
+                                  "text",
+                                  "link_label"
+                                ],
+                                "reactions": [],
+                                "custom_data": {
+                                  "k": "v"
+                                },
+                                "sponsors": [],
+                                "earnable_rewards": [],
+                                "widget_interactions_url_template": "https://cf-blast-iconic.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?alert_id=985956c2-bef7-4716-a2fe-42b3d2655048",
+                                "widget_attributes": [],
+                                "playback_time_ms": null,
+                                "report_counts": {
+                                  "total": 0,
+                                  "pending": 0,
+                                  "accepted": 0,
+                                  "dismissed": 0
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [],
+        "summary": "Copy of Create Automation Partner",
+        "operationId": "post_automation-partners-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "event_category": {
+                    "type": "string",
+                    "default": "sports"
+                  },
+                  "event_subcategory": {
+                    "type": "string",
+                    "enum": [
+                      "football",
+                      "rugby"
+                    ]
+                  },
+                  "event_id": {
+                    "type": "string"
+                  },
+                  "program_id": {
+                    "type": "string"
+                  },
+                  "match_scheduled_at": {
+                    "type": "string"
+                  },
+                  "automated_actions": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "action_type": {
+                          "type": "string",
+                          "description": "Refer the guide for full list of action types supported as per the event_subcategory"
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "default": "false"
+                        },
+                        "widgets": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "widget_kind": {
+                                "type": "string",
+                                "enum": [
+                                  "alert",
+                                  "text-poll",
+                                  "emoji-slider"
+                                ]
+                              },
+                              "payload": {
+                                "type": "object",
+                                "properties": {},
+                                "description": "The payload will contain the object of individual widget kind as referenced in guide."
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "widgets"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "event_category",
+                  "event_subcategory",
+                  "event_id",
+                  "program_id",
+                  "automated_actions"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "event_category": "sports",
+                    "event_subcategory": "football",
+                    "event_id": "4tcpns1nwyc0jtpucgzj9dp90",
+                    "program_id": "89edc0ea-71c7-44eb-b687-c8e667e610b9",
+                    "match_scheduled_at": "2026-06-11T18:00:00Z",
+                    "automated_actions": [
+                      {
+                        "action_type": "match_start",
+                        "enabled": true,
+                        "widgets": [
+                          {
+                            "widget_kind": "alert",
+                            "payload": {
+                              "text": "🏁 Kick off! {{teamDescription}}",
+                              "title": "Match Start",
+                              "image_url": "https://example.com/kickoff.png",
+                              "link_url": "https://example.com/match-centre",
+                              "link_label": "View match centre",
+                              "timeout": "PT15S",
+                              "custom_data": {
+                                "k": "v"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "action_type": "yellow_card",
+                        "enabled": true,
+                        "widgets": [
+                          {
+                            "widget_kind": "text-poll",
+                            "payload": {
+                              "question": "Was the {{cardType}} for {{playerName}} deserved? Reason: {{cardReason}}",
+                              "options": [
+                                {
+                                  "description": "Yes"
+                                },
+                                {
+                                  "description": "No"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
