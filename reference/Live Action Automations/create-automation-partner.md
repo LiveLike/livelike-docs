@@ -1,7 +1,7 @@
 ---
 api:
   file: base-url.json
-  operationId: get_new-endpoint-1
+  operationId: post_automation-partners
 hidden: false
 link:
   new_tab: false
