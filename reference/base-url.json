@@ -715,16 +715,24 @@
         "summary": "List Automation Partners"
       }
     },
-    "/automation-partners/-1": {
-      "post": {
+    "/automation-partners/{id}": {
+      "put": {
         "responses": {
           "200": {
             "description": ""
           }
         },
-        "parameters": [],
-        "summary": "Copy of Create Automation Partner",
-        "operationId": "post_automation-partners-1",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Update Automation Partner",
         "requestBody": {
           "content": {
             "application/json": {
@@ -860,7 +868,8 @@
               }
             }
           }
-        }
+        },
+        "operationId": "put_automation-partners-id"
       }
     }
   },
