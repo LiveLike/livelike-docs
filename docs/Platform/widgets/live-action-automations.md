@@ -1,5 +1,8 @@
 ---
 title: Live Action Automations
+excerpt: >-
+  Create automation partners that publish widgets automatically from live sports
+  event data.
 deprecated: false
 hidden: false
 metadata:
