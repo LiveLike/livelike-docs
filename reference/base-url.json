@@ -670,6 +670,49 @@
             }
           }
         }
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "program_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "match_scheduled_at",
+                "-match_scheduled_at",
+                "status",
+                "-status",
+                "automation_status",
+                "-automation_status"
+              ]
+            }
+          }
+        ],
+        "operationId": "get_automation-partners",
+        "summary": "List Automation Partners"
       }
     }
   },
