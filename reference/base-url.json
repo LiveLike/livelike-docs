@@ -323,6 +323,18 @@
           }
         }
       }
+    },
+    "/new-endpoint-1": {
+      "get": {
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "summary": "Create Automation Partner"
+      }
     }
   },
   "components": {
