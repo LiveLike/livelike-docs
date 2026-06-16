@@ -631,14 +631,7 @@
                             "widget_kind": "alert",
                             "payload": {
                               "text": "🏁 Kick off! {{teamDescription}}",
-                              "title": "Match Start",
-                              "image_url": "https://example.com/kickoff.png",
-                              "link_url": "https://example.com/match-centre",
-                              "link_label": "View match centre",
-                              "timeout": "PT15S",
-                              "custom_data": {
-                                "k": "v"
-                              }
+                              "image_url": "https://example.com/kickoff.png"
                             }
                           }
                         ]
