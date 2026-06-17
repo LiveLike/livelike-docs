@@ -2919,7 +2919,7 @@
         }
       },
       "get": {
-        "summary": "Get Chat Messages",
+        "summary": "List Chat Messages",
         "description": "",
         "operationId": "get-chatroom-messages",
         "parameters": [
@@ -3024,6 +3024,16 @@
                               "start_index": 1,
                               "end_index": 2,
                               "mentioned_profile_id": "398245d6-23a2-4c60-be38-5d3386462770"
+                            }
+                          ],
+                          "attributes": [
+                            {
+                              "value": "1",
+                              "key": "abc"
+                            },
+                            {
+                              "value": "2",
+                              "key": "abc"
                             }
                           ]
                         },
@@ -3169,8 +3179,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/chat-rooms/{chat_room_id}/chatroom-messages-count/": {
