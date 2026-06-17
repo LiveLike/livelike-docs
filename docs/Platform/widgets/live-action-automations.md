@@ -105,7 +105,7 @@ Use each element to configure one action trigger. All widgets within an action m
 | Field              | Type              | Required | Description                                                                                                            |
 | ------------------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `action_type`      | string            | **Yes**  | Action type constant — see [Football Action Types](#football-action-types) / [Rugby Action Types](#rugby-action-types) |
-| `enabled`          | boolean           | No       | Enables or disables the action (default: `true`)                                                                       |
+| `is_active`        | boolean           | No       | Enables or disables the action (default: `true`)                                                                       |
 | `widgets`          | array             | **Yes**  | Widget variants for this action — minimum 1, maximum 5                                                                 |
 | `publish_delay`    | ISO 8601 duration | No       | Delay before publishing after the event fires (default: `"PT0S"`)                                                      |
 | `max_widgets`      | integer           | No       | Maximum number of widgets published per match for this action                                                          |
@@ -388,7 +388,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
   "automated_actions": [
     {
       "action_type": "goal",
-      "enabled": true,
+      "is_active": true,
       "widgets": [
         {
           "widget_kind": "emoji-slider",
@@ -408,7 +408,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
     },
     {
       "action_type": "match_start",
-      "enabled": true,
+      "is_active": true,
       "widgets": [
         {
           "widget_kind": "alert",
@@ -427,7 +427,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
     },
     {
       "action_type": "yellow_card",
-      "enabled": true,
+      "is_active": true,
       "publish_delay": "PT3S",
       "widgets": [
         {
@@ -469,7 +469,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
   "automated_actions": [
     {
       "action_type": "rugby_try",
-      "enabled": true,
+      "is_active": true,
       "widgets": [
         {
           "widget_kind": "emoji-slider",
@@ -488,7 +488,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
     },
     {
       "action_type": "rugby_match_start",
-      "enabled": true,
+      "is_active": true,
       "widgets": [
         {
           "widget_kind": "alert",
@@ -521,7 +521,7 @@ Use these action types with `event_category: "sports"` and `event_subcategory: "
   "automated_actions": [
     {
       "action_type": "goal",
-      "enabled": true,
+      "is_active": true,
       "widgets": [
         {
           "widget_kind": "emoji-slider",
