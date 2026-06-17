@@ -719,7 +719,7 @@
                           "type": "string",
                           "description": "Refer the guide for full list of action types supported as per the event_subcategory"
                         },
-                        "enabled": {
+                        "is_active": {
                           "type": "boolean",
                           "default": "false"
                         },
@@ -776,7 +776,7 @@
                     "automated_actions": [
                       {
                         "action_type": "match_start",
-                        "enabled": true,
+                        "is_active": true,
                         "widgets": [
                           {
                             "widget_kind": "alert",
@@ -796,7 +796,7 @@
                       },
                       {
                         "action_type": "yellow_card",
-                        "enabled": true,
+                        "is_active": true,
                         "widgets": [
                           {
                             "widget_kind": "text-poll",
