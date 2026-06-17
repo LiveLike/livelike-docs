@@ -325,6 +325,49 @@
       }
     },
     "/automation-partners/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "program_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "match_scheduled_at",
+                "-match_scheduled_at",
+                "status",
+                "-status",
+                "automation_status",
+                "-automation_status"
+              ]
+            }
+          }
+        ],
+        "operationId": "get_automation-partners",
+        "summary": "List Automation Partners"
+      },
       "post": {
         "responses": {
           "200": {
@@ -616,96 +659,12 @@
               "examples": {
                 "New Example": {
                   "summary": "New Example",
-                  "value": {
-                    "event_category": "sports",
-                    "event_subcategory": "football",
-                    "event_id": "4tcpns1nwyc0jtpucgzj9dp90",
-                    "program_id": "89edc0ea-71c7-44eb-b687-c8e667e610b9",
-                    "match_scheduled_at": "2026-06-11T18:00:00Z",
-                    "automated_actions": [
-                      {
-                        "action_type": "match_start",
-                        "enabled": true,
-                        "widgets": [
-                          {
-                            "widget_kind": "alert",
-                            "payload": {
-                              "text": "🏁 Kick off! {{teamDescription}}",
-                              "image_url": "https://example.com/kickoff.png"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "action_type": "yellow_card",
-                        "enabled": true,
-                        "widgets": [
-                          {
-                            "widget_kind": "text-poll",
-                            "payload": {
-                              "question": "Was the {{cardType}} for {{playerName}} deserved? Reason: {{cardReason}}",
-                              "options": [
-                                {
-                                  "description": "Yes"
-                                },
-                                {
-                                  "description": "No"
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                  "value": "{\n  \"event_category\": \"sports\",\n  \"event_subcategory\": \"football\",\n  \"event_id\": \"4tcpns1nwyc0jtpucgzj9dp90\",\n  \"program_id\": \"89edc0ea-71c7-44eb-b687-c8e667e610b9\",\n  \"match_scheduled_at\": \"2026-06-11T18:00:00Z\",\n  \"automated_actions\": [\n    {\n      \"action_type\": \"match_start\",\n      \"is_active\": true,\n      \"widgets\": [\n        {\n          \"widget_kind\": \"alert\",\n          \"payload\": {\n            \"text\": \"🏁 Kick off! {{teamDescription}}\",\n            \"image_url\": \"https://example.com/kickoff.png\"\n          }\n        }\n      ]\n    },\n    {\n      \"action_type\": \"yellow_card\",\n      \"is_active\": true,\n      \"widgets\": [\n        {\n          \"widget_kind\": \"text-poll\",\n          \"payload\": {\n            \"question\": \"Was the {{cardType}} for {{playerName}} deserved? Reason: {{cardReason}}\",\n            \"options\": [\n              {\n                \"description\": \"Yes\"\n              },\n              {\n                \"description\": \"No\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}_"
                 }
               }
             }
           }
         }
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "query",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "program_id",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "ordering",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "created_at",
-                "-created_at",
-                "match_scheduled_at",
-                "-match_scheduled_at",
-                "status",
-                "-status",
-                "automation_status",
-                "-automation_status"
-              ]
-            }
-          }
-        ],
-        "operationId": "get_automation-partners",
-        "summary": "List Automation Partners"
       }
     },
     "/automation-partners/{id}": {
