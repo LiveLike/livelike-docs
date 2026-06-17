@@ -1,10 +1,8 @@
 ---
-title: Send a Chat Message
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: send-chat-message
-deprecated: false
 hidden: false
 metadata:
   title: ''
