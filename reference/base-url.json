@@ -572,7 +572,7 @@
                           "type": "string",
                           "description": "Refer the guide mentioned above for full list of action types supported as per the event_subcategory"
                         },
-                        "enabled": {
+                        "is_active": {
                           "type": "boolean",
                           "default": "false"
                         },
