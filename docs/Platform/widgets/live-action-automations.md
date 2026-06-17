@@ -187,12 +187,8 @@ Use `alert` to publish a notification card to viewers.
   "widget_kind": "alert",
   "payload": {
     "text": "⚽ GOAL! {{goalScorer}} scores for {{teamDescription}}!",
-    "title": "Goal!",
     "image_url": "https://cdn.example.com/goal.png",
-    "link_url": "https://example.com/match-centre",
-    "link_label": "View match centre",
     "timeout": "PT15S",
-    "custom_data": null,
     "localized_data": {
       "fr": {
         "title": "But !",
@@ -204,16 +200,11 @@ Use `alert` to publish a notification card to viewers.
 }
 ```
 
-| Field            | Type              | Required | Description                                                            |
-| ---------------- | ----------------- | -------- | ---------------------------------------------------------------------- |
-| `text`           | string            | **Yes**  | Alert body text. Supports `{{variableName}}` placeholders              |
-| `title`          | string            | No       | Alert heading (max 500 characters)                                     |
-| `image_url`      | URL               | No       | Image shown on the alert card                                          |
-| `link_url`       | URL               | No       | Call-to-action URL                                                     |
-| `link_label`     | string            | No       | Label for the call-to-action link                                      |
-| `timeout`        | ISO 8601 duration | No       | How long the alert is visible                                          |
-| `custom_data`    | string (JSON)     | No       | Arbitrary JSON string attached to the widget                           |
-| `localized_data` | object            | No       | BCP-47 locale keys mapping to translated `title`, `text`, `link_label` |
+| Field            | Type   | Required | Description                                                            |
+| ---------------- | ------ | -------- | ---------------------------------------------------------------------- |
+| `text`           | string | **Yes**  | Alert body text. Supports `{{variableName}}` placeholders              |
+| `image_url`      | URL    | No       | Image shown on the alert card                                          |
+| `localized_data` | object | No       | BCP-47 locale keys mapping to translated `title`, `text`, `link_label` |
 
 ***
 
@@ -230,9 +221,6 @@ Use `emoji-slider` to present an emoji reaction slider to viewers.
       { "image_url": "https://cdn.example.com/fire.png" },
       { "image_url": "https://cdn.example.com/meh.png" }
     ],
-    "initial_magnitude": 0.5,
-    "timeout": "PT20S",
-    "custom_data": null,
     "localized_data": {
       "de": {
         "question": "Bewerte dieses Tor! 🔥"
@@ -242,14 +230,11 @@ Use `emoji-slider` to present an emoji reaction slider to viewers.
 }
 ```
 
-| Field               | Type              | Required | Description                                                         |
-| ------------------- | ----------------- | -------- | ------------------------------------------------------------------- |
-| `question`          | string            | **Yes**  | The slider question/label. Supports `{{variableName}}` placeholders |
-| `options`           | array             | **Yes**  | Emoji options — each with an `"image_url"` string                   |
-| `initial_magnitude` | decimal (0.0–1.0) | No       | Starting position of the slider (default: `0.5`)                    |
-| `timeout`           | ISO 8601 duration | No       | How long the slider accepts responses                               |
-| `custom_data`       | string (JSON)     | No       | Arbitrary JSON string attached to the widget                        |
-| `localized_data`    | object            | No       | BCP-47 locale keys mapping to translated `question`                 |
+| Field            | Type   | Required | Description                                                         |
+| ---------------- | ------ | -------- | ------------------------------------------------------------------- |
+| `question`       | string | **Yes**  | The slider question/label. Supports `{{variableName}}` placeholders |
+| `options`        | array  | **Yes**  | Emoji options — each with an `"image_url"` string                   |
+| `localized_data` | object | No       | BCP-47 locale keys mapping to translated `question`                 |
 
 ***
 
