@@ -8,3 +8,4 @@ link:
 metadata:
   robots: index
 ---
+[Refer the Guide to Live Action Automations](doc:live-action-automations) for more details.
