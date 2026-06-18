@@ -17385,6 +17385,11 @@
                   "blocked_profile_custom_id": {
                     "type": "string",
                     "description": "profile custom id that is being blocked"
+                  },
+                  "remove_relationships": {
+                    "type": "boolean",
+                    "default": "false",
+                    "description": "When true, also remove any existing relationships (friend, follower, etc.) between the two profiles, in both directions. Unblocking does not restore them."
                   }
                 }
               }
@@ -17647,7 +17652,6 @@
             }
           }
         },
-        "deprecated": false,
         "x-readme": {
           "code-samples": [
             {
