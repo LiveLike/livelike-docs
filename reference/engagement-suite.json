@@ -34657,6 +34657,16 @@
         ],
         "operationId": "get_role-grants",
         "summary": "Role Grants List"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "operationId": "post_role-grants",
+        "summary": "Create Role Grant (Assignment)"
       }
     }
   },
