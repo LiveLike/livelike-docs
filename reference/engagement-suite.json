@@ -24373,6 +24373,14 @@
                       "none",
                       "filtered"
                     ]
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "list of comment board attributes in {\"key\": <>, \"value\": <>} format",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    }
                   }
                 }
               }
@@ -24465,8 +24473,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/comment-boadrs/": {
