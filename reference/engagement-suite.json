@@ -16342,125 +16342,6 @@
         "deprecated": false
       }
     },
-    "/profiles/{id}/badges/": {
-      "get": {
-        "summary": "List Earned Badges",
-        "description": "List badges earned by a user",
-        "operationId": "get-users-badges",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n  \"count\": 3,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"awarded_at\": \"2021-07-12T17:07:15.135787Z\",\n      \"badge\": {\n        \"id\": \"9d17db41-477f-47e5-b5c8-e03fa1b0fa4d\",\n        \"name\": \"Cool Badge\",\n        \"description\": \"first available badge\",\n        \"badge_icon_url\": \"/media/assets/d545b7cb-b24a-456c-bc3e-c633901563bc.png\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    },\n    {\n      \"awarded_at\": \"2021-07-12T17:45:43.179425Z\",\n      \"badge\": {\n        \"id\": \"b6c56227-8643-4e06-bb22-f30917575e48\",\n        \"name\": \"Second Badge\",\n        \"description\": \"another badge\",\n        \"badge_icon_url\": \"/media/assets/8f22fb78-35e7-4d53-a5ee-cb8f91e89d57.jpg\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    },\n    {\n      \"awarded_at\": \"2021-07-13T14:40:42.895282Z\",\n      \"badge\": {\n        \"id\": \"24659aac-732e-4da0-a6bf-0338dd617b3a\",\n        \"name\": \"Third Badge\",\n        \"description\": null,\n        \"badge_icon_url\": \"/media/assets/49f71674-26ea-4814-be47-fab82feec6dc.jpg\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    }\n  ]\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer",
-                      "example": 3,
-                      "default": 0
-                    },
-                    "next": {},
-                    "previous": {},
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "awarded_at": {
-                            "type": "string",
-                            "example": "2021-07-12T17:07:15.135787Z"
-                          },
-                          "badge": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string",
-                                "example": "9d17db41-477f-47e5-b5c8-e03fa1b0fa4d"
-                              },
-                              "name": {
-                                "type": "string",
-                                "example": "Cool Badge"
-                              },
-                              "description": {
-                                "type": "string",
-                                "example": "first available badge"
-                              },
-                              "badge_icon_url": {
-                                "type": "string",
-                                "example": "/media/assets/d545b7cb-b24a-456c-bc3e-c633901563bc.png"
-                              },
-                              "mimetype": {
-                                "type": "string",
-                                "example": "application/octet-stream"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "x-readme": {
-          "code-samples": [
-            {
-              "language": "curl",
-              "code": "curl --request GET \\\n     --url https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/ \\\n     --header 'Accept: application/json'"
-            },
-            {
-              "language": "python",
-              "code": "import requests\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/\"\n\nheaders = {\"Accept\": \"application/json\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
-            },
-            {
-              "language": "text",
-              "code": "const fetch = require('node-fetch');\n\nconst url = 'https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/';\nconst options = {method: 'GET', headers: {Accept: 'application/json'}};\n\nfetch(url, options)\n  .then(res => res.json())\n  .then(json => console.log(json))\n  .catch(err => console.error('error:' + err));",
-              "name": "Node"
-            }
-          ],
-          "samples-languages": [
-            "curl",
-            "python",
-            "text"
-          ]
-        }
-      }
-    },
     "/profiles/{profile_id}/badges/": {
       "post": {
         "summary": "Award a Badge to a User",
@@ -16561,6 +16442,130 @@
           }
         },
         "deprecated": false
+      },
+      "get": {
+        "summary": "List Earned Badges",
+        "description": "List badges earned by a user",
+        "operationId": "get-users-badges",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter badges associated with the specified reward item"
+          },
+          {
+            "in": "path",
+            "name": "profile_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"count\": 3,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"awarded_at\": \"2021-07-12T17:07:15.135787Z\",\n      \"badge\": {\n        \"id\": \"9d17db41-477f-47e5-b5c8-e03fa1b0fa4d\",\n        \"name\": \"Cool Badge\",\n        \"description\": \"first available badge\",\n        \"badge_icon_url\": \"/media/assets/d545b7cb-b24a-456c-bc3e-c633901563bc.png\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    },\n    {\n      \"awarded_at\": \"2021-07-12T17:45:43.179425Z\",\n      \"badge\": {\n        \"id\": \"b6c56227-8643-4e06-bb22-f30917575e48\",\n        \"name\": \"Second Badge\",\n        \"description\": \"another badge\",\n        \"badge_icon_url\": \"/media/assets/8f22fb78-35e7-4d53-a5ee-cb8f91e89d57.jpg\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    },\n    {\n      \"awarded_at\": \"2021-07-13T14:40:42.895282Z\",\n      \"badge\": {\n        \"id\": \"24659aac-732e-4da0-a6bf-0338dd617b3a\",\n        \"name\": \"Third Badge\",\n        \"description\": null,\n        \"badge_icon_url\": \"/media/assets/49f71674-26ea-4814-be47-fab82feec6dc.jpg\",\n        \"mimetype\": \"application/octet-stream\"\n      }\n    }\n  ]\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 3,
+                      "default": 0
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "awarded_at": {
+                            "type": "string",
+                            "example": "2021-07-12T17:07:15.135787Z"
+                          },
+                          "badge": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "9d17db41-477f-47e5-b5c8-e03fa1b0fa4d"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Cool Badge"
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": "first available badge"
+                              },
+                              "badge_icon_url": {
+                                "type": "string",
+                                "example": "/media/assets/d545b7cb-b24a-456c-bc3e-c633901563bc.png"
+                              },
+                              "mimetype": {
+                                "type": "string",
+                                "example": "application/octet-stream"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "x-readme": {
+          "code-samples": [
+            {
+              "language": "curl",
+              "code": "curl --request GET \\\n     --url https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/ \\\n     --header 'Accept: application/json'"
+            },
+            {
+              "language": "python",
+              "code": "import requests\n\nurl = \"https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/\"\n\nheaders = {\"Accept\": \"application/json\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+            },
+            {
+              "language": "text",
+              "code": "const fetch = require('node-fetch');\n\nconst url = 'https://cf-blast.livelikecdn.com/api/v1/profiles/id/badges/';\nconst options = {method: 'GET', headers: {Accept: 'application/json'}};\n\nfetch(url, options)\n  .then(res => res.json())\n  .then(json => console.log(json))\n  .catch(err => console.error('error:' + err));",
+              "name": "Node"
+            }
+          ],
+          "samples-languages": [
+            "curl",
+            "python",
+            "text"
+          ]
+        }
       }
     },
     "/profiles/{profile_id}/badge-progress/": {
