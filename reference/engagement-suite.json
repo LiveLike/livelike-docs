@@ -34708,6 +34708,27 @@
         "operationId": "get_role-grants-2",
         "summary": "Delete Role Grant (Unassignment)"
       }
+    },
+    "/applications/{client_id}/revoke-role-grants/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Unassignment by Natural Key",
+        "operationId": "post_applications-client-id-revoke-role-grants"
+      }
     }
   },
   "x-readme": {
