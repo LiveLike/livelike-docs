@@ -34669,7 +34669,7 @@
         "summary": "Create Role Grant (Assignment)"
       }
     },
-    "/role-grants/{role_grant_id}/": {
+    "/role-grants/{role_grant_uuid}/": {
       "get": {
         "responses": {
           "200": {
@@ -34679,7 +34679,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "role_grant_id",
+            "name": "role_grant_uuid",
             "schema": {
               "type": "string"
             },
