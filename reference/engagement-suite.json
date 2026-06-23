@@ -34645,7 +34645,16 @@
             "description": ""
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
         "operationId": "get_role-grants",
         "summary": "Role Grants List"
       }
