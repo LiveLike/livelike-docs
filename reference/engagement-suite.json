@@ -16896,6 +16896,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter badges associated with the specified reward item."
           }
         ],
         "responses": {
@@ -17091,8 +17099,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/earned-badges/{earned-badge-id}": {
