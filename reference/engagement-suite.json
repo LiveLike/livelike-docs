@@ -34668,6 +34668,27 @@
         "operationId": "post_role-grants",
         "summary": "Create Role Grant (Assignment)"
       }
+    },
+    "/role-grants/{role_grant_id}/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "role_grant_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_role-grants-1",
+        "summary": "Role Grant Detail"
+      }
     }
   },
   "x-readme": {
