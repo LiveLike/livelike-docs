@@ -34688,6 +34688,25 @@
         ],
         "operationId": "get_role-grants-1",
         "summary": "Role Grant Detail"
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "role_grant_uuid",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_role-grants-2",
+        "summary": "Delete Role Grant (Unassignment)"
       }
     }
   },
