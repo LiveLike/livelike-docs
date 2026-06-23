@@ -34637,7 +34637,19 @@
         "deprecated": false
       }
     },
-    "/widget-reports/-1": {}
+    "/widget-reports/-1": {},
+    "/role-grants/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "operationId": "get_role-grants",
+        "summary": "Role Grants List"
+      }
+    }
   },
   "x-readme": {
     "headers": [],
