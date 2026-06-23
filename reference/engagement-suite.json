@@ -24080,6 +24080,14 @@
                       "none",
                       "filtered"
                     ]
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "description": "list of comment board attributes in {\"key\": <>, \"value\": <>} format"
                   }
                 }
               }
@@ -24177,8 +24185,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "get": {
         "summary": "Get the list of comment boards",
