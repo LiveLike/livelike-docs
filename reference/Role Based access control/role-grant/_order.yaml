@@ -2,3 +2,4 @@
 - create-role-grant-assignment
 - role-grant-detail
 - delete-role-grant-unassignment
+- unassignment-by-natural-key
