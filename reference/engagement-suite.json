@@ -32213,7 +32213,7 @@
     },
     "/applications/{client_id}/profile-groups/": {
       "post": {
-        "summary": "Create a Group",
+        "summary": "Create a Profile Group",
         "description": "",
         "operationId": "create-a-group",
         "parameters": [
@@ -32327,8 +32327,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/text-prediction-follow-ups/-1": {},
