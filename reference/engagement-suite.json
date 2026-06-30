@@ -1760,6 +1760,11 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "rule_tree": {
+                    "type": "string",
+                    "format": "json",
+                    "description": "Update rule tree structure for dynamic user groups"
                   }
                 }
               }
