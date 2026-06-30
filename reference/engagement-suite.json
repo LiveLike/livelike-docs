@@ -32255,6 +32255,20 @@
                       ],
                       "type": "object"
                     }
+                  },
+                  "membership_type": {
+                    "type": "string",
+                    "default": "manual",
+                    "description": "Membership type for user groups. Can be \"dynamic\" or \"manual\"",
+                    "enum": [
+                      "dynamic",
+                      "manual"
+                    ]
+                  },
+                  "rule_tree": {
+                    "type": "string",
+                    "format": "json",
+                    "description": "Required with membership_type as dynamic"
                   }
                 }
               }
