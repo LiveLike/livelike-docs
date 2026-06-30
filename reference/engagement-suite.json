@@ -1889,8 +1889,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/applications/{client_id}/profile-groups/{group_id}/members/": {
