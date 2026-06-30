@@ -1,11 +1,9 @@
 ---
-title: Remove Members from Group
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: remove-members-from-group
-deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
