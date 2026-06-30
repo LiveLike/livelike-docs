@@ -1,11 +1,9 @@
 ---
-title: Delete Profile Group
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: delete-profile-group
-deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
