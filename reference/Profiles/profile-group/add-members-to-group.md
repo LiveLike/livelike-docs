@@ -1,11 +1,9 @@
 ---
-title: Add Members to Group
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: add-members-to-group
-deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
