@@ -1,11 +1,9 @@
 ---
-title: Update Profile Group
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: update-profile-group
-deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
