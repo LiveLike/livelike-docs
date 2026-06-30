@@ -32273,7 +32273,7 @@
                   "rule_tree": {
                     "type": "string",
                     "format": "json",
-                    "description": "Required with membership_type as dynamic"
+                    "description": "Definition of rules for the profiles in the profile group to follow. Required with membership_type as dynamic"
                   }
                 }
               }
