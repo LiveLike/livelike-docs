@@ -1996,7 +1996,7 @@
         }
       },
       "get": {
-        "summary": "Get Profile Group Members",
+        "summary": "List Profile Group Members",
         "description": "",
         "operationId": "get-profile-group-detail-copy",
         "parameters": [
@@ -2091,8 +2091,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/applications/{client_id}/profile-groups/{group_id}/members/ (COPY)": {
