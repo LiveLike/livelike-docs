@@ -1707,7 +1707,7 @@
         }
       },
       "patch": {
-        "summary": "Update Group",
+        "summary": "Update Profile Group",
         "description": "",
         "operationId": "update-profile-group",
         "parameters": [
@@ -1826,8 +1826,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "delete": {
         "summary": "Delete Profile Group",
