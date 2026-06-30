@@ -11,3 +11,4 @@ metadata:
 next:
   description: ''
 ---
+For creating and understanding rule trees for Dynamic Profile Groups, please refer: <Anchor target="_blank" href="https://docs.livelike.com/docs/dynamic-profile-group-rule-structure">Dynamic Profile Group Rule Structure</Anchor>
