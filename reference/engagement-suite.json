@@ -1704,8 +1704,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "patch": {
         "summary": "Update Group",
