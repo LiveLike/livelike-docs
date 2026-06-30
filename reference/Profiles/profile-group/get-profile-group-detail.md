@@ -1,11 +1,9 @@
 ---
-title: Get Profile Group Detail
 excerpt: ''
 api:
   file: engagement-suite.json
   operationId: get-profile-group-detail
-deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
