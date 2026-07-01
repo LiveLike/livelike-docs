@@ -17309,13 +17309,13 @@
         "operationId": "get-an-asset-1",
         "parameters": [],
         "responses": {
-          "200": {
+          "201": {
             "description": "200",
             "content": {
               "application/json": {
                 "examples": {
-                  "OK": {
-                    "summary": "OK",
+                  "Created": {
+                    "summary": "Created",
                     "value": {
                       "id": "d7f1c89e-5403-436c-9916-d322105738d3",
                       "url": "https://cf-blast.livelikecdn.com/api/v1/media/d7f1c89e-5403-436c-9916-d322105738d3/",
