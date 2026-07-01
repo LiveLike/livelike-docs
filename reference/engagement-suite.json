@@ -34743,8 +34743,8 @@
       }
     },
     "/media/{id}/-1": {
-      "get": {
-        "summary": "Copy of Get an Asset",
+      "post": {
+        "summary": "Create Asset",
         "description": "",
         "operationId": "get-an-asset-1",
         "parameters": [
