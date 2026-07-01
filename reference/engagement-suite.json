@@ -34741,6 +34741,86 @@
         "summary": "Unassignment by Natural Key",
         "operationId": "post_applications-client-id-revoke-role-grants"
       }
+    },
+    "/media/{id}/-1": {
+      "get": {
+        "summary": "Copy of Get an Asset",
+        "description": "",
+        "operationId": "get-an-asset-1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the media asset",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"2109ea19-f1bf-4eb6-9dd5-d9437b649054\",\n    \"url\": \"http://localhost/api/v1/media/2109ea19-f1bf-4eb6-9dd5-d9437b649054/\",\n    \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n    \"created_at\": \"2021-02-24T16:07:22.010000Z\",\n    \"description\": \"50 x 200\",\n    \"file\": \"http://localhost/media/assets/c5ad9911-d6dd-40f4-bd0f-63a2c1e4651f.png\",\n    \"mimetype\": \"image/png\",\n    \"tags\": []\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "2109ea19-f1bf-4eb6-9dd5-d9437b649054"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "http://localhost/api/v1/media/2109ea19-f1bf-4eb6-9dd5-d9437b649054/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2021-02-24T16:07:22.010000Z"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "50 x 200"
+                    },
+                    "file": {
+                      "type": "string",
+                      "example": "http://localhost/media/assets/c5ad9911-d6dd-40f4-bd0f-63a2c1e4651f.png"
+                    },
+                    "mimetype": {
+                      "type": "string",
+                      "example": "image/png"
+                    },
+                    "tags": {
+                      "type": "array"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-readme": {
+          "code-samples": [
+            {
+              "language": "curl",
+              "code": "curl https://cf-blast.livelikecdn.com/api/v1/media/<asset_id>/"
+            }
+          ],
+          "samples-languages": [
+            "curl"
+          ]
+        }
+      }
     }
   },
   "x-readme": {
