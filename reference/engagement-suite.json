@@ -17314,43 +17314,27 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "Result": {
-                    "value": "{\n    \"id\": \"2109ea19-f1bf-4eb6-9dd5-d9437b649054\",\n    \"url\": \"http://localhost/api/v1/media/2109ea19-f1bf-4eb6-9dd5-d9437b649054/\",\n    \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n    \"created_at\": \"2021-02-24T16:07:22.010000Z\",\n    \"description\": \"50 x 200\",\n    \"file\": \"http://localhost/media/assets/c5ad9911-d6dd-40f4-bd0f-63a2c1e4651f.png\",\n    \"mimetype\": \"image/png\",\n    \"tags\": []\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "example": "2109ea19-f1bf-4eb6-9dd5-d9437b649054"
-                    },
-                    "url": {
-                      "type": "string",
-                      "example": "http://localhost/api/v1/media/2109ea19-f1bf-4eb6-9dd5-d9437b649054/"
-                    },
-                    "client_id": {
-                      "type": "string",
-                      "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "example": "2021-02-24T16:07:22.010000Z"
-                    },
-                    "description": {
-                      "type": "string",
-                      "example": "50 x 200"
-                    },
-                    "file": {
-                      "type": "string",
-                      "example": "http://localhost/media/assets/c5ad9911-d6dd-40f4-bd0f-63a2c1e4651f.png"
-                    },
-                    "mimetype": {
-                      "type": "string",
-                      "example": "image/png"
-                    },
-                    "tags": {
-                      "type": "array"
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "d7f1c89e-5403-436c-9916-d322105738d3",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/media/d7f1c89e-5403-436c-9916-d322105738d3/",
+                      "client_id": "wFu9D9vgqgXlDpzT7ljZaT1NhHm1GpWyjxe2Ic6t",
+                      "created_at": "2026-07-01T15:57:17.558350Z",
+                      "description": "",
+                      "file": "https://cf-blast-storage-iconic-us-east-1.livelikeblast.com/applications/wFu9D9vgqgXlDpzT7ljZaT1NhHm1GpWyjxe2Ic6t/assets/Screenshot_2026-06-29_at_5.41.59PM_77e6b21a.png",
+                      "mimetype": "image/png",
+                      "tags": [],
+                      "variants": [
+                        {
+                          "type": "compressed",
+                          "file_url": "https://cf-blast-storage-iconic-us-east-1.livelikeblast.com/applications/wFu9D9vgqgXlDpzT7ljZaT1NhHm1GpWyjxe2Ic6t/assets/variants/Screenshot_2026-06-29_at_5.41.59PM_77e6b21a_compressed.png"
+                        },
+                        {
+                          "type": "webp",
+                          "file_url": "https://cf-blast-storage-iconic-us-east-1.livelikeblast.com/applications/wFu9D9vgqgXlDpzT7ljZaT1NhHm1GpWyjxe2Ic6t/assets/variants/Screenshot_2026-06-29_at_5.41.59PM_77e6b21a.webp"
+                        }
+                      ]
                     }
                   }
                 }
@@ -17369,6 +17353,44 @@
           "samples-languages": [
             "curl"
           ]
+        },
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Default's value to file name"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "byte"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": ""
+                  },
+                  "create_variants_in_sync": {
+                    "type": "boolean",
+                    "description": "Forces the system to create variants synchronously, otherwise it will create the variants asynchronously."
+                  }
+                },
+                "required": [
+                  "client_id",
+                  "file"
+                ]
+              }
+            }
+          }
         }
       }
     },
