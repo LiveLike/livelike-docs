@@ -17273,6 +17273,22 @@
               "type": "string",
               "default": "the ID of the application the asset was created under"
             }
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "string"
+            },
+            "description": "multiple tag query param supported to filter by multiple tag names"
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "schema": {
+              "type": "string"
+            },
+            "description": "search by description and tag name"
           }
         ],
         "responses": {
@@ -17289,7 +17305,6 @@
             }
           }
         },
-        "deprecated": false,
         "security": [],
         "x-readme": {
           "code-samples": [
