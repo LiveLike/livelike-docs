@@ -14,10 +14,10 @@ Reward Item Expiry operates independently for each Reward Item and automatically
 
 LiveLike supports two ways to configure expiry:
 
-| Type                                         | How It Works                                                                                                                                                                                                                                                  | Best  For                                                                             |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| **Earn-Based Expiry Period (in days)**       | Tracked at reward transaction level. Every reward credit transaction carries it's own validity (in days) calculated from the date of transaction. Users cannot redeem reward item earned in a single transaction post the expiry window of that transaction.  | A usable currency that users accumulate and spend over time                           |
-| **Global Expiry Date (fixed calendar date)** | Tracked at reward item level. Every users' entire balance expires on a fixed calendar date. Users cannot earn or redeem that reward item post the expiry.                                                                                                     | A status-based currency that resets on a recurring calendar (e.g. a season end date). |
+| Type                                         | How It Works                                                                                                                                                                                                                                                 | Best  For                                                                             |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| **Earn-Based Expiry Period (in days)**       | Tracked at reward transaction level. Every reward credit transaction carries it's own validity (in days) calculated from the date of transaction. Users cannot redeem reward item earned in a single transaction post the expiry window of that transaction. | A usable currency that users accumulate and spend over time                           |
+| **Global Expiry Date (fixed calendar date)** | Tracked at reward item level. Every users' entire balance expires on a fixed calendar date. Users cannot earn or redeem that reward item post the expiry.                                                                                                    | A status-based currency that resets on a recurring calendar (e.g. a season end date). |
 
 If both are set on the same reward item, whichever comes first wins for any given earn: the Earn-Based window, or the Global Expiry Date. **Expiry always happens end of day in UTC timezone**.
 
@@ -29,7 +29,7 @@ You can also leave both off for any reward item — balances never expires.
 
 ### Earn-Based Expiry Period
 
-With Earn-Based Expiry Period, every transaction is tracked individually and expires on its own schedule, a fixed window of days from the date it was earned. Rather than one lump balance, earns are held in small groups ("buckets") behind the scenes. The upside for your users: they lose small amounts over time instead of losing everything at once, and can see exactly how much is expiring and when.
+With Earn-Based Expiry Period, every transaction is tracked individually and expires on its own schedule, a fixed window (in calendar days) calculated from the date of each transaction. Rather than one lump balance, earns are held in small groups ("buckets") behind the scenes. The upside for your users: they lose small amounts over time instead of losing everything at once, and can see exactly how much is expiring and when.
 
 #### Key configuration fields:<br />
 
