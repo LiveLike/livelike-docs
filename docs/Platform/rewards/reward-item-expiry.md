@@ -123,7 +123,7 @@ Reward Item Expiry applies to points earned through Badges, Streaks, and Quest r
 
 ## Managing Expiry Over Time
 
-**Editing settings:** you can update a reward item's expiry configuration whenever you like, but changes only apply to points earned **after** the change - existing balances keep the expiry they were originally given. Worth keeping in mind: adjusting the window or date won't retroactively shift when a user's current points expire.
+**Editing settings:** you can update a reward item's expiry configuration whenever you like, but changes only apply to points earned after the change - existing balances keep the expiry they were originally given. Worth keeping in mind: adjusting the window or date won't retroactively shift when a user's current points expire.
 
 ### Editing a Expiry (CMS)
 
@@ -134,6 +134,8 @@ Reward Item Expiry applies to points earned through Badges, Streaks, and Quest r
 - Update the desired fields
 
 - Save
+
+In **Draft** status can be fully edited, all configuration fields are modifiable before publication.
 
 **Tracking liability:** you can pull the outstanding balance for a reward item grouped by upcoming expiry date, filterable by reward item and date, so you can see how much liability is coming off the books and when — updated in near real time.
 
