@@ -85,6 +85,8 @@ Setting `expiry_mode` to `none` keeps things exactly as they are today: points n
 
 Reward Item Expiry applies to points earned through Badges, Streaks, and Quest rewards. Any points awarded from these experiences follow the expiry configuration of the associated reward item, ensuring a consistent experience across all reward types.
 
+***
+
 ## How Spending, Balances, and Refunds Work
 
 **Spending (debits):**
@@ -115,9 +117,7 @@ Reward Item Expiry applies to points earned through Badges, Streaks, and Quest r
 
 ***
 
-## Setting Up
-
-### Via CMS
+## Setting Up Via CMS
 
 1. Navigate to **Reward → Create New Reward Item**
 2. Set a **Name** and optional **Description**
