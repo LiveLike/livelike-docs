@@ -165,6 +165,8 @@ One redemption succeeds, the other is rejected with an insufficient-balance erro
 
 **If I change the global expiry date, does it affect points users already have?**<br />Yes - global date change updates expiry for the entire reward item for all users.
 
+**Can I update global expiry date after the original date has passed?**<br />No - date change needs to happen before the global expiry date passes.
+
 **How do I see what's about to expire across my user base?**
 Use the liability view, grouped by expiry date and filterable by reward item, updated in near real time.
 
