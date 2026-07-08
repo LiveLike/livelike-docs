@@ -108,15 +108,6 @@ Reward Item Expiry applies to points earned through Badges, Streaks, and Quest r
 
 ***
 
-## What Users See
-
-- **Balance screen:** their total available points up front, with an expiry schedule underneath listing "\[X pts] expire on \[date]," soonest first. Under Global Expiry Date, this is just one line. If expiry is off, there's no schedule at all — just the balance.
-- **Redemption confirmation & history:** under Earn-Based Expiry Period, users see exactly which points were spent — e.g. "Points used: 100 pts expiring Jul 1, 200 pts expiring Jul 5." Under Global Expiry Date, no breakdown is needed since there's only one pool.
-- **Passive expiry:** shows up in transaction history as "\[X pts] expired on \[date]." If several buckets expire on the same day, each appears as its own line; a Global Expiry Date voiding appears as a single event.
-- **Notifications:** LiveLike doesn't send expiry reminders directly. Instead, we fire a webhook ahead of an upcoming expiry, so you can build the notification experience that fits your product — your channel, your timing, your copy.
-
-***
-
 ## Setting Up Via CMS
 
 1. Navigate to **Reward → Create New Reward Item**
@@ -133,6 +124,16 @@ Reward Item Expiry applies to points earned through Badges, Streaks, and Quest r
 ## Managing Expiry Over Time
 
 **Editing settings:** you can update a reward item's expiry configuration whenever you like, but changes only apply to points earned **after** the change - existing balances keep the expiry they were originally given. Worth keeping in mind: adjusting the window or date won't retroactively shift when a user's current points expire.
+
+### Editing a Expiry (CMS)
+
+- Navigate to **Reward**
+
+- Locate the Reward and click **Edit**
+
+- Update the desired fields
+
+- Save
 
 **Tracking liability:** you can pull the outstanding balance for a reward item grouped by upcoming expiry date, filterable by reward item and date, so you can see how much liability is coming off the books and when — updated in near real time.
 
