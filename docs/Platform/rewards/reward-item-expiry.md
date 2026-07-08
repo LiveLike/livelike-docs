@@ -168,4 +168,4 @@ One redemption succeeds, the other is rejected with an insufficient-balance erro
 **How do I see what's about to expire across my user base?**
 Use the liability view, grouped by expiry date and filterable by reward item, updated in near real time.
 
-**Will LiveLike remind users before their points expire?**<br />Not directly - we send a webhook ahead of the expiry so you can trigger your own notification, in whatever channel and timing works for your product.
+**Will LiveLike remind users before their points expire?**<br />You can configure a webhook to trigger your own notification, in whatever channel and timing works for your product.
