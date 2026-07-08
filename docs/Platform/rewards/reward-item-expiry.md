@@ -1,8 +1,6 @@
 ---
 title: Reward Item Expiry
-excerpt: >-
-  Defines how long reward earned through a reward item remain valid, allowing
-  operators to configure different expirations for different rewards.
+excerpt: Defines how long rewards earned remain valid
 deprecated: false
 hidden: true
 metadata:
