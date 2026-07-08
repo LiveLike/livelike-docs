@@ -40,7 +40,7 @@ With Earn-Based Expiry Period, every transaction is tracked individually and exp
 
 **How spending works:** when a user redeems, points are drawn from the bucket closest to expiring first, moving on to the next bucket if needed to cover the full amount. If a bucket is only partly spent, whatever's left keeps its original expiry - spending never resets the clock on remaining points.
 
-**A note on same-day earns:** if a user earns the same reward item more than once on the same calendar day, those earns are grouped together since they'll expire on the same date anyway. Calendar day is based on UTC timezone. It cannot be changed.
+**A note on same-day earns:** if a user earns the same reward item more than once on the same calendar day, those earns are grouped together since they'll expire on the same date anyway. Date of expiry is based on UTC timezone. It cannot be changed.
 
 **Example: Redeemable points on a 30-day window**
 
