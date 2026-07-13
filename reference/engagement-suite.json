@@ -17276,11 +17276,11 @@
           },
           {
             "in": "query",
-            "name": "tag",
+            "name": "tag_name",
             "schema": {
               "type": "string"
             },
-            "description": "multiple tag query param supported to filter by multiple tag names"
+            "description": "multiple tag_name query param supported to filter by multiple tag names"
           },
           {
             "in": "query",
@@ -17288,7 +17288,15 @@
             "schema": {
               "type": "string"
             },
-            "description": "search by description and tag name"
+            "description": "search by description"
+          },
+          {
+            "in": "query",
+            "name": "tag_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "multiple tag_slug query param supported to filter by multiple tag slugs"
           }
         ],
         "responses": {
