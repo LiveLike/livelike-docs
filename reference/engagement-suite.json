@@ -17396,7 +17396,8 @@
                   },
                   "create_variants_in_sync": {
                     "type": "boolean",
-                    "description": "Forces the system to create variants synchronously, otherwise it will create the variants asynchronously."
+                    "description": "Forces the system to create variants synchronously, otherwise it will create the variants asynchronously.",
+                    "default": "false"
                   }
                 },
                 "required": [
