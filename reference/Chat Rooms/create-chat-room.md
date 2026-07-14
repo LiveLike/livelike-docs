@@ -1,10 +1,7 @@
 ---
-title: Create a Chat Room
-excerpt: Create a new chat room
 api:
   file: chat-rooms.json
   operationId: create-chat-room
-deprecated: false
 hidden: false
 metadata:
   title: ''
