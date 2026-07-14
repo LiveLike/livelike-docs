@@ -246,7 +246,7 @@
                   },
                   "content_filter": {
                     "type": "string",
-                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only.",
+                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only. **4.** `ai`: Moderate against the transformer based model",
                     "default": "none",
                     "enum": [
                       "none",
