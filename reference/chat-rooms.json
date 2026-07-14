@@ -251,7 +251,8 @@
                     "enum": [
                       "none",
                       "filtered",
-                      "producer"
+                      "producer",
+                      "ai"
                     ]
                   },
                   "sticker_pack_ids": {
@@ -541,8 +542,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/{id}": {
