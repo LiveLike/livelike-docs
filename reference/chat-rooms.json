@@ -546,6 +546,62 @@
       }
     },
     "/{id}": {
+      "delete": {
+        "summary": "Delete a Chat Room",
+        "description": "",
+        "operationId": "delete-a-chat-room",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Chat Room ID",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"detail\": \"User cannot delete chat room.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string",
+                      "example": "User cannot delete chat room."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
       "patch": {
         "summary": "Update a Chat Room",
         "description": "",
@@ -573,7 +629,7 @@
                   },
                   "content_filter": {
                     "type": "string",
-                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only. **4.** `ai`: If a message is recognized by an AI model as being objectionable, it will be filtered.",
+                    "description": "To manage the type of messages allowed in a chat room, we provide three levels of content filtering. Each level determines how messages are moderated and who is allowed to post. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.  **3.** `producer`: Only producers can post, others can view messages only. **4.** `ai`: message recognized by an AI model as objectionable, will be filtered.",
                     "default": "none",
                     "enum": [
                       "none",
@@ -759,62 +815,6 @@
             }
           }
         }
-      },
-      "delete": {
-        "summary": "Delete a Chat Room",
-        "description": "",
-        "operationId": "delete-a-chat-room",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Chat Room ID",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "403",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n  \"detail\": \"User cannot delete chat room.\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "detail": {
-                      "type": "string",
-                      "example": "User cannot delete chat room."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
       }
     },
     "/{id}/delete-chat-message/": {
