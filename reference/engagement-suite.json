@@ -24327,6 +24327,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "schema": {
+              "type": "string"
+            },
+            "description": "free text search on comment board title."
           }
         ],
         "responses": {
@@ -24427,8 +24435,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "patch": {
         "summary": "Update a comment board",
