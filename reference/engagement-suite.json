@@ -35035,7 +35035,7 @@
             }
           }
         },
-        "summary": "Create quality rules",
+        "summary": "Create comment quality rules",
         "operationId": "post_applications-client-id-comment-quality-rules"
       }
     }
