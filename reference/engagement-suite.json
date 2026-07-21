@@ -34976,6 +34976,14 @@
             },
             "required": true,
             "description": ""
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
         "requestBody": {
