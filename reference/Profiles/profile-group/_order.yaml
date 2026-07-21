@@ -3,5 +3,5 @@
 - delete-profile-group
 - update-profile-group
 - add-members-to-group
-- get-profile-group-detail-copy
+- get-profile-group-members
 - remove-members-from-group
