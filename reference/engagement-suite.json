@@ -35047,9 +35047,38 @@
         "operationId": "post_applications-client-id-comment-quality-rules"
       }
     },
-    "/applications/{client_id}/comment-quality-rules-1": {
-      "post": {
+    "/applications/{client_id}/comment-quality-rules/{uuid}/": {
+      "patch": {
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "79fea58e-a037-4771-9dae-83e57ebf6b69",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/adMpPiA5AxfBJOi4pueTIF2If3a4WLIjfqiifG15/comment-quality-rules/79fea58e-a037-4771-9dae-83e57ebf6b69/",
+                      "client_id": "adMpPiA5AxfBJOi4pueTIF2If3a4WLIjfqiifG15",
+                      "min_char_count": 0,
+                      "disallowed_chars": "*",
+                      "emoji_ratio_threshold": 0.7,
+                      "min_sentiment_score": 0.2,
+                      "max_toxicity_score": 0.1,
+                      "exclude_gif": true,
+                      "updated_at": "2026-07-21T07:31:21.399184Z",
+                      "created_at": "2026-07-21T07:31:21.399195Z"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          },
           "201": {
             "content": {
               "application/json": {
@@ -35106,24 +35135,6 @@
                       "example": "2026-07-21T07:31:21.399195Z"
                     }
                   }
-                },
-                "examples": {
-                  "Created": {
-                    "summary": "Created",
-                    "value": {
-                      "id": "79fea58e-a037-4771-9dae-83e57ebf6b69",
-                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/adMpPiA5AxfBJOi4pueTIF2If3a4WLIjfqiifG15/comment-quality-rules/79fea58e-a037-4771-9dae-83e57ebf6b69/",
-                      "client_id": "adMpPiA5AxfBJOi4pueTIF2If3a4WLIjfqiifG15",
-                      "min_char_count": 0,
-                      "disallowed_chars": "*",
-                      "emoji_ratio_threshold": 0.7,
-                      "min_sentiment_score": 0.2,
-                      "max_toxicity_score": 0.1,
-                      "exclude_gif": true,
-                      "updated_at": "2026-07-21T07:31:21.399184Z",
-                      "created_at": "2026-07-21T07:31:21.399195Z"
-                    }
-                  }
                 }
               }
             },
@@ -35135,16 +35146,6 @@
                 "schema": {
                   "type": "object",
                   "properties": {}
-                },
-                "examples": {
-                  "Bad Request": {
-                    "summary": "Bad Request",
-                    "value": {
-                      "application": [
-                        "Comment quality rules already exist for this application."
-                      ]
-                    }
-                  }
                 }
               }
             },
@@ -35164,6 +35165,14 @@
           {
             "in": "header",
             "name": "Authorization",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "uuid",
             "schema": {
               "type": "string"
             },
@@ -35227,7 +35236,7 @@
             }
           }
         },
-        "summary": "Copy of Create comment quality rules",
+        "summary": "Update comment quality rules",
         "operationId": "post_applications-client-id-comment-quality-rules-1"
       }
     }
