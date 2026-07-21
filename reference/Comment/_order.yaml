@@ -9,7 +9,6 @@
 - list-comments-with-mentions
 - get-comment-counts
 - list-comment-quality-rules
-- create-comment-quality-rules-1
 - delete-comment-quality-rules
 - create-quality-rules
 - update-comment-quality-rules
