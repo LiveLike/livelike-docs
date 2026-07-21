@@ -35237,7 +35237,8 @@
           }
         },
         "summary": "Update comment quality rules",
-        "operationId": "post_applications-client-id-comment-quality-rules-1"
+        "operationId": "post_applications-client-id-comment-quality-rules-1",
+        "x-internal": false
       }
     }
   },
