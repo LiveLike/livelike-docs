@@ -35187,35 +35187,35 @@
                 "properties": {
                   "min_char_count": {
                     "type": "number",
-                    "default": "0",
+                    "default": "",
                     "description": "Minimum number of non-whitespace characters in a comment for it to be evaluated as a quality comment. Default value is 0 which means this check is ignored."
                   },
                   "emoji_ratio_threshold": {
                     "type": "number",
                     "format": "float",
-                    "default": "0.7",
+                    "default": "",
                     "description": "Max ratio of emojis to text content in a comment for it to be evaluated as a quality comment. Default value is 0.7 which means at max 70% of the comment can be filled with emojis."
                   },
                   "disallowed_chars": {
                     "type": "string",
-                    "default": "*",
+                    "default": "",
                     "description": "Characters in a comment that can lead to it being discarded from quality comment evaluation. Example: \"F*ck\". Default value is \"\""
                   },
                   "min_sentiment_score": {
                     "type": "number",
                     "format": "float",
-                    "default": "0.2",
+                    "default": "",
                     "description": "Minimum sentiment score for a comment to be evaluated as a high quality comment. This can range from -1 to 1 with -1 being the most negative and 1 being the most positive. The default value for this is 0.2. Can be set to None to disable this check."
                   },
                   "max_toxicity_score": {
                     "type": "number",
                     "format": "float",
-                    "default": "0.1",
+                    "default": "",
                     "description": "Maximum toxicity score for a comment to be evaluated as a high quality comment. This can range from 0 to 1 with 0 being the least toxic and 1 being the most toxic. Default value for this is 0.1. Can be set to None to disable this check."
                   },
                   "exclude_gif": {
                     "type": "boolean",
-                    "default": "false",
+                    "default": "",
                     "description": "If enabled, comments that contain GIF content will be excluded from quality comments evaluation."
                   }
                 }
