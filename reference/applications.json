@@ -1124,8 +1124,9 @@
             }
           }
         },
-        "summary": "Copy of ",
-        "operationId": "patch_client-id-comment-quality-rules-uuid"
+        "summary": "Update comment quality rules",
+        "operationId": "patch_client-id-comment-quality-rules-uuid",
+        "x-internal": true
       },
       "delete": {
         "description": "",
