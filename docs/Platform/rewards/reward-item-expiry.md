@@ -2,7 +2,7 @@
 title: Reward Item Expiry
 excerpt: Defines how long rewards earned remain valid
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
