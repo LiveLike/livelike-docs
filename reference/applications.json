@@ -28,7 +28,7 @@
     "/{client_id}/": {
       "patch": {
         "summary": "Update an Application",
-        "description": "This API requires using a Personal API Token.",
+        "description": "This API requires using a Personal API Token. The requester must be an Admin in the organization ",
         "operationId": "update-an-application",
         "parameters": [
           {
@@ -266,8 +266,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "delete": {
         "summary": "Delete an application",
