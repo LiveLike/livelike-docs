@@ -48,16 +48,18 @@ To begin, either select an existing game or click "Create New" to start fresh. T
 
    ![](https://files.readme.io/8db5b3ecfa845c49cfcc38bba361f8745796feca7520f28f8b1612e1ef0f7975-image.png)
 
-   <br />
+
+
 3. **Game Copies** Configure game text elements:
 
    1. Welcome screen with a custom greeting and a start button
    2. End screen with closing message
    3. Result screen with two display types: Single/Score Based
 
-   <br />
+
 
    ![](https://files.readme.io/211d9ccb2826c2c688368fa726daa02270b28468ec45f18516db57504685e8fc-image.png)
+
 4. **Word Database**
 
    1. You can set up target words and images for each date, with support for word lengths ranging from 5 to 10 letters.
@@ -66,12 +68,19 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       1. When enabled, the current image will remain active until a new image is added to the database.
    4. Enable Pixelation Mode
       1. When enabled, images will appear pixelated during gameplay to increase difficulty.
-   5. Attempts
+   5. Guess The Visual Mode
+      1. A new mode where each entry uses two image URLs instead of one:
+         1. Question URL — the image shown to the player as the prompt (e.g. "Guess where the ball is," "Guess the jersey number," "Guess the jersey season").
+         2. Result URL — the image revealed once attempts are exhausted or the player guesses correctly, showing the answer.
+   6. Attempts
       1. Defines the maximum number of guesses a player can make per image.
 
-   ![](https://files.readme.io/0d4951a78e87a5d385afc0045512316824baf01183c92ede39d434437143633d-image.png)
+   ![]()
 
-   <br />
+   ![](https://files.readme.io/6959bc4036b22dc2cab56fece40d1af25098b0e5d7d2dfba107efbe107fd054f-image.png)
+
+
+
 5. **Theme Setup**
    1. In this step, you can customize the visual branding and theme elements of your game.
    2. This is part of the game's customization process, allowing you to maintain brand consistency and create a unique visual identity for your GTI implementation. The theme setup ensures your game matches your brand's visual guidelines and style requirements.
@@ -86,17 +95,19 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       7. Sponsor Logo: Max size: 42x300 pixels
       8. Background image: Recommended size 1080x1920 , max size 1mb
 
-      <br />
+
 
       ![](https://files.readme.io/fe69cbb447236fde487b2d0e7cf2b549e70dbe32fb0504dd566cdf603e5efa53-image.png)
+
 6. **Social features**The section includes toggles for showing user stats and enabling stat sharing capabilities.
 
    1. Players can customize a share message (defaulted to "Join me in today's word puzzle") to invite others. The Deeplink feature allows configuration of deep linking functionality, along with a countdown toggle that displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
    2. Count Down features when enabled, displays a countdown when today's game ends but the new game hasn't started yet, indicating when the next game day begins.
 
-   <br />
+
 
    ![](https://files.readme.io/b3de62c1f9586fd0a38f83d1c2de1515d6989c1cbf6620eaa1367151b3da3f09-image.png)
+
 7. **Localization**
 
    1. The Localization section allows Producers to configure language support, fonts, and keyboard layouts.
@@ -110,16 +121,21 @@ To begin, either select an existing game or click "Create New" to start fresh. T
       Example: QWERTY
    8. Allow Keyboard Switch: Allows players to switch keyboard layouts if multiple layouts are configured.
 
-   <br />
+
 
    ![](https://files.readme.io/e684de71128ddb42c9a74cfeaf2791ac690a14ff43e3f310f8bbb19e1aa3c38a-image.png)
+
 8. **Live Game Manager**
 
    1. This section provides real-time management capabilities for your GTI game.
    2. This interface includes a "Publish Game" button for launching your game and displays the word and image timeline.
 
-   <br />
 
-   <Image align="right" src="https://files.readme.io/04d15f747ea21378258db81cc6860434a087bebbe21fef93c6cc51def06e9ade-image.png" />
 
-   <br />
+
+   <Image src="https://files.readme.io/04d15f747ea21378258db81cc6860434a087bebbe21fef93c6cc51def06e9ade-image.png" align="right" wrap={true} />
+
+
+
+
+<br />
