@@ -13192,12 +13192,311 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{}"
+                    "value": {
+                      "count": 6,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "1435b34c-1c12-429b-84d1-1ca3b9838575",
+                          "pubnub_enabled": true,
+                          "url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/",
+                          "program_id": "57b2388d-c741-468b-95bb-688df374f1e7",
+                          "client_id": "tvxxSfu1MFxBwFdFQjdmHymjbpwrXCMYnmLXia35",
+                          "created_at": "2026-07-23T21:23:56.302519Z",
+                          "kind": "rich-post",
+                          "published_at": null,
+                          "scheduled_at": null,
+                          "interactive_until": null,
+                          "title": "Test Rich Post",
+                          "content": "Test rich post with mention of @Justin",
+                          "timeout": "P0DT00H00M30S",
+                          "subscribe_channel": "program.widget.57b2388d-c741-468b-95bb-688df374f1e7",
+                          "program_date_time": null,
+                          "publish_delay": "P0DT00H00M00S",
+                          "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/interactions/",
+                          "impression_url": "https://blast-us-east-1.livelikeblast.com/api/v1/widget-impressions/rich-post/1435b34c-1c12-429b-84d1-1ca3b9838575/",
+                          "impression_count": 0,
+                          "unique_impression_count": 0,
+                          "engagement_count": null,
+                          "engagement_percent": null,
+                          "status": "pending",
+                          "created_by": {
+                            "id": "a5795c2b-9dd3-436e-bfb5-7a07451048d7",
+                            "name": "Kushagra Kaushik",
+                            "image_url": null,
+                            "custom_id": null
+                          },
+                          "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/schedule/",
+                          "rewards_url": null,
+                          "translations": {},
+                          "translatable_fields": [
+                            "title",
+                            "content"
+                          ],
+                          "reactions": [],
+                          "custom_data": null,
+                          "sponsors": [],
+                          "earnable_rewards": [],
+                          "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=1435b34c-1c12-429b-84d1-1ca3b9838575",
+                          "widget_attributes": [],
+                          "playback_time_ms": null,
+                          "report_counts": {
+                            "total": 0,
+                            "pending": 0,
+                            "accepted": 0,
+                            "dismissed": 0
+                          },
+                          "filtered_title": null,
+                          "filtered_content": null,
+                          "content_filter": [],
+                          "edit_count": 0,
+                          "mentions": [
+                            {
+                              "start_index": 30,
+                              "end_index": 37,
+                              "mentioned_profile_id": "d6646392-e87b-437f-ba29-d154b7a26679",
+                              "mentioned_profile_custom_id": null,
+                              "mentioned_profile_nickname": "Prakriti Deshmukh",
+                              "id": "1685df79-2d3d-4f08-a504-3637d405bb56"
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
                   "type": "object",
-                  "properties": {}
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 6,
+                      "default": 0
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "1435b34c-1c12-429b-84d1-1ca3b9838575"
+                          },
+                          "pubnub_enabled": {
+                            "type": "boolean",
+                            "example": true,
+                            "default": true
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/"
+                          },
+                          "program_id": {
+                            "type": "string",
+                            "example": "57b2388d-c741-468b-95bb-688df374f1e7"
+                          },
+                          "client_id": {
+                            "type": "string",
+                            "example": "tvxxSfu1MFxBwFdFQjdmHymjbpwrXCMYnmLXia35"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2026-07-23T21:23:56.302519Z"
+                          },
+                          "kind": {
+                            "type": "string",
+                            "example": "rich-post"
+                          },
+                          "published_at": {},
+                          "scheduled_at": {},
+                          "interactive_until": {},
+                          "title": {
+                            "type": "string",
+                            "example": "Test Rich Post"
+                          },
+                          "content": {
+                            "type": "string",
+                            "example": "Test rich post with mention of @Justin"
+                          },
+                          "timeout": {
+                            "type": "string",
+                            "example": "P0DT00H00M30S"
+                          },
+                          "subscribe_channel": {
+                            "type": "string",
+                            "example": "program.widget.57b2388d-c741-468b-95bb-688df374f1e7"
+                          },
+                          "program_date_time": {},
+                          "publish_delay": {
+                            "type": "string",
+                            "example": "P0DT00H00M00S"
+                          },
+                          "interaction_url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/interactions/"
+                          },
+                          "impression_url": {
+                            "type": "string",
+                            "example": "https://blast-us-east-1.livelikeblast.com/api/v1/widget-impressions/rich-post/1435b34c-1c12-429b-84d1-1ca3b9838575/"
+                          },
+                          "impression_count": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "unique_impression_count": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "engagement_count": {},
+                          "engagement_percent": {},
+                          "status": {
+                            "type": "string",
+                            "example": "pending"
+                          },
+                          "created_by": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "a5795c2b-9dd3-436e-bfb5-7a07451048d7"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Kushagra Kaushik"
+                              },
+                              "image_url": {},
+                              "custom_id": {}
+                            }
+                          },
+                          "schedule_url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/1435b34c-1c12-429b-84d1-1ca3b9838575/schedule/"
+                          },
+                          "rewards_url": {},
+                          "translations": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "translatable_fields": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "example": "title"
+                            }
+                          },
+                          "reactions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "custom_data": {},
+                          "sponsors": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "earnable_rewards": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "widget_interactions_url_template": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=1435b34c-1c12-429b-84d1-1ca3b9838575"
+                          },
+                          "widget_attributes": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "playback_time_ms": {},
+                          "report_counts": {
+                            "type": "object",
+                            "properties": {
+                              "total": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "pending": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "accepted": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "dismissed": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              }
+                            }
+                          },
+                          "filtered_title": {},
+                          "filtered_content": {},
+                          "content_filter": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "edit_count": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "mentions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "start_index": {
+                                  "type": "integer",
+                                  "example": 30,
+                                  "default": 0
+                                },
+                                "end_index": {
+                                  "type": "integer",
+                                  "example": 37,
+                                  "default": 0
+                                },
+                                "mentioned_profile_id": {
+                                  "type": "string",
+                                  "example": "d6646392-e87b-437f-ba29-d154b7a26679"
+                                },
+                                "mentioned_profile_custom_id": {},
+                                "mentioned_profile_nickname": {
+                                  "type": "string",
+                                  "example": "Prakriti Deshmukh"
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "example": "1685df79-2d3d-4f08-a504-3637d405bb56"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -13218,8 +13517,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/rich-posts/{id}/": {
