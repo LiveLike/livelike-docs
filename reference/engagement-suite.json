@@ -12903,6 +12903,14 @@
                   "custom_data": {
                     "type": "string",
                     "description": "Integration-specific data to accompany the rich post"
+                  },
+                  "mentions": {
+                    "type": "array",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "description": "Location and identities of profiles being mentioned in the rich post"
                   }
                 }
               }
@@ -12916,7 +12924,57 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"id\": \"664255f3-8699-44f4-8679-9a72c4d8cf50\",\n    \"pubnub_enabled\": false,\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/\",\n    \"program_id\": \"238b2232-d2cb-4323-adbc-78d0064a9be8\",\n    \"client_id\": \"jV2LSongmdccPRL65M8GC6Z8lTievPsRsqsoSMiq\",\n    \"created_at\": \"2023-01-24T21:43:16.187462Z\",\n    \"kind\": \"rich-post\",\n    \"published_at\": \"2023-01-24T21:43:16.536982Z\",\n    \"scheduled_at\": \"2023-01-24T21:43:16.334096Z\",\n    \"interactive_until\": null,\n    \"title\": \"Example title\",\n    \"content\": \"<p>Example content</p>\",\n    \"timeout\": \"P0DT00H00M30S\",\n    \"subscribe_channel\": \"program.widget.238b2232-d2cb-4323-adbc-78d0064a9be8\",\n    \"program_date_time\": null,\n    \"publish_delay\": \"P0DT00H00M00S\",\n    \"interaction_url\": \"https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/interactions/\",\n    \"impression_url\": \"https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-impressions/rich-post/664255f3-8699-44f4-8679-9a72c4d8cf50/\",\n    \"impression_count\": 0,\n    \"unique_impression_count\": 0,\n    \"engagement_count\": null,\n    \"engagement_percent\": null,\n    \"status\": \"published\",\n    \"created_by\": {\n        \"id\": \"eaa67d8e-29c4-4ee8-89d8-06c0e0e9c7d0\",\n        \"name\": null,\n        \"image_url\": null\n    },\n    \"schedule_url\": \"https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/schedule/\",\n    \"rewards_url\": null,\n    \"translations\": {},\n    \"translatable_fields\": [\n        \"content\"\n    ],\n    \"reactions\": [],\n    \"custom_data\": null,\n    \"earnable_rewards\": [],\n    \"widget_interactions_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=664255f3-8699-44f4-8679-9a72c4d8cf50\",\n    \"widget_attributes\": []\n}\n"
+                    "value": {
+                      "id": "664255f3-8699-44f4-8679-9a72c4d8cf50",
+                      "pubnub_enabled": false,
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/",
+                      "program_id": "238b2232-d2cb-4323-adbc-78d0064a9be8",
+                      "client_id": "jV2LSongmdccPRL65M8GC6Z8lTievPsRsqsoSMiq",
+                      "created_at": "2023-01-24T21:43:16.187462Z",
+                      "kind": "rich-post",
+                      "published_at": "2023-01-24T21:43:16.536982Z",
+                      "scheduled_at": "2023-01-24T21:43:16.334096Z",
+                      "interactive_until": null,
+                      "title": "Example title",
+                      "content": "<p>Example content</p>",
+                      "timeout": "P0DT00H00M30S",
+                      "subscribe_channel": "program.widget.238b2232-d2cb-4323-adbc-78d0064a9be8",
+                      "program_date_time": null,
+                      "publish_delay": "P0DT00H00M00S",
+                      "interaction_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/interactions/",
+                      "impression_url": "https://blastrt-prod-us-east-1.livelikecdn.com/api/v1/widget-impressions/rich-post/664255f3-8699-44f4-8679-9a72c4d8cf50/",
+                      "impression_count": 0,
+                      "unique_impression_count": 0,
+                      "engagement_count": null,
+                      "engagement_percent": null,
+                      "status": "published",
+                      "created_by": {
+                        "id": "eaa67d8e-29c4-4ee8-89d8-06c0e0e9c7d0",
+                        "name": null,
+                        "image_url": null
+                      },
+                      "schedule_url": "https://cf-blast.livelikecdn.com/api/v1/rich-posts/664255f3-8699-44f4-8679-9a72c4d8cf50/schedule/",
+                      "rewards_url": null,
+                      "translations": {},
+                      "translatable_fields": [
+                        "content"
+                      ],
+                      "mentions": [
+                        {
+                          "start_index": 30,
+                          "end_index": 37,
+                          "mentioned_profile_id": "d6646392-e87b-437f-ba29-d154b7a26679",
+                          "mentioned_profile_custom_id": null,
+                          "mentioned_profile_nickname": "Prakriti Deshmukh",
+                          "id": "1685df79-2d3d-4f08-a504-3637d405bb56"
+                        }
+                      ],
+                      "reactions": [],
+                      "custom_data": null,
+                      "earnable_rewards": [],
+                      "widget_interactions_url_template": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=664255f3-8699-44f4-8679-9a72c4d8cf50",
+                      "widget_attributes": []
+                    }
                   }
                 },
                 "schema": {
@@ -13032,19 +13090,62 @@
                         "example": "content"
                       }
                     },
+                    "mentions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "start_index": {
+                            "type": "integer",
+                            "example": 30,
+                            "default": 0
+                          },
+                          "end_index": {
+                            "type": "integer",
+                            "example": 37,
+                            "default": 0
+                          },
+                          "mentioned_profile_id": {
+                            "type": "string",
+                            "example": "d6646392-e87b-437f-ba29-d154b7a26679"
+                          },
+                          "mentioned_profile_custom_id": {},
+                          "mentioned_profile_nickname": {
+                            "type": "string",
+                            "example": "Prakriti Deshmukh"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "1685df79-2d3d-4f08-a504-3637d405bb56"
+                          }
+                        }
+                      }
+                    },
                     "reactions": {
-                      "type": "array"
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {}
+                      }
                     },
                     "custom_data": {},
                     "earnable_rewards": {
-                      "type": "array"
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {}
+                      }
                     },
                     "widget_interactions_url_template": {
                       "type": "string",
                       "example": "https://cf-blast.livelikecdn.com/api/v1/profiles/{profile_id}/widget-interactions/?rich_post_id=664255f3-8699-44f4-8679-9a72c4d8cf50"
                     },
                     "widget_attributes": {
-                      "type": "array"
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {}
+                      }
                     }
                   }
                 }
@@ -13067,8 +13168,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "get": {
         "summary": "List Rich Posts",
