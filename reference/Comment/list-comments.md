@@ -3,7 +3,6 @@ excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-comments
-deprecated: false
 hidden: false
 metadata:
   title: ''
