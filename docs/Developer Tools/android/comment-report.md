@@ -9,4 +9,4 @@ metadata:
 
 Users can report a comment to moderators.
 
-**API Definition:** [createCommentReport](https://livelike-doc-redirect-url.herokuapp.com/javascript?keyword=createCommentReport)
+**API Definition:** [createCommentReport](https://docs.livelike.com/reference/create-comment-report)
