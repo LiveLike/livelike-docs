@@ -1,5 +1,6 @@
 ---
 title: Comment Report
+excerpt: '**CommentReport** represents one report created against a comment'
 deprecated: false
 hidden: true
 metadata:
