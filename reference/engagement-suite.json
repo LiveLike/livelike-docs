@@ -28342,24 +28342,9 @@
             }
           },
           {
-            "name": "report_status",
-            "in": "query",
-            "description": "pending/dismissed",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "client_id",
             "in": "query",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "comment_id",
-            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -28369,6 +28354,23 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "comment_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Multiple comment_ids accepted. Must belong to same comment board."
+          },
+          {
+            "name": "report_status",
+            "in": "query",
+            "description": "pending/dismissed",
+            "schema": {
+              "type": "string",
+              "default": ""
             }
           }
         ],
@@ -28518,8 +28520,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/comments/{comment_id}/dismiss-reports/": {
