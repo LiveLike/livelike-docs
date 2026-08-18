@@ -1,12 +1,13 @@
 ---
 title: Arcade Changelogs
+excerpt: >-
+  Release notes for every Arcade game, written for the people who configure and
+  embed them.
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-Release notes for every Arcade game, written for the people who configure and embed them.
-
 Each game has its own page, and each release that changes something you can see or configure gets its own entry underneath it.
 
 ## How to read these notes
