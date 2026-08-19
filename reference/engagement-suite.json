@@ -14037,6 +14037,12 @@
                     },
                     "attributes": {
                       "type": "array"
+                    },
+                    "expires_at": {
+                      "type": "string"
+                    },
+                    "transaction_validity_days": {
+                      "type": "string"
                     }
                   }
                 }
