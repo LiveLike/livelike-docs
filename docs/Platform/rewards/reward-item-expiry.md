@@ -33,10 +33,9 @@ With Earn-Based Expiry Period, every transaction is tracked individually and exp
 
 #### Key configuration fields:<br />
 
-| Field              | Description                                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| `expiry_mode`      | Set to `fifo` - first in first out.                                                                                  |
-| fifo\_window\_days | Number of days from the earn date to expiry. Minimum 1 day, no maximum. Set this to turn Earn-Based Expiry Period on |
+| Field                     | Description                                                                                                          |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| transaction_validity_days | Number of days from the earn date to expiry. Minimum 1 day, no maximum. Set this to turn Earn-Based Expiry Period on |
 
 **How spending works:** when a user redeems, points are drawn from the bucket closest to expiring first, moving on to the next bucket if needed to cover the full amount. If a bucket is only partly spent, whatever's left keeps its original expiry - spending never resets the clock on remaining points.
 
@@ -46,7 +45,7 @@ With Earn-Based Expiry Period, every transaction is tracked individually and exp
 
 Say you want points to stay "fresh" so users redeem regularly instead of stockpiling.
 
-- You configure reward item as "Redeemable Points" with `expiry_mode: fifo` and `fifo_window_days: 30`
+- You configure reward item as "Redeemable Points" with `transaction_validity_days: 30`
 - A user earns 100 pts on Jun 1, 200 pts on Jun 5, and 700 pts on Jun 10 - creating three buckets that expire end of day (UTC) on Jul 1, Jul 5, and Jul 10 respectively.
 - On Jun 29, the user redeems an 800-pt item. Buckets A and B (Jun 1 and Jun 5) are fully used up, and 500 of the 700 pts from Bucket C are used, leaving 200 pts still expiring end of day on Jul 10
 - If the user hadn't redeemed anything, each bucket would simply expire on its own date, and each shows up as its own entry in their transaction history
@@ -57,16 +56,15 @@ With Global Expiry Date, you set one calendar date, and every point earned into 
 
 **Key configuration fields:**
 
-| Field                    | Description                                             |
-| ------------------------ | ------------------------------------------------------- |
-| `expiry_mode`            | Set to `fixed-date`                                     |
-| `fixed-date_expiry_date` | The date the balance expires. Must be set in the future |
+| Field        | Description                                             |
+| ------------ | ------------------------------------------------------- |
+| `expires_at` | The date the balance expires. Must be set in the future |
 
 **Example: Season-based tier points**
 
 Say you want member or tier points to reset cleanly at the end of a season, rather than dribbling away individually.
 
-- You configure "Tier Points" with `expiry_mode: fixed-date` and `fixed-date_expiry_date: Aug 31`
+- You configure "Tier Points" with  `expires_at: Aug 31`
 - A user earns 50 pts on Jun 1, 75 pts on Jun 18, and 100 pts on Jul 4 - all three earns are tagged to expire Aug 31
 - On Aug 31, the user's full 225-pt balance is voided in a single expiry event
 - If you set a new expiry date, entire pool of that reward item (earned in past as well as in future) picks up that date automatically
@@ -75,7 +73,7 @@ Say you want member or tier points to reset cleanly at the end of a season, rath
 
 ### No Expiry
 
-Setting `expiry_mode` to `none` keeps things exactly as they are today: points never expire, no expiry schedule is shown to the user, and the balance behaves as a simple running total.&#x20;
+Skipping expires_at and transaction_validity_days while setting reward item the points never expire, no expiry schedule is shown to the user, and the balance behaves as a simple running total.&#x20;
 
 ***
 
