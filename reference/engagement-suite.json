@@ -13977,6 +13977,15 @@
                       },
                       "type": "object"
                     }
+                  },
+                  "expires_at": {
+                    "type": "string",
+                    "description": "Date after which all transactions for the reward item expire; no debit or credit transactions are allowed after this date.",
+                    "format": "date"
+                  },
+                  "transaction_validity_days": {
+                    "type": "integer",
+                    "description": "Number of days from the transaction date for which the reward remains valid for the user."
                   }
                 }
               }
@@ -14050,8 +14059,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/profiles/{profile_id}/reward-item-balances/{reward_item_id}/": {
