@@ -14852,6 +14852,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "expires_at",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Effective expiry — the earlier of the transaction's own expires_at and the reward item's earning_ends_at."
+          },
+          {
+            "in": "query",
+            "name": "user_multiplier_url",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link to this profile's reward-multiplier resource."
           }
         ],
         "responses": {
@@ -14986,8 +15002,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/reward-tables/{id}/": {
