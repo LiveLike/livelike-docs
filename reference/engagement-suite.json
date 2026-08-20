@@ -14783,228 +14783,6 @@
         }
       }
     },
-    "/reward-transactions/": {
-      "get": {
-        "summary": "List Reward Transactions",
-        "description": "List reward transactions for earned reward items",
-        "operationId": "list-reward-transactions",
-        "parameters": [
-          {
-            "name": "widget_id",
-            "in": "query",
-            "description": "Filters transactions by widget ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "widget_kind",
-            "in": "query",
-            "description": "Filters transactions by kind of widget, e.g. `text-poll`",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "profile_id",
-            "in": "query",
-            "description": "Filter transactions by destination profile ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "reward_item_id",
-            "in": "query",
-            "description": "Filter transactions by reward item ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "reward_action_key",
-            "in": "query",
-            "description": "Filter transactions by reward_action_key",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "created_since",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "created_until",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "attributes",
-            "in": "query",
-            "description": "Filter transactions by atribute's key/value",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "expires_at",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Effective expiry — the earlier of the transaction's own expires_at and the reward item's earning_ends_at."
-          },
-          {
-            "in": "query",
-            "name": "user_multiplier_url",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Link to this profile's reward-multiplier resource."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n  \"results\": [\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/d6cf158d-0383-4b96-a9d9-a069827b93a2/\",\n      \"profile_id\": \"2cb3fcb7-4ab7-488e-9121-e57176e3b3b9\",\n      \"created_at\": \"2021-07-15T08:38:04.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"d6cf158d-0383-4b96-a9d9-a069827b93a2\",\n      \"profile_nickname\": \"Intrepid Dog\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"texture\",\n          \"value\": \"smooth\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/e2e8e65c-beaf-425d-9e24-35f33df8bff2/\",\n      \"profile_id\": \"f3ae08ff-3e9b-40c7-ad9b-a650ce5877f4\",\n      \"created_at\": \"2021-07-15T09:02:59.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"3bb7b84a-5bcc-4539-bb52-c36b5d410d03\",\n     \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"e2e8e65c-beaf-425d-9e24-35f33df8bff2\",\n      \"profile_nickname\": \"Strong Giraffe\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"speed\",\n          \"value\": \"fast\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/7b77218b-52d3-4398-a579-7b1767ddc538/\",\n      \"profile_id\": \"f3ae08ff-3e9b-40c7-ad9b-a650ce5877f4\",\n      \"created_at\": \"2021-07-15T09:29:14.000Z\",\n      \"reward_action_key\": \"quiz-correct\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"69b7326e-d05d-4725-a210-31e461cc526a\",\n     \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 500,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz correctly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"7b77218b-52d3-4398-a579-7b1767ddc538\",\n      \"profile_nickname\": \"Strong Giraffe\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"temperature\",\n          \"value\": \"hot\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/e6fd0ddf-fe47-4293-bd2e-88e80a8dc9dc/\",\n      \"profile_id\": \"0998bfac-3f51-45a6-b456-8035dc9d09c0\",\n      \"created_at\": \"2021-07-15T16:40:09.000Z\",\n      \"reward_action_key\": \"quiz-answered\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"0a61384e-d4bf-41f2-bb07-ab1d865355dc\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 9,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz incorrectly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"e6fd0ddf-fe47-4293-bd2e-88e80a8dc9dc\",\n      \"profile_nickname\": \"Electric Raptor\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"height\",\n          \"value\": \"tall\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/1a44101f-5e9e-402e-bc1c-c4343e9b6a03/\",\n      \"profile_id\": \"181f0f58-5fc7-4249-ac47-cf163713635f\",\n      \"created_at\": \"2021-07-16T08:05:38.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"1a44101f-5e9e-402e-bc1c-c4343e9b6a03\",\n      \"profile_nickname\": \"Alex K\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"width\",\n          \"value\": \"wide\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/c90ecb5d-171a-4272-b391-b36860ff9916/\",\n      \"profile_id\": \"68c3124a-4f08-45ad-a7f9-35482d53099f\",\n      \"created_at\": \"2021-07-20T08:26:29.000Z\",\n      \"reward_action_key\": \"quiz-correct\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"e196f1bb-1f85-4474-aa66-b36e2e7416fb\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 500,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz correctly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"c90ecb5d-171a-4272-b391-b36860ff9916\",\n      \"profile_nickname\": \"Vivid Moose\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"depth\",\n          \"value\": \"deep\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/cea97f65-626a-400b-930d-9995e6a83072/\",\n      \"profile_id\": \"68c3124a-4f08-45ad-a7f9-35482d53099f\",\n      \"created_at\": \"2021-07-20T08:32:09.000Z\",\n      \"reward_action_key\": \"quiz-answered\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"fe3d3fe6-8164-4038-9888-9cb92c49cc1b\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 9,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz incorrectly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"cea97f65-626a-400b-930d-9995e6a83072\",\n      \"profile_nickname\": \"Vivid Moose\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"brightness\",\n          \"value\": \"dim\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/7dfe7e82-f7d4-4571-a24c-ca5a6434bf68/\",\n      \"profile_id\": \"72bf0506-2883-48ea-87b0-be61b1ae0394\",\n      \"created_at\": \"2021-07-21T11:28:23.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"7dfe7e82-f7d4-4571-a24c-ca5a6434bf68\",\n      \"profile_nickname\": \"Dan R\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"density\",\n          \"value\": \"heavy\"\n        }\n      ],\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\"\n    }\n  ],\n  \"previous\": null,\n  \"count\": 3215,\n  \"next\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/?offset=20\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "custom_data": {},
-                          "url": {
-                            "type": "string",
-                            "example": "https://cf-blast.livelikecdn.com/api/v1/reward-transactions/d6cf158d-0383-4b96-a9d9-a069827b93a2/"
-                          },
-                          "profile_id": {
-                            "type": "string",
-                            "example": "2cb3fcb7-4ab7-488e-9121-e57176e3b3b9"
-                          },
-                          "created_at": {
-                            "type": "string",
-                            "example": "2021-07-15T08:38:04.000Z"
-                          },
-                          "reward_action_key": {
-                            "type": "string",
-                            "example": "poll-voted"
-                          },
-                          "widget_id": {},
-                          "reward_action_id": {
-                            "type": "string",
-                            "example": "63e087b2-2f11-4406-a927-2c43e8a16209"
-                          },
-                          "reason": {
-                            "type": "string",
-                            "example": "attend a game"
-                          },
-                          "description": {
-                            "type": "string",
-                            "example": "attended an away game vs Atlanta Braves on April 30th"
-                          },
-                          "widget_kind": {},
-                          "reward_item_amount": {
-                            "type": "integer",
-                            "example": 100,
-                            "default": 0
-                          },
-                          "reward_item_id": {
-                            "type": "string",
-                            "example": "f412f658-fc53-4924-8fed-8103d81a826d"
-                          },
-                          "reward_action_name": {
-                            "type": "string",
-                            "example": "Voted on a poll"
-                          },
-                          "reward_item_name": {
-                            "type": "string",
-                            "example": "Web Demo Reward"
-                          },
-                          "id": {
-                            "type": "string",
-                            "example": "d6cf158d-0383-4b96-a9d9-a069827b93a2"
-                          },
-                          "profile_nickname": {
-                            "type": "string",
-                            "example": "Intrepid Dog"
-                          },
-                          "source": {
-                            "type": "string",
-                            "example": "quest-completed"
-                          },
-                          "user_quest_id": {},
-                          "invoked_action_id": {},
-                          "reward_table_entry_id": {},
-                          "invoked_action_code": {},
-                          "attributes": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "key": {
-                                  "type": "string",
-                                  "example": "texture"
-                                },
-                                "value": {
-                                  "type": "string",
-                                  "example": "smooth"
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "previous": {},
-                    "count": {
-                      "type": "integer",
-                      "example": 3215,
-                      "default": 0
-                    },
-                    "next": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/reward-transactions/?offset=20"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/reward-tables/{id}/": {
       "get": {
         "summary": "Get Reward Table",
@@ -35778,6 +35556,236 @@
         "summary": "Update comment quality rules",
         "operationId": "post_applications-client-id-comment-quality-rules-1",
         "x-internal": false
+      }
+    },
+    "/reward-transactions/": {
+      "get": {
+        "summary": "List Reward Transactions",
+        "description": "List reward transactions for earned reward items",
+        "operationId": "list-reward-transactions",
+        "parameters": [
+          {
+            "name": "widget_id",
+            "in": "query",
+            "description": "Filters transactions by widget ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "widget_kind",
+            "in": "query",
+            "description": "Filters transactions by kind of widget, e.g. `text-poll`",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "profile_id",
+            "in": "query",
+            "description": "Filter transactions by destination profile ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "reward_item_id",
+            "in": "query",
+            "description": "Filter transactions by reward item ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "reward_action_key",
+            "in": "query",
+            "description": "Filter transactions by reward_action_key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "created_until",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "Filter transactions by atribute's key/value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "expires_at",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Effective expiry — the earlier of the transaction's own expires_at and the reward item's earning_ends_at."
+          },
+          {
+            "in": "query",
+            "name": "user_multiplier_url",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link to this profile's reward-multiplier resource."
+          },
+          {
+            "in": "query",
+            "name": "idempotency_key",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Client-supplied key used to dedupe transaction creation requests."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"results\": [\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/d6cf158d-0383-4b96-a9d9-a069827b93a2/\",\n      \"profile_id\": \"2cb3fcb7-4ab7-488e-9121-e57176e3b3b9\",\n      \"created_at\": \"2021-07-15T08:38:04.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"d6cf158d-0383-4b96-a9d9-a069827b93a2\",\n      \"profile_nickname\": \"Intrepid Dog\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"texture\",\n          \"value\": \"smooth\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/e2e8e65c-beaf-425d-9e24-35f33df8bff2/\",\n      \"profile_id\": \"f3ae08ff-3e9b-40c7-ad9b-a650ce5877f4\",\n      \"created_at\": \"2021-07-15T09:02:59.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"3bb7b84a-5bcc-4539-bb52-c36b5d410d03\",\n     \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"e2e8e65c-beaf-425d-9e24-35f33df8bff2\",\n      \"profile_nickname\": \"Strong Giraffe\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"speed\",\n          \"value\": \"fast\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/7b77218b-52d3-4398-a579-7b1767ddc538/\",\n      \"profile_id\": \"f3ae08ff-3e9b-40c7-ad9b-a650ce5877f4\",\n      \"created_at\": \"2021-07-15T09:29:14.000Z\",\n      \"reward_action_key\": \"quiz-correct\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"69b7326e-d05d-4725-a210-31e461cc526a\",\n     \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 500,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz correctly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"7b77218b-52d3-4398-a579-7b1767ddc538\",\n      \"profile_nickname\": \"Strong Giraffe\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"temperature\",\n          \"value\": \"hot\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/e6fd0ddf-fe47-4293-bd2e-88e80a8dc9dc/\",\n      \"profile_id\": \"0998bfac-3f51-45a6-b456-8035dc9d09c0\",\n      \"created_at\": \"2021-07-15T16:40:09.000Z\",\n      \"reward_action_key\": \"quiz-answered\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"0a61384e-d4bf-41f2-bb07-ab1d865355dc\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 9,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz incorrectly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"e6fd0ddf-fe47-4293-bd2e-88e80a8dc9dc\",\n      \"profile_nickname\": \"Electric Raptor\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"height\",\n          \"value\": \"tall\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/1a44101f-5e9e-402e-bc1c-c4343e9b6a03/\",\n      \"profile_id\": \"181f0f58-5fc7-4249-ac47-cf163713635f\",\n      \"created_at\": \"2021-07-16T08:05:38.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"1a44101f-5e9e-402e-bc1c-c4343e9b6a03\",\n      \"profile_nickname\": \"Alex K\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"width\",\n          \"value\": \"wide\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/c90ecb5d-171a-4272-b391-b36860ff9916/\",\n      \"profile_id\": \"68c3124a-4f08-45ad-a7f9-35482d53099f\",\n      \"created_at\": \"2021-07-20T08:26:29.000Z\",\n      \"reward_action_key\": \"quiz-correct\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"e196f1bb-1f85-4474-aa66-b36e2e7416fb\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 500,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz correctly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"c90ecb5d-171a-4272-b391-b36860ff9916\",\n      \"profile_nickname\": \"Vivid Moose\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"depth\",\n          \"value\": \"deep\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/cea97f65-626a-400b-930d-9995e6a83072/\",\n      \"profile_id\": \"68c3124a-4f08-45ad-a7f9-35482d53099f\",\n      \"created_at\": \"2021-07-20T08:32:09.000Z\",\n      \"reward_action_key\": \"quiz-answered\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"fe3d3fe6-8164-4038-9888-9cb92c49cc1b\",\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 9,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Answered a quiz incorrectly\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"cea97f65-626a-400b-930d-9995e6a83072\",\n      \"profile_nickname\": \"Vivid Moose\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"brightness\",\n          \"value\": \"dim\"\n        }\n      ]\n    },\n    {\n      \"custom_data\": null,\n      \"url\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/7dfe7e82-f7d4-4571-a24c-ca5a6434bf68/\",\n      \"profile_id\": \"72bf0506-2883-48ea-87b0-be61b1ae0394\",\n      \"created_at\": \"2021-07-21T11:28:23.000Z\",\n      \"reward_action_key\": \"poll-voted\",\n      \"widget_id\": null,\n      \"reward_action_id\": \"63e087b2-2f11-4406-a927-2c43e8a16209\",\n      \"widget_kind\": null,\n      \"reward_item_amount\": 100,\n      \"reward_item_id\": \"f412f658-fc53-4924-8fed-8103d81a826d\",\n      \"reward_action_name\": \"Voted on a poll\",\n      \"reward_item_name\": \"Web Demo Reward\",\n      \"id\": \"7dfe7e82-f7d4-4571-a24c-ca5a6434bf68\",\n      \"profile_nickname\": \"Dan R\",\n      \"source\": \"quest-completed\",\n      \"user_quest_id\": null,\n      \"invoked_action_id\": null,\n      \"reward_table_entry_id\": null,\n      \"invoked_action_code\": null,\n      \"attributes\": [\n        {\n          \"key\": \"density\",\n          \"value\": \"heavy\"\n        }\n      ],\n      \"reason\": \"attend a game\",\n      \"description\": \"attended an away game vs Atlanta Braves on April 30th\"\n    }\n  ],\n  \"previous\": null,\n  \"count\": 3215,\n  \"next\": \"https://cf-blast.livelikecdn.com/api/v1/reward-transactions/?offset=20\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "custom_data": {},
+                          "url": {
+                            "type": "string",
+                            "example": "https://cf-blast.livelikecdn.com/api/v1/reward-transactions/d6cf158d-0383-4b96-a9d9-a069827b93a2/"
+                          },
+                          "profile_id": {
+                            "type": "string",
+                            "example": "2cb3fcb7-4ab7-488e-9121-e57176e3b3b9"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2021-07-15T08:38:04.000Z"
+                          },
+                          "reward_action_key": {
+                            "type": "string",
+                            "example": "poll-voted"
+                          },
+                          "widget_id": {},
+                          "reward_action_id": {
+                            "type": "string",
+                            "example": "63e087b2-2f11-4406-a927-2c43e8a16209"
+                          },
+                          "reason": {
+                            "type": "string",
+                            "example": "attend a game"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "attended an away game vs Atlanta Braves on April 30th"
+                          },
+                          "widget_kind": {},
+                          "reward_item_amount": {
+                            "type": "integer",
+                            "example": 100,
+                            "default": 0
+                          },
+                          "reward_item_id": {
+                            "type": "string",
+                            "example": "f412f658-fc53-4924-8fed-8103d81a826d"
+                          },
+                          "reward_action_name": {
+                            "type": "string",
+                            "example": "Voted on a poll"
+                          },
+                          "reward_item_name": {
+                            "type": "string",
+                            "example": "Web Demo Reward"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "d6cf158d-0383-4b96-a9d9-a069827b93a2"
+                          },
+                          "profile_nickname": {
+                            "type": "string",
+                            "example": "Intrepid Dog"
+                          },
+                          "source": {
+                            "type": "string",
+                            "example": "quest-completed"
+                          },
+                          "user_quest_id": {},
+                          "invoked_action_id": {},
+                          "reward_table_entry_id": {},
+                          "invoked_action_code": {},
+                          "attributes": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "key": {
+                                  "type": "string",
+                                  "example": "texture"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "example": "smooth"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "previous": {},
+                    "count": {
+                      "type": "integer",
+                      "example": 3215,
+                      "default": 0
+                    },
+                    "next": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/reward-transactions/?offset=20"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
