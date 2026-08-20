@@ -13851,7 +13851,33 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"count\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n      \"id\": \"194d4d03-b7c0-4b72-bf7f-1974c92a4709\",\n      \"url\": \"http://localhost:8000/api/v1/reward-items/194d4d03-b7c0-4b72-bf7f-1974c92a4709/\",\n      \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n      \"name\": \"Test Points\"\n    },\n    {\n      \"id\": \"dd5449a4-46fb-4f67-9b4a-fea612eb4574\",\n      \"url\": \"http://localhost:8000/api/v1/reward-items/dd5449a4-46fb-4f67-9b4a-fea612eb4574/\",\n      \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n      \"name\": \"Dollars\"\n    }\n  ]\n}"
+                    "value": {
+                      "count": 2,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "194d4d03-b7c0-4b72-bf7f-1974c92a4709",
+                          "url": "http://localhost:8000/api/v1/reward-items/194d4d03-b7c0-4b72-bf7f-1974c92a4709/",
+                          "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                          "name": "Test Points",
+                          "images": [],
+                          "attributes": [],
+                          "expires_at": null,
+                          "transaction_validity_days": null
+                        },
+                        {
+                          "id": "dd5449a4-46fb-4f67-9b4a-fea612eb4574",
+                          "url": "http://localhost:8000/api/v1/reward-items/dd5449a4-46fb-4f67-9b4a-fea612eb4574/",
+                          "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                          "name": "Dollars",
+                          "images": [],
+                          "attributes": [],
+                          "expires_at": null,
+                          "transaction_validity_days": null
+                        }
+                      ]
+                    }
                   }
                 },
                 "schema": {
@@ -13910,7 +13936,6 @@
             }
           }
         },
-        "deprecated": false,
         "x-readme": {
           "code-samples": [
             {
