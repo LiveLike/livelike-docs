@@ -1,10 +1,7 @@
 ---
-title: Credit Reward Item
-excerpt: Credit reward item points to a user profile
 api:
   file: engagement-suite.json
   operationId: credit-reward-item
-deprecated: false
 hidden: false
 metadata:
   title: ''
