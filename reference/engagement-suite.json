@@ -14312,6 +14312,15 @@
                       "type": "string"
                     },
                     "description": "List of leaderboard UUIDs to update; if provided, only those leaderboards are updated; if empty ([]), no linked leaderboards are updated; if omitted, all linked leaderboards are updated."
+                  },
+                  "expires_at": {
+                    "type": "string",
+                    "description": "Date after which the credited amount stops counting toward the profile's balance. Must be today or later, and can't exceed the reward item's earning_ends_at.",
+                    "format": "date"
+                  },
+                  "idempotency_key": {
+                    "type": "string",
+                    "description": "Client-supplied dedup token — replaying the same key returns/short-circuits the existing transaction instead of creating a duplicate."
                   }
                 },
                 "required": [
@@ -14375,7 +14384,6 @@
             }
           }
         },
-        "deprecated": false,
         "x-readme": {
           "code-samples": [
             {
