@@ -1,10 +1,7 @@
 ---
-title: List Reward Transactions
-excerpt: List reward transactions for earned reward items
 api:
   file: engagement-suite.json
   operationId: list-reward-transactions
-deprecated: false
 hidden: false
 metadata:
   title: ''
