@@ -1,4 +1,3 @@
-- templates
 - getting-started
 - concepts
 - widgets
@@ -8,6 +7,7 @@
 - presence
 - social-graph-service
 - flairs
+- templates
 - rewards
 - leaderboards
 - badges
