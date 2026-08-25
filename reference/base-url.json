@@ -1149,6 +1149,27 @@
         "summary": "Update Template",
         "operationId": "get_templates-2",
         "description": "Use to update the template including the template_object"
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_templates-3",
+        "summary": "Delete Template",
+        "description": "Used to delete the template."
       }
     }
   },
