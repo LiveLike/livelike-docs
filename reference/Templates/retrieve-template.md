@@ -8,3 +8,4 @@ link:
 metadata:
   robots: index
 ---
+Refer the Template Guide [here](doc:templates)
