@@ -1081,6 +1081,37 @@
         "summary": "Retrieve Template",
         "operationId": "get_templates-1",
         "description": "Use to get the detail of template including the template_object, which is not returned in the list apis"
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Update Template",
+        "operationId": "get_templates-2",
+        "description": "Use to update the template including the template_object"
       }
     }
   },
