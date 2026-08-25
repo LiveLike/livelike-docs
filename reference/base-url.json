@@ -827,12 +827,6 @@
     "/templates/": {
       "post": {
         "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
-          },
           "201": {
             "content": {
               "application/json": {
@@ -888,7 +882,17 @@
             "description": "Created"
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
         "summary": "Create Templates",
         "operationId": "post_templates",
         "description": "Create a template",
