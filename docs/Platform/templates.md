@@ -34,7 +34,7 @@ Standard application API authentication is required.
 | --------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `GET`           | `/templates/`      | [List templates](ref:list-templates). Supports filtering (see below). `template_object` is **omitted** from each item in list responses. |
 | `POST`          | `/templates/`      | [Create a new template.](ref:create-templates)                                                                                           |
-| `GET`           | `/templates/{id}/` | Retrieve a single template, including its full `template_object`.                                                                        |
+| `GET`           | `/templates/{id}/` | [Retrieve a single template](ref:retrieve-template), including its full `template_object`.                                               |
 | `PUT` / `PATCH` | `/templates/{id}/` | Update a template's `name` and/or `template_object`. `category` and `subcategory` are immutable after creation.                          |
 | `DELETE`        | `/templates/{id}/` | Delete the template.                                                                                                                     |
 
