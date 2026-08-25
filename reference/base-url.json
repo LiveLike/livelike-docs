@@ -823,6 +823,133 @@
         },
         "operationId": "put_automation-partners-id"
       }
+    },
+    "/templates/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "b1f6c3de-8b2a-4b0a-9e77-1a2b3c4d5e6f",
+                      "client_id": "abc123",
+                      "category": "widgets",
+                      "subcategory": "text-poll",
+                      "name": "Favorite Color Poll",
+                      "is_default": false,
+                      "using_genie": false,
+                      "created_on": "2026-07-30T12:00:00Z",
+                      "updated_on": "2026-07-30T12:00:00Z",
+                      "created_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "updated_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "template_object": {
+                        "question": "What's your favorite color?",
+                        "options": [
+                          {
+                            "description": "Red",
+                            "localized_data": {}
+                          },
+                          {
+                            "description": "Blue",
+                            "localized_data": {}
+                          }
+                        ],
+                        "localized_data": {},
+                        "timeout": "PT30S",
+                        "sponsors": [],
+                        "widget_attributes": []
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [],
+        "summary": "Create Templates",
+        "operationId": "post_templates",
+        "description": "Create a template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "default": "widgets",
+                    "enum": [
+                      "widgets"
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "subcategory": {
+                    "type": "string",
+                    "description": "Refer the enum values in Template guide link mentioned above."
+                  },
+                  "template_object": {
+                    "type": "object",
+                    "properties": {},
+                    "description": "Dynamic object based on the subcategory. Refer the fields required for each subcategory in Template guide mentioned above."
+                  }
+                },
+                "required": [
+                  "category",
+                  "name",
+                  "subcategory",
+                  "template_object"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "category": "widgets",
+                    "subcategory": "text-poll",
+                    "name": "Favorite Color Poll",
+                    "template_object": {
+                      "question": "What's your favorite color?",
+                      "options": [
+                        {
+                          "description": "Red"
+                        },
+                        {
+                          "description": "Blue"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
