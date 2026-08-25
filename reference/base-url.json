@@ -1012,6 +1012,29 @@
         "operationId": "get_templates",
         "description": "Used to get the list of templates from the token scoped Application"
       }
+    },
+    "/templates/<id>/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Retrieve Template",
+        "operationId": "get_templates-1",
+        "description": "Use to get the detail of template including the template_object, which is not returned in the list apis"
+      }
     }
   },
   "components": {
