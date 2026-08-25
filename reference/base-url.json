@@ -953,6 +953,18 @@
               }
             }
           }
+        },
+        "x-readme": {
+          "code-samples": [
+            {
+              "code": "curl --request POST \\\n     --url https://cf-blast.livelikecdn.com/api/v1/templates/ \\\n     --header 'Authorization: Bearer {token}' \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"category\": \"widgets\",\n  \"subcategory\": \"text-poll\",\n  \"name\": \"Favorite Color Poll\",\n  \"template_object\": {\n    \"question\": \"What's your favorite color?\",\n    \"options\": [\n      {\n        \"description\": \"Red\"\n      },\n      {\n        \"description\": \"Blue\"\n      }\n    ]\n  }\n}\n'",
+              "language": "shell",
+              "name": ""
+            }
+          ],
+          "samples-languages": [
+            "shell"
+          ]
         }
       }
     }
