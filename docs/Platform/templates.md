@@ -30,13 +30,13 @@ Standard application API authentication is required.
 
 ## Endpoints
 
-| Method          | Path               | Description                                                                                                            |
-| --------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `GET`           | `/templates/`      | [List templates](). Supports filtering (see below). `template_object` is **omitted** from each item in list responses. |
-| `POST`          | `/templates/`      | Create a new template.                                                                                                 |
-| `GET`           | `/templates/{id}/` | Retrieve a single template, including its full `template_object`.                                                      |
-| `PUT` / `PATCH` | `/templates/{id}/` | Update a template's `name` and/or `template_object`. `category` and `subcategory` are immutable after creation.        |
-| `DELETE`        | `/templates/{id}/` | Delete the template.                                                                                                   |
+| Method          | Path               | Description                                                                                                                      |
+| --------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| `GET`           | `/templates/`      | [List templates](reference:). Supports filtering (see below). `template_object` is **omitted** from each item in list responses. |
+| `POST`          | `/templates/`      | Create a new template.                                                                                                           |
+| `GET`           | `/templates/{id}/` | Retrieve a single template, including its full `template_object`.                                                                |
+| `PUT` / `PATCH` | `/templates/{id}/` | Update a template's `name` and/or `template_object`. `category` and `subcategory` are immutable after creation.                  |
+| `DELETE`        | `/templates/{id}/` | Delete the template.                                                                                                             |
 
 ### List filters (query params)
 
