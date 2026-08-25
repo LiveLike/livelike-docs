@@ -895,7 +895,7 @@
         ],
         "summary": "Create Templates",
         "operationId": "post_templates",
-        "description": "Create a template",
+        "description": "Create a new template of certain category/subcategory.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -910,7 +910,8 @@
                     ]
                   },
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name should be unique in a category"
                   },
                   "subcategory": {
                     "type": "string",
