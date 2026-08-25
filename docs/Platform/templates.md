@@ -1,9 +1,9 @@
 ---
 title: Templates
 excerpt: >-
-  Enable producers save reusable content (e.g. a poll question with options, an
-  alert's text/image) so they can be reused later when creating a live widget,
-  without retyping the same content.
+  Enable producers to save reusable content (e.g. a poll question with options,
+  an alert's text/image) so they can be reused later when creating a live
+  widget, without retyping the same content.
 deprecated: false
 hidden: false
 metadata:
