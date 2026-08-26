@@ -476,7 +476,7 @@ reactionSession = self.sdk.reaction.createReactionSession(reactionSpace: reactio
   The Reaction Session abstraction is only present on the iOS and Android SDKs. Other SDKs can still use reactions but expose them on other interfaces.
 </Callout>
 
-#### Add User Reaction
+### Add User Reaction
 
 This API requires:
 
@@ -509,7 +509,7 @@ reactionSession.addUserReaction(targetID: targetID, reactionID: reactionID, cust
 }
 ```
 
-#### List User Reactions by target ID
+### List User Reactions by target ID
 
 ```javascript
 LiveLike.getUserReactions({
@@ -541,7 +541,7 @@ reactionSession.getUserReactions(
 }
 ```
 
-#### List User Reactions by reaction type ID
+### List User Reactions by reaction type ID
 
 ```javascript
 LiveLike.getUserReactions({
@@ -573,7 +573,7 @@ reactionSession.getUserReactions(
 }
 ```
 
-#### Count User Reactions by target IDs
+### Count User Reactions by target IDs
 
 Return counts of user reactions grouped by target ID, broken down by reaction type ID within each target ID. Supply multiple target IDs to perform an optimized batch call.
 
@@ -605,9 +605,9 @@ reactionSession.getUserReactionsCount(
 }
 ```
 
-#### Remove User Reaction
+### Remove User Reaction
 
-Remove a user reaction using user reaction Id which is Id of the user reaction object created when a user adds a reaction.
+Remove a user reaction from a space by its ID.
 
 ```javascript
 LiveLike.removeUserReaction({
