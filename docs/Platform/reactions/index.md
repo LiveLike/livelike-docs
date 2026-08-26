@@ -433,6 +433,9 @@ reactionSession.subscribeToReactionSpaceDelegate(<key>, object: ReactionSpaceDel
     }
 })
 ```
+```swift
+func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace newReactionSpace: ReactionSpace)
+```
 
 <Callout icon="📘" theme="info">
   ### Real Time Events (iOS)
@@ -450,16 +453,6 @@ Realtime notifications for addition and removal of user reactions.
 func reactionSession(_ reactionSession: ReactionSession, didAddReaction reaction: UserReaction)
 
 func reactionSession(_ reactionSession: ReactionSession, didRemoveReaction reaction: UserReaction)
-```
-
-### Real Time Reaction Space events
-
-For real time updates of reactions, please conform to **ReactionClientDelegate**
-
-This event is triggered whenever a reaction space is updated with its name or reaction pack ids. You may need to use this event to update your reaction list based on updated reaction pack Ids.
-
-```swift
-func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace newReactionSpace: ReactionSpace)
 ```
 
 ## User Reactions
