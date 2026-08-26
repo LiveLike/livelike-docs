@@ -125,6 +125,10 @@ sdk.reaction.getReactionPackInfo(reactionPackID: packID) { result in
 
 Exclusive reaction packs work just like regular reaction packs, they can be assigned to users on an individual basis. The reactions inside an exclusive pack can only be used by the profiles that have been assigned that pack, whereas regular reaction packs are available to all users.
 
+<Callout icon="📘" theme="info">
+  Discover use cases and find more details on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
+</Callout>
+
 #### **Assign Access to Reaction Pack**
 
 Grants access to an exclusive reaction pack for the specified profile.
@@ -142,10 +146,6 @@ Retrieves a paginated list of all reaction packs currently owned by the specifie
 Removes the user's access to a specific reaction pack.
 
 [Revoke Profile Reaction Pack](ref:revoke-profile-reaction-pack)
-
-<Callout icon="📘" theme="info">
-  Discover use cases and find more details on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
-</Callout>
 
 ## Reaction Spaces
 
