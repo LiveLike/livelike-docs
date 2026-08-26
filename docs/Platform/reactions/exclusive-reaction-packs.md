@@ -1,6 +1,6 @@
 ---
 title: Exclusive Reaction Packs
-excerpt: Per-user access to reactions
+excerpt: Per-user access to reaction packs
 deprecated: false
 hidden: false
 metadata:
