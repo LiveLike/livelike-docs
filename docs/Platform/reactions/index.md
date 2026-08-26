@@ -123,7 +123,7 @@ sdk.reaction.getReactionPackInfo(reactionPackID: packID) { result in
 
 ### Exclusive Reaction Packs
 
-Exclusive Reaction Packs allow you to control which users can access which reaction packs on an individual per-user basis. The reactions inside an exclusive pack can only be used by the profiles that have been assigned that pack, whereas regular reaction packs are available to all users. Learn more on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
+Exclusive reaction packs work just like regular reaction packs, they can be assigned to users on an individual basis. The reactions inside an exclusive pack can only be used by the profiles that have been assigned that pack, whereas regular reaction packs are available to all users. Learn more on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
 
 ## Reaction Spaces
 
