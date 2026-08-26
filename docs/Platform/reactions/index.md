@@ -509,7 +509,9 @@ reactionSession.addUserReaction(targetID: targetID, reactionID: reactionID, cust
 }
 ```
 
-### List User Reactions by target ID
+### List User Reactions
+
+#### List User Reactions by target ID
 
 ```javascript
 LiveLike.getUserReactions({
@@ -541,7 +543,7 @@ reactionSession.getUserReactions(
 }
 ```
 
-### List User Reactions by reaction type ID
+#### List User Reactions by reaction type ID
 
 ```javascript
 LiveLike.getUserReactions({
@@ -570,6 +572,20 @@ reactionSession.getUserReactions(
 		case .failure(let error):
     	// Failure Block
 	}
+}
+```
+
+#### List User Reactions across multiple spaces
+
+```kotlin
+sdk.reaction().getUserReactions(
+  GetUserReactionsCountRequest(
+    reactionSpaceIds = listOf(ractionSpaceId1, reactionSpaceId2),
+    targetIds = listOf(targetId1, targetId2)
+  )
+) {
+  result, error ->
+    println(result)
 }
 ```
 
@@ -608,7 +624,6 @@ reactionSession.getUserReactionsCount(
 #### Count User Reactions across multiple spaces
 
 ```kotlin
-// Use the sdk.reaction() reaction client singleton to request reactions across spaces
 sdk.reaction().getUserReactionsCount(
   GetUserReactionsCountRequest(
     reactionSpaceIds = listOf(ractionSpaceId1, reactionSpaceId2),
