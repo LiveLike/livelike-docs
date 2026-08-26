@@ -12,23 +12,27 @@ next:
 ---
 Use the Reactions service to add user reactions to your content. Anything that can be referenced by a unique identifier is eligible for reactions, so everything ranging from built-in LiveLike components to your own custom content can support user reactions.
 
-<Image align="center" width="300px" src="https://files.readme.io/a165ca3-ReactionsAsAService.png" />
 
-> 📘 Available since:
->
-> **Web SDK** `2.29.0`
->
-> **Android SDK** `2.54`
->
-> **iOS SDK** `2.51`
+<Image src="https://files.readme.io/a165ca3-ReactionsAsAService.png" align="center" width="300px" />
+
+
+<Callout icon="📘" theme="info">
+  ### Available since:
+
+  **Web SDK** `2.29.0`
+
+  **Android SDK** `2.54`
+
+  **iOS SDK** `2.51`
+</Callout>
 
 ## Reactions Basics
 
 The reactions service consists of a few components.
 
-* A **Reaction Pack** defines a set of reaction types. Each pack can have many reaction types inside of it, and each type has an ID, name, and image asset. Once a pack is created it can be associated with spaces in order to make its reaction types available inside those spaces.
-* A **Reaction Space** acts as namespace and mapping for content. Targets within each space represent individual units inside the space that can be reacted to. Packs can be linked with spaces to control which reactions are available to use inside those spaces. Reaction spaces are usually mapped one-to-one with content like chat rooms, comment boards, blog posts, videos, and so on.
-* A **User Reaction** is an instance of a user adding their reaction to some target within the space.
+- A **Reaction Pack** defines a set of reaction types. Each pack can have many reaction types inside of it, and each type has an ID, name, and image asset. Once a pack is created it can be associated with spaces in order to make its reaction types available inside those spaces.
+- A **Reaction Space** acts as namespace and mapping for content. Targets within each space represent individual units inside the space that can be reacted to. Packs can be linked with spaces to control which reactions are available to use inside those spaces. Reaction spaces are usually mapped one-to-one with content like chat rooms, comment boards, blog posts, videos, and so on.
+- A **User Reaction** is an instance of a user adding their reaction to some target within the space.
 
 ## Typical Reactions Workflow
 
@@ -56,32 +60,33 @@ With LiveLike, **any content that has a unique identifier can support reactions*
 
 **Sample Use Cases**
 
-* In-app purchases for fans who want collectible reactions.
-* Team-branded packs available only to official fan groups.
-* Collectible reaction packs redeemable through the Rewards Store.
-* Gold-tier members unlocking exclusive reactions as part of loyalty benefits.
+- In-app purchases for fans who want collectible reactions.
+- Team-branded packs available only to official fan groups.
+- Collectible reaction packs redeemable through the Rewards Store.
+- Gold-tier members unlocking exclusive reactions as part of loyalty benefits.
 
 #### How It Works
 
-* Access can be granted, revoked, or automated through purchases, rewards, or membership tiers.
-* Fans only see the packs they own, keeping the experience clutter-free and personalized.
+- Access can be granted, revoked, or automated through purchases, rewards, or membership tiers.
+- Fans only see the packs they own, keeping the experience clutter-free and personalized.
 
 **APIs – Integrator Experience**
 
-* **Grant Access to a Reaction Pack:**
+- **Grant Access to a Reaction Pack:**
 
   `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
   Grants access to an exclusive reaction pack for the specified profile.
+
   ```
   {
       "reaction_pack_id": "6e654321-abcd-4def-9012-9876543210fe",
   }
   ```
-* **List All Reaction Packs Owned by Profile**
+- **List All Reaction Packs Owned by Profile**
 
   Retrieves a paginated list of all reaction packs currently owned by the specified profile.
   `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
-* **Revoke Access to a Reaction Pack**
+- **Revoke Access to a Reaction Pack**
 
   Revokes the user's access to a specific reaction pack.
   `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
@@ -436,9 +441,11 @@ reactionSession.subscribeToReactionSpaceDelegate(<key>, object: ReactionSpaceDel
 })
 ```
 
-> 📘 Real Time Events (iOS)
->
-> For iOS SDK, please conform to the respective Delegates
+<Callout icon="📘" theme="info">
+  ### Real Time Events (iOS)
+
+  For iOS SDK, please conform to the respective Delegates
+</Callout>
 
 ### Real Time User Reaction events
 
@@ -464,11 +471,9 @@ func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace new
 
 ### User Reactions API
 
-> 📘 Note:
->
-> **Reaction Session** is an interface to interact with the reactions space exposed by Android and IOS SDK.
-
 #### Create Reaction Session
+
+A **Reaction Session** is the interface to interact with a reaction space exposed by Android and IOS SDK.
 
 ```kotlin
 val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<target-group-id>,errorDelegate)
@@ -476,6 +481,12 @@ val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<t
 ```swift
 reactionSession = self.sdk.reaction.createReactionSession(reactionSpace: reactionSpace)
 ```
+
+<Callout icon="📘" theme="info">
+  ### Reaction Sessions on Android and iOS
+
+  The Reaction Session abstraction is only present on the iOS and Android SDKs. Other SDKs can still use reactions but expose them on other interfaces.
+</Callout>
 
 #### Add User Reaction
 
@@ -576,8 +587,7 @@ reactionSession.getUserReactions(
 
 #### Count User Reactions by target IDs
 
-This API could be used in case you just need reaction with total count for a given target Id.
-You can get total reaction count for a list of target Id where currently total target Ids is limited to 20 for a single API request.
+Return counts of user reactions grouped by target ID, broken down by reaction type ID within each target ID. Supply multiple target IDs to perform an optimized batch call.
 
 ```javascript
 LiveLike.getUserReactionsCount({
