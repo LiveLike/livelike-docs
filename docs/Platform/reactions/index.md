@@ -312,11 +312,11 @@ sdk.reaction.getReactionSpaces(reactionSpaceID: nil, targetGroupID: targetGroupI
 })
 ```
 
-### Real time Reaction Space events
+### Live Reaction events
 
 For real time updates of user reactions, use reaction space events.
 
-#### Add User Reaction event
+#### User Reaction Added event
 
 ```javascript
 function onAddUserReaction(userReaction){
@@ -325,17 +325,13 @@ function onAddUserReaction(userReaction){
 LiveLike.addReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.ADD_REACTION,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onAddUserReaction
-)
+}, onAddUserReaction)
 
 // To remove a added listener function
 LiveLike.removeReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.ADD_REACTION,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onAddUserReaction // earlier added listener function
-)
+}, onAddUserReaction /* earlier added listener function */)
 ```
 ```kotlin
 reactionSession.subscribeToUserReactionDelegate(<key>, object : UserReactionDelegate { // the key is used to identify the delegate,needs to be a string
@@ -352,7 +348,7 @@ reactionSession.subscribeToUserReactionDelegate(<key>, object : UserReactionDele
 func reactionSession(_ reactionSession: ReactionSession, didAddReaction reaction: UserReaction)
 ```
 
-#### Remove User Reaction event
+#### User Reaction Removed event
 
 ```javascript
 function onRemoveUserReaction(userReaction){
@@ -361,17 +357,13 @@ function onRemoveUserReaction(userReaction){
 LiveLike.addReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.REMOVE_REACTION,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onRemoveUserReaction
-)
+}, onRemoveUserReaction)
 
 // To remove a added listener function
 LiveLike.removeReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.REMOVE_REACTION,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onRemoveUserReaction // earlier added listener function
-)
+}, onRemoveUserReaction /* earlier added listener function */)
 ```
 ```kotlin
 reactionSession.subscribeToUserReactionDelegate(<key>, object : UserReactionDelegate {// the key is used to identify the delegate,needs to be a string
@@ -388,9 +380,9 @@ reactionSession.subscribeToUserReactionDelegate(<key>, object : UserReactionDele
 func reactionSession(_ reactionSession: ReactionSession, didRemoveReaction reaction: UserReaction)
 ```
 
-#### Reaction Space Update event
+#### Reaction Space Updated event
 
-This event is triggered whenever a reaction space is updated with its name or reaction pack ids. You may need to use this event to update your reaction list based on updated reaction pack Ids.
+This event is triggered whenever a reaction space is updated with its name or reaction pack ID. You may need to use this event to update your reaction list based on updated reaction pack IDs.
 
 ```javascript
 function onUpdateReactionSpace(eventDetail){
@@ -399,17 +391,13 @@ function onUpdateReactionSpace(eventDetail){
 LiveLike.addReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.UPDATE_REACTION_SPACE,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onUpdateReactionSpace
-)
+}, onUpdateReactionSpace)
 
 // To remove a added listener function
 LiveLike.removeReactionSpaceEventListener({
     event: LiveLike.ReactionSpaceEvent.UPDATE_REACTION_SPACE,
     reactionSpaceId: "aa7e03fc-01f0-4a98-a2e0-3fed689632d7"
-},
-onUpdateReactionSpace // earlier added listener function
-)
+}, onUpdateReactionSpace /* earlier added listener function */)
 ```
 ```kotlin
 reactionSession.subscribeToReactionSpaceDelegate(<key>, object: ReactionSpaceDelegate {
@@ -420,24 +408,6 @@ reactionSession.subscribeToReactionSpaceDelegate(<key>, object: ReactionSpaceDel
 ```
 ```swift
 func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace newReactionSpace: ReactionSpace)
-```
-
-<Callout icon="📘" theme="info">
-  ### Real Time Events (iOS)
-
-  For iOS SDK, please conform to the respective Delegates
-</Callout>
-
-### Real Time User Reaction events
-
-For real time updates of user reactions, please conform to **ReactionSessionDelegate**
-
-Realtime notifications for addition and removal of user reactions.
-
-```swift
-func reactionSession(_ reactionSession: ReactionSession, didAddReaction reaction: UserReaction)
-
-func reactionSession(_ reactionSession: ReactionSession, didRemoveReaction reaction: UserReaction)
 ```
 
 ## User Reactions
