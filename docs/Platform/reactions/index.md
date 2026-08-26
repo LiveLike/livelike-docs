@@ -49,47 +49,6 @@ A typical reaction workflow involves setting up reaction packs, mapping those pa
 
 Imagine you want to allow your users to react to important moments in videos. Each video would have a reaction space associated with it, and moments inside the video would be represented by targets within the video's reaction space. Each moment would need some kind of unique identifier, so timecodes, chapters, or any other ID from your system would work as long as it's unique inside the reaction space.
 
-## Exclusive Reaction Packs
-
-Reactions let fans instantly express how they feel about content, whether it’s cheering for a team, liking a message, or showing support during a big moment.
-With LiveLike, **any content that has a unique identifier can support reactions**: chat messages, blog posts, comments, videos, polls, or your own custom items.
-
-<Callout icon="📘" theme="info">
-  Exclusive packs are managed at the profile level. Only profiles that have been granted access will see and use them inside chat or comments.
-</Callout>
-
-**Sample Use Cases**
-
-- In-app purchases for fans who want collectible reactions.
-- Team-branded packs available only to official fan groups.
-- Collectible reaction packs redeemable through the Rewards Store.
-- Gold-tier members unlocking exclusive reactions as part of loyalty benefits.
-
-#### How It Works
-
-- Access can be granted, revoked, or automated through purchases, rewards, or membership tiers.
-- Fans only see the packs they own, keeping the experience clutter-free and personalized.
-
-**APIs – Integrator Experience**
-
-- **Grant Access to a Reaction Pack:**
-
-  `POST /api/v1/profiles/{profile_uuid}/reaction-packs/`
-  Grants access to an exclusive reaction pack for the specified profile.
-
-  ```
-  {
-      "reaction_pack_id": "6e654321-abcd-4def-9012-9876543210fe",
-  }
-  ```
-- **List All Reaction Packs Owned by Profile**
-
-  Retrieves a paginated list of all reaction packs currently owned by the specified profile.
-  `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
-- **Revoke Access to a Reaction Pack**
-
-  Revokes the user's access to a specific reaction pack.<br />`DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
-
 ## Reaction Packs
 
 ![](https://files.readme.io/1859c1e-reaction.gif)
@@ -100,7 +59,7 @@ An application can have multiple reaction packs, and each space can use a some o
 
 #### List Reaction Packs
 
-This could be used to get list of reaction pack created through producer suite.
+Lists all available reaction packs.
 
 ```javascript
 LiveLike.getReactionPacks().then(({results}) => console.log(results))
@@ -130,7 +89,7 @@ sdk.reaction.getReactionPacks(page: .first) { result in
 
 #### Get Reaction Pack Details
 
-This could be used to get reaction pack details using reaction pack Id.
+Returns the details of a specific reaction pack by its ID.
 
 ```javascript
 LiveLike.getReactionPackDetail({
@@ -161,6 +120,10 @@ sdk.reaction.getReactionPackInfo(reactionPackID: packID) { result in
 	}
 }
 ```
+
+### Exclusive Reaction Packs
+
+Exclusive Reaction Packs allow you to control which users can access which reaction packs on an individual per-user basis. The reactions inside an exclusive pack can only be used by the profiles that have been assigned that pack, whereas regular reaction packs are available to all users. Learn more on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
 
 ## Reaction Spaces
 
