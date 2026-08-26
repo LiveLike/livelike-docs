@@ -88,16 +88,9 @@ With LiveLike, **any content that has a unique identifier can support reactions*
   `GET /api/v1/profiles/{profile_uuid}/reaction-packs/`
 - **Revoke Access to a Reaction Pack**
 
-  Revokes the user's access to a specific reaction pack.
-  `DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
+  Revokes the user's access to a specific reaction pack.<br />`DELETE /api/v1/profiles/{profile_uuid}/reaction-packs/{reaction_pack_id}/`
 
-## Reactions Reference
-
-1. Reaction Pack API
-2. Reaction Space API
-3. User Reaction API
-
-### Reaction Packs API
+## Reaction Packs
 
 ![](https://files.readme.io/1859c1e-reaction.gif)
 
@@ -169,7 +162,7 @@ sdk.reaction.getReactionPackInfo(reactionPackID: packID) { result in
 }
 ```
 
-### Reaction Spaces API
+## Reaction Spaces
 
 Reaction space is a resource which lets you add or remove reactions for a given target. It maps your content unique identifier i.e target group Id with reaction pack Id and also helps in achieving a complete isolation of user reactions across different content. This also gives you an opportunity to get all user reactions based on target group Id without needing the reference of reaction space Id.
 
@@ -469,11 +462,13 @@ This event is triggered whenever a reaction space is updated with its name or re
 func reactionClient(_ reactionClient: ReactionClient, didUpdateReactionSpace newReactionSpace: ReactionSpace)
 ```
 
-### User Reactions API
+## User Reactions
+
+A User Reaction is an individual user reaction from one profile to a target within a space.
 
 #### Create Reaction Session
 
-A **Reaction Session** is the interface to interact with a reaction space exposed by Android and IOS SDK.
+A **Reaction Session** is the interface to interact with a single reaction space exposed by Android and iOS SDKs
 
 ```kotlin
 val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<target-group-id>,errorDelegate)
