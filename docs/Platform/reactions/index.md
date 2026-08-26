@@ -433,11 +433,7 @@ reactionSession = self.sdk.reaction.createReactionSession(reactionSpace: reactio
 
 ### Add User Reaction
 
-This API requires:
-
-1. reaction space Id
-2. reaction Id of a reaction from a reaction pack
-3. target Id which is unique identifier of the subjected entity being reacted upon
+Add a user reaction of the specified reaction type to the specified target. The reaction ID is the ID of the reaction type, and the target ID is the ID of the target.&#x20;
 
 ```javascript
 LiveLike.addUserReaction({
