@@ -143,6 +143,10 @@ Removes the user's access to a specific reaction pack.
 
 [Revoke Profile Reaction Pack](ref:revoke-profile-reaction-pack)
 
+<Callout icon="📘" theme="info">
+  Discover use cases and find more details on the [Exclusive Reaction Packs](doc:exclusive-reaction-packs) page.
+</Callout>
+
 ## Reaction Spaces
 
 Reaction space is a resource which lets you add or remove reactions for a given target. It maps your content unique identifier i.e target group Id with reaction pack Id and also helps in achieving a complete isolation of user reactions across different content. This also gives you an opportunity to get all user reactions based on target group Id without needing the reference of reaction space Id.
