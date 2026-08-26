@@ -573,7 +573,7 @@ reactionSession.getUserReactions(
 }
 ```
 
-### Count User Reactions by target IDs
+### Count User Reactions
 
 Return counts of user reactions grouped by target ID, broken down by reaction type ID within each target ID. Supply multiple target IDs to perform an optimized batch call.
 
@@ -602,6 +602,21 @@ reactionSession.getUserReactionsCount(
     case .failure(let error):
     	//Failure Block
 	}
+}
+```
+
+#### Count User Reactions across multiple spaces
+
+```kotlin
+// Use the sdk.reaction() reaction client singleton to request reactions across spaces
+sdk.reaction().getUserReactionsCount(
+  GetUserReactionsCountRequest(
+    reactionSpaceIds = listOf(ractionSpaceId1, reactionSpaceId2),
+    targetIds = listOf(targetId1, targetId2)
+  )
+) {
+  result, error ->
+    println(result)
 }
 ```
 
