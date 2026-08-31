@@ -823,6 +823,354 @@
         },
         "operationId": "put_automation-partners-id"
       }
+    },
+    "/templates/": {
+      "post": {
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "b1f6c3de-8b2a-4b0a-9e77-1a2b3c4d5e6f",
+                      "client_id": "abc123",
+                      "category": "widgets",
+                      "subcategory": "text-poll",
+                      "name": "Favorite Color Poll",
+                      "is_default": false,
+                      "using_genie": false,
+                      "created_on": "2026-07-30T12:00:00Z",
+                      "updated_on": "2026-07-30T12:00:00Z",
+                      "created_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "updated_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "template_object": {
+                        "question": "What's your favorite color?",
+                        "options": [
+                          {
+                            "description": "Red",
+                            "localized_data": {}
+                          },
+                          {
+                            "description": "Blue",
+                            "localized_data": {}
+                          }
+                        ],
+                        "localized_data": {},
+                        "timeout": "PT30S",
+                        "sponsors": [],
+                        "widget_attributes": []
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Create Templates",
+        "operationId": "post_templates",
+        "description": "Create a new template of certain category/subcategory.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "default": "widgets",
+                    "enum": [
+                      "widgets"
+                    ]
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name should be unique in a category"
+                  },
+                  "subcategory": {
+                    "type": "string",
+                    "description": "Refer the enum values in Template guide link mentioned above."
+                  },
+                  "template_object": {
+                    "type": "object",
+                    "properties": {},
+                    "description": "Dynamic object based on the subcategory. Refer the fields required for each subcategory in Template guide mentioned above."
+                  }
+                },
+                "required": [
+                  "category",
+                  "name",
+                  "subcategory",
+                  "template_object"
+                ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {
+                    "category": "widgets",
+                    "subcategory": "text-poll",
+                    "name": "Favorite Color Poll",
+                    "template_object": {
+                      "question": "What's your favorite color?",
+                      "options": [
+                        {
+                          "description": "Red"
+                        },
+                        {
+                          "description": "Blue"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-readme": {
+          "code-samples": [
+            {
+              "code": "curl --request POST \\\n     --url https://cf-blast.livelikecdn.com/api/v1/templates/ \\\n     --header 'Authorization: Bearer {token}' \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"category\": \"widgets\",\n  \"subcategory\": \"text-poll\",\n  \"name\": \"Favorite Color Poll\",\n  \"template_object\": {\n    \"question\": \"What's your favorite color?\",\n    \"options\": [\n      {\n        \"description\": \"Red\"\n      },\n      {\n        \"description\": \"Blue\"\n      }\n    ]\n  }\n}\n'",
+              "language": "shell",
+              "name": ""
+            }
+          ],
+          "samples-languages": [
+            "shell"
+          ]
+        }
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "category",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "widgets"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "subcategory",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_default",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "List Templates",
+        "operationId": "get_templates",
+        "description": "Used to get the list of templates from the token scoped Application"
+      }
+    },
+    "/templates/<id>/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "b1f6c3de-8b2a-4b0a-9e77-1a2b3c4d5e6f",
+                      "client_id": "abc123",
+                      "category": "widgets",
+                      "subcategory": "text-poll",
+                      "name": "Favorite Color Poll",
+                      "is_default": false,
+                      "using_genie": false,
+                      "created_on": "2026-07-30T12:00:00Z",
+                      "updated_on": "2026-07-30T12:00:00Z",
+                      "created_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "updated_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "template_object": {
+                        "question": "What's your favorite color?",
+                        "options": [
+                          {
+                            "description": "Red",
+                            "localized_data": {}
+                          },
+                          {
+                            "description": "Blue",
+                            "localized_data": {}
+                          }
+                        ],
+                        "localized_data": {},
+                        "timeout": "PT30S",
+                        "sponsors": [],
+                        "widget_attributes": []
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Retrieve Template",
+        "operationId": "get_templates-1",
+        "description": "Use to get the detail of template including the template_object, which is not returned in the list apis"
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "b1f6c3de-8b2a-4b0a-9e77-1a2b3c4d5e6f",
+                      "client_id": "abc123",
+                      "category": "widgets",
+                      "subcategory": "text-poll",
+                      "name": "Favorite Color Poll",
+                      "is_default": false,
+                      "using_genie": false,
+                      "created_on": "2026-07-30T12:00:00Z",
+                      "updated_on": "2026-07-30T12:00:00Z",
+                      "created_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "updated_by": {
+                        "id": "u-1",
+                        "name": "Jane Producer",
+                        "image_url": null
+                      },
+                      "template_object": {
+                        "question": "What's your favorite color?",
+                        "options": [
+                          {
+                            "description": "Red",
+                            "localized_data": {}
+                          },
+                          {
+                            "description": "Blue",
+                            "localized_data": {}
+                          }
+                        ],
+                        "localized_data": {},
+                        "timeout": "PT30S",
+                        "sponsors": [],
+                        "widget_attributes": []
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Update Template",
+        "operationId": "get_templates-2",
+        "description": "Use to update the template including the template_object"
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {token}"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_templates-3",
+        "summary": "Delete Template",
+        "description": "Used to delete the template."
+      }
     }
   },
   "components": {
