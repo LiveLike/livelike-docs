@@ -521,7 +521,7 @@ Comment inline-reply previews allow an app to display a limited number of replie
 
 Inline reply previews are limited to 1–5 replies per top-level comment. To retrieve the complete reply list, use the dedicated `getCommentReplies()` method.
 
-## Availability
+## Behaviour
 
 - `repliesLimit` is available through the comment request&#x20;
 - `repliesLimit `is optional..
