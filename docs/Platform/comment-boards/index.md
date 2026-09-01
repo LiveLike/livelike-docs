@@ -19,15 +19,15 @@ Use Comments to allow your audience to add their comments and reply to others on
 
 The comments service enables app developers to add comments to anything in their experience. By creating comment boards and associating those boards with content in your app, you enable users to add comments and replies to that content. Some use cases for the comments service include:
 
-* Comments on blog posts
-* Reactions to videos
-* Fan discussion of teams and players
+- Comments on blog posts
+- Reactions to videos
+- Fan discussion of teams and players
 
 ## Glossary
 
-* **Board**: resource that represents a topic to comment on. Clients associate boards to their blog posts, videos, teams, individual sports matches, and so on.
-* **Comment**: resource that represents a post made to a board. Comments have IDs, authors, contents, and timestamps. Comments can be posted directly to a board, or in response to another comment. Comments that respond to other comments are called replies.
-* **Reply**: a comment posted in direct response to another comment.
+- **Board**: resource that represents a topic to comment on. Clients associate boards to their blog posts, videos, teams, individual sports matches, and so on.
+- **Comment**: resource that represents a post made to a board. Comments have IDs, authors, contents, and timestamps. Comments can be posted directly to a board, or in response to another comment. Comments that respond to other comments are called replies.
+- **Reply**: a comment posted in direct response to another comment.
 
 ## Working with Comment Boards in Swift and Kotlin
 
@@ -239,8 +239,7 @@ LiveLike.deleteCommentBoard({
 
 ## Working with Comments
 
-Comments related APIs can be accessed with the help of the CommentClient. The CommentClient is linked to a Comment Board and can be initialized using the createCommentClient method in the EngagementSDK. It requires the commentBoardID as a parameter which gives the user access to the following APIs after initialization.\
-For WebSDK, we do not need any commentClient all the APIs are available under LiveLike
+Comments related APIs can be accessed with the help of the CommentClient. The CommentClient is linked to a Comment Board and can be initialized using the createCommentClient method in the EngagementSDK. It requires the commentBoardID as a parameter which gives the user access to the following APIs after initialization.<br />For WebSDK, we do not need any commentClient all the APIs are available under LiveLike
 
 ```kotlin
 private var commentClient: LiveLikeCommentClient? = null
@@ -396,13 +395,7 @@ LiveLike.getComment({
 
 ## Get a list of Top Level Comments
 
-Integrator can filter top level comments with filters like:\
-NEWEST ,OLDEST, topLevel ,\
-OLDEST\_REPLIES(Comments with oldest reply),\
-NEWEST\_REPLIES(Comments with newest reply),\
-repliedSince(Get comments with reply since timestamp ),\
-repliedUntil (Get comments with reply until timestamp ),\
-isReported (Get reported comments ),
+Integrator can filter top level comments with filters like:<br />NEWEST ,OLDEST, topLevel ,<br />OLDEST_REPLIES(Comments with oldest reply),<br />NEWEST_REPLIES(Comments with newest reply),<br />repliedSince(Get comments with reply since timestamp ),<br />repliedUntil (Get comments with reply until timestamp ),<br />isReported (Get reported comments ),
 
 ```kotlin
 
@@ -522,6 +515,34 @@ LiveLike.getCommentReplies({
   }).then(comments => console.log(comments));
 ```
 
+# Comment Inline-Reply Previews
+
+Comment inline-reply previews allow an app to display a limited number of replies directly below each top-level comment, without making a separate request for every comment.
+
+Inline reply previews are limited to 1–5 replies per top-level comment. To retrieve the complete reply list, use the dedicated `getCommentReplies()` method.
+
+## Availability
+
+- `repliesLimit` is available through the comment request&#x20;
+- repliesLimit is optional , when omitted, existing behaviour is unchanged.
+- Valid values are 1 through 5.
+- The limit applies only to top-level comment history requests.
+- Each top-level Comment can contain up to the configured number of replies in Comment.replies.
+- Comment.repliesCount contains the total number of replies, including replies not returned inline.
+
+
+
+```kotlin
+sdk.comment(commentBoardId).getComments(
+  GetCommentsRequestOptions(
+    repliesLimit = 2
+  ),
+  LiveLikePagination.FIRST
+) { comments, error ->
+  // Each top-level Comment may include up to two replies in Comment.replies.
+}
+```
+
 ## Edit a Comment
 
 ```kotlin
@@ -617,8 +638,8 @@ LiveLike.deleteComment({
 
 Moderators can ban a profile to restrict its access in a comment board but the banned profile does not lose access to moderation tools if they have that.
 
-1. profile\_id: required, 
-2. comment\_board\_id: optional, if not provided, the profile will be banned from all the comment boards in the application, provided the moderator has sufficient permissions to do that.
+1. profile_id: required,
+2. comment_board_id: optional, if not provided, the profile will be banned from all the comment boards in the application, provided the moderator has sufficient permissions to do that.
 3. description: optional, this field can be used to provide additional information about a ban or the reason for banning a user.
 
 ```kotlin
