@@ -551,11 +551,22 @@ LiveLike.getUserReactionsCount({
 }).then(reaction => console.log(reaction))
 ```
 ```kotlin
+//reactionSession once initialized takes reactionDetails 
 reactionSession.getUserReactionsCount(<list-of-target-ids>,LiveLikePagination.FIRST,object:LiveLikeCallback<List<TargetUserReactionCount>>(){
 	override fun onResponse(result: List<TargetUserReactionCount>?, error: String?) {
     
   }
 })
+
+
+
+//Count from sdk.reaction() takes space and list of targets
+sdk.reaction().getUserReactionsCount(
+    GetUserReactionsCountRequest(
+        reactionSpaceId = reactionSpaceId,
+        targetIds = listOf(targetId1, targetId2)
+    )
+) { result, error ->}
 ```
 ```swift
 reactionSession.getUserReactionsCount(
@@ -572,19 +583,7 @@ reactionSession.getUserReactionsCount(
 }
 ```
 
-#### Count User Reactions across multiple spaces
-
-```kotlin
-sdk.reaction().getUserReactionsCount(
-  GetUserReactionsCountRequest(
-    reactionSpaceIds = listOf(ractionSpaceId1, reactionSpaceId2),
-    targetIds = listOf(targetId1, targetId2)
-  )
-) {
-  result, error ->
-    println(result)
-}
-```
+####
 
 ### Remove User Reaction
 
