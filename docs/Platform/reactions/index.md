@@ -526,7 +526,13 @@ reactionSession.getUserReactions(
 }
 ```
 
-#### List User Reactions across multiple spaces
+#### List User Reactions across multiple spaces<br /><br />
+
+getUserReactions(request, callback) — returns UserReaction records across multiple targets, target groups, and/or reaction spaces.
+
+- Required : at least one non-empty reactionSpaceIds or targetGroupIds list
+
+- Optional: targetIds, reactionId, reactedById, relationship filters, and pagination
 
 ```kotlin
 sdk.reaction().getUserReactions(
