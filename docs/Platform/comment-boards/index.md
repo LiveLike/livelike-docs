@@ -524,16 +524,16 @@ Inline reply previews are limited to 1–5 replies per top-level comment. To ret
 ## Availability
 
 - `repliesLimit` is available through the comment request&#x20;
-- repliesLimit is optional , when omitted, existing behaviour is unchanged.
+- `repliesLimit `is optional , when omitted, existing behaviour is unchanged.
 - Valid values are 1 through 5.
 - The limit applies only to top-level comment history requests.
-- Each top-level Comment can contain up to the configured number of replies in Comment.replies.
-- Comment.repliesCount contains the total number of replies, including replies not returned inline.
+- Each top-level Comment can contain up to the configured number of replies in `Comment.replies.`
+- `Comment.repliesCount` contains the total number of replies, including replies not returned inline.
 
 
 
 ```kotlin
-sdk.comment(commentBoardId).getComments(
+commentClient.comment(commentBoardId).getComments(
   GetCommentsRequestOptions(
     repliesLimit = 2
   ),
