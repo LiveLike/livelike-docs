@@ -418,6 +418,8 @@ A User Reaction is an individual user reaction from one profile to a target with
 
 A **Reaction Session** is the interface to interact with a single reaction space exposed by Android and iOS SDKs
 
+- Suitable for flows that load reactions, submit/remove a reaction, or retrieve counts for known targets
+
 ```kotlin
 val reactionSession = engagementSDK.createReactionSession(<reaction-space-id>,<target-group-id>,errorDelegate)
 ```
@@ -528,7 +530,7 @@ reactionSession.getUserReactions(
 
 #### List User Reactions across multiple spaces<br /><br />
 
-getUserReactions(request, callback) — returns UserReaction records across multiple targets, target groups, and/or reaction spaces.
+`getUserReactions(request, callback) `— returns UserReaction records across multiple targets, target groups, and/or reaction spaces.
 
 - Required : at least one non-empty reactionSpaceIds or targetGroupIds list
 
