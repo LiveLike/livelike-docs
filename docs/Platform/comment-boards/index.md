@@ -239,7 +239,17 @@ LiveLike.deleteCommentBoard({
 
 ## Working with Comments
 
-Comments related APIs can be accessed with the help of the CommentClient. The CommentClient is linked to a Comment Board and can be initialized using the createCommentClient method in the EngagementSDK. It requires the commentBoardID as a parameter which gives the user access to the following APIs after initialization.<br />For WebSDK, we do not need any commentClient all the APIs are available under LiveLike
+Comments related APIs can be accessed with the help of the CommentClient. The CommentClient is linked to a Comment Board and can be initialized using the createCommentClient method in the EngagementSDK. It requires the commentBoardID as a parameter which gives the user access to the following APIs after initialization.<br />For WebSDK, we do not need any commentClient all the APIs are available under LiveLike<br /><br /><br />
+
+<Callout icon="📘" theme="info">
+  ### Android
+
+  <br />**CommentSession** <br />State manager for a comments screen. It maintains the current list of displayed comments, handles pagination as users scroll, and provides updated data for UI rendering.<br />Allows your UI to subscribe to commentListFlow, which always contains the current comment-feed state. It manages the initial load, loading more comments with loadNextHistory(), reloads, sorting, reply navigation, and updates to the displayed list.
+
+  **CommentClient &#x20;**<br />Performs individual comment API requests.<br /> Use it to perform specific operations—such as adding a comment, adding a reply, editing a comment, or fetching all replies—and receive results via callback.<br />
+</Callout>
+
+<br />
 
 ```kotlin
 private var commentClient: LiveLikeCommentClient? = null
@@ -529,7 +539,7 @@ Inline reply previews are limited to 1–5 replies per top-level comment. To ret
 - Each top-level Comment can contain up to the configured number of replies in `Comment.replies.`
 - `Comment.repliesCount` contains the total number of replies, including replies not returned inline.
 
-
+<br />
 
 ```kotlin
 commentClient.comment(commentBoardId).getComments(
