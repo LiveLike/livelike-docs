@@ -244,7 +244,7 @@ Comments related APIs can be accessed with the help of the CommentClient. The Co
 <Callout icon="📘" theme="info">
   ### Android
 
-  <br />**CommentSession** <br />State manager for a comments screen. It maintains the current list of displayed comments, handles pagination as users scroll, and provides updated data for UI rendering.<br />Allows your UI to subscribe to commentListFlow, which always contains the current comment-feed state. It manages the initial load, loading more comments with loadNextHistory(), reloads, sorting, reply navigation, and updates to the displayed list.
+  <br />**CommentSession** <br />Requires commentBoardID to create instance.<br />State manager for a comments screen. It maintains the current list of displayed comments, handles pagination as users scroll, and provides updated data for UI rendering.<br />Allows your UI to subscribe to commentListFlow, which always contains the current comment-feed state. It manages the initial load, loading more comments with loadNextHistory(), reloads, sorting, reply navigation, and updates to the displayed list.
 
   **CommentClient &#x20;**<br />Performs individual comment API requests.<br /> Use it to perform specific operations—such as adding a comment, adding a reply, editing a comment, or fetching all replies—and receive results via callback.<br />
 </Callout>
