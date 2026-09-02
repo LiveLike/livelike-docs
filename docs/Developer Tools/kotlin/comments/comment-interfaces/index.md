@@ -63,7 +63,7 @@ Subscribe to commentListFlow to receive the current list of comments whenever it
 - Returning from replies to the top-level feed with closeCommentReplies().
 - Sending a top-level comment or a reply with sendComment(), depending on the current reply context.
 - Optional inline reply previews through repliesLimit / setRepliesLimit().
-  Use CommentSession for a standard comments UI with pagination and live updates. Use CommentClient instead for one-off operations such as reporting, editing, deleting, or fetching a specific comment.<br /><br />Details : [https://docs.livelike.com/update/docs/commentsession](https://docs.livelike.com/update/docs/commentsession "https://docs.livelike.com/update/docs/commentsession")
+  Use CommentSession for a standard comments UI with pagination and live updates. Use CommentClient instead for one-off operations such as reporting, editing, deleting, or fetching a specific comment.<br /><br />Details :  [CommentSession](https://docs.livelike.com/docs/commentsession)
 
 ***
 
