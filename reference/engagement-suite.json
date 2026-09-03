@@ -35814,15 +35814,37 @@
       }
     },
     "/widget-messages/": {
-      "get": {
+      "post": {
         "responses": {
           "200": {
             "description": ""
           }
         },
         "parameters": [],
-        "operationId": "get_widget-messages",
-        "summary": "Send a Widget Chat Message"
+        "summary": "Send a Widget Chat Message",
+        "operationId": "post_widget-messages",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "widget_kind": {
+                    "type": "string",
+                    "description": "e.g text-poll, image-poll, etc"
+                  },
+                  "widget_i": {
+                    "type": "string",
+                    "description": "Widget's unique uuid"
+                  }
+                },
+                "required": [
+                  "widget_kind"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
