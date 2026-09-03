@@ -35841,6 +35841,12 @@
                 "required": [
                   "widget_kind"
                 ]
+              },
+              "examples": {
+                "New Example": {
+                  "summary": "New Example",
+                  "value": {}
+                }
               }
             }
           }
