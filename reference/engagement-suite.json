@@ -24989,48 +24989,6 @@
         "deprecated": false
       }
     },
-    "/comment-board-by-custom-id/{custom-id}/": {
-      "delete": {
-        "summary": "Delete comment board by custom id",
-        "description": "",
-        "operationId": "delete-comment-board-by-custom-id",
-        "responses": {
-          "204": {
-            "description": "204",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/comment-boards/{comment-board-id}/pinned-comments/": {
       "get": {
         "summary": "List pinned comments",
@@ -36012,6 +35970,63 @@
             }
           }
         }
+      },
+      "delete": {
+        "summary": "Delete comment board by custom id",
+        "description": "",
+        "operationId": "delete-comment-board-by-custom-id",
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "custom_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
