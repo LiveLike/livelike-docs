@@ -35812,6 +35812,18 @@
           }
         }
       }
+    },
+    "/widget-messages/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "operationId": "get_widget-messages",
+        "summary": "Send a Widget Chat Message"
+      }
     }
   },
   "x-readme": {
