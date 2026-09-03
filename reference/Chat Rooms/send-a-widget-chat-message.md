@@ -1,7 +1,7 @@
 ---
 api:
   file: engagement-suite.json
-  operationId: post_widget-messages
+  operationId: post_chat-room-id-widget-messages
 hidden: true
 link:
   new_tab: false
