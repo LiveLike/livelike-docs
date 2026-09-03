@@ -24989,145 +24989,6 @@
         "deprecated": false
       }
     },
-    "/comment-board-by-custom-id/{custom_id}": {
-      "patch": {
-        "summary": "Update Comment Board by custom id",
-        "description": "",
-        "operationId": "update-comment-board-by-custom-id",
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "custom_id": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "allow_comments": {
-                    "type": "string"
-                  },
-                  "replies_depth": {
-                    "type": "string"
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Custom data is used for things like:  Storing extra context for the comment board"
-                  },
-                  "content_filter": {
-                    "type": "string",
-                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
-                    "default": "none",
-                    "enum": [
-                      "none",
-                      "filtered"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"id\": \"eefa00d2-cf12-48de-99a0-3f10a1d3587a\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/\",\n    \"client_id\": \"lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje\",\n    \"custom_id\": \"custom-id-2\",\n    \"title\": \"User_Test\",\n    \"custom_data\": null,\n    \"description\": null,\n    \"allow_comments\": true,\n    \"replies_depth\": 2,\n    \"comments_url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/\",\n    \"comment_detail_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/\",\n    \"created_by\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"created_at\": \"2022-12-21T10:58:46.151911Z\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "example": "eefa00d2-cf12-48de-99a0-3f10a1d3587a"
-                    },
-                    "url": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/"
-                    },
-                    "client_id": {
-                      "type": "string",
-                      "example": "lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje"
-                    },
-                    "custom_id": {
-                      "type": "string",
-                      "example": "custom-id-2"
-                    },
-                    "title": {
-                      "type": "string",
-                      "example": "User_Test"
-                    },
-                    "custom_data": {},
-                    "description": {},
-                    "allow_comments": {
-                      "type": "boolean",
-                      "example": true,
-                      "default": true
-                    },
-                    "replies_depth": {
-                      "type": "integer",
-                      "example": 2,
-                      "default": 0
-                    },
-                    "comments_url": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/"
-                    },
-                    "comment_detail_url_template": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/"
-                    },
-                    "created_by": {
-                      "type": "string",
-                      "example": "460c435b-d3b7-4add-bc63-628b0911f811"
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "example": "2022-12-21T10:58:46.151911Z"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/comment-board-by-custom-id/{custom-id}/": {
       "delete": {
         "summary": "Delete comment board by custom id",
@@ -35999,6 +35860,160 @@
             "required": true
           }
         ]
+      }
+    },
+    "/comment-board-by-custom-id/{client_id}/{custom_id}": {
+      "patch": {
+        "summary": "Update Comment Board by custom id",
+        "description": "",
+        "operationId": "update-comment-board-by-custom-id",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "custom_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "allow_comments": {
+                    "type": "string"
+                  },
+                  "replies_depth": {
+                    "type": "string"
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Custom data is used for things like:  Storing extra context for the comment board"
+                  },
+                  "content_filter": {
+                    "type": "string",
+                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
+                    "default": "none",
+                    "enum": [
+                      "none",
+                      "filtered"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"eefa00d2-cf12-48de-99a0-3f10a1d3587a\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/\",\n    \"client_id\": \"lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje\",\n    \"custom_id\": \"custom-id-2\",\n    \"title\": \"User_Test\",\n    \"custom_data\": null,\n    \"description\": null,\n    \"allow_comments\": true,\n    \"replies_depth\": 2,\n    \"comments_url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/\",\n    \"comment_detail_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/\",\n    \"created_by\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"created_at\": \"2022-12-21T10:58:46.151911Z\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "eefa00d2-cf12-48de-99a0-3f10a1d3587a"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje"
+                    },
+                    "custom_id": {
+                      "type": "string",
+                      "example": "custom-id-2"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "User_Test"
+                    },
+                    "custom_data": {},
+                    "description": {},
+                    "allow_comments": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "replies_depth": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
+                    },
+                    "comments_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/"
+                    },
+                    "comment_detail_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/"
+                    },
+                    "created_by": {
+                      "type": "string",
+                      "example": "460c435b-d3b7-4add-bc63-628b0911f811"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2022-12-21T10:58:46.151911Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
