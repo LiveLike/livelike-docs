@@ -1,7 +1,7 @@
 ---
 api:
   file: engagement-suite.json
-  operationId: get_widget-messages
+  operationId: post_widget-messages
 hidden: true
 link:
   new_tab: false
