@@ -35972,7 +35972,10 @@
               "examples": {
                 "New Example": {
                   "summary": "New Example",
-                  "value": {}
+                  "value": {
+                    "widget_kind": "text-poll",
+                    "widget_id": "17df95e7-9265-49d2-8269-27fc197e0d86"
+                  }
                 }
               }
             }
