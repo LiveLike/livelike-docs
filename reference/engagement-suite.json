@@ -35813,16 +35813,25 @@
         }
       }
     },
-    "/widget-messages/": {
+    "/{chat_room_id}/widget-messages/": {
       "post": {
         "responses": {
           "200": {
             "description": ""
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chat_room_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Chat room uuid"
+          }
+        ],
         "summary": "Send a Widget Chat Message",
-        "operationId": "post_widget-messages",
         "requestBody": {
           "content": {
             "application/json": {
@@ -35850,7 +35859,8 @@
               }
             }
           }
-        }
+        },
+        "operationId": "post_chat-room-id-widget-messages"
       }
     }
   },
