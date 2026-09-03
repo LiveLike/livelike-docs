@@ -13,8 +13,8 @@ This release adds improvement for comments and reactions.
 
 ## Comments
 
-* Added Profile Relations to filtering in Comments.
-* New endpoint API
+- Added Profile Relations to filtering in Comments.
+- New endpoint API
 
   Count comments in real time across one or multiple Comment Boards, with the option to filter by Profile Relations or include all comments
 
@@ -26,8 +26,6 @@ This release adds improvement for comments and reactions.
 
 ## Reactions
 
-You can now use reactions in the SDK.
-
-* Added Profile Relations to filtering in User Reactions.
-* Fixed specific bug with pagination
-* New fields in the User Reaction response ( `target_group_id and url`)
+- Added Profile Relations to filtering in User Reactions.
+- Fixed specific bug with pagination
+- New fields in the User Reaction response ( `target_group_id and url`)
