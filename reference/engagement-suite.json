@@ -35860,9 +35860,7 @@
             "required": true
           }
         ]
-      }
-    },
-    "/comment-board-by-custom-id/{client_id}/{custom_id}": {
+      },
       "patch": {
         "summary": "Update Comment Board by custom id",
         "description": "",
@@ -35877,7 +35875,7 @@
           },
           {
             "in": "path",
-            "name": "custom_id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -35885,7 +35883,7 @@
           },
           {
             "in": "path",
-            "name": "client_id",
+            "name": "custom_id",
             "schema": {
               "type": "string"
             },
