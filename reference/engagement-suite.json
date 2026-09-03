@@ -35818,6 +35818,124 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "dfc86c35-9d49-452c-b484-caec765e454e",
+                      "chat_room_id": "7973b48b-cfb3-4f57-9bb5-552b39cdc247",
+                      "sender_id": "e52943b1-0e39-4413-9f36-8bae3bd7d51a",
+                      "sender_nickname": "Jolly Baboon",
+                      "sender_image_url": null,
+                      "badge_image_url": null,
+                      "sender_profile_url": "http://localhost:8888/api/v1/profiles/e52943b1-0e39-4413-9f36-8bae3bd7d51a/",
+                      "created_at": "2026-09-03T05:04:11.536032+00:00",
+                      "message_event": "widget-message-created",
+                      "widget_kind": "text-poll",
+                      "widget_id": "17df95e7-9265-49d2-8269-27fc197e0d86",
+                      "widget_data": {
+                        "id": "17df95e7-9265-49d2-8269-27fc197e0d86",
+                        "pubnub_enabled": true,
+                        "url": "http://testserver/api/v1/text-polls/17df95e7-9265-49d2-8269-27fc197e0d86/",
+                        "kind": "text-poll",
+                        "program_id": "8d1885c6-1635-4d41-8904-76f3e86eeb49",
+                        "program_name": "test app 1 program 1",
+                        "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                        "created_at": "2026-07-17T16:03:59.591Z",
+                        "published_at": "2026-07-17T16:03:59.745Z",
+                        "scheduled_at": "2026-07-17T16:03:59.685Z",
+                        "interactive_until": null,
+                        "question": "1",
+                        "timeout": "P0DT00H00M15S",
+                        "options": [
+                          {
+                            "id": "51be5577-e8f3-49d0-9aa7-ec3afe8adc81",
+                            "description": "2",
+                            "vote_count": 0,
+                            "vote_url": "http://testserver/api/v1/text-poll-options/51be5577-e8f3-49d0-9aa7-ec3afe8adc81/votes/",
+                            "translations": {},
+                            "translatable_fields": [
+                              "description"
+                            ],
+                            "filtered_description": null,
+                            "content_filter": [],
+                            "localized_data": {}
+                          },
+                          {
+                            "id": "8cfbefaf-6615-4a32-9333-638b88e32e4d",
+                            "description": "3",
+                            "vote_count": 0,
+                            "vote_url": "http://testserver/api/v1/text-poll-options/8cfbefaf-6615-4a32-9333-638b88e32e4d/votes/",
+                            "translations": {},
+                            "translatable_fields": [
+                              "description"
+                            ],
+                            "filtered_description": null,
+                            "content_filter": [],
+                            "localized_data": {}
+                          }
+                        ],
+                        "subscribe_channel": "program.widget.17df95e7-9265-49d2-8269-27fc197e0d86",
+                        "program_date_time": null,
+                        "publish_delay": "P0DT00H00M00S",
+                        "interaction_url": "http://testserver/api/v1/text-polls/17df95e7-9265-49d2-8269-27fc197e0d86/interactions/",
+                        "impression_url": "http://testserver/api/v1/text-polls/17df95e7-9265-49d2-8269-27fc197e0d86/impressions/",
+                        "impression_count": 0,
+                        "unique_impression_count": 0,
+                        "engagement_count": 0,
+                        "engagement_percent": "0.000",
+                        "status": "published",
+                        "created_by": {
+                          "id": "e52943b1-0e39-4413-9f36-8bae3bd7d51a",
+                          "name": "Jolly Baboon",
+                          "image_url": null,
+                          "custom_id": "test-custom-id"
+                        },
+                        "schedule_url": "http://testserver/api/v1/text-polls/17df95e7-9265-49d2-8269-27fc197e0d86/schedule/",
+                        "rewards_url": null,
+                        "translations": {},
+                        "translatable_fields": [
+                          "question"
+                        ],
+                        "reactions": [],
+                        "custom_data": null,
+                        "widget_interactions_url_template": "http://testserver/api/v1/profiles/{profile_id}/widget-interactions/?text_poll_id=17df95e7-9265-49d2-8269-27fc197e0d86",
+                        "sponsors": [],
+                        "earnable_rewards": [
+                          {
+                            "reward_item_id": "194d4d03-b7c0-4b72-bf7f-1974c92a4709",
+                            "reward_item_name": "Test Points",
+                            "reward_action_key": "poll-voted",
+                            "reward_item_amount": 5
+                          }
+                        ],
+                        "widget_attributes": [],
+                        "playback_time_ms": null,
+                        "report_counts": {
+                          "total": 0,
+                          "pending": 0,
+                          "accepted": 0,
+                          "dismissed": 0
+                        },
+                        "filtered_question": null,
+                        "content_filter": [],
+                        "localized_data": {}
+                      },
+                      "pubnub_timetoken": 17884118520160558
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
           }
         },
         "parameters": [
