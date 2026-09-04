@@ -36125,7 +36125,33 @@
         ],
         "summary": "Update reaction space by target group id",
         "operationId": "patch_reaction-space-by-target-group-id-client-id-target-group-id-1",
-        "x-internal": false
+        "x-internal": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reaction_pack_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "target_group_id": {
+                    "type": "string"
+                  },
+                  "custom_data": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "reaction_pack_ids"
+                ]
+              }
+            }
+          }
+        }
       }
     },
     "/reaction-space-by-target-group-id/{client_id}/{target_group_id}/-1-1": {
