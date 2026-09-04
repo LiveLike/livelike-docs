@@ -36076,7 +36076,17 @@
       "patch": {
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": "{...}"
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
