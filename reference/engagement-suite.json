@@ -36029,6 +36029,18 @@
           }
         ]
       }
+    },
+    "/new-endpoint": {
+      "get": {
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "summary": "Get reaction space by target group id"
+      }
     }
   },
   "x-readme": {
