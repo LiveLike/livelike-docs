@@ -35705,7 +35705,8 @@
             }
           }
         },
-        "operationId": "post_chat-room-id-widget-messages"
+        "operationId": "post_chat-room-id-widget-messages",
+        "x-internal": false
       }
     },
     "/comment-board-by-custom-id/{client_id}/{custom_id}/": {
