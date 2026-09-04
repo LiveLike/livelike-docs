@@ -36041,6 +36041,35 @@
         "parameters": [],
         "summary": "Get reaction space by target group id"
       }
+    },
+    "/reaction-space-by-target-group-id/{client_id}/{target_group_id}/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "target_group_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Get reaction space by target group id",
+        "operationId": "get_reaction-space-by-target-group-id-client-id-target-group-id"
+      }
     }
   },
   "x-readme": {
