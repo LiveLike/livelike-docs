@@ -3,3 +3,4 @@
 - list-reaction-spaces
 - update-a-reaction-space
 - delete-a-reaction-space
+- get-reaction-space-by-target-group-id
