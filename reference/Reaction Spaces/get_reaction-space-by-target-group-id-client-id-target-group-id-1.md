@@ -1,7 +1,7 @@
 ---
 api:
   file: engagement-suite.json
-  operationId: get_reaction-space-by-target-group-id-client-id-target-group-id-1
+  operationId: patch_reaction-space-by-target-group-id-client-id-target-group-id-1
 hidden: true
 link:
   new_tab: false
