@@ -36082,7 +36082,23 @@
                 "examples": {
                   "OK": {
                     "summary": "OK",
-                    "value": "{...}"
+                    "value": {
+                      "id": "b964db17-1c2f-40ac-9c7c-9b0a014abc23",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/reaction-spaces/b964db17-1c2f-40ac-9c7c-9b0a014abc23/",
+                      "created_by": "e0a92904-2c6c-400e-93ba-d379142f06cc",
+                      "client_id": "pnODbVXg0UI80s0l2aH5Y7FOuGbftoAdSNqpdvo6",
+                      "name": null,
+                      "reaction_pack_ids": [
+                        "f6fc5ed1-c48e-4c0e-9a90-6831f1725b5a",
+                        "e684c275-17ea-43bf-a22b-9018f873c450"
+                      ],
+                      "custom_data": null,
+                      "target_group_id": "readme",
+                      "reaction_space_channel": "reaction_space.b964db17-1c2f-40ac-9c7c-9b0a014abc23",
+                      "user_reactions_url": "https://cf-blast.livelikecdn.com/api/v1/user-reactions/",
+                      "user_reaction_detail_url_template": "https://cf-blast.livelikecdn.com/api/v1/user-reactions/{user_reaction_id}/",
+                      "user_reactions_count_url": "https://cf-blast.livelikecdn.com/api/v1/user-reactions-count/"
+                    }
                   }
                 }
               }
