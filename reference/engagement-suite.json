@@ -36102,7 +36102,7 @@
       }
     },
     "/reaction-space-by-target-group-id/{client_id}/{target_group_id}/-1-1": {
-      "patch": {
+      "delete": {
         "responses": {
           "200": {
             "description": ""
@@ -36126,9 +36126,9 @@
             "required": true
           }
         ],
-        "summary": "Copy of Update reaction space by target group id",
-        "operationId": "patch_reaction-space-by-target-group-id-client-id-target-group-id-1-1",
-        "x-internal": false
+        "summary": "Delete reaction space by target group id",
+        "x-internal": false,
+        "operationId": "delete_reaction-space-by-target-group-id-client-id-target-group-id-1-1"
       }
     }
   },
