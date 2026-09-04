@@ -36072,7 +36072,7 @@
       }
     },
     "/reaction-space-by-target-group-id/{client_id}/{target_group_id}/-1": {
-      "get": {
+      "patch": {
         "responses": {
           "200": {
             "description": ""
@@ -36097,7 +36097,7 @@
           }
         ],
         "summary": "Copy of Get reaction space by target group id",
-        "operationId": "get_reaction-space-by-target-group-id-client-id-target-group-id-1"
+        "operationId": "patch_reaction-space-by-target-group-id-client-id-target-group-id-1"
       }
     }
   },
