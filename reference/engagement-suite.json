@@ -36068,7 +36068,8 @@
           }
         ],
         "summary": "Get reaction space by target group id",
-        "operationId": "get_reaction-space-by-target-group-id-client-id-target-group-id"
+        "operationId": "get_reaction-space-by-target-group-id-client-id-target-group-id",
+        "description": "does not return the reaction space itself. It responds with a 301 Moved Permanently pointing at the canonical resource URL, /reaction-spaces/{id}/, and the reaction space is served from there."
       }
     },
     "/reaction-space-by-target-group-id/{client_id}/{target_group_id}/-1": {
