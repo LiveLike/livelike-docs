@@ -35400,6 +35400,17 @@
               "type": "string"
             },
             "description": "Client-supplied key used to dedupe transaction creation requests."
+          },
+          {
+            "in": "query",
+            "name": "transaction_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "credit",
+                "debit"
+              ]
+            }
           }
         ],
         "responses": {
