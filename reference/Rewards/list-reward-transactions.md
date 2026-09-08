@@ -3,11 +3,11 @@ api:
   file: engagement-suite.json
   operationId: list-reward-transactions
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
 ---
 When authenticating with a producer access token, all transactions inside the scoped application will be returned. When authenticating with a profile access token, only transactions destined for the authenticated profile will be returned.
