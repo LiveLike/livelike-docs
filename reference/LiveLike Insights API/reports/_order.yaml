@@ -1,0 +1,6 @@
+- listinsightsreports
+- createinsightsreport
+- getinsightsreport
+- partialupdateinsightsreport
+- updateinsightsreport
+- deleteinsightsreport

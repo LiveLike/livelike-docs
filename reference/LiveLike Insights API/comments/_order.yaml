@@ -1,0 +1,6 @@
+- listinsightsreportcomments
+- createinsightsreportcomment
+- getinsightsreportcomment
+- partialupdateinsightsreportcomment
+- updateinsightsreportcomment
+- deleteinsightsreportcomment
