@@ -1,16 +1,24 @@
 openapi: 3.0.3
 info:
-  title: Insights
+  title: LiveLike Insights API
   description: >
-    Manage Insights Reports (periodic HTML/PDF analytics reports) for an
-    Application, along with report tags and threaded producer comments.
+    Insights Reports are periodic HTML or PDF reports that a producer publishes
+    to an Application, such as usage summaries or engagement breakdowns. This
+    API creates and manages reports, tags, and the comment thread attached to
+    each report.
+
+
+    All endpoints require the caller to be a producer of the target Application.
+    If Insights is not enabled for the Application, every endpoint returns 404.
   version: 1.0.0
 servers:
   - url: https://producer.livelikecdn.com/api/v1
     description: Production
 tags:
   - name: Reports
+    description: Create, retrieve, update, and delete Insights reports.
   - name: Comments
+    description: Comment threads attached to a report.
 paths:
   /applications/{client_id}/insights-reports/:
     parameters:
@@ -20,43 +28,46 @@ paths:
         - Reports
       summary: List reports
       description: >
-        Returns all Insights Reports for the Application, sorted pinned-first,
-        then by `order`, then by `created_at` (unless overridden with
-        `ordering`).
+        Returns all Insights reports for the Application. Results are ordered
+        pinned first, then by `order`, then by `created_at`, unless a different
+        order is requested with `ordering`.
       operationId: listInsightsReports
       parameters:
         - name: is_active
           in: query
+          description: Filter by active status.
           schema:
             type: boolean
         - name: is_pinned
           in: query
+          description: Filter by pinned status.
           schema:
             type: boolean
         - name: published_on_after
           in: query
-          description: Only reports published on/after this date
+          description: Return only reports published on or after this date.
           schema:
             type: string
             format: date
         - name: published_on_before
           in: query
-          description: Only reports published on/before this date
+          description: Return only reports published on or before this date.
           schema:
             type: string
             format: date
         - name: tags
           in: query
-          description: >-
-            Comma-separated tag labels; matches reports with any matching tag
-            (case-insensitive)
+          description: >
+            Comma-separated list of tag labels. Matches reports carrying at
+            least one of the given tags. Matching is case-insensitive.
           schema:
             type: string
         - name: ordering
           in: query
-          description: >-
-            One of `order`, `created_at`, `published_on`. Prefix with `-` for
-            descending.
+          description: >
+            Field to sort by. One of `order`, `created_at`, or `published_on`.
+            Prefix with `-` for descending order. Defaults to
+            `-is_pinned,order,created_at`.
           schema:
             type: string
             enum:
@@ -70,13 +81,13 @@ paths:
         - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
-          description: OK
+          description: A paginated list of reports.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaginatedReportList'
         '400':
-          description: Invalid date filter
+          description: One of the date filters is not a valid date.
           content:
             application/json:
               schema:
@@ -94,7 +105,11 @@ paths:
     post:
       tags:
         - Reports
-      summary: Create report
+      summary: Create a report
+      description: >
+        Creates a new Insights report. `is_active` defaults to `true`, so a
+        report is visible as soon as it is created unless explicitly set to
+        `false`. `published_on` defaults to the current date if omitted.
       operationId: createInsightsReport
       requestBody:
         required: true
@@ -107,15 +122,16 @@ paths:
               $ref: '#/components/schemas/ReportWrite'
       responses:
         '201':
-          description: Created
+          description: The report was created.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Report'
         '400':
-          description: >-
-            Validation error (bad file extension, file too large, or other field
-            errors)
+          description: >
+            The request was invalid. Common causes are an unsupported
+            `report_file` extension, a file exceeding the maximum upload size,
+            or a missing required field.
           content:
             application/json:
               schema:
@@ -137,11 +153,12 @@ paths:
     get:
       tags:
         - Reports
-      summary: Retrieve report
+      summary: Retrieve a report
+      description: Retrieves a single Insights report by ID.
       operationId: getInsightsReport
       responses:
         '200':
-          description: OK
+          description: The requested report.
           content:
             application/json:
               schema:
@@ -159,10 +176,12 @@ paths:
     patch:
       tags:
         - Reports
-      summary: Update report (partial)
+      summary: Update a report
       description: >
-        Omit `tags` to leave existing tags untouched. Include `tags` (even `[]`)
-        to replace all existing tags with the given list.
+        Updates a report. Only the fields included in the request are changed.
+        If `tags` is omitted, existing tags are left unchanged. If `tags` is
+        included, even as an empty array, it replaces the full set of tags on
+        the report.
       operationId: partialUpdateInsightsReport
       requestBody:
         required: true
@@ -175,13 +194,13 @@ paths:
               $ref: '#/components/schemas/ReportWrite'
       responses:
         '200':
-          description: OK
+          description: The updated report.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Report'
         '400':
-          description: Validation error
+          description: The request was invalid.
           content:
             application/json:
               schema:
@@ -199,10 +218,11 @@ paths:
     put:
       tags:
         - Reports
-      summary: Update report (full)
+      summary: Replace a report
       description: >
-        Omit `tags` to leave existing tags untouched. Include `tags` (even `[]`)
-        to replace all existing tags with the given list.
+        Functionally equivalent to `PATCH` on this endpoint. The same tag rule
+        applies: omitting `tags` leaves existing tags unchanged, while including
+        it replaces them.
       operationId: updateInsightsReport
       requestBody:
         required: true
@@ -215,13 +235,13 @@ paths:
               $ref: '#/components/schemas/ReportWrite'
       responses:
         '200':
-          description: OK
+          description: The updated report.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Report'
         '400':
-          description: Validation error
+          description: The request was invalid.
           content:
             application/json:
               schema:
@@ -239,11 +259,12 @@ paths:
     delete:
       tags:
         - Reports
-      summary: Delete report
+      summary: Delete a report
+      description: Permanently deletes a report, its tags, and all associated comments.
       operationId: deleteInsightsReport
       responses:
         '204':
-          description: No Content
+          description: The report was deleted.
         '403':
           $ref: '#/components/responses/Forbidden'
         '404':
@@ -263,15 +284,16 @@ paths:
         - Comments
       summary: List comments
       description: >
-        Returns top-level comments for the report, each with its `replies`
-        nested inline (one level of threading only).
+        Returns the top-level comments on a report. Each comment includes its
+        replies in the `replies` field. Threads are limited to one level of
+        nesting: a reply cannot itself have replies.
       operationId: listInsightsReportComments
       parameters:
         - $ref: '#/components/parameters/Page'
         - $ref: '#/components/parameters/PageSize'
       responses:
         '200':
-          description: OK
+          description: A paginated list of top-level comments.
           content:
             application/json:
               schema:
@@ -289,12 +311,13 @@ paths:
     post:
       tags:
         - Comments
-      summary: Create comment
+      summary: Create a comment
       description: >
-        `parent_id` must reference an existing top-level comment on the same
-        report. Replying to a reply, or referencing a comment on a different
-        report, returns 400. `author_label` and `is_staff_reply` are set
-        server-side from the authenticated user.
+        Posts a comment on a report. Omit `parent_id` to start a new thread, or
+        set it to the ID of an existing top-level comment to reply to it.
+        Replying to a reply, or referencing a comment on a different report,
+        returns 400. `author_label` and `is_staff_reply` are derived from the
+        authenticated user and cannot be set in the request.
       operationId: createInsightsReportComment
       requestBody:
         required: true
@@ -304,15 +327,15 @@ paths:
               $ref: '#/components/schemas/CommentWrite'
       responses:
         '201':
-          description: Created
+          description: The comment was created.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Comment'
         '400':
-          description: >-
-            Invalid parent_id (references a reply, or a comment on a different
-            report)
+          description: >
+            `parent_id` refers to a reply rather than a top-level comment, or to
+            a comment on a different report.
           content:
             application/json:
               schema:
@@ -335,11 +358,12 @@ paths:
     get:
       tags:
         - Comments
-      summary: Retrieve comment
+      summary: Retrieve a comment
+      description: Retrieves a single comment or reply by ID.
       operationId: getInsightsReportComment
       responses:
         '200':
-          description: OK
+          description: The requested comment.
           content:
             application/json:
               schema:
@@ -357,10 +381,11 @@ paths:
     patch:
       tags:
         - Comments
-      summary: Update comment (partial)
+      summary: Update a comment
       description: >
-        Only `text` may be modified — any other field in the payload is ignored.
-        Only the comment's original author may edit it.
+        Updates the text of a comment. Only `text` is writable; any other field
+        in the request body is ignored. Only the original author of the comment
+        may update it.
       operationId: partialUpdateInsightsReportComment
       requestBody:
         required: true
@@ -370,13 +395,13 @@ paths:
               $ref: '#/components/schemas/CommentUpdate'
       responses:
         '200':
-          description: OK
+          description: The updated comment.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Comment'
         '403':
-          description: Not the comment's original author
+          description: The caller is not the original author of the comment.
           content:
             application/json:
               schema:
@@ -392,10 +417,10 @@ paths:
     put:
       tags:
         - Comments
-      summary: Update comment (full)
+      summary: Replace a comment
       description: >
-        Only `text` may be modified — any other field in the payload is ignored.
-        Only the comment's original author may edit it.
+        Functionally equivalent to `PATCH` on this endpoint. Only `text` is
+        writable, and only the original author of the comment may update it.
       operationId: updateInsightsReportComment
       requestBody:
         required: true
@@ -405,13 +430,13 @@ paths:
               $ref: '#/components/schemas/CommentUpdate'
       responses:
         '200':
-          description: OK
+          description: The updated comment.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Comment'
         '403':
-          description: Not the comment's original author
+          description: The caller is not the original author of the comment.
           content:
             application/json:
               schema:
@@ -427,14 +452,17 @@ paths:
     delete:
       tags:
         - Comments
-      summary: Delete comment
-      description: Only the comment's original author may delete it.
+      summary: Delete a comment
+      description: >
+        Deletes a comment. Only the original author of the comment may delete
+        it. Deleting a top-level comment does not automatically delete its
+        replies.
       operationId: deleteInsightsReportComment
       responses:
         '204':
-          description: No Content
+          description: The comment was deleted.
         '403':
-          description: Not the comment's original author
+          description: The caller is not the original author of the comment.
           content:
             application/json:
               schema:
@@ -453,14 +481,14 @@ components:
       name: client_id
       in: path
       required: true
-      description: The Application's client ID
+      description: The client ID of the Application.
       schema:
         type: string
     ReportId:
       name: report_id
       in: path
       required: true
-      description: Report UUID
+      description: The ID of the report.
       schema:
         type: string
         format: uuid
@@ -468,37 +496,39 @@ components:
       name: comment_id
       in: path
       required: true
-      description: Comment UUID
+      description: The ID of the comment.
       schema:
         type: string
         format: uuid
     Page:
       name: page
       in: query
-      description: Page number
+      description: The page number to retrieve.
       schema:
         type: integer
         minimum: 1
     PageSize:
       name: page_size
       in: query
-      description: Results per page
+      description: The number of results to return per page. Defaults to 20.
       schema:
         type: integer
         default: 20
   responses:
     Forbidden:
-      description: >-
-        Authenticated but not authorized (not a producer of the Application, or
-        not the comment's author)
+      description: >
+        The caller is authenticated but not authorized to perform this action.
+        This is returned when the caller is not a producer of the Application,
+        or, for comment updates and deletes, when the caller is not the
+        comment's author.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
     NotFound:
-      description: >-
-        Application/report/comment not found, or Insights not enabled for the
-        Application
+      description: >
+        The Application, report, or comment could not be found, or Insights is
+        not enabled for the Application.
       content:
         application/json:
           schema:
@@ -506,10 +536,12 @@ components:
   schemas:
     Tag:
       type: object
+      description: A label attached to a report, used for filtering the report list.
       properties:
         label:
           type: string
           maxLength: 50
+          description: The tag text.
         color:
           type: string
           enum:
@@ -521,241 +553,300 @@ components:
             - blue
             - grey
           default: blue
+          description: The color used to render the tag.
         order:
           type: integer
           default: 0
+          description: Sort position among the report's other tags.
       required:
         - label
     Report:
       type: object
+      description: An Insights report.
       properties:
         id:
           type: string
           format: uuid
           readOnly: true
+          description: Unique identifier for the report.
         client_id:
           type: string
           readOnly: true
-          description: The owning Application's client ID
+          description: The client ID of the Application that owns the report.
         title:
           type: string
           maxLength: 200
+          description: The report title.
         description:
           type: string
+          description: A description of the report's contents.
         period:
           type: string
           maxLength: 100
-          description: Free-text display label, e.g. "May - June 2026"
+          description: >
+            Free-text label describing the period covered by the report, for
+            example "May - June 2026".
         published_on:
           type: string
           format: date
-          description: Defaults to creation date if not provided
+          description: >
+            The date the report was published. Defaults to the creation date if
+            not provided.
         report_file:
           type: string
           format: uri
-          description: Publicly accessible URL to the .html/.pdf report content
+          description: URL of the uploaded report file.
         is_active:
           type: boolean
           default: true
-          description: Inactive reports are hidden from the client-facing view
+          description: Whether the report is visible in the client-facing view.
         is_pinned:
           type: boolean
           default: false
-          description: Pinned reports sort first
+          description: Whether the report is pinned above unpinned reports in the list.
         order:
           type: integer
           default: 0
-          description: Manual sort key
+          description: Sort position among the Application's other reports.
         tags:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
+          description: Tags attached to the report.
         created_at:
           type: string
           format: date-time
           readOnly: true
+          description: When the report was created.
         updated_at:
           type: string
           format: date-time
           readOnly: true
+          description: When the report was last updated.
       required:
         - id
         - client_id
         - title
     ReportWrite:
       type: object
+      description: Request body for creating or updating a report.
       properties:
         title:
           type: string
           maxLength: 200
+          description: The report title.
         description:
           type: string
           default: ''
+          description: A description of the report's contents.
         period:
           type: string
           maxLength: 100
+          description: >
+            Free-text label describing the period covered by the report, for
+            example "May - June 2026".
         published_on:
           type: string
           format: date
+          description: >
+            The date the report was published. Defaults to the current date if
+            not provided.
         report_file:
           type: string
           format: binary
-          description: >-
-            Must end in .html or .pdf. Max size default 10 MB
-            (server-configurable).
+          description: >
+            The report file. Must have a `.html` or `.pdf` extension. Maximum
+            file size defaults to 10 MB and is configurable per environment.
         is_active:
           type: boolean
           default: true
+          description: Whether the report is visible in the client-facing view.
         is_pinned:
           type: boolean
           default: false
+          description: Whether the report is pinned above unpinned reports in the list.
         order:
           type: integer
           default: 0
+          description: Sort position among the Application's other reports.
         tags:
           type: array
           items:
             $ref: '#/components/schemas/Tag'
           default: []
+          description: >
+            Tags to attach to the report. On update, omitting this field leaves
+            existing tags unchanged; including it replaces them.
       required:
         - title
     PaginatedReportList:
       type: object
+      description: A page of reports.
       properties:
         count:
           type: integer
+          description: Total number of reports matching the query.
         next:
           type: string
           format: uri
           nullable: true
+          description: URL of the next page of results, or null if this is the last page.
         previous:
           type: string
           format: uri
           nullable: true
+          description: >-
+            URL of the previous page of results, or null if this is the first
+            page.
         results:
           type: array
           items:
             $ref: '#/components/schemas/Report'
     Comment:
       type: object
+      description: A comment or reply on a report.
       properties:
         id:
           type: string
           format: uuid
           readOnly: true
-        parent_id:
-          type: string
-          format: uuid
-          nullable: true
-          description: The parent comment, if this is a reply
-        author_label:
-          type: string
-          readOnly: true
-          description: Display name of the comment's author, set server-side
-        is_staff_reply:
-          type: boolean
-          readOnly: true
-          description: true if authored by a LiveLike team member
-        text:
-          type: string
-        is_deleted:
-          type: boolean
-          readOnly: true
-          description: Reserved for soft-delete; not currently settable via this API
-        is_edited:
-          type: boolean
-          readOnly: true
-          description: Set automatically when the author edits text
-        replies:
-          type: array
-          description: Always empty for a reply (only one level of nesting)
-          items:
-            $ref: '#/components/schemas/Comment'
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-        - id
-        - text
-    CommentWrite:
-      type: object
-      properties:
-        text:
-          type: string
+          description: Unique identifier for the comment.
         parent_id:
           type: string
           format: uuid
           nullable: true
           description: >-
-            ID of an existing top-level comment on the same report to reply to.
-            Omit/null for a top-level comment.
+            ID of the parent comment, if this is a reply. Null for top-level
+            comments.
+        author_label:
+          type: string
+          readOnly: true
+          description: Display name of the comment's author.
+        is_staff_reply:
+          type: boolean
+          readOnly: true
+          description: Whether the comment was posted by a LiveLike team member.
+        text:
+          type: string
+          description: The comment body.
+        is_deleted:
+          type: boolean
+          readOnly: true
+          description: >
+            Reserved for soft-delete. This field is not currently settable
+            through this API.
+        is_edited:
+          type: boolean
+          readOnly: true
+          description: Whether the comment has been edited since it was created.
+        replies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+          description: >
+            Replies to this comment. Always empty for a reply, since threads are
+            limited to one level of nesting.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: When the comment was created.
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: When the comment was last updated.
+      required:
+        - id
+        - text
+    CommentWrite:
+      type: object
+      description: Request body for creating a comment or reply.
+      properties:
+        text:
+          type: string
+          description: The comment body.
+        parent_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: |
+            ID of the top-level comment to reply to. Omit to start a new thread.
       required:
         - text
     CommentUpdate:
       type: object
+      description: >-
+        Request body for updating a comment. Only the comment text can be
+        changed.
       properties:
         text:
           type: string
+          description: The updated comment body.
       required:
         - text
     PaginatedCommentList:
       type: object
+      description: A page of top-level comments, with replies nested inline.
       properties:
         count:
           type: integer
+          description: Total number of top-level comments on the report.
         next:
           type: string
           format: uri
           nullable: true
+          description: URL of the next page of results, or null if this is the last page.
         previous:
           type: string
           format: uri
           nullable: true
+          description: >-
+            URL of the previous page of results, or null if this is the first
+            page.
         results:
           type: array
           items:
             $ref: '#/components/schemas/Comment'
     Error:
       type: object
+      description: Standard error response for 403 and 404 responses.
       properties:
         detail:
           type: string
+          description: A human-readable description of the error.
     ValidationError:
       type: object
+      description: >
+        Field-level validation errors returned with a 400 response. Each key is
+        a field name; each value is a list of error messages for that field.
       additionalProperties:
         type: array
         items:
           type: string
-      description: Maps field name to a list of error messages
   securitySchemes:
     jwtAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      description: LiveLike JWT
+      description: LiveLike JWT.
     clientJwtAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      description: Client JWT
+      description: Client JWT.
     producerAccessToken:
       type: apiKey
       in: header
       name: Authorization
-      description: Producer access token
+      description: Producer access token.
     sessionAuth:
       type: apiKey
       in: cookie
       name: sessionid
-      description: Django session cookie
+      description: Django session cookie.
     personalApiToken:
       type: apiKey
       in: header
       name: Authorization
-      description: Personal API token
-x-readme: {}
+      description: Personal API token.
