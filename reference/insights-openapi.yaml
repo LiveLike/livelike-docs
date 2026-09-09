@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: LiveLike Insights API
+  title: Insights
   description: >
     Manage Insights Reports (periodic HTML/PDF analytics reports) for an
     Application, along with report tags and threaded producer comments.
@@ -758,3 +758,4 @@ components:
       in: header
       name: Authorization
       description: Personal API token
+x-readme: {}
