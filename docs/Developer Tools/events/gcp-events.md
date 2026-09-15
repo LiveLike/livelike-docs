@@ -1,7 +1,12 @@
 ---
 title: GCP Events
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
+### We need below info from integrators
+
+* GCP Account Key JSON
+* GCP project ID
+* GCP PUB-SUB Topic ID
