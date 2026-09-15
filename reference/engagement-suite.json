@@ -36255,6 +36255,48 @@
           }
         }
       }
+    },
+    "/chat-rooms/{chat_room_id}/bulk-memberships/-1": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chat_room_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Copy of Add bulk chat memberships",
+        "operationId": "get_new-endpoint-1-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profile_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "The list of profiles you want to add as members to the specified chat room. Limit up to 200."
+                  }
+                },
+                "required": [
+                  "profile_ids"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
