@@ -406,7 +406,8 @@
                         "contract_address": "0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458",
                         "network_type": "ethereum"
                       }
-                    ]
+                    ],
+                    "profile_groups": []
                   }
                 }
               }
