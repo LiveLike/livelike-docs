@@ -36213,6 +36213,48 @@
         "x-internal": false,
         "operationId": "delete_reaction-space-by-target-group-id-client-id-target-group-id-1-1"
       }
+    },
+    "/chat-rooms/{chat_room_id}/bulk-memberships/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chat_room_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Add bulk chat memberships",
+        "operationId": "get_new-endpoint-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profile_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "The list of profiles you want to add as members to the specified chat room. Limit up to 200."
+                  }
+                },
+                "required": [
+                  "profile_ids"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
