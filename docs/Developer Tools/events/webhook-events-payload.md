@@ -885,6 +885,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
     "reaction_name": "smile_emoji",
     "reaction_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "target_id": "b78039c1-1d79-4689-a373-aa00c7ea0fe3",
+    "target_id": "comment",
     "user_reaction_id": "e78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "reaction_space_id": "a78039c1-1d79-4689-a373-aa00c7ea0fe3",
     "reaction_space_target_group_id": "f78039c1-1d79-4689-a373-aa00c7ea0fe3",
@@ -900,20 +901,21 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 
 ### Field Descriptions
 
-| Field Name                            | Type       | Description                                                                              |
-| :------------------------------------ | :--------- | :--------------------------------------------------------------------------------------- |
-| `id`                                  | `string`   | Unique identifier for the event                                                          |
-| `event`                               | `string`   | Event type {`user-reaction-created`} for create and {`user-reaction-deleted`} for delete |
-| `data.reaction_space_id`              | `string`   | Unique identified of reaction space                                                      |
-| `data.reaction_space_target_group_id` | `string`   | Target id for rection space                                                              |
-| `data.reaction_created_by_id`         | `string`   | User id of the user created reaction                                                     |
-| `data.reaction_created_by_nickname`   | `string`   | User nickname of the user created reaction                                               |
-| `data.reaction_created_by_custom_id`  | `string`   | User custom id of the user created reaction                                              |
-| `data.reaction_name`                  | `string`   | Name of the reaction                                                                     |
-| `data.reaction_id`                    | `string`   | Id of the reaction                                                                       |
-| `data.user_reaction_id`               | `string`   | Id of user reaction                                                                      |
-| `data.target_id`                      | `string`   | Id of the target where reaction is applied                                               |
-| `created_at`                          | `datetime` | Timestamp when the event was created                                                     |
+| Field Name                            | Type       | Description                                                                                                  |
+| :------------------------------------ | :--------- | :----------------------------------------------------------------------------------------------------------- |
+| `id`                                  | `string`   | Unique identifier for the event                                                                              |
+| `event`                               | `string`   | Event type {`user-reaction-created`} for create and {`user-reaction-deleted`} for delete                     |
+| `data.reaction_space_id`              | `string`   | Unique identified of reaction space                                                                          |
+| `data.reaction_space_target_group_id` | `string`   | Target id for rection space                                                                                  |
+| `data.reaction_created_by_id`         | `string`   | User id of the user created reaction                                                                         |
+| `data.reaction_created_by_nickname`   | `string`   | User nickname of the user created reaction                                                                   |
+| `data.reaction_created_by_custom_id`  | `string`   | User custom id of the user created reaction                                                                  |
+| `data.reaction_name`                  | `string`   | Name of the reaction                                                                                         |
+| `data.reaction_id`                    | `string`   | Id of the reaction                                                                                           |
+| `data.user_reaction_id`               | `string`   | Id of user reaction                                                                                          |
+| `data.target_id`                      | `string`   | Id of the target where reaction is applied                                                                   |
+| `data.target_type`                    | `string`   | Type of the target/entity where reaction is applied. if not provided during creation time, it remains `null` |
+| `created_at`                          | `datetime` | Timestamp when the event was created                                                                         |
 
 ## `chat-message-throttle-updated`
 
