@@ -39,7 +39,29 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"id\": \"5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/\",\n  \"client_id\": \"8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS\",\n  \"title\": null,\n  \"created_at\": \"2020-04-28T13:35:52.973396Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n    }\n  },\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266\"\n}\n"
+                    "value": {
+                      "id": "5052ea2f-0cb4-4fb6-bec8-fe275826b266",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/",
+                      "client_id": "8PqSNDgIVHnXuJuGte1HdvOjOqhCFE1ZCR3qhqaS",
+                      "title": null,
+                      "created_at": "2020-04-28T13:35:52.973396Z",
+                      "content_filter": "none",
+                      "visibility": "everyone",
+                      "channels": {
+                        "chat": {
+                          "sendbird": null,
+                          "pubnub": "chatroom.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                        },
+                        "reactions": {
+                          "pubnub": "chatroomreactions.5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                        }
+                      },
+                      "profile_groups": [],
+                      "upload_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/upload/",
+                      "memberships_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/5052ea2f-0cb4-4fb6-bec8-fe275826b266/memberships/",
+                      "sticker_packs_url": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266",
+                      "reaction_packs_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=5052ea2f-0cb4-4fb6-bec8-fe275826b266"
+                    }
                   }
                 },
                 "schema": {
@@ -116,7 +138,6 @@
             }
           }
         },
-        "deprecated": false,
         "security": []
       }
     },
