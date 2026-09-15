@@ -9,7 +9,7 @@ metadata:
   description: ''
   robots: index
 ---
-This document details the webhook events sent by our system, including their payload structures and descriptions of each field.
+This document details the events(Webhook, SQS, etc) sent by our system, including their payload structures and descriptions of each field.
 
 ## `reward-table-rewards-awarded`
 
