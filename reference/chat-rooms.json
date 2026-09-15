@@ -392,6 +392,13 @@
                     "type": "number",
                     "description": "Set chat messages throttling",
                     "default": "0"
+                  },
+                  "profile_groups": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of user groups you want to link to the chat room"
                   }
                 }
               },
