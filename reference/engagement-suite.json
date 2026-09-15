@@ -36219,6 +36219,65 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "successfully_added": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "uuid-1"
+                      }
+                    },
+                    "already_added": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "uuid-2"
+                      }
+                    },
+                    "invalid_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "uuid-3"
+                      }
+                    },
+                    "blocked": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "uuid-4"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "successfully_added": [
+                        "uuid-1"
+                      ],
+                      "already_added": [
+                        "uuid-2"
+                      ],
+                      "invalid_ids": [
+                        "uuid-3"
+                      ],
+                      "blocked": [
+                        "uuid-4"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Created"
           }
         },
         "parameters": [
