@@ -1,5 +1,5 @@
 ---
-title: Webhook Events
+title: Delivery Channel - Webhook
 deprecated: false
 hidden: false
 link:
