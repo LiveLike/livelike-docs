@@ -22477,7 +22477,7 @@
     },
     "/user-reactions/": {
       "post": {
-        "summary": "Create a user reaction",
+        "summary": "Create user reaction",
         "description": "",
         "operationId": "create-a-user-reaction",
         "requestBody": {
@@ -22504,6 +22504,10 @@
                   },
                   "custom_data": {
                     "type": "string"
+                  },
+                  "target_type": {
+                    "type": "string",
+                    "description": "Specifies the type of entity the user is reacting to. When provided, it must be one of \"comment\", \"chat-message\", or \"richt-post\"."
                   }
                 }
               }
@@ -22577,8 +22581,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       },
       "get": {
         "summary": "List user reactions",
