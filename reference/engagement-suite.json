@@ -36257,10 +36257,27 @@
       }
     },
     "/chat-rooms/{chat_room_id}/bulk-memberships/-1": {
-      "post": {
+      "delete": {
         "responses": {
           "200": {
             "description": ""
+          },
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "No Content": {
+                    "summary": "No Content",
+                    "value": ""
+                  }
+                }
+              }
+            },
+            "description": "No Content"
           }
         },
         "parameters": [
@@ -36273,7 +36290,7 @@
             "required": true
           }
         ],
-        "summary": "Copy of Add bulk chat memberships",
+        "summary": "Delete bulk chat memberships",
         "operationId": "get_new-endpoint-1-1",
         "requestBody": {
           "content": {
