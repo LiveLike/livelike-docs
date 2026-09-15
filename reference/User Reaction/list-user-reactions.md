@@ -1,15 +1,12 @@
 ---
-title: List user reactions
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-user-reactions
-deprecated: false
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
 ---
