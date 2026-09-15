@@ -1,5 +1,5 @@
 ---
-title: SQS Events
+title: Delivery Channel - AWS SQS
 deprecated: false
 hidden: false
 link:
