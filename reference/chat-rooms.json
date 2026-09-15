@@ -421,7 +421,53 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"id\": \"29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/\",\n  \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"title\": \"testTitle\",\n  \"created_at\": \"2023-04-27T09:07:22.982044Z\",\n  \"content_filter\": \"none\",\n  \"visibility\": \"everyone\",\n  \"channels\": {\n    \"chat\": {\n      \"sendbird\": null,\n      \"pubnub\": \"chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"reactions\": {\n      \"pubnub\": \"chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    },\n    \"control\": {\n      \"pubnub\": \"chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c\"\n    }\n  },\n  \"report_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/\",\n  \"reported_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending\",\n  \"delete_message_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/\",\n  \"upload_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/\",\n  \"memberships_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/\",\n  \"muted_status_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/\",\n  \"custom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/\",\n  \"sticker_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"reaction_packs_url\": \"https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c\",\n  \"custom_data\": null,\n  \"sponsors_url\": \"https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"chatroom_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/\",\n  \"chatroom_messages_count_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/\",\n  \"pubnub_messages_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/\",\n  \"pubnub_messages_remove_reaction_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/\",\n  \"token_gates\": [\n    {\n      \"contract_address\": \"0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458\",\n      \"network_type\": \"ethereum\"\n    }\n  ],\n  \"chatroom_token_gate_access_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}\",\n  \"chatroom_access_rule_url\": \"https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/\",\n  \"reported_chat_messages_url\": \"https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/\",\n  \"reaction_space_id\": \"71b422ae-df6d-4c8e-bae3-c12204856754\"\n}\n"
+                    "value": {
+                      "id": "29c0fb7b-d6f9-4400-9dc5-2535a97d224c",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/",
+                      "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "title": "testTitle",
+                      "created_at": "2023-04-27T09:07:22.982044Z",
+                      "content_filter": "none",
+                      "visibility": "everyone",
+                      "channels": {
+                        "chat": {
+                          "sendbird": null,
+                          "pubnub": "chatroom.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                        },
+                        "reactions": {
+                          "pubnub": "chatroom.reactions.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                        },
+                        "control": {
+                          "pubnub": "chatroom.control.29c0fb7b-d6f9-4400-9dc5-2535a97d224c"
+                        }
+                      },
+                      "report_message_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/report-chat-message/",
+                      "reported_messages_url": "https://cf-blast.livelikecdn.com/api/v1/reported-chat-room-messages/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&status=pending",
+                      "delete_message_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/delete-chat-message/",
+                      "upload_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/upload/",
+                      "memberships_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/memberships/",
+                      "muted_status_url_template": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/muted-status/{profile_id}/",
+                      "custom_messages_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/custom-messages/",
+                      "sticker_packs_url": "https://cf-blast.livelikecdn.com/api/v1/sticker-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c",
+                      "reaction_packs_url": "https://cf-blast.livelikecdn.com/api/v1/reaction-packs/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c",
+                      "custom_data": null,
+                      "sponsors_url": "https://cf-blast.livelikecdn.com/api/v1/sponsors/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&client_id=FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+                      "chatroom_messages_url": "https://cf-blast.livelikecdn.com/api/v1/chatroom-messages/",
+                      "chatroom_messages_count_url": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/chatroom_messages_count/",
+                      "pubnub_messages_reaction_url_template": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/",
+                      "pubnub_messages_remove_reaction_url_template": "https://cf-blast.livelikecdn.com/api/v1/chat-rooms/29c0fb7b-d6f9-4400-9dc5-2535a97d224c/pubnub-messages/{message_timetoken}/reactions/{action_timetoken}/",
+                      "token_gates": [
+                        {
+                          "contract_address": "0xe60ede23D15Cc5e1807DeC001DA44f9B24d1e458",
+                          "network_type": "ethereum"
+                        }
+                      ],
+                      "profile_groups": [],
+                      "chatroom_token_gate_access_url_template": "https://cf-blast.livelikecdn.com/api/v1/chatroom-token-gate-access/?chat_room_id=29c0fb7b-d6f9-4400-9dc5-2535a97d224c&wallet_address={wallet_address}",
+                      "chatroom_access_rule_url": "https://cf-blast.livelikecdn.com/api/v1/chat-room-access-rules/",
+                      "reported_chat_messages_url": "https://cf-blast.livelikecdn.com/api/v1/reported-chat-messages/",
+                      "reaction_space_id": "71b422ae-df6d-4c8e-bae3-c12204856754"
+                    }
                   }
                 },
                 "schema": {
