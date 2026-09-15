@@ -39,7 +39,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 
 | Field                   | Type   | Description                                        |
 | ----------------------- | ------ | -------------------------------------------------- |
-| `id`                    | string | Unique identifier for the webhook event.           |
+| `id`                    | string | Unique identifier for the event.                   |
 | `event`                 | string | The event type.                                    |
 | `reward_transaction_id` | string | Unique ID of the reward transaction.               |
 | `reward_item_id`        | string | Unique ID of the reward item.                      |
@@ -84,7 +84,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 
 | Field                   | Type   | Description                                      |
 | ----------------------- | ------ | ------------------------------------------------ |
-| `id`                    | string | Unique identifier for the webhook event.         |
+| `id`                    | string | Unique identifier for the event.                 |
 | `event`                 | string | The event type.                                  |
 | `badge_id`              | string | Unique ID of the badge.                          |
 | `earned_badge_id`       | string | ID of the earned badge instance.                 |
@@ -128,7 +128,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 
 | Field                | Type   | Description                                |
 | -------------------- | ------ | ------------------------------------------ |
-| `id`                 | string | Unique identifier for the webhook event.   |
+| `id`                 | string | Unique identifier for the event.           |
 | `event`              | string | The event type.                            |
 | `user_quest_task_id` | string | ID of the user quest task.                 |
 | `user_quest_id`      | string | ID of the user quest.                      |
@@ -172,21 +172,21 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 
 **Field Descriptions:**
 
-| Field                | Type   | Description                              |
-| -------------------- | ------ | ---------------------------------------- |
-| `id`                 | string | Unique identifier for the webhook event. |
-| `event`              | string | The event type.                          |
-| `user_quest_task_id` | string | ID of the user quest task.               |
-| `user_quest_id`      | string | ID of the user quest.                    |
-| `quest_task_id`      | string | ID of the quest task.                    |
-| `quest_id`           | string | ID of the quest.                         |
-| `created_at`         | string | Timestamp when the event was created.    |
-| `completed_at`       | string | Timestamp when the task was completed.   |
-| `status`             | string | Status of the task.                      |
-| `progress`           | number | Progress made on the task.               |
-| `client_id`          | string | ID of the client.                        |
-| `profile_id`         | string | ID of the profile.                       |
-| `nickname`           | string | Nickname of the profile.                 |
+| Field                | Type   | Description                            |
+| -------------------- | ------ | -------------------------------------- |
+| `id`                 | string | Unique identifier for the event.       |
+| `event`              | string | The event type.                        |
+| `user_quest_task_id` | string | ID of the user quest task.             |
+| `user_quest_id`      | string | ID of the user quest.                  |
+| `quest_task_id`      | string | ID of the quest task.                  |
+| `quest_id`           | string | ID of the quest.                       |
+| `created_at`         | string | Timestamp when the event was created.  |
+| `completed_at`       | string | Timestamp when the task was completed. |
+| `status`             | string | Status of the task.                    |
+| `progress`           | number | Progress made on the task.             |
+| `client_id`          | string | ID of the client.                      |
+| `profile_id`         | string | ID of the profile.                     |
+| `nickname`           | string | Nickname of the profile.               |
 
 <br />
 
