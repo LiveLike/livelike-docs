@@ -1,5 +1,5 @@
 ---
-title: GCP Events
+title: Delivery Channel - GCP Pub/Sub
 deprecated: false
 hidden: true
 metadata:
@@ -9,4 +9,4 @@ metadata:
 
 * GCP Account Key JSON
 * GCP project ID
-* GCP PUB-SUB Topic ID
+* GCP PUB/SUB Topic ID
