@@ -34715,7 +34715,7 @@
     },
     "/user-reactions-count/": {
       "get": {
-        "summary": "Copy of Get user reaction count",
+        "summary": "Count user reactions per target",
         "description": "",
         "operationId": "get-user-reaction-count-1",
         "parameters": [
@@ -34758,6 +34758,21 @@
               "type": "string"
             },
             "description": "Profile UUID for the from_profile in a profile relationship. This parameter or an auth token for the from_profile is required with relationship_type."
+          },
+          {
+            "in": "query",
+            "name": "target_group_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required with target_group_id"
           }
         ],
         "responses": {
@@ -34834,8 +34849,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/widget-reports/-1": {},
