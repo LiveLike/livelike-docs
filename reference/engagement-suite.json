@@ -24530,11 +24530,12 @@
                   },
                   "content_filter": {
                     "type": "string",
-                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
+                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered. **3.** `ai`: message recognized by an AI model as objectionable, will be filtered.",
                     "default": "none",
                     "enum": [
                       "none",
-                      "filtered"
+                      "filtered",
+                      "ai"
                     ]
                   },
                   "attributes": {
