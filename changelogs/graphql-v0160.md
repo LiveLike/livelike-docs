@@ -8,7 +8,7 @@ published_at: '2026-09-17T06:21:15.141Z'
 ---
 ## Changes Summary
 
-Based on the GraphQL schema, here are the release changes. This release introducesGraphQL widget Emoji Slider, Flair, and update on RBAC. Support for Apollo Cache Control.
+Based on the GraphQL schema, here are the release changes. This release introduces widgets Emoji Slider, Flair, and update on RBAC. Support for Apollo Cache Control.
 
 ### Release Changes
 
