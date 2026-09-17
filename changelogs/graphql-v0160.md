@@ -6,15 +6,15 @@ published_at: '2026-09-17T06:21:15.141Z'
 ---
 ## Changes Summary
 
-Based on the GraphQL schema, here are the release changes. This release introduces enhancements to the GraphQL API, including Apollo-compatible GraphQL Cache Control support, a new UGC Emoji Slider widget, fan flair management, and role and role assignment deletion capabilities for GraphQL Integrators.<br /><br />
+Based on the GraphQL schema, here are the release changes. This release introduces enhancements to the GraphQL API, including Apollo-compatible Apollo Cache Control support, a new UGC Emoji Slider widget, fan flair management, and role and role assignment deletion capabilities for GraphQL Integrators.
 
 ### Release Changes
 
-#### GraphQL Cache Control
+#### Apollo Cache Control
 
 ***
 
-* **Cache Control**: Added Apollo-compatible GraphQL Cache Control support for generating cache metadata and HTTP `Cache-Control` headers for eligible GraphQL responses.
+* **Cache Control**: Added Apollo-compatible Apollo Cache Control support for generating cache metadata and HTTP `Cache-Control` headers for eligible GraphQL responses.
 
 #### Slider
 
