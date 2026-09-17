@@ -1,15 +1,14 @@
 ---
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-comments
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
 ---
 ## Comments with reaction counts
 
