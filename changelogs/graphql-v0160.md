@@ -2,11 +2,13 @@
 title: GraphQL v0.16.0
 author: Akshay Garg
 hidden: false
+metadata:
+  robots: noindex
 published_at: '2026-09-17T06:21:15.141Z'
 ---
 ## Changes Summary
 
-Based on the GraphQL schema, here are the release changes. This release introduces enhancements to the GraphQL API, including Apollo-compatible Apollo Cache Control support, Emoji Slider widget, fan flair management, and role and role assignment deletion capabilities for GraphQL Integrators.
+Based on the GraphQL schema, here are the release changes. This release introducesGraphQL widget Emoji Slider, Flair, and update on RBAC. Support for Apollo Cache Control.
 
 ### Release Changes
 
