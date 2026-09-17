@@ -23135,6 +23135,15 @@
               "type": "boolean"
             },
             "description": "When set to true, excludes comments from authors whose profiles have been deactivated/deleted."
+          },
+          {
+            "in": "query",
+            "name": "without_reported_thread",
+            "schema": {
+              "type": "boolean",
+              "default": "false"
+            },
+            "description": "Use the without_reported_thread parameter to omit reported comments that have no replies. A reported parent comment that has replies remains visible so that its reply thread can still be rendered."
           }
         ],
         "responses": {
