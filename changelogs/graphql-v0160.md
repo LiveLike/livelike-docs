@@ -10,11 +10,11 @@ Based on the GraphQL schema, here are the release changes. This release introduc
 
 ### Release Changes
 
-#### Apollo Cache Control
+<br />
 
-***
+#### Apollo-compatible cache control for GraphQL Yoga
 
-* **Cache Control**: Added Apollo-compatible Apollo Cache Control support for generating cache metadata and HTTP `Cache-Control` headers for eligible GraphQL responses.
+<br />
 
 #### Slider
 
