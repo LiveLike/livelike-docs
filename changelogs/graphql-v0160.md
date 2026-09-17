@@ -16,6 +16,7 @@ Based on the GraphQL schema, here are the release changes. This release introduc
 
 ***
 
+Support for Apollo Server's cache-control behavior to GraphQL Yoga.
 
 <br />
 
