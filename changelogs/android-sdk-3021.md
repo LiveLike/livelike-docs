@@ -3,6 +3,7 @@ title: Android SDK 3.0.21
 author: Viktor Manev
 hidden: false
 published_at: '2026-09-18T12:36:39.696Z'
+type: improved
 ---
 ## Android SDK 3.0.21 — R8 Optimization&#x20;
 
