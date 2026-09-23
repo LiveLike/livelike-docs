@@ -34,16 +34,16 @@ Sharding is configured per chat room, in the LiveLike CMS, when the room is crea
   Per-shard capacity is set by LiveLike engineering, not by producers. If you expect an audience that would benefit from a different capacity, contact your LiveLike POC.
 </Callout>
 
-No SDK changes are required. Shard assignment happens on our servers when a client fetches chat room details, and is returned through the same channels field your app already uses to connect to chat — turning sharding on for a room just changes which channel name comes back for a given user.
+No SDK changes are required. Shard assignment happens on our servers when a client fetches chat room details, and is returned through the same channels field your app already uses to connect to chat, turning sharding on for a room just changes which channel name comes back for a given user.
 
 ## How users are distributed
 
 ***
 
 - Shard count is derived from the audience estimate: ceil(max estimated audience / shard capacity).
-- Each user is assigned to a shard deterministically, based on their user ID — distribution is even across shards.
+- Each user is assigned to a shard deterministically, based on their user ID, distribution is even across shards.
 - A user returns to the same shard on reconnect, across sessions and devices, as long as the room's shard count hasn't changed.
-- The estimate is a sizing input, not a hard cap. If more users show up than estimated, existing shards simply run denser — nobody is blocked or turned away.
+- The estimate is a sizing input, not a hard cap. If more users show up than estimated, existing shards simply run denser, nobody is blocked or turned away.
 
 ## What's shard-scoped vs. room-wide
 
@@ -86,12 +86,12 @@ Message deletion is the one moderator action that's shard-scoped rather than roo
 <Callout icon="📘" theme="info">
   ### Replies, quotes, and mentions stay within a shard
 
-  You can't reply to, quote, or mention a message/user that isn't visible in your own shard — since the notification would never reach across shard boundaries, the action is rejected outright.
+  You can't reply to, quote, or mention a message/user that isn't visible in your own shard, since the notification would never reach across shard boundaries, the action is rejected outright.
 </Callout>
 
 Pinned messages, announcements, and moderator mutes always show up for every user in the room no matter their shard, because those live on the room's shared control channels rather than any one shard's channel.
 
-Use this to your advantage: anything that must reach every user in the room — a host announcement, a giveaway winner, a moderation notice — should go out as a [custom message](https://docs.livelike.com/docs/sending-custom-chat-messages) or a pinned message, not a regular chat message. A host or talent account posting normal chat messages will only reach the shard they happen to land in.
+Use this to your advantage: anything that must reach every user in the room, a host announcement, a giveaway winner, a moderation notice, should go out as a [custom message](https://docs.livelike.com/docs/sending-custom-chat-messages) or a pinned message, not a regular chat message. A host or talent account posting normal chat messages will only reach the shard they happen to land in.
 
 <br />
 
@@ -99,16 +99,16 @@ Use this to your advantage: anything that must reach every user in the room — 
 
 ***
 
-Avoid changing the audience estimate once a room is already live. Shard assignment is calculated fresh every time rather than stored, so updating the estimate recomputes the shard count and every user is re-evaluated against it on their next reconnect — with no guarantee they land on the same shard as before, and no migration of message history between shards. Mid-event resharding will visibly disrupt active conversations.
+Avoid changing the audience estimate once a room is already live. Shard assignment is calculated fresh every time rather than stored, so updating the estimate recomputes the shard count and every user is re-evaluated against it on their next reconnect, with no guarantee they land on the same shard as before, and no migration of message history between shards. Mid-event resharding will visibly disrupt active conversations.
 
 ## Things to keep in mind
 
 ***
 
 - **Sharding is optional, per room.** Rooms that comfortably stay within normal concurrency don't need it.
-- **Users only see their own shard's conversation.** This is the trade-off that makes sharding work at scale — plan any content that needs universal reach (see above) accordingly.
+- **Users only see their own shard's conversation.** This is the trade-off that makes sharding work at scale, plan any content that needs universal reach (see above) accordingly.
 - **Don't change the estimate once a room is live (see above).**
-- **Estimate realistically.** Under-estimating is safe — shards just run a bit denser. Over-estimating spreads a modest audience across too many shards, and chat can feel empty.
+- **Estimate realistically.** Under-estimating is safe, shards just run a bit denser. Over-estimating spreads a modest audience across too many shards, and chat can feel empty.
 
 ## What we need from you
 
