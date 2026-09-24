@@ -5,7 +5,7 @@ excerpt: >-
   one letter at a time. Each wrong guess is a chance spent, and the picture
   sharpens as they go.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
