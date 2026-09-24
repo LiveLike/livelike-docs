@@ -4,7 +4,9 @@ excerpt: >-
   Release notes for every Arcade game, written for the people who configure and
   embed them.
 deprecated: false
-hidden: false
+hidden: true
+link:
+  new_tab: false
 metadata:
   robots: index
 ---
