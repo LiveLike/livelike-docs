@@ -36398,6 +36398,152 @@
         },
         "x-internal": false
       }
+    },
+    "/reward-items/-1": {
+      "post": {
+        "summary": "Copy of Create Reward Item",
+        "description": "",
+        "operationId": "create-reward-item-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "client_id",
+                  "name"
+                ],
+                "properties": {
+                  "client_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "value"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "prizeout_item": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "prizeout_status": {
+                          "type": "string"
+                        },
+                        "reward_item_points": {
+                          "type": "integer"
+                        },
+                        "prizeout_points": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "expires_at": {
+                    "type": "string",
+                    "description": "Date after which all transactions for the reward item expire; no debit or credit transactions are allowed after this date.",
+                    "format": "date"
+                  },
+                  "transaction_validity_days": {
+                    "type": "integer",
+                    "description": "Number of days from the transaction date for which the reward remains valid for the user."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": {
+                      "id": "df91dde4-b8da-438c-a57f-c70f2b2a9429",
+                      "url": "http://localhost:8888/api/v1/reward-items/df91dde4-b8da-438c-a57f-c70f2b2a9429/",
+                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                      "name": "Correct answer bonus points",
+                      "images": [],
+                      "attributes": [],
+                      "prizeout_conversion_rate": null,
+                      "reward_item_points": null,
+                      "prizeout_points": null,
+                      "prizeout_status": null
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "42249086-45e0-483a-a158-95555ea9fc70"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "http://localhost:8000/api/v1/reward-items/42249086-45e0-483a-a158-95555ea9fc70/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "New Reward Item"
+                    },
+                    "images": {
+                      "type": "array"
+                    },
+                    "attributes": {
+                      "type": "array"
+                    },
+                    "expires_at": {
+                      "type": "string"
+                    },
+                    "transaction_validity_days": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
