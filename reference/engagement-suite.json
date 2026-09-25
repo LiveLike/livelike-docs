@@ -36463,7 +36463,11 @@
                     "prizeout_conversion_rate": {},
                     "reward_item_points": {},
                     "prizeout_points": {},
-                    "prizeout_status": {}
+                    "prizeout_status": {},
+                    "expires_at": {
+                      "type": "string",
+                      "format": "date"
+                    }
                   }
                 }
               }
