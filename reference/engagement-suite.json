@@ -36412,16 +36412,18 @@
                 "examples": {
                   "Result": {
                     "value": {
-                      "id": "df91dde4-b8da-438c-a57f-c70f2b2a9429",
-                      "url": "http://localhost:8888/api/v1/reward-items/df91dde4-b8da-438c-a57f-c70f2b2a9429/",
-                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
-                      "name": "Correct answer bonus points",
+                      "id": "bc999759-07ab-4d5c-9f8a-26268e2163a8",
+                      "url": "http://localhost:8888/api/v1/reward-items/bc999759-07ab-4d5c-9f8a-26268e2163a8/",
+                      "client_id": "LhNwUUewBzvObltqsYGSlnAWaheezCEUjzOpK2bd",
+                      "name": "Correct answer bonus points aa",
                       "images": [],
                       "attributes": [],
                       "prizeout_conversion_rate": null,
                       "reward_item_points": null,
                       "prizeout_points": null,
-                      "prizeout_status": null
+                      "prizeout_status": null,
+                      "expires_at": null,
+                      "transaction_validity_days": null
                     }
                   }
                 },
@@ -36430,32 +36432,38 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "example": "42249086-45e0-483a-a158-95555ea9fc70"
+                      "example": "df91dde4-b8da-438c-a57f-c70f2b2a9429"
                     },
                     "url": {
                       "type": "string",
-                      "example": "http://localhost:8000/api/v1/reward-items/42249086-45e0-483a-a158-95555ea9fc70/"
+                      "example": "http://localhost:8888/api/v1/reward-items/df91dde4-b8da-438c-a57f-c70f2b2a9429/"
                     },
                     "client_id": {
                       "type": "string",
-                      "example": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu"
+                      "example": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R"
                     },
                     "name": {
                       "type": "string",
-                      "example": "New Reward Item"
+                      "example": "Correct answer bonus points"
                     },
                     "images": {
-                      "type": "array"
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {}
+                      }
                     },
                     "attributes": {
-                      "type": "array"
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {}
+                      }
                     },
-                    "expires_at": {
-                      "type": "string"
-                    },
-                    "transaction_validity_days": {
-                      "type": "string"
-                    }
+                    "prizeout_conversion_rate": {},
+                    "reward_item_points": {},
+                    "prizeout_points": {},
+                    "prizeout_status": {}
                   }
                 }
               }
