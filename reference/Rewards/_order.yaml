@@ -1,6 +1,6 @@
 - list-reward-items
 - create-reward-item
-- create-reward-item-1
+- retrieve-reward-item
 - get-reward-item-balance
 - list-reward-item-balances
 - credit-reward-item
