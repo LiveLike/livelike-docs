@@ -36399,79 +36399,14 @@
         "x-internal": false
       }
     },
-    "/reward-items/-1": {
-      "post": {
-        "summary": "Copy of Create Reward Item",
-        "description": "",
+    "/reward-items/{reward_item_id}": {
+      "get": {
+        "summary": "Get Reward Item",
+        "description": "Retrieve Reward Item",
         "operationId": "create-reward-item-1",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "client_id",
-                  "name"
-                ],
-                "properties": {
-                  "client_id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "key",
-                        "value"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "prizeout_item": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "prizeout_status": {
-                          "type": "string"
-                        },
-                        "reward_item_points": {
-                          "type": "integer"
-                        },
-                        "prizeout_points": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "expires_at": {
-                    "type": "string",
-                    "description": "Date after which all transactions for the reward item expire; no debit or credit transactions are allowed after this date.",
-                    "format": "date"
-                  },
-                  "transaction_validity_days": {
-                    "type": "integer",
-                    "description": "Number of days from the transaction date for which the reward remains valid for the user."
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
-          "201": {
-            "description": "201",
+          "200": {
+            "description": "200",
             "content": {
               "application/json": {
                 "examples": {
@@ -36525,24 +36460,18 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
           }
-        }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ]
       }
     }
   },
