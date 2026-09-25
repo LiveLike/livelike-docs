@@ -1,7 +1,7 @@
 ---
 title: iOS SDK 2.117
 author: LJupcho Nastevski
-hidden: true
+hidden: false
 published_at: '2026-09-25T13:33:38.661Z'
 type: added
 ---
