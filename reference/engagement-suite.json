@@ -36467,6 +36467,9 @@
                     "expires_at": {
                       "type": "string",
                       "format": "date"
+                    },
+                    "transaction_validity_days": {
+                      "type": "integer"
                     }
                   }
                 }
