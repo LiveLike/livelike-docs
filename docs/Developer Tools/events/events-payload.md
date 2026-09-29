@@ -956,7 +956,15 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
   "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
   "event": "rich-post-created",
   "data": {
-    ...
+    "created_by_id": "",
+    "created_by_nickname": "",
+    "created_by_custom_id": "",
+    "status": "",
+    "interactive_until": "",
+    "origin": "",
+    "program_id": "",
+    "title": "",
+    "filtered_title": "",
   },
   "created_at": "2025-12-26T13:27:45.141277+00:00"
 }
@@ -985,7 +993,19 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
   "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
   "event": "rich-post-mention-created",
   "data": {
-    ...
+    "profile_id": "",
+    "profile_custom_id": "",
+    "profile_nickname": "",
+    "mentioned_by_id": "",
+    "mentioned_by_custom_id": "",
+    "mentioned_by_nickname": "",
+    "rich_post_id": "",
+    "rich_post_title": "",
+    "program_id": "",
+    "start_index": "",
+    "end_index": "",
+    "client_id": "",
+    "created_at": "",
   },
   "created_at": "2025-12-26T13:27:45.141277+00:00"
 }
