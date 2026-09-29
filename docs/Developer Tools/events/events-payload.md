@@ -947,6 +947,62 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 | `data.chat_message_throttle_seconds` | `string`   | The updated chat throttle time in seconds            |
 | `created_at`                         | `datetime` | Timestamp when the event was created                 |
 
+## `rich-post-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
+  "event": "rich-post-created",
+  "data": {
+    ...
+  },
+  "created_at": "2025-12-26T13:27:45.141277+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name   | Type       | Description                          |
+| :----------- | :--------- | :----------------------------------- |
+| `id`         | `string`   | Unique identifier for the event      |
+| `event`      | `string`   | Event type {`rich-post-created`}     |
+|              |            |                                      |
+|              |            |                                      |
+|              |            |                                      |
+|              |            |                                      |
+| `created_at` | `datetime` | Timestamp when the event was created |
+
+<br />
+
+## `rich-post-mention-created`
+
+### Payload Example:
+
+```json
+{
+  "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
+  "event": "rich-post-mention-created",
+  "data": {
+    ...
+  },
+  "created_at": "2025-12-26T13:27:45.141277+00:00"
+}
+```
+
+### Field Descriptions
+
+| Field Name   | Type       | Description                              |
+| :----------- | :--------- | :--------------------------------------- |
+| `id`         | `string`   | Unique identifier for the event          |
+| `event`      | `string`   | Event type {`rich-post-mention-created`} |
+|              |            |                                          |
+|              |            |                                          |
+|              |            |                                          |
+|              |            |                                          |
+| `created_at` | `datetime` | Timestamp when the event was created     |
+
 ***
 
 ## Notes
