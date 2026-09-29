@@ -976,10 +976,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 | :----------- | :--------- | :----------------------------------- |
 | `id`         | `string`   | Unique identifier for the event      |
 | `event`      | `string`   | Event type {`rich-post-created`}     |
-|              |            |                                      |
-|              |            |                                      |
-|              |            |                                      |
-|              |            |                                      |
+| `data.{...}` | `object`   | Rich post data                       |
 | `created_at` | `datetime` | Timestamp when the event was created |
 
 <br />
@@ -1017,10 +1014,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 | :----------- | :--------- | :--------------------------------------- |
 | `id`         | `string`   | Unique identifier for the event          |
 | `event`      | `string`   | Event type {`rich-post-mention-created`} |
-|              |            |                                          |
-|              |            |                                          |
-|              |            |                                          |
-|              |            |                                          |
+| `data.{...}` | `object`   | Rich post and mention data               |
 | `created_at` | `datetime` | Timestamp when the event was created     |
 
 ***
