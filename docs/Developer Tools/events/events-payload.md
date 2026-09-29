@@ -956,15 +956,15 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
   "id": "f138c104-c987-4c24-8eb5-4bc555b149f2",
   "event": "rich-post-created",
   "data": {
-    "created_by_id": "",
-    "created_by_nickname": "",
-    "created_by_custom_id": "",
+    "created_by_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "created_by_nickname": "Swift Zebra",
+    "created_by_custom_id": "author nickname",
     "status": "",
     "interactive_until": "",
     "origin": "",
-    "program_id": "",
-    "title": "",
-    "filtered_title": "",
+    "program_id": "eab83c37-1e9e-4180-932f-b9fe27b14865",
+    "title": "Rich Post 1",
+    "filtered_title": "Rich *** Post",
   },
   "created_at": "2025-12-26T13:27:45.141277+00:00"
 }
