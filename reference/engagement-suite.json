@@ -22507,7 +22507,12 @@
                   },
                   "target_type": {
                     "type": "string",
-                    "description": "Specifies the type of entity the user is reacting to. When provided, it must be one of \"comment\", \"chat-message\", or \"richt-post\"."
+                    "description": "Specifies the type of entity the user is reacting to. When provided, it must be one of \"comment\", \"chat-message\", or \"rich-post\".",
+                    "enum": [
+                      "comment",
+                      "chat-message",
+                      "rich-post"
+                    ]
                   }
                 }
               }
