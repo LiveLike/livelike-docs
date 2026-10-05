@@ -23154,9 +23154,18 @@
             "in": "query",
             "name": "inline_replies_ordering",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "reaction_count",
+                "-reaction_count",
+                "reply_count",
+                "-reply_count",
+                "trending_score"
+              ]
             },
-            "description": "Controls the ordering of inline replies returned when replies_limit is specified. Possible values are the same as for the ordering query parameter."
+            "description": "Controls the ordering of inline replies returned when replies_limit is specified. Possible values are the same as for the ordering query parameter. If this parameter is not provided, the ordering falls back to the ordering parameter."
           }
         ],
         "responses": {
