@@ -23149,6 +23149,14 @@
               "default": "false"
             },
             "description": "Use the without_reported_thread parameter to omit reported comments that have no replies. A reported parent comment that has replies remains visible so that its reply thread can still be rendered."
+          },
+          {
+            "in": "query",
+            "name": "inline_replies_ordering",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Controls the ordering of inline replies returned when replies_limit is specified. Possible values are the same as for the ordering query parameter."
           }
         ],
         "responses": {
