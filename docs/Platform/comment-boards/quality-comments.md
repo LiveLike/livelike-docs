@@ -29,7 +29,7 @@ These signals help distinguish meaningful fan participation from spam, noise or 
 
 Based on the configured rules, the system assigns a quality flag to each comment. `is_high_quality = true | false`
 
-This flag is returned in the Comment List API allowing clients to filter comments that meet the quality criteria.
+This flag is returned in the List Comments API allowing clients to filter comments that meet the quality criteria.
 
 ## Filter Comments by Engagement Using Trending Score
 
