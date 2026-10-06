@@ -22656,6 +22656,24 @@
               "type": "string"
             },
             "description": "Profile UUID for the from_profile in a profile relationship. This parameter or an auth token for the from_profile is required with relationship_type."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "string",
+              "default": "20"
+            },
+            "description": "Up to a maximum of 100 (values above that are clamped to 100)"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "string",
+              "default": "1"
+            },
+            "description": "page number"
           }
         ],
         "responses": {
