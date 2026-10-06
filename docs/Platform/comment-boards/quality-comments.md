@@ -73,7 +73,7 @@ The Quality Comments feature allows clients to programmatically retrieve the mos
 
 <br />
 
-For more details on the List Comments API,  please check this out: <Anchor label="List Comments API" target="_blank" href="https://docs.livelike.com/update/reference/list-comments">List Comments API</Anchor>
+For more details on the List Comments API,  please check this out: [List comments](ref:list-comments)
 
 <br />
 
