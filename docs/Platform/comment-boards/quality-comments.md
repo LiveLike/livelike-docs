@@ -9,77 +9,57 @@ next:
 ---
 The Quality Comments feature allows clients to programmatically retrieve the most meaningful, engaging, and high-signal comments from one or multiple comment boards. This helps highlight the best fan comments, reduce noise, and power experiences such as Top Comments or Highlights. This capability is powered by comment quality signals.
 
-<br />
-
-# Key Capabilities
-
-<br />
-
 ## Comment Quality Rules
 
-1. Each application can define its own criteria for quality comments using the **CommentQualityRules** configuration model.
-2. These rules determine how the system identifies **high quality comments**.
-3. Common signals used in the rules include:
-   1. AI moderation signals
-      1. Sentiment analysis (positive, neutral, negative) - Calculated as a score ranging from -1 to 1, -1 being the most negative and 1 being the most positive.
-      2. Toxicity analysis (high, medium, low) - Calculated as a score ranging from 0 to 1, 0 being the least toxic and 1 being the most toxic.
-   2. Content Signals
-      1. Minimum character count - Whitespaces excluded from this count
-      2. Allowed or disallowed characters
-      3. Emoji to text ratio
-      4. GIF Exclusion
-4. These signals help distinguish meaningful fan participation from spam, noise or low-effort messages.
+Each application can define its own criteria for quality comments using the **CommentQualityRules** configuration model. These rules determine how the system identifies high quality comments. Common signals used in the rules include:
+
+- AI moderation signals
+  1. Sentiment analysis (positive, neutral, negative) - Calculated as a score ranging from -1 to 1, -1 being the most negative and 1 being the most positive.
+  2. Toxicity analysis (high, medium, low) - Calculated as a score ranging from 0 to 1, 0 being the least toxic and 1 being the most toxic.
+
+- Content Signals
+  1. Minimum character count - Whitespaces excluded from this count
+  2. Allowed or disallowed characters
+  3. Emoji to text ratio
+  4. GIF Exclusion
+
+These signals help distinguish meaningful fan participation from spam, noise or low-effort messages.
 
 <br />
 
 ## System Tags Comments as High Quality
 
-1. Based on the configured rules, the system assigns a quality flag to each comment. `is_high_quality = true | false`
-2. This flag is returned in the Comment List API allowing clients to filter comments that meet the quality criteria.
+Based on the configured rules, the system assigns a quality flag to each comment. `is_high_quality = true | false`
 
-<br />
+This flag is returned in the Comment List API allowing clients to filter comments that meet the quality criteria.
 
 ## Filter Comments by Engagement Using Trending Score
 
-1. Clients can further refine results using trending score filters.
-2. Trending score reflects how much engagement a comment is receiving.
-3. Available filters:
-   1. `trending_score_gte` - return comments with scores greater than or equal to a value
-   2. `trending_score_lte` - return comments with scores less than or equal to a value
-   3. Example: `trending_score_gte=3`; This helps surface comments that are gaining attention or engagement.
+Results can be refined further using [Trending Comments](doc:trending-comments) score filters when calling the List Comments API. Trending score reflects how much engagement a comment is receiving. Available filters:
 
-<br />
+- `trending_score_gte` - return comments with scores greater than or equal to a value
+- `trending_score_lte` - return comments with scores less than or equal to a value
+
+For example, `trending_score_gte=3` will return only comments with a trending score of at least 3.
 
 ## Retrieve comments from multiple comment boards
 
-1. Clients can request comments from multiple comment boards in a single API call. `comment_board_id={'<id_1>'}&comment_board_id={'<id_2>'}`.
-2. This is useful for Events with multiple chat rooms or Aggregating conversations across different topics or moments.
-
-<br />
+Clients can request comments from multiple comment boards in a single API call by repeating the `comment_board_id` filter. This can be useful for scenarios where aggregating conversations across different topics or moments is desired.
 
 ## Limit Comments per board
 
-1. To ensure balanced results, clients can limit the number of comments returned per board.
-2. For example: `per_board_limit=5`; This returns up to 5 comments from each comment board, preventing one board from dominating the results.
+To ensure balanced results, clients can limit the number of comments returned per board. For example: `per_board_limit=5` will return up to 5 comments from each comment board, preventing one board from dominating the results.
 
-<br />
+## Ordering the results
 
-## Order the results
+Clients can apply a sorting parameter to control the order in which comments are returned. Example use cases:
 
-1. Clients can apply a sorting parameter to control the order in which comments are returned.
-2. Example use cases:
-   1. Sort by trending score to highlight popular comments
-   2. Sort by recency to show the latest quality comments
-
-<br />
+1. Sort by trending score to highlight popular comments
+2. Sort by recency to show the latest quality comments
 
 For more details on the List Comments API,  please check this out: [List comments](ref:list-comments)
 
-<br />
-
 # Implementation Examples
-
-<br />
 
 ## Top Fan Comments
 
@@ -92,8 +72,6 @@ For more details on the List Comments API,  please check this out: [List comment
    4. Fan reaction rail
 4. Example Experience: During a live sports match, the platform shows Top 5 fan reactions that add meaningful discussion instead of short or spam-like messages.
 
-<br />
-
 ## Noise Reduction
 
 1. Only comments marked as high quality are displayed.
@@ -102,15 +80,11 @@ For more details on the List Comments API,  please check this out: [List comment
    2. Premium discussion mode
 3. Example Experience: Instead of showing every message, the platform surfaces comments that add value to the conversation.
 
-<br />
-
 ## Best Practices for Clients
 
 * To get the best results from Quality Comments use trending score + quality filter together. This helps surface comments that are both meaningful and engaging.
 * Limit comments per board when aggregating feeds. This prevents a single comment board from dominating results.
 * Tune quality rules based on your community behavior.  For example: Sports chats may allow more emojis whereas News discussions may require longer messages
-
-<br />
 
 | Feature         | What it Measures                           |
 | :-------------- | :----------------------------------------- |
