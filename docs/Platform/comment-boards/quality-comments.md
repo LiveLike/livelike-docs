@@ -25,8 +25,6 @@ Each application can define its own criteria for quality comments using the **Co
 
 These signals help distinguish meaningful fan participation from spam, noise or low-effort messages.
 
-<br />
-
 ## System Tags Comments as High Quality
 
 Based on the configured rules, the system assigns a quality flag to each comment. `is_high_quality = true | false`
