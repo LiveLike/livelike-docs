@@ -34772,7 +34772,7 @@
           {
             "name": "reaction_space_id",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -34783,7 +34783,8 @@
             "description": "there can be multiple target_id as filter eg, target_id=abcd&target_id=1234",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
