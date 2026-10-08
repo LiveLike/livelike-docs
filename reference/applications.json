@@ -3775,6 +3775,128 @@
         "operationId": "patch_client-id-reward-stores-id",
         "summary": "Update Reward Store"
       }
+    },
+    "/{client_id}/reward-store-1": {
+      "post": {
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Created",
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                      "name": "Summer Rewards",
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": {
+                        "theme": "dark"
+                      },
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "reward_item_ids": [
+                        "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10"
+                      ],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        },
+                        {
+                          "key": "region",
+                          "value": "US"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-08T09:30:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-reward-store-1",
+        "summary": "Copy of Create Reward Store",
+        "description": "Creates a reward store in an application. It is always created in the draft state.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Max 255 characters."
+                  },
+                  "reward_item_ids": {
+                    "type": "string",
+                    "description": "At most 1. Each item must belong to this application."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON.",
+                    "format": "json"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "Value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "Each item is {key, value}. Both are required and are strings of at most 200 characters. The same key may repeat with different values. An identical key and value pair twice is rejected."
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
+        },
+        "x-internal": true
+      }
     }
   },
   "x-readme": {
