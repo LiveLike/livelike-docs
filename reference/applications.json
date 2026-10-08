@@ -3609,7 +3609,8 @@
               }
             }
           }
-        }
+        },
+        "x-internal": true
       }
     },
     "/{client_id}/reward-stores": {
