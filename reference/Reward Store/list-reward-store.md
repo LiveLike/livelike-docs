@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: get_client-id-reward-stores
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
