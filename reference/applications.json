@@ -3876,7 +3876,44 @@
       "post": {
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "publish_url": "…/publish/",
+                      "unpublish_url": "…/unpublish/",
+                      "name": "Summer Rewards",
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-…",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-08T10:05:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
