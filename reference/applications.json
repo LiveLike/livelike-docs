@@ -3741,7 +3741,8 @@
           }
         ],
         "summary": "Retrieve Reward Store",
-        "operationId": "get_client-id-reward-stores-1"
+        "operationId": "get_client-id-reward-stores-1",
+        "x-internal": true
       }
     }
   },
