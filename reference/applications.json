@@ -3956,7 +3956,7 @@
                       "publish_url": "…/publish/",
                       "unpublish_url": "…/unpublish/",
                       "name": "Summer Rewards",
-                      "state": "published",
+                      "state": "unpublished",
                       "is_active": true,
                       "custom_data": null,
                       "reward_items": [
