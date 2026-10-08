@@ -3873,7 +3873,7 @@
       }
     },
     "/{client-id}/reward-stores/{id}/publish/": {
-      "get": {
+      "post": {
         "responses": {
           "200": {
             "description": ""
@@ -3897,9 +3897,9 @@
             "required": true
           }
         ],
-        "operationId": "get_client-id-reward-stores-id-publish",
         "summary": "Publish Reward Store",
-        "description": "Moves a store to the published state."
+        "description": "Moves a store to the published state.",
+        "operationId": "post_client-id-reward-stores-id-publish"
       }
     }
   },
