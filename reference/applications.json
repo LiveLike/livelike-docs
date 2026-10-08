@@ -3871,6 +3871,36 @@
         "x-internal": true,
         "operationId": "patch_client-id-reward-stores-id-1"
       }
+    },
+    "/{client-id}/reward-stores/{id}/publish/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "get_client-id-reward-stores-id-publish",
+        "summary": "Publish Reward Store",
+        "description": "Moves a store to the published state."
+      }
     }
   },
   "x-readme": {
