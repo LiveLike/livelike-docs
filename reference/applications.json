@@ -3746,6 +3746,35 @@
         "operationId": "get_client-id-reward-stores-1",
         "x-internal": true
       }
+    },
+    "/{client-id}/reward-stores/{id}/": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "patch_client-id-reward-stores-id",
+        "summary": "Update Reward Store"
+      }
     }
   },
   "x-readme": {
