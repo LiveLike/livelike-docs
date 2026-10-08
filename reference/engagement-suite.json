@@ -28010,9 +28010,9 @@
             "name": "ordering",
             "schema": {
               "type": "string",
-              "default": "created_at"
+              "default": ""
             },
-            "description": "sorting criteria",
+            "description": "sorting criteria. (e.g ordering=-created_at)",
             "required": false
           }
         ],
