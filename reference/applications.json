@@ -4003,7 +4003,7 @@
           }
         ],
         "summary": "Unpublish Reward Store",
-        "description": "Moves a store to the published state.",
+        "description": "Moves a store to the unpublished state.",
         "x-internal": true,
         "operationId": "post_client-id-reward-stores-id-unpublish-1"
       }
