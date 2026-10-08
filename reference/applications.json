@@ -3936,7 +3936,8 @@
         ],
         "summary": "Publish Reward Store",
         "description": "Moves a store to the published state.",
-        "operationId": "post_client-id-reward-stores-id-publish"
+        "operationId": "post_client-id-reward-stores-id-publish",
+        "x-internal": true
       }
     }
   },
