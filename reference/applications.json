@@ -3676,7 +3676,8 @@
         ],
         "summary": "List Reward Store",
         "operationId": "get_client-id-reward-stores",
-        "description": "Returns the application's reward stores, newest first (-created_at). Inactive (soft-deleted) stores are never returned, but stores in every state (draft, published, unpublished) are."
+        "description": "Returns the application's reward stores, newest first (-created_at). Inactive (soft-deleted) stores are never returned, but stores in every state (draft, published, unpublished) are.",
+        "x-internal": true
       }
     },
     "/{client_id}/reward-stores/{id}/": {
