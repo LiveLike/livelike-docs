@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: post_client-id-reward-store-1
+  operationId: patch_client-id-reward-stores-id-1
 hidden: true
 link:
   new_tab: false
