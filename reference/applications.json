@@ -3863,10 +3863,7 @@
                     },
                     "description": "Each item is {key, value}. Both are required and are strings of at most 200 characters. The same key may repeat with different values. An identical key and value pair twice is rejected."
                   }
-                },
-                "required": [
-                  "name"
-                ]
+                }
               }
             }
           }
