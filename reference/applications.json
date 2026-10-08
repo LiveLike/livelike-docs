@@ -3490,6 +3490,70 @@
         "summary": "Unarchive Reward Multiplier",
         "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-unarchive"
       }
+    },
+    "/{client_id}/reward-store": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-reward-store",
+        "summary": "Create Reward Store",
+        "description": "Creates a reward store in an application. It is always created in the draft state.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Max 255 characters."
+                  },
+                  "reward_item_ids": {
+                    "type": "string",
+                    "description": "At most 1. Each item must belong to this application."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON.",
+                    "format": "json"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "Value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "Each item is {key, value}. Both are required and are strings of at most 200 characters. The same key may repeat with different values. An identical key and value pair twice is rejected."
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
