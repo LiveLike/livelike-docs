@@ -27988,6 +27988,32 @@
               "type": "string",
               "default": ""
             }
+          },
+          {
+            "in": "query",
+            "name": "since",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "in": "query",
+            "name": "until",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "default": "created_at"
+            },
+            "description": "sorting criteria",
+            "required": false
           }
         ],
         "responses": {
