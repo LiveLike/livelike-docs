@@ -3745,39 +3745,8 @@
         "summary": "Retrieve Reward Store",
         "operationId": "get_client-id-reward-stores-1",
         "x-internal": true
-      }
-    },
-    "/{client-id}/reward-stores/{id}/": {
+      },
       "patch": {
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "operationId": "patch_client-id-reward-stores-id",
-        "summary": "Update Reward Store"
-      }
-    },
-    "/{client_id}/reward-store-1": {
-      "post": {
         "responses": {
           "201": {
             "description": "",
@@ -3848,10 +3817,17 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
-        "operationId": "post_client-id-reward-store-1",
-        "summary": "Copy of Create Reward Store",
+        "summary": "Update Reward Store",
         "description": "Creates a reward store in an application. It is always created in the draft state.",
         "requestBody": {
           "content": {
@@ -3895,7 +3871,37 @@
             }
           }
         },
-        "x-internal": true
+        "x-internal": true,
+        "operationId": "patch_client-id-reward-stores-id-1"
+      }
+    },
+    "/{client-id}/reward-stores/{id}/": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "patch_client-id-reward-stores-id",
+        "summary": "Update Reward Store"
       }
     }
   },
