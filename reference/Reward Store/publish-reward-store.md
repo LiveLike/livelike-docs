@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: get_client-id-reward-stores-id-publish
+  operationId: post_client-id-reward-stores-id-publish
 hidden: false
 link:
   new_tab: false
