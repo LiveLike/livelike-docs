@@ -3940,7 +3940,7 @@
         "x-internal": true
       }
     },
-    "/{client-id}/reward-stores/{id}/publish/-1": {
+    "/{client-id}/reward-stores/{id}/unpublish/-1": {
       "post": {
         "responses": {
           "200": {
@@ -4002,10 +4002,10 @@
             "required": true
           }
         ],
-        "summary": "Copy of Publish Reward Store",
+        "summary": "Unpublish Reward Store",
         "description": "Moves a store to the published state.",
-        "operationId": "post_client-id-reward-stores-id-publish-1",
-        "x-internal": true
+        "x-internal": true,
+        "operationId": "post_client-id-reward-stores-id-unpublish-1"
       }
     }
   },
