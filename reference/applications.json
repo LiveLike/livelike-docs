@@ -4340,10 +4340,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "product_store_id": {
-                    "type": "string",
-                    "description": "The store this category belongs to. It must be an active store in this application. It can't be changed later."
-                  },
                   "name": {
                     "type": "string",
                     "description": "Max 255 characters. Must be unique among active categories in the same store."
@@ -4371,13 +4367,10 @@
                         }
                       },
                       "type": "object"
-                    }
+                    },
+                    "description": "Full replace. [] clears them. Omitting the field leaves them unchanged. Both key and value are required strings of at most 200 characters."
                   }
-                },
-                "required": [
-                  "product_store_id",
-                  "name"
-                ]
+                }
               },
               "examples": {
                 "New Example": {
