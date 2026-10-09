@@ -28010,7 +28010,11 @@
             "name": "ordering",
             "schema": {
               "type": "string",
-              "default": ""
+              "default": "-created_at",
+              "enum": [
+                "created_at",
+                "-created_at"
+              ]
             },
             "description": "sorting criteria. (e.g ordering=-created_at)",
             "required": false
