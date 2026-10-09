@@ -113,6 +113,14 @@ next:
 
 <br />
 
+- **Daily Jigsaw Puzzle**: Add the following script tag to your HTML page:
+
+```html
+<script type="module" src="https://arcade-web.livelikecdn.com/daily-jigsaw-puzzle-0.1.0.js"></script>
+```
+
+<br />
+
 ### Step 3: Embed Game Component
 
 - In the body section of your HTML page, add the appropriate game component tag and replace the placeholders with your actual values:
@@ -187,6 +195,12 @@ next:
 
 ```html html
 <ll-predictor-plus accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId} lang="en"></ll-predictor-plus>
+```
+
+- #### **Daily Jigsaw Puzzle**
+
+```html html
+<ll-djp accessToken=${accessToken} profileId=${profileId} clientId=${clientId} gameId=${gameId} instanceId=${instanceId}></ll-djp>
 ```
 
 > 📘
