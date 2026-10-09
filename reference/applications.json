@@ -4522,7 +4522,7 @@
         "operationId": "post_client-id-categories-uuid-publish"
       }
     },
-    "/{client_id}/categories/{uuid}/publish/-1": {
+    "/{client_id}/categories/{uuid}/unpublish/-1": {
       "post": {
         "responses": {
           "200": {
@@ -4584,9 +4584,9 @@
             "required": true
           }
         ],
-        "summary": "Copy of Publish Category",
+        "summary": "Unpublish Category",
         "x-internal": true,
-        "operationId": "post_client-id-categories-uuid-publish-1"
+        "operationId": "post_client-id-categories-uuid-unpublish-1"
       }
     }
   },
