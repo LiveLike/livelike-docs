@@ -4289,9 +4289,9 @@
             "required": true
           }
         ],
-        "summary": "Copy of Create Category",
+        "summary": "Update Category",
         "operationId": "post_client-id-categories-1",
-        "description": "Creates a category inside a reward store. It is always created in the draft state.",
+        "description": "Updates a category.",
         "requestBody": {
           "content": {
             "application/json": {
