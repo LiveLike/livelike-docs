@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: post_categories-uuid-products-reorder
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
