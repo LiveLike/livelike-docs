@@ -22659,6 +22659,14 @@
           },
           {
             "in": "query",
+            "name": "per_space_limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Integer between 1 and 100"
+          },
+          {
+            "in": "query",
             "name": "page_size",
             "schema": {
               "type": "string",
@@ -22674,14 +22682,6 @@
               "default": "1"
             },
             "description": "page number"
-          },
-          {
-            "in": "query",
-            "name": "per_space_limit",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Integer between 1 and 100"
           }
         ],
         "responses": {
