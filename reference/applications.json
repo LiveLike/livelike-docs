@@ -4455,7 +4455,7 @@
         "operationId": "get_client-id-categories-1-1"
       }
     },
-    "/{client_id}/categories/{uuid}/publish/": {
+    "/{client_id}/categories/{uuid}/unpublish/": {
       "post": {
         "responses": {
           "200": {
@@ -4477,7 +4477,7 @@
                       "name": "Gift Cards",
                       "description": "Digital gift cards from partner brands",
                       "display_order": 0,
-                      "state": "draft",
+                      "state": "unpublished",
                       "is_active": true,
                       "custom_data": null,
                       "attributes": [
@@ -4518,8 +4518,8 @@
           }
         ],
         "summary": "Publish Category",
-        "operationId": "post_client-id-categories-uuid-publish",
-        "x-internal": true
+        "x-internal": true,
+        "operationId": "post_client-id-categories-uuid-unpublish"
       }
     }
   },
