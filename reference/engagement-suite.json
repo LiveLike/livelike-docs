@@ -28028,6 +28028,20 @@
               "type": "string"
             },
             "description": "Comment Author's UUID"
+          },
+          {
+            "in": "query",
+            "name": "report_count_gte",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "report_count_lte",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
