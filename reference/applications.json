@@ -4454,6 +4454,35 @@
         "x-internal": true,
         "operationId": "get_client-id-categories-1-1"
       }
+    },
+    "/{client_id}/categories/{uuid}/publish/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Publish Category",
+        "operationId": "post_client-id-categories-uuid-publish"
+      }
     }
   },
   "x-readme": {
