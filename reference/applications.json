@@ -4593,7 +4593,33 @@
       "post": {
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": [
+                      {
+                        "product_id": "c4e1f0a2-7b3d-4a98-8e55-1f2d3c4b5a69",
+                        "name": "$10 Gift Card",
+                        "display_order": 0
+                      },
+                      {
+                        "product_id": "5d6e7f80-1a2b-4c3d-9e8f-0a1b2c3d4e5f",
+                        "name": "$25 Gift Card",
+                        "display_order": 1
+                      },
+                      {
+                        "product_id": "9b8a7c6d-5e4f-4321-a0b1-c2d3e4f5a6b7",
+                        "name": "$50 Gift Card",
+                        "display_order": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
