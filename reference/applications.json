@@ -4544,7 +4544,7 @@
                       "name": "Gift Cards",
                       "description": "Digital gift cards from partner brands",
                       "display_order": 0,
-                      "state": "published",
+                      "state": "unpublished",
                       "is_active": true,
                       "custom_data": null,
                       "attributes": [
