@@ -28013,7 +28013,9 @@
               "default": "-created_at",
               "enum": [
                 "created_at",
-                "-created_at"
+                "-created_at",
+                "report_count",
+                "-report_count"
               ]
             },
             "description": "sorting criteria. (e.g ordering=-created_at)",
