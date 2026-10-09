@@ -4608,7 +4608,41 @@
         ],
         "summary": "Reorder Products in a Category",
         "operationId": "post_categories-uuid-products-reorder",
-        "description": "Sets the display position of one or more products inside a category. It is a partial reorder: list only the products you want to move. Products you don't list keep their relative order, and the product's position in any other category isn't touched."
+        "description": "Sets the display position of one or more products inside a category. It is a partial reorder: list only the products you want to move. Products you don't list keep their relative order, and the product's position in any other category isn't touched.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "products": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "product_id": {
+                          "type": "string",
+                          "description": "Must be a product already in this category."
+                        },
+                        "position": {
+                          "type": "string",
+                          "description": "Zero-based position, zero or higher. If omitted or null, the product goes to the end."
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "product_id"
+                      ]
+                    },
+                    "description": "Must be non-empty. Items are applied one at a time, in list order."
+                  }
+                },
+                "required": [
+                  "products"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
