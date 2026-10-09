@@ -4410,10 +4410,8 @@
         },
         "x-internal": true,
         "operationId": "post_client-id-categories-id"
-      }
-    },
-    "/{client-id}/categories/{id}-1": {
-      "get": {
+      },
+      "delete": {
         "responses": {
           "200": {
             "description": "",
@@ -4474,8 +4472,8 @@
             "required": true
           }
         ],
-        "summary": "Copy of Retrieve Category",
-        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
+        "summary": "Delete Category",
+        "description": "Permanently deletes a category. This is a hard delete, unlike reward stores, which are soft-deleted. Only a category in the draft state can be deleted.",
         "x-internal": true,
         "operationId": "get_client-id-categories-1-1"
       }
