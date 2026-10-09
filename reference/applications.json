@@ -4588,6 +4588,28 @@
         "x-internal": true,
         "operationId": "post_client-id-categories-uuid-unpublish-1"
       }
+    },
+    "/categories/{uuid}/products/reorder/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "uuid",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Reorder Products in a Category",
+        "operationId": "post_categories-uuid-products-reorder",
+        "description": "Sets the display position of one or more products inside a category. It is a partial reorder: list only the products you want to move. Products you don't list keep their relative order, and the product's position in any other category isn't touched."
+      }
     }
   },
   "x-readme": {
