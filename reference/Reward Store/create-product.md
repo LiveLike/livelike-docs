@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: post_client-id-products
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
