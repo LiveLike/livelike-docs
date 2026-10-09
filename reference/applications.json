@@ -4413,12 +4413,6 @@
       },
       "delete": {
         "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
-          },
           "204": {
             "content": {
               "application/json": {
