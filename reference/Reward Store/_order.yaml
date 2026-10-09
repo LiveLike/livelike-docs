@@ -5,6 +5,6 @@
 - publish-reward-store
 - post_client-id-reward-stores-id-publish-1
 - create-category
-- post_client-id-categories-1
 - list-categories
 - get_client-id-categories-1
+- post_client-id-categories-1
