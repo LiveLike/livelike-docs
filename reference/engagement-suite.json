@@ -34834,14 +34834,6 @@
         "operationId": "get-user-reaction-count-1",
         "parameters": [
           {
-            "name": "reaction_space_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "target_id",
             "in": "query",
             "description": "there can be multiple target_id as filter eg, target_id=abcd&target_id=1234",
@@ -34849,6 +34841,14 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "name": "reaction_space_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "in": "query",
