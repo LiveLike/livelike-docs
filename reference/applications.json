@@ -4159,6 +4159,56 @@
         "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
         "x-internal": true
       }
+    },
+    "/{client-id}/categories/-1": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=tier:gold. Repeating the parameter ANDs the pairs."
+          }
+        ],
+        "summary": "Copy of List Categories",
+        "operationId": "get_client-id-categories-1",
+        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
+        "x-internal": true
+      }
     }
   },
   "x-readme": {
