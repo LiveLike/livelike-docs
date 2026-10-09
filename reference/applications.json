@@ -4767,8 +4767,47 @@
                     },
                     "description": "Each category must belong to this product's store and be published. If display_order is omitted, the product is placed at the end of that category."
                   },
-                  "name2": {
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "start_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Can't be in the past."
+                  },
+                  "expiry_at": {
+                    "type": "string",
+                    "description": "Must be in the future and not before start_at."
+                  },
+                  "redemption_success_message": {
+                    "type": "string",
+                    "description": "Rich text.",
+                    "format": "json"
+                  },
+                  "redemption_failure_message": {
+                    "type": "string",
+                    "format": "json",
+                    "description": "Rich text."
+                  },
+                  "custom_data": {
                     "type": "string"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
                   }
                 },
                 "required": [
