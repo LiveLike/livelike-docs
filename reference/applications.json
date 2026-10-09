@@ -4671,6 +4671,28 @@
         },
         "x-internal": true
       }
+    },
+    "/{client_id}/products/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_client-id-products",
+        "summary": "Create Product",
+        "description": "Creates a product in a reward store. It is always created in the draft state. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint. A product can't be published until it has at least one."
+      }
     }
   },
   "x-readme": {
