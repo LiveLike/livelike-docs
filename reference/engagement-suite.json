@@ -28034,14 +28034,16 @@
             "name": "report_count_gte",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "comments reported more or equal number of times"
           },
           {
             "in": "query",
             "name": "report_count_lte",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "comments reported less or equal number of times"
           }
         ],
         "responses": {
