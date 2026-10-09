@@ -4156,7 +4156,8 @@
         ],
         "summary": "List Categories",
         "operationId": "get_client-id-categories",
-        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned."
+        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
+        "x-internal": true
       }
     }
   },
