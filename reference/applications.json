@@ -4481,7 +4481,8 @@
           }
         ],
         "summary": "Publish Category",
-        "operationId": "post_client-id-categories-uuid-publish"
+        "operationId": "post_client-id-categories-uuid-publish",
+        "x-internal": true
       }
     }
   },
