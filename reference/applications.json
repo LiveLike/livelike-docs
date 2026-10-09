@@ -4270,13 +4270,48 @@
         "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
         "x-internal": true,
         "operationId": "get_client-id-categories-1"
-      }
-    },
-    "/{client-id}/categories/-1": {
+      },
       "post": {
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "publish_url": "…/categories/3a7e9b21-…/publish/",
+                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "display_order": 0,
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-08T11:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "parameters": [
@@ -4287,10 +4322,17 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
         "summary": "Update Category",
-        "operationId": "post_client-id-categories-1",
         "description": "Updates a category.",
         "requestBody": {
           "content": {
@@ -4373,7 +4415,8 @@
             }
           }
         },
-        "x-internal": true
+        "x-internal": true,
+        "operationId": "post_client-id-categories-id"
       }
     }
   },
