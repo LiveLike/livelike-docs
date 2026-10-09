@@ -28020,6 +28020,14 @@
             },
             "description": "sorting criteria. (e.g ordering=-created_at)",
             "required": false
+          },
+          {
+            "in": "query",
+            "name": "comment_author_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Comment Author's UUID"
           }
         ],
         "responses": {
