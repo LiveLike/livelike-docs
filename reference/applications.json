@@ -4692,7 +4692,92 @@
         "operationId": "post_client-id-products",
         "summary": "Create Product",
         "description": "Creates a product in a reward store. It is always created in the draft state. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint. A product can't be published until it has at least one.",
-        "x-internal": true
+        "x-internal": true,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "description": "Must be an active store in this application. Write-only."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Max 255 characters."
+                  },
+                  "product_type": {
+                    "type": "string",
+                    "enum": [
+                      "badge",
+                      "multiplier",
+                      "flair",
+                      "common_code",
+                      "unique_code",
+                      "merchandise",
+                      "experience",
+                      "konekt"
+                    ]
+                  },
+                  "redemption_provider": {
+                    "type": "string",
+                    "description": "Only konekt. Must be konekt when product_type is konekt, and empty for every other type.",
+                    "enum": [
+                      "konekt",
+                      "null"
+                    ]
+                  },
+                  "redemption_method": {
+                    "type": "string",
+                    "description": "reward_item (default) or cash."
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "redemption_rules": {
+                    "type": "object",
+                    "properties": {
+                      "max_redemptions_per_user": {
+                        "type": "integer"
+                      },
+                      "max_redemption_days": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "gating_profile_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "category_ids": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "category_id": {
+                          "type": "string"
+                        },
+                        "display_order": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "Each category must belong to this product's store and be published. If display_order is omitted, the product is placed at the end of that category."
+                  },
+                  "name2": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "product_store_id"
+                ]
+              }
+            }
+          }
+        }
       }
     }
   },
