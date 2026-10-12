@@ -36464,7 +36464,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "UUID of the comment board that needs to be updated."
           }
         ],
         "requestBody": {
