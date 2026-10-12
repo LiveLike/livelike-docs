@@ -24846,58 +24846,6 @@
         }
       }
     },
-    "/comment-boadrs/": {
-      "delete": {
-        "summary": "Delete Comment Board",
-        "description": "",
-        "operationId": "delete-comment-board",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/comment-boards/{comment-board-id}/pinned-comments/": {
       "get": {
         "summary": "List pinned comments",
@@ -36581,6 +36529,58 @@
                       "example": "a0e8a202-0674-4124-b494-f5e32c056dc0"
                     }
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/comment-boadrs/{id}/": {
+      "delete": {
+        "summary": "Delete Comment Board",
+        "description": "",
+        "operationId": "delete-comment-board",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "UUID of the comment board that needs to be deleted."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
                 }
               }
             }
