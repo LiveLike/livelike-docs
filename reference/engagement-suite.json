@@ -35650,7 +35650,7 @@
     },
     "/comment-board-by-custom-id/{client_id}/{custom_id}/": {
       "get": {
-        "summary": "Get comment board by custom_id",
+        "summary": "Get comment board by custom ID",
         "description": "",
         "operationId": "get-comment-board-by-custom_id",
         "responses": {
