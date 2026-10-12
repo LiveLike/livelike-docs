@@ -24844,164 +24844,6 @@
             }
           }
         }
-      },
-      "patch": {
-        "summary": "Update a comment board",
-        "description": "",
-        "operationId": "update-a-comment-board",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "comment-board-id that needs to be updated",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Bearer Token",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "custom_id": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "allow_comments": {
-                    "type": "string"
-                  },
-                  "replies_depth": {
-                    "type": "string"
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Custom data is used for things like:  Storing extra context for the comment board"
-                  },
-                  "content_filter": {
-                    "type": "string",
-                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
-                    "default": "none",
-                    "enum": [
-                      "none",
-                      "filtered"
-                    ]
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "description": "list of comment board attributes in {\"key\": <>, \"value\": <>} format",
-                    "items": {
-                      "properties": {},
-                      "type": "object"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{\n    \"id\": \"eefa00d2-cf12-48de-99a0-3f10a1d3587a\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/\",\n    \"client_id\": \"lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje\",\n    \"custom_id\": \"a0\",\n    \"title\": \"User_Test\",\n    \"custom_data\": null,\n    \"description\": null,\n    \"allow_comments\": true,\n    \"replies_depth\": 2,\n    \"comments_url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/\",\n    \"comment_detail_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/\",\n    \"created_by\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"created_at\": \"2022-12-21T10:58:46.151911Z\",\n    \"reaction_space_id\": \"a0e8a202-0674-4124-b494-f5e32c056dc0\"\n}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "example": "eefa00d2-cf12-48de-99a0-3f10a1d3587a"
-                    },
-                    "url": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/"
-                    },
-                    "client_id": {
-                      "type": "string",
-                      "example": "lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje"
-                    },
-                    "custom_id": {
-                      "type": "string",
-                      "example": "a0"
-                    },
-                    "title": {
-                      "type": "string",
-                      "example": "User_Test"
-                    },
-                    "custom_data": {},
-                    "description": {},
-                    "allow_comments": {
-                      "type": "boolean",
-                      "example": true,
-                      "default": true
-                    },
-                    "replies_depth": {
-                      "type": "integer",
-                      "example": 2,
-                      "default": 0
-                    },
-                    "comments_url": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/"
-                    },
-                    "comment_detail_url_template": {
-                      "type": "string",
-                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/"
-                    },
-                    "created_by": {
-                      "type": "string",
-                      "example": "460c435b-d3b7-4add-bc63-628b0911f811"
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "example": "2022-12-21T10:58:46.151911Z"
-                    },
-                    "reaction_space_id": {
-                      "type": "string",
-                      "example": "a0e8a202-0674-4124-b494-f5e32c056dc0"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Result": {
-                    "value": "{}"
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/comment-boadrs/": {
@@ -36600,6 +36442,165 @@
           }
         ],
         "x-internal": false
+      }
+    },
+    "/comment-boards/{id}/": {
+      "patch": {
+        "summary": "Update a comment board",
+        "description": "",
+        "operationId": "update-a-comment-board",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer Token",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "allow_comments": {
+                    "type": "string"
+                  },
+                  "replies_depth": {
+                    "type": "string"
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Custom data is used for things like:  Storing extra context for the comment board"
+                  },
+                  "content_filter": {
+                    "type": "string",
+                    "description": "To manage the type of comments allowed in a comment board, we provide two levels of content filtering. Each level determines how messages are moderated. **1.** `none`: No content filtering, all users can post freely.  **2.**`filtered`: Profanity is automatically filtered.",
+                    "default": "none",
+                    "enum": [
+                      "none",
+                      "filtered"
+                    ]
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "list of comment board attributes in {\"key\": <>, \"value\": <>} format",
+                    "items": {
+                      "properties": {},
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"eefa00d2-cf12-48de-99a0-3f10a1d3587a\",\n    \"url\": \"https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/\",\n    \"client_id\": \"lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje\",\n    \"custom_id\": \"a0\",\n    \"title\": \"User_Test\",\n    \"custom_data\": null,\n    \"description\": null,\n    \"allow_comments\": true,\n    \"replies_depth\": 2,\n    \"comments_url\": \"https://cf-blast.livelikecdn.com/api/v1/comments/\",\n    \"comment_detail_url_template\": \"https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/\",\n    \"created_by\": \"460c435b-d3b7-4add-bc63-628b0911f811\",\n    \"created_at\": \"2022-12-21T10:58:46.151911Z\",\n    \"reaction_space_id\": \"a0e8a202-0674-4124-b494-f5e32c056dc0\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "eefa00d2-cf12-48de-99a0-3f10a1d3587a"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comment-boards/eefa00d2-cf12-48de-99a0-3f10a1d3587a/"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "lom9db0XtQUhOZQq1vz8QPfSpiyyxppiUVGMcAje"
+                    },
+                    "custom_id": {
+                      "type": "string",
+                      "example": "a0"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "User_Test"
+                    },
+                    "custom_data": {},
+                    "description": {},
+                    "allow_comments": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "replies_depth": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
+                    },
+                    "comments_url": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/"
+                    },
+                    "comment_detail_url_template": {
+                      "type": "string",
+                      "example": "https://cf-blast.livelikecdn.com/api/v1/comments/{comment_id}/"
+                    },
+                    "created_by": {
+                      "type": "string",
+                      "example": "460c435b-d3b7-4add-bc63-628b0911f811"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2022-12-21T10:58:46.151911Z"
+                    },
+                    "reaction_space_id": {
+                      "type": "string",
+                      "example": "a0e8a202-0674-4124-b494-f5e32c056dc0"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
