@@ -10,3 +10,4 @@ metadata:
   description: ''
   robots: index
 ---
+Resolves a comment board by its custom ID and parent application and redirects to the canonical comment board detail resource.
