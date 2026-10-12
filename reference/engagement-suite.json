@@ -18693,6 +18693,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Returns all the redemption keys that have the name provided in query param, it also supports multiple name filters e.g ?name=key1&name=key2. "
           }
         ],
         "responses": {
@@ -18765,7 +18773,6 @@
             }
           }
         },
-        "deprecated": false,
         "x-readme": {
           "code-samples": [
             {
