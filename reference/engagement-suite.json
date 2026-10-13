@@ -35339,6 +35339,20 @@
                 "debit"
               ]
             }
+          },
+          {
+            "in": "query",
+            "name": "expires_at_since",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "expires_at_until",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
