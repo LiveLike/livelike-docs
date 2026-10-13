@@ -35344,15 +35344,19 @@
             "in": "query",
             "name": "expires_at_since",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Filters reward transactions whose expires_at is on or after the specified date and time"
           },
           {
             "in": "query",
             "name": "expires_at_until",
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Filters reward transactions whose expires_at is on or before the specified date and time."
           }
         ],
         "responses": {
