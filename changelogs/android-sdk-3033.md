@@ -1,5 +1,5 @@
 ---
-title: Android SDK 3.0.33
+title: Android SDK 3.0.23
 author: Viktor Manev
 hidden: false
 published_at: '2026-10-13T15:44:33.639Z'
