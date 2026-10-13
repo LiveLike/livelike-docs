@@ -5,9 +5,7 @@ hidden: false
 published_at: '2026-10-13T15:44:33.639Z'
 type: added
 ---
-# Added independent inline-reply sorting
-
-Added independent inline-reply sorting through `inlineRepliesOrdering`, allowing newest-first top-level comments with oldest-first inline replies. Supported in:
+### <br /><br />Added independent inline-reply sorting through `inlineRepliesOrdering`, allowing newest-first top-level comments with oldest-first inline replies. Supported in:
 
 - `LiveLikeCommentClient.getComments()` and `getCommentsPage()` through `GetCommentsRequestOptions`
 - `LiveLikeKotlin.createCommentSession()` through its new `inlineRepliesOrdering` parameter
@@ -32,3 +30,5 @@ val commentSession = sdk.createCommentSession
    inlineRepliesOrdering = CommentSortingOptions.NEWEST_REPLIES // NEW
  )
 ```
+
+For more information, see [List Comments](https://docs.livelike.com/reference/list-comments).
