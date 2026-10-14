@@ -36923,7 +36923,7 @@
     },
     "/badges/-1": {
       "post": {
-        "summary": "Copy of Create App Badge",
+        "summary": "Update App Badge",
         "description": "Create a new badge inside an app that can be awarded to users later",
         "operationId": "create-badge-1-1",
         "requestBody": {
@@ -36931,11 +36931,6 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "client_id",
-                  "name",
-                  "file"
-                ],
                 "properties": {
                   "client_id": {
                     "type": "string",
@@ -36987,7 +36982,7 @@
           }
         },
         "responses": {
-          "201": {
+          "200": {
             "description": "201",
             "content": {
               "application/json": {
