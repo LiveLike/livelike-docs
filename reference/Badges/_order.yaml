@@ -1,5 +1,6 @@
 - list-available-badges
 - create-badge-1
+- create-badge-1-1
 - get-a-badge
 - get-users-badges
 - award-a-badge-to-a-user
@@ -7,4 +8,3 @@
 - list-profiles-who-have-earned-a-specific-badge
 - get-list-of-earned-badges
 - revoke-earned-badge
-- create-badge-1-1
