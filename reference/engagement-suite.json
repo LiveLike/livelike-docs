@@ -16528,7 +16528,21 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n  \"id\": \"98475771-7d9b-4c88-86f9-70ab4b925e62\",\n  \"client_id\": \"jV2LSongmdccPRL65M8GC6Z8lTievPsRsqsoSMiq\",\n  \"name\": \"Sample Badge\",\n  \"description\": \"Earned 100 silver coins inviting friends\",\n  \"badge_icon_url\": \"https://cf-blast-storage.livelikecdn.com/assets/7df9c888-8ef8-4ea1-9257-a4e16d094507.jpeg\",\n  \"mimetype\": \"application/octet-stream\",\n  \"registered_links\":[\n    {\n      \"id\": \"170ba3f5-5c23-437b-890f-6758ceb05db8\",\n      \"name\": \"Sponsor Activation\",\n      \"description\": \"\",\n      \"link_url\": \"https://www.example.com\",\n      \"client_id\":\" jV2LSongmdccPRL65M8GC6Z8lTievPsRsqsoSMiq\"\n    }\n  ],\n  \"file\":\"https://cf-blast-storage.livelikecdn.com/assets/7df9c888-8ef8-4ea1-9257-a4e16d094507.jpeg\"\n}"
+                    "value": {
+                      "id": "a8981444-78db-436b-bdb7-434c672bde7c",
+                      "url": "http://localhost:8888/api/v1/badges/a8981444-78db-436b-bdb7-434c672bde7c/",
+                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                      "name": "Expert",
+                      "description": null,
+                      "badge_icon_url": "/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "mimetype": "application/octet-stream",
+                      "registered_links": [],
+                      "file": "http://localhost:8888/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "attributes": [],
+                      "created_at": "2026-10-14T12:10:38.850973Z",
+                      "reward_item_id": null,
+                      "reward_item_threshold": null
+                    }
                   }
                 },
                 "schema": {
@@ -16595,8 +16609,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/profiles/{profile_id}/badges/": {
