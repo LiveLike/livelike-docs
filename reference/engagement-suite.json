@@ -36920,6 +36920,117 @@
           }
         }
       }
+    },
+    "/badges/-1": {
+      "post": {
+        "summary": "Copy of Create App Badge",
+        "description": "Create a new badge inside an app that can be awarded to users later",
+        "operationId": "create-badge-1-1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "client_id",
+                  "name",
+                  "file"
+                ],
+                "properties": {
+                  "client_id": {
+                    "type": "string",
+                    "description": "Client ID of the app to create the badge in"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the new badge"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the new badge"
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "Image representation of the new badge",
+                    "format": "binary"
+                  },
+                  "badge_icon_url": {
+                    "type": "string",
+                    "description": "one of this or file"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "List of {key, value}, each max 200 characters. A duplicate key/value pair on the same badge is rejected."
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "description": "UUID of a RewardItem, nullable."
+                  },
+                  "reward_item_threshold": {
+                    "type": "string",
+                    "description": "Integer of at least 1, nullable."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": {
+                      "id": "a8981444-78db-436b-bdb7-434c672bde7c",
+                      "url": "http://localhost:8888/api/v1/badges/a8981444-78db-436b-bdb7-434c672bde7c/",
+                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                      "name": "Expert",
+                      "description": null,
+                      "badge_icon_url": "/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "mimetype": "application/octet-stream",
+                      "registered_links": [],
+                      "file": "http://localhost:8888/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "attributes": [],
+                      "created_at": "2026-10-14T12:10:38.850973Z",
+                      "reward_item_id": null,
+                      "reward_item_threshold": null
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
