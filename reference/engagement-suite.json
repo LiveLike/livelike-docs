@@ -16550,7 +16550,21 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n    \"id\": \"418563f1-d5e5-4a45-b424-1a70bd850d02\",\n    \"client_id\": \"pnODbVXg0UI80s0l2aH5Y7FOuGbftoAdSNqpdvo6\",\n    \"name\": \"new badge12\",\n    \"description\": null,\n    \"badge_icon_url\": \"https://cf-blast-storage.livelikecdn.com/assets/cd3ef152-9409-4372-a322-ad027b18bf61.png\",\n    \"mimetype\": \"image/png\",\n    \"registered_links\": [],\n}"
+                    "value": {
+                      "id": "a8981444-78db-436b-bdb7-434c672bde7c",
+                      "url": "http://localhost:8888/api/v1/badges/a8981444-78db-436b-bdb7-434c672bde7c/",
+                      "client_id": "PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R",
+                      "name": "Expert",
+                      "description": null,
+                      "badge_icon_url": "/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "mimetype": "application/octet-stream",
+                      "registered_links": [],
+                      "file": "http://localhost:8888/media/assets/938bac73-b9a2-451d-8b34-d42c60cf4246.png",
+                      "attributes": [],
+                      "created_at": "2026-10-14T12:10:38.850973Z",
+                      "reward_item_id": null,
+                      "reward_item_threshold": null
+                    }
                   }
                 }
               }
@@ -16572,8 +16586,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/badges/{badge-id}/": {
