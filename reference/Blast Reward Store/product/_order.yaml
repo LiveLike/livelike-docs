@@ -1,0 +1,6 @@
+- post_v1-applications-client-id-products
+- get_v1-applications-client-id-products-product-id
+- patch_v1-applications-client-id-products-product-id
+- get_v1-applications-client-id-products-admin
+- post_v1-applications-client-id-products-product-id-publish
+- post_v1-applications-client-id-products-product-id-unpublish

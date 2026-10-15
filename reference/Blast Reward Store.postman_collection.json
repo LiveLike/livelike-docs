@@ -1,0 +1,1528 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Blast Reward Store",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://{{base_url}}api"
+    },
+    {
+      "url": "http://localhost:8000"
+    },
+    {
+      "url": "https://cf-blast-game-changers.livelikecdn.com"
+    },
+    {
+      "url": "http://localhost:8888"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Sync Product"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Variant"
+    },
+    {
+      "name": "Order"
+    }
+  ],
+  "paths": {
+    "/v1/applications/{client_id}/products/aa2996eb-98e9-4960-bc55-92d484c6ff54/variants/from-provider-products/": {
+      "post": {
+        "tags": [
+          "Sync Product"
+        ],
+        "summary": "Sync konekt product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "provider_products": [
+                    {
+                      "provider_product_id": "c5b55fda-c0f6-4ca9-9322-d13f88e92c7a"
+                    },
+                    {
+                      "provider_product_id": "1891cb9a-eb41-4f14-9135-6d83f2787509"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer-access-token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/provider-products/": {
+      "get": {
+        "tags": [
+          "Sync Product"
+        ],
+        "summary": "New Request",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer $ACCESS_TOKEN"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Product create form",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "example": "1d9eee8a-2c5e-4b64-88a8-9c98ef2cb85f"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Image Product"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "example": "10.00"
+                  },
+                  "inventory_count": {
+                    "type": "integer",
+                    "example": "5"
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "example": "028a5d74-d587-45d5-a6e6-d802c75ba75c"
+                  },
+                  "image[0]image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image[0]display_order": {
+                    "type": "integer",
+                    "example": "0"
+                  },
+                  "image[1]image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image[1]display_order": {
+                    "type": "integer",
+                    "example": "1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <access_token>"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Retrieve Product",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Product create form Copy",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "example": "1d9eee8a-2c5e-4b64-88a8-9c98ef2cb85f"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Image Product"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "example": "10.00"
+                  },
+                  "inventory_count": {
+                    "type": "integer",
+                    "example": "5"
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "example": "028a5d74-d587-45d5-a6e6-d802c75ba75c"
+                  },
+                  "image[0]image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image[0]display_order": {
+                    "type": "integer",
+                    "example": "0"
+                  },
+                  "image[1]image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "image[1]display_order": {
+                    "type": "integer",
+                    "example": "1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <access_token>"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/admin/": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Admin product api",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "published"
+          },
+          {
+            "name": "ordering",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "-expiry_at"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "1"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "20"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/publish/": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Publish Product",
+        "requestBody": {
+          "content": {}
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/unpublish/": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Unpublish Product",
+        "requestBody": {
+          "content": {}
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/": {
+      "post": {
+        "tags": [
+          "Variant"
+        ],
+        "summary": "Add Product Variant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "variants": [
+                    {
+                      "label": "Coupon Code"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Variant"
+        ],
+        "summary": "List Product Variants",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/e6a614ec-1c90-4472-b1c3-af146763b6f5/": {
+      "get": {
+        "tags": [
+          "Variant"
+        ],
+        "summary": "Retrieve Varaint",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/0aa2a366-4e9b-4a51-a6af-350d42101b6f/": {
+      "delete": {
+        "tags": [
+          "Variant"
+        ],
+        "summary": "Delete Variant",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/bf8bf2ef-29f0-48b0-b2e6-e2988c8b1014/": {
+      "patch": {
+        "tags": [
+          "Variant"
+        ],
+        "summary": "Update Variant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "label": "Launch Night"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/applications/{client_id}/order-items/1411540d-b62f-4cab-b3d2-9d8db4a37cb4/refunds/": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Refund",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "reason": "Item defective on arrival"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/orders/": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "Create Order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "idempotency_key": "16fbe2ee-dfce-4d8a-9c5a-fbf479f85df0",
+                  "items": [
+                    {
+                      "variant_id": "5bdbddd2-1363-4584-914e-0214b85d7744",
+                      "quantity": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/fcc3da69-1287-4292-a048-875555333699/": {
+      "patch": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Update variant form",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "images[0]image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "images[0]display_order": {
+                    "type": "integer",
+                    "example": "0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/products/{product_id}/variants/{variant_id}/coupon-codes/": {
+      "put": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Coupon Add",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "codes": [
+                    "WINTER01",
+                    "WINTER02",
+                    "WINTER03"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "variant_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Coupon Add Copy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "codes": [
+                    "WINTER011",
+                    "WINTER022",
+                    "WINTER033",
+                    "WINTER044",
+                    "WINTER055",
+                    "WINTER066"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "variant_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/applications/p2wvIRrA5xttrLAG1dcHUzPTfaqVb29PsNFPnjky/products/ed0dfe77-965f-4f86-888e-7dc69bd28b1a/variants/a1dc6c56-9a6d-460a-b391-3ac37c308efc/coupon-codes/": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "New Request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "codes": [
+                    "crossvar1536",
+                    "fresh3303"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer MrrP7ydXN8I4CVu6Zct5VrGSOA45V7-NQOdJFEAKbTdWyTQ5oabGZA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/reorder/": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Update Category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "products": [
+                    {
+                      "product_id": "e3a13f67-a42b-41fc-89b8-6cde364d8f18",
+                      "display_order": 10
+                    },
+                    {
+                      "product_id": "b3a20eb6-304a-4c72-a80f-3f061118e1b7"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <producer_access_token>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/e3a13f67-a42b-41fc-89b8-6cde364d8f18/position/": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Update Category Copy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "position": 4
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer nRzAgM11kJxoxy1BmQTssKf0NC1-KokZHtmOnzc7wM_R2LZb4FNWew"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/reorder/": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "New Request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "products": [
+                    {
+                      "product_id": "e3a13f67-a42b-41fc-89b8-6cde364d8f18",
+                      "position": 3
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer nRzAgM11kJxoxy1BmQTssKf0NC1-KokZHtmOnzc7wM_R2LZb4FNWew"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/provider-product-sync-jobs/": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Sync Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "provider": "konekt"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <PRODUCER_ACCESS_TOKEN>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/v1/applications/{client_id}/provider-product-sync-jobs/857548eb-46c1-4a64-9b33-80f974e102fc/": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Sync Product Copy",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer <PRODUCER_ACCESS_TOKEN>"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
