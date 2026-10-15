@@ -1,0 +1,1289 @@
+openapi: 3.0.3
+info:
+  title: Blast Reward Store
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: '{{base_url}}api'
+  - url: http://localhost
+  - url: https://cf-blast-game-changers.livelikecdn.com
+paths:
+  /v1/applications/{client_id}/products/aa2996eb-98e9-4960-bc55-92d484c6ff54/variants/from-provider-products/:
+    post:
+      tags:
+        - Sync Product
+      summary: Sync konekt product
+      description: Sync konekt product
+      operationId: syncKonektProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider_products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      provider_product_id:
+                        type: string
+                        example: c5b55fda-c0f6-4ca9-9322-d13f88e92c7a
+                  example:
+                    - provider_product_id: c5b55fda-c0f6-4ca9-9322-d13f88e92c7a
+                    - provider_product_id: 1891cb9a-eb41-4f14-9135-6d83f2787509
+            examples:
+              Sync konekt product:
+                value:
+                  provider_products:
+                    - provider_product_id: c5b55fda-c0f6-4ca9-9322-d13f88e92c7a
+                    - provider_product_id: 1891cb9a-eb41-4f14-9135-6d83f2787509
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/provider-products/:
+    get:
+      tags:
+        - Sync Product
+      summary: New Request
+      description: New Request
+      operationId: newRequest
+      parameters:
+        - name: provider
+          in: query
+          schema:
+            type: string
+            example: konekt
+        - name: is_active
+          in: query
+          schema:
+            type: string
+            example: 'true'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                is_active:
+                  type: string
+                  example: 'true'
+                provider:
+                  type: string
+                  example: konekt
+            examples:
+              New Request:
+                value:
+                  is_active: 'true'
+                  provider: konekt
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/:
+    post:
+      tags:
+        - Product
+      summary: Create Product
+      description: Create Product
+      operationId: createProduct
+      requestBody:
+        content:
+          application/json:
+            examples:
+              Create Product:
+                value: |-
+                  {
+                      "product_store_id": "1d9eee8a-2c5e-4b64-88a8-9c98ef2cb85f",
+                      "name": "Badge Product",
+                      "product_type": "unique_code",
+                      "description": {
+                          "type": "doc",
+                          "content": []
+                      },
+                      "redemption_rules": {
+                          "max_redemptions_per_user": 1,
+                          "max_redemption_days": 5
+                      },
+                      "gating_profile_group_ids": [],
+                      "category_ids": [
+                          {
+                              "id": "32ce79e1-c23b-4cf0-9e70-be13a933c51e"
+                            
+                          }
+                      ],
+                      "sponsor_ids": [
+
+                      ],
+                      // "start_at": "2026-08-25T00:00:00Z",
+                      "expiry_at": "2026-12-31T23:59:59Z",
+                      "redemption_success_message": {
+                          "type": "doc",
+                          "content": []
+                      },
+                      "redemption_failure_message": {
+                          "type": "doc",
+                          "content": []
+                      },
+                      "custom_data": "{\"sku\":\"ABC123\"}",
+                      "reward_item_id": "defcec39-2af5-4cb2-9bb1-32bb817813e1"
+                      
+                  }
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                cost:
+                  type: string
+                  example: '10.00'
+                image[0]display_order:
+                  type: string
+                  example: '0'
+                image[0]image:
+                  type: string
+                  format: binary
+                image[1]display_order:
+                  type: string
+                  example: '1'
+                image[1]image:
+                  type: string
+                  format: binary
+                inventory_count:
+                  type: string
+                  example: '5'
+                name:
+                  type: string
+                  example: Image Product
+                product_store_id:
+                  type: string
+                  example: 1d9eee8a-2c5e-4b64-88a8-9c98ef2cb85f
+                reward_item_id:
+                  type: string
+                  example: 028a5d74-d587-45d5-a6e6-d802c75ba75c
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/:
+    get:
+      tags:
+        - Product
+      summary: Retrieve Product
+      description: Retrieve Product
+      operationId: retrieveProduct
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    patch:
+      tags:
+        - Product
+      summary: Update Product
+      description: Update Product
+      operationId: updateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category_ids:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      display_order:
+                        type: number
+                        example: 2
+                      id:
+                        type: string
+                        example: 30b05ec9-6896-49e8-ba3f-6fcae21e802f
+                  example:
+                    - display_order: 2
+                      id: 30b05ec9-6896-49e8-ba3f-6fcae21e802f
+                    - id: d83fd8cd-e749-4db1-87e1-f142fef8998c
+                name:
+                  type: string
+                  example: Update test image product
+            examples:
+              Update Product:
+                value:
+                  category_ids:
+                    - display_order: 2
+                      id: 30b05ec9-6896-49e8-ba3f-6fcae21e802f
+                    - id: d83fd8cd-e749-4db1-87e1-f142fef8998c
+                  name: Update test image product
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                cost:
+                  type: string
+                  example: '10.00'
+                image[0]display_order:
+                  type: string
+                  example: '0'
+                image[0]image:
+                  type: string
+                  format: binary
+                image[1]display_order:
+                  type: string
+                  example: '1'
+                image[1]image:
+                  type: string
+                  format: binary
+                inventory_count:
+                  type: string
+                  example: '5'
+                name:
+                  type: string
+                  example: Image Product
+                product_store_id:
+                  type: string
+                  example: 1d9eee8a-2c5e-4b64-88a8-9c98ef2cb85f
+                reward_item_id:
+                  type: string
+                  example: 028a5d74-d587-45d5-a6e6-d802c75ba75c
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/admin/:
+    get:
+      tags:
+        - Product
+      summary: Admin product api
+      description: Admin product api
+      operationId: adminProductApi
+      parameters:
+        - name: state
+          in: query
+          schema:
+            type: string
+            example: published
+        - name: category_name
+          in: query
+          schema:
+            type: string
+            example: Apparel
+        - name: category_id
+          in: query
+          schema:
+            type: string
+            example: <category-uuid>
+        - name: product_store_id
+          in: query
+          schema:
+            type: string
+            example: <product-store-uuid>
+        - name: sponsor_id
+          in: query
+          schema:
+            type: string
+            example: <sponsor-uuid>
+        - name: product_type
+          in: query
+          schema:
+            type: string
+            example: built_in
+        - name: is_gated
+          in: query
+          schema:
+            type: string
+            example: 'true'
+        - name: attributes
+          in: query
+          schema:
+            type: string
+            example: season:2026
+        - name: ordering
+          in: query
+          schema:
+            type: string
+            example: '-expiry_at'
+        - name: page
+          in: query
+          schema:
+            type: string
+            example: '1'
+        - name: page_size
+          in: query
+          schema:
+            type: string
+            example: '20'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                attributes:
+                  type: string
+                  example: season:2026
+                category_id:
+                  type: string
+                  example: <category-uuid>
+                category_name:
+                  type: string
+                  example: Apparel
+                is_gated:
+                  type: string
+                  example: 'true'
+                ordering:
+                  type: string
+                  example: '-expiry_at'
+                page:
+                  type: string
+                  example: '1'
+                page_size:
+                  type: string
+                  example: '20'
+                product_store_id:
+                  type: string
+                  example: <product-store-uuid>
+                product_type:
+                  type: string
+                  example: built_in
+                sponsor_id:
+                  type: string
+                  example: <sponsor-uuid>
+                state:
+                  type: string
+                  example: published
+                status:
+                  type: string
+                  example: coming_soon
+            examples:
+              Admin product api:
+                value:
+                  attributes: season:2026
+                  category_id: <category-uuid>
+                  category_name: Apparel
+                  is_gated: 'true'
+                  ordering: '-expiry_at'
+                  page: '1'
+                  page_size: '20'
+                  product_store_id: <product-store-uuid>
+                  product_type: built_in
+                  sponsor_id: <sponsor-uuid>
+                  state: published
+                  status: coming_soon
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/publish/:
+    post:
+      tags:
+        - Product
+      summary: Publish Product
+      description: Publish Product
+      operationId: publishProduct
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/unpublish/:
+    post:
+      tags:
+        - Product
+      summary: Unpublish Product
+      description: Unpublish Product
+      operationId: unpublishProduct
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/variants/:
+    get:
+      tags:
+        - Variant
+      summary: List Product Variants
+      description: List Product Variants
+      operationId: listProductVariants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variants:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      color:
+                        type: string
+                        example: '#FF0000'
+                      cost:
+                        type: string
+                        example: '10.00'
+                      custom_data:
+                        type: string
+                        example: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage:
+                        type: number
+                        example: 15
+                      event_end:
+                        type: string
+                        example: '2026-09-01T21:00:00Z'
+                      event_start:
+                        type: string
+                        example: '2026-09-01T18:00:00Z'
+                      inventory_count:
+                        type: number
+                        example: 100
+                      label:
+                        type: string
+                        example: Small / Blue
+                      size:
+                        type: string
+                        example: S
+                      variant_type:
+                        type: string
+                        example: size
+                  example:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+            examples:
+              List Product Variants:
+                value:
+                  variants:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    post:
+      tags:
+        - Variant
+      summary: Add Product Variant
+      description: Add Product Variant
+      operationId: addProductVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variants:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      label:
+                        type: string
+                        example: Coupon Code
+                  example:
+                    - label: Coupon Code
+            examples:
+              Add Product Variant:
+                value:
+                  variants:
+                    - label: Coupon Code
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  "/v1/applications/{client_id}/products/{product_id}/variants/e6a614ec-1c90-4472-b1c3-af146763b6f5\n/":
+    get:
+      tags:
+        - Variant
+      summary: Retrieve Varaint
+      description: Retrieve Varaint
+      operationId: retrieveVaraint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variants:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      color:
+                        type: string
+                        example: '#FF0000'
+                      cost:
+                        type: string
+                        example: '10.00'
+                      custom_data:
+                        type: string
+                        example: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage:
+                        type: number
+                        example: 15
+                      event_end:
+                        type: string
+                        example: '2026-09-01T21:00:00Z'
+                      event_start:
+                        type: string
+                        example: '2026-09-01T18:00:00Z'
+                      inventory_count:
+                        type: number
+                        example: 100
+                      label:
+                        type: string
+                        example: Small / Blue
+                      size:
+                        type: string
+                        example: S
+                      variant_type:
+                        type: string
+                        example: size
+                  example:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+            examples:
+              Retrieve Varaint:
+                value:
+                  variants:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/variants/0aa2a366-4e9b-4a51-a6af-350d42101b6f/:
+    delete:
+      tags:
+        - Variant
+      summary: Delete Variant
+      description: Delete Variant
+      operationId: deleteVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variants:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      color:
+                        type: string
+                        example: '#FF0000'
+                      cost:
+                        type: string
+                        example: '10.00'
+                      custom_data:
+                        type: string
+                        example: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage:
+                        type: number
+                        example: 15
+                      event_end:
+                        type: string
+                        example: '2026-09-01T21:00:00Z'
+                      event_start:
+                        type: string
+                        example: '2026-09-01T18:00:00Z'
+                      inventory_count:
+                        type: number
+                        example: 100
+                      label:
+                        type: string
+                        example: Small / Blue
+                      size:
+                        type: string
+                        example: S
+                      variant_type:
+                        type: string
+                        example: size
+                  example:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+            examples:
+              Delete Variant:
+                value:
+                  variants:
+                    - cost: '10.00'
+                      custom_data: '{"sku":"TSHIRT-S-BLUE"}'
+                      discount_percentage: 15
+                      inventory_count: 100
+                      label: Small / Blue
+                      size: S
+                      variant_type: size
+                    - color: '#FF0000'
+                      cost: '12.00'
+                      custom_data: '{"sku":"TSHIRT-RED"}'
+                      discount_percentage: 10
+                      inventory_count: 50
+                      label: Red Edition
+                      variant_type: colour
+                    - cost: '25.00'
+                      custom_data: '{"sku":"EVENT-LAUNCH"}'
+                      event_end: '2026-09-01T21:00:00Z'
+                      event_start: '2026-09-01T18:00:00Z'
+                      inventory_count: 200
+                      label: Launch Night
+                      variant_type: event
+                    - cost: '40.00'
+                      inventory_count: 20
+                      label: Collector's Bundle
+                      variant_type: other
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/variants/bf8bf2ef-29f0-48b0-b2e6-e2988c8b1014/:
+    patch:
+      tags:
+        - Variant
+      summary: Update Variant
+      description: Update Variant
+      operationId: updateVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                label:
+                  type: string
+                  example: Launch Night
+            examples:
+              Update Variant:
+                value:
+                  label: Launch Night
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/applications/{client_id}/order-items/1411540d-b62f-4cab-b3d2-9d8db4a37cb4/refunds/:
+    post:
+      tags:
+        - Order
+      summary: Refund
+      description: Refund
+      operationId: refund
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  example: Item defective on arrival
+            examples:
+              Refund:
+                value:
+                  reason: Item defective on arrival
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/orders/:
+    post:
+      tags:
+        - Order
+      summary: Create Order
+      description: Create Order
+      operationId: createOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idempotency_key:
+                  type: string
+                  example: 16fbe2ee-dfce-4d8a-9c5a-fbf479f85df0
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      quantity:
+                        type: number
+                        example: 1
+                      variant_id:
+                        type: string
+                        example: 5bdbddd2-1363-4584-914e-0214b85d7744
+                  example:
+                    - quantity: 1
+                      variant_id: 5bdbddd2-1363-4584-914e-0214b85d7744
+            examples:
+              Create Order:
+                value:
+                  idempotency_key: 16fbe2ee-dfce-4d8a-9c5a-fbf479f85df0
+                  items:
+                    - quantity: 1
+                      variant_id: 5bdbddd2-1363-4584-914e-0214b85d7744
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/variants/fcc3da69-1287-4292-a048-875555333699/:
+    patch:
+      summary: Update variant form
+      description: Update variant form
+      operationId: updateVariantForm
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                images[0]display_order:
+                  type: string
+                  example: '0'
+                images[0]image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/products/{product_id}/variants/{variant_id}/coupon-codes/:
+    put:
+      summary: Coupon Add
+      description: Coupon Add
+      operationId: couponAdd
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codes:
+                  type: array
+                  items:
+                    type: string
+                    example: WINTER01
+                  example:
+                    - WINTER01
+                    - WINTER02
+                    - WINTER03
+            examples:
+              Coupon Add:
+                value:
+                  codes:
+                    - WINTER01
+                    - WINTER02
+                    - WINTER03
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    post:
+      summary: Coupon Add Copy
+      description: Coupon Add Copy
+      operationId: couponAddCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codes:
+                  type: array
+                  items:
+                    type: string
+                    example: WINTER011
+                  example:
+                    - WINTER011
+                    - WINTER022
+                    - WINTER033
+                    - WINTER044
+                    - WINTER055
+                    - WINTER066
+            examples:
+              Coupon Add Copy:
+                value:
+                  codes:
+                    - WINTER011
+                    - WINTER022
+                    - WINTER033
+                    - WINTER044
+                    - WINTER055
+                    - WINTER066
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: variant_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/applications/p2wvIRrA5xttrLAG1dcHUzPTfaqVb29PsNFPnjky/products/ed0dfe77-965f-4f86-888e-7dc69bd28b1a/variants/a1dc6c56-9a6d-460a-b391-3ac37c308efc/coupon-codes/:
+    post:
+      summary: New Request
+      description: New Request
+      operationId: newRequest1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codes:
+                  type: array
+                  items:
+                    type: string
+                    example: crossvar1536
+                  example:
+                    - crossvar1536
+                    - fresh3303
+            examples:
+              New Request:
+                value:
+                  codes:
+                    - crossvar1536
+                    - fresh3303
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+  /v1/applications/{client_id}/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/reorder/:
+    post:
+      summary: Update Category
+      description: Update Category
+      operationId: updateCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      display_order:
+                        type: number
+                        example: 10
+                      product_id:
+                        type: string
+                        example: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+                  example:
+                    - display_order: 10
+                      product_id: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+                    - product_id: b3a20eb6-304a-4c72-a80f-3f061118e1b7
+            examples:
+              Update Category:
+                value:
+                  products:
+                    - display_order: 10
+                      product_id: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+                    - product_id: b3a20eb6-304a-4c72-a80f-3f061118e1b7
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/e3a13f67-a42b-41fc-89b8-6cde364d8f18/position/:
+    post:
+      summary: Update Category Copy
+      description: Update Category Copy
+      operationId: updateCategoryCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                position:
+                  type: number
+                  example: 4
+            examples:
+              Update Category Copy:
+                value:
+                  position: 4
+      responses:
+        '200':
+          description: ''
+  /api/v1/applications/PlI2efBCBRGw56KBcHucDvTevGv5x5Egqn0R2P8R/categories/32ce79e1-c23b-4cf0-9e70-be13a933c51e/products/reorder/:
+    post:
+      summary: New Request
+      description: New Request
+      operationId: newRequest2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      position:
+                        type: number
+                        example: 3
+                      product_id:
+                        type: string
+                        example: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+                  example:
+                    - position: 3
+                      product_id: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+            examples:
+              New Request:
+                value:
+                  products:
+                    - position: 3
+                      product_id: e3a13f67-a42b-41fc-89b8-6cde364d8f18
+      responses:
+        '200':
+          description: ''
+  /v1/applications/{client_id}/provider-product-sync-jobs/:
+    post:
+      summary: Sync Product
+      description: Sync Product
+      operationId: syncProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider:
+                  type: string
+                  example: konekt
+            examples:
+              Sync Product:
+                value:
+                  provider: konekt
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/applications/{client_id}/provider-product-sync-jobs/857548eb-46c1-4a64-9b33-80f974e102fc/:
+    get:
+      summary: Sync Product Copy
+      description: Sync Product Copy
+      operationId: syncProductCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider:
+                  type: string
+                  example: konekt
+            examples:
+              Sync Product Copy:
+                value:
+                  provider: konekt
+      responses:
+        '200':
+          description: ''
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: client_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /:
+    get:
+      summary: Order
+      description: Order
+      operationId: order
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: Sync Product
+  - name: Product
+  - name: Variant
+  - name: Order
