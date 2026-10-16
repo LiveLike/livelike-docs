@@ -1,5 +1,5 @@
 ---
-title: Consecutive Streaks
+title: Consecutive Action Streaks
 deprecated: false
 hidden: false
 metadata:
