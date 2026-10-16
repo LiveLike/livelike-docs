@@ -1,10 +1,7 @@
 ---
-title: Invoke Reward Action
-excerpt: Invoke actions to trigger the rewards engine for that action
 api:
   file: engagement-suite.json
   operationId: invoking-custom-actions
-deprecated: false
 hidden: false
 metadata:
   title: ''

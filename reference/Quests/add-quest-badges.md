@@ -1,10 +1,7 @@
 ---
-title: Add Badges to Quest
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: add-quest-badges
-deprecated: false
 hidden: false
 metadata:
   title: ''

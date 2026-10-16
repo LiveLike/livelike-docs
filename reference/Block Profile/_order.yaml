@@ -2,6 +2,4 @@
 - get-blocked-profiles
 - unblock-profile
 - get-blocked-profile-ids
-- unblock-profile-by-profile-id
-- profile-blocks-bulk-sync
 - unblock-profile-by-profile-custom-id

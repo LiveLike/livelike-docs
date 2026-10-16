@@ -1,10 +1,7 @@
 ---
-title: List Reward Item Transfers
-excerpt: You can see the reward item balance for a given user
 api:
   file: engagement-suite.json
   operationId: list-reward-item-transfers
-deprecated: false
 hidden: false
 metadata:
   title: ''

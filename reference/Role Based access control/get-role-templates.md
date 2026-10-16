@@ -1,10 +1,7 @@
 ---
-title: Get Role Templates
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: get-role-templates
-deprecated: false
 hidden: false
 metadata:
   title: ''

@@ -1,10 +1,7 @@
 ---
-title: Delete Role Assignment
-excerpt: Used for deleting a role assignment by using the uuid of the assignment.
 api:
   file: engagement-suite.json
   operationId: delete-role-assignment
-deprecated: false
 hidden: false
 metadata:
   title: ''

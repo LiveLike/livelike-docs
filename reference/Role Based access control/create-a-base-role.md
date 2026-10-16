@@ -1,10 +1,7 @@
 ---
-title: Create a Base Role
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-a-base-role
-deprecated: false
 hidden: false
 metadata:
   title: ''

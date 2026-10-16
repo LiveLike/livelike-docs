@@ -1,10 +1,7 @@
 ---
-title: Create a Program Ban
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-a-program-ban
-deprecated: false
 hidden: false
 metadata:
   title: ''

@@ -1,10 +1,7 @@
 ---
-title: Delete a Program Ban
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: delete-a-program-ban
-deprecated: false
 hidden: false
 metadata:
   title: ''

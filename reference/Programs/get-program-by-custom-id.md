@@ -1,9 +1,7 @@
 ---
-title: Get Program by Custom ID
 api:
   file: engagement-suite.json
   operationId: get-program-by-custom-id
-deprecated: false
 hidden: false
 metadata:
   title: Look Up Program By Custom Id

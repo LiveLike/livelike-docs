@@ -1,10 +1,7 @@
 ---
-title: Create a Role
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-roles
-deprecated: false
 hidden: false
 metadata:
   title: ''

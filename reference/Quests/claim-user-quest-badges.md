@@ -1,10 +1,7 @@
 ---
-title: Claim User Quest Badge
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: claim-user-quest-badges
-deprecated: false
 hidden: false
 metadata:
   title: ''

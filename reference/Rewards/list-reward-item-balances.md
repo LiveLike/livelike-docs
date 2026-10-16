@@ -1,10 +1,7 @@
 ---
-title: List Reward Item Balances
-excerpt: List reward item balances by passing reward_item_id
 api:
   file: engagement-suite.json
   operationId: list-reward-item-balances
-deprecated: false
 hidden: false
 metadata:
   title: ''

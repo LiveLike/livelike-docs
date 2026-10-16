@@ -1,10 +1,7 @@
 ---
-title: Create Profile by Custom ID
-excerpt: Create a new user profile with a custom ID
 api:
   file: engagement-suite.json
   operationId: create-profile-by-custom-id
-deprecated: false
 hidden: false
 metadata:
   title: ''

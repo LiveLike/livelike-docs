@@ -1,10 +1,7 @@
 ---
-title: List User Quests
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-user-quests
-deprecated: false
 hidden: false
 metadata:
   title: ''

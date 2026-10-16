@@ -1,12 +1,7 @@
 ---
-title: Put Update a Role
-excerpt: >-
-  Used to replace existing permissions in a role to a new set of permissions,
-  and also update name/key of the role
 api:
   file: engagement-suite.json
   operationId: patch-update-a-role-copy
-deprecated: false
 hidden: false
 metadata:
   title: ''

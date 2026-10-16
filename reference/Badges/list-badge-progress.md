@@ -1,10 +1,7 @@
 ---
-title: List Badge progress
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-badge-progress
-deprecated: false
 hidden: false
 metadata:
   title: ''

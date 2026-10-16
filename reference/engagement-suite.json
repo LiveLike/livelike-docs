@@ -19213,7 +19213,8 @@
                           "key": "k2",
                           "value": "two"
                         }
-                      ]
+                      ],
+                      "ab_test": null
                     }
                   }
                 },
@@ -19256,6 +19257,30 @@
                             "type": "string",
                             "example": "one"
                           }
+                        }
+                      }
+                    },
+                    "ab_test": {
+                      "type": "object",
+                      "nullable": true,
+                      "description": "A/B test configuration when this is an A/B test quest, otherwise null.",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "assignment_strategy": {
+                          "type": "string",
+                          "enum": [
+                            "random",
+                            "round_robin"
+                          ]
                         }
                       }
                     }
@@ -19307,7 +19332,7 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n\t\"id\": \"0276241f-959a-4062-a28c-e1a9c13b0c81\",\n\t\"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n\t\"name\": \"Bens Quest\",\n\t\"description\": \"My first Quest\",\n\t\"quest_tasks\": [],\n\t\"created_at\": \"2022-06-10T02:20:03.570870Z\",\n  \"attributes\": [\n        {\n            \"key\": \"k1\",\n            \"value\": \"one\"\n        },\n        {\n            \"key\": \"k2\",\n            \"value\": \"two\"\n        }\n    ]\n}"
+                    "value": "{\n  \"id\": \"0276241f-959a-4062-a28c-e1a9c13b0c81\",\n  \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n  \"name\": \"Bens Quest\",\n  \"description\": \"My first Quest\",\n  \"quest_tasks\": [],\n  \"created_at\": \"2022-06-10T02:20:03.570870Z\",\n  \"attributes\": [\n    {\n      \"key\": \"k1\",\n      \"value\": \"one\"\n    },\n    {\n      \"key\": \"k2\",\n      \"value\": \"two\"\n    }\n  ],\n  \"ab_test\": null\n}"
                   }
                 },
                 "schema": {
@@ -19349,6 +19374,30 @@
                             "type": "string",
                             "example": "one"
                           }
+                        }
+                      }
+                    },
+                    "ab_test": {
+                      "type": "object",
+                      "nullable": true,
+                      "description": "A/B test configuration when this is an A/B test quest, otherwise null.",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "assignment_strategy": {
+                          "type": "string",
+                          "enum": [
+                            "random",
+                            "round_robin"
+                          ]
                         }
                       }
                     }
@@ -19917,6 +19966,11 @@
                   "attributes": {
                     "type": "array",
                     "description": "key and value pairs"
+                  },
+                  "test_variant_id": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "A/B test quests only: UUID of the variant this task belongs to. Omit for regular quests."
                   }
                 }
               }
@@ -20249,7 +20303,7 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n\t\"id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n\t\"profile_id\": \"90dd4b66-1731-402f-91d8-f53e7a3829de\",\n\t\"created_at\": \"2022-06-27T21:41:45.259586Z\",\n\t\"user_quest_tasks\": [\n\t\t{\n\t\t\t\"id\": \"cf4672ed-767f-494f-8739-b545abd9f4a8\",\n      \"default_progress_increment\": 1,\n      \"progress\": 0,\n\t\t\t\"status\": \"incomplete\",\n\t\t\t\"created_at\": \"2022-06-27T21:41:45.331026Z\",\n\t\t\t\"completed_at\": null,\n\t\t\t\"user_quest_id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n\t\t\t\"quest_task\": {\n\t\t\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\t\t\"name\": \"send 5 emails\",\n\t\t\t\t\"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n\t\t\t\t\"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n\t\t\t\t\"created_at\": \"2022-06-27T17:10:22.450723Z\"\n\t\t\t}\n\t\t}\n\t],\n\t\"status\": \"incomplete\",\n  \"completed_at\": null,\n\t\"quest\": {\n\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n\t\t\"name\": \"New Quest\",\n\t\t\"description\": \"\",\n\t\t\"quest_tasks\": [\n\t\t\t{\n\t\t\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\t\t\"name\": \"send 5 emails\",\n\t\t\t\t\"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n\t\t\t\t\"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n\t\t\t\t\"created_at\": \"2022-06-27T17:10:22.450723Z\"\n\t\t\t}\n\t\t]\n  }\n}"
+                    "value": "{\n  \"id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n  \"profile_id\": \"90dd4b66-1731-402f-91d8-f53e7a3829de\",\n  \"created_at\": \"2022-06-27T21:41:45.259586Z\",\n  \"user_quest_tasks\": [\n    {\n      \"id\": \"cf4672ed-767f-494f-8739-b545abd9f4a8\",\n      \"default_progress_increment\": 1,\n      \"progress\": 0,\n      \"status\": \"incomplete\",\n      \"created_at\": \"2022-06-27T21:41:45.331026Z\",\n      \"completed_at\": null,\n      \"user_quest_id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n      \"quest_task\": {\n        \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n        \"name\": \"send 5 emails\",\n        \"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n        \"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n        \"created_at\": \"2022-06-27T17:10:22.450723Z\"\n      }\n    }\n  ],\n  \"status\": \"incomplete\",\n  \"completed_at\": null,\n  \"quest\": {\n    \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n    \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n    \"name\": \"New Quest\",\n    \"description\": \"\",\n    \"quest_tasks\": [\n      {\n        \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n        \"name\": \"send 5 emails\",\n        \"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n        \"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n        \"created_at\": \"2022-06-27T17:10:22.450723Z\"\n      }\n    ]\n  },\n  \"assigned_test_variant\": null\n}"
                   }
                 },
                 "schema": {
@@ -20400,6 +20454,27 @@
                           }
                         }
                       }
+                    },
+                    "assigned_test_variant": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "allocation_percentage": {
+                          "type": "string",
+                          "example": "50.00"
+                        }
+                      },
+                      "description": "A/B test quests only: the variant assigned to this profile, otherwise null."
                     }
                   }
                 }
@@ -20662,7 +20737,7 @@
               "application/json": {
                 "examples": {
                   "Result": {
-                    "value": "{\n\t\"id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n\t\"profile_id\": \"90dd4b66-1731-402f-91d8-f53e7a3829de\",\n\t\"created_at\": \"2022-06-27T21:41:45.259586Z\",\n\t\"user_quest_tasks\": [\n\t\t{\n\t\t\t\"id\": \"cf4672ed-767f-494f-8739-b545abd9f4a8\",\n      \"default_progress_increment\": 1,\n      \"progress\": 0,\n\t\t\t\"status\": \"incomplete\",\n\t\t\t\"created_at\": \"2022-06-27T21:41:45.331026Z\",\n\t\t\t\"completed_at\": null,\n\t\t\t\"user_quest_id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n\t\t\t\"quest_task\": {\n\t\t\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\t\t\"name\": \"send 5 emails\",\n\t\t\t\t\"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n\t\t\t\t\"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n\t\t\t\t\"created_at\": \"2022-06-27T17:10:22.450723Z\"\n\t\t\t}\n\t\t}\n\t],\n\t\"status\": \"incomplete\",\n  \"completed_at\": null,\n\t\"quest\": {\n\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n\t\t\"name\": \"New Quest\",\n\t\t\"description\": \"\",\n\t\t\"quest_tasks\": [\n\t\t\t{\n\t\t\t\t\"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n\t\t\t\t\"name\": \"send 5 emails\",\n\t\t\t\t\"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n\t\t\t\t\"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n\t\t\t\t\"created_at\": \"2022-06-27T17:10:22.450723Z\"\n\t\t\t}\n\t\t]\n  }\n}"
+                    "value": "{\n  \"id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n  \"profile_id\": \"90dd4b66-1731-402f-91d8-f53e7a3829de\",\n  \"created_at\": \"2022-06-27T21:41:45.259586Z\",\n  \"user_quest_tasks\": [\n    {\n      \"id\": \"cf4672ed-767f-494f-8739-b545abd9f4a8\",\n      \"default_progress_increment\": 1,\n      \"progress\": 0,\n      \"status\": \"incomplete\",\n      \"created_at\": \"2022-06-27T21:41:45.331026Z\",\n      \"completed_at\": null,\n      \"user_quest_id\": \"0fb18b15-2f29-4996-9852-f3150bfa6793\",\n      \"quest_task\": {\n        \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n        \"name\": \"send 5 emails\",\n        \"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n        \"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n        \"created_at\": \"2022-06-27T17:10:22.450723Z\"\n      }\n    }\n  ],\n  \"status\": \"incomplete\",\n  \"completed_at\": null,\n  \"quest\": {\n    \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n    \"client_id\": \"FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu\",\n    \"name\": \"New Quest\",\n    \"description\": \"\",\n    \"quest_tasks\": [\n      {\n        \"id\": \"f19e1a92-a34d-4944-ad02-e8bc39c59c62\",\n        \"name\": \"send 5 emails\",\n        \"description:\": \"send 5 emails to complete the quest\",\n        \"progress_target_value\": 5,\n        \"default_progress_increment\": 1,\n        \"quest_id\": \"e2f987ef-d644-44c4-bff7-03b440c885d2\",\n        \"created_at\": \"2022-06-27T17:10:22.450723Z\"\n      }\n    ]\n  },\n  \"assigned_test_variant\": null\n}"
                   }
                 },
                 "schema": {
@@ -20813,6 +20888,27 @@
                           }
                         }
                       }
+                    },
+                    "assigned_test_variant": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "allocation_percentage": {
+                          "type": "string",
+                          "example": "50.00"
+                        }
+                      },
+                      "description": "A/B test quests only: the variant assigned to this profile, otherwise null."
                     }
                   }
                 }
@@ -20923,6 +21019,30 @@
                             "type": "integer",
                             "example": 104,
                             "default": 0
+                          },
+                          "test_variants": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "nullable": true,
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "allocation_percentage": {
+                                  "type": "string",
+                                  "example": "50.00"
+                                }
+                              }
+                            },
+                            "description": "A/B test quests only: variants this reward is linked to."
                           }
                         }
                       }

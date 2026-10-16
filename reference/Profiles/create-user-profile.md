@@ -1,10 +1,7 @@
 ---
-title: Create User Profile
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-user-profile
-deprecated: false
 hidden: false
 metadata:
   title: ''

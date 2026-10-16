@@ -1,10 +1,7 @@
 ---
-title: Create Tier
-excerpt: To Create tiers within a Tier Group
 api:
   file: engagement-suite.json
   operationId: create-tier
-deprecated: false
 hidden: false
 metadata:
   title: ''

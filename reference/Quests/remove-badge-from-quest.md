@@ -1,10 +1,7 @@
 ---
-title: Remove Badge from Quest
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: remove-badge-from-quest
-deprecated: false
 hidden: false
 metadata:
   title: ''

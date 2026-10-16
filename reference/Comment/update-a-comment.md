@@ -1,9 +1,7 @@
 ---
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: update-a-comment
-deprecated: false
 hidden: false
 metadata:
   title: ''

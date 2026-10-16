@@ -1,13 +1,7 @@
 ---
-title: Patch Update a Base Role
-excerpt: >-
-  Used to add permissions, and update the key/name of the base role. Patch
-  Update adds the supplied permissions to existing ones in the supplied base
-  role.
 api:
   file: engagement-suite.json
   operationId: patch-update-a-base-role
-deprecated: false
 hidden: false
 metadata:
   title: ''

@@ -1,10 +1,7 @@
 ---
-title: Get Quest Badges
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: get-quest-badges
-deprecated: false
 hidden: false
 metadata:
   title: ''

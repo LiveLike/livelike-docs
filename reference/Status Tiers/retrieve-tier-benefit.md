@@ -1,5 +1,4 @@
 ---
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: retrive-tier-benefit

@@ -1,10 +1,7 @@
 ---
-title: Create a Poll Vote
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-poll-vote
-deprecated: false
 hidden: false
 metadata:
   title: ''

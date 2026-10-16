@@ -1,10 +1,7 @@
 ---
-title: Get Program Bans
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: get-program-bans
-deprecated: false
 hidden: false
 metadata:
   title: ''

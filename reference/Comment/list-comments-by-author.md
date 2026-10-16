@@ -1,10 +1,7 @@
 ---
-title: List Comments by Author
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: list-comments-by-author
-deprecated: false
 hidden: false
 metadata:
   title: ''

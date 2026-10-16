@@ -1,10 +1,7 @@
 ---
-title: Get List of Resources
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: get-list-of-resources
-deprecated: false
 hidden: false
 metadata:
   title: ''

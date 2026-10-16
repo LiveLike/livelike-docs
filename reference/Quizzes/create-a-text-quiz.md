@@ -1,10 +1,7 @@
 ---
-title: Create a Text Quiz
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-a-text-quiz
-deprecated: false
 hidden: false
 metadata:
   title: ''

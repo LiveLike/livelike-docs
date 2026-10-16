@@ -1,9 +1,7 @@
 ---
-title: Update Published Rich Post
 api:
   file: engagement-suite.json
   operationId: list-rich-posts-1
-deprecated: false
 hidden: false
 link:
   new_tab: false

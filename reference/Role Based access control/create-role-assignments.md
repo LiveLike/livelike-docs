@@ -1,10 +1,7 @@
 ---
-title: Create Role Assignments
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: create-role-assignments
-deprecated: false
 hidden: false
 metadata:
   title: ''

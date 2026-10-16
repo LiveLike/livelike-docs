@@ -1,12 +1,7 @@
 ---
-title: Put Update a Base Role
-excerpt: >-
-  Used to replace existing permissions in a base role to a new set of
-  permissions, and also update name/key of the base role
 api:
   file: engagement-suite.json
   operationId: put-update-a-base-role
-deprecated: false
 hidden: false
 metadata:
   title: ''

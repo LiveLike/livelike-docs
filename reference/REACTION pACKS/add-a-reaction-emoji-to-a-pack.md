@@ -1,10 +1,7 @@
 ---
-title: Add a Reaction emoji to a pack
-excerpt: ''
 api:
   file: engagement-suite.json
   operationId: add-a-reaction-emoji-to-a-pack
-deprecated: false
 hidden: true
 metadata:
   title: ''

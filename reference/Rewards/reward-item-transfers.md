@@ -1,10 +1,7 @@
 ---
-title: Transfer Reward Items
-excerpt: Transfer reward items from one user to another
 api:
   file: engagement-suite.json
   operationId: reward-item-transfers
-deprecated: false
 hidden: false
 metadata:
   title: ''
