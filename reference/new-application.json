@@ -11,19 +11,7 @@
   ],
   "tags": [],
   "paths": {
-    "/new-endpoint": {
-      "get": {
-        "summary": "New Endpoint",
-        "description": "This is your first endpoint! Edit this page to start documenting your API.",
-        "operationId": "get_new-endpoint",
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          }
-        }
-      }
-    },
-    "/{client-id}/ab-test-quests/": {
+    "/{client_id}/ab-test-quests/": {
       "get": {
         "description": "",
         "responses": {
@@ -444,7 +432,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string",
               "default": ""
@@ -466,7 +454,8 @@
             }
           }
         ],
-        "operationId": "get_client-id-ab-test-quests"
+        "operationId": "get_client-id-ab-test-quests",
+        "summary": "List A/B Test Quests"
       },
       "post": {
         "description": "",
@@ -624,269 +613,176 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
             "required": true
-          },
-          {
-            "in": "query",
-            "name": "quest_name",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Name of Quest",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "quest_description",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Description of Quest",
-            "required": false
-          },
-          {
-            "in": "query",
-            "name": "name",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Name for AB test",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "description",
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "description": "Description for AB Test"
-          },
-          {
-            "in": "query",
-            "name": "profile_group_ids",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "description": "uuids of profile group ids to link to quest"
-          },
-          {
-            "in": "query",
-            "name": "started_at",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "description": "start time of quest in UTC"
-          },
-          {
-            "in": "query",
-            "name": "stopped_at",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "description": "end time of quest in UTC"
-          },
-          {
-            "in": "query",
-            "name": "variants",
-            "schema": {
-              "type": "array",
-              "items": {
+          }
+        ],
+        "operationId": "post_client-id-ab-test-quests",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
                 "properties": {
+                  "quest_name": {
+                    "type": "string",
+                    "description": "Name of Quest"
+                  },
+                  "quest_description": {
+                    "type": "string",
+                    "description": "Description of Quest"
+                  },
                   "name": {
                     "type": "string",
-                    "description": "Variant name"
+                    "description": "Name for AB test"
                   },
-                  "badge_ids": {
+                  "description": {
+                    "type": "string",
+                    "description": "Description for AB Test"
+                  },
+                  "profile_group_ids": {
                     "type": "array",
                     "items": {
                       "type": "string"
                     },
-                    "description": "A list of badge UUIDs to be linked to a specific variant."
+                    "description": "uuids of profile group ids to link to quest"
                   },
-                  "quest_rewards": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "reward_item_id": {
-                          "type": "string",
-                          "description": "uuid if reward item"
-                        },
-                        "reward_item_amount": {
-                          "type": "integer",
-                          "description": "amount value to be awarded "
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "description": "A list of reward objects to be associated with the quest variant."
+                  "started_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "start time of quest in UTC"
                   },
-                  "sponsor_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "description": "UUIDs of sponsors that should be linked to the quest variant."
+                  "stopped_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "end time of quest in UTC"
                   },
-                  "quest_tasks": {
+                  "variants": {
                     "type": "array",
-                    "description": "A list of quest tasks to be associated with the variant for tracking and progressing the quest.",
                     "items": {
                       "properties": {
                         "name": {
                           "type": "string",
-                          "description": "Display name of the quest task."
+                          "description": "Variant name"
                         },
-                        "target_value": {
-                          "type": "string",
-                          "description": "Required count or value to complete the task."
+                        "badge_ids": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "A list of badge UUIDs to be linked to a specific variant."
                         },
-                        "quest_task_actions": {
+                        "quest_rewards": {
                           "type": "array",
                           "items": {
                             "properties": {
-                              "reward_action_key": {
+                              "reward_item_id": {
                                 "type": "string",
-                                "description": "key of the action whose occurrence increments the task’s progress."
+                                "description": "uuid if reward item"
+                              },
+                              "reward_item_amount": {
+                                "type": "integer",
+                                "description": "amount value to be awarded "
                               }
                             },
                             "type": "object"
                           },
-                          "description": "List of actions that contribute toward progressing this task."
+                          "description": "A list of reward objects to be associated with the quest variant."
                         },
-                        "attributes": {
+                        "sponsor_ids": {
                           "type": "array",
                           "items": {
+                            "type": "string"
+                          },
+                          "description": "UUIDs of sponsors that should be linked to the quest variant."
+                        },
+                        "quest_tasks": {
+                          "type": "array",
+                          "description": "A list of quest tasks to be associated with the variant for tracking and progressing the quest.",
+                          "items": {
                             "properties": {
-                              "key": {
-                                "type": "string"
+                              "name": {
+                                "type": "string",
+                                "description": "Display name of the quest task."
                               },
-                              "value": {
-                                "type": "string"
+                              "target_value": {
+                                "type": "string",
+                                "description": "Required count or value to complete the task."
+                              },
+                              "quest_task_actions": {
+                                "type": "array",
+                                "items": {
+                                  "properties": {
+                                    "reward_action_key": {
+                                      "type": "string",
+                                      "description": "key of the action whose occurrence increments the task’s progress."
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "description": "List of actions that contribute toward progressing this task."
+                              },
+                              "attributes": {
+                                "type": "array",
+                                "items": {
+                                  "properties": {
+                                    "key": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "description": "Quest task attributes"
                               }
                             },
                             "type": "object"
-                          },
-                          "description": "Quest task attributes"
+                          }
                         }
                       },
                       "type": "object"
-                    }
-                  }
-                },
-                "type": "object"
-              }
-            },
-            "description": "Takes exactly two variant objects ",
-            "style": "deepObject",
-            "explode": true,
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "timeout",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Duration after the first user action within which the quest must be completed (used when started_at or stopped_at is not provided)"
-          },
-          {
-            "in": "query",
-            "name": "attributes",
-            "schema": {
-              "type": "array",
-              "items": {
-                "properties": {
-                  "key": {
-                    "type": "string"
+                    },
+                    "description": "Takes exactly two variant objects "
                   },
-                  "value": {
-                    "type": "string"
+                  "timeout": {
+                    "type": "string",
+                    "description": "Duration after the first user action within which the quest must be completed (used when started_at or stopped_at is not provided)"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "description": "Quest attributes"
                   }
                 },
-                "type": "object"
-              }
-            },
-            "style": "deepObject",
-            "explode": true,
-            "description": "Quest attributes"
-          }
-        ],
-        "operationId": "post_client-id-ab-test-quests"
-      }
-    },
-    "/profiles/{profile-id}/quest-variant-assignment": {
-      "put": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "profile_id": "efc01b0d-fdeb-471a-8a0d-314220e65e03",
-                      "assigned": [
-                        {
-                          "id": "e4999cbf-855e-4cff-bfca-36c47ac6d79f",
-                          "quest_id": "70d6fb38-8be5-45b1-8ca6-71aca6cba1c8",
-                          "assigned_test_variant": {
-                            "id": "feaba22b-05a7-4e12-97ed-b220f892fea7",
-                            "name": "New Variant",
-                            "description": null,
-                            "allocation_percentage": "50.00"
-                          },
-                          "ab_test": {
-                            "id": "eb2bd245-1043-412e-a45f-0458f3fdfaf3",
-                            "name": "AB Test Variant",
-                            "description": "This is test test ab quest",
-                            "assignment_strategy": "random"
-                          }
-                        }
-                      ],
-                      "skipped": []
-                    }
-                  }
-                }
+                "required": [
+                  "quest_name",
+                  "name",
+                  "variants"
+                ]
               }
             }
           }
         },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "profile-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "quest_ids",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
-        ],
-        "operationId": "put_profiles-profile-id-quest-variant-assignment"
+        "summary": "Create A/B Test Quest"
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/publish/": {
+    "/{client_id}/periodic-streaks/{id}/publish/": {
       "post": {
         "description": "",
         "responses": {
@@ -935,7 +831,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -943,17 +839,18 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "publish-periodic-streak"
+        "operationId": "publish-periodic-streak",
+        "summary": "Publish Periodic Streak"
       }
     },
-    "/{client-id}/periodic-streaks/": {
+    "/{client_id}/periodic-streaks/": {
       "get": {
         "description": "",
         "responses": {
@@ -1004,7 +901,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1042,7 +939,8 @@
             "description": "Attributes should be in format of key:value"
           }
         ],
-        "operationId": "get_client-id-periodic-streaks"
+        "operationId": "get_client-id-periodic-streaks",
+        "summary": "List Periodic Streaks"
       },
       "post": {
         "description": "",
@@ -1099,7 +997,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1192,10 +1090,11 @@
               }
             }
           }
-        }
+        },
+        "summary": "Create Periodic Streak"
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/": {
+    "/{client_id}/periodic-streaks/{id}/": {
       "get": {
         "description": "",
         "responses": {
@@ -1239,7 +1138,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1247,14 +1146,15 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "get_client-id-periodic-streaks-periodic-streak-id"
+        "operationId": "get_client-id-periodic-streaks-periodic-streak-id",
+        "summary": "Get Periodic Streak"
       },
       "patch": {
         "description": "",
@@ -1299,7 +1199,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1307,7 +1207,7 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
@@ -1381,7 +1281,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "Update Periodic Streak"
       },
       "delete": {
         "description": "",
@@ -1410,7 +1311,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1418,26 +1319,15 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "delete_client-id-periodic-streaks-periodic-streak-id"
-      }
-    },
-    "/new-endpoint-1": {
-      "get": {
-        "description": "",
-        "operationId": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
+        "operationId": "delete_client-id-periodic-streaks-periodic-streak-id",
+        "summary": "Delete Periodic Streak"
       }
     },
     "/{client-id}/ab-test-quest/{ab-test-id}": {
@@ -1805,7 +1695,7 @@
         "summary": "Publish Consecutive Action Streak"
       }
     },
-    "/{client-id}/consecutive-action-streaks/": {
+    "/{client_id}/consecutive-action-streaks/": {
       "post": {
         "description": "",
         "responses": {
@@ -1856,7 +1746,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -1934,7 +1824,7 @@
             }
           }
         },
-        "summary": "Copy of "
+        "summary": "Create Consecutive Action Streak"
       },
       "get": {
         "description": "",
@@ -1986,7 +1876,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2031,74 +1921,11 @@
             }
           }
         ],
-        "summary": "Copy of ",
+        "summary": "List Consecutive Action Streaks",
         "operationId": "get_client-id-consecutive-action-streaks"
       }
     },
-    "/{client-id}/consecutive-action-streaks/{consecutive-action-streak-id}/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "88a55cd9-ece7-4439-b040-2e5427b48eb0",
-                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/",
-                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/publish/",
-                      "name": "test streak",
-                      "description": "Test streak",
-                      "progress_action_key": "prediction-correct",
-                      "created_at": "2025-11-04T14:46:40.948028Z",
-                      "streak_type": "consecutive_action",
-                      "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
-                      "started_at": null,
-                      "stopped_at": null,
-                      "freeze_start": null,
-                      "freeze_until": null,
-                      "freeze_reason": "",
-                      "attributes": [],
-                      "profile_groups": [],
-                      "updated_by_id": "7f250963-3c54-44bc-ac54-c52b5b8a728b",
-                      "status": "live",
-                      "targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-targets/",
-                      "batch_targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/batch-streak-targets/",
-                      "reset_action_key": null,
-                      "require_targets": true
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "consecutive-action-streak-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Copy of ",
-        "operationId": "get_client-id-consecutive-action-streaks-consecutive-action-streak-id"
-      }
-    },
-    "/{client-id}/streak-milestones/": {
+    "/{client_id}/streak-milestones/": {
       "get": {
         "description": "",
         "responses": {
@@ -2159,7 +1986,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2187,7 +2014,8 @@
             }
           }
         ],
-        "operationId": "get_client-id-streak-milestones"
+        "operationId": "get_client-id-streak-milestones",
+        "summary": "List Streak Milestones"
       },
       "post": {
         "description": "",
@@ -2232,7 +2060,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2317,7 +2145,7 @@
         "summary": "Create Streak Milestone"
       }
     },
-    "/{client-id}/streak-milestones/{milestone-id}/": {
+    "/{client_id}/streak-milestones/{id}/": {
       "patch": {
         "description": "",
         "responses": {
@@ -2354,7 +2182,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2362,7 +2190,7 @@
           },
           {
             "in": "path",
-            "name": "milestone-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
@@ -2430,7 +2258,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "Update Streak Milestone"
       },
       "delete": {
         "description": "",
@@ -2442,7 +2271,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2450,17 +2279,18 @@
           },
           {
             "in": "path",
-            "name": "milestone-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "delete_client-id-streak-milestones-milestone-id"
+        "operationId": "delete_client-id-streak-milestones-milestone-id",
+        "summary": "Delete Streak Milestone"
       }
     },
-    "/{client-id}/streak-targets/": {
+    "/{client_id}/streak-targets/": {
       "get": {
         "description": "",
         "responses": {
@@ -2507,7 +2337,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2521,7 +2351,8 @@
             }
           }
         ],
-        "operationId": "get_client-id-streak-targets"
+        "operationId": "get_client-id-streak-targets",
+        "summary": "List Streak Targets"
       },
       "post": {
         "description": "",
@@ -2565,7 +2396,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2628,10 +2459,11 @@
               }
             }
           }
-        }
+        },
+        "summary": "Create Streak Target"
       }
     },
-    "/{client-id}/streak-targets/{streak-target-id}/": {
+    "/{client_id}/streak-targets/{id}/": {
       "patch": {
         "description": "",
         "responses": {
@@ -2667,7 +2499,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2675,7 +2507,7 @@
           },
           {
             "in": "path",
-            "name": "streak-target-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
@@ -2713,7 +2545,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "Update Streak Target"
       },
       "delete": {
         "description": "",
@@ -2742,7 +2575,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2750,53 +2583,18 @@
           },
           {
             "in": "path",
-            "name": "streak-target-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "delete_client-id-streak-targets-streak-target-id"
+        "operationId": "delete_client-id-streak-targets-streak-target-id",
+        "summary": "Delete Streak Target"
       }
     },
-    "/new-endpoint-2": {
-      "post": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "operationId": "post_new-endpoint-2",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "streak_id": {
-                    "type": "string"
-                  },
-                  "targets_csv": {
-                    "type": "object",
-                    "properties": {}
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "streak_id"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/archive/": {
+    "/{client_id}/periodic-streaks/{id}/archive/": {
       "post": {
         "description": "",
         "responses": {
@@ -2840,7 +2638,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2848,17 +2646,18 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-archive"
+        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-archive",
+        "summary": "Archive Periodic Streak"
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/unarchive/": {
+    "/{client_id}/periodic-streaks/{id}/unarchive/": {
       "post": {
         "description": "",
         "responses": {
@@ -2869,7 +2668,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2877,18 +2676,18 @@
           },
           {
             "in": "path",
-            "name": "periodic-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-unarchive"
+        "operationId": "post_client-id-periodic-streaks-periodic-streak-id-unarchive",
+        "summary": "Unarchive Periodic Streak"
       }
     },
-    "/{client-id}/periodic-streaks/{periodic-streak-id}/unarchive/-1": {},
-    "/{client-id}/consecutive-actions/{consecutive-action-id}/archive/": {
+    "/{client_id}/consecutive-action-streaks/{id}/unarchive/": {
       "post": {
         "description": "",
         "responses": {
@@ -2899,7 +2698,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2907,17 +2706,18 @@
           },
           {
             "in": "path",
-            "name": "consecutive-action-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "post_client-id-consecutive-actions-consecutive-action-id-archive"
+        "operationId": "post_client-id-consecutive-action-streaks-consecutive-action-id-unarchive",
+        "summary": "Unarchive Consecutive Action Streak"
       }
     },
-    "/{client-id}/consecutive-action-streaks/{consecutive-action-id}/unarchive/": {
+    "/{client_id}/csv-streak-targets/": {
       "post": {
         "description": "",
         "responses": {
@@ -2928,7 +2728,53 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "post_new-endpoint-2",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "streak_id": {
+                    "type": "string",
+                    "description": "UUID of the consecutive action streak (must be in draft)"
+                  },
+                  "targets_csv": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "CSV file of targets"
+                  }
+                },
+                "required": [
+                  "streak_id",
+                  "targets_csv"
+                ]
+              }
+            }
+          }
+        },
+        "summary": "Create Streak Targets from CSV"
+      }
+    },
+    "/{client_id}/consecutive-action-streaks/{id}/archive/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2936,17 +2782,153 @@
           },
           {
             "in": "path",
-            "name": "consecutive-action-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "post_client-id-consecutive-action-streaks-consecutive-action-id-unarchive"
+        "operationId": "post_client-id-consecutive-actions-consecutive-action-id-archive",
+        "summary": "Archive Consecutive Action Streak"
       }
     },
-    "/{client-id}/consecutive-action-streaks/{consecutive-streak-id}/-1": {
+    "/profiles/{profile_id}/quest-variant-assignments/": {
+      "put": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "profile_id": "efc01b0d-fdeb-471a-8a0d-314220e65e03",
+                      "assigned": [
+                        {
+                          "id": "e4999cbf-855e-4cff-bfca-36c47ac6d79f",
+                          "quest_id": "70d6fb38-8be5-45b1-8ca6-71aca6cba1c8",
+                          "assigned_test_variant": {
+                            "id": "feaba22b-05a7-4e12-97ed-b220f892fea7",
+                            "name": "New Variant",
+                            "description": null,
+                            "allocation_percentage": "50.00"
+                          },
+                          "ab_test": {
+                            "id": "eb2bd245-1043-412e-a45f-0458f3fdfaf3",
+                            "name": "AB Test Variant",
+                            "description": "This is test test ab quest",
+                            "assignment_strategy": "random"
+                          }
+                        }
+                      ],
+                      "skipped": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "profile_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "put_profiles-profile-id-quest-variant-assignment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "quest_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "quest_ids"
+                ]
+              }
+            }
+          }
+        },
+        "summary": "Assign Quest Variants to Profile"
+      }
+    },
+    "/{client_id}/consecutive-action-streaks/{id}/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "id": "88a55cd9-ece7-4439-b040-2e5427b48eb0",
+                      "url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/",
+                      "publish_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/consecutive-action-streaks/88a55cd9-ece7-4439-b040-2e5427b48eb0/publish/",
+                      "name": "test streak",
+                      "description": "Test streak",
+                      "progress_action_key": "prediction-correct",
+                      "created_at": "2025-11-04T14:46:40.948028Z",
+                      "streak_type": "consecutive_action",
+                      "client_id": "4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY",
+                      "started_at": null,
+                      "stopped_at": null,
+                      "freeze_start": null,
+                      "freeze_until": null,
+                      "freeze_reason": "",
+                      "attributes": [],
+                      "profile_groups": [],
+                      "updated_by_id": "7f250963-3c54-44bc-ac54-c52b5b8a728b",
+                      "status": "live",
+                      "targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/streak-targets/",
+                      "batch_targets_url": "https://cf-blast.livelikecdn.com/api/v1/applications/4JF1QjhD594ve6IOkZaK5LFvIktqeW1xvFmsQiHY/batch-streak-targets/",
+                      "reset_action_key": null,
+                      "require_targets": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Get Consecutive Action Streak",
+        "operationId": "get_client-id-consecutive-action-streaks-consecutive-action-streak-id"
+      },
       "patch": {
         "description": "",
         "responses": {
@@ -2991,7 +2973,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -2999,7 +2981,7 @@
           },
           {
             "in": "path",
-            "name": "consecutive-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
@@ -3066,11 +3048,9 @@
             }
           }
         },
-        "summary": "Copy of ",
+        "summary": "Update Consecutive Action Streak",
         "operationId": "patch_client-id-consecutive-action-streaks-consecutive-streak-id-1"
-      }
-    },
-    "/{client-id}/consecutive-action-streaks/{consecutive-streak-id}/": {
+      },
       "delete": {
         "description": "",
         "responses": {
@@ -3098,7 +3078,7 @@
         "parameters": [
           {
             "in": "path",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -3106,14 +3086,15 @@
           },
           {
             "in": "path",
-            "name": "consecutive-streak-id",
+            "name": "id",
             "schema": {
               "type": "string"
             },
             "required": true
           }
         ],
-        "operationId": "delete_client-id-consecutive-action-streaks-consecutive-streak-id"
+        "operationId": "delete_client-id-consecutive-action-streaks-consecutive-streak-id",
+        "summary": "Delete Consecutive Action Streak"
       }
     }
   },
