@@ -1802,7 +1802,7 @@
           }
         ],
         "operationId": "publish-periodic-streak-1",
-        "summary": "Copy of "
+        "summary": "Publish Consecutive Action Streak"
       }
     },
     "/{client-id}/consecutive-action-streaks/": {
