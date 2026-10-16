@@ -1,9 +1,7 @@
 ---
-title: Listing Applications Widgets
 api:
   file: applications.json
   operationId: get_client-id-widgets
-deprecated: false
 hidden: false
 link:
   new_tab: false
