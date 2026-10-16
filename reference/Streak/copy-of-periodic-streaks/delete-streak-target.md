@@ -1,9 +1,7 @@
 ---
-title: Delete streak target
 api:
   file: new-application.json
   operationId: delete_client-id-streak-targets-streak-target-id
-deprecated: false
 hidden: false
 link:
   new_tab: false

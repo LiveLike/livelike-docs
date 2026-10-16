@@ -1,9 +1,7 @@
 ---
-title: Create a Consecutive Action Streak
 api:
   file: new-application.json
   operationId: create-a-periodic-streak-1
-deprecated: false
 hidden: false
 link:
   new_tab: false

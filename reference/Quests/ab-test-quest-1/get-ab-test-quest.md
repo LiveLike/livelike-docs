@@ -1,10 +1,7 @@
 ---
-title: Get AB Test Quest
-excerpt: Get AB Test Quest
 api:
   file: new-application.json
   operationId: get_client-id-ab-test-quest-ab-test-id
-deprecated: false
 hidden: false
 link:
   new_tab: false
