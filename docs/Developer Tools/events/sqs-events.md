@@ -20,7 +20,7 @@ SQS (Simple Queue Service) Events allow the LiveLike platform to deliver event n
 # Key Concepts
 
 * SQS Queue URL: The AWS SQS endpoint where LiveLike will deliver event payloads.
-* Event Key: A string identifier that describes the type of event (e.g., create-chatroom-mute).
+* Event Name: A string identifier that describes the type of event (e.g., create-chatroom-mute).
 * Event Payload: The JSON body sent to the queue containing the event key and associated data.
 * Shared Queue: The SQS queue is shared between LiveLike and the client application.
 * Event Subscriptions: You can subscribe to specific event types relevant to your use case.
