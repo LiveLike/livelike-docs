@@ -1,0 +1,4718 @@
+openapi: 3.0.3
+info:
+  title: Livelike REST API
+  version: 1.0.0 (v1)
+  description: LiveLike APIs.
+paths:
+  /api/v1/applications/{client_id}/categories/:
+    get:
+      operationId: applications_categories_list_list
+      description: Retrieve a list of ProductStoreCategory records.
+      parameters:
+        - in: query
+          name: attributes
+          schema:
+            type: string
+          description: Query parameter `attributes`.
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: product_store_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `product_store_id`.
+        - in: query
+          name: state
+          schema:
+            type: string
+            x-spec-enum-id: 763af54b5975e428
+            enum:
+              - draft
+              - published
+              - unpublished
+          description: |-
+            Publication state of the category
+
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductStoreCategoryList'
+          description: ''
+    post:
+      operationId: applications_categories_create_create
+      description: Create a new ProductStoreCategory record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+  /api/v1/applications/{client_id}/categories/{uuid}/:
+    get:
+      operationId: applications_categories_retrieve_retrieve
+      description: Retrieve a single ProductStoreCategory record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+    put:
+      operationId: applications_categories_update_update
+      description: Update an existing ProductStoreCategory record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+    patch:
+      operationId: applications_categories_partial_update_partial_update
+      description: Perform partial update on ProductStoreCategory.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/PatchedProductStoreCategory'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+    delete:
+      operationId: applications_categories_destroy_destroy
+      description: Delete an existing ProductStoreCategory record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/applications/{client_id}/categories/{uuid}/products/{product_uuid}/position/:
+    post:
+      operationId: applications_categories_products_position_create_set_product_position
+      description: Perform set product position on ProductStoreCategory.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: >-
+              ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+  /api/v1/applications/{client_id}/categories/{uuid}/publish/:
+    post:
+      operationId: applications_categories_publish_create_publish
+      description: Perform publish on ProductStoreCategory.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+  /api/v1/applications/{client_id}/categories/{uuid}/unpublish/:
+    post:
+      operationId: applications_categories_unpublish_create_unpublish
+      description: Perform unpublish on ProductStoreCategory.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStoreCategory'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStoreCategory'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/:
+    get:
+      operationId: applications_order_items_list_list
+      description: Retrieve a list of OrderItem records.
+      parameters:
+        - in: query
+          name: amount__gte
+          schema:
+            type: number
+          description: Query parameter `amount__gte`.
+        - in: query
+          name: amount__lte
+          schema:
+            type: number
+          description: Query parameter `amount__lte`.
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: query
+          name: is_refunded
+          schema:
+            type: boolean
+          description: Query parameter `is_refunded`.
+        - in: query
+          name: order_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `order_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: product_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `product_id`.
+        - in: query
+          name: profile_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `profile_id`.
+        - in: query
+          name: redemption_method
+          schema:
+            type: string
+            x-spec-enum-id: 1348fdf7abf0012a
+            enum:
+              - cash
+              - reward_item
+          description: |-
+            How this order was paid, snapshotted at creation.
+
+            * `reward_item` - Reward item
+            * `cash` - Cash
+        - in: query
+          name: redemption_provider
+          schema:
+            type: string
+            x-spec-enum-id: 07d3726d6031e8af
+            nullable: true
+            enum:
+              - konekt
+          description: >-
+            Third party that redeems and fulfils this product. Null (the
+            default) means we do it ourselves. Inventory is always ours
+            regardless.
+
+
+            * `konekt` - Konekt
+        - in: query
+          name: since
+          schema:
+            type: string
+            format: date-time
+          description: Query parameter `since`.
+        - in: query
+          name: status
+          schema:
+            type: string
+            x-spec-enum-id: 5f97a1a933aa5761
+            enum:
+              - awaiting_provider_confirmation
+              - fulfilled
+              - in_progress
+              - redeemed
+              - refunded
+              - rejected
+          description: |-
+            Current redemption status of this line.
+
+            * `in_progress` - In progress
+            * `redeemed` - Redeemed
+            * `awaiting_provider_confirmation` - Awaiting provider confirmation
+            * `fulfilled` - Fulfilled
+            * `rejected` - Rejected
+            * `refunded` - Refunded
+        - in: query
+          name: until
+          schema:
+            type: string
+            format: date-time
+          description: Query parameter `until`.
+        - in: query
+          name: variant_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `variant_id`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedOrderItemList'
+          description: ''
+    post:
+      operationId: applications_order_items_create_create
+      description: Create a new OrderItem record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{order_item_id}/refunds/:
+    get:
+      operationId: applications_order_items_refunds_list_list
+      description: Retrieve a list of Refund records.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: order_item_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `order_item_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedRefundList'
+          description: ''
+    post:
+      operationId: applications_order_items_refunds_create_create
+      description: Create a new Refund record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: order_item_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `order_item_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Refund'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Refund'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Refund'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Refund'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Refund'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{order_item_id}/refunds/{uuid}/:
+    get:
+      operationId: applications_order_items_refunds_retrieve_retrieve
+      description: Retrieve a single Refund record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: order_item_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `order_item_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Refund'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{uuid}/:
+    get:
+      operationId: applications_order_items_retrieve_retrieve
+      description: Retrieve a single OrderItem record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{uuid}/fulfill/:
+    post:
+      operationId: applications_order_items_fulfill_create_fulfill
+      description: 'Mark a paid line delivered: redeemed -> fulfilled.'
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{uuid}/redeem/:
+    post:
+      operationId: applications_order_items_redeem_create_redeem
+      description: >-
+        Confirm a provider-backed line's payment: awaiting_provider_confirmation
+        -> redeemed.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+          description: ''
+  /api/v1/applications/{client_id}/order-items/{uuid}/reject/:
+    post:
+      operationId: applications_order_items_reject_create_reject
+      description: >-
+        Decline a line (delivered or not) and mark it rejected. Rejection itself
+        moves nothing
+
+        -- issue a refund separately to reverse payment and restock.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+          description: ''
+  /api/v1/applications/{client_id}/orders/:
+    get:
+      operationId: applications_orders_list_list
+      description: Retrieve a list of Order records.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: product_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `product_id`.
+        - in: query
+          name: redemption_method
+          schema:
+            type: string
+            x-spec-enum-id: 1348fdf7abf0012a
+            enum:
+              - cash
+              - reward_item
+          description: |-
+            How this order was paid, snapshotted at creation.
+
+            * `reward_item` - Reward item
+            * `cash` - Cash
+        - in: query
+          name: reward_item_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `reward_item_id`.
+        - in: query
+          name: since
+          schema:
+            type: string
+            format: date-time
+          description: Query parameter `since`.
+        - in: query
+          name: status
+          schema:
+            type: string
+            x-spec-enum-id: e9fbbb64dc19aa0b
+            enum:
+              - cancelled
+              - created
+          description: >-
+            Container status of the order; the redemption lifecycle lives on its
+            items.
+
+
+            * `created` - Created
+
+            * `cancelled` - Cancelled
+        - in: query
+          name: total_amount__gte
+          schema:
+            type: number
+          description: Query parameter `total_amount__gte`.
+        - in: query
+          name: total_amount__lte
+          schema:
+            type: number
+          description: Query parameter `total_amount__lte`.
+        - in: query
+          name: until
+          schema:
+            type: string
+            format: date-time
+          description: Query parameter `until`.
+        - in: query
+          name: variant_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `variant_id`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedOrderList'
+          description: ''
+    post:
+      operationId: applications_orders_create_create
+      description: Create a new Order record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Order'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Order'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+  /api/v1/applications/{client_id}/orders/{uuid}/:
+    get:
+      operationId: applications_orders_retrieve_retrieve
+      description: Retrieve a single Order record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+          description: ''
+  /api/v1/applications/{client_id}/products/:
+    get:
+      operationId: applications_products_list_list
+      description: Retrieve a list of Product records.
+      parameters:
+        - in: query
+          name: attributes
+          schema:
+            type: string
+          description: Query parameter `attributes`.
+        - in: query
+          name: category_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `category_id`.
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: product_store_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `product_store_id`.
+        - in: query
+          name: product_type
+          schema:
+            type: string
+            x-spec-enum-id: 0d484cc3c6fe66d6
+            nullable: true
+            enum:
+              - badge
+              - common_code
+              - experience
+              - flair
+              - konekt
+              - merchandise
+              - multiplier
+              - unique_code
+          description: >-
+            Category of product, e.g. badge, multiplier, common/unique code,
+            flair, reward item, sweepstake entry, spin the Wheel attempt,
+            merchandise, experience, or konekt
+
+
+            * `badge` - Badge
+
+            * `multiplier` - Multiplier
+
+            * `flair` - Flair
+
+            * `common_code` - Common code
+
+            * `unique_code` - Unique code
+
+            * `merchandise` - Merchandise
+
+            * `experience` - Experience
+
+            * `konekt` - Konekt
+        - in: query
+          name: sponsor_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `sponsor_id`.
+        - in: query
+          name: state
+          schema:
+            type: string
+            x-spec-enum-id: 763af54b5975e428
+            enum:
+              - draft
+              - published
+              - unpublished
+          description: |-
+            Publication state of the product
+
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductList'
+          description: ''
+    post:
+      operationId: applications_products_create_create
+      description: Create a new Product record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /api/v1/applications/{client_id}/products/{product_uuid}/variants/:
+    get:
+      operationId: applications_products_variants_list_list
+      description: Retrieve a list of ProductVariant records.
+      parameters:
+        - in: query
+          name: attributes
+          schema:
+            type: string
+          description: Query parameter `attributes`.
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: query
+          name: variant_type
+          schema:
+            type: string
+            x-spec-enum-id: 99b1ac45ed71ac9d
+            nullable: true
+            enum:
+              - colour
+              - common_code
+              - event
+              - other
+              - provider_product
+              - size
+              - unique_code
+          description: >-
+            Category of variant: size, colour, event, other, one of the
+            coupon-code types (unique_code/common_code), or provider_product
+            (fulfilled by an external provider catalog item).
+
+
+            * `size` - Size
+
+            * `colour` - Colour
+
+            * `event` - Event
+
+            * `other` - Other
+
+            * `unique_code` - Unique code
+
+            * `common_code` - Common code
+
+            * `provider_product` - Provider product
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductVariantList'
+          description: ''
+    post:
+      operationId: applications_products_variants_create_create
+      description: Create a new ProductVariant record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductVariantBulkCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductVariantBulkCreate'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariantBulkCreate'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductVariantBulkCreate'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariantBulkCreate'
+          description: ''
+  /api/v1/applications/{client_id}/products/{product_uuid}/variants/{uuid}/:
+    get:
+      operationId: applications_products_variants_retrieve_retrieve
+      description: Retrieve a single ProductVariant record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+    put:
+      operationId: applications_products_variants_update_update
+      description: Update an existing ProductVariant record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+    patch:
+      operationId: applications_products_variants_partial_update_partial_update
+      description: Perform partial update on ProductVariant.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductVariant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductVariant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductVariant'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/PatchedProductVariant'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+    delete:
+      operationId: applications_products_variants_destroy_destroy
+      description: Delete an existing ProductVariant record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/applications/{client_id}/products/{product_uuid}/variants/{uuid}/coupon-codes/:
+    post:
+      operationId: applications_products_variants_coupon_codes_create_coupon_codes
+      description: >-
+        POST adds a batch of new codes (up to 5,000) to the available pool. PUT
+
+        replaces the whole available pool with a new batch, leaving
+        already-redeemed
+
+        codes untouched. Both report how many submitted codes were accepted vs.
+        skipped
+
+        as duplicates.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+    put:
+      operationId: applications_products_variants_coupon_codes_update_coupon_codes
+      description: >-
+        POST adds a batch of new codes (up to 5,000) to the available pool. PUT
+
+        replaces the whole available pool with a new batch, leaving
+        already-redeemed
+
+        codes untouched. Both report how many submitted codes were accepted vs.
+        skipped
+
+        as duplicates.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+  /api/v1/applications/{client_id}/products/{product_uuid}/variants/from-provider-products/:
+    post:
+      operationId: >-
+        applications_products_variants_from_provider_products_create_from_provider_products
+      description: >-
+        Bulk-creates one ``variant_type=provider_product`` variant per provider
+
+        product listed — label and cost come from the provider's own catalog
+        payload,
+
+        not the request body.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: product_uuid
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `product_uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductVariant'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductVariant'
+          description: ''
+  /api/v1/applications/{client_id}/products/{uuid}/:
+    get:
+      operationId: applications_products_retrieve_retrieve
+      description: Retrieve a single Product record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    put:
+      operationId: applications_products_update_update
+      description: Update an existing Product record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    patch:
+      operationId: applications_products_partial_update_partial_update
+      description: Perform partial update on Product.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+    delete:
+      operationId: applications_products_destroy_destroy
+      description: Delete an existing Product record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/applications/{client_id}/products/{uuid}/publish/:
+    post:
+      operationId: applications_products_publish_create_publish
+      description: Perform publish on Product.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /api/v1/applications/{client_id}/products/{uuid}/unpublish/:
+    post:
+      operationId: applications_products_unpublish_create_unpublish
+      description: Perform unpublish on Product.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /api/v1/applications/{client_id}/products/admin/:
+    get:
+      operationId: applications_products_admin_retrieve_admin
+      description: >-
+        Producer-facing listing: every product in the application regardless of
+
+        state (including Draft), with filtering by display status, category
+        name, and
+
+        gating, and sorting by creation/update/expiry date — none of which the
+        public
+
+        listing needs.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+  /api/v1/applications/{client_id}/provider-product-sync-jobs/:
+    get:
+      operationId: applications_provider_product_sync_jobs_list_list
+      description: Retrieve a list of ProviderProductSyncJob records.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProviderProductSyncJobList'
+          description: ''
+    post:
+      operationId: applications_provider_product_sync_jobs_create_create
+      description: Create a new ProviderProductSyncJob record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProviderProductSyncJob'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProviderProductSyncJob'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProviderProductSyncJob'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProviderProductSyncJob'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProviderProductSyncJob'
+          description: ''
+  /api/v1/applications/{client_id}/provider-product-sync-jobs/{uuid}/:
+    get:
+      operationId: applications_provider_product_sync_jobs_retrieve_retrieve
+      description: Retrieve a single ProviderProductSyncJob record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProviderProductSyncJob'
+          description: ''
+  /api/v1/applications/{client_id}/provider-products/:
+    get:
+      operationId: applications_provider_products_list_list
+      description: Retrieve a list of ProviderProduct records.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: query
+          name: is_active
+          schema:
+            type: boolean
+          description: Query parameter `is_active`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: provider
+          schema:
+            type: string
+            x-spec-enum-id: 07d3726d6031e8af
+            enum:
+              - konekt
+          description: |-
+            The external provider this product was fetched from.
+
+            * `konekt` - Konekt
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProviderProductList'
+          description: ''
+  /api/v1/applications/{client_id}/provider-products/{uuid}/:
+    get:
+      operationId: applications_provider_products_retrieve_retrieve
+      description: Retrieve a single ProviderProduct record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProviderProduct'
+          description: ''
+  /api/v1/applications/{client_id}/reward-stores/:
+    get:
+      operationId: applications_reward_stores_list_list
+      description: Retrieve a list of ProductStore records.
+      parameters:
+        - in: query
+          name: attributes
+          schema:
+            type: string
+          description: Query parameter `attributes`.
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - name: ordering
+          required: false
+          in: query
+          description: Which field to use when ordering the results.
+          schema:
+            type: string
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - in: query
+          name: reward_item_id
+          schema:
+            type: string
+            format: uuid
+          description: Query parameter `reward_item_id`.
+        - in: query
+          name: state
+          schema:
+            type: string
+            x-spec-enum-id: 763af54b5975e428
+            enum:
+              - draft
+              - published
+              - unpublished
+          description: |-
+            Publication state of the product store
+
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductStoreList'
+          description: ''
+    post:
+      operationId: applications_reward_stores_create_create
+      description: Create a new ProductStore record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+  /api/v1/applications/{client_id}/reward-stores/{uuid}/:
+    get:
+      operationId: applications_reward_stores_retrieve_retrieve
+      description: Retrieve a single ProductStore record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+    put:
+      operationId: applications_reward_stores_update_update
+      description: Update an existing ProductStore record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+    patch:
+      operationId: applications_reward_stores_partial_update_partial_update
+      description: Perform partial update on ProductStore.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStore'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductStore'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/PatchedProductStore'
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+    delete:
+      operationId: applications_reward_stores_destroy_destroy
+      description: Delete an existing ProductStore record.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/applications/{client_id}/reward-stores/{uuid}/publish/:
+    post:
+      operationId: applications_reward_stores_publish_create_publish
+      description: Perform publish on ProductStore.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+  /api/v1/applications/{client_id}/reward-stores/{uuid}/unpublish/:
+    post:
+      operationId: applications_reward_stores_unpublish_create_unpublish
+      description: Perform unpublish on ProductStore.
+      parameters:
+        - in: path
+          name: client_id
+          schema:
+            type: string
+            pattern: ^[^/]+$
+          required: true
+          description: Path parameter `client_id`.
+        - in: path
+          name: uuid
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Path parameter `uuid`.
+      tags:
+        - applications
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ProductStore'
+        required: true
+      security:
+        - LiveLikeJWTAuthentication: []
+        - ClientJWTAuthentication: []
+        - ProducerAccessTokenAuthentication: []
+        - SessionAuthentication: []
+        - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductStore'
+          description: ''
+components:
+  schemas:
+    Order:
+      type: object
+      description: Read serializer for an order and the variant lines in it.
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        profile:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          description: profile
+        status:
+          enum:
+            - created
+            - cancelled
+          type: string
+          x-spec-enum-id: e9fbbb64dc19aa0b
+          readOnly: true
+          description: >-
+            Container status of the order; the redemption lifecycle lives on its
+            items.
+
+
+            * `created` - Created
+
+            * `cancelled` - Cancelled
+        reward_item:
+          allOf:
+            - $ref: '#/components/schemas/ProductStoreRewardItem'
+          readOnly: true
+          description: reward_item
+        total_amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+          readOnly: true
+          description: Total reward-item amount spent on this order.
+        redemption_method:
+          enum:
+            - reward_item
+            - cash
+          type: string
+          x-spec-enum-id: 1348fdf7abf0012a
+          readOnly: true
+          description: |-
+            How this order was paid, snapshotted at creation.
+
+            * `reward_item` - Reward item
+            * `cash` - Cash
+        idempotency_key:
+          type: string
+          readOnly: true
+          description: >-
+            Client-supplied key that prevents duplicate orders when a request is
+            retried.
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+          readOnly: true
+          description: items
+        refunds:
+          type: string
+          readOnly: true
+          description: refunds
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+    OrderItem:
+      type: object
+      description: >-
+        Read serializer for one line within an order — the unit that carries the
+        redemption
+
+        lifecycle.
+
+
+        A line redeems a :class:`ProductVariant`, so the variant is the primary
+        nested object
+
+        (id, label, and its effective images — the variant's own, falling back
+        to the product's);
+
+        the parent product is a small sibling object for context. ``profile`` is
+        the order's owner,
+
+        surfaced here so the store-wide order-items view can show who to fulfil
+        for without a
+
+        round-trip to the order.
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        order_id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: order_id
+        profile:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          description: profile
+        product:
+          type: string
+          readOnly: true
+          description: product
+        variant:
+          type: string
+          readOnly: true
+          description: variant
+        redemption_method:
+          type: string
+          readOnly: true
+          description: redemption_method
+        status:
+          enum:
+            - in_progress
+            - redeemed
+            - awaiting_provider_confirmation
+            - fulfilled
+            - rejected
+            - refunded
+          type: string
+          x-spec-enum-id: 5f97a1a933aa5761
+          readOnly: true
+          description: |-
+            Current redemption status of this line.
+
+            * `in_progress` - In progress
+            * `redeemed` - Redeemed
+            * `awaiting_provider_confirmation` - Awaiting provider confirmation
+            * `fulfilled` - Fulfilled
+            * `rejected` - Rejected
+            * `refunded` - Refunded
+        quantity:
+          type: integer
+          readOnly: true
+          description: Number of units of the variant redeemed.
+        amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+          readOnly: true
+          description: Reward-item amount spent on this item.
+        unit_amount:
+          type: string
+          readOnly: true
+          description: unit_amount
+        failure_reason:
+          type: string
+          readOnly: true
+          nullable: true
+          description: Why this item was rejected or refunded, if it was.
+        updated_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          description: updated_by
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        reject_url:
+          type: string
+          readOnly: true
+          description: reject_url
+        redeem_url:
+          type: string
+          readOnly: true
+          description: redeem_url
+        fulfill_url:
+          type: string
+          readOnly: true
+          description: fulfill_url
+        refund_url:
+          type: string
+          readOnly: true
+          description: refund_url
+    PaginatedOrderItemList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    PaginatedOrderList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+    PaginatedProductList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+    PaginatedProductStoreCategoryList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreCategory'
+    PaginatedProductStoreList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStore'
+    PaginatedProductVariantList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariant'
+    PaginatedProviderProductList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderProduct'
+    PaginatedProviderProductSyncJobList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderProductSyncJob'
+    PaginatedRefundList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Refund'
+    PatchedProduct:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        variants_url:
+          type: string
+          readOnly: true
+          description: variants_url
+        product_store:
+          type: string
+          readOnly: true
+          description: product_store
+        product_store_id:
+          type: string
+          format: uuid
+          writeOnly: true
+          description: product_store_id
+        name:
+          type: string
+          description: Name of the product
+          maxLength: 255
+        product_type:
+          enum:
+            - badge
+            - multiplier
+            - flair
+            - common_code
+            - unique_code
+            - merchandise
+            - experience
+            - konekt
+            - null
+          type: string
+          description: |-
+            * `badge` - Badge
+            * `multiplier` - Multiplier
+            * `flair` - Flair
+            * `common_code` - Common code
+            * `unique_code` - Unique code
+            * `merchandise` - Merchandise
+            * `experience` - Experience
+            * `konekt` - Konekt
+          x-spec-enum-id: 0d484cc3c6fe66d6
+          nullable: true
+        redemption_provider:
+          enum:
+            - konekt
+            - ''
+            - null
+          type: string
+          x-spec-enum-id: 07d3726d6031e8af
+          nullable: true
+          description: >-
+            Third party that redeems and fulfils this product. Null (the
+            default) means we do it ourselves. Inventory is always ours
+            regardless.
+
+
+            * `konekt` - Konekt
+        redemption_method:
+          enum:
+            - reward_item
+            - cash
+          type: string
+          x-spec-enum-id: 1348fdf7abf0012a
+          description: >-
+            How members pay for this product. 'reward_item' debits our
+            reward-item ledger; other values mean money is collected by an
+            external provider (no ledger debit).
+
+
+            * `reward_item` - Reward item
+
+            * `cash` - Cash
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        display_status:
+          type: string
+          readOnly: true
+          description: display_status
+        description:
+          nullable: true
+          description: Rich text description of the product
+        is_eligible_to_redeem:
+          type: string
+          readOnly: true
+          description: is_eligible_to_redeem
+        redemption_rules:
+          nullable: true
+          description: >-
+            Rules governing redemption of this product, e.g.
+            {"max_redemptions_per_user": 5, "max_redemption_days": 7}
+        gating_profile_groups:
+          type: string
+          readOnly: true
+          description: gating_profile_groups
+        gating_profile_group_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: gating_profile_group_ids
+        categories:
+          type: string
+          readOnly: true
+          description: categories
+        category_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductCategoryWrite'
+          writeOnly: true
+          description: category_ids
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductSponsorRef'
+          readOnly: true
+          description: sponsors
+        sponsor_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: sponsor_ids
+        reward_item:
+          allOf:
+            - $ref: '#/components/schemas/ProductStoreRewardItem'
+          readOnly: true
+          description: reward_item
+        reward_item_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: reward_item_id
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductImage'
+          readOnly: true
+          description: images
+        image:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductImageWrite'
+          writeOnly: true
+          description: image
+        start_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Time this product becomes available for redemption
+        expiry_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Time this product stops being available for redemption
+        redemption_success_message:
+          nullable: true
+          description: Rich text message shown on successful redemption
+        redemption_failure_message:
+          nullable: true
+          description: Rich text message shown on failed redemption
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+    PatchedProductStore:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        name:
+          type: string
+          description: Name of the product store
+          maxLength: 255
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        reward_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreRewardItem'
+          readOnly: true
+          description: reward_items
+        reward_item_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: reward_item_ids
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductSponsorRef'
+          readOnly: true
+          description: sponsors
+        sponsor_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: sponsor_ids
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+    PatchedProductStoreCategory:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        product_store:
+          type: string
+          readOnly: true
+          description: product_store
+        product_store_id:
+          type: string
+          format: uuid
+          writeOnly: true
+          description: product_store_id
+        name:
+          type: string
+          description: Name of the category
+          maxLength: 255
+        description:
+          type: string
+          nullable: true
+          description: Description of the category
+        sequence:
+          type: integer
+          minimum: 0
+          nullable: true
+          description: sequence
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreCategoryAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+    PatchedProductVariant:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        product:
+          type: string
+          readOnly: true
+          description: product
+        label:
+          type: string
+          nullable: true
+          description: label of the variant (e.g. size, color, or edition)
+          maxLength: 255
+        color_label:
+          type: string
+          nullable: true
+          description: >-
+            Colour name of this variant (e.g. 'Midnight Blue'), for
+            variant_type=colour
+          maxLength: 50
+        color_hexcode:
+          type: string
+          nullable: true
+          description: >-
+            Hex code of this variant's colour (e.g. #1A2B3C), for
+            variant_type=colour
+          maxLength: 7
+        is_default:
+          type: boolean
+          description: Whether this is the default variant shown for the product.
+        size:
+          type: string
+          nullable: true
+          description: Size label of this variant (e.g. S, M, L, 42), for variant_type=size
+          maxLength: 25
+        event_start:
+          type: string
+          format: date-time
+          nullable: true
+          description: >-
+            Start time of the event this variant represents, for
+            variant_type=event
+        event_end:
+          type: string
+          format: date-time
+          nullable: true
+          description: >-
+            End time of the event this variant represents, for
+            variant_type=event
+        common_coupon_code:
+          type: string
+          nullable: true
+          description: >-
+            The shared code handed out for every redemption, for
+            variant_type=common_code.
+          maxLength: 255
+        provider_product:
+          allOf:
+            - $ref: '#/components/schemas/ProviderProductRef'
+          readOnly: true
+          description: provider_product
+        provider_product_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: >-
+            UUID of the ProviderProduct (external provider catalog item) this
+            variant is fulfilled from. Only allowed when the product's
+            product_type is 'konekt'.
+        builtin_source_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: >-
+            UUID of the built-in LiveLike entity this variant is fulfilled from.
+            Only allowed when the product's product_type is 'badge',
+            'multiplier' or 'flair', in which case it must reference,
+            respectively, an active badge / a live user-activated reward
+            multiplier / an active flair in this application.
+        coupon_codes:
+          type: array
+          items:
+            type: string
+            maxLength: 255
+          writeOnly: true
+          description: >-
+            Replaces this variant's available (unredeemed) code pool on update —
+            omit the field to leave the pool untouched, or pass [] to clear it.
+            Redeemed codes are never affected. Only allowed when the product's
+            product_type is 'unique_code'.
+        coupon_code_count:
+          type: string
+          readOnly: true
+          description: coupon_code_count
+        cost:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: >-
+            Cost to redeem this variant. May differ from the parent product's
+            cost.
+        discount_percentage:
+          type: integer
+          maximum: 100
+          minimum: 0
+          nullable: true
+          description: >-
+            Percentage discount applied to this variant's cost. A variant has a
+            discount when this is set.
+        has_discount:
+          type: string
+          readOnly: true
+          description: has_discount
+        discounted_cost:
+          type: string
+          readOnly: true
+          description: discounted_cost
+        inventory_count:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: Remaining redeemable inventory for this variant
+        low_stock_threshold:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: >-
+            Inventory level at or below which this variant is considered low
+            stock (e.g. for an 'only a few left' notice). Unset means no
+            low-stock threshold.
+        available_coupon_code_count:
+          type: string
+          readOnly: true
+          description: available_coupon_code_count
+        redeemed_coupon_code_count:
+          type: string
+          readOnly: true
+          description: redeemed_coupon_code_count
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariantImage'
+          description: images
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariantAttribute'
+          description: attributes
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        display_status:
+          type: string
+          readOnly: true
+          description: display_status
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        variants_url:
+          type: string
+          readOnly: true
+          description: variants_url
+        product_store:
+          type: string
+          readOnly: true
+          description: product_store
+        product_store_id:
+          type: string
+          format: uuid
+          writeOnly: true
+          description: product_store_id
+        name:
+          type: string
+          description: Name of the product
+          maxLength: 255
+        product_type:
+          enum:
+            - badge
+            - multiplier
+            - flair
+            - common_code
+            - unique_code
+            - merchandise
+            - experience
+            - konekt
+            - null
+          type: string
+          description: |-
+            * `badge` - Badge
+            * `multiplier` - Multiplier
+            * `flair` - Flair
+            * `common_code` - Common code
+            * `unique_code` - Unique code
+            * `merchandise` - Merchandise
+            * `experience` - Experience
+            * `konekt` - Konekt
+          x-spec-enum-id: 0d484cc3c6fe66d6
+          nullable: true
+        redemption_provider:
+          enum:
+            - konekt
+            - ''
+            - null
+          type: string
+          x-spec-enum-id: 07d3726d6031e8af
+          nullable: true
+          description: >-
+            Third party that redeems and fulfils this product. Null (the
+            default) means we do it ourselves. Inventory is always ours
+            regardless.
+
+
+            * `konekt` - Konekt
+        redemption_method:
+          enum:
+            - reward_item
+            - cash
+          type: string
+          x-spec-enum-id: 1348fdf7abf0012a
+          description: >-
+            How members pay for this product. 'reward_item' debits our
+            reward-item ledger; other values mean money is collected by an
+            external provider (no ledger debit).
+
+
+            * `reward_item` - Reward item
+
+            * `cash` - Cash
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        display_status:
+          type: string
+          readOnly: true
+          description: display_status
+        description:
+          nullable: true
+          description: Rich text description of the product
+        is_eligible_to_redeem:
+          type: string
+          readOnly: true
+          description: is_eligible_to_redeem
+        redemption_rules:
+          nullable: true
+          description: >-
+            Rules governing redemption of this product, e.g.
+            {"max_redemptions_per_user": 5, "max_redemption_days": 7}
+        gating_profile_groups:
+          type: string
+          readOnly: true
+          description: gating_profile_groups
+        gating_profile_group_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: gating_profile_group_ids
+        categories:
+          type: string
+          readOnly: true
+          description: categories
+        category_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductCategoryWrite'
+          writeOnly: true
+          description: category_ids
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductSponsorRef'
+          readOnly: true
+          description: sponsors
+        sponsor_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: sponsor_ids
+        reward_item:
+          allOf:
+            - $ref: '#/components/schemas/ProductStoreRewardItem'
+          readOnly: true
+          description: reward_item
+        reward_item_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: reward_item_id
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductImage'
+          readOnly: true
+          description: images
+        image:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductImageWrite'
+          writeOnly: true
+          description: image
+        start_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Time this product becomes available for redemption
+        expiry_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Time this product stops being available for redemption
+        redemption_success_message:
+          nullable: true
+          description: Rich text message shown on successful redemption
+        redemption_failure_message:
+          nullable: true
+          description: Rich text message shown on failed redemption
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+      required:
+        - name
+        - product_store_id
+    ProductAttribute:
+      type: object
+      properties:
+        key:
+          type: string
+          maxLength: 200
+          description: key
+        value:
+          type: string
+          maxLength: 200
+          description: value
+      required:
+        - key
+        - value
+    ProductCategoryWrite:
+      type: object
+      properties:
+        category_id:
+          type: string
+          format: uuid
+          description: category_id
+        display_order:
+          type: integer
+          minimum: 0
+          nullable: true
+          description: display_order
+      required:
+        - category_id
+    ProductImage:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          description: id
+        image_url:
+          type: string
+          readOnly: true
+          description: image_url
+        display_order:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          description: Position of the image within the product's image gallery
+    ProductImageWrite:
+      type: object
+      properties:
+        image:
+          type: string
+          format: uri
+          description: Image or GLB 3D model file
+          pattern: (?:jpg|jpeg|png|gif|webp|glb)$
+        display_order:
+          type: integer
+          minimum: 0
+          description: display_order
+      required:
+        - image
+    ProductSponsorRef:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        name:
+          type: string
+          maxLength: 200
+          description: name
+      required:
+        - name
+    ProductStore:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        name:
+          type: string
+          description: Name of the product store
+          maxLength: 255
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        reward_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreRewardItem'
+          readOnly: true
+          description: reward_items
+        reward_item_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: reward_item_ids
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductSponsorRef'
+          readOnly: true
+          description: sponsors
+        sponsor_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: sponsor_ids
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+      required:
+        - name
+    ProductStoreAttribute:
+      type: object
+      properties:
+        key:
+          type: string
+          maxLength: 200
+          description: key
+        value:
+          type: string
+          maxLength: 200
+          description: value
+      required:
+        - key
+        - value
+    ProductStoreCategory:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        publish_url:
+          type: string
+          readOnly: true
+          description: publish_url
+        unpublish_url:
+          type: string
+          readOnly: true
+          description: unpublish_url
+        product_store:
+          type: string
+          readOnly: true
+          description: product_store
+        product_store_id:
+          type: string
+          format: uuid
+          writeOnly: true
+          description: product_store_id
+        name:
+          type: string
+          description: Name of the category
+          maxLength: 255
+        description:
+          type: string
+          nullable: true
+          description: Description of the category
+        sequence:
+          type: integer
+          minimum: 0
+          nullable: true
+          description: sequence
+        state:
+          enum:
+            - draft
+            - published
+            - unpublished
+          type: string
+          description: |-
+            * `draft` - Draft
+            * `published` - Published
+            * `unpublished` - Unpublished
+          x-spec-enum-id: 763af54b5975e428
+          readOnly: true
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductStoreCategoryAttribute'
+          description: attributes
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+      required:
+        - name
+        - product_store_id
+    ProductStoreCategoryAttribute:
+      type: object
+      properties:
+        key:
+          type: string
+          maxLength: 200
+          description: key
+        value:
+          type: string
+          maxLength: 200
+          description: value
+      required:
+        - key
+        - value
+    ProductStoreRewardItem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        name:
+          type: string
+          maxLength: 200
+          description: name
+      required:
+        - name
+    ProductVariant:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        url:
+          type: string
+          readOnly: true
+          description: url
+        product:
+          type: string
+          readOnly: true
+          description: product
+        label:
+          type: string
+          nullable: true
+          description: label of the variant (e.g. size, color, or edition)
+          maxLength: 255
+        color_label:
+          type: string
+          nullable: true
+          description: >-
+            Colour name of this variant (e.g. 'Midnight Blue'), for
+            variant_type=colour
+          maxLength: 50
+        color_hexcode:
+          type: string
+          nullable: true
+          description: >-
+            Hex code of this variant's colour (e.g. #1A2B3C), for
+            variant_type=colour
+          maxLength: 7
+        is_default:
+          type: boolean
+          description: Whether this is the default variant shown for the product.
+        size:
+          type: string
+          nullable: true
+          description: Size label of this variant (e.g. S, M, L, 42), for variant_type=size
+          maxLength: 25
+        event_start:
+          type: string
+          format: date-time
+          nullable: true
+          description: >-
+            Start time of the event this variant represents, for
+            variant_type=event
+        event_end:
+          type: string
+          format: date-time
+          nullable: true
+          description: >-
+            End time of the event this variant represents, for
+            variant_type=event
+        common_coupon_code:
+          type: string
+          nullable: true
+          description: >-
+            The shared code handed out for every redemption, for
+            variant_type=common_code.
+          maxLength: 255
+        provider_product:
+          allOf:
+            - $ref: '#/components/schemas/ProviderProductRef'
+          readOnly: true
+          description: provider_product
+        provider_product_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: >-
+            UUID of the ProviderProduct (external provider catalog item) this
+            variant is fulfilled from. Only allowed when the product's
+            product_type is 'konekt'.
+        builtin_source_id:
+          type: string
+          format: uuid
+          nullable: true
+          description: >-
+            UUID of the built-in LiveLike entity this variant is fulfilled from.
+            Only allowed when the product's product_type is 'badge',
+            'multiplier' or 'flair', in which case it must reference,
+            respectively, an active badge / a live user-activated reward
+            multiplier / an active flair in this application.
+        coupon_codes:
+          type: array
+          items:
+            type: string
+            maxLength: 255
+          writeOnly: true
+          description: >-
+            Replaces this variant's available (unredeemed) code pool on update —
+            omit the field to leave the pool untouched, or pass [] to clear it.
+            Redeemed codes are never affected. Only allowed when the product's
+            product_type is 'unique_code'.
+        coupon_code_count:
+          type: string
+          readOnly: true
+          description: coupon_code_count
+        cost:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: >-
+            Cost to redeem this variant. May differ from the parent product's
+            cost.
+        discount_percentage:
+          type: integer
+          maximum: 100
+          minimum: 0
+          nullable: true
+          description: >-
+            Percentage discount applied to this variant's cost. A variant has a
+            discount when this is set.
+        has_discount:
+          type: string
+          readOnly: true
+          description: has_discount
+        discounted_cost:
+          type: string
+          readOnly: true
+          description: discounted_cost
+        inventory_count:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: Remaining redeemable inventory for this variant
+        low_stock_threshold:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          nullable: true
+          description: >-
+            Inventory level at or below which this variant is considered low
+            stock (e.g. for an 'only a few left' notice). Unset means no
+            low-stock threshold.
+        available_coupon_code_count:
+          type: string
+          readOnly: true
+          description: available_coupon_code_count
+        redeemed_coupon_code_count:
+          type: string
+          readOnly: true
+          description: redeemed_coupon_code_count
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariantImage'
+          description: images
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariantAttribute'
+          description: attributes
+        custom_data:
+          type: string
+          nullable: true
+          description: Arbitrary client-defined data (e.g. serialized JSON).
+        is_active:
+          type: boolean
+          readOnly: true
+          description: is_active
+        display_status:
+          type: string
+          readOnly: true
+          description: display_status
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          nullable: true
+          description: created_by
+      required:
+        - label
+    ProductVariantAttribute:
+      type: object
+      properties:
+        key:
+          type: string
+          maxLength: 200
+          description: key
+        value:
+          type: string
+          maxLength: 200
+          description: value
+      required:
+        - key
+        - value
+    ProductVariantBulkCreate:
+      type: object
+      description: >-
+        Input for adding one or more variants (each with its own images) to the
+        product
+
+        named in the URL (``context["product"]``, set by the view). Validated as
+        a whole
+
+        batch before anything is written — if any variant fails validation, none
+        are
+
+        created.
+      properties:
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariant'
+          description: variants
+      required:
+        - variants
+    ProductVariantImage:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          description: id
+        image:
+          type: string
+          format: uri
+          writeOnly: true
+          description: Image or GLB 3D model file
+          pattern: (?:jpg|jpeg|png|gif|webp|glb)$
+        image_url:
+          type: string
+          readOnly: true
+          description: image_url
+        display_order:
+          type: integer
+          maximum: 9223372036854776000
+          minimum: 0
+          format: int64
+          description: Position of the image within the variant's image gallery
+      required:
+        - display_order
+        - image
+    ProfileSummary:
+      type: object
+      description: >-
+        Minimal profile for created_by / updated_by in streak responses. id =
+        uuid, nickname.
+      properties:
+        id:
+          type: string
+          readOnly: true
+          description: id
+        nickname:
+          type: string
+          maxLength: 100
+          description: nickname
+    ProviderProduct:
+      type: object
+      description: >-
+        Full read representation of a synced ``ProviderProduct``, listed
+        producer-side so
+
+        a ``provider_product_id`` can be picked when creating a variant.
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        provider:
+          enum:
+            - konekt
+          type: string
+          x-spec-enum-id: 07d3726d6031e8af
+          readOnly: true
+          description: |-
+            The external provider this product was fetched from.
+
+            * `konekt` - Konekt
+        external_id:
+          type: string
+          readOnly: true
+          description: >-
+            The provider's own identifier for this product (e.g. Konekt's
+            productId).
+        product_data:
+          readOnly: true
+          description: Raw product payload as last returned by the provider's API.
+        issued_inventory:
+          type: integer
+          readOnly: true
+          description: Count of units issued by admin.
+        is_active:
+          type: boolean
+          readOnly: true
+          title: Active
+          description: Uncheck this instead of deleting the provider product.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+    ProviderProductNormalizedData:
+      type: object
+      description: >-
+        Provider-neutral attributes derived from a ``ProviderProduct``'s raw
+        payload.
+      properties:
+        face_value:
+          type: string
+          readOnly: true
+          description: >-
+            Face value from the provider product's data. Read-only; null if
+            none.
+        currency:
+          type: string
+          readOnly: true
+          description: >-
+            Currency code from the provider product's data. Read-only; null if
+            none.
+    ProviderProductRef:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        provider:
+          enum:
+            - konekt
+          type: string
+          x-spec-enum-id: 07d3726d6031e8af
+          description: |-
+            The external provider this product was fetched from.
+
+            * `konekt` - Konekt
+        external_id:
+          type: string
+          description: >-
+            The provider's own identifier for this product (e.g. Konekt's
+            productId).
+          maxLength: 255
+        data:
+          allOf:
+            - $ref: '#/components/schemas/ProviderProductNormalizedData'
+          readOnly: true
+          description: data
+      required:
+        - external_id
+        - provider
+    ProviderProductSyncJob:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        provider:
+          enum:
+            - konekt
+          type: string
+          x-spec-enum-id: 07d3726d6031e8af
+          readOnly: true
+          description: |-
+            The external provider being synced.
+
+            * `konekt` - Konekt
+        status:
+          enum:
+            - pending
+            - running
+            - completed
+            - failed
+          type: string
+          x-spec-enum-id: 92b33e537baea703
+          readOnly: true
+          description: |-
+            Progress of the sync run.
+
+            * `pending` - Pending
+            * `running` - Running
+            * `completed` - Completed
+            * `failed` - Failed
+        products_synced:
+          type: integer
+          readOnly: true
+          description: Number of provider products created or updated by this run.
+        error_message:
+          type: string
+          readOnly: true
+          nullable: true
+          description: Failure detail, set if the run failed.
+        started_at:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          description: When the background task picked up this job.
+        finished_at:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          description: When the run completed or failed.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+    Refund:
+      type: object
+      description: Read serializer for a refund and the items it covered.
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: id
+        order_id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: order_id
+        status:
+          enum:
+            - pending
+            - completed
+            - failed
+          type: string
+          x-spec-enum-id: 51fa0017deb4b37a
+          readOnly: true
+          description: |-
+            Progress of the refund.
+
+            * `pending` - Pending
+            * `completed` - Completed
+            * `failed` - Failed
+        total_amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+          readOnly: true
+          description: >-
+            Total reward-item amount credited back — the sum of the refund's
+            items.
+        reason:
+          type: string
+          readOnly: true
+          nullable: true
+          description: Why the refund was issued.
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/RefundItem'
+          readOnly: true
+          description: items
+        created_by:
+          allOf:
+            - $ref: '#/components/schemas/ProfileSummary'
+          readOnly: true
+          description: created_by
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Record creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Last update timestamp
+    RefundItem:
+      type: object
+      description: Read serializer for one refunded item within a refund.
+      properties:
+        order_item_id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: order_item_id
+        variant_id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: variant_id
+        product_id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: product_id
+        amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+          readOnly: true
+          description: Reward-item amount credited back for this item.
+        quantity:
+          type: integer
+          readOnly: true
+          description: Number of units restocked for this item.
+  securitySchemes:
+    ClientJWTAuthentication:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    LiveLikeJWTAuthentication:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ProducerAccessTokenAuthentication:
+      type: apiKey
+      in: header
+      name: Authorization
+    SessionAuthentication:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"
