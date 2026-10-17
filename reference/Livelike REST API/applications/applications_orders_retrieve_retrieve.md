@@ -2,5 +2,5 @@
 api:
   file: reward-store-openapi.yaml
   operationId: applications_orders_retrieve_retrieve
-hidden: false
+hidden: true
 ---
