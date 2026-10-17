@@ -54,7 +54,7 @@ DELETE_COMMENT_BOARD_BAN_EVENT_KEY = "delete-comment-board-ban"
 
 ```json
 {
-    "event_key": "<EVENT_KEY>",
+    "event_name": "<EVENT_KEY>",
     "event_data": {
         "id": "<uuid>",
         "comment_board_id": "<uuid>",
@@ -100,7 +100,7 @@ DELETE_GLOBAL_CHATROOM_SHADOW_MUTE = "delete-global-chatroom-shadow-mute"
 
 ```json
 {
-    "event_key": "EVENT_KEY",
+    "event_name": "EVENT_KEY",
     "event_data": {
         "id": "<uuid>",
         "chat_room_id": "<uuid>",
