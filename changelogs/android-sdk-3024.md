@@ -3,6 +3,7 @@ title: Android SDK 3.0.24
 author: Viktor Manev
 hidden: true
 published_at: '2026-10-19T15:20:30.547Z'
+type: added
 ---
 <br />
 
@@ -58,4 +59,8 @@ val commentFeed = sdk.commentFeed()
 
 ## Important Notes
 
-Writes, report reads, board reads, and profile operations remain authenticated. Recreate the client, session, or feed client after changing the setting.
+Writes, report reads, board reads, and profile operations remain authenticated. Recreate the client, session, or feed client after changing the setting.<br />
+
+## More Info
+
+[Learn more about authenticated vs anonymous requests](https://docs.livelike.com/docs/comment-api-authenticated-vs-anonymous-requests)
