@@ -1,7 +1,7 @@
 ---
 title: 'Comments  Authenticated vs Anonymous '
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
