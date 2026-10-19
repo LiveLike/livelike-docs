@@ -23,7 +23,7 @@ simpleCommentSession() // Create a session using authenticated comment read`s.
 // Existing instances keep the setting captured at creation.
 ```
 
-## <br /><br /> Comment Client
+#### Methods affected from `preferAnonymousRequests :`<br /><br /> Comment Client
 
 ```
 val commentClient = sdk.comment(commentBoardId)
