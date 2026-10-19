@@ -64,4 +64,4 @@ Writes, report reads, board reads, and profile operations remain authenticated. 
 
 ## More Info
 
-[Learn more about authenticated vs anonymous requests](https://docs.livelike.com/docs/comment-api-authenticated-vs-anonymous-requests)
+[LiveLike : authenticated vs anonymous requests](https://docs.livelike.com/docs/comment-api-authenticated-vs-anonymous-requests)
