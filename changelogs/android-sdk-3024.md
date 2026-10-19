@@ -1,7 +1,7 @@
 ---
 title: Android SDK 3.0.24
 author: Viktor Manev
-hidden: true
+hidden: false
 published_at: '2026-10-19T15:20:30.547Z'
 type: added
 ---
@@ -14,7 +14,8 @@ Added`  sdk.preferAnonymousRequests (default: false)  `to allow anonymous GET re
 sdk.preferAnonymousRequests = true
 simpleCommentSession() // Create a session using anonymous comment reads.
 
-sdk.preferAnonymousRequests = falsesimpleCommentSession() // Create a session using authenticated comment read`s.
+sdk.preferAnonymousRequests = false
+simpleCommentSession() // Create a session using authenticated comment read`s.
 
 // Recreate the comment client, session, or feed client to apply changes.
 // Existing instances keep the setting captured at creation.
