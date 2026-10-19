@@ -29,8 +29,6 @@ No fields are added or removed based on authentication. Only field values and re
 
 For example, `self_reacted_user_reaction_id` is present in both responses but is null for anonymous requests.
 
-If `self_reported_comment_id` is introduced in the future, it would follow the same pattern: the field would contain the current viewer's report ID where applicable and would be null for anonymous requests.
-
 ## Choosing a request mode
 
 - Use authenticated requests when the experience depends on viewer-specific reactions and blocking rules.
