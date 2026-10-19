@@ -1,7 +1,7 @@
 ---
 title: Android SDK 3.0.24
 author: Viktor Manev
-hidden: true
+hidden: false
 metadata:
   robots: noindex
 published_at: '2026-10-19T15:20:30.547Z'
@@ -9,10 +9,9 @@ type: added
 ---
 <br />
 
-Added`  sdk.preferAnonymousRequests (default: false)  `to allow anonymous GET requests for `supported `comment APIs, including comments, replies, and counts.`
-`
+Added `sdk.preferAnonymousRequests` (default: `false`) to allow anonymous GET requests for supported comment APIs, including comments, replies, and counts.
 
-```
+```kotlin
 sdk.preferAnonymousRequests = true
 simpleCommentSession() // Create a session using anonymous comment reads.
 
@@ -23,9 +22,9 @@ simpleCommentSession() // Create a session using authenticated comment read`s.
 // Existing instances keep the setting captured at creation.
 ```
 
-#### Methods affected from `preferAnonymousRequests :`<br /><br /> Comment Client
+#### Methods affected by `preferAnonymousRequests`:<br /><br /> Comment Client
 
-```
+```kotlin
 val commentClient = sdk.comment(commentBoardId)
 ```
 
@@ -38,7 +37,7 @@ val commentClient = sdk.comment(commentBoardId)
 
 ## Comment Session
 
-```
+```kotlin
 val commentSession = sdk.createCommentSession(commentBoardId)
 ```
 
@@ -54,7 +53,7 @@ The session's initial comment loading and comment-count requests also use anonym
 
 ## Comment Feed
 
-```
+```kotlin
 val commentFeed = sdk.commentFeed()
 ```
 
