@@ -9,7 +9,7 @@ type: added
 ---
 <br />
 
-Added `sdk.preferAnonymousRequests` (default: `false`) to allow anonymous GET requests for supported comment APIs, including comments, replies, and counts.
+Added `sdk.preferAnonymousRequests` (default: `false`) to allow anonymous GET requests for `supported `comment APIs, including comments, replies, and counts.
 
 ```kotlin
 sdk.preferAnonymousRequests = true
