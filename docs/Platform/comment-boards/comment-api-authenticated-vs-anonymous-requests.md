@@ -1,5 +1,5 @@
 ---
-title: 'Comment API: Authenticated vs. Anonymous Requests'
+title: 'Comment  Authenticated vs Anonymous '
 deprecated: false
 hidden: true
 metadata:
