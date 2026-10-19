@@ -20,6 +20,7 @@ When an authentication token is provided, the response is never cached and is pe
 When no authentication token is provided:
 
 - Responses can be served from cache, providing significantly faster response times than authenticated requests.
+- These requests would not count toward the client's metered requests, reducing overall costs
 - Responses are not personalized: viewer-specific reaction IDs are null, and viewer-specific blocking rules are not applied.
 
 ## Consistent response structure
