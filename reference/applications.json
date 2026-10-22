@@ -6557,37 +6557,6 @@
         }
       }
     },
-    "/{client_id}/products/{uuid}/": {
-      "delete": {
-        "operationId": "delete_client-id-products-uuid",
-        "summary": "Delete Product",
-        "description": "probe",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
     "/{client_id}/products/admin/": {
       "get": {
         "operationId": "get_client-id-products-admin",
@@ -6687,6 +6656,63 @@
           },
           "401": {
             "description": "Missing or invalid access token."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{uuid}/": {
+      "delete": {
+        "operationId": "delete_client-id-products-uuid",
+        "summary": "Delete Product",
+        "description": "Permanently deletes a product that has never been published. A product that has ever been published can't be deleted, even if it is now unpublished; unpublish it instead. Requires a producer access token for the application.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The product was deleted."
+          },
+          "400": {
+            "description": "The product was published at some point and can't be deleted.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Previously published": {
+                    "value": {
+                      "detail": "Products that have ever been published cannot be deleted."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No product with this ID in the application."
           }
         }
       }
