@@ -7733,7 +7733,7 @@
     "/{client_id}/products/{product_uuid}/variants/from-provider-products/-1-1": {
       "post": {
         "operationId": "post_client-id-products-product-uuid-variants-from-provider-products-1-1",
-        "summary": "Copy of Create Order",
+        "summary": "Retrieve Order",
         "description": "Creates one variant for each provider product you list, on a `konekt` product. Requires a producer access token for the application.\n\nYou send only the provider product IDs. Each variant's label is taken from the provider's own catalog entry, and its cost is left empty, so set it afterwards with Update Variant. The provider product must be an active one in this application. As with Create Variants, the whole batch is validated first and nothing is created if any entry fails. A `konekt` product can have only one variant, and a product can have at most 15.\n\nThe response is the list of new variants, in the same shape as Retrieve Variant.",
         "x-internal": true,
         "parameters": [
