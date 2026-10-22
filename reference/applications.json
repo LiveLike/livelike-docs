@@ -7462,7 +7462,7 @@
       "post": {
         "operationId": "post_client-id-products-id-publish",
         "summary": "Publish Product",
-        "description": "probe",
+        "description": "Publishes a draft or unpublished product so members can see and redeem it. It takes no request body. Requires a producer access token for the application.\n\nThe product must have a product type, at least one image, at least one published category, and a reward item attached to its store. It must also have at least one active variant, and every active variant must have a cost. A `unique_code` product also needs a coupon code uploaded for an active variant. A product that is already published is rejected.",
         "x-internal": true,
         "parameters": [
           {
@@ -7471,20 +7471,32 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The client ID of the application."
           },
           {
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK. The product is returned with state published."
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No product with this ID in the application."
           }
         }
       }
