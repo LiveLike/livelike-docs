@@ -6618,7 +6618,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "probe9",
+        "description": "probe10",
         "x-internal": true,
         "parameters": [
           {
@@ -6638,17 +6638,24 @@
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
                     "results": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
-                          "redemption_method": {
+                          "id": {
                             "type": "string",
-                            "enum": [
-                              "reward_item",
-                              "cash"
-                            ]
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
                           },
                           "state": {
                             "type": "string",
@@ -6657,17 +6664,55 @@
                               "published",
                               "unpublished"
                             ]
-                          },
-                          "redemption_rules": {
-                            "type": "object",
-                            "nullable": true
-                          },
-                          "description": {
-                            "type": "object",
-                            "nullable": true
                           }
                         }
                       }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                          "product_store": {
+                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                            "name": "Summer Rewards"
+                          },
+                          "name": "Team Hoodie",
+                          "state": "draft",
+                          "description": null,
+                          "is_eligible_to_redeem": false,
+                          "redemption_rules": {
+                            "max_redemptions_per_user": 2,
+                            "max_redemption_days": 30
+                          },
+                          "gating_profile_groups": [],
+                          "categories": [
+                            {
+                              "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                              "name": "Gift Cards",
+                              "display_order": 0
+                            }
+                          ],
+                          "images": [],
+                          "attributes": [
+                            {
+                              "key": "size",
+                              "value": "M"
+                            }
+                          ],
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
                     }
                   }
                 }
