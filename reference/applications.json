@@ -7109,7 +7109,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "probe2",
+        "description": "probe3",
         "x-internal": true,
         "parameters": [
           {
@@ -7123,38 +7123,85 @@
           },
           {
             "in": "query",
-            "name": "product_store_id",
+            "name": "ordering",
             "schema": {
               "type": "string",
-              "format": "uuid"
+              "enum": [
+                "created_at",
+                "-created_at",
+                "updated_at",
+                "-updated_at",
+                "expiry_at",
+                "-expiry_at"
+              ]
             },
-            "description": "Only products in this reward store."
+            "description": "Sort field."
           },
           {
             "in": "query",
-            "name": "state",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "status",
             "schema": {
               "type": "string",
               "enum": [
                 "draft",
+                "unpublished",
                 "published",
-                "unpublished"
+                "coming_soon",
+                "expired"
               ]
             },
-            "description": "Only products in this state."
-          },
-          {
-            "in": "query",
-            "name": "is_gated",
-            "schema": {
-              "type": "boolean"
-            },
-            "description": "gated"
+            "description": "Display status."
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
