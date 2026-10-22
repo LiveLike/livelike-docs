@@ -5218,6 +5218,203 @@
             "description": "No active application with this client ID."
           }
         }
+      },
+      "get": {
+        "operationId": "get_client-id-products",
+        "summary": "List Products",
+        "description": "Returns the published products of the application's active reward stores. Drafts and unpublished products are not included; use List Products - Admin to see them. Reads are public, so no producer token is needed. Results are paginated, and each result is a full product in the same shape as Retrieve Product.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products in this reward store."
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products listed under this category."
+          },
+          {
+            "in": "query",
+            "name": "sponsor_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products with this sponsor."
+          },
+          {
+            "in": "query",
+            "name": "product_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "badge",
+                "multiplier",
+                "flair",
+                "common_code",
+                "unique_code",
+                "merchandise",
+                "experience",
+                "konekt"
+              ]
+            },
+            "description": "Only products of this type."
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "updated_at",
+                "-updated_at",
+                "expiry_at",
+                "-expiry_at"
+              ]
+            },
+            "description": "Sort field. Prefix with a minus for descending order."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "draft",
+                              "published",
+                              "unpublished"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                          "product_store": {
+                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                            "name": "Summer Rewards"
+                          },
+                          "name": "Team Hoodie",
+                          "product_type": "merchandise",
+                          "redemption_method": "reward_item",
+                          "state": "published",
+                          "display_status": "published",
+                          "is_eligible_to_redeem": true,
+                          "redemption_rules": {
+                            "max_redemptions_per_user": 2,
+                            "max_redemption_days": 30
+                          },
+                          "categories": [
+                            {
+                              "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                              "name": "Gift Cards",
+                              "display_order": 0
+                            }
+                          ],
+                          "images": [
+                            {
+                              "id": 1,
+                              "image_url": "https://<cdn>/products/hoodie.png",
+                              "display_order": 0
+                            }
+                          ],
+                          "expiry_at": "2027-06-30T23:59:59Z",
+                          "attributes": [
+                            {
+                              "key": "size",
+                              "value": "M"
+                            }
+                          ],
+                          "created_at": "2026-10-22T11:00:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{client_id}/products/-1-1-1-1": {
@@ -5764,29 +5961,6 @@
           },
           "404": {
             "description": "No active application with this client ID."
-          }
-        }
-      }
-    },
-    "/{client_id}/products/-1": {
-      "post": {
-        "operationId": "post_client-id-products-1",
-        "summary": "List Products",
-        "description": "probe",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
