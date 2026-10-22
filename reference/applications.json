@@ -6887,29 +6887,6 @@
         }
       }
     },
-    "/{client_id}/products/admin/": {
-      "get": {
-        "operationId": "get_client-id-products-admin",
-        "summary": "List Products - Admin",
-        "description": "probe",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/{client_id}/products/{id}/publish/": {
       "post": {
         "operationId": "post_client-id-products-id-publish",
@@ -7124,6 +7101,60 @@
           },
           "404": {
             "description": "No product with this ID in the application."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/admin/": {
+      "get": {
+        "operationId": "get_client-id-products-admin",
+        "summary": "List Products - Admin",
+        "description": "probe2",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products in this reward store."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only products in this state."
+          },
+          {
+            "in": "query",
+            "name": "is_gated",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "gated"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
