@@ -6557,107 +6557,6 @@
         }
       }
     },
-    "/{client_id}/products/admin/": {
-      "get": {
-        "operationId": "get_client-id-products-admin",
-        "summary": "List Products - Admin",
-        "description": "probe3",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "query",
-            "name": "ordering",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "created_at",
-                "-created_at",
-                "updated_at",
-                "-updated_at",
-                "expiry_at",
-                "-expiry_at"
-              ]
-            },
-            "description": "Sort field."
-          },
-          {
-            "in": "query",
-            "name": "attributes",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "type": "integer"
-            },
-            "description": "Page number."
-          },
-          {
-            "in": "query",
-            "name": "status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "unpublished",
-                "published",
-                "coming_soon",
-                "expired"
-              ]
-            },
-            "description": "Display status."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "next": {
-                      "type": "string",
-                      "nullable": true
-                    },
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/{client_id}/products/{uuid}/": {
       "delete": {
         "operationId": "delete_client-id-products-uuid",
@@ -6685,6 +6584,109 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/{client_id}/products/admin/": {
+      "get": {
+        "operationId": "get_client-id-products-admin",
+        "summary": "List Products - Admin",
+        "description": "probe4",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "product_store": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "draft",
+                              "published",
+                              "unpublished"
+                            ]
+                          },
+                          "description": {
+                            "type": "object",
+                            "nullable": true
+                          },
+                          "redemption_rules": {
+                            "type": "object",
+                            "nullable": true
+                          },
+                          "images": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "image_url": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "start_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true
+                          },
+                          "created_by": {
+                            "type": "object",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
           }
         }
       }
