@@ -6557,109 +6557,6 @@
         }
       }
     },
-    "/{client_id}/products/admin/": {
-      "get": {
-        "operationId": "get_client-id-products-admin",
-        "summary": "List Products - Admin",
-        "description": "probe4",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string",
-                            "format": "uuid"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "product_store": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "name": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "state": {
-                            "type": "string",
-                            "enum": [
-                              "draft",
-                              "published",
-                              "unpublished"
-                            ]
-                          },
-                          "description": {
-                            "type": "object",
-                            "nullable": true
-                          },
-                          "redemption_rules": {
-                            "type": "object",
-                            "nullable": true
-                          },
-                          "images": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "integer"
-                                },
-                                "image_url": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          },
-                          "start_at": {
-                            "type": "string",
-                            "format": "date-time",
-                            "nullable": true
-                          },
-                          "created_by": {
-                            "type": "object",
-                            "nullable": true
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Missing or invalid access token."
-          }
-        }
-      }
-    },
     "/{client_id}/products/{uuid}/": {
       "delete": {
         "operationId": "delete_client-id-products-uuid",
@@ -6713,6 +6610,66 @@
           },
           "404": {
             "description": "No product with this ID in the application."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/admin/": {
+      "get": {
+        "operationId": "get_client-id-products-admin",
+        "summary": "List Products - Admin",
+        "description": "probe5",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "name": "Team Hoodie",
+                          "description": null,
+                          "redemption_rules": {
+                            "max_redemptions_per_user": 2,
+                            "max_redemption_days": 30
+                          },
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No active application with this client ID."
           }
         }
       }
