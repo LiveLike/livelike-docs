@@ -8531,6 +8531,554 @@
           }
         }
       }
+    },
+    "/{client_id}/products/-1-1-1-1-1": {
+      "post": {
+        "operationId": "post_client-id-products-1-1-1-1-1",
+        "summary": "Copy of Update Variant",
+        "description": "Creates a product in a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint, and a product can't be published until it has at least one.\n\nRequires a producer access token for the application.\n\nSend JSON, or `multipart/form-data` when you upload product images.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application the product belongs to."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The reward store this product belongs to. It must be an active store in this application. Write-only."
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the product. Max 255 characters."
+                  },
+                  "product_type": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "badge",
+                      "multiplier",
+                      "flair",
+                      "common_code",
+                      "unique_code",
+                      "merchandise",
+                      "experience",
+                      "konekt"
+                    ],
+                    "description": "The kind of product. Optional."
+                  },
+                  "redemption_provider": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "konekt"
+                    ],
+                    "description": "The third party that redeems and fulfils the product. Must be `konekt` when `product_type` is `konekt`, and must be empty for every other `product_type`. Leave it out when you fulfil the product yourself."
+                  },
+                  "redemption_method": {
+                    "type": "string",
+                    "enum": [
+                      "reward_item",
+                      "cash"
+                    ],
+                    "default": "reward_item",
+                    "description": "How members pay for the product. `reward_item` debits the member's reward item balance. `cash` means money is collected by an external provider and no reward item is debited."
+                  },
+                  "description": {
+                    "type": "object",
+                    "description": "Rich text description of the product, as a JSON document."
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true,
+                    "description": "The reward item that variant prices are denominated in. It must be one of the reward items attached to the product's store."
+                  },
+                  "redemption_rules": {
+                    "type": "object",
+                    "description": "Limits on redemption. No other keys are accepted.",
+                    "properties": {
+                      "max_redemptions_per_user": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "The most times one member can redeem the product."
+                      },
+                      "max_redemption_days": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "How many days each redemption keeps counting against `max_redemptions_per_user`. Only valid together with `max_redemptions_per_user`."
+                      }
+                    }
+                  },
+                  "gating_profile_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Profile groups whose members are the only ones who can redeem the product. Each group must belong to this application."
+                  },
+                  "category_ids": {
+                    "type": "array",
+                    "description": "Categories to list the product under. Each category must belong to this product's store and be published.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "category_id"
+                      ],
+                      "properties": {
+                        "category_id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Position within the category. If omitted, the product is placed at the end."
+                        }
+                      }
+                    }
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Sponsors to attach. Each sponsor must belong to this application."
+                  },
+                  "start_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product becomes available. Can't be in the past."
+                  },
+                  "expiry_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product stops being available. Must be in the future and not before `start_at`."
+                  },
+                  "redemption_success_message": {
+                    "type": "object",
+                    "description": "Rich text shown to the member after a successful redemption."
+                  },
+                  "redemption_failure_message": {
+                    "type": "object",
+                    "description": "Rich text shown to the member when a redemption fails."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Key and value pairs. Both `key` and `value` are required on every item.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "key",
+                        "value"
+                      ],
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "array",
+                    "description": "Product images. Upload files with `multipart/form-data`, using the field names `image[0]image`, `image[0]display_order`, `image[1]image` and so on. Accepts JPG, PNG, GIF, WEBP and GLB files, up to 3 MB each by default. If `display_order` is omitted, upload order is used.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "string",
+                          "format": "binary"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Draft product": {
+                  "summary": "A merchandise product limited to two redemptions per member",
+                  "value": {
+                    "product_store_id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                    "name": "Team Hoodie",
+                    "product_type": "merchandise",
+                    "redemption_method": "reward_item",
+                    "reward_item_id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                    "redemption_rules": {
+                      "max_redemptions_per_user": 2,
+                      "max_redemption_days": 30
+                    },
+                    "category_ids": [
+                      {
+                        "category_id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                        "display_order": 0
+                      }
+                    ],
+                    "expiry_at": "2027-06-30T23:59:59Z",
+                    "attributes": [
+                      {
+                        "key": "size",
+                        "value": "M"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image[0]image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The first image file. Repeat with `image[1]image` and so on."
+                  },
+                  "image[0]display_order": {
+                    "type": "integer",
+                    "description": "Position of the first image. Optional."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The product is returned in the draft state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "publish_url": {
+                      "type": "string"
+                    },
+                    "unpublish_url": {
+                      "type": "string"
+                    },
+                    "variants_url": {
+                      "type": "string",
+                      "description": "The endpoint for adding variants to this product."
+                    },
+                    "product_store": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_provider": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_method": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ],
+                      "description": "Always `draft` on create."
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "description": "How the product reads to a member: draft, unpublished, or, once published, coming soon or expired."
+                    },
+                    "description": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "is_eligible_to_redeem": {
+                      "type": "boolean"
+                    },
+                    "redemption_rules": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "gating_profile_groups": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "sponsors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "reward_item": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "image_url": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "start_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "expiry_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "redemption_success_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "redemption_failure_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_by": {
+                      "type": "object",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                      "publish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/publish/",
+                      "unpublish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/unpublish/",
+                      "variants_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/variants/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Team Hoodie",
+                      "product_type": "merchandise",
+                      "redemption_provider": null,
+                      "redemption_method": "reward_item",
+                      "state": "draft",
+                      "display_status": "draft",
+                      "description": null,
+                      "is_eligible_to_redeem": false,
+                      "redemption_rules": {
+                        "max_redemptions_per_user": 2,
+                        "max_redemption_days": 30
+                      },
+                      "gating_profile_groups": [],
+                      "categories": [
+                        {
+                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                          "name": "Gift Cards",
+                          "display_order": 0
+                        }
+                      ],
+                      "sponsors": [],
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "images": [],
+                      "start_at": null,
+                      "expiry_at": "2027-06-30T23:59:59Z",
+                      "redemption_success_message": null,
+                      "redemption_failure_message": null,
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "size",
+                          "value": "M"
+                        }
+                      ],
+                      "created_at": "2026-10-22T11:00:00Z",
+                      "updated_at": "2026-10-22T11:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error. The body maps each invalid field to its messages.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid provider": {
+                    "value": {
+                      "redemption_provider": "Not allowed unless product_type is 'konekt' (it must be empty for any other product_type)."
+                    }
+                  },
+                  "Past start": {
+                    "value": {
+                      "start_at": "start_at cannot be in the past."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No active application with this client ID."
+          }
+        }
+      }
     }
   },
   "x-readme": {
