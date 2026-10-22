@@ -1,8 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: >-
-    post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1
+  operationId: post_client-id-order-items-uuid-fulfill
 hidden: true
 link:
   new_tab: false
