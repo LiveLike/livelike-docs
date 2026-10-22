@@ -6618,7 +6618,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "Returns every product in the application, in any state including draft, for producers. Unlike List Products, it adds filters on display status, category name and gating. Requires a producer access token for the application. Results are paginated.",
+        "description": "probe7",
         "x-internal": true,
         "parameters": [
           {
@@ -6627,151 +6627,78 @@
             "required": true,
             "schema": {
               "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "query",
-            "name": "product_store_id",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "Only products in this reward store."
-          },
-          {
-            "in": "query",
-            "name": "category_id",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "Only products listed under this category."
-          },
-          {
-            "in": "query",
-            "name": "category_name",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Only products in a category with this name. Case-insensitive exact match."
-          },
-          {
-            "in": "query",
-            "name": "sponsor_id",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "Only products with this sponsor."
-          },
-          {
-            "in": "query",
-            "name": "product_type",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "badge",
-                "multiplier",
-                "flair",
-                "common_code",
-                "unique_code",
-                "merchandise",
-                "experience",
-                "konekt"
-              ]
-            },
-            "description": "Only products of this type."
-          },
-          {
-            "in": "query",
-            "name": "state",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "published",
-                "unpublished"
-              ]
-            },
-            "description": "Only products in this publication state."
-          },
-          {
-            "in": "query",
-            "name": "status",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "unpublished",
-                "published",
-                "coming_soon",
-                "expired"
-              ]
-            },
-            "description": "Only products with this display status. Unlike state, it separates published products that are coming soon or expired."
-          },
-          {
-            "in": "query",
-            "name": "is_gated",
-            "schema": {
-              "type": "boolean"
-            },
-            "description": "true returns only products restricted to profile groups, false only products open to everyone."
-          },
-          {
-            "in": "query",
-            "name": "attributes",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
-          },
-          {
-            "in": "query",
-            "name": "ordering",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "created_at",
-                "-created_at",
-                "updated_at",
-                "-updated_at",
-                "expiry_at",
-                "-expiry_at"
-              ]
-            },
-            "description": "Sort field. Prefix with a minus for descending order."
-          },
-          {
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "type": "integer"
-            },
-            "description": "Page number."
-          },
-          {
-            "in": "query",
-            "name": "page_size",
-            "schema": {
-              "type": "integer"
-            },
-            "description": "Results per page. Defaults to 20."
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Missing or invalid access token."
-          },
-          "403": {
-            "description": "The token is not a producer token for this application."
-          },
-          "404": {
-            "description": "No active application with this client ID."
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "previous": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "publish_url": {
+                            "type": "string"
+                          },
+                          "unpublish_url": {
+                            "type": "string"
+                          },
+                          "variants_url": {
+                            "type": "string"
+                          },
+                          "product_store": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "product_type": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "redemption_provider": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
