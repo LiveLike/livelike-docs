@@ -13,7 +13,6 @@
 - post_client-id-categories-uuid-publish-1
 - reorder-products-in-a-category
 - create-product
-- post_client-id-products-1
 - list-products
 - list-products-admin
 - retrieve-product
@@ -21,3 +20,4 @@
 - delete-product
 - publish-product
 - unpublish-product
+- post_client-id-products-1
