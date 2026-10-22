@@ -6227,6 +6227,72 @@
           },
           {
             "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products in this reward store."
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products listed under this category."
+          },
+          {
+            "in": "query",
+            "name": "category_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Only products in a category with this name. Case-insensitive exact match."
+          },
+          {
+            "in": "query",
+            "name": "sponsor_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products with this sponsor."
+          },
+          {
+            "in": "query",
+            "name": "product_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "badge",
+                "multiplier",
+                "flair",
+                "common_code",
+                "unique_code",
+                "merchandise",
+                "experience",
+                "konekt"
+              ]
+            },
+            "description": "Only products of this type."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only products in this publication state."
+          },
+          {
+            "in": "query",
             "name": "status",
             "schema": {
               "type": "string",
@@ -6238,7 +6304,55 @@
                 "expired"
               ]
             },
-            "description": "Only products with this display status."
+            "description": "Only products with this display status. Unlike state, it separates published products that are coming soon or expired."
+          },
+          {
+            "in": "query",
+            "name": "is_gated",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "true returns only products restricted to profile groups, false only products open to everyone."
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "updated_at",
+                "-updated_at",
+                "expiry_at",
+                "-expiry_at"
+              ]
+            },
+            "description": "Sort field. Prefix with a minus for descending order."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
           }
         ],
         "responses": {
