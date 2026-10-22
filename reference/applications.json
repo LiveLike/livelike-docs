@@ -6618,7 +6618,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "probe8",
+        "description": "probe9",
         "x-internal": true,
         "parameters": [
           {
@@ -6643,18 +6643,28 @@
                       "items": {
                         "type": "object",
                         "properties": {
-                          "display_status": {
+                          "redemption_method": {
+                            "type": "string",
+                            "enum": [
+                              "reward_item",
+                              "cash"
+                            ]
+                          },
+                          "state": {
                             "type": "string",
                             "enum": [
                               "draft",
-                              "unpublished",
                               "published",
-                              "coming_soon",
-                              "expired"
+                              "unpublished"
                             ]
                           },
-                          "is_eligible_to_redeem": {
-                            "type": "boolean"
+                          "redemption_rules": {
+                            "type": "object",
+                            "nullable": true
+                          },
+                          "description": {
+                            "type": "object",
+                            "nullable": true
                           }
                         }
                       }
