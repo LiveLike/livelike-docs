@@ -7487,7 +7487,70 @@
         ],
         "responses": {
           "200": {
-            "description": "OK. The product is returned with state published."
+            "description": "OK. The product is returned with state published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ]
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "unpublished",
+                        "published",
+                        "coming_soon",
+                        "expired"
+                      ]
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "name": "Team Hoodie",
+                      "state": "published",
+                      "display_status": "published",
+                      "updated_at": "2026-10-22T12:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The product can't be published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Already published": {
+                    "value": {
+                      "detail": "Product is already published."
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Missing or invalid access token."
