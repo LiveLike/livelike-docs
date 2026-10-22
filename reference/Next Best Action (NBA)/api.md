@@ -8,8 +8,6 @@ hidden: false
 metadata:
   robots: index
 ---
-**Contents** [Overview](#overview)[Authentication](#auth)[Endpoints](#endpoints) [/predict_churn](#churn)[/predict_user_segments](#segments)[/predict_nba_arcade](#nba)[/save_results](#save)[/jobs/\{job_id\}](#jobs)[/nba_model_info](#info) [The models](#models)[Segmentation buckets](#buckets)[Errors and config](#errors)
-
 # NBA API Documentation
 
 One service scores a client's users for churn risk, segments and the two best next actions. The API key decides which client's model runs.
@@ -28,14 +26,7 @@ Every model is trained offline per client, and explanations are written offline 
 | `/save_results`          | POST      | Saves the all-users result to a Redshift table                 | Planned, not in the code yet |
 | `/jobs/{job_id}`         | GET       | Status and results of an all-users scoring job                 | Live                         |
 | `/nba_model_info`        | GET       | Model version, training date, signals, actions, test metrics   | Live                         |
-| `/health`, `/recommend`  | GET, POST | The earlier PSG recommender, unchanged                         | Live                         |
-
-**Clients live today**
-
-| Client | Client ID                                  | Model version | Signals | Actions |
-| ------ | ------------------------------------------ | ------------- | ------- | ------- |
-| PSG    | `74tPK1ZegDgUOpNzpalgVXPjRUEi5xje52e3a4Zb` | v1-2026-10-13 | 49      | 8       |
-| WWE    | `axQjqQjgwKrPkw8An5TXzwmaCMpVP9RUyPLynCfL` | v2-2026-10-12 | 39      | 6       |
+| `/health`, `/recommend`  | GET, POST | The earlier recommender, unchanged                             | Live                         |
 
 **How a client is chosen.** The `X-API-Key` header holds the application's client secret. The service looks it up in Redshift (`public.application`) to find the client ID, then loads that client's folder and latest model version. Adding a client means adding a folder (`feature_set.json`, `sql/`, `models/<version>/`) with no change to the service code.
 
@@ -63,7 +54,7 @@ curl -X POST https://<host>/predict_churn \
 
 ## Endpoints and example responses
 
-The examples use PSG. The user is a brand-new fan three days after joining.
+The examples use one illustrative user: a brand-new fan three days after joining. Names and numbers are placeholders.
 
 ### Reply envelope
 
@@ -96,7 +87,7 @@ How likely each user is to have no activity in the next 14 days.
 {
   "prediction_date": "2026-10-22",
   "user_uuid": "a3f1…",
-  "client_id": "74tPK1ZegDgUOpNzpalgVXPjRUEi5xje52e3a4Zb",
+  "client_id": "<client_id>",
   "model_version": "v1-2026-10-13",
   "days_since_last_active": 2.0,
   "churn_score": 0.73,
@@ -130,7 +121,7 @@ Which segment buckets each user falls in, and a plain-language picture of how th
 {
   "prediction_date": "2026-10-22",
   "user_uuid": "a3f1…",
-  "client_id": "74tPK1ZegDgUOpNzpalgVXPjRUEi5xje52e3a4Zb",
+  "client_id": "<client_id>",
   "model_version": "v1-2026-10-13",
   "user_segments": "never_played_a_game, new_user",
   "user_history": "A brand-new user in their first days who has not played a game yet and is the most likely to be lost. Joined about 3 days ago. Last active 2 days ago, with 1 active day(s) and 4 events in the last 28 days. Has not played an arcade game yet. Beyond games, has not answered a quiz, has not made a correct prediction. Has not earned any points yet.",
@@ -154,22 +145,22 @@ The two best next actions per user, with the reason and what similar users did a
 {
   "prediction_date": "2026-10-22",
   "user_uuid": "a3f1…",
-  "client_id": "74tPK1ZegDgUOpNzpalgVXPjRUEi5xje52e3a4Zb",
+  "client_id": "<client_id>",
   "model_version": "v1-2026-10-13",
-  "recommended_action_1": "Play Scratch Card – Scratch to Reveal",
+  "recommended_action_1": "Play Game A – Short description",
   "confidence_score_1": 0.82,
-  "why_predicted_1": "They have not played Scratch Card yet. They have not played anything yet, so an easy first game is the quickest win. As a newcomer who has not played yet, a first success matters most. Their churn risk is moderate (0.73), so a timely nudge can keep them engaged. 11% of the 128 users with a similar activity pattern have already done it. It ranked first among the actions open to this user.",
+  "why_predicted_1": "They have not played Game A yet. They have not played anything yet, so an easy first game is the quickest win. As a newcomer who has not played yet, a first success matters most. Their churn risk is moderate (0.73), so a timely nudge can keep them engaged. 11% of the 128 users with a similar activity pattern have already done it. It ranked first among the actions open to this user.",
   "what_it_would_do_1": "A quick arcade game that can earn points. Users like them who did this stayed active 64% of the time over the next 14 days. A visit in the next few days would keep their habit from fading.",
-  "recommended_game_id_1": "G-01KGQ39WH2X2Y8X1DJSXGZ08WG",
-  "recommended_action_2": "Play Guess What – Quick-Thinking Clue Game",
+  "recommended_game_id_1": "G-<game id A>",
+  "recommended_action_2": "Play Game B – Short description",
   "confidence_score_2": 0.16,
-  "why_predicted_2": "They have not played Guess What yet. They have not played anything yet, so an easy first game is the quickest win. As a newcomer who has not played yet, a first success matters most. 11% of the 128 users with a similar activity pattern have already done it. It is the next-best choice, right behind Scratch Card.",
+  "why_predicted_2": "They have not played Game B yet. They have not played anything yet, so an easy first game is the quickest win. As a newcomer who has not played yet, a first success matters most. 11% of the 128 users with a similar activity pattern have already done it. It is the next-best choice, right behind Game A.",
   "what_it_would_do_2": "Can pay out points. Among similar users who did this, 61% stayed active for the next 14 days. A visit in the next few days would keep their habit from fading.",
-  "recommended_game_id_2": "G-01JSHD62JHF7KD9A6CT570GVTK"
+  "recommended_game_id_2": "G-<game id B>"
 }
 ```
 
-PSG chooses from 8 actions and WWE from 6; the lists are in [the models](#models).
+Each client has its own action list, set in its feature file. The list is returned by `/nba_model_info`.
 
 ### POST /save_results Planned
 
@@ -232,14 +223,14 @@ What model the key's client is running, with its test results.
 
 ```
 {
-  "client": "PSG",
-  "client_id": "74tPK1ZegDgUOpNzpalgVXPjRUEi5xje52e3a4Zb",
+  "client": "<client name>",
+  "client_id": "<client_id>",
   "model_version": "v1-2026-10-13",
   "trained_at": "2026-10-13T04:34:59+00:00",
   "feature_groups": { "core": true, "streaks": true, "game_stats": true, "rewards": true, "tiers": true, "quests": false, "leaderboard": false, "comments": false },
   "feature_count": 49,
   "segments": ["high_churn_risk", "never_played_a_game", "…"],
-  "actions": ["Play Spin the Wheel – Fast-Paced Game of Chance", "…"],
+  "actions": ["Play Game A – Short description", "…"],
   "churn_definition": "no engagement event in the next 14 days",
   "metrics": { "model": { "auc": 0.90, "brier": 0.12 }, "old_formula": { "auc": 0.85, "brier": 0.33 } }
 }
@@ -255,24 +246,21 @@ A gradient-boosted classifier (scikit-learn `HistGradientBoostingClassifier`) th
 
 Bands are cut from today's active users: the top slice is High, the next is Medium, the rest Low. The cut-offs move a little with each retrain.
 
-|                                      | PSG (v1-2026-10-13)            | WWE (v2-2026-10-12)            |
-| ------------------------------------ | ------------------------------ | ------------------------------ |
-| Training data                        | 7 weekly snapshots, 9,614 rows | 6 weekly snapshots, 5,609 rows |
-| Test set (last week)                 | 1,292 users                    | 954 users                      |
-| AUC, model                           | 0.90                           | 0.86                           |
-| AUC, old formula                     | 0.85                           | 0.79                           |
-| AUC, recency only                    | 0.81                           | 0.76                           |
-| Brier score, model (lower is better) | 0.12                           | 0.17                           |
-| Brier score, old formula             | 0.33                           | 0.33                           |
-| High band starts at score            | 0.91                           | 0.78                           |
-| Medium band starts at score          | 0.71                           | 0.41                           |
-| Features used                        | 49                             | 39                             |
+Each trained version records these test results in `metrics.json`, and `/nba_model_info` returns them:
 
-AUC is how well the score ranks leavers above stayers (1.0 is perfect, 0.5 is a coin flip). The Brier score measures how close the percentages are to what happened, so it matters when the score is read as a probability.
+| Result        | What it shows                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------- |
+| Training data | Number of weekly snapshots and rows used                                                    |
+| Test set      | The most recent week, held out from training                                                |
+| AUC           | How well the score ranks leavers above stayers (1.0 is perfect, 0.5 is a coin flip)         |
+| Brier score   | How close the percentages are to what happened (lower is better)                            |
+| Baselines     | The same results for an older formula and for recency alone, so the model's lift is visible |
+| Band cut-offs | The scores where Medium and High start, taken from today's active users                     |
+| Feature count | Number of signals the model reads                                                           |
 
-PSG scores shift with the period: its churn rate swung from 85% in mid-August, after a user spike, to 49 to 64% in September. That is why bands are quantiles of the current active users.
+A client's churn rate can swing between periods, for example after a user spike. That is why bands are quantiles of the current active users and not fixed numbers.
 
-**Signals.** Both models read recency, activity counts over 7, 14 and 28 days, active days, sessions, play and completion counts per game, streaks, reward balance and earnings, days since the last reward, tenure and win rate. PSG also uses quiz and prediction counts and tier. The strongest signals are active days in the last 14 to 28 days, days since the last reward and recent event counts.
+**Signals.** Both models read recency, activity counts over 7, 14 and 28 days, active days, sessions, play and completion counts per game, streaks, reward balance and earnings, days since the last reward, tenure and win rate. Clients with quizzes, predictions or status tiers also get signals from those. The strongest signals are active days in the last 14 to 28 days, days since the last reward and recent event counts.
 
 ### User segmentation
 
@@ -287,10 +275,7 @@ A contextual bandit using Thompson sampling. For each action it learns how often
 - **Adjustments.** Games get a 1.10 boost and an action the user has never done gets a further 1.10. The game they played last is down-weighted to 0.7, so it is not recommended again straight away.
 - **Caveat.** The model is observational. It learns from who stayed active after doing an action, not from a randomized test, so users who choose an action may differ from those who do not. Treat the picks as a ranked suggestion, not proof of cause.
 
-| Client  | Actions the model chooses from                                                                                                                      |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PSG (8) | Spin the Wheel, Guess the Word, Guess the Image, Pick Your Team, Guess What, Scratch Card, Answer a quiz (8 points), Make a prediction (108 points) |
-| WWE (6) | Guess the Word (10 points), Guess the Image (10), Trivia (10), Watch a VOD (50), Join a chat room (30), Connect Fanatics (250, one time)            |
+Each client has its own action list, defined in its feature file. An action is either an arcade game or a reward action such as answering a quiz, making a prediction, watching a video, joining a chat room or linking an account. Reward actions carry the points they pay out, and one-time actions are offered once.
 
 ### Explanations
 
@@ -315,58 +300,31 @@ Training runs per client and writes a new version folder. The API reads `latest.
 | `nba_bandit.json`           | Retention counts per context and action, prior strength, game boost                 |
 | `metrics.json`              | Training data summary, test results, band cut-offs, segment sizes, library versions |
 
-Both current versions were built with scikit-learn 1.9.1, pandas 3.0.5 and numpy 2.5.3. The server must run the same versions to load them.
+The library versions used for training are recorded in `metrics.json`. The server must run the same versions to load the models.
 
 ## Master list of segmentation buckets
 
-Nine buckets, returned in `user_segments` as a comma-separated list. A user can be in several at once, and a user who meets none gets an empty list. Thresholds are set per client from that client's own users when the model is trained. Sizes are for the current model, out of 1,063 active PSG users and 2,029 active WWE users.
+Nine buckets, returned in `user_segments` as a comma-separated list. A user can be in several at once, and a user who meets none gets an empty list. The numbers in each rule (shown as N below) are set per client from that client's own users when the model is trained, so the same name can mean a slightly different number for each client.
 
-| Bucket                | Meaning                                | PSG rule                                                          | WWE rule                                                           | PSG users   | WWE users   |
-| --------------------- | -------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ | ----------- | ----------- |
-| `high_churn_risk`     | Likely to go quiet in the next 14 days | Churn score 0.75 or more                                          | Churn score 0.75 or more                                           | 494         | 496         |
-| `never_played_a_game` | Has not played any arcade game         | No plays of any game                                              | No plays of any game                                               | 33          | 9           |
-| `game_enthusiast`     | Has played many games                  | 10 or more games played                                           | 33 or more games played                                            | 277         | 512         |
-| `high_reward_earner`  | Has earned a lot of points             | 2,524 or more points earned in total                              | 4,630 or more points earned in total                               | 266         | 508         |
-| `new_user`            | Recently joined                        | 21 days or fewer since joining                                    | 21 days or fewer since joining                                     | 384         | 282         |
-| `power_user`          | Very frequent recent activity          | 70 or more events and 6 or more active days in the last 28 days   | 79 or more events and 11 or more active days in the last 28 days   | 242         | 439         |
-| `low_activity`        | Established user who is barely active  | 7 or fewer events in the last 28 days, joined 91 or more days ago | 11 or fewer events in the last 28 days, joined 72 or more days ago | 73          | 201         |
-| `high_status_tier`    | Reached an upper status tier           | Tier level 2 or higher                                            | Tier level 3 or higher                                             | 27          | 211         |
-| `lapsed_user`         | No activity in the last 14 days        | No activity in 14 days                                            | No activity in 14 days                                             | not counted | not counted |
+| Bucket                | Meaning                                | Rule                                                                          |
+| --------------------- | -------------------------------------- | ----------------------------------------------------------------------------- |
+| `high_churn_risk`     | Likely to go quiet in the next 14 days | Churn score of 0.75 or more                                                   |
+| `never_played_a_game` | Has not played any arcade game         | No plays of any game                                                          |
+| `game_enthusiast`     | Has played many games                  | N or more games played (about the top quarter of users)                       |
+| `high_reward_earner`  | Has earned a lot of points             | N or more points earned in total                                              |
+| `new_user`            | Recently joined                        | 21 days or fewer since joining                                                |
+| `power_user`          | Very frequent recent activity          | N events and N active days in the last 28 days, both at a high level          |
+| `low_activity`        | Established user who is barely active  | N or fewer events in the last 28 days, and joined before the median join date |
+| `high_status_tier`    | Reached an upper status tier           | Tier level N or higher (only where the client has tiers)                      |
+| `lapsed_user`         | No activity in the last 14 days        | No activity in 14 days                                                        |
 
 - `high_churn_risk` is based on the churn score, so it changes when the model is retrained. Lapsed users have no score and are not placed in it; they get `lapsed_user` instead.
-- `lapsed_user` is the only bucket not tied to a per-client threshold. It is the same 14-day cut-off the churn model uses.
+- `lapsed_user` is the only bucket not tied to a per-client number. It is the same 14-day cut-off the churn model uses.
 - `low_activity` and `power_user` cannot apply to the same user, and neither can `new_user` and `low_activity`.
-- A badge collector bucket was planned but is not computed for WWE, because no badge assignments were found for it.
 
 ### Fan types
 
-Separate from the buckets, each user also belongs to exactly one fan type. It decides the wording of the NBA explanation and is not returned as a field. The average churn score is across active users of that type.
-
-| PSG fan type                   | Users | Avg churn score |
-| ------------------------------ | ----- | --------------- |
-| One-visit newcomers gone quiet | 342   | 0.91            |
-| Highly engaged regulars        | 242   | 0.02            |
-| Brand-new users                | 128   | 0.80            |
-| Veterans, light now            | 64    | 0.71            |
-| Heavy users gone quiet         | 62    | 0.35            |
-| Cooling players                | 52    | 0.42            |
-| Newcomers testing the app      | 52    | 0.79            |
-| Occasional players             | 41    | 0.60            |
-| Active but irregular           | 40    | 0.20            |
-| Veterans slipping away         | 40    | 0.58            |
-
-| WWE fan type                | Users | Avg churn score |
-| --------------------------- | ----- | --------------- |
-| Highly engaged regulars     | 537   | 0.03            |
-| Light players fading        | 290   | 0.70            |
-| One-day visitors            | 259   | 0.81            |
-| Occasional players          | 223   | 0.38            |
-| Occasional players slipping | 168   | 0.54            |
-| Steady regulars             | 156   | 0.21            |
-| Newcomers yet to play       | 128   | 0.88            |
-| Newcomers who tried a game  | 95    | 0.70            |
-| Heavy users gone quiet      | 91    | 0.17            |
-| Cooling players             | 82    | 0.31            |
+Separate from the buckets, each user also belongs to exactly one fan type. It decides the wording of the NBA explanation and is not returned as a field. Fan types are found from each client's own users at training time and named for the behaviour they describe, for example a group of highly engaged regulars, a group of newcomers who have not played, or heavy users who have gone quiet. A client typically has around ten, and `metrics.json` and `explanations.json` record the name, size and average churn score of each.
 
 ## Errors, limits and configuration
 
