@@ -6867,7 +6867,7 @@
     "/{client_id}/products/-1-1-1-1": {
       "post": {
         "operationId": "post_client-id-products-1-1-1-1",
-        "summary": "Copy of Retrieve Product",
+        "summary": "Update Product",
         "description": "Creates a product in a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint, and a product can't be published until it has at least one.\n\nRequires a producer access token for the application.\n\nSend JSON, or `multipart/form-data` when you upload product images.",
         "x-internal": true,
         "parameters": [
