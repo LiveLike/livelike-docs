@@ -33,7 +33,7 @@
 - list-order-items
 - retrieve-order-item
 - redeem-order-item
-- post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1
+- fulfill-order-item
 - >-
   post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1-1
 - >-
