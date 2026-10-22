@@ -7586,150 +7586,6 @@
         }
       }
     },
-    "/{client_id}/products/{product_uuid}/variants/from-provider-products/-1-2-1-1": {
-      "post": {
-        "operationId": "post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1",
-        "summary": "Redeem Order Item",
-        "description": "Creates one variant for each provider product you list, on a `konekt` product. Requires a producer access token for the application.\n\nYou send only the provider product IDs. Each variant's label is taken from the provider's own catalog entry, and its cost is left empty, so set it afterwards with Update Variant. The provider product must be an active one in this application. As with Create Variants, the whole batch is validated first and nothing is created if any entry fails. A `konekt` product can have only one variant, and a product can have at most 15.\n\nThe response is the list of new variants, in the same shape as Retrieve Variant.",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "path",
-            "name": "product_uuid",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the konekt product to add variants to."
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "provider_products"
-                ],
-                "properties": {
-                  "provider_products": {
-                    "type": "array",
-                    "minItems": 1,
-                    "description": "The provider products to create variants from.",
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "provider_product_id"
-                      ],
-                      "properties": {
-                        "provider_product_id": {
-                          "type": "string",
-                          "format": "uuid",
-                          "description": "The ID of an active provider product in this application."
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "examples": {
-                "One provider product": {
-                  "value": {
-                    "provider_products": [
-                      {
-                        "provider_product_id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created. The new variants.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "format": "uuid"
-                      },
-                      "label": {
-                        "type": "string"
-                      },
-                      "cost": {
-                        "type": "integer",
-                        "nullable": true
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "Created": {
-                    "value": [
-                      {
-                        "id": "d6e3c0f4-8f50-4c19-ae37-4a1f2b9d5c83",
-                        "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/d6e3c0f4-…/",
-                        "product": {
-                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                          "name": "Gift Card"
-                        },
-                        "label": "Amazon Gift Card",
-                        "provider_product": {
-                          "id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58",
-                          "provider": "konekt",
-                          "external_id": "12345",
-                          "data": {
-                            "face_value": 25,
-                            "currency": "USD"
-                          }
-                        },
-                        "cost": null,
-                        "inventory_count": null,
-                        "is_active": true,
-                        "created_at": "2026-10-22T11:45:00Z",
-                        "updated_at": "2026-10-22T11:45:00Z"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Validation error.",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Not a konekt product": {
-                    "value": {
-                      "provider_products": "Variants can only be created from provider products for 'Konekt'-type products."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/{client_id}/products/{product_uuid}/variants/from-provider-products/-1-2-1-1-1": {
       "post": {
         "operationId": "post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1",
@@ -8972,6 +8828,108 @@
                       "redeem_url": null,
                       "fulfill_url": null,
                       "refund_url": null
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{uuid}/redeem/": {
+      "post": {
+        "operationId": "post_client-id-order-items-uuid-redeem",
+        "summary": "Redeem Order Item",
+        "description": "Confirms the payment of a provider-backed order item, moving it from `awaiting_provider_confirmation` to `redeemed`. It takes no request body. Requires a producer access token for the application.\n\nOnly an item in `awaiting_provider_confirmation` can be redeemed. Any other state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The updated order item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "redemption_method": "cash",
+                      "status": "redeemed",
+                      "quantity": 1,
+                      "amount": "25.00",
+                      "unit_amount": "25.00",
+                      "failure_reason": null,
+                      "updated_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "updated_at": "2026-10-22T15:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The item is a built-in product and has no manual steps.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Built-in product": {
+                    "value": {
+                      "detail": "This is a built-in product and cannot be updated.",
+                      "error_code": "PRODUCT_NOT_ACTIONABLE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The item isn't in a state that can be redeemed.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Wrong state": {
+                    "value": {
+                      "detail": "The item could not be updated.",
+                      "error_code": "ITEM_TRANSITION_REJECTED"
                     }
                   }
                 }
