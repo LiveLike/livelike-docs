@@ -30,7 +30,7 @@
 - create-variants-from-provider-products
 - create-order
 - retrieve-order
-- post_client-id-products-product-uuid-variants-from-provider-products-1-2
+- list-order-items
 - post_client-id-products-product-uuid-variants-from-provider-products-1-2-1
 - post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1
 - post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1
