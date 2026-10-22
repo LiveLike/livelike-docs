@@ -6618,7 +6618,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "probe7",
+        "description": "probe8",
         "x-internal": true,
         "parameters": [
           {
@@ -6638,59 +6638,23 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "count": {
-                      "type": "integer"
-                    },
-                    "next": {
-                      "type": "string",
-                      "nullable": true
-                    },
-                    "previous": {
-                      "type": "string",
-                      "nullable": true
-                    },
                     "results": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
-                          "id": {
+                          "display_status": {
                             "type": "string",
-                            "format": "uuid"
+                            "enum": [
+                              "draft",
+                              "unpublished",
+                              "published",
+                              "coming_soon",
+                              "expired"
+                            ]
                           },
-                          "url": {
-                            "type": "string"
-                          },
-                          "publish_url": {
-                            "type": "string"
-                          },
-                          "unpublish_url": {
-                            "type": "string"
-                          },
-                          "variants_url": {
-                            "type": "string"
-                          },
-                          "product_store": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "name": {
-                                "type": "string"
-                              }
-                            }
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "product_type": {
-                            "type": "string",
-                            "nullable": true
-                          },
-                          "redemption_provider": {
-                            "type": "string",
-                            "nullable": true
+                          "is_eligible_to_redeem": {
+                            "type": "boolean"
                           }
                         }
                       }
