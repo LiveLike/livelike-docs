@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: post_client-id-products-1-1
+  operationId: get_client-id-products-admin
 hidden: true
 link:
   new_tab: false
