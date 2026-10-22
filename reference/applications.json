@@ -6213,7 +6213,7 @@
       "get": {
         "operationId": "get_client-id-products-admin",
         "summary": "List Products - Admin",
-        "description": "Returns every product in the application, in any state including draft, for producers. Requires a producer access token for the application.",
+        "description": "Returns every product in the application, in any state including draft, for producers. Unlike List Products, it adds filters on display status, category name and gating. Requires a producer access token for the application. Results are paginated, and each result is a full product in the same shape as Retrieve Product.",
         "x-internal": true,
         "parameters": [
           {
@@ -6222,7 +6222,23 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "unpublished",
+                "published",
+                "coming_soon",
+                "expired"
+              ]
+            },
+            "description": "Only products with this display status."
           }
         ],
         "responses": {
