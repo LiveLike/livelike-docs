@@ -31,7 +31,7 @@
 - create-order
 - retrieve-order
 - list-order-items
-- post_client-id-products-product-uuid-variants-from-provider-products-1-2-1
+- retrieve-order-item
 - post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1
 - post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1
 - >-
