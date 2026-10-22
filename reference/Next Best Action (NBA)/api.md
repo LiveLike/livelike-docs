@@ -162,9 +162,9 @@ The two best next actions per user, with the reason and what similar users did a
 
 Each client has its own action list, set in its feature file. The list is returned by `/nba_model_info`.
 
-### POST /save_results Planned
+### POST /save_results
 
-Not in the code yet. The proposal is to write the cached all-users result, with churn, segment and NBA fields joined into one row per user, to a Redshift table named in the request. Each run adds rows stamped with `prediction_date` and `model_version`, so history builds up.
+Writes the cached all-users result, with churn, segment and NBA fields joined into one row per user, to a Redshift table named in the request. Each run adds rows stamped with `prediction_date` and `model_version`, so history builds up.
 
 ```
 { "table_name": "nba_results" }
@@ -180,42 +180,6 @@ Not in the code yet. The proposal is to write the cached all-users result, with 
 ```
 
 The table name would accept letters, digits and underscores only. Cost is about $0.05 per run for the write, plus storage.
-
-### GET /jobs/{job_id}
-
-Polls an all-users scoring job started by a call without `user_ids`. Add `?view=churn`, `segments` or `nba_arcade` to pick which fields the rows carry (default `churn`). Jobs are kept in memory on the pod that started them, so poll that pod.
-
-| `status`  | Meaning                                                           |
-| --------- | ----------------------------------------------------------------- |
-| `running` | Still scoring. Poll again in a minute.                            |
-| `done`    | Finished; the reply holds `count`, `model_version` and `results`. |
-| `expired` | The one-hour cache lapsed; call the endpoint again.               |
-| `failed`  | The job stopped; `error` holds the reason.                        |
-
-First reply to an all-users call (HTTP 202):
-
-```
-{
-  "job_id": "4eebae02645c",
-  "status": "running",
-  "poll": "/jobs/4eebae02645c?view=nba_arcade",
-  "note": "Scoring all active users. Poll the link, or call this endpoint again in a minute."
-}
-```
-
-Finished job:
-
-```
-{
-  "job_id": "4eebae02645c",
-  "status": "done",
-  "count": 1063,
-  "model_version": "v1-2026-10-13",
-  "started_at": 1792659600.2,
-  "finished_at": 1792659638.9,
-  "results": [ { "…": "one row per user" } ]
-}
-```
 
 ### GET /nba_model_info
 
