@@ -7586,150 +7586,6 @@
         }
       }
     },
-    "/{client_id}/products/{product_uuid}/variants/from-provider-products/-1": {
-      "post": {
-        "operationId": "post_client-id-products-product-uuid-variants-from-provider-products-1",
-        "summary": "Create Order",
-        "description": "Creates one variant for each provider product you list, on a `konekt` product. Requires a producer access token for the application.\n\nYou send only the provider product IDs. Each variant's label is taken from the provider's own catalog entry, and its cost is left empty, so set it afterwards with Update Variant. The provider product must be an active one in this application. As with Create Variants, the whole batch is validated first and nothing is created if any entry fails. A `konekt` product can have only one variant, and a product can have at most 15.\n\nThe response is the list of new variants, in the same shape as Retrieve Variant.",
-        "x-internal": true,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "path",
-            "name": "product_uuid",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the konekt product to add variants to."
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "provider_products"
-                ],
-                "properties": {
-                  "provider_products": {
-                    "type": "array",
-                    "minItems": 1,
-                    "description": "The provider products to create variants from.",
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "provider_product_id"
-                      ],
-                      "properties": {
-                        "provider_product_id": {
-                          "type": "string",
-                          "format": "uuid",
-                          "description": "The ID of an active provider product in this application."
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "examples": {
-                "One provider product": {
-                  "value": {
-                    "provider_products": [
-                      {
-                        "provider_product_id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created. The new variants.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "format": "uuid"
-                      },
-                      "label": {
-                        "type": "string"
-                      },
-                      "cost": {
-                        "type": "integer",
-                        "nullable": true
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "Created": {
-                    "value": [
-                      {
-                        "id": "d6e3c0f4-8f50-4c19-ae37-4a1f2b9d5c83",
-                        "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/d6e3c0f4-…/",
-                        "product": {
-                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                          "name": "Gift Card"
-                        },
-                        "label": "Amazon Gift Card",
-                        "provider_product": {
-                          "id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58",
-                          "provider": "konekt",
-                          "external_id": "12345",
-                          "data": {
-                            "face_value": 25,
-                            "currency": "USD"
-                          }
-                        },
-                        "cost": null,
-                        "inventory_count": null,
-                        "is_active": true,
-                        "created_at": "2026-10-22T11:45:00Z",
-                        "updated_at": "2026-10-22T11:45:00Z"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Validation error.",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Not a konekt product": {
-                    "value": {
-                      "provider_products": "Variants can only be created from provider products for 'Konekt'-type products."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/{client_id}/products/{product_uuid}/variants/from-provider-products/-1-1": {
       "post": {
         "operationId": "post_client-id-products-product-uuid-variants-from-provider-products-1-1",
@@ -9017,6 +8873,205 @@
                   "Not a konekt product": {
                     "value": {
                       "provider_products": "Variants can only be created from provider products for 'Konekt'-type products."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/orders/": {
+      "post": {
+        "operationId": "post_client-id-orders",
+        "summary": "Create Order",
+        "description": "Places a redemption order for the signed-in member. The member spends their reward item balance, or pays a provider in cash, on a product variant. Eligibility, stock and the balance debit are handled together, so an order either goes through completely or not at all. The caller must be a member of the application.\n\nSend an `idempotency_key` so a retried request can't place the order twice. Repeating a key with the same request returns the original order with status 200 instead of 201. Reusing a key for a different request fails with 409.\n\nAn order can contain only one item for now. The response is the order, in the same shape as Retrieve Order, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order.\n\nErrors come back as `detail` and `error_code`. A 400 means the request itself is wrong, for example an unknown variant. A 422 means the order is valid but the current state blocks it, for example out of stock, insufficient balance, or a product that is expired or the member isn't eligible for.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "idempotency_key",
+                  "items"
+                ],
+                "properties": {
+                  "idempotency_key": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "A unique key for this order, chosen by the client. Reuse it only to retry the same request."
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "description": "The variant to redeem. Exactly one item is allowed.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "variant_id"
+                      ],
+                      "properties": {
+                        "variant_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "The ID of the product variant to redeem."
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "How many units to redeem."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "One variant": {
+                  "value": {
+                    "idempotency_key": "order-2026-10-22-0001",
+                    "items": [
+                      {
+                        "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                        "quantity": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The order was placed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    },
+                    "new_balance": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                      "profile": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "status": "created",
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "total_amount": "500.00",
+                      "redemption_method": "reward_item",
+                      "idempotency_key": "order-2026-10-22-0001",
+                      "items": [
+                        {
+                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie",
+                            "type": "merchandise",
+                            "url": "…/products/b4f1a8c2-…/"
+                          },
+                          "variant": {
+                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                            "label": "Medium, Black",
+                            "images": [],
+                            "details": null
+                          },
+                          "redemption_method": "reward_item",
+                          "status": "in_progress",
+                          "quantity": 1,
+                          "amount": "500.00",
+                          "unit_amount": "500.00",
+                          "failure_reason": null
+                        }
+                      ],
+                      "refunds": [],
+                      "created_at": "2026-10-22T14:00:00Z",
+                      "updated_at": "2026-10-22T14:00:00Z",
+                      "new_balance": "1500.00"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Unknown variant": {
+                    "value": {
+                      "detail": "Variant not found.",
+                      "error_code": "VARIANT_NOT_FOUND"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The idempotency key was already used for a different request.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Key conflict": {
+                    "value": {
+                      "detail": "This idempotency key was already used for a different request.",
+                      "error_code": "IDEMPOTENCY_KEY_CONFLICT"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A valid order that the current state blocks.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Rejected": {
+                    "value": {
+                      "detail": "The order could not be placed.",
+                      "error_code": "ORDER_REJECTED"
                     }
                   }
                 }
