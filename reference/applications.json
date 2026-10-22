@@ -4817,6 +4817,518 @@
             }
           }
         }
+      },
+      "get": {
+        "operationId": "get_client-id-products",
+        "summary": "List Products",
+        "description": "Returns the published, active products of the application's active reward stores, paginated. Draft and unpublished products are not included. Use `product_store_id` to list one store's products.\n\nThis endpoint is public; no authentication is required. If a profile access token is sent in the `Authorization` header as `Bearer <token>`, `is_eligible_to_redeem` is evaluated for that profile (publish state, gating and per-member limit); without a token it is always `false`.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by custom product attributes as `key:value`. Repeat the parameter to match several, e.g. `attributes=season:2024&attributes=league:NFL`. The value may itself contain a colon."
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only return products in this category (category UUID)."
+          },
+          {
+            "in": "path",
+            "name": "client_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Client ID of your LiveLike application."
+          },
+          {
+            "name": "ordering",
+            "required": false,
+            "in": "query",
+            "description": "Sort field: `created_at`, `updated_at` or `expiry_at`. Prefix with `-` for descending, e.g. `-created_at`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "Page number of the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only return products in this reward store (store UUID)."
+          },
+          {
+            "in": "query",
+            "name": "product_type",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "enum": [
+                "badge",
+                "common_code",
+                "experience",
+                "flair",
+                "konekt",
+                "merchandise",
+                "multiplier",
+                "unique_code"
+              ]
+            },
+            "description": "Only return products of this type."
+          },
+          {
+            "in": "query",
+            "name": "sponsor_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only return products linked to this sponsor (sponsor UUID)."
+          }
+        ],
+        "security": [
+          {},
+          {
+            "sec0": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paginated list of products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "count",
+                    "results"
+                  ],
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "example": 123
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true,
+                      "format": "uri",
+                      "example": "http://api.example.org/accounts/?page=4"
+                    },
+                    "previous": {
+                      "type": "string",
+                      "nullable": true,
+                      "format": "uri",
+                      "example": "http://api.example.org/accounts/?page=2"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid",
+                            "readOnly": true,
+                            "description": "id"
+                          },
+                          "url": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "url"
+                          },
+                          "publish_url": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "publish_url"
+                          },
+                          "unpublish_url": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "unpublish_url"
+                          },
+                          "variants_url": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "variants_url"
+                          },
+                          "product_store": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "product_store"
+                          },
+                          "product_store_id": {
+                            "type": "string",
+                            "format": "uuid",
+                            "writeOnly": true,
+                            "description": "product_store_id"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the product",
+                            "maxLength": 255
+                          },
+                          "product_type": {
+                            "enum": [
+                              "badge",
+                              "multiplier",
+                              "flair",
+                              "common_code",
+                              "unique_code",
+                              "merchandise",
+                              "experience",
+                              "konekt",
+                              null
+                            ],
+                            "type": "string",
+                            "description": "* `badge` - Badge\n* `multiplier` - Multiplier\n* `flair` - Flair\n* `common_code` - Common code\n* `unique_code` - Unique code\n* `merchandise` - Merchandise\n* `experience` - Experience\n* `konekt` - Konekt",
+                            "x-spec-enum-id": "0d484cc3c6fe66d6",
+                            "nullable": true
+                          },
+                          "redemption_provider": {
+                            "enum": [
+                              "konekt",
+                              "",
+                              null
+                            ],
+                            "type": "string",
+                            "x-spec-enum-id": "07d3726d6031e8af",
+                            "nullable": true,
+                            "description": "Third party that redeems and fulfils this product. Null (the default) means we do it ourselves. Inventory is always ours regardless.\n\n* `konekt` - Konekt"
+                          },
+                          "redemption_method": {
+                            "enum": [
+                              "reward_item",
+                              "cash"
+                            ],
+                            "type": "string",
+                            "x-spec-enum-id": "1348fdf7abf0012a",
+                            "description": "How members pay for this product. 'reward_item' debits our reward-item ledger; other values mean money is collected by an external provider (no ledger debit).\n\n* `reward_item` - Reward item\n* `cash` - Cash"
+                          },
+                          "state": {
+                            "enum": [
+                              "draft",
+                              "published",
+                              "unpublished"
+                            ],
+                            "type": "string",
+                            "description": "* `draft` - Draft\n* `published` - Published\n* `unpublished` - Unpublished",
+                            "x-spec-enum-id": "763af54b5975e428",
+                            "readOnly": true
+                          },
+                          "display_status": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "display_status"
+                          },
+                          "description": {
+                            "nullable": true,
+                            "description": "Rich text description of the product"
+                          },
+                          "is_eligible_to_redeem": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "is_eligible_to_redeem"
+                          },
+                          "redemption_rules": {
+                            "nullable": true,
+                            "description": "Rules governing redemption of this product, e.g. {\"max_redemptions_per_user\": 5, \"max_redemption_days\": 7}"
+                          },
+                          "gating_profile_groups": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "gating_profile_groups"
+                          },
+                          "gating_profile_group_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "description": "gating_profile_group_ids"
+                          },
+                          "categories": {
+                            "type": "string",
+                            "readOnly": true,
+                            "description": "categories"
+                          },
+                          "category_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "category_id": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                  "description": "category_id"
+                                },
+                                "display_order": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "nullable": true,
+                                  "description": "display_order"
+                                }
+                              },
+                              "required": [
+                                "category_id"
+                              ],
+                              "x-readme-ref-name": "ProductCategoryWrite"
+                            },
+                            "writeOnly": true,
+                            "description": "category_ids"
+                          },
+                          "sponsors": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                  "readOnly": true,
+                                  "description": "id"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "maxLength": 200,
+                                  "description": "name"
+                                }
+                              },
+                              "required": [
+                                "name"
+                              ],
+                              "x-readme-ref-name": "ProductSponsorRef"
+                            },
+                            "readOnly": true,
+                            "description": "sponsors"
+                          },
+                          "sponsor_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "description": "sponsor_ids"
+                          },
+                          "reward_item": {
+                            "allOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "readOnly": true,
+                                    "description": "id"
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "maxLength": 200,
+                                    "description": "name"
+                                  }
+                                },
+                                "required": [
+                                  "name"
+                                ],
+                                "x-readme-ref-name": "ProductStoreRewardItem"
+                              }
+                            ],
+                            "readOnly": true,
+                            "description": "reward_item"
+                          },
+                          "reward_item_id": {
+                            "type": "string",
+                            "format": "uuid",
+                            "nullable": true,
+                            "description": "reward_item_id"
+                          },
+                          "images": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer",
+                                  "readOnly": true,
+                                  "description": "id"
+                                },
+                                "image_url": {
+                                  "type": "string",
+                                  "readOnly": true,
+                                  "description": "image_url"
+                                },
+                                "display_order": {
+                                  "type": "integer",
+                                  "maximum": 2147483647,
+                                  "minimum": 0,
+                                  "description": "Position of the image within the product's image gallery"
+                                }
+                              },
+                              "x-readme-ref-name": "ProductImage"
+                            },
+                            "readOnly": true,
+                            "description": "images"
+                          },
+                          "image": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "image": {
+                                  "type": "string",
+                                  "format": "uri",
+                                  "description": "Image or GLB 3D model file",
+                                  "pattern": "(?:jpg|jpeg|png|gif|webp|glb)$"
+                                },
+                                "display_order": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "description": "display_order"
+                                }
+                              },
+                              "required": [
+                                "image"
+                              ],
+                              "x-readme-ref-name": "ProductImageWrite"
+                            },
+                            "writeOnly": true,
+                            "description": "image"
+                          },
+                          "start_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true,
+                            "description": "Time this product becomes available for redemption"
+                          },
+                          "expiry_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true,
+                            "description": "Time this product stops being available for redemption"
+                          },
+                          "redemption_success_message": {
+                            "nullable": true,
+                            "description": "Rich text message shown on successful redemption"
+                          },
+                          "redemption_failure_message": {
+                            "nullable": true,
+                            "description": "Rich text message shown on failed redemption"
+                          },
+                          "is_active": {
+                            "type": "boolean",
+                            "readOnly": true,
+                            "description": "is_active"
+                          },
+                          "custom_data": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Arbitrary client-defined data (e.g. serialized JSON)."
+                          },
+                          "attributes": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "key": {
+                                  "type": "string",
+                                  "maxLength": 200,
+                                  "description": "key"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "maxLength": 200,
+                                  "description": "value"
+                                }
+                              },
+                              "required": [
+                                "key",
+                                "value"
+                              ],
+                              "x-readme-ref-name": "ProductAttribute"
+                            },
+                            "description": "attributes"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "description": "Record creation timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "description": "Last update timestamp"
+                          },
+                          "created_by": {
+                            "allOf": [
+                              {
+                                "type": "object",
+                                "description": "Minimal profile for created_by / updated_by in streak responses. id = uuid, nickname.",
+                                "properties": {
+                                  "id": {
+                                    "type": "string",
+                                    "readOnly": true,
+                                    "description": "id"
+                                  },
+                                  "nickname": {
+                                    "type": "string",
+                                    "maxLength": 100,
+                                    "description": "nickname"
+                                  }
+                                },
+                                "x-readme-ref-name": "ProfileSummary"
+                              }
+                            ],
+                            "readOnly": true,
+                            "nullable": true,
+                            "description": "created_by"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "product_store_id"
+                        ],
+                        "x-readme-ref-name": "Product"
+                      }
+                    }
+                  },
+                  "x-readme-ref-name": "PaginatedProductList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No active application exists for this `client_id`."
+          }
+        }
       }
     }
   },
