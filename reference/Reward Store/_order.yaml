@@ -36,7 +36,6 @@
 - fulfill-order-item
 - reject-order-item
 - create-refund
-- >-
-  post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1-1-1-1
+- list-refunds
 - >-
   post_client-id-products-product-uuid-variants-from-provider-products-1-2-1-1-1-1-1-1-1
