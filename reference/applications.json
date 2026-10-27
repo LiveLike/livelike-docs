@@ -4109,7 +4109,7 @@
             }
           }
         },
-        "x-internal": true
+        "x-internal": false
       },
       "get": {
         "responses": {
