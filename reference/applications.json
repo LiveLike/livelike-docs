@@ -7890,7 +7890,7 @@
         "operationId": "get_client-id-order-items",
         "summary": "List Order Items",
         "description": "Returns order items, which are the individual redemption lines of orders. A producer for the application sees every item in the application, which makes this the operations view, for example to find every item awaiting provider confirmation. A member sees only the items of their own orders. Newest first by default, and paginated.\n\nEach item carries its own `status`: `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. The `redeem_url`, `fulfill_url`, `reject_url` and `refund_url` fields point to the actions available on the item, and are null for built-in products (badge, multiplier, flair and coupon-code lines) that settle at order time.\n\nQuery parameters, all optional:\n- `order_id`, `profile_id`, `product_id`, `variant_id`: UUIDs that narrow the list to one order, member, product or variant.\n- `status`: one of the item statuses above.\n- `redemption_method`: `reward_item` or `cash`.\n- `redemption_provider`: for example `konekt`.\n- `amount__gte`, `amount__lte`: inclusive bounds on the item amount.\n- `is_refunded`: `true` for refunded items, `false` for the rest.\n- `since`, `until`: ISO 8601 times. `since` is inclusive and `until` is exclusive, both on the creation time.\n- `ordering`: `created_at`, `updated_at`, `status`, `amount` or `quantity`. Prefix with a minus for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
