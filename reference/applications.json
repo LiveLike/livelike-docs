@@ -3749,72 +3749,6 @@
       }
     },
     "/{client-id}/categories/{id}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T12:15:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Retrieve Category",
-        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
-        "x-internal": false,
-        "operationId": "get_client-id-categories-1"
-      },
       "post": {
         "responses": {
           "200": {
@@ -9132,6 +9066,98 @@
                           }
                         }
                       ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/": {
+      "get": {
+        "operationId": "get_client-id-categories-id",
+        "summary": "Retrieve Category",
+        "description": "Returns one category by ID. Reads are public, so no producer token is needed. A category in any state can be retrieved, but a deleted category, or one whose store was deleted, returns 404.\n\n`sequence` is the category's position in its store. `state` is `draft`, `published` or `unpublished`, and `publish_url` and `unpublish_url` point to the actions that change it.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "publish_url": "…/categories/3a7e9b21-…/publish/",
+                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-08T12:15:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
                     }
                   }
                 }
