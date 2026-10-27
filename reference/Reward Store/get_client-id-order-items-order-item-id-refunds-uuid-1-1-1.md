@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: get_client-id-order-items-order-item-id-refunds-uuid-1-1-1
+  operationId: post_client-id-provider-product-sync-jobs
 hidden: true
 link:
   new_tab: false
