@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: put_client-id-products-product-uuid-variants-uuid-coupon-codes
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
