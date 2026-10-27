@@ -1,7 +1,7 @@
 ---
 title: Android SDK 3.0.25
 author: Viktor Manev
-hidden: true
+hidden: false
 published_at: '2026-10-27T12:03:27.024Z'
 type: added
 ---
