@@ -7324,7 +7324,7 @@
         "operationId": "put_client-id-products-product-uuid-variants-uuid-coupon-codes",
         "summary": "Replace Coupon Codes",
         "description": "Replaces the whole pool of available coupon codes of a unique-code variant with a new batch. Codes that were already redeemed are left untouched. Requires a producer access token for the application.\n\nThe rules match Upload Coupon Codes: up to 5,000 codes of up to 255 characters, a code already on this variant is skipped and counted, and a code used on a different variant in the same store fails the request. The variant must belong to a `unique_code` product, and the product must not be published.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
