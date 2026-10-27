@@ -6626,7 +6626,7 @@
         "operationId": "get_client-id-products-product-uuid-variants",
         "summary": "List Variants",
         "description": "Returns the active variants of a product. Reads are public, so no producer token is needed. Results are paginated, and each result is a full variant in the same shape as Retrieve Variant. Deleted variants are not included.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
