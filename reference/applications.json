@@ -3748,51 +3748,6 @@
         }
       }
     },
-    "/{client-id}/categories/{id}": {
-      "delete": {
-        "responses": {
-          "204": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "No Content": {
-                    "summary": "No Content",
-                    "value": "{}"
-                  }
-                }
-              }
-            },
-            "description": "No Content"
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Delete Category",
-        "description": "Permanently deletes a category. This is a hard delete, unlike reward stores, which are soft-deleted. Only a category in the draft state can be deleted.",
-        "x-internal": false,
-        "operationId": "get_client-id-categories-1-1"
-      }
-    },
     "/{client_id}/categories/{uuid}/publish/": {
       "post": {
         "responses": {
@@ -9172,6 +9127,54 @@
                   "Store change": {
                     "value": {
                       "product_store_id": "The store of a category cannot be changed."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{uuid}/": {
+      "delete": {
+        "operationId": "delete_client-id-categories-uuid",
+        "summary": "Delete Category",
+        "description": "Permanently deletes a category. Requires a producer access token for the application.\n\nOnly a category in the `draft` state can be deleted, and the deletion is a hard delete, so it can't be undone. A published or unpublished category fails with 400.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The category was deleted."
+          },
+          "400": {
+            "description": "The category isn't a draft.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not a draft": {
+                    "value": {
+                      "detail": "Only draft categories can be deleted."
                     }
                   }
                 }
