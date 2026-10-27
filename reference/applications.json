@@ -7139,7 +7139,7 @@
         "operationId": "delete_client-id-products-product-uuid-variants-id",
         "summary": "Delete Variant",
         "description": "Removes a variant from a product. This is a soft delete: the variant is marked inactive, stops appearing in List Variants and Retrieve Variant, and no longer counts toward the product's limit of 15 variants. Requires a producer access token for the application.\n\nIt is blocked while the product is published. Unpublish the product first.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
