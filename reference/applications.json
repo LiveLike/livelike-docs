@@ -5422,7 +5422,7 @@
         "operationId": "post_client-id-products-id-publish",
         "summary": "Publish Product",
         "description": "Publishes a draft or unpublished product so members can see and redeem it. It takes no request body. Requires a producer access token for the application.\n\nThe product must have a product type, at least one image, at least one published category, and a reward item attached to its store. It must also have at least one active variant, and every active variant must have a cost. A `unique_code` product also needs a coupon code uploaded for an active variant. A product that is already published is rejected.\n\nThe response is the full product, in the same shape as Retrieve Product.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
