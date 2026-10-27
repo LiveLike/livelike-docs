@@ -1,7 +1,7 @@
 - create-reward-store
 - list-reward-store
 - retrieve-reward-store
-- post_client-id-reward-store-1
+- update-reward-store
 - publish-reward-store
 - post_client-id-reward-stores-id-publish-1
 - create-category
