@@ -7197,7 +7197,7 @@
         "operationId": "post_client-id-products-product-uuid-variants-uuid-coupon-codes",
         "summary": "Upload Coupon Codes",
         "description": "Adds a batch of coupon codes to the available pool of a unique-code variant. Requires a producer access token for the application.\n\nSend up to 5,000 codes per request, each up to 255 characters. A code already on this variant is skipped, not treated as an error, and the response reports how many were accepted and how many skipped. A code already used on a different variant in the same store fails the whole request, so a bad file never takes over another variant's codes.\n\nThe variant must belong to a `unique_code` product, and the product must not be published. To replace the pool instead of adding to it, use Replace Coupon Codes.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
