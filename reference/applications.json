@@ -6345,7 +6345,7 @@
         "operationId": "post_client-id-products-product-uuid-variants",
         "summary": "Create Variants",
         "description": "Adds one or more variants to a product. This is a bulk create: the whole batch is validated first, and if any variant fails, none are created. A variant carries the price and stock of a product, and a product can't be published until it has at least one active variant with a cost. Requires a producer access token for the application.\n\nThe product must not be published. A product can have at most 15 active variants. Products of type `konekt`, `unique_code` and `common_code` can have only one. Labels must be unique within the product.\n\nWhich variant fields you set depends on the product's `product_type`, and every other one must be left out:\n- `badge`, `multiplier`, `flair`: `builtin_source_id`, the ID of an active badge, user-activated reward multiplier or flair in this application.\n- `common_code`: `common_coupon_code`.\n- `unique_code`: none. Add codes with `coupon_codes`, or with Upload Coupon Codes.\n- `merchandise`: `color_label`, `color_hexcode` or `size`. At least one is required.\n- `experience`: `event_start` and `event_end`.\n- `konekt`: `provider_product_id`.\n\nSend JSON, or `multipart/form-data` when you upload variant images.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
