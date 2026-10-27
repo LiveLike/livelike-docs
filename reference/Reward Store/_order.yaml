@@ -42,4 +42,4 @@
 - list-provider-products
 - retrieve-provider-product
 - create-provider-product-sync-job
-- post_client-id-provider-product-sync-jobs-1
+- list-provider-product-sync-jobs
