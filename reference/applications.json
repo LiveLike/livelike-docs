@@ -4408,7 +4408,7 @@
             }
           }
         },
-        "x-internal": true,
+        "x-internal": false,
         "operationId": "post_client-id-categories-id"
       },
       "delete": {
