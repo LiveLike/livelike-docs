@@ -9298,6 +9298,106 @@
           }
         }
       }
+    },
+    "/{client_id}/orders/{uuid}/-1": {
+      "get": {
+        "operationId": "get_client-id-orders-uuid-1",
+        "summary": "Copy of Retrieve Order",
+        "description": "Returns one order of the signed-in member, with its items and any refunds. A member can only retrieve their own orders, and the caller must be a member of the application.\n\nThe order itself is only a container. Its `status` is `created` or `cancelled`, and the redemption progress of each purchase lives on the items, whose `status` is `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. `total_amount` is the sum of the item amounts, and `redemption_method` shows whether the member paid with a reward item or in cash.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                      "profile": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "status": "created",
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "total_amount": "500.00",
+                      "redemption_method": "reward_item",
+                      "idempotency_key": "order-2026-10-22-0001",
+                      "items": [
+                        {
+                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie",
+                            "type": "merchandise",
+                            "url": "…/products/b4f1a8c2-…/"
+                          },
+                          "variant": {
+                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                            "label": "Medium, Black",
+                            "images": [],
+                            "details": null
+                          },
+                          "redemption_method": "reward_item",
+                          "status": "redeemed",
+                          "quantity": 1,
+                          "amount": "500.00",
+                          "unit_amount": "500.00",
+                          "failure_reason": null
+                        }
+                      ],
+                      "refunds": [],
+                      "created_at": "2026-10-22T14:00:00Z",
+                      "updated_at": "2026-10-22T14:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-readme": {
