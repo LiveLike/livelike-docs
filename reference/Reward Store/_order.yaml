@@ -10,7 +10,7 @@
 - update-category
 - delete-category
 - publish-category
-- post_client-id-categories-uuid-publish-1
+- unpublish-category
 - reorder-products-in-a-category
 - create-product
 - list-products
