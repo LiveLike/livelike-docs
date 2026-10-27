@@ -4451,7 +4451,7 @@
         ],
         "summary": "Delete Category",
         "description": "Permanently deletes a category. This is a hard delete, unlike reward stores, which are soft-deleted. Only a category in the draft state can be deleted.",
-        "x-internal": true,
+        "x-internal": false,
         "operationId": "get_client-id-categories-1-1"
       }
     },
