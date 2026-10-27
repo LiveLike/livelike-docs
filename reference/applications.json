@@ -6902,7 +6902,7 @@
         "operationId": "patch_client-id-products-product-uuid-variants-uuid",
         "summary": "Update Variant",
         "description": "Updates a variant. Send only the fields you want to change. Requires a producer access token for the application.\n\nThe product must be unpublished or in draft, because a published product can't have its variants edited. The type-specific fields follow the same rules as Create Variants, so a field that doesn't match the product's `product_type` is rejected. `provider_product_id` can't be changed after the variant is created.\n\n`images` and `attributes` are full replacements. Send the complete list, and send an empty list to clear them. On a unique-code product, `coupon_codes` replaces the pool of available codes, and redeemed codes are never touched. Omit it to leave the pool alone, or send an empty list to clear the available codes.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
