@@ -5640,7 +5640,7 @@
         "operationId": "delete_client-id-products-uuid",
         "summary": "Delete Product",
         "description": "Permanently deletes a product that has never been published. A product that has ever been published can't be deleted, even if it is now unpublished; unpublish it instead. Requires a producer access token for the application.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
