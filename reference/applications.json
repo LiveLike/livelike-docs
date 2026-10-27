@@ -3748,73 +3748,6 @@
         }
       }
     },
-    "/{client_id}/categories/{uuid}/unpublish/-1": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "unpublished",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T11:00:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Unpublish Category",
-        "x-internal": false,
-        "operationId": "post_client-id-categories-uuid-unpublish-1"
-      }
-    },
     "/categories/{uuid}/products/reorder/": {
       "post": {
         "responses": {
@@ -9198,6 +9131,91 @@
                   "Missing fields": {
                     "value": {
                       "detail": "A category requires sequence, description to be published."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/unpublish/": {
+      "post": {
+        "operationId": "post_client-id-categories-id-unpublish",
+        "summary": "Unpublish Category",
+        "description": "Moves a published category to the `unpublished` state. It takes no request body. Requires a producer access token for the application.\n\nOnly a published category can be unpublished. An unpublished category can be published again, but it can no longer be deleted, because only drafts can be. The response is the updated category, in the same shape as Retrieve Category.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The category is returned with state unpublished.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "unpublished",
+                      "is_active": true,
+                      "updated_at": "2026-10-27T10:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The category isn't published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not published": {
+                    "value": {
+                      "detail": "Only published categories can be unpublished."
                     }
                   }
                 }
