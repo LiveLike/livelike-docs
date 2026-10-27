@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: post_client-id-categories-uuid-publish
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
