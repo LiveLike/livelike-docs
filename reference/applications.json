@@ -5534,7 +5534,7 @@
         "operationId": "post_client-id-products-id-unpublish",
         "summary": "Unpublish Product",
         "description": "Takes a published product off sale. It takes no request body. Requires a producer access token for the application.\n\nOnly a published product can be unpublished. An unpublished product can be edited again with Update Product and published again with Publish Product. A product that was ever published can't be deleted.\n\nThe response is the full product, in the same shape as Retrieve Product.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
