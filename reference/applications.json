@@ -8454,7 +8454,7 @@
         "operationId": "post_client-id-order-items-order-item-id-refunds",
         "summary": "Create Refund",
         "description": "Refunds one order item. The item's amount is credited back to the member, the item is restocked, and the item is marked `refunded`. Refunds are per item, and the item is identified by the URL. Requires a producer access token for the application.\n\nA `reason` is required. The response is the refund, in the same shape as Retrieve Refund, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order. A refund that can't be issued fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and can't be refunded, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
