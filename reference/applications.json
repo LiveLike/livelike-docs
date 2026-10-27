@@ -8122,7 +8122,7 @@
         "operationId": "post_client-id-order-items-uuid-redeem",
         "summary": "Redeem Order Item",
         "description": "Confirms the payment of a provider-backed order item, moving it from `awaiting_provider_confirmation` to `redeemed`. It takes no request body. Requires a producer access token for the application.\n\nOnly an item in `awaiting_provider_confirmation` can be redeemed. Any other state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
