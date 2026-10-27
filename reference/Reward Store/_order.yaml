@@ -3,7 +3,7 @@
 - retrieve-reward-store
 - update-reward-store
 - publish-reward-store
-- post_client-id-reward-stores-id-publish-1
+- unpublish-reward-store
 - create-category
 - list-categories
 - get_client-id-categories-1
