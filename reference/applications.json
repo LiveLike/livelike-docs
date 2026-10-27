@@ -9414,184 +9414,6 @@
         }
       }
     },
-    "/{client_id}/order-items/{order_item_id}/refunds/{uuid}/-1-1": {
-      "get": {
-        "operationId": "get_client-id-order-items-order-item-id-refunds-uuid-1-1",
-        "summary": "Retrieve Provider Product",
-        "description": "Returns one refund that covers an order item. Requires a producer access token for the application.\n\n`status` is `pending`, `completed` or `failed`. `total_amount` is the sum of the refunded item amounts, and `items` lists each refunded order item with its variant, product, amount and quantity. `reason` is the reason given when the refund was created, and `created_by` is the producer who issued it.",
-        "x-internal": false,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "path",
-            "name": "order_item_id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the order item."
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the refund."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "total_amount": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "examples": {
-                  "OK": {
-                    "value": {
-                      "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
-                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
-                      "status": "completed",
-                      "total_amount": "500.00",
-                      "reason": "Member requested a refund",
-                      "items": [
-                        {
-                          "order_item_id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
-                          "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
-                          "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                          "amount": "500.00",
-                          "quantity": 1
-                        }
-                      ],
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      },
-                      "created_at": "2026-10-22T16:30:00Z",
-                      "updated_at": "2026-10-22T16:30:00Z"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{client_id}/order-items/{order_item_id}/refunds/{uuid}/-1-1-1": {
-      "get": {
-        "operationId": "get_client-id-order-items-order-item-id-refunds-uuid-1-1-1",
-        "summary": "Create Provider Product Sync Job",
-        "description": "Returns one refund that covers an order item. Requires a producer access token for the application.\n\n`status` is `pending`, `completed` or `failed`. `total_amount` is the sum of the refunded item amounts, and `items` lists each refunded order item with its variant, product, amount and quantity. `reason` is the reason given when the refund was created, and `created_by` is the producer who issued it.",
-        "x-internal": false,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "path",
-            "name": "order_item_id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the order item."
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the refund."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "total_amount": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "examples": {
-                  "OK": {
-                    "value": {
-                      "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
-                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
-                      "status": "completed",
-                      "total_amount": "500.00",
-                      "reason": "Member requested a refund",
-                      "items": [
-                        {
-                          "order_item_id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
-                          "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
-                          "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                          "amount": "500.00",
-                          "quantity": 1
-                        }
-                      ],
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      },
-                      "created_at": "2026-10-22T16:30:00Z",
-                      "updated_at": "2026-10-22T16:30:00Z"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/{client_id}/provider-products/": {
       "get": {
         "operationId": "get_client-id-provider-products",
@@ -9693,6 +9515,182 @@
                           "created_at": "2026-10-20T08:00:00Z",
                           "updated_at": "2026-10-26T08:00:00Z"
                         }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/provider-products/{id}/": {
+      "get": {
+        "operationId": "get_client-id-provider-products-id",
+        "summary": "Retrieve Provider Product",
+        "description": "Returns one synced provider product, including the raw product payload as the provider last returned it. Requires a producer access token for the application.\n\n`product_data` is the provider's own payload, so its fields differ between providers. `issued_inventory` is the number of units issued by an admin. The `id` is the value to send as `provider_product_id` when creating a variant from a provider product.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the provider product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "external_id": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "d7e8f9a0-1b2c-4d3e-8f4a-5b6c7d8e9f01",
+                      "provider": "konekt",
+                      "external_id": "KNK-10432",
+                      "product_data": {
+                        "productId": "KNK-10432",
+                        "name": "Amazon Gift Card",
+                        "currency": "USD",
+                        "faceValue": 25
+                      },
+                      "issued_inventory": 0,
+                      "is_active": true,
+                      "created_at": "2026-10-20T08:00:00Z",
+                      "updated_at": "2026-10-26T08:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/provider-product-sync-jobs/": {
+      "post": {
+        "operationId": "post_client-id-provider-product-sync-jobs",
+        "summary": "Create Provider Product Sync Job",
+        "description": "Starts a background sync of an external provider's product catalog into the application's provider products. The job is created in the `pending` state and the call returns straight away with 202. Poll Retrieve Provider Product Sync Job for its progress, and use List Provider Products once it completes.\n\nThis needs a privileged LiveLike staff account. A producer access token is not enough, because a catalog sync affects raw provider data that underlies every application.\n\nA job moves through `pending`, `running` and then `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "default": "konekt",
+                    "description": "The provider whose catalog to sync. Defaults to konekt, which is the only provider integrated so far."
+                  }
+                }
+              },
+              "examples": {
+                "Sync Konekt": {
+                  "value": {
+                    "provider": "konekt"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted. The sync job was queued.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "products_synced": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Accepted": {
+                    "value": {
+                      "id": "e8f9a0b1-2c3d-4e4f-9a5b-6c7d8e9f0a12",
+                      "provider": "konekt",
+                      "status": "pending",
+                      "products_synced": 0,
+                      "error_message": null,
+                      "started_at": null,
+                      "finished_at": null,
+                      "created_at": "2026-10-27T06:45:00Z",
+                      "updated_at": "2026-10-27T06:45:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid provider.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid provider": {
+                    "value": {
+                      "provider": [
+                        "\"acme\" is not a valid choice."
                       ]
                     }
                   }
