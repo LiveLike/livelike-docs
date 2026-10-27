@@ -4988,8 +4988,8 @@
                     "description": "How members pay for the product."
                   },
                   "description": {
-                    "type": "object",
-                    "description": "Rich text description of the product, as a JSON document."
+                    "type": "string",
+                    "description": "Description of the product, as plain text."
                   },
                   "reward_item_id": {
                     "type": "string",
@@ -5056,11 +5056,11 @@
                   },
                   "redemption_success_message": {
                     "type": "object",
-                    "description": "Rich text shown after a successful redemption."
+                    "description": "Message shown after a successful redemption, as a JSON object such as {\"title\": \"Success!\", \"message\": \"Your reward has been redeemed\"}."
                   },
                   "redemption_failure_message": {
                     "type": "object",
-                    "description": "Rich text shown when a redemption fails."
+                    "description": "Message shown when a redemption fails, as a JSON object such as {\"title\": \"Oops!\", \"message\": \"We could not redeem your reward\"}."
                   },
                   "custom_data": {
                     "type": "string",
@@ -5104,6 +5104,7 @@
                 "Rename and limit": {
                   "value": {
                     "name": "Team Hoodie 2027",
+                    "description": "The 2027 edition of our team hoodie.",
                     "redemption_rules": {
                       "max_redemptions_per_user": 1
                     },
@@ -5149,6 +5150,7 @@
                         "name": "Summer Rewards"
                       },
                       "name": "Team Hoodie 2027",
+                      "description": "The 2027 edition of our team hoodie.",
                       "product_type": "merchandise",
                       "redemption_method": "reward_item",
                       "state": "unpublished",
