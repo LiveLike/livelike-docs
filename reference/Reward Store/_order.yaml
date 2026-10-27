@@ -39,6 +39,6 @@
 - create-refund
 - list-refunds
 - retrieve-refund
-- get_client-id-order-items-order-item-id-refunds-uuid-1
+- list-provider-products
 - get_client-id-order-items-order-item-id-refunds-uuid-1-1
 - get_client-id-order-items-order-item-id-refunds-uuid-1-1-1
