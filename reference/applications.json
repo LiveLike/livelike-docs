@@ -3748,74 +3748,6 @@
         }
       }
     },
-    "/{client-id}/reward-stores/{id}/unpublish/-1": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/publish/",
-                      "unpublish_url": "…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "unpublished",
-                      "is_active": true,
-                      "custom_data": null,
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-…",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T10:05:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Unpublish Reward Store",
-        "description": "Moves a store to the unpublished state.",
-        "x-internal": false,
-        "operationId": "post_client-id-reward-stores-id-unpublish-1"
-      }
-    },
     "/{client-id}/categories/": {
       "post": {
         "responses": {
@@ -9010,6 +8942,100 @@
                   "No reward item": {
                     "value": {
                       "detail": "Attach a reward item to the store before publishing."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/reward-stores/{id}/unpublish/": {
+      "post": {
+        "operationId": "post_client-id-reward-stores-id-unpublish",
+        "summary": "Unpublish Reward Store",
+        "description": "Moves a published reward store to the `unpublished` state. It takes no request body. Requires a producer access token for the application.\n\nOnly a published store can be unpublished. Once unpublished, all of its fields can be edited again with Update Reward Store. The response is the updated store, in the same shape as Retrieve Reward Store.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The store is returned with state unpublished.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "name": "Summer Rewards",
+                      "state": "unpublished",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-27T10:10:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The store isn't published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not published": {
+                    "value": {
+                      "detail": "Only published product stores can be unpublished."
                     }
                   }
                 }
