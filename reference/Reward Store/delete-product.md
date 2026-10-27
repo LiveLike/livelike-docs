@@ -2,7 +2,7 @@
 api:
   file: applications.json
   operationId: delete_client-id-products-uuid
-hidden: true
+hidden: false
 link:
   new_tab: false
 metadata:
