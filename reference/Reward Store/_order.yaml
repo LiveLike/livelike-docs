@@ -40,5 +40,5 @@
 - list-refunds
 - retrieve-refund
 - list-provider-products
-- get_client-id-order-items-order-item-id-refunds-uuid-1-1
+- retrieve-provider-product
 - get_client-id-order-items-order-item-id-refunds-uuid-1-1-1
