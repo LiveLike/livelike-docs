@@ -2,6 +2,8 @@
 title: Android SDK 3.0.25
 author: Viktor Manev
 hidden: false
+metadata:
+  robots: noindex
 published_at: '2026-10-27T12:03:27.024Z'
 type: added
 ---
@@ -13,7 +15,7 @@ Added optional `excludeCommentReportThreshold` to comment client requests, comme
 
 ## Usage
 
-Pass a positive integer such as 1, 2, 5 ... to exclude comments at or above that report count. Reported parents with replies remain visible.
+Pass a positive integer such as 1, 2, 3  ... to exclude comments at or above that report count. Reported parents with replies remain visible.
 
 ## Configuration
 
