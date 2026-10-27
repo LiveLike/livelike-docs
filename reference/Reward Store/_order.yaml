@@ -30,6 +30,7 @@
 - create-variants-from-provider-products
 - create-order
 - retrieve-order
+- get_client-id-orders-uuid-1
 - list-order-items
 - retrieve-order-item
 - redeem-order-item
@@ -38,4 +39,3 @@
 - create-refund
 - list-refunds
 - retrieve-refund
-- get_client-id-orders-uuid-1
