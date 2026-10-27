@@ -8,7 +8,7 @@
 - list-categories
 - retrieve-category
 - update-category
-- get_client-id-categories-1-1
+- delete-category
 - publish-category
 - post_client-id-categories-uuid-publish-1
 - reorder-products-in-a-category
