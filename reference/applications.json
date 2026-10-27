@@ -8600,7 +8600,7 @@
         "operationId": "get_client-id-order-items-order-item-id-refunds",
         "summary": "List Refunds",
         "description": "Returns the refunds that cover an order item, so for an item that has been refunded it is a list with that one refund. Requires a producer access token for the application. Results are paginated, and each result is a refund in the same shape as Retrieve Refund.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
