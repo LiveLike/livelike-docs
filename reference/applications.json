@@ -3744,7 +3744,7 @@
         ],
         "summary": "Retrieve Reward Store",
         "operationId": "get_client-id-reward-stores-1",
-        "x-internal": true
+        "x-internal": false
       },
       "patch": {
         "responses": {
