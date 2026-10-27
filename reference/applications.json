@@ -9704,7 +9704,7 @@
     "/{client_id}/provider-product-sync-jobs/-1": {
       "post": {
         "operationId": "post_client-id-provider-product-sync-jobs-1",
-        "summary": "Copy of Create Provider Product Sync Job",
+        "summary": "List Provider Product Sync Jobs",
         "description": "Starts a background sync of an external provider's product catalog into the application's provider products. The job is created in the `pending` state and the call returns straight away with 202. Poll Retrieve Provider Product Sync Job for its progress, and use List Provider Products once it completes.\n\nThis needs a privileged LiveLike staff account. A producer access token is not enough, because a catalog sync affects raw provider data that underlies every application.\n\nA job moves through `pending`, `running` and then `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.",
         "x-internal": false,
         "parameters": [
