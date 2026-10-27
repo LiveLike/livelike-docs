@@ -3491,73 +3491,6 @@
         "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-unarchive"
       }
     },
-    "/{client_id}/reward-stores": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "count": 1,
-                      "next": null,
-                      "previous": null,
-                      "results": [
-                        {
-                          "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                          "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                          "publish_url": "…/publish/",
-                          "unpublish_url": "…/unpublish/",
-                          "name": "Summer Rewards",
-                          "state": "published",
-                          "is_active": true,
-                          "custom_data": null,
-                          "reward_items": [
-                            {
-                              "id": "6f1c2a3e-…",
-                              "name": "Gold Coins"
-                            }
-                          ],
-                          "attributes": [
-                            {
-                              "key": "season",
-                              "value": "2026"
-                            }
-                          ],
-                          "created_at": "2026-10-08T09:30:00Z",
-                          "updated_at": "2026-10-08T10:05:00Z",
-                          "created_by": {
-                            "id": "b1a2c3d4-…",
-                            "nickname": "upend"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "List Reward Store",
-        "operationId": "get_client-id-reward-stores",
-        "description": "Returns the application's reward stores, newest first (-created_at). Inactive (soft-deleted) stores are never returned, but stores in every state (draft, published, unpublished) are.",
-        "x-internal": true
-      }
-    },
     "/{client_id}/reward-stores/{id}/": {
       "get": {
         "responses": {
@@ -8855,6 +8788,132 @@
                   "Foreign reward item": {
                     "value": {
                       "reward_item_ids": "One or more reward items do not belong to this application."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-reward-stores",
+        "summary": "List Reward Stores",
+        "description": "Returns the reward stores of an application. Reads are public, so no producer token is needed. Stores in every state (`draft`, `published` and `unpublished`) are returned, and only deleted stores are left out. Results are paginated, and each result is a store in the same shape as Retrieve Reward Store.\n\nQuery parameters, all optional:\n- `state`: `draft`, `published` or `unpublished`.\n- `reward_item_id`: only stores that use this reward item.\n- `attributes`: `key:value`, for example `attributes=season:2026`. Repeat the parameter to AND the pairs.\n- `ordering`: a field name, with a minus prefix for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only stores in this state."
+          },
+          {
+            "in": "query",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only stores that use this reward item."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                          "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                          "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                          "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                          "name": "Summer Rewards",
+                          "state": "published",
+                          "is_active": true,
+                          "custom_data": null,
+                          "reward_items": [
+                            {
+                              "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                              "name": "Gold Coins"
+                            }
+                          ],
+                          "sponsors": [],
+                          "attributes": [
+                            {
+                              "key": "season",
+                              "value": "2026"
+                            }
+                          ],
+                          "created_at": "2026-10-08T09:30:00Z",
+                          "updated_at": "2026-10-08T10:05:00Z",
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
                     }
                   }
                 }
