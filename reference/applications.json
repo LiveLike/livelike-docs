@@ -8025,7 +8025,7 @@
         "operationId": "get_client-id-order-items-uuid",
         "summary": "Retrieve Order Item",
         "description": "Returns one order item. A producer for the application can retrieve any item, and a member only the items of their own orders.\n\n`amount` is the line total and `unit_amount` the price of one unit. `variant.details` depends on the product type. For a badge, multiplier or flair it is the granted entity. For a unique-code or common-code product it is `{\"codes\": [...]}`, which is empty once the item is refunded or rejected. For a provider product it is `{\"assets\": [...]}`, the items the provider issued, which stays empty until the provider responds. It is null for other types. `failure_reason` holds the reason given when the item was rejected.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
