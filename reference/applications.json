@@ -6869,6 +6869,121 @@
             }
           }
         }
+      },
+      "get": {
+        "operationId": "get_client-id-orders",
+        "summary": "List Orders",
+        "description": "Returns the orders of the calling member in this application, newest first, and paginated. A member only ever sees their own orders, so there is no way to list another member's orders with this endpoint. Use List Order Items for the producer view across the whole application.\n\nAn order is a container: its lifecycle lives on its items, and the order `status` is only `created` or `cancelled`. Each order carries its items and any refunds issued against it.\n\nQuery parameters, all optional:\n- `status`: `created` or `cancelled`.\n- `redemption_method`: `reward_item` or `cash`.\n- `reward_item_id`, `product_id`, `variant_id`: UUIDs that narrow the list to orders paid with one reward item, or containing one product or variant.\n- `total_amount__gte`, `total_amount__lte`: inclusive bounds on the order total.\n- `since`, `until`: ISO 8601 times. `since` is inclusive and `until` is exclusive, both on the creation time.\n- `ordering`: `created_at`, `updated_at`, `status` or `total_amount`. Prefix with a minus for descending order. The default is `-created_at`.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created",
+                "cancelled"
+              ]
+            },
+            "description": "Only orders with this status."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "total_amount": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                          "profile": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          },
+                          "status": "created",
+                          "reward_item": {
+                            "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                            "name": "Gold Coins"
+                          },
+                          "total_amount": "500.00",
+                          "redemption_method": "reward_item",
+                          "idempotency_key": "order-2026-10-22-0001",
+                          "items": [
+                            {
+                              "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                              "status": "redeemed",
+                              "quantity": 1,
+                              "amount": "500.00",
+                              "unit_amount": "500.00"
+                            }
+                          ],
+                          "refunds": [],
+                          "created_at": "2026-10-22T14:00:00Z",
+                          "updated_at": "2026-10-22T14:00:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{client_id}/orders/{uuid}/": {
@@ -9290,106 +9405,6 @@
                           ]
                         }
                       ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{client_id}/orders/{uuid}/-1": {
-      "get": {
-        "operationId": "get_client-id-orders-uuid-1",
-        "summary": "List Orders",
-        "description": "Returns one order of the signed-in member, with its items and any refunds. A member can only retrieve their own orders, and the caller must be a member of the application.\n\nThe order itself is only a container. Its `status` is `created` or `cancelled`, and the redemption progress of each purchase lives on the items, whose `status` is `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. `total_amount` is the sum of the item amounts, and `redemption_method` shows whether the member paid with a reward item or in cash.",
-        "x-internal": false,
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The client ID of the application."
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "description": "The ID of the order."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "total_amount": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "examples": {
-                  "OK": {
-                    "value": {
-                      "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
-                      "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
-                      "profile": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      },
-                      "status": "created",
-                      "reward_item": {
-                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
-                        "name": "Coins"
-                      },
-                      "total_amount": "500.00",
-                      "redemption_method": "reward_item",
-                      "idempotency_key": "order-2026-10-22-0001",
-                      "items": [
-                        {
-                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
-                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
-                          "product": {
-                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                            "name": "Team Hoodie",
-                            "type": "merchandise",
-                            "url": "…/products/b4f1a8c2-…/"
-                          },
-                          "variant": {
-                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
-                            "label": "Medium, Black",
-                            "images": [],
-                            "details": null
-                          },
-                          "redemption_method": "reward_item",
-                          "status": "redeemed",
-                          "quantity": 1,
-                          "amount": "500.00",
-                          "unit_amount": "500.00",
-                          "failure_reason": null
-                        }
-                      ],
-                      "refunds": [],
-                      "created_at": "2026-10-22T14:00:00Z",
-                      "updated_at": "2026-10-22T14:00:00Z"
                     }
                   }
                 }
