@@ -5838,7 +5838,7 @@
         "operationId": "patch_client-id-products-id",
         "summary": "Update Product",
         "description": "Updates a product. Send only the fields you want to change. Requires a producer access token for the application.\n\nA published product can't be edited: unpublish it first, then edit, then publish it again. The array fields `category_ids`, `sponsor_ids`, `gating_profile_group_ids`, `attributes` and `image` are full replacements. Send the complete list, and send an empty list to clear them. Omitting a field leaves it unchanged. Once a product has left the draft state it must keep at least one image.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
