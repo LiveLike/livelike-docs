@@ -6785,7 +6785,7 @@
         "operationId": "get_client-id-products-product-uuid-variants-uuid",
         "summary": "Retrieve Variant",
         "description": "Returns one variant of a product. Reads are public, so no producer token is needed. A deleted variant returns 404.\n\n`has_discount` is true when `discount_percentage` is set, and `discounted_cost` is the cost after the discount. `available_count` is the stock left, and for a unique-code variant it is the number of unredeemed codes. `display_status` is one of `available`, `few_left`, `sold_out`, `coming_soon` or `expired`. The last two follow the parent product's start and expiry dates. `coupon_code_count`, `available_coupon_code_count` and `redeemed_coupon_code_count` count the codes of a unique-code variant. The codes themselves are never returned.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
