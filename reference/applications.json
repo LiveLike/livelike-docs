@@ -5697,7 +5697,7 @@
         "operationId": "get_client-id-products-id",
         "summary": "Retrieve Product",
         "description": "Returns one product by ID. Reads are public, so no producer token is needed. Unlike List Products, a product in any state can be retrieved, including draft and unpublished ones, as long as you know its ID. `is_eligible_to_redeem` reflects the requesting member and is always false for anonymous requests.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
