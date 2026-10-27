@@ -8326,7 +8326,7 @@
         "operationId": "post_client-id-order-items-uuid-reject",
         "summary": "Reject Order Item",
         "description": "Declines an order item and marks it `rejected`, whether or not it was delivered. Requires a producer access token for the application.\n\nRejecting moves no money and no stock. To give the member their balance back and restock the item, issue a refund with Create Refund. An optional `reason` is recorded on the item as `failure_reason`.\n\nAn item that can't be rejected from its current state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
