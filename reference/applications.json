@@ -7790,7 +7790,7 @@
         "operationId": "get_client-id-orders-uuid",
         "summary": "Retrieve Order",
         "description": "Returns one order of the signed-in member, with its items and any refunds. A member can only retrieve their own orders, and the caller must be a member of the application.\n\nThe order itself is only a container. Its `status` is `created` or `cancelled`, and the redemption progress of each purchase lives on the items, whose `status` is `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. `total_amount` is the sum of the item amounts, and `redemption_method` shows whether the member paid with a reward item or in cash.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
