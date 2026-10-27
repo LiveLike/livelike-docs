@@ -3749,146 +3749,6 @@
       }
     },
     "/{client-id}/categories/{id}": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "draft",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T11:00:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Update Category",
-        "description": "Updates a category.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Max 255 characters. Must be unique among active categories in the same store."
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "display_order": {
-                    "type": "string",
-                    "description": "Zero or higher. If omitted, it is auto-assigned to the next free position (highest existing order + 1). Must be unique among active categories in the store. Required before the category can be published."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON."
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "description": "Full replace. [] clears them. Omitting the field leaves them unchanged. Both key and value are required strings of at most 200 characters."
-                  }
-                }
-              },
-              "examples": {
-                "New Example": {
-                  "summary": "New Example",
-                  "value": {
-                    "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                    "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                    "publish_url": "…/categories/3a7e9b21-…/publish/",
-                    "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                    "product_store": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "name": "Summer Rewards"
-                    },
-                    "name": "Gift Cards",
-                    "description": "Digital gift cards from partner brands",
-                    "display_order": 0,
-                    "state": "draft",
-                    "is_active": true,
-                    "custom_data": null,
-                    "attributes": [
-                      {
-                        "key": "tier",
-                        "value": "gold"
-                      }
-                    ],
-                    "created_at": "2026-10-08T11:00:00Z",
-                    "updated_at": "2026-10-08T11:00:00Z",
-                    "created_by": {
-                      "id": "b1a2c3d4-…",
-                      "nickname": "upend"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-internal": true,
-        "operationId": "post_client-id-categories-id"
-      },
       "delete": {
         "responses": {
           "204": {
@@ -9158,6 +9018,160 @@
                         "id": "b1a2c3d4-…",
                         "nickname": "upend"
                       }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patch_client-id-categories-id",
+        "summary": "Update Category",
+        "description": "Updates a category. Send only the fields you want to change. Requires a producer access token for the application.\n\nThe store of a category can't be changed. The name must stay unique among the store's active categories, and `sequence` must stay unique too. `attributes` is a full replacement: send the complete list, and send an empty list to clear it. Omitting a field leaves it unchanged. The response is the updated category, in the same shape as Retrieve Category.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the category. Max 255 characters, and unique among the store's active categories."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the category. Required before the category can be published."
+                  },
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Position of the category in the store, zero or higher. Must be unique among the store's active categories."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Full replace. Both key and value are required on every item. An identical pair twice is rejected.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Rename": {
+                  "value": {
+                    "name": "Digital Gift Cards",
+                    "sequence": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Digital Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 1,
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-27T10:20:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Duplicate name": {
+                    "value": {
+                      "name": "A category with this name already exists in the store."
+                    }
+                  },
+                  "Store change": {
+                    "value": {
+                      "product_store_id": "The store of a category cannot be changed."
                     }
                   }
                 }
