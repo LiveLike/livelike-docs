@@ -3492,71 +3492,6 @@
       }
     },
     "/{client_id}/reward-stores/{id}/": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/publish/",
-                      "unpublish_url": "…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-…",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T10:05:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Retrieve Reward Store",
-        "operationId": "get_client-id-reward-stores-1",
-        "x-internal": false
-      },
       "patch": {
         "responses": {
           "201": {
@@ -3681,6 +3616,102 @@
         },
         "x-internal": false,
         "operationId": "patch_client-id-reward-stores-id-1"
+      },
+      "get": {
+        "operationId": "get_client-id-reward-stores-id",
+        "summary": "Retrieve Reward Store",
+        "description": "Returns one reward store by ID. Reads are public, so no producer token is needed. A store in any state can be retrieved, but a deleted store returns 404.\n\n`state` is `draft`, `published` or `unpublished`. `reward_items` is the single reward item that products in the store are priced in, and `sponsors` and `attributes` are the sponsors and key and value pairs attached to it. `publish_url` and `unpublish_url` point to the actions that change its state.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                      "name": "Summer Rewards",
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [
+                        {
+                          "id": "3b9d7c1e-4a2f-4e68-b5d0-8c1a6f2e9d47",
+                          "name": "Acme"
+                        }
+                      ],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-08T10:05:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{client-id}/reward-stores/{id}/publish/": {
