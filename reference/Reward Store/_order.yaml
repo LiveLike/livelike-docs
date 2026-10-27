@@ -7,7 +7,7 @@
 - create-category
 - list-categories
 - retrieve-category
-- post_client-id-categories-1
+- update-category
 - get_client-id-categories-1-1
 - publish-category
 - post_client-id-categories-uuid-publish-1
