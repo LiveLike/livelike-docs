@@ -3868,7 +3868,7 @@
             }
           }
         },
-        "x-internal": true,
+        "x-internal": false,
         "operationId": "patch_client-id-reward-stores-id-1"
       }
     },
