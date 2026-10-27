@@ -9699,13 +9699,11 @@
             }
           }
         }
-      }
-    },
-    "/{client_id}/provider-product-sync-jobs/-1": {
-      "post": {
-        "operationId": "post_client-id-provider-product-sync-jobs-1",
+      },
+      "get": {
+        "operationId": "get_client-id-provider-product-sync-jobs",
         "summary": "List Provider Product Sync Jobs",
-        "description": "Starts a background sync of an external provider's product catalog into the application's provider products. The job is created in the `pending` state and the call returns straight away with 202. Poll Retrieve Provider Product Sync Job for its progress, and use List Provider Products once it completes.\n\nThis needs a privileged LiveLike staff account. A producer access token is not enough, because a catalog sync affects raw provider data that underlies every application.\n\nA job moves through `pending`, `running` and then `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.",
+        "description": "Returns the provider product sync jobs of the application, newest first, and paginated. Each job is one background run that fetches a provider's catalog. Use it to see which syncs ran and how they ended. This needs a privileged LiveLike staff account. A producer access token is not enough.\n\nA job's `status` is `pending`, `running`, `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.\n\nThere are no filters. The only query parameters are `page` and `page_size`, and the default page size is 20.",
         "x-internal": false,
         "parameters": [
           {
@@ -9716,82 +9714,83 @@
               "type": "string"
             },
             "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
           }
         ],
-        "requestBody": {
-          "required": false,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "provider": {
-                    "type": "string",
-                    "default": "konekt",
-                    "description": "The provider whose catalog to sync. Defaults to konekt, which is the only provider integrated so far."
-                  }
-                }
-              },
-              "examples": {
-                "Sync Konekt": {
-                  "value": {
-                    "provider": "konekt"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
-          "202": {
-            "description": "Accepted. The sync job was queued.",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "provider": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "products_synced": {
+                    "count": {
                       "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "products_synced": {
+                            "type": "integer"
+                          }
+                        }
+                      }
                     }
                   }
                 },
                 "examples": {
-                  "Accepted": {
+                  "OK": {
                     "value": {
-                      "id": "e8f9a0b1-2c3d-4e4f-9a5b-6c7d8e9f0a12",
-                      "provider": "konekt",
-                      "status": "pending",
-                      "products_synced": 0,
-                      "error_message": null,
-                      "started_at": null,
-                      "finished_at": null,
-                      "created_at": "2026-10-27T06:45:00Z",
-                      "updated_at": "2026-10-27T06:45:00Z"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid provider.",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "Invalid provider": {
-                    "value": {
-                      "provider": [
-                        "\"acme\" is not a valid choice."
+                      "count": 2,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "e8f9a0b1-2c3d-4e4f-9a5b-6c7d8e9f0a12",
+                          "provider": "konekt",
+                          "status": "completed",
+                          "products_synced": 148,
+                          "error_message": null,
+                          "started_at": "2026-10-27T06:45:02Z",
+                          "finished_at": "2026-10-27T06:45:41Z",
+                          "created_at": "2026-10-27T06:45:00Z",
+                          "updated_at": "2026-10-27T06:45:41Z"
+                        },
+                        {
+                          "id": "f9a0b1c2-3d4e-4f50-8b6c-7d8e9f0a1b23",
+                          "provider": "konekt",
+                          "status": "failed",
+                          "products_synced": 0,
+                          "error_message": "Provider request timed out.",
+                          "started_at": "2026-10-26T06:00:02Z",
+                          "finished_at": "2026-10-26T06:00:32Z",
+                          "created_at": "2026-10-26T06:00:00Z",
+                          "updated_at": "2026-10-26T06:00:32Z"
+                        }
                       ]
                     }
                   }
