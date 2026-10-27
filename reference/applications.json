@@ -3491,1192 +3491,11 @@
         "operationId": "post_client-id-reward-multipliers-reward-multiplier-id-unarchive"
       }
     },
-    "/{client_id}/reward-store": {
-      "post": {
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ]
-                },
-                "examples": {
-                  "Created": {
-                    "summary": "Created",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
-                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "draft",
-                      "is_active": true,
-                      "custom_data": {
-                        "theme": "dark"
-                      },
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "reward_item_ids": [
-                        "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10"
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        },
-                        {
-                          "key": "region",
-                          "value": "US"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T09:30:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "operationId": "post_client-id-reward-store",
-        "summary": "Create Reward Store",
-        "description": "Creates a reward store in an application. It is always created in the draft state.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Max 255 characters."
-                  },
-                  "reward_item_ids": {
-                    "type": "string",
-                    "description": "At most 1. Each item must belong to this application."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON.",
-                    "format": "json"
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "Value": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "description": "Each item is {key, value}. Both are required and are strings of at most 200 characters. The same key may repeat with different values. An identical key and value pair twice is rejected."
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "x-internal": false
-      }
-    },
-    "/{client_id}/reward-stores": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "count": 1,
-                      "next": null,
-                      "previous": null,
-                      "results": [
-                        {
-                          "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                          "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                          "publish_url": "…/publish/",
-                          "unpublish_url": "…/unpublish/",
-                          "name": "Summer Rewards",
-                          "state": "published",
-                          "is_active": true,
-                          "custom_data": null,
-                          "reward_items": [
-                            {
-                              "id": "6f1c2a3e-…",
-                              "name": "Gold Coins"
-                            }
-                          ],
-                          "attributes": [
-                            {
-                              "key": "season",
-                              "value": "2026"
-                            }
-                          ],
-                          "created_at": "2026-10-08T09:30:00Z",
-                          "updated_at": "2026-10-08T10:05:00Z",
-                          "created_by": {
-                            "id": "b1a2c3d4-…",
-                            "nickname": "upend"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "List Reward Store",
-        "operationId": "get_client-id-reward-stores",
-        "description": "Returns the application's reward stores, newest first (-created_at). Inactive (soft-deleted) stores are never returned, but stores in every state (draft, published, unpublished) are.",
-        "x-internal": false
-      }
-    },
     "/{client_id}/reward-stores/{id}/": {
       "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/publish/",
-                      "unpublish_url": "…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-…",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T10:05:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
+        "operationId": "get_client-id-reward-stores-id",
         "summary": "Retrieve Reward Store",
-        "operationId": "get_client-id-reward-stores-1",
-        "x-internal": false
-      },
-      "patch": {
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ]
-                },
-                "examples": {
-                  "Created": {
-                    "summary": "Created",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
-                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "draft",
-                      "is_active": true,
-                      "custom_data": {
-                        "theme": "dark"
-                      },
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "reward_item_ids": [
-                        "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10"
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        },
-                        {
-                          "key": "region",
-                          "value": "US"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T09:30:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Update Reward Store",
-        "description": "Creates a reward store in an application. It is always created in the draft state.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Max 255 characters."
-                  },
-                  "reward_item_ids": {
-                    "type": "string",
-                    "description": "At most 1. Each item must belong to this application."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON.",
-                    "format": "json"
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "Value": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "description": "Each item is {key, value}. Both are required and are strings of at most 200 characters. The same key may repeat with different values. An identical key and value pair twice is rejected."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-internal": false,
-        "operationId": "patch_client-id-reward-stores-id-1"
-      }
-    },
-    "/{client-id}/reward-stores/{id}/publish/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/publish/",
-                      "unpublish_url": "…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-…",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T10:05:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Publish Reward Store",
-        "description": "Moves a store to the published state.",
-        "operationId": "post_client-id-reward-stores-id-publish",
-        "x-internal": false
-      }
-    },
-    "/{client-id}/reward-stores/{id}/unpublish/-1": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
-                      "publish_url": "…/publish/",
-                      "unpublish_url": "…/unpublish/",
-                      "name": "Summer Rewards",
-                      "state": "unpublished",
-                      "is_active": true,
-                      "custom_data": null,
-                      "reward_items": [
-                        {
-                          "id": "6f1c2a3e-…",
-                          "name": "Gold Coins"
-                        }
-                      ],
-                      "attributes": [
-                        {
-                          "key": "season",
-                          "value": "2026"
-                        }
-                      ],
-                      "created_at": "2026-10-08T09:30:00Z",
-                      "updated_at": "2026-10-08T10:05:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Unpublish Reward Store",
-        "description": "Moves a store to the unpublished state.",
-        "x-internal": false,
-        "operationId": "post_client-id-reward-stores-id-unpublish-1"
-      }
-    },
-    "/{client-id}/categories/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Create Category",
-        "operationId": "post_client-id-categories",
-        "description": "Creates a category inside a reward store. It is always created in the draft state.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "product_store_id": {
-                    "type": "string",
-                    "description": "The store this category belongs to. It must be an active store in this application. It can't be changed later."
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "Max 255 characters. Must be unique among active categories in the same store."
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "display_order": {
-                    "type": "string",
-                    "description": "Zero or higher. If omitted, it is auto-assigned to the next free position (highest existing order + 1). Must be unique among active categories in the store. Required before the category can be published."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON."
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  }
-                },
-                "required": [
-                  "product_store_id",
-                  "name"
-                ]
-              },
-              "examples": {
-                "New Example": {
-                  "summary": "New Example",
-                  "value": {
-                    "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                    "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                    "publish_url": "…/categories/3a7e9b21-…/publish/",
-                    "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                    "product_store": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "name": "Summer Rewards"
-                    },
-                    "name": "Gift Cards",
-                    "description": "Digital gift cards from partner brands",
-                    "display_order": 0,
-                    "state": "draft",
-                    "is_active": true,
-                    "custom_data": null,
-                    "attributes": [
-                      {
-                        "key": "tier",
-                        "value": "gold"
-                      }
-                    ],
-                    "created_at": "2026-10-08T11:00:00Z",
-                    "updated_at": "2026-10-08T11:00:00Z",
-                    "created_by": {
-                      "id": "b1a2c3d4-…",
-                      "nickname": "upend"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-internal": false
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "count": 1,
-                      "next": null,
-                      "previous": null,
-                      "results": [
-                        {
-                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                          "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                          "publish_url": "…/categories/3a7e9b21-…/publish/",
-                          "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                          "product_store": {
-                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                            "name": "Summer Rewards"
-                          },
-                          "name": "Gift Cards",
-                          "description": "Digital gift cards from partner brands",
-                          "display_order": 0,
-                          "state": "published",
-                          "is_active": true,
-                          "custom_data": null,
-                          "attributes": [
-                            {
-                              "key": "tier",
-                              "value": "gold"
-                            }
-                          ],
-                          "created_at": "2026-10-08T11:00:00Z",
-                          "updated_at": "2026-10-08T12:15:00Z",
-                          "created_by": {
-                            "id": "b1a2c3d4-…",
-                            "nickname": "upend"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "product_store_id",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "state",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "draft",
-                "published",
-                "unpublished"
-              ]
-            }
-          },
-          {
-            "in": "query",
-            "name": "attributes",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Format key:value, for example attributes=tier:gold. Repeating the parameter ANDs the pairs."
-          }
-        ],
-        "summary": "List Categories",
-        "operationId": "get_client-id-categories",
-        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
-        "x-internal": false
-      }
-    },
-    "/{client-id}/categories/{id}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T12:15:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Retrieve Category",
-        "description": "Returns the categories across the application's live reward stores. It excludes inactive categories and categories whose store has been deleted. Categories in every state (draft, published, unpublished) are returned.",
-        "x-internal": false,
-        "operationId": "get_client-id-categories-1"
-      },
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "draft",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T11:00:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Update Category",
-        "description": "Updates a category.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Max 255 characters. Must be unique among active categories in the same store."
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "display_order": {
-                    "type": "string",
-                    "description": "Zero or higher. If omitted, it is auto-assigned to the next free position (highest existing order + 1). Must be unique among active categories in the store. Required before the category can be published."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON."
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "description": "Full replace. [] clears them. Omitting the field leaves them unchanged. Both key and value are required strings of at most 200 characters."
-                  }
-                }
-              },
-              "examples": {
-                "New Example": {
-                  "summary": "New Example",
-                  "value": {
-                    "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                    "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                    "publish_url": "…/categories/3a7e9b21-…/publish/",
-                    "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                    "product_store": {
-                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                      "name": "Summer Rewards"
-                    },
-                    "name": "Gift Cards",
-                    "description": "Digital gift cards from partner brands",
-                    "display_order": 0,
-                    "state": "draft",
-                    "is_active": true,
-                    "custom_data": null,
-                    "attributes": [
-                      {
-                        "key": "tier",
-                        "value": "gold"
-                      }
-                    ],
-                    "created_at": "2026-10-08T11:00:00Z",
-                    "updated_at": "2026-10-08T11:00:00Z",
-                    "created_by": {
-                      "id": "b1a2c3d4-…",
-                      "nickname": "upend"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-internal": false,
-        "operationId": "post_client-id-categories-id"
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                },
-                "examples": {
-                  "No Content": {
-                    "summary": "No Content",
-                    "value": "{}"
-                  }
-                }
-              }
-            },
-            "description": "No Content"
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client-id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Delete Category",
-        "description": "Permanently deletes a category. This is a hard delete, unlike reward stores, which are soft-deleted. Only a category in the draft state can be deleted.",
-        "x-internal": false,
-        "operationId": "get_client-id-categories-1-1"
-      }
-    },
-    "/{client_id}/categories/{uuid}/publish/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "published",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T11:00:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Publish Category",
-        "x-internal": false,
-        "operationId": "post_client-id-categories-uuid-publish"
-      }
-    },
-    "/{client_id}/categories/{uuid}/unpublish/-1": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": {
-                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
-                      "publish_url": "…/categories/3a7e9b21-…/publish/",
-                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Gift Cards",
-                      "description": "Digital gift cards from partner brands",
-                      "display_order": 0,
-                      "state": "unpublished",
-                      "is_active": true,
-                      "custom_data": null,
-                      "attributes": [
-                        {
-                          "key": "tier",
-                          "value": "gold"
-                        }
-                      ],
-                      "created_at": "2026-10-08T11:00:00Z",
-                      "updated_at": "2026-10-08T11:00:00Z",
-                      "created_by": {
-                        "id": "b1a2c3d4-…",
-                        "nickname": "upend"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "uuid",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Unpublish Category",
-        "x-internal": false,
-        "operationId": "post_client-id-categories-uuid-unpublish-1"
-      }
-    },
-    "/categories/{uuid}/products/reorder/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "examples": {
-                  "OK": {
-                    "summary": "OK",
-                    "value": [
-                      {
-                        "product_id": "c4e1f0a2-7b3d-4a98-8e55-1f2d3c4b5a69",
-                        "name": "$10 Gift Card",
-                        "display_order": 0
-                      },
-                      {
-                        "product_id": "5d6e7f80-1a2b-4c3d-9e8f-0a1b2c3d4e5f",
-                        "name": "$25 Gift Card",
-                        "display_order": 1
-                      },
-                      {
-                        "product_id": "9b8a7c6d-5e4f-4321-a0b1-c2d3e4f5a6b7",
-                        "name": "$50 Gift Card",
-                        "display_order": 2
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "in": "path",
-            "name": "uuid",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Reorder Products in a Category",
-        "operationId": "post_categories-uuid-products-reorder",
-        "description": "Sets the display position of one or more products inside a category. It is a partial reorder: list only the products you want to move. Products you don't list keep their relative order, and the product's position in any other category isn't touched.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "products": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "product_id": {
-                          "type": "string",
-                          "description": "Must be a product already in this category."
-                        },
-                        "position": {
-                          "type": "string",
-                          "description": "Zero-based position, zero or higher. If omitted or null, the product goes to the end."
-                        }
-                      },
-                      "type": "object",
-                      "required": [
-                        "product_id"
-                      ]
-                    },
-                    "description": "Must be non-empty. Items are applied one at a time, in list order."
-                  }
-                },
-                "required": [
-                  "products"
-                ]
-              }
-            }
-          }
-        },
-        "x-internal": false
-      }
-    },
-    "/{client_id}/products/": {
-      "post": {
-        "operationId": "post_client-id-products",
-        "summary": "Create Product",
-        "description": "Creates a product in a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint, and a product can't be published until it has at least one.\n\nRequires a producer access token for the application.\n\nSend JSON, or `multipart/form-data` when you upload product images.",
+        "description": "Returns one reward store by ID. Reads are public, so no producer token is needed. A store in any state can be retrieved, but a deleted store returns 404.\n\n`state` is `draft`, `published` or `unpublished`. `reward_items` is the single reward item that products in the store are priced in, and `sponsors` and `attributes` are the sponsors and key and value pairs attached to it. `publish_url` and `unpublish_url` point to the actions that change its state.",
         "x-internal": false,
         "parameters": [
           {
@@ -4686,248 +3505,22 @@
             "schema": {
               "type": "string"
             },
-            "description": "The client ID of the application the product belongs to."
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "product_store_id",
-                  "name"
-                ],
-                "properties": {
-                  "product_store_id": {
-                    "type": "string",
-                    "format": "uuid",
-                    "description": "The reward store this product belongs to. It must be an active store in this application. Write-only."
-                  },
-                  "name": {
-                    "type": "string",
-                    "maxLength": 255,
-                    "description": "Name of the product. Max 255 characters."
-                  },
-                  "product_type": {
-                    "type": "string",
-                    "nullable": true,
-                    "enum": [
-                      "badge",
-                      "multiplier",
-                      "flair",
-                      "common_code",
-                      "unique_code",
-                      "merchandise",
-                      "experience",
-                      "konekt"
-                    ],
-                    "description": "The kind of product. Optional."
-                  },
-                  "redemption_provider": {
-                    "type": "string",
-                    "nullable": true,
-                    "enum": [
-                      "konekt"
-                    ],
-                    "description": "The third party that redeems and fulfils the product. Must be `konekt` when `product_type` is `konekt`, and must be empty for every other `product_type`. Leave it out when you fulfil the product yourself."
-                  },
-                  "redemption_method": {
-                    "type": "string",
-                    "enum": [
-                      "reward_item",
-                      "cash"
-                    ],
-                    "default": "reward_item",
-                    "description": "How members pay for the product. `reward_item` debits the member's reward item balance. `cash` means money is collected by an external provider and no reward item is debited."
-                  },
-                  "description": {
-                    "type": "object",
-                    "description": "Rich text description of the product, as a JSON document."
-                  },
-                  "reward_item_id": {
-                    "type": "string",
-                    "format": "uuid",
-                    "nullable": true,
-                    "description": "The reward item that variant prices are denominated in. It must be one of the reward items attached to the product's store."
-                  },
-                  "redemption_rules": {
-                    "type": "object",
-                    "description": "Limits on redemption. No other keys are accepted.",
-                    "properties": {
-                      "max_redemptions_per_user": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "description": "The most times one member can redeem the product."
-                      },
-                      "max_redemption_days": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "description": "How many days each redemption keeps counting against `max_redemptions_per_user`. Only valid together with `max_redemptions_per_user`."
-                      }
-                    }
-                  },
-                  "gating_profile_group_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "description": "Profile groups whose members are the only ones who can redeem the product. Each group must belong to this application."
-                  },
-                  "category_ids": {
-                    "type": "array",
-                    "description": "Categories to list the product under. Each category must belong to this product's store and be published.",
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "category_id"
-                      ],
-                      "properties": {
-                        "category_id": {
-                          "type": "string",
-                          "format": "uuid"
-                        },
-                        "display_order": {
-                          "type": "integer",
-                          "minimum": 0,
-                          "nullable": true,
-                          "description": "Position within the category. If omitted, the product is placed at the end."
-                        }
-                      }
-                    }
-                  },
-                  "sponsor_ids": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "uuid"
-                    },
-                    "description": "Sponsors to attach. Each sponsor must belong to this application."
-                  },
-                  "start_at": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "When the product becomes available. Can't be in the past."
-                  },
-                  "expiry_at": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "When the product stops being available. Must be in the future and not before `start_at`."
-                  },
-                  "redemption_success_message": {
-                    "type": "object",
-                    "description": "Rich text shown to the member after a successful redemption."
-                  },
-                  "redemption_failure_message": {
-                    "type": "object",
-                    "description": "Rich text shown to the member when a redemption fails."
-                  },
-                  "custom_data": {
-                    "type": "string",
-                    "description": "Free text, for example serialized JSON."
-                  },
-                  "attributes": {
-                    "type": "array",
-                    "description": "Key and value pairs. Both `key` and `value` are required on every item.",
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "key",
-                        "value"
-                      ],
-                      "properties": {
-                        "key": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "image": {
-                    "type": "array",
-                    "description": "Product images. Upload files with `multipart/form-data`, using the field names `image[0]image`, `image[0]display_order`, `image[1]image` and so on. Accepts JPG, PNG, GIF, WEBP and GLB files, up to 3 MB each by default. If `display_order` is omitted, upload order is used.",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "image": {
-                          "type": "string",
-                          "format": "binary"
-                        },
-                        "display_order": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "examples": {
-                "Draft product": {
-                  "summary": "A merchandise product limited to two redemptions per member",
-                  "value": {
-                    "product_store_id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                    "name": "Team Hoodie",
-                    "product_type": "merchandise",
-                    "redemption_method": "reward_item",
-                    "reward_item_id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
-                    "redemption_rules": {
-                      "max_redemptions_per_user": 2,
-                      "max_redemption_days": 30
-                    },
-                    "category_ids": [
-                      {
-                        "category_id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                        "display_order": 0
-                      }
-                    ],
-                    "expiry_at": "2027-06-30T23:59:59Z",
-                    "attributes": [
-                      {
-                        "key": "size",
-                        "value": "M"
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "product_store_id",
-                  "name"
-                ],
-                "properties": {
-                  "product_store_id": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "image[0]image": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "The first image file. Repeat with `image[1]image` and so on."
-                  },
-                  "image[0]display_order": {
-                    "type": "integer",
-                    "description": "Position of the first image. Optional."
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
-          "201": {
-            "description": "Created. The product is returned in the draft state.",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -4937,160 +3530,11 @@
                       "type": "string",
                       "format": "uuid"
                     },
-                    "url": {
-                      "type": "string"
-                    },
-                    "publish_url": {
-                      "type": "string"
-                    },
-                    "unpublish_url": {
-                      "type": "string"
-                    },
-                    "variants_url": {
-                      "type": "string",
-                      "description": "The endpoint for adding variants to this product."
-                    },
-                    "product_store": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string",
-                          "format": "uuid"
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      }
-                    },
                     "name": {
                       "type": "string"
                     },
-                    "product_type": {
-                      "type": "string",
-                      "nullable": true
-                    },
-                    "redemption_provider": {
-                      "type": "string",
-                      "nullable": true
-                    },
-                    "redemption_method": {
-                      "type": "string"
-                    },
                     "state": {
-                      "type": "string",
-                      "enum": [
-                        "draft",
-                        "published",
-                        "unpublished"
-                      ],
-                      "description": "Always `draft` on create."
-                    },
-                    "display_status": {
-                      "type": "string",
-                      "description": "How the product reads to a member: draft, unpublished, or, once published, coming soon or expired."
-                    },
-                    "description": {
-                      "type": "object",
-                      "nullable": true
-                    },
-                    "is_eligible_to_redeem": {
-                      "type": "boolean"
-                    },
-                    "redemption_rules": {
-                      "type": "object",
-                      "nullable": true
-                    },
-                    "gating_profile_groups": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "categories": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "display_order": {
-                            "type": "integer"
-                          }
-                        }
-                      }
-                    },
-                    "sponsors": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "reward_item": {
-                      "type": "object",
-                      "nullable": true,
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "images": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "integer"
-                          },
-                          "image_url": {
-                            "type": "string"
-                          },
-                          "display_order": {
-                            "type": "integer"
-                          }
-                        }
-                      }
-                    },
-                    "start_at": {
-                      "type": "string",
-                      "format": "date-time",
-                      "nullable": true
-                    },
-                    "expiry_at": {
-                      "type": "string",
-                      "format": "date-time",
-                      "nullable": true
-                    },
-                    "redemption_success_message": {
-                      "type": "object",
-                      "nullable": true
-                    },
-                    "redemption_failure_message": {
-                      "type": "object",
-                      "nullable": true
+                      "type": "string"
                     },
                     "is_active": {
                       "type": "boolean"
@@ -5098,87 +3542,40 @@
                     "custom_data": {
                       "type": "string",
                       "nullable": true
-                    },
-                    "attributes": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string"
-                          },
-                          "value": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "created_at": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "updated_at": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "created_by": {
-                      "type": "object",
-                      "nullable": true
                     }
                   }
                 },
                 "examples": {
-                  "Created": {
+                  "OK": {
                     "value": {
-                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
-                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
-                      "publish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/publish/",
-                      "unpublish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/unpublish/",
-                      "variants_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/variants/",
-                      "product_store": {
-                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
-                        "name": "Summer Rewards"
-                      },
-                      "name": "Team Hoodie",
-                      "product_type": "merchandise",
-                      "redemption_provider": null,
-                      "redemption_method": "reward_item",
-                      "state": "draft",
-                      "display_status": "draft",
-                      "description": null,
-                      "is_eligible_to_redeem": false,
-                      "redemption_rules": {
-                        "max_redemptions_per_user": 2,
-                        "max_redemption_days": 30
-                      },
-                      "gating_profile_groups": [],
-                      "categories": [
-                        {
-                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
-                          "name": "Gift Cards",
-                          "display_order": 0
-                        }
-                      ],
-                      "sponsors": [],
-                      "reward_item": {
-                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
-                        "name": "Coins"
-                      },
-                      "images": [],
-                      "start_at": null,
-                      "expiry_at": "2027-06-30T23:59:59Z",
-                      "redemption_success_message": null,
-                      "redemption_failure_message": null,
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                      "name": "Summer Rewards",
+                      "state": "published",
                       "is_active": true,
                       "custom_data": null,
-                      "attributes": [
+                      "reward_items": [
                         {
-                          "key": "size",
-                          "value": "M"
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
                         }
                       ],
-                      "created_at": "2026-10-22T11:00:00Z",
-                      "updated_at": "2026-10-22T11:00:00Z",
+                      "sponsors": [
+                        {
+                          "id": "3b9d7c1e-4a2f-4e68-b5d0-8c1a6f2e9d47",
+                          "name": "Acme"
+                        }
+                      ],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-08T10:05:00Z",
                       "created_by": {
                         "id": "b1a2c3d4-…",
                         "nickname": "upend"
@@ -5188,37 +3585,170 @@
                 }
               }
             }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patch_client-id-reward-stores-id",
+        "summary": "Update Reward Store",
+        "description": "Updates a reward store. Send only the fields you want to change. Requires a producer access token for the application.\n\nOnce a store is published, only `name` and `sponsor_ids` can be changed, and any other field fails with 400. Unpublish the store to edit the rest. The reward item can't be changed while any product in the store is published. A store can have at most one reward item.\n\n`reward_item_ids`, `sponsor_ids` and `attributes` are full replacements. Send the complete list, and send an empty list to clear them. Omitting a field leaves it unchanged. The response is the updated store, in the same shape as Retrieve Reward Store.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
           },
-          "400": {
-            "description": "Validation error. The body maps each invalid field to its messages.",
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the reward store. Max 255 characters."
+                  },
+                  "reward_item_ids": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Full replace. At most one reward item, and it must belong to this application."
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Full replace. Sponsors to attach. Each must belong to this application."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Full replace. Both key and value are required on every item. The same key can repeat with different values, but an identical pair twice is rejected.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Rename": {
+                  "value": {
+                    "name": "Summer Rewards 2027"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated store.",
             "content": {
               "application/json": {
-                "examples": {
-                  "Invalid provider": {
-                    "value": {
-                      "redemption_provider": "Not allowed unless product_type is 'konekt' (it must be empty for any other product_type)."
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
                     }
-                  },
-                  "Past start": {
+                  }
+                },
+                "examples": {
+                  "OK": {
                     "value": {
-                      "start_at": "start_at cannot be in the past."
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "name": "Summer Rewards 2027",
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-27T10:00:00Z"
                     }
                   }
                 }
               }
             }
           },
-          "401": {
-            "description": "Missing or invalid access token."
-          },
-          "403": {
-            "description": "The token is not a producer token for this application."
-          },
-          "404": {
-            "description": "No active application with this client ID."
+          "400": {
+            "description": "Validation error, or the field can't be changed while the store is published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Published store": {
+                    "value": {
+                      "custom_data": "Only the name and sponsors can be changed while the store is published."
+                    }
+                  },
+                  "Published products": {
+                    "value": {
+                      "reward_item_ids": [
+                        "Reward items cannot be changed while any product in this store is published."
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-      },
+      }
+    },
+    "/{client_id}/products/": {
       "get": {
         "operationId": "get_client-id-products",
         "summary": "List Products",
@@ -5413,6 +3943,560 @@
                 }
               }
             }
+          }
+        }
+      },
+      "post": {
+        "operationId": "post_client-id-products",
+        "summary": "Create Product",
+        "description": "Creates a product in a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint, and a product can't be published until it has at least one. Requires a producer access token for the application.\n\nSend JSON, or `multipart/form-data` when you upload product images.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application the product belongs to."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The reward store this product belongs to. It must be an active store in this application. Write-only."
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the product. Max 255 characters."
+                  },
+                  "product_type": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "badge",
+                      "multiplier",
+                      "flair",
+                      "common_code",
+                      "unique_code",
+                      "merchandise",
+                      "experience",
+                      "konekt"
+                    ],
+                    "description": "The kind of product. Optional here, but required before the product can be published."
+                  },
+                  "redemption_provider": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "konekt"
+                    ],
+                    "description": "The third party that redeems and fulfils the product. Must be `konekt` when `product_type` is `konekt`, and must be empty for every other `product_type`. Leave it out when you fulfil the product yourself."
+                  },
+                  "redemption_method": {
+                    "type": "string",
+                    "enum": [
+                      "reward_item",
+                      "cash"
+                    ],
+                    "default": "reward_item",
+                    "description": "How members pay for the product. `reward_item` debits the member's reward item balance. `cash` means money is collected by an external provider and no reward item is debited."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the product, as plain text."
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true,
+                    "description": "The reward item that variant prices are denominated in. It must be one of the reward items attached to the product's store. Required before the product can be published."
+                  },
+                  "redemption_rules": {
+                    "type": "object",
+                    "description": "Limits on redemption. No other keys are accepted.",
+                    "properties": {
+                      "max_redemptions_per_user": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "The most times one member can redeem the product."
+                      },
+                      "max_redemption_days": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "How many days each redemption keeps counting against `max_redemptions_per_user`. Only valid together with `max_redemptions_per_user`."
+                      }
+                    }
+                  },
+                  "gating_profile_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Profile groups whose members are the only ones who can redeem the product. Each group must belong to this application."
+                  },
+                  "category_ids": {
+                    "type": "array",
+                    "description": "Categories to list the product under. Each category must belong to this product's store and be published.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "category_id"
+                      ],
+                      "properties": {
+                        "category_id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Position within the category. If omitted, the product is placed at the end."
+                        }
+                      }
+                    }
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Sponsors to attach. Each sponsor must belong to this application."
+                  },
+                  "start_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product becomes available. Can't be in the past."
+                  },
+                  "expiry_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product stops being available. Must be in the future and not before `start_at`."
+                  },
+                  "redemption_success_message": {
+                    "type": "object",
+                    "description": "Message shown to the member after a successful redemption, as a JSON object such as {\"title\": \"Success!\", \"message\": \"Your reward has been redeemed\"}."
+                  },
+                  "redemption_failure_message": {
+                    "type": "object",
+                    "description": "Message shown to the member when a redemption fails, as a JSON object such as {\"title\": \"Oops!\", \"message\": \"We could not redeem your reward\"}."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Key and value pairs. Both `key` and `value` are required on every item.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "key",
+                        "value"
+                      ],
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "array",
+                    "description": "Product images. Upload files with `multipart/form-data`, using the field names `image[0]image`, `image[0]display_order`, `image[1]image` and so on. Accepts JPG, PNG, GIF, WEBP and GLB files, up to 3 MB each by default. If `display_order` is omitted, upload order is used. At least one image is required before the product can be published.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "string",
+                          "format": "binary"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Draft product": {
+                  "summary": "A merchandise product limited to two redemptions per member",
+                  "value": {
+                    "product_store_id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                    "name": "Team Hoodie",
+                    "description": "Our classic team hoodie.",
+                    "product_type": "merchandise",
+                    "redemption_method": "reward_item",
+                    "reward_item_id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                    "redemption_rules": {
+                      "max_redemptions_per_user": 2,
+                      "max_redemption_days": 30
+                    },
+                    "category_ids": [
+                      {
+                        "category_id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                        "display_order": 0
+                      }
+                    ],
+                    "expiry_at": "2027-06-30T23:59:59Z",
+                    "redemption_success_message": {
+                      "title": "Success!",
+                      "message": "Your reward has been redeemed"
+                    },
+                    "attributes": [
+                      {
+                        "key": "size",
+                        "value": "M"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image[0]image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The first image file. Repeat with `image[1]image` and so on."
+                  },
+                  "image[0]display_order": {
+                    "type": "integer",
+                    "description": "Position of the first image. Optional."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The product is returned in the draft state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "publish_url": {
+                      "type": "string"
+                    },
+                    "unpublish_url": {
+                      "type": "string"
+                    },
+                    "variants_url": {
+                      "type": "string",
+                      "description": "The endpoint for adding variants to this product."
+                    },
+                    "product_store": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_provider": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_method": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ],
+                      "description": "Always `draft` on create."
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "description": "How the product reads to a member: draft, unpublished, or, once published, coming soon or expired."
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "is_eligible_to_redeem": {
+                      "type": "boolean"
+                    },
+                    "redemption_rules": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "gating_profile_groups": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "sponsors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "reward_item": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "image_url": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "start_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "expiry_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "redemption_success_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "redemption_failure_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_by": {
+                      "type": "object",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                      "publish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/publish/",
+                      "unpublish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/unpublish/",
+                      "variants_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/variants/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Team Hoodie",
+                      "product_type": "merchandise",
+                      "redemption_provider": null,
+                      "redemption_method": "reward_item",
+                      "state": "draft",
+                      "display_status": "draft",
+                      "description": "Our classic team hoodie.",
+                      "is_eligible_to_redeem": false,
+                      "redemption_rules": {
+                        "max_redemptions_per_user": 2,
+                        "max_redemption_days": 30
+                      },
+                      "gating_profile_groups": [],
+                      "categories": [
+                        {
+                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                          "name": "Gift Cards",
+                          "display_order": 0
+                        }
+                      ],
+                      "sponsors": [],
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "images": [],
+                      "start_at": null,
+                      "expiry_at": "2027-06-30T23:59:59Z",
+                      "redemption_success_message": {
+                        "title": "Success!",
+                        "message": "Your reward has been redeemed"
+                      },
+                      "redemption_failure_message": null,
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "size",
+                          "value": "M"
+                        }
+                      ],
+                      "created_at": "2026-10-22T11:00:00Z",
+                      "updated_at": "2026-10-22T11:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error. The body maps each invalid field to its messages.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid provider": {
+                    "value": {
+                      "redemption_provider": "Not allowed unless product_type is 'konekt' (it must be empty for any other product_type)."
+                    }
+                  },
+                  "Past start": {
+                    "value": {
+                      "start_at": "start_at cannot be in the past."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No active application with this client ID."
           }
         }
       }
@@ -5904,8 +4988,8 @@
                     "description": "How members pay for the product."
                   },
                   "description": {
-                    "type": "object",
-                    "description": "Rich text description of the product, as a JSON document."
+                    "type": "string",
+                    "description": "Description of the product, as plain text."
                   },
                   "reward_item_id": {
                     "type": "string",
@@ -5972,11 +5056,11 @@
                   },
                   "redemption_success_message": {
                     "type": "object",
-                    "description": "Rich text shown after a successful redemption."
+                    "description": "Message shown after a successful redemption, as a JSON object such as {\"title\": \"Success!\", \"message\": \"Your reward has been redeemed\"}."
                   },
                   "redemption_failure_message": {
                     "type": "object",
-                    "description": "Rich text shown when a redemption fails."
+                    "description": "Message shown when a redemption fails, as a JSON object such as {\"title\": \"Oops!\", \"message\": \"We could not redeem your reward\"}."
                   },
                   "custom_data": {
                     "type": "string",
@@ -6020,6 +5104,7 @@
                 "Rename and limit": {
                   "value": {
                     "name": "Team Hoodie 2027",
+                    "description": "The 2027 edition of our team hoodie.",
                     "redemption_rules": {
                       "max_redemptions_per_user": 1
                     },
@@ -6065,6 +5150,7 @@
                         "name": "Summer Rewards"
                       },
                       "name": "Team Hoodie 2027",
+                      "description": "The 2027 edition of our team hoodie.",
                       "product_type": "merchandise",
                       "redemption_method": "reward_item",
                       "state": "unpublished",
@@ -8792,6 +7878,1418 @@
                       },
                       "created_at": "2026-10-22T16:30:00Z",
                       "updated_at": "2026-10-22T16:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/reward-stores/": {
+      "post": {
+        "operationId": "post_client-id-reward-stores",
+        "summary": "Create Reward Store",
+        "description": "Creates a reward store in an application. It is always created in the `draft` state, so it is not published until you call Publish Reward Store. Requires a producer access token for the application.\n\nA store can have at most one reward item, and it must belong to this application. A store can't be published without one. Sponsors, if you send any, must also belong to this application.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the reward store. Max 255 characters."
+                  },
+                  "reward_item_ids": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "The reward item that products in the store are priced in. At most one, and it must belong to this application."
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Sponsors to attach to the store. Each must belong to this application."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Key and value pairs. Both key and value are required. The same key can repeat with different values, but an identical key and value pair twice is rejected.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "New store": {
+                  "value": {
+                    "name": "Summer Rewards",
+                    "reward_item_ids": [
+                      "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10"
+                    ],
+                    "custom_data": "{\"theme\":\"dark\"}",
+                    "attributes": [
+                      {
+                        "key": "season",
+                        "value": "2026"
+                      },
+                      {
+                        "key": "region",
+                        "value": "US"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The store is returned in the draft state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                      "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                      "name": "Summer Rewards",
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": "{\"theme\":\"dark\"}",
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        },
+                        {
+                          "key": "region",
+                          "value": "US"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-08T09:30:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Too many reward items": {
+                    "value": {
+                      "reward_item_ids": [
+                        "A product store can be assigned at most 1 reward item."
+                      ]
+                    }
+                  },
+                  "Foreign reward item": {
+                    "value": {
+                      "reward_item_ids": "One or more reward items do not belong to this application."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-reward-stores",
+        "summary": "List Reward Stores",
+        "description": "Returns the reward stores of an application. Reads are public, so no producer token is needed. Stores in every state (`draft`, `published` and `unpublished`) are returned, and only deleted stores are left out. Results are paginated, and each result is a store in the same shape as Retrieve Reward Store.\n\nQuery parameters, all optional:\n- `state`: `draft`, `published` or `unpublished`.\n- `reward_item_id`: only stores that use this reward item.\n- `attributes`: `key:value`, for example `attributes=season:2026`. Repeat the parameter to AND the pairs.\n- `ordering`: a field name, with a minus prefix for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only stores in this state."
+          },
+          {
+            "in": "query",
+            "name": "reward_item_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only stores that use this reward item."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                          "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                          "publish_url": "…/reward-stores/0d9c8f7e-…/publish/",
+                          "unpublish_url": "…/reward-stores/0d9c8f7e-…/unpublish/",
+                          "name": "Summer Rewards",
+                          "state": "published",
+                          "is_active": true,
+                          "custom_data": null,
+                          "reward_items": [
+                            {
+                              "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                              "name": "Gold Coins"
+                            }
+                          ],
+                          "sponsors": [],
+                          "attributes": [
+                            {
+                              "key": "season",
+                              "value": "2026"
+                            }
+                          ],
+                          "created_at": "2026-10-08T09:30:00Z",
+                          "updated_at": "2026-10-08T10:05:00Z",
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/reward-stores/{id}/publish/": {
+      "post": {
+        "operationId": "post_client-id-reward-stores-id-publish",
+        "summary": "Publish Reward Store",
+        "description": "Moves a draft or unpublished reward store to the `published` state. It takes no request body. Requires a producer access token for the application.\n\nThe store must have a reward item attached, and a store that is already published is rejected. The response is the updated store, in the same shape as Retrieve Reward Store.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The store is returned with state published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "name": "Summer Rewards",
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-27T10:05:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The store can't be published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Already published": {
+                    "value": {
+                      "detail": "Product store is already published."
+                    }
+                  },
+                  "No reward item": {
+                    "value": {
+                      "detail": "Attach a reward item to the store before publishing."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/reward-stores/{id}/unpublish/": {
+      "post": {
+        "operationId": "post_client-id-reward-stores-id-unpublish",
+        "summary": "Unpublish Reward Store",
+        "description": "Moves a published reward store to the `unpublished` state. It takes no request body. Requires a producer access token for the application.\n\nOnly a published store can be unpublished. Once unpublished, all of its fields can be edited again with Update Reward Store. The response is the updated store, in the same shape as Retrieve Reward Store.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the reward store."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The store is returned with state unpublished.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                      "url": "https://<host>/api/v1/applications/<client_id>/reward-stores/0d9c8f7e-…/",
+                      "name": "Summer Rewards",
+                      "state": "unpublished",
+                      "is_active": true,
+                      "custom_data": null,
+                      "reward_items": [
+                        {
+                          "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                          "name": "Gold Coins"
+                        }
+                      ],
+                      "sponsors": [],
+                      "attributes": [
+                        {
+                          "key": "season",
+                          "value": "2026"
+                        }
+                      ],
+                      "created_at": "2026-10-08T09:30:00Z",
+                      "updated_at": "2026-10-27T10:10:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The store isn't published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not published": {
+                    "value": {
+                      "detail": "Only published product stores can be unpublished."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/": {
+      "post": {
+        "operationId": "post_client-id-categories",
+        "summary": "Create Category",
+        "description": "Creates a category inside a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Requires a producer access token for the application.\n\nThe store must be an active store in this application, and it can't be changed later. The name must be unique among the store's active categories. If you leave out `sequence`, the category goes to the next free position. A category needs a `sequence` and a `description` before it can be published.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "The reward store this category belongs to. It must be an active store in this application and can't be changed later."
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the category. Max 255 characters, and unique among the store's active categories."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the category. Required before the category can be published."
+                  },
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Position of the category in the store, zero or higher. If omitted, it goes to the next free position. Must be unique among the store's active categories."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Key and value pairs. Both key and value are required. An identical pair twice is rejected.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "New category": {
+                  "value": {
+                    "product_store_id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                    "name": "Gift Cards",
+                    "description": "Digital gift cards from partner brands",
+                    "sequence": 0,
+                    "attributes": [
+                      {
+                        "key": "tier",
+                        "value": "gold"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The category is returned in the draft state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "publish_url": "…/categories/3a7e9b21-…/publish/",
+                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-08T11:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Duplicate name": {
+                    "value": {
+                      "name": "A category with this name already exists in the store."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-categories",
+        "summary": "List Categories",
+        "description": "Returns the categories across the application's active reward stores. Reads are public, so no producer token is needed. Categories in every state (`draft`, `published` and `unpublished`) are returned, and deleted categories and categories of deleted stores are left out. Results are paginated, and each result is a category in the same shape as Retrieve Category.\n\nQuery parameters, all optional:\n- `product_store_id`: only categories of this store.\n- `state`: `draft`, `published` or `unpublished`.\n- `attributes`: `key:value`, for example `attributes=tier:gold`. Repeat the parameter to AND the pairs.\n- `ordering`: a field name, with a minus prefix for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only categories of this reward store."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only categories in this state."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                          "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                          "publish_url": "…/categories/3a7e9b21-…/publish/",
+                          "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
+                          "product_store": {
+                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                            "name": "Summer Rewards"
+                          },
+                          "name": "Gift Cards",
+                          "description": "Digital gift cards from partner brands",
+                          "sequence": 0,
+                          "state": "published",
+                          "is_active": true,
+                          "custom_data": null,
+                          "attributes": [
+                            {
+                              "key": "tier",
+                              "value": "gold"
+                            }
+                          ],
+                          "created_at": "2026-10-08T11:00:00Z",
+                          "updated_at": "2026-10-08T12:15:00Z",
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/": {
+      "get": {
+        "operationId": "get_client-id-categories-id",
+        "summary": "Retrieve Category",
+        "description": "Returns one category by ID. Reads are public, so no producer token is needed. A category in any state can be retrieved, but a deleted category, or one whose store was deleted, returns 404.\n\n`sequence` is the category's position in its store. `state` is `draft`, `published` or `unpublished`, and `publish_url` and `unpublish_url` point to the actions that change it.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "publish_url": "…/categories/3a7e9b21-…/publish/",
+                      "unpublish_url": "…/categories/3a7e9b21-…/unpublish/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "published",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-08T12:15:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patch_client-id-categories-id",
+        "summary": "Update Category",
+        "description": "Updates a category. Send only the fields you want to change. Requires a producer access token for the application.\n\nThe store of a category can't be changed. The name must stay unique among the store's active categories, and `sequence` must stay unique too. `attributes` is a full replacement: send the complete list, and send an empty list to clear it. Omitting a field leaves it unchanged. The response is the updated category, in the same shape as Retrieve Category.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the category. Max 255 characters, and unique among the store's active categories."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the category. Required before the category can be published."
+                  },
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Position of the category in the store, zero or higher. Must be unique among the store's active categories."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Full replace. Both key and value are required on every item. An identical pair twice is rejected.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Rename": {
+                  "value": {
+                    "name": "Digital Gift Cards",
+                    "sequence": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Digital Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 1,
+                      "state": "draft",
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "tier",
+                          "value": "gold"
+                        }
+                      ],
+                      "created_at": "2026-10-08T11:00:00Z",
+                      "updated_at": "2026-10-27T10:20:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Duplicate name": {
+                    "value": {
+                      "name": "A category with this name already exists in the store."
+                    }
+                  },
+                  "Store change": {
+                    "value": {
+                      "product_store_id": "The store of a category cannot be changed."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{uuid}/": {
+      "delete": {
+        "operationId": "delete_client-id-categories-uuid",
+        "summary": "Delete Category",
+        "description": "Permanently deletes a category. Requires a producer access token for the application.\n\nOnly a category in the `draft` state can be deleted, and the deletion is a hard delete, so it can't be undone. A published or unpublished category fails with 400.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The category was deleted."
+          },
+          "400": {
+            "description": "The category isn't a draft.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not a draft": {
+                    "value": {
+                      "detail": "Only draft categories can be deleted."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/publish/": {
+      "post": {
+        "operationId": "post_client-id-categories-id-publish",
+        "summary": "Publish Category",
+        "description": "Moves a draft or unpublished category to the `published` state. It takes no request body. Requires a producer access token for the application.\n\nThe category must have a `sequence` and a `description`, and a category that is already published is rejected. Products can only be added to a published category. The response is the updated category, in the same shape as Retrieve Category.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The category is returned with state published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "published",
+                      "is_active": true,
+                      "updated_at": "2026-10-27T10:25:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The category can't be published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Already published": {
+                    "value": {
+                      "detail": "Category is already published."
+                    }
+                  },
+                  "Missing fields": {
+                    "value": {
+                      "detail": "A category requires sequence, description to be published."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/unpublish/": {
+      "post": {
+        "operationId": "post_client-id-categories-id-unpublish",
+        "summary": "Unpublish Category",
+        "description": "Moves a published category to the `unpublished` state. It takes no request body. Requires a producer access token for the application.\n\nOnly a published category can be unpublished. An unpublished category can be published again, but it can no longer be deleted, because only drafts can be. The response is the updated category, in the same shape as Retrieve Category.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The category is returned with state unpublished.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                      "url": "https://<host>/api/v1/applications/<client_id>/categories/3a7e9b21-…/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Gift Cards",
+                      "description": "Digital gift cards from partner brands",
+                      "sequence": 0,
+                      "state": "unpublished",
+                      "is_active": true,
+                      "updated_at": "2026-10-27T10:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The category isn't published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not published": {
+                    "value": {
+                      "detail": "Only published categories can be unpublished."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/categories/{id}/products/reorder/": {
+      "post": {
+        "operationId": "post_client-id-categories-id-products-reorder",
+        "summary": "Reorder Products in a Category",
+        "description": "Changes the order of products within one category. Requires a producer access token for the application.\n\nYou only list the products you want to move, not every product in the category. Each entry has a `product_id` and an optional zero-based `position`, and the entries are applied in list order. An entry without a `position` sends that product to the end. Products you don't list keep their relative order, and a product's position in any other category is not affected. Every `product_id` must already be in this category.\n\nThe response lists every product in the category with its `display_order`.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the category."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "products"
+                ],
+                "properties": {
+                  "products": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "The products to move, in the order to apply them.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "product_id"
+                      ],
+                      "properties": {
+                        "product_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "The ID of a product that is already in this category."
+                        },
+                        "position": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Zero-based position to move the product to. If omitted, the product goes to the end."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Move two products": {
+                  "value": {
+                    "products": [
+                      {
+                        "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                        "position": 0
+                      },
+                      {
+                        "product_id": "a3e2d1c0-9b8a-4f7e-8d6c-5b4a39281706",
+                        "position": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. Every product in the category, with its display order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "display_order": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": [
+                      {
+                        "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                        "name": "Team Hoodie",
+                        "display_order": 1000
+                      },
+                      {
+                        "product_id": "a3e2d1c0-9b8a-4f7e-8d6c-5b4a39281706",
+                        "name": "Team Cap",
+                        "display_order": 2000
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Product not in category": {
+                    "value": {
+                      "products": [
+                        {
+                          "product_id": [
+                            "Object with uuid=a3e2d1c0-9b8a-4f7e-8d6c-5b4a39281706 does not exist."
+                          ]
+                        }
+                      ]
                     }
                   }
                 }
