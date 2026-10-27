@@ -7591,7 +7591,7 @@
         "operationId": "post_client-id-orders",
         "summary": "Create Order",
         "description": "Places a redemption order for the signed-in member. The member spends their reward item balance, or pays a provider in cash, on a product variant. Eligibility, stock and the balance debit are handled together, so an order either goes through completely or not at all. The caller must be a member of the application.\n\nSend an `idempotency_key` so a retried request can't place the order twice. Repeating a key with the same request returns the original order with status 200 instead of 201. Reusing a key for a different request fails with 409.\n\nAn order can contain only one item for now. The response is the order, in the same shape as Retrieve Order, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order.\n\nErrors come back as `detail` and `error_code`. A 400 means the request itself is wrong, for example an unknown variant. A 422 means the order is valid but the current state blocks it, for example out of stock, insufficient balance, or a product that is expired or the member isn't eligible for.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
