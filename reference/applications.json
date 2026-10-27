@@ -9580,7 +9580,7 @@
     "/{client_id}/order-items/{order_item_id}/refunds/{uuid}/-1-1-1": {
       "get": {
         "operationId": "get_client-id-order-items-order-item-id-refunds-uuid-1-1-1",
-        "summary": "Copy of Retrieve Provider Product",
+        "summary": "Create Provider Product Sync Job",
         "description": "Returns one refund that covers an order item. Requires a producer access token for the application.\n\n`status` is `pending`, `completed` or `failed`. `total_amount` is the sum of the refunded item amounts, and `items` lists each refunded order item with its variant, product, amount and quantity. `reason` is the reason given when the refund was created, and `created_by` is the producer who issued it.",
         "x-internal": false,
         "parameters": [
