@@ -4518,7 +4518,7 @@
           }
         ],
         "summary": "Publish Category",
-        "x-internal": true,
+        "x-internal": false,
         "operationId": "post_client-id-categories-uuid-publish"
       }
     },
