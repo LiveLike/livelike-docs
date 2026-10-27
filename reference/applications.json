@@ -3610,7 +3610,7 @@
             }
           }
         },
-        "x-internal": true
+        "x-internal": false
       }
     },
     "/{client_id}/reward-stores": {
