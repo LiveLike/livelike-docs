@@ -30,6 +30,7 @@
 - create-variants-from-provider-products
 - create-order
 - retrieve-order
+- list-orders
 - list-order-items
 - retrieve-order-item
 - redeem-order-item
@@ -38,3 +39,7 @@
 - create-refund
 - list-refunds
 - retrieve-refund
+- list-provider-products
+- retrieve-provider-product
+- create-provider-product-sync-job
+- list-provider-product-sync-jobs

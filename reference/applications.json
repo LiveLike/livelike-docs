@@ -6869,6 +6869,121 @@
             }
           }
         }
+      },
+      "get": {
+        "operationId": "get_client-id-orders",
+        "summary": "List Orders",
+        "description": "Returns the orders of the calling member in this application, newest first, and paginated. A member only ever sees their own orders, so there is no way to list another member's orders with this endpoint. Use List Order Items for the producer view across the whole application.\n\nAn order is a container: its lifecycle lives on its items, and the order `status` is only `created` or `cancelled`. Each order carries its items and any refunds issued against it.\n\nQuery parameters, all optional:\n- `status`: `created` or `cancelled`.\n- `redemption_method`: `reward_item` or `cash`.\n- `reward_item_id`, `product_id`, `variant_id`: UUIDs that narrow the list to orders paid with one reward item, or containing one product or variant.\n- `total_amount__gte`, `total_amount__lte`: inclusive bounds on the order total.\n- `since`, `until`: ISO 8601 times. `since` is inclusive and `until` is exclusive, both on the creation time.\n- `ordering`: `created_at`, `updated_at`, `status` or `total_amount`. Prefix with a minus for descending order. The default is `-created_at`.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created",
+                "cancelled"
+              ]
+            },
+            "description": "Only orders with this status."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "total_amount": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                          "profile": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          },
+                          "status": "created",
+                          "reward_item": {
+                            "id": "6f1c2a3e-8b1d-4c55-9a0e-2d7b5f9e1a10",
+                            "name": "Gold Coins"
+                          },
+                          "total_amount": "500.00",
+                          "redemption_method": "reward_item",
+                          "idempotency_key": "order-2026-10-22-0001",
+                          "items": [
+                            {
+                              "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                              "status": "redeemed",
+                              "quantity": 1,
+                              "amount": "500.00",
+                              "unit_amount": "500.00"
+                            }
+                          ],
+                          "refunds": [],
+                          "created_at": "2026-10-22T14:00:00Z",
+                          "updated_at": "2026-10-22T14:00:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/{client_id}/orders/{uuid}/": {
@@ -9288,6 +9403,393 @@
                           "product_id": [
                             "Object with uuid=a3e2d1c0-9b8a-4f7e-8d6c-5b4a39281706 does not exist."
                           ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/provider-products/": {
+      "get": {
+        "operationId": "get_client-id-provider-products",
+        "summary": "List Provider Products",
+        "description": "Returns the provider products that have been synced into the application, newest first by default, and paginated. A provider product is a copy of one product from an external provider's catalog, such as Konekt. Use it to find the `provider_product_id` to send to Create Variants from Provider Products. Requires a producer access token for the application.\n\nQuery parameters, all optional:\n- `provider`: only products from this provider, for example `konekt`.\n- `is_active`: `true` or `false`.\n- `ordering`: `created_at` or `updated_at`. Prefix with a minus for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "provider",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Only products from this provider, for example konekt."
+          },
+          {
+            "in": "query",
+            "name": "is_active",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only active or only inactive provider products."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "external_id": {
+                            "type": "string"
+                          },
+                          "is_active": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "d7e8f9a0-1b2c-4d3e-8f4a-5b6c7d8e9f01",
+                          "provider": "konekt",
+                          "external_id": "KNK-10432",
+                          "product_data": {
+                            "productId": "KNK-10432",
+                            "name": "Amazon Gift Card",
+                            "currency": "USD",
+                            "faceValue": 25
+                          },
+                          "issued_inventory": 0,
+                          "is_active": true,
+                          "created_at": "2026-10-20T08:00:00Z",
+                          "updated_at": "2026-10-26T08:00:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/provider-products/{id}/": {
+      "get": {
+        "operationId": "get_client-id-provider-products-id",
+        "summary": "Retrieve Provider Product",
+        "description": "Returns one synced provider product, including the raw product payload as the provider last returned it. Requires a producer access token for the application.\n\n`product_data` is the provider's own payload, so its fields differ between providers. `issued_inventory` is the number of units issued by an admin. The `id` is the value to send as `provider_product_id` when creating a variant from a provider product.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the provider product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "external_id": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "d7e8f9a0-1b2c-4d3e-8f4a-5b6c7d8e9f01",
+                      "provider": "konekt",
+                      "external_id": "KNK-10432",
+                      "product_data": {
+                        "productId": "KNK-10432",
+                        "name": "Amazon Gift Card",
+                        "currency": "USD",
+                        "faceValue": 25
+                      },
+                      "issued_inventory": 0,
+                      "is_active": true,
+                      "created_at": "2026-10-20T08:00:00Z",
+                      "updated_at": "2026-10-26T08:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/provider-product-sync-jobs/": {
+      "post": {
+        "operationId": "post_client-id-provider-product-sync-jobs",
+        "summary": "Create Provider Product Sync Job",
+        "description": "Starts a background sync of an external provider's product catalog into the application's provider products. The job is created in the `pending` state and the call returns straight away with 202. Poll Retrieve Provider Product Sync Job for its progress, and use List Provider Products once it completes.\n\nThis needs a privileged LiveLike staff account. A producer access token is not enough, because a catalog sync affects raw provider data that underlies every application.\n\nA job moves through `pending`, `running` and then `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "default": "konekt",
+                    "description": "The provider whose catalog to sync. Defaults to konekt, which is the only provider integrated so far."
+                  }
+                }
+              },
+              "examples": {
+                "Sync Konekt": {
+                  "value": {
+                    "provider": "konekt"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted. The sync job was queued.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "products_synced": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Accepted": {
+                    "value": {
+                      "id": "e8f9a0b1-2c3d-4e4f-9a5b-6c7d8e9f0a12",
+                      "provider": "konekt",
+                      "status": "pending",
+                      "products_synced": 0,
+                      "error_message": null,
+                      "started_at": null,
+                      "finished_at": null,
+                      "created_at": "2026-10-27T06:45:00Z",
+                      "updated_at": "2026-10-27T06:45:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid provider.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid provider": {
+                    "value": {
+                      "provider": [
+                        "\"acme\" is not a valid choice."
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-provider-product-sync-jobs",
+        "summary": "List Provider Product Sync Jobs",
+        "description": "Returns the provider product sync jobs of the application, newest first, and paginated. Each job is one background run that fetches a provider's catalog. Use it to see which syncs ran and how they ended. This needs a privileged LiveLike staff account. A producer access token is not enough.\n\nA job's `status` is `pending`, `running`, `completed` or `failed`. `products_synced` counts the provider products created or updated by the run, and `error_message` is set if it failed.\n\nThere are no filters. The only query parameters are `page` and `page_size`, and the default page size is 20.",
+        "x-internal": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "products_synced": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 2,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "e8f9a0b1-2c3d-4e4f-9a5b-6c7d8e9f0a12",
+                          "provider": "konekt",
+                          "status": "completed",
+                          "products_synced": 148,
+                          "error_message": null,
+                          "started_at": "2026-10-27T06:45:02Z",
+                          "finished_at": "2026-10-27T06:45:41Z",
+                          "created_at": "2026-10-27T06:45:00Z",
+                          "updated_at": "2026-10-27T06:45:41Z"
+                        },
+                        {
+                          "id": "f9a0b1c2-3d4e-4f50-8b6c-7d8e9f0a1b23",
+                          "provider": "konekt",
+                          "status": "failed",
+                          "products_synced": 0,
+                          "error_message": "Provider request timed out.",
+                          "started_at": "2026-10-26T06:00:02Z",
+                          "finished_at": "2026-10-26T06:00:32Z",
+                          "created_at": "2026-10-26T06:00:00Z",
+                          "updated_at": "2026-10-26T06:00:32Z"
                         }
                       ]
                     }
