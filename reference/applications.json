@@ -5223,7 +5223,7 @@
         "operationId": "get_client-id-products",
         "summary": "List Products",
         "description": "Returns the published products of the application's active reward stores. Drafts and unpublished products are not included; use List Products - Admin to see them. Reads are public, so no producer token is needed. Results are paginated, and each result is a full product in the same shape as Retrieve Product.",
-        "x-internal": true,
+        "x-internal": false,
         "parameters": [
           {
             "in": "path",
