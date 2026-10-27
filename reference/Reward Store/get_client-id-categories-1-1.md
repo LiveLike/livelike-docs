@@ -1,7 +1,7 @@
 ---
 api:
   file: applications.json
-  operationId: get_client-id-categories-1-1
+  operationId: delete_client-id-categories-uuid
 hidden: true
 link:
   new_tab: false
