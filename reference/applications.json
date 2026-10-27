@@ -4674,41 +4674,45 @@
     },
     "/{client_id}/products/": {
       "post": {
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
+        "operationId": "post_client-id-products",
+        "summary": "Create Product",
+        "description": "Creates a product in a reward store. It is always created in the `draft` state, so it is not visible to members until you publish it. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint, and a product can't be published until it has at least one.\n\nRequires a producer access token for the application.\n\nSend JSON, or `multipart/form-data` when you upload product images.",
+        "x-internal": true,
         "parameters": [
           {
             "in": "path",
             "name": "client_id",
+            "required": true,
             "schema": {
               "type": "string"
             },
-            "required": true
+            "description": "The client ID of the application the product belongs to."
           }
         ],
-        "operationId": "post_client-id-products",
-        "summary": "Create Product",
-        "description": "Creates a product in a reward store. It is always created in the draft state. Variants, which carry the price and stock, are added afterwards through the nested variants endpoint. A product can't be published until it has at least one.",
-        "x-internal": true,
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
                 "properties": {
                   "product_store_id": {
                     "type": "string",
-                    "description": "Must be an active store in this application. Write-only."
+                    "format": "uuid",
+                    "description": "The reward store this product belongs to. It must be an active store in this application. Write-only."
                   },
                   "name": {
                     "type": "string",
-                    "description": "Max 255 characters."
+                    "maxLength": 255,
+                    "description": "Name of the product. Max 255 characters."
                   },
                   "product_type": {
                     "type": "string",
+                    "nullable": true,
                     "enum": [
                       "badge",
                       "multiplier",
@@ -4718,60 +4722,1243 @@
                       "merchandise",
                       "experience",
                       "konekt"
-                    ]
+                    ],
+                    "description": "The kind of product. Optional."
                   },
                   "redemption_provider": {
                     "type": "string",
-                    "description": "Only konekt. Must be konekt when product_type is konekt, and empty for every other type.",
+                    "nullable": true,
                     "enum": [
-                      "konekt",
-                      "null"
-                    ]
+                      "konekt"
+                    ],
+                    "description": "The third party that redeems and fulfils the product. Must be `konekt` when `product_type` is `konekt`, and must be empty for every other `product_type`. Leave it out when you fulfil the product yourself."
                   },
                   "redemption_method": {
                     "type": "string",
-                    "description": "reward_item (default) or cash."
+                    "enum": [
+                      "reward_item",
+                      "cash"
+                    ],
+                    "default": "reward_item",
+                    "description": "How members pay for the product. `reward_item` debits the member's reward item balance. `cash` means money is collected by an external provider and no reward item is debited."
                   },
                   "description": {
-                    "type": "string"
+                    "type": "object",
+                    "description": "Rich text description of the product, as a JSON document."
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true,
+                    "description": "The reward item that variant prices are denominated in. It must be one of the reward items attached to the product's store."
                   },
                   "redemption_rules": {
                     "type": "object",
+                    "description": "Limits on redemption. No other keys are accepted.",
                     "properties": {
                       "max_redemptions_per_user": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "The most times one member can redeem the product."
                       },
                       "max_redemption_days": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "How many days each redemption keeps counting against `max_redemptions_per_user`. Only valid together with `max_redemptions_per_user`."
                       }
                     }
                   },
                   "gating_profile_group_ids": {
                     "type": "array",
                     "items": {
-                      "type": "string"
-                    }
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Profile groups whose members are the only ones who can redeem the product. Each group must belong to this application."
                   },
                   "category_ids": {
                     "type": "array",
+                    "description": "Categories to list the product under. Each category must belong to this product's store and be published.",
                     "items": {
+                      "type": "object",
+                      "required": [
+                        "category_id"
+                      ],
                       "properties": {
                         "category_id": {
-                          "type": "string"
+                          "type": "string",
+                          "format": "uuid"
                         },
                         "display_order": {
-                          "type": "string"
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Position within the category. If omitted, the product is placed at the end."
                         }
-                      },
-                      "type": "object"
-                    },
-                    "description": "Each category must belong to this product's store and be published. If display_order is omitted, the product is placed at the end of that category."
+                      }
+                    }
                   },
                   "sponsor_ids": {
                     "type": "array",
                     "items": {
-                      "type": "string"
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Sponsors to attach. Each sponsor must belong to this application."
+                  },
+                  "start_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product becomes available. Can't be in the past."
+                  },
+                  "expiry_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the product stops being available. Must be in the future and not before `start_at`."
+                  },
+                  "redemption_success_message": {
+                    "type": "object",
+                    "description": "Rich text shown to the member after a successful redemption."
+                  },
+                  "redemption_failure_message": {
+                    "type": "object",
+                    "description": "Rich text shown to the member when a redemption fails."
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Key and value pairs. Both `key` and `value` are required on every item.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "key",
+                        "value"
+                      ],
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
                     }
+                  },
+                  "image": {
+                    "type": "array",
+                    "description": "Product images. Upload files with `multipart/form-data`, using the field names `image[0]image`, `image[0]display_order`, `image[1]image` and so on. Accepts JPG, PNG, GIF, WEBP and GLB files, up to 3 MB each by default. If `display_order` is omitted, upload order is used.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "string",
+                          "format": "binary"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Draft product": {
+                  "summary": "A merchandise product limited to two redemptions per member",
+                  "value": {
+                    "product_store_id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                    "name": "Team Hoodie",
+                    "product_type": "merchandise",
+                    "redemption_method": "reward_item",
+                    "reward_item_id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                    "redemption_rules": {
+                      "max_redemptions_per_user": 2,
+                      "max_redemption_days": 30
+                    },
+                    "category_ids": [
+                      {
+                        "category_id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                        "display_order": 0
+                      }
+                    ],
+                    "expiry_at": "2027-06-30T23:59:59Z",
+                    "attributes": [
+                      {
+                        "key": "size",
+                        "value": "M"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "product_store_id",
+                  "name"
+                ],
+                "properties": {
+                  "product_store_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "image[0]image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The first image file. Repeat with `image[1]image` and so on."
+                  },
+                  "image[0]display_order": {
+                    "type": "integer",
+                    "description": "Position of the first image. Optional."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The product is returned in the draft state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "publish_url": {
+                      "type": "string"
+                    },
+                    "unpublish_url": {
+                      "type": "string"
+                    },
+                    "variants_url": {
+                      "type": "string",
+                      "description": "The endpoint for adding variants to this product."
+                    },
+                    "product_store": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_provider": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "redemption_method": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ],
+                      "description": "Always `draft` on create."
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "description": "How the product reads to a member: draft, unpublished, or, once published, coming soon or expired."
+                    },
+                    "description": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "is_eligible_to_redeem": {
+                      "type": "boolean"
+                    },
+                    "redemption_rules": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "gating_profile_groups": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "sponsors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "reward_item": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "image_url": {
+                            "type": "string"
+                          },
+                          "display_order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "start_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "expiry_at": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "redemption_success_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "redemption_failure_message": {
+                      "type": "object",
+                      "nullable": true
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "custom_data": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "attributes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_by": {
+                      "type": "object",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                      "publish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/publish/",
+                      "unpublish_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/unpublish/",
+                      "variants_url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/variants/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Team Hoodie",
+                      "product_type": "merchandise",
+                      "redemption_provider": null,
+                      "redemption_method": "reward_item",
+                      "state": "draft",
+                      "display_status": "draft",
+                      "description": null,
+                      "is_eligible_to_redeem": false,
+                      "redemption_rules": {
+                        "max_redemptions_per_user": 2,
+                        "max_redemption_days": 30
+                      },
+                      "gating_profile_groups": [],
+                      "categories": [
+                        {
+                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                          "name": "Gift Cards",
+                          "display_order": 0
+                        }
+                      ],
+                      "sponsors": [],
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "images": [],
+                      "start_at": null,
+                      "expiry_at": "2027-06-30T23:59:59Z",
+                      "redemption_success_message": null,
+                      "redemption_failure_message": null,
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "size",
+                          "value": "M"
+                        }
+                      ],
+                      "created_at": "2026-10-22T11:00:00Z",
+                      "updated_at": "2026-10-22T11:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error. The body maps each invalid field to its messages.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Invalid provider": {
+                    "value": {
+                      "redemption_provider": "Not allowed unless product_type is 'konekt' (it must be empty for any other product_type)."
+                    }
+                  },
+                  "Past start": {
+                    "value": {
+                      "start_at": "start_at cannot be in the past."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No active application with this client ID."
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-products",
+        "summary": "List Products",
+        "description": "Returns the published products of the application's active reward stores. Drafts and unpublished products are not included; use List Products - Admin to see them. Reads are public, so no producer token is needed. Results are paginated, and each result is a full product in the same shape as Retrieve Product.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products in this reward store."
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products listed under this category."
+          },
+          {
+            "in": "query",
+            "name": "sponsor_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products with this sponsor."
+          },
+          {
+            "in": "query",
+            "name": "product_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "badge",
+                "multiplier",
+                "flair",
+                "common_code",
+                "unique_code",
+                "merchandise",
+                "experience",
+                "konekt"
+              ]
+            },
+            "description": "Only products of this type."
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "updated_at",
+                "-updated_at",
+                "expiry_at",
+                "-expiry_at"
+              ]
+            },
+            "description": "Sort field. Prefix with a minus for descending order."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "draft",
+                              "published",
+                              "unpublished"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                          "product_store": {
+                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                            "name": "Summer Rewards"
+                          },
+                          "name": "Team Hoodie",
+                          "product_type": "merchandise",
+                          "redemption_method": "reward_item",
+                          "state": "published",
+                          "display_status": "published",
+                          "is_eligible_to_redeem": true,
+                          "redemption_rules": {
+                            "max_redemptions_per_user": 2,
+                            "max_redemption_days": 30
+                          },
+                          "categories": [
+                            {
+                              "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                              "name": "Gift Cards",
+                              "display_order": 0
+                            }
+                          ],
+                          "images": [
+                            {
+                              "id": 1,
+                              "image_url": "https://<cdn>/products/hoodie.png",
+                              "display_order": 0
+                            }
+                          ],
+                          "expiry_at": "2027-06-30T23:59:59Z",
+                          "attributes": [
+                            {
+                              "key": "size",
+                              "value": "M"
+                            }
+                          ],
+                          "created_at": "2026-10-22T11:00:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{id}/publish/": {
+      "post": {
+        "operationId": "post_client-id-products-id-publish",
+        "summary": "Publish Product",
+        "description": "Publishes a draft or unpublished product so members can see and redeem it. It takes no request body. Requires a producer access token for the application.\n\nThe product must have a product type, at least one image, at least one published category, and a reward item attached to its store. It must also have at least one active variant, and every active variant must have a cost. A `unique_code` product also needs a coupon code uploaded for an active variant. A product that is already published is rejected.\n\nThe response is the full product, in the same shape as Retrieve Product.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The product is returned with state published.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ]
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "unpublished",
+                        "published",
+                        "coming_soon",
+                        "expired"
+                      ]
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "name": "Team Hoodie",
+                      "state": "published",
+                      "display_status": "published",
+                      "updated_at": "2026-10-22T12:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The product can't be published. Each field that blocks publishing is named in the body.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Already published": {
+                    "value": {
+                      "detail": "Product is already published."
+                    }
+                  },
+                  "Missing requirements": {
+                    "value": {
+                      "images": "At least one product image is required.",
+                      "variants": "At least one active variant is required."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No product with this ID in the application."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{id}/unpublish/": {
+      "post": {
+        "operationId": "post_client-id-products-id-unpublish",
+        "summary": "Unpublish Product",
+        "description": "Takes a published product off sale. It takes no request body. Requires a producer access token for the application.\n\nOnly a published product can be unpublished. An unpublished product can be edited again with Update Product and published again with Publish Product. A product that was ever published can't be deleted.\n\nThe response is the full product, in the same shape as Retrieve Product.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The product is returned with state unpublished.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ]
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "unpublished",
+                        "published",
+                        "coming_soon",
+                        "expired"
+                      ]
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "name": "Team Hoodie",
+                      "state": "unpublished",
+                      "display_status": "unpublished",
+                      "updated_at": "2026-10-22T13:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The product isn't published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not published": {
+                    "value": {
+                      "detail": "Only published products can be unpublished."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No product with this ID in the application."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{uuid}/": {
+      "delete": {
+        "operationId": "delete_client-id-products-uuid",
+        "summary": "Delete Product",
+        "description": "Permanently deletes a product that has never been published. A product that has ever been published can't be deleted, even if it is now unpublished; unpublish it instead. Requires a producer access token for the application.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The product was deleted."
+          },
+          "400": {
+            "description": "The product was published at some point and can't be deleted.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Previously published": {
+                    "value": {
+                      "detail": "Products that have ever been published cannot be deleted."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid access token."
+          },
+          "403": {
+            "description": "The token is not a producer token for this application."
+          },
+          "404": {
+            "description": "No product with this ID in the application."
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{id}/": {
+      "get": {
+        "operationId": "get_client-id-products-id",
+        "summary": "Retrieve Product",
+        "description": "Returns one product by ID. Reads are public, so no producer token is needed. Unlike List Products, a product in any state can be retrieved, including draft and unpublished ones, as long as you know its ID. `is_eligible_to_redeem` reflects the requesting member and is always false for anonymous requests.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "product_type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ]
+                    },
+                    "display_status": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "unpublished",
+                        "published",
+                        "coming_soon",
+                        "expired"
+                      ]
+                    },
+                    "is_eligible_to_redeem": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                      "publish_url": "…/products/b4f1a8c2-…/publish/",
+                      "unpublish_url": "…/products/b4f1a8c2-…/unpublish/",
+                      "variants_url": "…/products/b4f1a8c2-…/variants/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Team Hoodie",
+                      "product_type": "merchandise",
+                      "redemption_provider": null,
+                      "redemption_method": "reward_item",
+                      "state": "published",
+                      "display_status": "published",
+                      "description": null,
+                      "is_eligible_to_redeem": true,
+                      "redemption_rules": {
+                        "max_redemptions_per_user": 2,
+                        "max_redemption_days": 30
+                      },
+                      "gating_profile_groups": [],
+                      "categories": [
+                        {
+                          "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                          "name": "Gift Cards",
+                          "display_order": 0
+                        }
+                      ],
+                      "sponsors": [],
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "images": [
+                        {
+                          "id": 1,
+                          "image_url": "https://<cdn>/products/hoodie.png",
+                          "display_order": 0
+                        }
+                      ],
+                      "start_at": null,
+                      "expiry_at": "2027-06-30T23:59:59Z",
+                      "redemption_success_message": null,
+                      "redemption_failure_message": null,
+                      "is_active": true,
+                      "custom_data": null,
+                      "attributes": [
+                        {
+                          "key": "size",
+                          "value": "M"
+                        }
+                      ],
+                      "created_at": "2026-10-22T11:00:00Z",
+                      "updated_at": "2026-10-22T12:00:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No product with this ID in the application."
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patch_client-id-products-id",
+        "summary": "Update Product",
+        "description": "Updates a product. Send only the fields you want to change. Requires a producer access token for the application.\n\nA published product can't be edited: unpublish it first, then edit, then publish it again. The array fields `category_ids`, `sponsor_ids`, `gating_profile_group_ids`, `attributes` and `image` are full replacements. Send the complete list, and send an empty list to clear them. Omitting a field leaves it unchanged. Once a product has left the draft state it must keep at least one image.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the product. Max 255 characters."
+                  },
+                  "product_type": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "badge",
+                      "multiplier",
+                      "flair",
+                      "common_code",
+                      "unique_code",
+                      "merchandise",
+                      "experience",
+                      "konekt"
+                    ],
+                    "description": "The kind of product. Switching to a single-variant type fails if the product has more than one active variant."
+                  },
+                  "redemption_provider": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "konekt"
+                    ],
+                    "description": "Must be konekt when product_type is konekt, and empty for every other type."
+                  },
+                  "redemption_method": {
+                    "type": "string",
+                    "enum": [
+                      "reward_item",
+                      "cash"
+                    ],
+                    "description": "How members pay for the product."
+                  },
+                  "description": {
+                    "type": "object",
+                    "description": "Rich text description of the product, as a JSON document."
+                  },
+                  "reward_item_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true,
+                    "description": "Must be one of the reward items attached to the product's store."
+                  },
+                  "redemption_rules": {
+                    "type": "object",
+                    "description": "Limits on redemption. Only max_redemptions_per_user and max_redemption_days are accepted, and the days value needs the per-user cap.",
+                    "properties": {
+                      "max_redemptions_per_user": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "max_redemption_days": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  },
+                  "gating_profile_group_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Full replace. Profile groups that can redeem the product."
+                  },
+                  "category_ids": {
+                    "type": "array",
+                    "description": "Full replace. Each category must belong to the product's store and be published.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "category_id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  },
+                  "sponsor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "description": "Full replace. Sponsors to attach."
                   },
                   "start_at": {
                     "type": "string",
@@ -4780,24 +5967,26 @@
                   },
                   "expiry_at": {
                     "type": "string",
+                    "format": "date-time",
                     "description": "Must be in the future and not before start_at."
                   },
                   "redemption_success_message": {
-                    "type": "string",
-                    "description": "Rich text.",
-                    "format": "json"
+                    "type": "object",
+                    "description": "Rich text shown after a successful redemption."
                   },
                   "redemption_failure_message": {
-                    "type": "string",
-                    "format": "json",
-                    "description": "Rich text."
+                    "type": "object",
+                    "description": "Rich text shown when a redemption fails."
                   },
                   "custom_data": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
                   },
                   "attributes": {
                     "type": "array",
+                    "description": "Full replace. Both key and value are required on every item.",
                     "items": {
+                      "type": "object",
                       "properties": {
                         "key": {
                           "type": "string"
@@ -4805,14 +5994,2807 @@
                         "value": {
                           "type": "string"
                         }
-                      },
-                      "type": "object"
+                      }
+                    }
+                  },
+                  "image": {
+                    "type": "array",
+                    "description": "Full replace. Send multipart/form-data with image[0]image, image[0]display_order and so on. Accepts JPG, PNG, GIF, WEBP and GLB, up to 3 MB each by default.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "string",
+                          "format": "binary"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Rename and limit": {
+                  "value": {
+                    "name": "Team Hoodie 2027",
+                    "redemption_rules": {
+                      "max_redemptions_per_user": 1
+                    },
+                    "expiry_at": "2027-12-31T23:59:59Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated product.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "draft",
+                        "published",
+                        "unpublished"
+                      ]
                     }
                   }
                 },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                      "product_store": {
+                        "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                        "name": "Summer Rewards"
+                      },
+                      "name": "Team Hoodie 2027",
+                      "product_type": "merchandise",
+                      "redemption_method": "reward_item",
+                      "state": "unpublished",
+                      "display_status": "unpublished",
+                      "redemption_rules": {
+                        "max_redemptions_per_user": 1
+                      },
+                      "expiry_at": "2027-12-31T23:59:59Z",
+                      "updated_at": "2026-10-22T13:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the product is published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before editing any field."
+                    }
+                  },
+                  "Invalid field": {
+                    "value": {
+                      "expiry_at": "expiry_at must be in the future."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/admin/": {
+      "get": {
+        "operationId": "get_client-id-products-admin",
+        "summary": "List Products - Admin",
+        "description": "Returns every product in the application, in any state including draft, for producers. Unlike List Products, it adds filters on display status, category name and gating. Requires a producer access token for the application. Results are paginated, and each result is a full product in the same shape as Retrieve Product.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "product_store_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products in this reward store."
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products listed under this category."
+          },
+          {
+            "in": "query",
+            "name": "category_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Only products in a category with this name. Case-insensitive exact match."
+          },
+          {
+            "in": "query",
+            "name": "sponsor_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only products with this sponsor."
+          },
+          {
+            "in": "query",
+            "name": "product_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "badge",
+                "multiplier",
+                "flair",
+                "common_code",
+                "unique_code",
+                "merchandise",
+                "experience",
+                "konekt"
+              ]
+            },
+            "description": "Only products of this type."
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published",
+                "unpublished"
+              ]
+            },
+            "description": "Only products in this publication state."
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "unpublished",
+                "published",
+                "coming_soon",
+                "expired"
+              ]
+            },
+            "description": "Only products with this display status. Unlike state, it separates published products that are coming soon or expired."
+          },
+          {
+            "in": "query",
+            "name": "is_gated",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "true returns only products restricted to profile groups, false only products open to everyone."
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=size:M. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "ordering",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "created_at",
+                "-created_at",
+                "updated_at",
+                "-updated_at",
+                "expiry_at",
+                "-expiry_at"
+              ]
+            },
+            "description": "Sort field. Prefix with a minus for descending order."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "draft",
+                              "published",
+                              "unpublished"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61/",
+                          "product_store": {
+                            "id": "0d9c8f7e-3b2a-4f61-a1c4-5e8d7b6a9c20",
+                            "name": "Summer Rewards"
+                          },
+                          "name": "Team Hoodie",
+                          "state": "draft",
+                          "description": null,
+                          "is_eligible_to_redeem": false,
+                          "redemption_rules": {
+                            "max_redemptions_per_user": 2,
+                            "max_redemption_days": 30
+                          },
+                          "gating_profile_groups": [],
+                          "categories": [
+                            {
+                              "id": "3a7e9b21-5c4d-4e8f-b6a1-9d2c0f1e7a33",
+                              "name": "Gift Cards",
+                              "display_order": 0
+                            }
+                          ],
+                          "images": [],
+                          "attributes": [
+                            {
+                              "key": "size",
+                              "value": "M"
+                            }
+                          ],
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{product_uuid}/variants/": {
+      "post": {
+        "operationId": "post_client-id-products-product-uuid-variants",
+        "summary": "Create Variants",
+        "description": "Adds one or more variants to a product. This is a bulk create: the whole batch is validated first, and if any variant fails, none are created. A variant carries the price and stock of a product, and a product can't be published until it has at least one active variant with a cost. Requires a producer access token for the application.\n\nThe product must not be published. A product can have at most 15 active variants. Products of type `konekt`, `unique_code` and `common_code` can have only one. Labels must be unique within the product.\n\nWhich variant fields you set depends on the product's `product_type`, and every other one must be left out:\n- `badge`, `multiplier`, `flair`: `builtin_source_id`, the ID of an active badge, user-activated reward multiplier or flair in this application.\n- `common_code`: `common_coupon_code`.\n- `unique_code`: none. Add codes with `coupon_codes`, or with Upload Coupon Codes.\n- `merchandise`: `color_label`, `color_hexcode` or `size`. At least one is required.\n- `experience`: `event_start` and `event_end`.\n- `konekt`: `provider_product_id`.\n\nSend JSON, or `multipart/form-data` when you upload variant images.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product to add variants to."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
                 "required": [
-                  "product_store_id"
-                ]
+                  "variants"
+                ],
+                "properties": {
+                  "variants": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "The variants to create.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "label"
+                      ],
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "maxLength": 255,
+                          "description": "Name of the variant, for example Medium, Black. Must be unique within the product."
+                        },
+                        "cost": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Cost to redeem, in units of the product's reward item. Can be empty while the product is a draft, but every active variant needs one to publish."
+                        },
+                        "discount_percentage": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 100,
+                          "nullable": true,
+                          "description": "Percentage taken off the cost. Setting it gives the variant a discount."
+                        },
+                        "inventory_count": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Redeemable stock. Leave empty for unlimited."
+                        },
+                        "low_stock_threshold": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "nullable": true,
+                          "description": "Stock level at or below which the variant reads as few_left."
+                        },
+                        "is_default": {
+                          "type": "boolean",
+                          "description": "Whether this is the default variant shown for the product."
+                        },
+                        "color_label": {
+                          "type": "string",
+                          "maxLength": 50,
+                          "description": "Merchandise products only. Colour name, for example Midnight Blue."
+                        },
+                        "color_hexcode": {
+                          "type": "string",
+                          "maxLength": 7,
+                          "description": "Merchandise products only. Colour hex code, for example #1A2B3C."
+                        },
+                        "size": {
+                          "type": "string",
+                          "maxLength": 25,
+                          "description": "Merchandise products only. Size label, for example M or 42."
+                        },
+                        "event_start": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Experience products only. Start of the event."
+                        },
+                        "event_end": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Experience products only. End of the event. Must be after event_start."
+                        },
+                        "common_coupon_code": {
+                          "type": "string",
+                          "maxLength": 255,
+                          "description": "Common-code products only. The shared code handed out on every redemption."
+                        },
+                        "coupon_codes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "maxLength": 255
+                          },
+                          "description": "Unique-code products only. Codes to load. A code already used on another variant in the store fails the whole request."
+                        },
+                        "provider_product_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "nullable": true,
+                          "description": "Konekt products only. An active provider product in this application whose provider matches the product's redemption_provider."
+                        },
+                        "builtin_source_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "nullable": true,
+                          "description": "Badge, multiplier and flair products only. The built-in entity this variant is fulfilled from."
+                        },
+                        "attributes": {
+                          "type": "array",
+                          "description": "Key and value pairs. Both are required, and the same pair can't repeat.",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "images": {
+                          "type": "array",
+                          "description": "Variant images. Upload files with multipart/form-data, as variants[0]images[0]image and variants[0]images[0]display_order. display_order is required. Accepts JPG, PNG, GIF, WEBP and GLB, up to 3 MB each by default.",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "image": {
+                                "type": "string",
+                                "format": "binary"
+                              },
+                              "display_order": {
+                                "type": "integer",
+                                "minimum": 0
+                              }
+                            }
+                          }
+                        },
+                        "custom_data": {
+                          "type": "string",
+                          "description": "Free text, for example serialized JSON."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Merchandise variants": {
+                  "value": {
+                    "variants": [
+                      {
+                        "label": "Medium, Black",
+                        "size": "M",
+                        "color_label": "Black",
+                        "color_hexcode": "#000000",
+                        "cost": 500,
+                        "inventory_count": 100,
+                        "low_stock_threshold": 10,
+                        "is_default": true
+                      },
+                      {
+                        "label": "Large, Black",
+                        "size": "L",
+                        "color_label": "Black",
+                        "color_hexcode": "#000000",
+                        "cost": 500,
+                        "inventory_count": 80
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The new variants, in request order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "cost": {
+                        "type": "integer",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": [
+                      {
+                        "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                        "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/c5d2b9e3-…/",
+                        "product": {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "name": "Team Hoodie"
+                        },
+                        "label": "Medium, Black",
+                        "color_label": "Black",
+                        "color_hexcode": "#000000",
+                        "is_default": true,
+                        "size": "M",
+                        "cost": 500,
+                        "discount_percentage": null,
+                        "has_discount": false,
+                        "discounted_cost": 500,
+                        "inventory_count": 100,
+                        "low_stock_threshold": 10,
+                        "available_count": 100,
+                        "redeemed_count": 0,
+                        "images": [],
+                        "attributes": [],
+                        "is_active": true,
+                        "display_status": "available",
+                        "created_at": "2026-10-22T11:30:00Z",
+                        "updated_at": "2026-10-22T11:30:00Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the product is published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before adding variants."
+                    }
+                  },
+                  "Duplicate label": {
+                    "value": {
+                      "variants": "Variant label(s) already exist on this product: Medium, Black."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-products-product-uuid-variants",
+        "summary": "List Variants",
+        "description": "Returns the active variants of a product. Reads are public, so no producer token is needed. Results are paginated, and each result is a full variant in the same shape as Retrieve Variant. Deleted variants are not included.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "query",
+            "name": "variant_type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "size",
+                "colour",
+                "event",
+                "other",
+                "unique_code",
+                "common_code",
+                "provider_product"
+              ]
+            },
+            "description": "Only variants of this type."
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Format key:value, for example attributes=fit:regular. Repeating the parameter ANDs the pairs."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "cost": {
+                            "type": "integer",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                          "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/c5d2b9e3-…/",
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie"
+                          },
+                          "label": "Medium, Black",
+                          "color_label": "Black",
+                          "color_hexcode": "#000000",
+                          "is_default": true,
+                          "size": "M",
+                          "cost": 500,
+                          "discount_percentage": 10,
+                          "has_discount": true,
+                          "discounted_cost": 450,
+                          "inventory_count": 100,
+                          "low_stock_threshold": 10,
+                          "available_count": 100,
+                          "redeemed_count": 0,
+                          "images": [
+                            {
+                              "id": 1,
+                              "image_url": "https://<cdn>/variants/hoodie-m.png",
+                              "display_order": 0
+                            }
+                          ],
+                          "attributes": [
+                            {
+                              "key": "fit",
+                              "value": "regular"
+                            }
+                          ],
+                          "is_active": true,
+                          "display_status": "available",
+                          "created_at": "2026-10-22T11:30:00Z",
+                          "updated_at": "2026-10-22T11:30:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{product_uuid}/variants/{uuid}/": {
+      "get": {
+        "operationId": "get_client-id-products-product-uuid-variants-uuid",
+        "summary": "Retrieve Variant",
+        "description": "Returns one variant of a product. Reads are public, so no producer token is needed. A deleted variant returns 404.\n\n`has_discount` is true when `discount_percentage` is set, and `discounted_cost` is the cost after the discount. `available_count` is the stock left, and for a unique-code variant it is the number of unredeemed codes. `display_status` is one of `available`, `few_left`, `sold_out`, `coming_soon` or `expired`. The last two follow the parent product's start and expiry dates. `coupon_code_count`, `available_coupon_code_count` and `redeemed_coupon_code_count` count the codes of a unique-code variant. The codes themselves are never returned.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the variant."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "cost": {
+                      "type": "integer",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/c5d2b9e3-…/",
+                      "product": {
+                        "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                        "name": "Team Hoodie"
+                      },
+                      "label": "Medium, Black",
+                      "color_label": "Black",
+                      "color_hexcode": "#000000",
+                      "is_default": true,
+                      "size": "M",
+                      "event_start": null,
+                      "event_end": null,
+                      "common_coupon_code": null,
+                      "provider_product": null,
+                      "builtin_source_id": null,
+                      "coupon_code_count": 0,
+                      "cost": 500,
+                      "discount_percentage": 10,
+                      "has_discount": true,
+                      "discounted_cost": 450,
+                      "inventory_count": 100,
+                      "low_stock_threshold": 10,
+                      "available_count": 100,
+                      "redeemed_count": 0,
+                      "available_coupon_code_count": 0,
+                      "redeemed_coupon_code_count": 0,
+                      "images": [
+                        {
+                          "id": 1,
+                          "image_url": "https://<cdn>/variants/hoodie-m.png",
+                          "display_order": 0
+                        }
+                      ],
+                      "attributes": [
+                        {
+                          "key": "fit",
+                          "value": "regular"
+                        }
+                      ],
+                      "custom_data": null,
+                      "is_active": true,
+                      "display_status": "available",
+                      "created_at": "2026-10-22T11:30:00Z",
+                      "updated_at": "2026-10-22T11:30:00Z",
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patch_client-id-products-product-uuid-variants-uuid",
+        "summary": "Update Variant",
+        "description": "Updates a variant. Send only the fields you want to change. Requires a producer access token for the application.\n\nThe product must be unpublished or in draft, because a published product can't have its variants edited. The type-specific fields follow the same rules as Create Variants, so a field that doesn't match the product's `product_type` is rejected. `provider_product_id` can't be changed after the variant is created.\n\n`images` and `attributes` are full replacements. Send the complete list, and send an empty list to clear them. On a unique-code product, `coupon_codes` replaces the pool of available codes, and redeemed codes are never touched. Omit it to leave the pool alone, or send an empty list to clear the available codes.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the variant."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Name of the variant. Must be unique within the product."
+                  },
+                  "cost": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Cost to redeem, in units of the product's reward item."
+                  },
+                  "discount_percentage": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "nullable": true,
+                    "description": "Percentage taken off the cost."
+                  },
+                  "inventory_count": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Redeemable stock. Empty means unlimited."
+                  },
+                  "low_stock_threshold": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "nullable": true,
+                    "description": "Stock level at or below which the variant reads as few_left."
+                  },
+                  "is_default": {
+                    "type": "boolean",
+                    "description": "Whether this is the default variant shown for the product."
+                  },
+                  "color_label": {
+                    "type": "string",
+                    "description": "Merchandise products only."
+                  },
+                  "color_hexcode": {
+                    "type": "string",
+                    "description": "Merchandise products only. For example #1A2B3C."
+                  },
+                  "size": {
+                    "type": "string",
+                    "description": "Merchandise products only."
+                  },
+                  "event_start": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Experience products only."
+                  },
+                  "event_end": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Experience products only. Must be after event_start."
+                  },
+                  "common_coupon_code": {
+                    "type": "string",
+                    "description": "Common-code products only."
+                  },
+                  "coupon_codes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Unique-code products only. Replaces the available code pool."
+                  },
+                  "builtin_source_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true,
+                    "description": "Badge, multiplier and flair products only."
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "description": "Full replace. Both key and value are required on every item.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "images": {
+                    "type": "array",
+                    "description": "Full replace. display_order is required on every image.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "string",
+                          "format": "binary"
+                        },
+                        "display_order": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  },
+                  "custom_data": {
+                    "type": "string",
+                    "description": "Free text, for example serialized JSON."
+                  }
+                }
+              },
+              "examples": {
+                "Change price and stock": {
+                  "value": {
+                    "cost": 450,
+                    "inventory_count": 120,
+                    "discount_percentage": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated variant.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "cost": {
+                      "type": "integer",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                      "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/c5d2b9e3-…/",
+                      "product": {
+                        "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                        "name": "Team Hoodie"
+                      },
+                      "label": "Medium, Black",
+                      "size": "M",
+                      "cost": 450,
+                      "discount_percentage": 10,
+                      "has_discount": true,
+                      "discounted_cost": 405,
+                      "inventory_count": 120,
+                      "available_count": 120,
+                      "redeemed_count": 0,
+                      "is_active": true,
+                      "display_status": "available",
+                      "updated_at": "2026-10-22T12:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the product is published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before editing any variant."
+                    }
+                  },
+                  "Wrong field for type": {
+                    "value": {
+                      "size": "Not allowed when the product's product_type is 'experience'."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{product_uuid}/variants/{id}/": {
+      "delete": {
+        "operationId": "delete_client-id-products-product-uuid-variants-id",
+        "summary": "Delete Variant",
+        "description": "Removes a variant from a product. This is a soft delete: the variant is marked inactive, stops appearing in List Variants and Retrieve Variant, and no longer counts toward the product's limit of 15 variants. Requires a producer access token for the application.\n\nIt is blocked while the product is published. Unpublish the product first.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the variant."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content. The variant was deleted."
+          },
+          "400": {
+            "description": "The product is published.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before removing variants."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{product_uuid}/variants/{uuid}/coupon-codes/": {
+      "post": {
+        "operationId": "post_client-id-products-product-uuid-variants-uuid-coupon-codes",
+        "summary": "Upload Coupon Codes",
+        "description": "Adds a batch of coupon codes to the available pool of a unique-code variant. Requires a producer access token for the application.\n\nSend up to 5,000 codes per request, each up to 255 characters. A code already on this variant is skipped, not treated as an error, and the response reports how many were accepted and how many skipped. A code already used on a different variant in the same store fails the whole request, so a bad file never takes over another variant's codes.\n\nThe variant must belong to a `unique_code` product, and the product must not be published. To replace the pool instead of adding to it, use Replace Coupon Codes.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the variant."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "codes"
+                ],
+                "properties": {
+                  "codes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 5000,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 255
+                    },
+                    "description": "The codes to add. Duplicates within the request are counted once."
+                  }
+                }
+              },
+              "examples": {
+                "Three codes": {
+                  "value": {
+                    "codes": [
+                      "SUMMER-AB12",
+                      "SUMMER-CD34",
+                      "SUMMER-EF56"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. How many codes were added and how many were skipped as duplicates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "accepted": {
+                      "type": "integer",
+                      "description": "Codes added to the pool."
+                    },
+                    "skipped": {
+                      "type": "integer",
+                      "description": "Submitted codes that were duplicates and not added."
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "accepted": 2,
+                      "skipped": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Code on another variant": {
+                    "value": {
+                      "codes": "The following codes are already in use on another variant in this store: SUMMER-AB12."
+                    }
+                  },
+                  "Wrong variant type": {
+                    "value": {
+                      "detail": "Coupon codes are not supported for variant_type 'size'."
+                    }
+                  },
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before managing coupon codes."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "put_client-id-products-product-uuid-variants-uuid-coupon-codes",
+        "summary": "Replace Coupon Codes",
+        "description": "Replaces the whole pool of available coupon codes of a unique-code variant with a new batch. Codes that were already redeemed are left untouched. Requires a producer access token for the application.\n\nThe rules match Upload Coupon Codes: up to 5,000 codes of up to 255 characters, a code already on this variant is skipped and counted, and a code used on a different variant in the same store fails the request. The variant must belong to a `unique_code` product, and the product must not be published.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the product."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the variant."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "codes"
+                ],
+                "properties": {
+                  "codes": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 5000,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 255
+                    },
+                    "description": "The new pool of available codes. Every unredeemed code not in this list is removed."
+                  }
+                }
+              },
+              "examples": {
+                "Two codes": {
+                  "value": {
+                    "codes": [
+                      "AUTUMN-GH78",
+                      "AUTUMN-IJ90"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. How many codes were added and how many were skipped as duplicates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "accepted": {
+                      "type": "integer",
+                      "description": "Codes added to the pool."
+                    },
+                    "skipped": {
+                      "type": "integer",
+                      "description": "Submitted codes that were duplicates and not added."
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "accepted": 2,
+                      "skipped": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Code on another variant": {
+                    "value": {
+                      "codes": "The following codes are already in use on another variant in this store: AUTUMN-GH78."
+                    }
+                  },
+                  "Published product": {
+                    "value": {
+                      "detail": "Published products must be unpublished before managing coupon codes."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/products/{product_uuid}/variants/from-provider-products/": {
+      "post": {
+        "operationId": "post_client-id-products-product-uuid-variants-from-provider-products",
+        "summary": "Create Variants from Provider Products",
+        "description": "Creates one variant for each provider product you list, on a `konekt` product. Requires a producer access token for the application.\n\nYou send only the provider product IDs. Each variant's label is taken from the provider's own catalog entry, and its cost is left empty, so set it afterwards with Update Variant. The provider product must be an active one in this application. As with Create Variants, the whole batch is validated first and nothing is created if any entry fails. A `konekt` product can have only one variant, and a product can have at most 15.\n\nThe response is the list of new variants, in the same shape as Retrieve Variant.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "product_uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the konekt product to add variants to."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "provider_products"
+                ],
+                "properties": {
+                  "provider_products": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "The provider products to create variants from.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "provider_product_id"
+                      ],
+                      "properties": {
+                        "provider_product_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "The ID of an active provider product in this application."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "One provider product": {
+                  "value": {
+                    "provider_products": [
+                      {
+                        "provider_product_id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The new variants.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "cost": {
+                        "type": "integer",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": [
+                      {
+                        "id": "d6e3c0f4-8f50-4c19-ae37-4a1f2b9d5c83",
+                        "url": "https://<host>/api/v1/applications/<client_id>/products/b4f1a8c2-…/variants/d6e3c0f4-…/",
+                        "product": {
+                          "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "name": "Gift Card"
+                        },
+                        "label": "Amazon Gift Card",
+                        "provider_product": {
+                          "id": "e8a3c1d5-2b6f-4c90-a7d4-6f1b9e0c3a58",
+                          "provider": "konekt",
+                          "external_id": "12345",
+                          "data": {
+                            "face_value": 25,
+                            "currency": "USD"
+                          }
+                        },
+                        "cost": null,
+                        "inventory_count": null,
+                        "is_active": true,
+                        "created_at": "2026-10-22T11:45:00Z",
+                        "updated_at": "2026-10-22T11:45:00Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Not a konekt product": {
+                    "value": {
+                      "provider_products": "Variants can only be created from provider products for 'Konekt'-type products."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/orders/": {
+      "post": {
+        "operationId": "post_client-id-orders",
+        "summary": "Create Order",
+        "description": "Places a redemption order for the signed-in member. The member spends their reward item balance, or pays a provider in cash, on a product variant. Eligibility, stock and the balance debit are handled together, so an order either goes through completely or not at all. The caller must be a member of the application.\n\nSend an `idempotency_key` so a retried request can't place the order twice. Repeating a key with the same request returns the original order with status 200 instead of 201. Reusing a key for a different request fails with 409.\n\nAn order can contain only one item for now. The response is the order, in the same shape as Retrieve Order, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order.\n\nErrors come back as `detail` and `error_code`. A 400 means the request itself is wrong, for example an unknown variant. A 422 means the order is valid but the current state blocks it, for example out of stock, insufficient balance, or a product that is expired or the member isn't eligible for.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "idempotency_key",
+                  "items"
+                ],
+                "properties": {
+                  "idempotency_key": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "A unique key for this order, chosen by the client. Reuse it only to retry the same request."
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "description": "The variant to redeem. Exactly one item is allowed.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "variant_id"
+                      ],
+                      "properties": {
+                        "variant_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "The ID of the product variant to redeem."
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "How many units to redeem."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "One variant": {
+                  "value": {
+                    "idempotency_key": "order-2026-10-22-0001",
+                    "items": [
+                      {
+                        "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                        "quantity": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The order was placed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    },
+                    "new_balance": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                      "profile": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "status": "created",
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "total_amount": "500.00",
+                      "redemption_method": "reward_item",
+                      "idempotency_key": "order-2026-10-22-0001",
+                      "items": [
+                        {
+                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie",
+                            "type": "merchandise",
+                            "url": "…/products/b4f1a8c2-…/"
+                          },
+                          "variant": {
+                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                            "label": "Medium, Black",
+                            "images": [],
+                            "details": null
+                          },
+                          "redemption_method": "reward_item",
+                          "status": "in_progress",
+                          "quantity": 1,
+                          "amount": "500.00",
+                          "unit_amount": "500.00",
+                          "failure_reason": null
+                        }
+                      ],
+                      "refunds": [],
+                      "created_at": "2026-10-22T14:00:00Z",
+                      "updated_at": "2026-10-22T14:00:00Z",
+                      "new_balance": "1500.00"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Unknown variant": {
+                    "value": {
+                      "detail": "Variant not found.",
+                      "error_code": "VARIANT_NOT_FOUND"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The idempotency key was already used for a different request.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Key conflict": {
+                    "value": {
+                      "detail": "This idempotency key was already used for a different request.",
+                      "error_code": "IDEMPOTENCY_KEY_CONFLICT"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A valid order that the current state blocks.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Rejected": {
+                    "value": {
+                      "detail": "The order could not be placed.",
+                      "error_code": "ORDER_REJECTED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/orders/{uuid}/": {
+      "get": {
+        "operationId": "get_client-id-orders-uuid",
+        "summary": "Retrieve Order",
+        "description": "Returns one order of the signed-in member, with its items and any refunds. A member can only retrieve their own orders, and the caller must be a member of the application.\n\nThe order itself is only a container. Its `status` is `created` or `cancelled`, and the redemption progress of each purchase lives on the items, whose `status` is `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. `total_amount` is the sum of the item amounts, and `redemption_method` shows whether the member paid with a reward item or in cash.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "url": "https://<host>/api/v1/applications/<client_id>/orders/a1b2c3d4-…/",
+                      "profile": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "status": "created",
+                      "reward_item": {
+                        "id": "7c1e4b52-9a3d-4d0e-8f26-1b5a3c9e7d44",
+                        "name": "Coins"
+                      },
+                      "total_amount": "500.00",
+                      "redemption_method": "reward_item",
+                      "idempotency_key": "order-2026-10-22-0001",
+                      "items": [
+                        {
+                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie",
+                            "type": "merchandise",
+                            "url": "…/products/b4f1a8c2-…/"
+                          },
+                          "variant": {
+                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                            "label": "Medium, Black",
+                            "images": [],
+                            "details": null
+                          },
+                          "redemption_method": "reward_item",
+                          "status": "redeemed",
+                          "quantity": 1,
+                          "amount": "500.00",
+                          "unit_amount": "500.00",
+                          "failure_reason": null
+                        }
+                      ],
+                      "refunds": [],
+                      "created_at": "2026-10-22T14:00:00Z",
+                      "updated_at": "2026-10-22T14:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/": {
+      "get": {
+        "operationId": "get_client-id-order-items",
+        "summary": "List Order Items",
+        "description": "Returns order items, which are the individual redemption lines of orders. A producer for the application sees every item in the application, which makes this the operations view, for example to find every item awaiting provider confirmation. A member sees only the items of their own orders. Newest first by default, and paginated.\n\nEach item carries its own `status`: `in_progress`, `awaiting_provider_confirmation`, `redeemed`, `fulfilled`, `rejected` or `refunded`. The `redeem_url`, `fulfill_url`, `reject_url` and `refund_url` fields point to the actions available on the item, and are null for built-in products (badge, multiplier, flair and coupon-code lines) that settle at order time.\n\nQuery parameters, all optional:\n- `order_id`, `profile_id`, `product_id`, `variant_id`: UUIDs that narrow the list to one order, member, product or variant.\n- `status`: one of the item statuses above.\n- `redemption_method`: `reward_item` or `cash`.\n- `redemption_provider`: for example `konekt`.\n- `amount__gte`, `amount__lte`: inclusive bounds on the item amount.\n- `is_refunded`: `true` for refunded items, `false` for the rest.\n- `since`, `until`: ISO 8601 times. `since` is inclusive and `until` is exclusive, both on the creation time.\n- `ordering`: `created_at`, `updated_at`, `status`, `amount` or `quantity`. Prefix with a minus for descending order.\n- `page` and `page_size`: pagination. The default page size is 20.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "in_progress",
+                "awaiting_provider_confirmation",
+                "redeemed",
+                "fulfilled",
+                "rejected",
+                "refunded"
+              ]
+            },
+            "description": "Only items with this status."
+          },
+          {
+            "in": "query",
+            "name": "order_id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Only items of this order."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "profile": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          },
+                          "product": {
+                            "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                            "name": "Team Hoodie",
+                            "type": "merchandise",
+                            "url": "…/products/b4f1a8c2-…/"
+                          },
+                          "variant": {
+                            "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                            "label": "Medium, Black",
+                            "images": [],
+                            "details": null
+                          },
+                          "redemption_method": "reward_item",
+                          "status": "redeemed",
+                          "quantity": 1,
+                          "amount": "500.00",
+                          "unit_amount": "500.00",
+                          "failure_reason": null,
+                          "updated_by": null,
+                          "created_at": "2026-10-22T14:00:00Z",
+                          "updated_at": "2026-10-22T14:00:00Z",
+                          "reject_url": "…/order-items/f2a3b4c5-…/reject/",
+                          "redeem_url": "…/order-items/f2a3b4c5-…/redeem/",
+                          "fulfill_url": "…/order-items/f2a3b4c5-…/fulfill/",
+                          "refund_url": "…/order-items/f2a3b4c5-…/refunds/"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{uuid}/": {
+      "get": {
+        "operationId": "get_client-id-order-items-uuid",
+        "summary": "Retrieve Order Item",
+        "description": "Returns one order item. A producer for the application can retrieve any item, and a member only the items of their own orders.\n\n`amount` is the line total and `unit_amount` the price of one unit. `variant.details` depends on the product type. For a badge, multiplier or flair it is the granted entity. For a unique-code or common-code product it is `{\"codes\": [...]}`, which is empty once the item is refunded or rejected. For a provider product it is `{\"assets\": [...]}`, the items the provider issued, which stays empty until the provider responds. It is null for other types. `failure_reason` holds the reason given when the item was rejected.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "profile": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "product": {
+                        "id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                        "name": "Summer Voucher",
+                        "type": "unique_code",
+                        "url": "…/products/b4f1a8c2-…/"
+                      },
+                      "variant": {
+                        "id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                        "label": "Summer Voucher",
+                        "images": [],
+                        "details": {
+                          "codes": [
+                            {
+                              "code": "SUMMER-AB12",
+                              "issued_at": "2026-10-22T14:00:01Z"
+                            }
+                          ]
+                        }
+                      },
+                      "redemption_method": "reward_item",
+                      "status": "fulfilled",
+                      "quantity": 1,
+                      "amount": "300.00",
+                      "unit_amount": "300.00",
+                      "failure_reason": null,
+                      "updated_by": null,
+                      "created_at": "2026-10-22T14:00:00Z",
+                      "updated_at": "2026-10-22T14:00:01Z",
+                      "reject_url": null,
+                      "redeem_url": null,
+                      "fulfill_url": null,
+                      "refund_url": null
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{uuid}/redeem/": {
+      "post": {
+        "operationId": "post_client-id-order-items-uuid-redeem",
+        "summary": "Redeem Order Item",
+        "description": "Confirms the payment of a provider-backed order item, moving it from `awaiting_provider_confirmation` to `redeemed`. It takes no request body. Requires a producer access token for the application.\n\nOnly an item in `awaiting_provider_confirmation` can be redeemed. Any other state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The updated order item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "redemption_method": "cash",
+                      "status": "redeemed",
+                      "quantity": 1,
+                      "amount": "25.00",
+                      "unit_amount": "25.00",
+                      "failure_reason": null,
+                      "updated_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "updated_at": "2026-10-22T15:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The item is a built-in product and has no manual steps.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Built-in product": {
+                    "value": {
+                      "detail": "This is a built-in product and cannot be updated.",
+                      "error_code": "PRODUCT_NOT_ACTIONABLE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The item isn't in a state that can be redeemed.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Wrong state": {
+                    "value": {
+                      "detail": "The item could not be updated.",
+                      "error_code": "ITEM_TRANSITION_REJECTED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{uuid}/fulfill/": {
+      "post": {
+        "operationId": "post_client-id-order-items-uuid-fulfill",
+        "summary": "Fulfill Order Item",
+        "description": "Marks a paid order item as delivered, moving it from `redeemed` to `fulfilled`. It takes no request body. Requires a producer access token for the application.\n\nOnly an item in `redeemed` can be fulfilled. Any other state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The updated order item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "redemption_method": "reward_item",
+                      "status": "fulfilled",
+                      "quantity": 1,
+                      "amount": "500.00",
+                      "unit_amount": "500.00",
+                      "failure_reason": null,
+                      "updated_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "updated_at": "2026-10-22T15:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The item is a built-in product and has no manual steps.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Built-in product": {
+                    "value": {
+                      "detail": "This is a built-in product and cannot be updated.",
+                      "error_code": "PRODUCT_NOT_ACTIONABLE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The item isn't in a state that can be fulfilled.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Wrong state": {
+                    "value": {
+                      "detail": "The item could not be updated.",
+                      "error_code": "ITEM_TRANSITION_REJECTED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{uuid}/reject/": {
+      "post": {
+        "operationId": "post_client-id-order-items-uuid-reject",
+        "summary": "Reject Order Item",
+        "description": "Declines an order item and marks it `rejected`, whether or not it was delivered. Requires a producer access token for the application.\n\nRejecting moves no money and no stock. To give the member their balance back and restock the item, issue a refund with Create Refund. An optional `reason` is recorded on the item as `failure_reason`.\n\nAn item that can't be rejected from its current state fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and have no manual steps, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`. The response is the updated order item, in the same shape as Retrieve Order Item, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Why the item was rejected. Optional, and stored as failure_reason on the item."
+                  }
+                }
+              },
+              "examples": {
+                "With a reason": {
+                  "value": {
+                    "reason": "Item discontinued by the provider"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK. The updated order item.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "new_balance": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "redemption_method": "reward_item",
+                      "status": "rejected",
+                      "quantity": 1,
+                      "amount": "500.00",
+                      "unit_amount": "500.00",
+                      "failure_reason": "Item discontinued by the provider",
+                      "updated_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "updated_at": "2026-10-22T16:00:00Z",
+                      "new_balance": "1000.00"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The item is a built-in product and has no manual steps.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Built-in product": {
+                    "value": {
+                      "detail": "This is a built-in product and cannot be updated.",
+                      "error_code": "PRODUCT_NOT_ACTIONABLE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The item can't be rejected from its current state.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Wrong state": {
+                    "value": {
+                      "detail": "The item could not be updated.",
+                      "error_code": "ITEM_TRANSITION_REJECTED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{order_item_id}/refunds/": {
+      "post": {
+        "operationId": "post_client-id-order-items-order-item-id-refunds",
+        "summary": "Create Refund",
+        "description": "Refunds one order item. The item's amount is credited back to the member, the item is restocked, and the item is marked `refunded`. Refunds are per item, and the item is identified by the URL. Requires a producer access token for the application.\n\nA `reason` is required. The response is the refund, in the same shape as Retrieve Refund, plus `new_balance`, the member's current balance in the order's reward item. It is null for a cash order. A refund that can't be issued fails with 422 and an `error_code`. Built-in products (badge, multiplier, flair and coupon-code lines) settle at order time and can't be refunded, so they fail with 400 `PRODUCT_NOT_ACTIONABLE`.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "order_item_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item to refund."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "reason"
+                ],
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Why the item is being refunded. Can't be blank."
+                  }
+                }
+              },
+              "examples": {
+                "Refund": {
+                  "value": {
+                    "reason": "Member requested a refund"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created. The refund was issued.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    },
+                    "new_balance": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Created": {
+                    "value": {
+                      "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "status": "completed",
+                      "total_amount": "500.00",
+                      "reason": "Member requested a refund",
+                      "items": [
+                        {
+                          "order_item_id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                          "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "amount": "500.00",
+                          "quantity": 1
+                        }
+                      ],
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "created_at": "2026-10-22T16:30:00Z",
+                      "updated_at": "2026-10-22T16:30:00Z",
+                      "new_balance": "1500.00"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the item is a built-in product.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Missing reason": {
+                    "value": {
+                      "reason": [
+                        "This field is required."
+                      ]
+                    }
+                  },
+                  "Built-in product": {
+                    "value": {
+                      "detail": "This is a built-in product and cannot be updated.",
+                      "error_code": "PRODUCT_NOT_ACTIONABLE"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The refund can't be issued.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Rejected": {
+                    "value": {
+                      "detail": "The refund could not be issued.",
+                      "error_code": "REFUND_REJECTED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "get_client-id-order-items-order-item-id-refunds",
+        "summary": "List Refunds",
+        "description": "Returns the refunds that cover an order item, so for an item that has been refunded it is a list with that one refund. Requires a producer access token for the application. Results are paginated, and each result is a refund in the same shape as Retrieve Refund.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "order_item_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Page number."
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Results per page. Defaults to 20."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "total_amount": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "count": 1,
+                      "next": null,
+                      "previous": null,
+                      "results": [
+                        {
+                          "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
+                          "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                          "status": "completed",
+                          "total_amount": "500.00",
+                          "reason": "Member requested a refund",
+                          "items": [
+                            {
+                              "order_item_id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                              "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                              "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                              "amount": "500.00",
+                              "quantity": 1
+                            }
+                          ],
+                          "created_by": {
+                            "id": "b1a2c3d4-…",
+                            "nickname": "upend"
+                          },
+                          "created_at": "2026-10-22T16:30:00Z",
+                          "updated_at": "2026-10-22T16:30:00Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{client_id}/order-items/{order_item_id}/refunds/{uuid}/": {
+      "get": {
+        "operationId": "get_client-id-order-items-order-item-id-refunds-uuid",
+        "summary": "Retrieve Refund",
+        "description": "Returns one refund that covers an order item. Requires a producer access token for the application.\n\n`status` is `pending`, `completed` or `failed`. `total_amount` is the sum of the refunded item amounts, and `items` lists each refunded order item with its variant, product, amount and quantity. `reason` is the reason given when the refund was created, and `created_by` is the producer who issued it.",
+        "x-internal": true,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "client_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The client ID of the application."
+          },
+          {
+            "in": "path",
+            "name": "order_item_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the order item."
+          },
+          {
+            "in": "path",
+            "name": "uuid",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the refund."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "total_amount": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "value": {
+                      "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
+                      "order_id": "a1b2c3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+                      "status": "completed",
+                      "total_amount": "500.00",
+                      "reason": "Member requested a refund",
+                      "items": [
+                        {
+                          "order_item_id": "f2a3b4c5-6d7e-4f80-91a2-b3c4d5e6f708",
+                          "variant_id": "c5d2b9e3-7e4f-4b08-9d26-3f0e1a8c4b72",
+                          "product_id": "b4f1a8c2-6d3e-4a97-8c15-2e9d0f7b3a61",
+                          "amount": "500.00",
+                          "quantity": 1
+                        }
+                      ],
+                      "created_by": {
+                        "id": "b1a2c3d4-…",
+                        "nickname": "upend"
+                      },
+                      "created_at": "2026-10-22T16:30:00Z",
+                      "updated_at": "2026-10-22T16:30:00Z"
+                    }
+                  }
+                }
               }
             }
           }
