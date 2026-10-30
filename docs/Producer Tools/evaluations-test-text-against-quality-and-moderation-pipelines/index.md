@@ -78,7 +78,9 @@ An optional `override_config` changes your saved settings for this request only,
 
 <br />
 
-<br />
+1. &#x20;[Comment Quality pipeline](doc:comment-quality-pipeline)
+2. [Comment Moderation pipeline](doc:copy-of-comment-quality-pipeline-1)
+3. [Chat Message Moderation pipeline](doc:copy-of-comment-quality-pipeline)
 
 <br />
 
