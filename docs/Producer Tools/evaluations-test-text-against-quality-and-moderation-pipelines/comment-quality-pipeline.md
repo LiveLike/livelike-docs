@@ -1,5 +1,5 @@
 ---
-title: Comment Quality pipeline
+title: Comment Quality Pipeline
 deprecated: false
 hidden: true
 link:
@@ -231,7 +231,7 @@ metadata:
   </tbody>
 </Table>
 
-### Payload examples
+### Payload Examples
 
 ```json With Direct Text
 {
