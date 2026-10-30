@@ -11,31 +11,66 @@ Evaluations are read-only: nothing is saved, and no comment, message or setting 
 
 ### Endpoints
 
-| Method | Path                                                            | Purpose             |
-| ------ | --------------------------------------------------------------- | ------------------- |
-| `POST` | `/api/v1/applications/{client_id}/evaluations/`                 | Start an evaluation |
-| `GET`  | `/api/v1/applications/{client_id}/evaluations/{evaluation_id}/` | Get the result      |
+<Table>
+  <thead>
+    <tr>
+      <th style={{ width: "11.1%" }}>
+        Method
+      </th>
 
-**Auth:** a producer access token for the application (`Authorization: Bearer <token>`). Any other token gets `403`.
+      <th style={{ width: "74.1%" }}>
+        Path
+      </th>
+
+      <th style={{ width: "15.9%" }}>
+        Purpose
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        `POST`
+      </td>
+
+      <td>
+        `/api/v1/applications/{client_id}/evaluations/`
+      </td>
+
+      <td>
+        Start an evaluation
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        `GET`
+      </td>
+
+      <td>
+        `/api/v1/applications/{client_id}/evaluations/{evaluation_id}/`
+      </td>
+
+      <td>
+        Poll the result
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+**Auth:**&#x20;
+
+- A producer access token for the application (`Authorization: Bearer <token>`).&#x20;
+- Any other token gets `403`.
 
 ### Pipelines
 
-| `pipeline`           | Input (exactly one)    | Max text length | Optional tuning |
-| -------------------- | ---------------------- | --------------- | --------------- |
-| `comment_quality`    | `text` or `comment_id` | 5000            | `overrides`     |
-| `comment_moderation` | `text` or `comment_id` | 5000            | `thresholds`    |
-| `chat_moderation`    | `text` or `message_id` | 200             | `thresholds`    |
-
-- `overrides` (quality only) are applied on top of your saved comment quality rules. If you haven't saved any rules, the defaults are used.&#x20;
-  - Fields:
-    - `min_char_count`
-    - `disallowed_chars`
-    - `exclude_gif`
-    - `emoji_ratio_threshold`
-    - `min_sentiment_score`
-    - `max_toxicity_score`.&#x20;
-  - Set `emoji_ratio_threshold`, `min_sentiment_score` or `max_toxicity_score` to `null` to turn that rule off.
-- `thresholds` (moderation only) is a `{category: 0..1}` map applied on top of your saved moderation config. You can only override thresholds, the model always comes from your saved config. Each category must be one the model emits, for example `toxic`, `severe_toxic`, `obscene`, `threat`, `insult`, `identity_hate`. A category is flagged when its score is **above** its threshold.
+| `pipeline`           | Input (exactly one)    | Max text length | Optional tuning <br />(draft only) |
+| -------------------- | ---------------------- | --------------- | ---------------------------------- |
+| `comment_quality`    | `text` or `comment_id` | 5000            | `thresholds`                       |
+| `comment_moderation` | `text` or `comment_id` | 5000            | `thresholds`                       |
+| `chat_moderation`    | `text` or `message_id` | 200             | `thresholds`                       |
 
 ### Sync vs async
 
@@ -79,7 +114,7 @@ curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
   -d '{
         "pipeline": "comment_quality",
         "text": "gg 🔥🔥🔥",
-        "overrides": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
+        "override_config": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
         "async": false
       }'
 ```
@@ -93,7 +128,7 @@ curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
   -d '{
         "pipeline": "comment_quality",
         "comment_id": "<comment-uuid>",
-        "overrides": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
+        "override_config": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
         "async": false
       }'
 ```
@@ -127,7 +162,7 @@ curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
   -d '{
         "pipeline": "comment_moderation",
         "text": "<text to test>",
-        "thresholds": {"insult": 0.5, "threat": 0.3},
+        "override_config": {"insult": 0.5, "threat": 0.3},
         "async": false
       }'
 ```
@@ -161,7 +196,7 @@ curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
   -d '{
         "pipeline": "chat_moderation",
         "text": "<text to test>",
-        "thresholds": {"toxic": 0.6, "obscene": 0.5},
+        "override_config": {"toxic": 0.6, "obscene": 0.5},
         "async": false
       }'
 ```
@@ -179,7 +214,7 @@ curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
 
 ```json
 {
-  "url": "https://<api-host>/api/v1/applications/<client_id>/evaluations/<evaluation_id>/",
+  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/<evaluation_id>/",
   "pipeline": "chat_moderation",
   "status": "pending"
 }
