@@ -10,8 +10,6 @@ Test any text, or an existing comment or chat message, against your application'
 
 Evaluations use your saved settings, and you can override them for a single request to try changes before you save them. Evaluations are read-only, they never save or change anything.
 
-<br />
-
 <Callout icon="⚠️" theme="info">
   ### **Producer-only** debugging **endpoint.**&#x20;
 
