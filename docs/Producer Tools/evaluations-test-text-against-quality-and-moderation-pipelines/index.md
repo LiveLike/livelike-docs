@@ -1,5 +1,5 @@
 ---
-title: Self-Serve Content Evaluations
+title: Self-Service Content Evaluation
 excerpt: Test text against quality and moderation pipelines
 deprecated: false
 hidden: true
