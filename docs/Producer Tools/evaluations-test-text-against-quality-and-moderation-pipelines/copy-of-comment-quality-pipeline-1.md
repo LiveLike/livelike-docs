@@ -123,7 +123,7 @@ metadata:
   </tbody>
 </Table>
 
-### Examples
+### Payload Examples
 
 ```json With Direct Text
 {
