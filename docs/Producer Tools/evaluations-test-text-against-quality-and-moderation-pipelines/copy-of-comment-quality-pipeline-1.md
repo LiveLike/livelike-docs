@@ -1,5 +1,5 @@
 ---
-title: Comment Moderation pipeline
+title: Comment Moderation Pipeline
 deprecated: false
 hidden: true
 link:
