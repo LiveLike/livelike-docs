@@ -87,34 +87,21 @@ Each pipeline(POST API) needs **exactly one** input:&#x20;
 
 Every response, from every pipeline, has the same five keys:
 
-| Key                | Description                                                                  |
-| ------------------ | ---------------------------------------------------------------------------- |
-| `url`              | Where to poll this evaluation.                                               |
-| `pipeline`         | The pipeline that was run.                                                   |
-| `status`           | `pending`, `completed` or `failed`.                                          |
-| `effective_config` | The exact settings used: your saved settings with `override_config` applied. |
-| `result`           | `null` until `status` is `completed`, then the outcome (see below).          |
+- `url` : Where to poll this evaluation for result.
+- `pipeline` : The pipeline that was run.
+- `status` : `pending`, `completed` or `failed`.
+- `effective_config` : The final settings used for this evaluation: your saved settings with `override_config` applied. It has the same shape as `override_config` .
+- `result` : `null` until `status` is `completed`, then the outcome (see below).
+  - `decision` : `pass` or `fail`&#x20;
+  - `rules` : A list of rules. One entry per rule. Each rule in the list has 4 keys -
+    - `name` : The rule field (quality) or category (moderation)
+    - `outcome` : `pass` or `fail` .`error` when a rule couldn't run.
+    - `value` : What was measured, e.g. character count, emoji ratio or score
+    - `threshold` : The threshold it was compared with.
 
-`effective_config` has the same shape as `override_config`:
+<br />
 
-- **comment_quality pipeline:** the six comment quality rule fields.
-- **Moderation pipelines:** `model_id` plus one key per category, with its threshold.
-
-`result` contains:
-
-| Key        | Description                                                                                         |
-| ---------- | --------------------------------------------------------------------------------------------------- |
-| `decision` | `pass` or `fail`. `fail` means at least one rule failed, for moderation, the text would be flagged. |
-| `rules`    | One entry per rule (quality) or per category (moderation).                                          |
-
-Each entry in `rules` has:
-
-| Key         | Description                                                                                                     |
-| ----------- | --------------------------------------------------------------------------------------------------------------- |
-| `name`      | The rule field (quality) or category (moderation).                                                              |
-| `outcome`   | `pass` or `fail`. Quality rules can also return `error` when a rule couldn't run; an error counts as a failure. |
-| `value`     | What was measured, e.g. character count, emoji ratio or score.                                                  |
-| `threshold` | The threshold it was compared with.                                                                             |
+<br />
 
 #### Response examples
 
