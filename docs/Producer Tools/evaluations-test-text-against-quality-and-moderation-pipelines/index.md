@@ -13,9 +13,9 @@ Evaluations use your saved settings, and you can override them for a single requ
 <br />
 
 <Callout icon="⚠️" theme="info">
-  ### **Producer-only endpoint.**&#x20;
+  ### **Producer-only** debugging **endpoint.**&#x20;
 
-  This endpoint is for application producers only and needs a producer access token. Its request, payload and response may change without prior notice, so always check this page for the latest details before using it.
+  This is a self-service endpoint for application producers to test and debug their comment quality and moderation settings. It needs a producer access token and is not meant to be integrated into end-user apps. Its request, payload and response may change without prior notice, so always refer to this page for the latest details before use.
 </Callout>
 
 ## Endpoints
