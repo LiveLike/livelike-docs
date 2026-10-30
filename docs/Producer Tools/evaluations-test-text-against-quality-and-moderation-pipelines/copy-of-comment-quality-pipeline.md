@@ -1,5 +1,5 @@
 ---
-title: Chat Message Moderation pipeline
+title: Chat Message Moderation Pipeline
 deprecated: false
 hidden: true
 link:
