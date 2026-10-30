@@ -79,7 +79,7 @@ Each pipeline(POST API) needs **exactly one** input:&#x20;
 - Either `text`, or the ID of an existing item (e.g Comment ID or Chat message ID).&#x20;
 - An optional `override_config` . This changes your saved settings for this request only, fields you leave out keep their saved values. This allows you to evaluate the tuned configuration before saving.
 
-1. &#x20;[Comment Quality pipeline](doc:comment-quality-pipeline)
+1. [Comment Quality pipeline](doc:comment-quality-pipeline)
 2. [Comment Moderation pipeline](doc:copy-of-comment-quality-pipeline-1)
 3. [Chat Message Moderation pipeline](doc:copy-of-comment-quality-pipeline)
 
