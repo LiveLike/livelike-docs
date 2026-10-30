@@ -79,9 +79,9 @@ Each pipeline(POST API) needs **exactly one** input:&#x20;
 - Either `text`, or the ID of an existing item (e.g Comment ID or Chat message ID).&#x20;
 - An optional `override_config` . This changes your saved settings for this request only, fields you leave out keep their saved values. This allows you to evaluate the tuned configuration before saving.
 
-1. [Comment Quality pipeline](doc:comment-quality-pipeline)
-2. [Comment Moderation pipeline](doc:copy-of-comment-quality-pipeline-1)
-3. [Chat Message Moderation pipeline](doc:copy-of-comment-quality-pipeline)
+1. [Comment Quality Pipeline Payload](doc:comment-quality-pipeline)
+2. [Comment Moderation Pipeline Payload](doc:copy-of-comment-quality-pipeline-1)
+3. [Chat Message Moderation Pipeline Payload](doc:copy-of-comment-quality-pipeline)
 
 ## Response
 
@@ -91,7 +91,7 @@ Every response, from every pipeline, has the same five keys:
 - `pipeline` : The pipeline that was run.
 - `status` : `pending`, `completed` or `failed`.
 - `effective_config` : The final settings used for this evaluation: your saved settings with `override_config` applied. It has the same shape as `override_config` .
-- `result` : `null` until `status` is `completed`, then the outcome (see below).
+- `result` : `null` until `status` is `completed`, then the outcome.
   - `decision` : `pass` or `fail`&#x20;
   - `rules` : A list of rules. One entry per rule. Each rule in the list has 4 keys -
     - `name` : The rule field (quality) or category (moderation)
@@ -99,13 +99,9 @@ Every response, from every pipeline, has the same five keys:
     - `value` : What was measured, e.g. character count, emoji ratio or score
     - `threshold` : The threshold it was compared with.
 
-<br />
+### Response examples
 
-<br />
-
-#### Response examples
-
-Pending (async `POST`):
+**Pending (async&#x20;**`POST`**):**
 
 ```json
 {
@@ -124,7 +120,7 @@ Pending (async `POST`):
 }
 ```
 
-Completed:
+**Comment quality(Completed):**
 
 ```json
 {
@@ -153,217 +149,36 @@ Completed:
 }
 ```
 
-<br />
-
-<br />
-
-<br />
-
-<br />
-
-Results expire **10 minutes** after they're created. After that, the `GET` returns `404`.
-
-<br />
-
-### Examples
-
-The pipeline examples use `"async": false` so the result comes back in the same response. To get a `url` to poll instead, see [Async: start, then poll](#async-start-then-poll).
-
-#### Comment quality
-
-**Free text**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "comment_quality", "text": "What a finish, great match today!", "async": false}'
-```
-
-**Existing comment**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "comment_quality", "comment_id": "<comment-uuid>", "async": false}'
-```
-
-**Try draft rules before saving them on free text**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "pipeline": "comment_quality",
-        "text": "gg 🔥🔥🔥",
-        "override_config": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
-        "async": false
-      }'
-```
-
-**Try draft rules before saving them on existing comment**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "pipeline": "comment_quality",
-        "comment_id": "<comment-uuid>",
-        "override_config": {"min_char_count": 3, "emoji_ratio_threshold": 0.5, "max_toxicity_score": null},
-        "async": false
-      }'
-```
-
-#### Comment moderation
-
-**Free text**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "comment_moderation", "text": "<text to test>", "async": false}'
-```
-
-**Existing comment**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "comment_moderation", "comment_id": "<comment-uuid>", "async": false}'
-```
-
-**Try draft thresholds before saving them&#x20;**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "pipeline": "comment_moderation",
-        "text": "<text to test>",
-        "override_config": {"insult": 0.5, "threat": 0.3},
-        "async": false
-      }'
-```
-
-#### Chat moderation
-
-**Free text** (max 200 characters)
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "chat_moderation", "text": "<text to test>", "async": false}'
-```
-
-**Existing message**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "chat_moderation", "message_id": "<message-uuid>", "async": false}'
-```
-
-**Try draft thresholds before saving them**
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "pipeline": "chat_moderation",
-        "text": "<text to test>",
-        "override_config": {"toxic": 0.6, "obscene": 0.5},
-        "async": false
-      }'
-```
-
-#### Async: start, then poll
-
-Leave out `"async"` (or set it to `true`) and the request returns `202` straight away:
-
-```bash
-curl -X POST "$HOST/api/v1/applications/$CLIENT_ID/evaluations/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"pipeline": "chat_moderation", "text": "<text to test>"}'
-```
+**Moderation (Completed):**
 
 ```json
 {
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/<evaluation_id>/",
-  "pipeline": "chat_moderation",
-  "status": "pending"
-}
-```
-
-Poll the `url` until `status` is `completed` or `failed`. Results expire after 10 minutes.
-
-```bash
-curl "$HOST/api/v1/applications/$CLIENT_ID/evaluations/<evaluation_id>/" \
-  -H "Authorization: Bearer $TOKEN"
-```
-
-<br />
-
-### Response
-
-`status` is `pending`, `completed` or `failed`. A completed result has these fields:
-
-| Field              | Meaning                                                                                                                             |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `decision`         | `pass` / `fail` for quality; `allowed` / `flagged` for moderation                                                                   |
-| `rules`            | One entry per rule or category: `name`, `outcome` (`pass` / `fail` / `error` / `skipped`), the measured `value` and the `threshold` |
-| `effective_config` | The exact config used (saved settings + your overrides)                                                                             |
-| `model_id`         | The model(s) that scored the text                                                                                                   |
-
-All quality rules always run, so you see every result, not just the first failure.
-
-**Comment quality**
-
-```json
-{
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/6f1c…/",
-  "pipeline": "comment_quality",
-  "status": "completed",
-  "decision": "fail",
-  "effective_config": {
-    "min_char_count": 3, "disallowed_chars": "*", "emoji_ratio_threshold": 0.5,
-    "exclude_gif": false, "min_sentiment_score": 0.2, "max_toxicity_score": null
-  },
-  "rules": [
-    {"name": "min_char_count", "outcome": "pass", "value": 6, "threshold": 3},
-    {"name": "disallowed_chars", "outcome": "pass", "value": null, "threshold": "*"},
-    {"name": "emoji_ratio_threshold", "outcome": "fail", "value": 0.6, "threshold": 0.5},
-    {"name": "exclude_gif", "outcome": "pass", "value": false, "threshold": false},
-    {"name": "min_sentiment_score", "outcome": "pass", "value": 0.71, "threshold": 0.2},
-    {"name": "max_toxicity_score", "outcome": "skipped", "value": null, "threshold": null}
-  ],
-  "model_id": {"min_sentiment_score": "<sentiment-model>", "max_toxicity_score": "<toxicity-model>"}
-}
-```
-
-**Moderation**
-
-```json
-{
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/9a2e…/",
+  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/568811fd-2117-4402-b613-a0d6c96bd527/",
   "pipeline": "comment_moderation",
   "status": "completed",
-  "decision": "flagged",
-  "effective_config": {"model_id": "unitary/toxic-bert", "thresholds": {"toxic": 0.8, "insult": 0.5, "threat": 0.3}},
-  "rules": [
-    {"name": "toxic", "outcome": "pass", "value": 0.42, "threshold": 0.8},
-    {"name": "insult", "outcome": "fail", "value": 0.67, "threshold": 0.5},
-    {"name": "threat", "outcome": "pass", "value": 0.02, "threshold": 0.3}
-  ],
-  "model_id": "unitary/toxic-bert"
+  "effective_config": {
+    "model_id": "unitary/toxic-bert",
+    "toxic": 0.8,
+    "severe_toxic": 0.8,
+    "obscene": 0.8,
+    "threat": 0.8,
+    "insult": 0.5,
+    "identity_hate": 0.8
+  },
+  "result": {
+    "decision": "fail",
+    "rules": [
+      {"name": "toxic", "outcome": "pass", "value": 0.42, "threshold": 0.8},
+      {"name": "severe_toxic", "outcome": "pass", "value": 0.01, "threshold": 0.8},
+      {"name": "obscene", "outcome": "pass", "value": 0.05, "threshold": 0.8},
+      {"name": "threat", "outcome": "pass", "value": 0.02, "threshold": 0.8},
+      {"name": "insult", "outcome": "fail", "value": 0.67, "threshold": 0.5},
+      {"name": "identity_hate", "outcome": "pass", "value": 0.01, "threshold": 0.8}
+    ]
+  }
 }
 ```
+
+<br />
+
+#### **Note:** Results expire **10 minutes** after they're created. After that, the `GET` returns `404`.
