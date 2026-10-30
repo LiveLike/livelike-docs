@@ -10,6 +10,14 @@ Test any text, or an existing comment or chat message, against your application'
 
 Evaluations use your saved settings, and you can override them for a single request to try changes before you save them. Evaluations are read-only, they never save or change anything.
 
+<br />
+
+<Callout icon="⚠️" theme="info">
+  ### **Producer-only endpoint.**&#x20;
+
+  This endpoint is for application producers only and needs a producer access token. Its request, payload and response may change without prior notice, so always check this page for the latest details before using it.
+</Callout>
+
 ## Endpoints
 
 <Table>
