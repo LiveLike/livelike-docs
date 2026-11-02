@@ -111,7 +111,7 @@ Every response, from every pipeline, has the same five keys:
 
 ```json
 {
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/761a0acd-5fc7-4b35-991e-1c55fc0ad864/",
+  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/<evaluation-uuid>/",
   "pipeline": "comment_quality",
   "status": "pending",
   "effective_config": {
@@ -130,7 +130,7 @@ Every response, from every pipeline, has the same five keys:
 
 ```json
 {
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/761a0acd-5fc7-4b35-991e-1c55fc0ad864/",
+  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/<evaluation-uuid>/",
   "pipeline": "comment_quality",
   "status": "completed",
   "effective_config": {
@@ -159,7 +159,7 @@ Every response, from every pipeline, has the same five keys:
 
 ```json
 {
-  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/568811fd-2117-4402-b613-a0d6c96bd527/",
+  "url": "https://<host>/api/v1/applications/<client_id>/evaluations/<evaluation-uuid>/",
   "pipeline": "comment_moderation",
   "status": "completed",
   "effective_config": {
