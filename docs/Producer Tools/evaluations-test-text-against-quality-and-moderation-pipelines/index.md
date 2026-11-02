@@ -4,7 +4,7 @@ excerpt: Test text against quality and moderation pipelines
 deprecated: false
 hidden: false
 metadata:
-  robots: index
+  robots: noindex
 ---
 Test any text, or an existing comment or chat message, against your application's **comment quality** and **AI moderation** pipelines and see how each rule scores it.
 
