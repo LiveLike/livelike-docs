@@ -2,7 +2,7 @@
 title: Self-Service Content Evaluation
 excerpt: Test text against quality and moderation pipelines
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
