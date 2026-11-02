@@ -187,4 +187,4 @@ Every response, from every pipeline, has the same five keys:
 
 <br />
 
-#### **Note:** Results expire **10 minutes** after they're created. After that, the `GET` returns `404`.
+### **Note:** Results expire **10 minutes** after they're created. After that, the `GET` returns `404`.
