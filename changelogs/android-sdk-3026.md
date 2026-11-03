@@ -1,7 +1,9 @@
 ---
-title: Android SDK 3.0.26
+title: Android SDK 3.0.26.1
 author: Viktor Manev
 hidden: false
+metadata:
+  robots: noindex
 published_at: '2026-11-03T13:32:23.576Z'
 type: improved
 ---
