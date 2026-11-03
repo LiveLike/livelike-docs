@@ -1,7 +1,7 @@
 ---
 title: Android SDK 3.0.26
 author: Viktor Manev
-hidden: true
+hidden: false
 published_at: '2026-11-03T13:32:23.576Z'
 type: improved
 ---
@@ -15,6 +15,6 @@ type: improved
 - Fixed profile-loading failures to prevent requests with missing profile IDs
 - `currentProfileOnce()` now throws on loading failure or a missing profile ID
 
-## New Features
+## Addition
 
-- Added `getCurrentProfileOrNull()` to safely retrieve a profile, returning `null` on error
+- Added `profile`.`getCurrentProfileOrNull()` to safely retrieve a profile, returning `null` on error
