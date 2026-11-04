@@ -469,7 +469,7 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 | `data.created_at`           | `datetime` | Timestamp when the profile relationship was created        |
 | `created_at`                | `datetime` | Timestamp when the event was created                       |
 
-## `profile-relationship-deleted`&#x20;
+## `profile-relationship-deleted`
 
 ### Payload Example:
 
