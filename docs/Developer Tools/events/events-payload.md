@@ -469,6 +469,28 @@ This document details the events(Webhook, SQS, etc) sent by our system, includin
 | `data.created_at`           | `datetime` | Timestamp when the profile relationship was created        |
 | `created_at`                | `datetime` | Timestamp when the event was created                       |
 
+## `profile-relationship-deleted`
+
+```json
+{
+  "id": "81b4d144-2936-44b7-867b-8c8740dc6159",
+  "event": "profile-relationship-deleted",
+  "data": {
+    "relationship_type": "follow",
+    "to_profile_id": "31d9b4b0-7ef6-44f8-911c-96035700c7d8",
+    "to_profile_nickname": "Charming Throut",
+    "to_profile_custom_id": "thisisid",
+    "profile_id": "ce74ad6c-496d-48da-85a6-9b6d83367598",
+    "profile_nickname": "Swift Zebra",
+    "profile_custom_id": "customid",
+    "client_id": "FVQI5U57tfCyDV99YjhF3ExdlpiObg5JASvy81Mu",
+    "created_at": "2025-09-10T07:01:46Z",
+    "deleted_at": "2025-09-10T08:01:46Z"
+  },
+  "created_at": "2025-09-10T07:02:16.062427+00:00"
+}
+```
+
 ## `chat-mention-created`
 
 ### Payload Example:
