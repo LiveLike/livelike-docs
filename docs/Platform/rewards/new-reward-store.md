@@ -14,7 +14,7 @@ The Reward Store is a **curated catalog of physical and digital rewards** that u
 - **Curate a catalog.** Create products with images, descriptions, categories, and custom attributes, and set a point cost on each.
 - **Control eligibility and visibility.** Gate products to user meeting defined criteria (via User Groups), set availability windows, and cap how many and how often a user can redeem.
 - **Redeem in one step.** A redemption checks the user's balance, eligibility, and stock, deducts the points automatically, and creates an order.
-- **Track and manage orders.** Every redemption is an order you can follow through fulfillment, rejection, or refund. Users can see their active and past orders.
+- **Track and manage orders.** Every redemption is an order you can follow through fulfillment, rejection, or refund. Users can see their order histroy.
 - **Build your own storefront.** Storefront APIs cover products, categories, order history, redemption, reward items, and refunds, so the experience can match your product.
 
 **Typical storefront pages**
