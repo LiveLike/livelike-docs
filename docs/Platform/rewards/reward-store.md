@@ -32,7 +32,7 @@ The LiveLike Reward Store supports a wide range of features to help you build th
 
 ### **User Personalization & Access Control**
 
-* Gate products by **user tier**
+* Gate products by **user group**
 * Feature specific products to highlight them in your storefront
 * Combine with quests or user actions to unlock exclusive items
 
