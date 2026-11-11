@@ -38,69 +38,69 @@ next:
 - **Guess The Word**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.9.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-word-2.28.0.js"></script>
 
 ```
 
 - **Guess The Image**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-image-1.3.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-the-image-1.14.0.js"></script>
 
 ```
 
 - **Trivia**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.7.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/trivia-1.24.0.js"></script>
 
 ```
 
 - **Pick Your Team**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.15.1.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/pick-your-team-1.35.0.js"></script>
 ```
 
 - **Play Predictor**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.10.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/predictor-1.23.0.js"></script>
 
 ```
 
 - **Guess What**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/guess-what-1.2.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/guess-what-1.11.0.js"></script>
 
 ```
 
 - **Spin The Wheel**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.2.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/spin-the-wheel-1.9.0.js"></script>
 
 ```
 
 - **Skill Game**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.1.3.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/skill-game-0.5.0.js"></script>
 
 ```
 
 - **Sweepstakes**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.2.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/sweepstakes-0.5.0.js"></script>
 
 ```
 
 - **Scratch Card**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.2.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/scratch-card-0.4.0.js"></script>
 ```
 
 <br />
@@ -108,7 +108,7 @@ next:
 - **Play Predictor +**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/predictor-plus-1.0.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/predictor-plus-1.7.3.js"></script>
 ```
 
 <br />
@@ -116,7 +116,7 @@ next:
 - **Daily Jigsaw Puzzle**: Add the following script tag to your HTML page:
 
 ```html
-<script type="module" src="https://arcade-web.livelikecdn.com/daily-jigsaw-puzzle-0.1.0.js"></script>
+<script type="module" src="https://arcade-web.livelikecdn.com/daily-jigsaw-puzzle-0.1.1.js"></script>
 ```
 
 <br />
@@ -219,5 +219,3 @@ next:
 ## Please Note
 
 - Games that require **social sharing or download image enablement** (_for games that supports it_) from native Android or iOS apps also need corresponding configuration on the app side. Please refer to the implementation guide here for detailed setup instructions. [here](https://docs.livelike.com/update/docs/native-share-and-download-interface-integration-ios-android-react-native#/)
-
-<br />
