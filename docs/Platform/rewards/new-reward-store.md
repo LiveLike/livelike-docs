@@ -11,17 +11,17 @@ The Reward Store is a **curated catalog of physical and digital rewards** that u
 
 **What you can do**
 
-- **Curate a catalog.** Create products with images, descriptions, categories, and custom attributes, and set a point cost on each.
-- **Control eligibility and visibility.** Gate products to user meeting defined criteria (via User Groups), set availability windows, and cap how many and how often a user can redeem.
+- **Curate a catalog.** Create reward with images, descriptions, categories, and custom attributes, and set a point cost on each.
+- **Control eligibility and visibility.** Gate rewards to user meeting defined criteria (via User Groups), set availability windows, and cap how many and how often a user can redeem.
 - **Redeem in one step.** A redemption checks the user's balance, eligibility, and stock, deducts the points automatically, and creates an order.
-- **Track and manage orders.** Every redemption is an order you can follow through fulfillment, rejection, or refund. Users can see their order histroy.
-- **Build your own storefront.** Storefront APIs cover products, categories, order history, redemption, reward items, and refunds, so the experience can match your product.
+- **Track and manage orders.** Every redemption is an order you can follow through fulfillment, rejection, or refund. Users can see their order history.
+- **Build your own storefront.** Storefront APIs cover rewards/products, categories, order history, redemption, reward items, and refunds, so the experience can match your product.
 
 **Typical storefront pages**
 
-- **Catalog:** product thumbnails, point costs, restrictions, and featured sections/categories.
-- **Product details:** large image, description, cost and eligibility, and a redeem button with a confirmation step.
-- **Order history:** past and ongoing redemptions.
+- **Catalog:** gallery of all rewards/products with key details like costs, restrictions, availability, grouped into categories.
+- **Rewards details:** images, name and description, cost and eligibility, and redemption CTA.
+- **Order history:** history of all reward redemptions.
 
 **How it fits together**
 
