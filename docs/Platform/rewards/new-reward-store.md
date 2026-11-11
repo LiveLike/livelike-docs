@@ -7,12 +7,12 @@ metadata:
 ---
 ## Overview
 
-The Reward Store is the "burn" side of the LiveLike economy. Users **earn** points through LiveLike experiences, then **spend** them on rewards inside your product. You curate a catalog of digital or physical items and control who can see and redeem each one.
+The Reward Store is a **curated catalog of physical and digital rewards** that users can claim/redeem. Users **earn** points through different touch points in the experience like quests, streaks, actions, etc., then **redeem/spend** them on the store against rewards. You control who can see and redeem each reward.
 
 **What you can do**
 
 - **Curate a catalog.** Create products with images, descriptions, categories, and custom attributes, and set a point cost on each.
-- **Control eligibility and visibility.** Restrict products to user groups, set availability windows, and cap how often a user can redeem.
+- **Control eligibility and visibility.** Gate products to user meeting defined criteria (via User Groups), set availability windows, and cap how many and how often a user can redeem.
 - **Redeem in one step.** A redemption checks the user's balance, eligibility, and stock, deducts the points automatically, and creates an order.
 - **Track and manage orders.** Every redemption is an order you can follow through fulfillment, rejection, or refund. Users can see their active and past orders.
 - **Build your own storefront.** Storefront APIs cover products, categories, order history, redemption, reward items, and refunds, so the experience can match your product.
