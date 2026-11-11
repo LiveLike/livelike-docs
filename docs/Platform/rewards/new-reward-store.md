@@ -19,7 +19,7 @@ The Reward Store is a **curated catalog of physical and digital rewards** that u
 
 **Typical storefront pages**
 
-- **Catalog:** product thumbnails, point costs, restrictions, and featured sections.
+- **Catalog:** product thumbnails, point costs, restrictions, and featured sections/categories.
 - **Product details:** large image, description, cost and eligibility, and a redeem button with a confirmation step.
 - **Order history:** past and ongoing redemptions.
 
