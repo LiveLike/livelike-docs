@@ -26,8 +26,8 @@ The Reward Store is a **curated catalog of physical and digital rewards** that u
 **How it fits together**
 
 1. Users earn points (the store's **reward item**) from your engagement features.
-2. You set up a store, categories, and products in the CMS.
-3. Users redeem products from your storefront and points are debited once per order.
+2. You set up a store, categories, and rewards/products in the CMS or via APIs.
+3. Users redeem rewards/products from your storefront and points are debited once per order.
 4. LiveLike delivers built-in and partner rewards automatically. You fulfill custom rewards (merchandise, experiences) yourself.
 
 The rest of this guide covers each of these in detail.
