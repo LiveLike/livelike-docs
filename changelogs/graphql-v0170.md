@@ -14,12 +14,10 @@ Based on the GraphQL schema, here are the release changes. This release adds cou
 
 ***
 
-* **ReactionSpace.reactionSpaceCount**: New field on `ReactionSpace` that returns its `ReactionSpaceCount` (`reactionsCount` and `emojiCounts`). Counts can now be fetched together with the reaction space instead of through a separate `reactionSpacesCount` query. Returns `null` if no count is available.
+* **ReactionSpace.reactionSpaceCount**: New field on `ReactionSpace` that returns its related`ReactionSpaceCount type`
 
 #### Comment
 
 ***
 
-* **CommentBoard.commentBoardCount**: New field on `CommentBoard` that returns its `CommentBoardCount` (`commentsCount` and `topLevelCommentsCount`). Counts can now be fetched together with the comment board instead of through a separate `commentBoardsCount` query. Returns `null` if no count is available.
-
-The existing `reactionSpacesCount` and `commentBoardsCount` queries are unchanged.
+* **CommentBoard.commentBoardCount**: New field on `CommentBoard` that returns its related`CommentBoardCount type`
