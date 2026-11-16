@@ -2,6 +2,8 @@
 title: GraphQL v0.17.0
 author: Akshay Garg
 hidden: false
+metadata:
+  robots: noindex
 published_at: '2026-11-16T11:39:48.681Z'
 ---
 ## Changes Summary
@@ -14,10 +16,10 @@ Based on the GraphQL schema, here are the release changes. This release adds cou
 
 ***
 
-* **ReactionSpace.reactionSpaceCount**: New field on `ReactionSpace` that returns its related`ReactionSpaceCount type`
+* **ReactionSpace.reactionSpaceCount**: New field on `ReactionSpace` that returns its related `ReactionSpaceCount` type
 
 #### Comment
 
 ***
 
-* **CommentBoard.commentBoardCount**: New field on `CommentBoard` that returns its related`CommentBoardCount type`
+* **CommentBoard.commentBoardCount**: New field on `CommentBoard` that returns its related`CommentBoardCount` type
