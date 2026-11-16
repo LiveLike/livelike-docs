@@ -22322,13 +22322,6 @@
               "type": "string"
             },
             "description": "Multiple space ids. ?reaction_space_id=uuid1&reaction_space_id=uuid2&..."
-          },
-          {
-            "name": "target_group_id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
