@@ -22321,7 +22321,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Multiple space ids. ?reaction_space_id=uuid1&reaction_space_id=uuid2&..."
+            "description": "Multiple space ids(max 100). \n?reaction_space_id=uuid1&reaction_space_id=uuid2&..."
           },
           {
             "in": "query",
