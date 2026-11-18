@@ -2,7 +2,7 @@
 title: Getting the best out of Genie
 excerpt: How to write requests, combine features and work safely.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
