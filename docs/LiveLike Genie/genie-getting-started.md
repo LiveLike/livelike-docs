@@ -1,6 +1,6 @@
 ---
 title: Getting started with Genie
-excerpt: Sign in, connect your application and send your first request.
+excerpt: Open Genie from Producer Suite and send your first request.
 deprecated: false
 hidden: false
 link:
@@ -8,27 +8,28 @@ link:
 metadata:
   robots: index
 ---
-## 1. Sign in
+## 1. Open Genie
 
-Go to [genie.livelike.ai](https://genie.livelike.ai) and sign in with your LiveLike account. You land on a new chat.
+In Producer Suite, go to **Business Tools → Genie**. It takes you to **[genie.livelike.ai](https://genie.livelike.ai)**, where you land on a new chat.
+
+Don't see Genie under Business Tools? It needs to be enabled for your account — see [How to Enable Genie](/docs/genie-introduction#how-to-enable-genie).
 
 ![The Genie home screen: navigation on the left, the message box in the centre](https://files.readme.io/70c518268118949bac4aaa8bb9b548c5048d68d9e4e0c8bafb75879afbc87a0d-01-home.jpg)
 
 ## 2. Choose the application Genie works on
 
-Genie acts on **one LiveLike application at a time**, as you. It finds that application from a **producer access token**.
+Genie acts on **one LiveLike application at a time**, as you. It opens on the application you came from in Producer Suite, so there's nothing to set up.
+
+To check or switch the application:
 
 1. Click your name at the bottom-left of the sidebar to open the account menu, then choose **Access Token**.
 
    ![The account menu: API Docs, Access Token, theme switch and Sign Out](https://files.readme.io/1e051a0dd6721636c76788436c7374301fb3ee380f9a9508256403a1360d8bc4-05-account-menu.jpg)
 
-2. The **Current** tab shows the application, client ID and token Genie is using now. Click **Change Token** and paste the producer access token for the application you want (you'll find it in Producer Suite for that application).
-3. Already used Genie with other applications? Pick one from the **Others** tab to switch straight to it.
+2. The **Current** tab shows the application Genie is working on now.
+3. To switch, pick another application from the **Others** tab.
 
-   ![The Producer Access Token dialog with Current and Others tabs](https://files.readme.io/d34cc4adc9b4fa99b40a0a40c3603056813da27063cd938f3e5010efdb7322eb-06-access-token.jpg)
-
-> 📘 **Why a token?**
-> The token is what lets Genie call LiveLike on your behalf. Connectors, Tasks and anything that reads or changes your app need it.
+   ![The Access Token dialog with Current and Others tabs](https://files.readme.io/d34cc4adc9b4fa99b40a0a40c3603056813da27063cd938f3e5010efdb7322eb-06-access-token.jpg)
 
 Ask Genie **"Who am I?"** (or type `/whoami`) at any time to confirm which user and application it's acting as.
 
@@ -52,7 +53,7 @@ Genie shows how long it thought and which agents it used, asks you to confirm be
 | **Skills** *(Beta)* | Discover, install and write skills. → [Skills](/docs/genie-skills) |
 | **Connectors** *(Beta)* | Connect Genie to Slack, Asana, Segment and other services. → [Connectors](/docs/genie-connectors) |
 | **History** | Your past sessions. Sessions shared with you are tagged **Shared**. |
-| **Account menu** (your name, bottom-left) | Access Token, API Docs, light/dark theme, Sign Out. |
+| **Account menu** (your name, bottom-left) | Switch application (Access Token), API Docs, light/dark theme, Sign Out. |
 | **Preview** (in the message box) | Try preview agents in your own browser. → [Preview Settings](/docs/genie-preview-settings) |
 
 Next: [Working in chat](/docs/genie-chat).
