@@ -2,7 +2,7 @@
 title: Genie features
 excerpt: Everything Genie can build, manage and answer — agent by agent.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
