@@ -23,8 +23,8 @@ metadata:
 
 ![The Connectors catalog](https://files.readme.io/52147268fdb1672cf5c7a300cd5b3e829972e3ee043e9ae669776b7491abd9fb-19-connectors-catalog.jpg)
 
-> 🚧 **Set your access token first**
-> Connectors are tied to the LiveLike application you're working on. Set a producer token (account menu → **Access Token**) to see and manage them.
+> 📘 **Connectors belong to an application**
+> Connectors are tied to the LiveLike application you opened Genie from. Switch application (account menu → **Access Token** → **Others**) to see and manage another application's connectors.
 
 ## Add a connector
 
