@@ -34,6 +34,85 @@ The rest of this guide covers each of these in detail.
 
 ***
 
+## Why Use a Reward Store
+
+The Reward Store gives your audience a reason to keep earning points. Points on their own are a number on a screen. A store turns them into something users want, which closes the loop between engagement and reward and gives you a flexible, scalable loyalty program inside your own product.
+
+| Business Goal | How the Reward Store Helps |
+| --- | --- |
+| **Drive repeat engagement** | Users come back to earn more points for the items they want |
+| **Reward your best fans** | Gate premium items to VIP or loyalty groups so status has visible benefits |
+| **Run a loyalty program** | One catalog covers digital perks, physical merchandise, and experiences |
+| **Create exclusivity** | Limited stock, availability windows, and redemption caps make rewards feel special |
+| **Work with sponsors** | Attach a sponsor to the store or to individual products, so partners can fund or feature rewards |
+| **Save operations effort** | Balance checks, stock, order creation, delivery of digital rewards, and refunds are automatic |
+
+### Common Ways to Use It
+
+Pick the model that fits your program. You can also combine them in one store.
+
+| Model | What It Looks Like | Features That Support It |
+| --- | --- | --- |
+| **Simple perk catalog** | A short list of digital rewards (badges, flair, coupon codes) users can redeem any time | Built-in products, which need no fulfillment work from your team |
+| **Loyalty marketplace** | A larger catalog with categories, featured items, merchandise, and experiences | Categories, product ordering, custom products |
+| **Gated or tiered shop** | Premium items open only to certain segments, such as VIPs or subscribers | **Access Gating** by user group |
+| **Limited-time drop** | A product available for a short window or in small quantities, for example a launch-week reward | **Starts From / Expires At**, limited stock, **Max Redemption** |
+| **Sponsored rewards** | Partner-funded or partner-branded items | **Sponsor** on the store and products |
+| **Digital gift cards** | Gift cards delivered by an external provider | Konekt partner products (where enabled) |
+
+### Example Reward Ideas
+
+- **Recognition:** badges and flair that show status in your community, with no cost to deliver.
+- **Boosters:** a reward multiplier that lets a user earn points faster for a period, which encourages even more engagement.
+- **Offers:** shared or one-time coupon codes for discounts from you or a partner.
+- **Merchandise:** jerseys, signed items, or other physical goods that your team ships.
+- **Experiences:** tickets, meet-and-greets, or event access with a set start and end time.
+- **Gift cards:** digital cards delivered automatically through a provider.
+
+### Tools for Managing Your Program
+
+| Lever | What It Does for the Business |
+| --- | --- |
+| **Price (cost in points)** | Controls how quickly users can afford a reward and how scarce it feels |
+| **Discount** | Run a sale on a reward (0 to 100%) without changing its base price |
+| **Stock (Available)** | Caps how many rewards can be given away, which protects budget for physical and paid items |
+| **Low Stock Threshold** | Shows users a **Few Left** label to create urgency |
+| **Availability window** | Schedules when a reward goes live (**Coming Soon**) and when it ends (**Expired**) |
+| **Max Redemption (with days)** | Stops one person from taking everything, for example 2 per user every 30 days |
+| **Access Gating** | Shows different offers to different audience segments |
+| **Publish / Unpublish** | Take a reward live or pull it from the storefront at any time without losing order history |
+
+### Planning Your Store
+
+Before you build, it helps to decide a few things as a team:
+
+1. **Goal.** What behavior do you want to reward, and what should the store do for the business?
+2. **Points economy.** How fast do users earn points, and what should the cheapest and most expensive rewards cost? Rewards that are always out of reach discourage users, and rewards that are too cheap lose their appeal.
+3. **Budget and stock.** For rewards that cost you money (merchandise, experiences, gift cards), set stock to the number you can afford to give away.
+4. **Audiences.** Which rewards are for everyone, and which are exclusive to a group?
+5. **Fulfillment owner.** For merchandise and experiences, decide who on your team delivers orders and how quickly. Built-in and partner rewards need no one.
+6. **Calendar.** Plan launches, drops, and sponsor campaigns using availability windows.
+
+### Who Does What
+
+| Role | Typical Responsibilities |
+| --- | --- |
+| **Marketing / Community** | Plan the catalog, pricing, and campaigns. Write product names and descriptions. Choose images |
+| **Product / Program owner** | Decide the points economy, audiences, and limits. Own the storefront experience |
+| **Operations / Support** | Fulfill merchandise and experience orders. Handle rejections and refunds |
+| **Partnerships** | Set up sponsors and partner rewards such as gift cards |
+| **Engineering** | Build the storefront in your app using the Reward Store APIs |
+
+### Keeping the Program Healthy
+
+- **Work through Redeemed orders.** For custom rewards, an order that stays in **Redeemed** means a user has paid and is still waiting. Check the Orders tab regularly.
+- **Refund when you cannot deliver.** Rejecting an order does not return points. Issue a refund so the user is made whole.
+- **Watch stock.** A **Sold Out** reward cannot be redeemed. Top it up or unpublish it.
+- **Refresh the catalog.** New and limited-time rewards give users a reason to come back.
+- **Retire rewards cleanly.** Unpublish rather than delete. Past orders stay intact.
+
+***
+
 ## How the Reward Store Is Organized
 
 | Concept        | What It Is                                                                                                                   |
