@@ -2,13 +2,15 @@
 title: Getting started with Genie
 excerpt: Sign in, connect your application and send your first request.
 deprecated: false
-hidden: true
+hidden: false
+link:
+  new_tab: false
 metadata:
   robots: index
 ---
 ## 1. Sign in
 
-Go to **[genie.livelike.ai](https://genie.livelike.ai)** and sign in with your LiveLike account. You land on a new chat.
+Go to [genie.livelike.ai](https://genie.livelike.ai) and sign in with your LiveLike account. You land on a new chat.
 
 ![The Genie home screen: navigation on the left, the message box in the centre](https://files.readme.io/70c518268118949bac4aaa8bb9b548c5048d68d9e4e0c8bafb75879afbc87a0d-01-home.jpg)
 
