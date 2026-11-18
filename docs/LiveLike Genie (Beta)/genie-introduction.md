@@ -2,15 +2,25 @@
 title: LiveLike Genie
 excerpt: Run your LiveLike engagement program by talking to it.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
 **Genie is LiveLike's AI operator for your engagement program.** Tell it what you want in plain English — "create a three-question quiz for tonight's game", "which quests had the highest completion last week?", "every Monday at 9am, post the weekly leaderboard to Slack" — and Genie plans the work, asks you to confirm anything that changes your app, and carries it out using the same LiveLike APIs your producers use in Producer Suite.
 
-Open Genie at **[genie.livelike.ai](https://genie.livelike.ai)**.
+<br />
 
 ![The Genie home screen](https://files.readme.io/70c518268118949bac4aaa8bb9b548c5048d68d9e4e0c8bafb75879afbc87a0d-01-home.jpg)
+
+<br />
+
+# How to Enable Genie
+
+* Contact your Account Manager
+* Email [support@livelike.com](mailto:support@livelike.com)
+* Once we've confirmed that Genie is enabled navigate to:
+  * Producer Suite → Business Tools → Genie
+  * This will lead you to [genie.livelike.ai](https://genie.livelike.ai).
 
 ## What you can do with Genie
 
