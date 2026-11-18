@@ -2,7 +2,7 @@
 title: Tasks
 excerpt: Put recurring work on a schedule.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
