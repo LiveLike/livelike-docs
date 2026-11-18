@@ -2,7 +2,7 @@
 title: Working in chat
 excerpt: The message box, files, plans, confirmations and keyboard shortcuts.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
