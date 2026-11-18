@@ -2,7 +2,7 @@
 title: Connectors
 excerpt: Let Genie read from and act in the tools around LiveLike.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
