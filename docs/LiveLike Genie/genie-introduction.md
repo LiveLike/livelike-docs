@@ -45,7 +45,7 @@ Every conversation is saved as a **session** you can return to, rename, or conti
 
 ## Where to go next
 
-- [Getting started](/docs/genie-getting-started) — sign in, choose your application, send your first request.
+- [Getting started](/docs/genie-getting-started) — open Genie from Producer Suite and send your first request.
 - [Working in chat](/docs/genie-chat) — the message box, files, confirmations and shortcuts.
 - [Features](/docs/genie-features) — everything Genie can manage, agent by agent.
 - [Tasks](/docs/genie-tasks) · [Skills](/docs/genie-skills) · [Connectors](/docs/genie-connectors) · [Preview Settings](/docs/genie-preview-settings)
