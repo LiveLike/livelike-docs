@@ -54,7 +54,7 @@ You don't need to know table names. Ask a business question — "Which programs 
 
 | Symptom | What to do |
 |---|---|
-| Genie can't see your programs, widgets or connectors | Open the account menu (your name, bottom-left) → **Access Token** and check the application, then ask "Who am I?" to confirm. |
+| Genie can't see your programs, widgets or connectors | Ask "Who am I?" to check which application Genie is on. If it's the wrong one, switch from the account menu → **Access Token** → **Others**. |
 | A connector shows a warning | Open it and **Reconnect** (OAuth) or **Reconfigure** (API key). |
 | A task run is **Failed** or **Partial** | Open the run from **History** to read the transcript; fix the cause, then use **Run Now**. |
 | A skill isn't being applied | Check it's in **Installed Skills**. Make its description name the situations it's for, or apply it directly with **＋ → Add Skill**. |
