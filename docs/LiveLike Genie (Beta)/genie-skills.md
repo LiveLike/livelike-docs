@@ -2,7 +2,7 @@
 title: Skills
 excerpt: Teach Genie your way of working once, and it follows it every time.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
