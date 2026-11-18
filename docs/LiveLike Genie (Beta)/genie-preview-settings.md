@@ -2,7 +2,7 @@
 title: Preview Settings
 excerpt: Try preview agents in your own browser without changing Genie for anyone else.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
