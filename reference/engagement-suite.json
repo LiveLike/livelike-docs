@@ -34567,13 +34567,13 @@
     "/user-reactions-count/": {
       "get": {
         "summary": "Count user reactions per target",
-        "description": "",
+        "description": "Repeat the param in the query string ?\nreaction_space_id=a&reaction_space_id=b&target_id=x&target_id=y, and each one is capped at 100. Going over returns a 400. Every target_id is counted in every reaction_space_id passed in url.",
         "operationId": "get-user-reaction-count-1",
         "parameters": [
           {
             "name": "target_id",
             "in": "query",
-            "description": "there can be multiple target_id as filter eg, target_id=abcd&target_id=1234",
+            "description": "Accepts repeated target_id for fetching in bulk (max 100)",
             "schema": {
               "type": "string"
             },
@@ -34586,7 +34586,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Accept repeated reaction_space_id for fetching in bulk (max 100)"
+            "description": "Accepts repeated reaction_space_id for fetching in bulk (max 100)"
           },
           {
             "in": "query",
