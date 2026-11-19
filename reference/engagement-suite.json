@@ -34573,7 +34573,7 @@
           {
             "name": "target_id",
             "in": "query",
-            "description": "Accepts repeated target_id for fetching in bulk (max 100)",
+            "description": "Accepts repeated target_id params for bulk fetching (max 100)",
             "schema": {
               "type": "string"
             },
@@ -34586,7 +34586,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Accepts repeated reaction_space_id for fetching in bulk (max 100)"
+            "description": "Accepts repeated reaction_space_id params for bulk fetching (max 100)"
           },
           {
             "in": "query",
