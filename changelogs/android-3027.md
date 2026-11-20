@@ -1,7 +1,7 @@
 ---
 title: Android 3.0.27
 author: Viktor Manev
-hidden: true
+hidden: false
 published_at: '2026-11-20T16:59:13.910Z'
 ---
 ## Added sdk.profile().getUserComments() to retrieve comments posted by the current user across comment boards.<br /><br />
