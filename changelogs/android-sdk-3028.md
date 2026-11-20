@@ -1,7 +1,7 @@
 ---
 title: Android SDK 3.0.28
 author: Viktor Manev
-hidden: true
+hidden: false
 published_at: '2026-11-20T17:01:05.396Z'
 ---
 ## Changes
