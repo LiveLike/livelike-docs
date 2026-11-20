@@ -9,7 +9,7 @@ published_at: '2026-11-20T17:01:05.396Z'
 - Added `sdk.setGetRequestInterceptor()` to customize outgoing LiveLike API GET requests, including per-request authentication control.
 - Deprecated `preferAnonymousRequests` in favor of the new interceptor.
 - Fixed duplicate query parameters in comment-count and comment-related pagination requests.
-- Added versioned Android SDK API reference documentation.
+- Added versioned Android SDK API reference documentation. <br />[https://sdk-reference.livelikecdn.com/android](https://sdk-reference.livelikecdn.com/android "https://sdk-reference.livelikecdn.com/android")
 
 ## Example: Removing authentication from comment requests
 
