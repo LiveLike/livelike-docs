@@ -22,13 +22,13 @@ Added root-level `SDK.reaction()` reaction client singleton methods:<br />The ex
 
 - `getUserReactions(request, callback)` — returns `UserReaction `records across multiple targets, target groups, and/or reaction spaces.
 
-  **- Required:** at least one non-empty `reactionSpaceIds` or `targetGroupIds` list
+  **- Required:** at least one non-empty `reactionSpaceIds` or `targetGroupIds` ,supports multiple.
 
-  **- Optional:** `targetIds`, `reactionId`, `reactedById`, relationship filters, and pagination
+  **- Optional:** `targetIds`, `reactionId`, `reactedById`, relationship filters, and pagination.
 
 - `getUserReactionsCount(request, callback)` — returns reaction totals per target.
 
-  **- Required:** one `reactionSpaceId`
+  **- Required:** one `reactionSpaceId`  supports multiple
 
   **- Optional:** `targetIds`, `reactedById`, relationship filters, and pagination
 
