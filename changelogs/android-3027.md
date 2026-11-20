@@ -1,5 +1,5 @@
 ---
-title: Android 3.0.27
+title: Android SDK 3.0.27
 author: Viktor Manev
 hidden: false
 published_at: '2026-11-20T16:59:13.910Z'
