@@ -4,7 +4,7 @@ author: Viktor Manev
 hidden: false
 published_at: '2026-11-20T17:01:05.396Z'
 ---
-## Changes
+## What's new
 
 - Added `sdk.setGetRequestInterceptor()` to customize outgoing LiveLike API GET requests, including per-request authentication control.
 - Deprecated `preferAnonymousRequests` in favor of the new interceptor.
