@@ -22912,7 +22912,7 @@
           {
             "name": "comment_board_id",
             "in": "query",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             },
@@ -23140,6 +23140,14 @@
               "type": "number"
             },
             "description": "Use the exclude_comment_report_threshold parameter to omit reported comments that have no replies. The parameter specifies the minimum number of reports a comment must receive to be excluded. A reported parent comment with replies remains visible so that its reply thread can still be rendered.\nIf omitted, no filtering is applied. The value must be a positive integer."
+          },
+          {
+            "in": "query",
+            "name": "comment_board_custom_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Client_id is required with this param"
           }
         ],
         "responses": {
