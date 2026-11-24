@@ -11,3 +11,12 @@ published_at: '2026-11-24T16:59:13.839Z'
 - The single reactionSpaceId is deprecated but still supported. When both inputs are provided, IDs are combined without duplicates.
 - Requests now require 1–100 target IDs and support up to 100 unique reaction spaces.
 - Updating: Use named arguments when creating GetUserReactionsCountRequest, as the parameter order has changed.<br /><br />more info:<br />[https://docs.livelike.com/reference/get-user-reaction-count](https://docs.livelike.com/reference/get-user-reaction-count "https://docs.livelike.com/reference/get-user-reaction-count")
+
+  <br />
+
+```kotlin Sample
+sdk.reaction().getUserReactions(request = GetUserReactionsRequest(
+targetGroupIds = listOf(reactionPaginationTargetGroupId), 
+reactionSpaceIds = listOf(reactionPaginationSpaceId))
+) { result, error -> println(result)       }
+```
