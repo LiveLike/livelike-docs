@@ -1,7 +1,7 @@
 ---
 title: Android SDK  3.0.29
 author: Viktor Manev
-hidden: false
+hidden: true
 published_at: '2026-11-24T16:59:13.839Z'
 ---
 #### Whats new
