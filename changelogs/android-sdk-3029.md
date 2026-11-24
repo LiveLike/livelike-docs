@@ -15,8 +15,8 @@ published_at: '2026-11-24T16:59:13.839Z'
   <br />
 
 ```kotlin Sample
-sdk.reaction().getUserReactions(request = GetUserReactionsRequest(
-targetGroupIds = listOf(reactionPaginationTargetGroupId), 
-reactionSpaceIds = listOf(reactionPaginationSpaceId))
+sdk.reaction().getUserReactionsCount(request = GetUserReactionsCountRequest(
+targetIds = listOf(myReactionTargetIds), 
+reactionSpaceIds = listOf(myReactionSpaceId))
 ) { result, error -> println(result)       }
 ```
